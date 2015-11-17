@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Principal;
+using System.Text;
+using System.Threading.Tasks;
+using GestionAdministrativa.Security;
+
+namespace GestionAdministrativa.Security
+{
+    public class GestionAdministrativaPrincipal : IPrincipal
+    {
+        private GestionAdministrativaIdentity _identity;
+
+        public GestionAdministrativaIdentity Identity
+        {
+            get { return _identity ?? new AnonymousIdentity(); }
+            set { _identity = value; }
+        }
+
+        #region IPrincipal Members
+        IIdentity IPrincipal.Identity
+        {
+            get { return this.Identity; }
+        }
+
+        public bool IsInRole(string role)
+        {
+            return _identity.Roles.Contains(role);
+        }
+        #endregion
+    }
+    
+}

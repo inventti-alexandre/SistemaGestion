@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using GestionAdministrativa.Data.Interfaces;
+
+namespace GestionAdministrativa.Data.Repository
+{
+    public class ReporteRepository : EFBaseRepository, IReporteRepository
+    {
+        public ReporteRepository()
+        {
+        }
+
+        public ReporteRepository(DbContext dbContext)
+            : base(dbContext)
+        {
+        }
+
+        //public IQueryable<ComprobantesByVentaId_Result> ComprobantesByVentaId(Guid ventaId)
+        //{
+        //    return AlejandriaDbContext.ComprobantesByVentaId(ventaId).AsQueryable();
+        //}
+
+        //public IQueryable<ComprobantesDelDia1_Result> ComprobantesDelDia()
+        //{
+        //    return AlejandriaDbContext.ComprobantesDelDia().AsQueryable();
+        //}
+
+        //public IQueryable<ProximasCuotasByCobrador_Result> ProximasCuotasByCobrador(int cobradorId)
+        //{
+        //    return AlejandriaDbContext.ProximasCuotasByCobrador(cobradorId).AsQueryable();
+        //}
+    }
+}

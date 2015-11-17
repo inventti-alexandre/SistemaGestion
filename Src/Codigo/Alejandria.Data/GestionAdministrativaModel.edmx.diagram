@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="99b1b99db2a04024808ed4cd3dad1108" Name="Diagram1" ZoomLevel="32">
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Bancos" Width="1.5" PointX="5.25" PointY="64.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Cajas" Width="1.5" PointX="21.75" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.CajasMovimientos" Width="1.5" PointX="18.75" PointY="71" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.CategoriasOperadores" Width="1.5" PointX="18.75" PointY="59.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Celulares" Width="1.5" PointX="21.75" PointY="57.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.CelularesMovimiento" Width="1.5" PointX="32.25" PointY="64.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.CentrosCostos" Width="1.5" PointX="21.75" PointY="71.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Choferes" Width="1.5" PointX="15.75" PointY="58.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.ChoferesMontosFavor" Width="1.5" PointX="32.25" PointY="57.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Conceptos" Width="1.5" PointX="15.75" PointY="72.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.CondicionesCompra" Width="1.5" PointX="24.75" PointY="65.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Dias" Width="1.5" PointX="19.5" PointY="56.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Funciones" Width="1.5" PointX="24.75" PointY="60.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.GruposProveedores" Width="1.5" PointX="24.75" PointY="70.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Localidades" Width="1.5" PointX="24.75" PointY="55.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Moviles" Width="1.5" PointX="35.25" PointY="59.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Operadores" Width="1.5" PointX="13.5" PointY="58.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.OperadoresFunciones" Width="1.5" PointX="38.25" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.OperadoresSucursales" Width="1.5" PointX="38.25" PointY="69.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.OrdenesPago" Width="1.5" PointX="15.75" PointY="63.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.OrdenesPagoDetalle" Width="1.5" PointX="27" PointY="64.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.PagosCelular" Width="1.5" PointX="35.25" PointY="64.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Paises" Width="1.5" PointX="0.75" PointY="66.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Personal" Width="1.5" PointX="8.25" PointY="64" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.PersonalConcepto" Width="1.5" PointX="32.25" PointY="70.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.PersonalNovedades" Width="1.5" PointX="35.25" PointY="70" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Proveedores" Width="1.5" PointX="10.5" PointY="63" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.ProveedoresBanco" Width="1.5" PointX="18.75" PointY="65.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Provincias" Width="1.5" PointX="3" PointY="65.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Recibos" Width="1.5" PointX="38.25" PointY="58.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.RecibosDetalle" Width="1.5" PointX="43.5" PointY="64.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Roles" Width="1.5" PointX="15.75" PointY="127.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Sucursales" Width="1.5" PointX="30" PointY="56.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.TiposCelulares" Width="1.5" PointX="41.25" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.TiposComprobantes" Width="1.5" PointX="41.25" PointY="70.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.TiposDocumentosIdentidad" Width="1.5" PointX="8.25" PointY="60.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.TiposGastos" Width="1.5" PointX="41.25" PointY="59.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.TiposMovimientosCajas" Width="1.5" PointX="35.25" PointY="54.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.TiposRecibos" Width="1.5" PointX="41.25" PointY="56.75" IsExpanded="true" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Bancos_Localidad" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Bancos_OperadoresAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Bancos_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Bancos_Provincia" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Bancos_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Bancos_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Proveedores_ProveedorBanco" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ProveedoresBanco_Bancos" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Cajas_Operador" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Cajas_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Cajas_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Cajas_Sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Cajas_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Cajas_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPagoDetalle_Cajas" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CajasMovimientos_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CajasMovimientos_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CajasMovimientos_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CajasMovimientos_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CajasMovimientos_TipoComprobante" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CajasMovimientos_TipoMovimientoCaja" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CategoriasOperadores_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CategoriasOperadores_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CategoriasOperadores_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CategoriasOperadores_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Personal_CategoriasOperadores" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Celulares_DiaPago" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Celulares_OperadoresAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Celulares_OperadoresModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Celulares_SucursalesAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Celulares_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Celulares_TipoCelular" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CelularesMovimiento_Celular" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosCelular_Celular" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CelularesMovimiento_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CelularesMovimiento_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CelularesMovimiento_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CelularesMovimiento_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CelularesMovimiento_TipoComprobante" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CentrosCostos_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CentrosCostos_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CentrosCostos_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CentrosCostos_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPago_CentrosCostos" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Choferes_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Choferes_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Choferes_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Choferes_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMontosFavor_Choferes" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMontosFavor_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMontosFavor_OperadorAutoriza" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMontosFavor_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMontosFavor_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMontosFavor_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMontosFavor_TipoComprobante" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Conceptos_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Conceptos_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Conceptos_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Conceptos_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PersonalConcepto_Conceptos" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PersonalNovedades_Conceptos" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CondicionesCompra_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CondicionesCompra_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CondicionesCompra_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CondicionesCompra_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Proveedores_CondicionCompra" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Funciones_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Funciones_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Funciones_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Funciones_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_GruposProveedores_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_GruposProveedores_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_GruposProveedores_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_GruposProveedores_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Proveedores_GrupoProveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Localidades_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Localidades_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Localidades_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Localidades_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Personal_Localidad" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Proveedores_Localidad" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Sucursales_Localidades" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Moviles_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Moviles_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Moviles_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Moviles_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Operadores_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Operadores_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Operadores_Personal" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Operadores_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Operadores_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OperadoresFunciones_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OperadoresFunciones_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OperadoresSucursal_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OperadoresSucursal_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPago_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPago_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPagoDetalle_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPagoDetalle_OperadorAutoriza" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPagoDetalle_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosCelular_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosCelular_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Personal_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Personal_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PersonalConcepto_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PersonalConcepto_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PersonalNovedades_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PersonalNovedades_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Proveedores_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Proveedores_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ProveedoresBanco_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ProveedoresBanco_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Provincias_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Provincias_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Recibos_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Recibos_OperadorAutoriza" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Recibos_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_RecibosDetalle_OperadorALta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_RecibosDetalle_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Sucursales_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Sucursales_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TiposCelulares_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TiposCelulares_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TiposComprobantes_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TiposComprobantes_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TiposGastos_OperadoresAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TiposGastos_OperadoresModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TiposMovimientosCajas_OperadorAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TiposMovimientosCajas_OperadorModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OperadoresFunciones_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OperadoresFunciones_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OperadoresSucursal_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OperadoresSucursal_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPago_Comprobante" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPago_Proveedores" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPago_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPago_Sucursales" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPago_SucursalGasto" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPago_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPago_TipoGasto" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPagoDetalle_OrdenesPago" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPagoDetalle_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPagoDetalle_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosCelular_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosCelular_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Provincias_Paises" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Personal_Provincia" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Personal_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Personal_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PersonalConcepto_Personal" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PersonalNovedades_Personal" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PersonalConcepto_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PersonalConcepto_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PersonalNovedades_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PersonalNovedades_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Proveedores_Provincia" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Proveedores_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Proveedores_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Proveedores_TipoDocumentoIdentidad" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ProveedoresBanco_Proveedores" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ProveedoresBanco_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ProveedoresBanco_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Provincias_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Provincias_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Sucursales_Provincias" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Recibos_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Recibos_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_RecibosDetalle_Recibo" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_RecibosDetalle_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_RecibosDetalle_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_RecibosDetalle_TipoRecibo" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Sucursales_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Sucursales_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TiposCelulares_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TiposCelulares_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TiposComprobantes_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TiposComprobantes_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TiposGastos_SucursalesAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TiposGastos_SucursalesModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TiposMovimientosCajas_SucursalAlta" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TiposMovimientosCajas_SucursalModificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionAdministrativa.Model.OperadoresRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
