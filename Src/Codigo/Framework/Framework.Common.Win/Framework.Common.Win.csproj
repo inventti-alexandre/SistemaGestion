@@ -40,15 +40,15 @@
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.WinControls, Version=2011.1.11.315, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Libreria\Codigo\LaPaz\Controles\Telerik\Telerik.WinControls.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Libreria\Codigo\LaPaz\Controles\Telerik\Telerik.WinControls.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.UI, Version=2011.1.11.315, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Libreria\Codigo\LaPaz\Controles\Telerik\Telerik.WinControls.UI.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Libreria\Codigo\LaPaz\Controles\Telerik\Telerik.WinControls.UI.dll</HintPath>
     </Reference>
     <Reference Include="TelerikCommon, Version=2011.1.11.315, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Libreria\Codigo\LaPaz\Controles\Telerik\TelerikCommon.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Libreria\Codigo\LaPaz\Controles\Telerik\TelerikCommon.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
