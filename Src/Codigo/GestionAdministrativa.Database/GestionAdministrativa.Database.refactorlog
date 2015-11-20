@@ -182,4 +182,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="OperadorAutorizaId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="7f42583c-6581-4497-93f6-eb34c41b8924" ChangeDateTime="11/20/2015 14:09:15">
+    <Property Name="ElementName" Value="[dbo].[Choferes].[FechaModificacion]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Choferes]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FechaModficacion" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="df3607a5-64d4-452f-8533-e4d98268a4ad" ChangeDateTime="11/20/2015 14:09:20">
+    <Property Name="ElementName" Value="[dbo].[Choferes].[ActivoA]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Choferes]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Activo" />
+  </Operation>
 </Operations>

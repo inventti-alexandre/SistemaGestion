@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GestionAdministrativa.Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="GestionAdministrativa.Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bancos">
           <Key>
             <PropertyRef Name="Id" />
@@ -169,7 +169,8 @@
           <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
           <Property Name="SucursalModificacionId" Type="int" />
           <Property Name="FechaAlta" Type="datetime" />
-          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="FechaModficacion" Type="datetime" />
+          <Property Name="Activo" Type="bit" />
         </EntityType>
         <EntityType Name="ChoferesMontosFavor">
           <Key>
@@ -3685,8 +3686,7 @@
             <End Role="TiposMovimientosCajas" EntitySet="TiposMovimientosCajas" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GestionAdministrativa.Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -3884,28 +3884,6 @@
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_CentrosCostos_SucursalModificacion" FromRole="CentrosCostos" ToRole="Sucursales" />
           <NavigationProperty Name="OrdenesPago" Relationship="Self.FK_OrdenesPago_CentrosCostos" FromRole="CentrosCostos" ToRole="OrdenesPago" />
         </EntityType>
-        <EntityType Name="Choferes">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="Dni" Type="Int32" />
-          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="OperadorAltaId" Type="Guid" Nullable="false" />
-          <Property Name="SucursalAltaId" Type="Int32" Nullable="false" />
-          <Property Name="OperadorModificacionId" Type="Guid" />
-          <Property Name="SucursalModificacionId" Type="Int32" />
-          <Property Name="FechaAlta" Type="DateTime" Precision="3" />
-          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Operadores" Relationship="Self.FK_Choferes_OperadorAlta" FromRole="Choferes" ToRole="Operadores" />
-          <NavigationProperty Name="Operadores1" Relationship="Self.FK_Choferes_OperadorModificacion" FromRole="Choferes" ToRole="Operadores" />
-          <NavigationProperty Name="Sucursales" Relationship="Self.FK_Choferes_SucursalAlta" FromRole="Choferes" ToRole="Sucursales" />
-          <NavigationProperty Name="Sucursales1" Relationship="Self.FK_Choferes_SucursalModificacion" FromRole="Choferes" ToRole="Sucursales" />
-          <NavigationProperty Name="ChoferesMontosFavor" Relationship="Self.FK_ChoferesMontosFavor_Choferes" FromRole="Choferes" ToRole="ChoferesMontosFavor" />
-        </EntityType>
         <EntityType Name="ChoferesMontosFavor">
           <Key>
             <PropertyRef Name="Id" />
@@ -3926,13 +3904,13 @@
           <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
           <Property Name="SucursalModificacionId" Type="Int32" />
           <Property Name="OperadorModificacionId" Type="Guid" />
-          <NavigationProperty Name="Choferes" Relationship="Self.FK_ChoferesMontosFavor_Choferes" FromRole="ChoferesMontosFavor" ToRole="Choferes" />
           <NavigationProperty Name="Operadores" Relationship="Self.FK_ChoferesMontosFavor_OperadorAlta" FromRole="ChoferesMontosFavor" ToRole="Operadores" />
           <NavigationProperty Name="Operadores1" Relationship="Self.FK_ChoferesMontosFavor_OperadorAutoriza" FromRole="ChoferesMontosFavor" ToRole="Operadores" />
           <NavigationProperty Name="Operadores2" Relationship="Self.FK_ChoferesMontosFavor_OperadorModificacion" FromRole="ChoferesMontosFavor" ToRole="Operadores" />
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_ChoferesMontosFavor_SucursalAlta" FromRole="ChoferesMontosFavor" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_ChoferesMontosFavor_SucursalModificacion" FromRole="ChoferesMontosFavor" ToRole="Sucursales" />
           <NavigationProperty Name="TiposComprobantes" Relationship="Self.FK_ChoferesMontosFavor_TipoComprobante" FromRole="ChoferesMontosFavor" ToRole="TiposComprobantes" />
+          <NavigationProperty Name="Chofere" Relationship="GestionAdministrativa.Model.FK_ChoferesMontosFavor_Choferes" FromRole="ChoferesMontosFavor" ToRole="Chofere" />
         </EntityType>
         <EntityType Name="Conceptos">
           <Key>
@@ -4097,8 +4075,6 @@
           <NavigationProperty Name="CelularesMovimiento1" Relationship="Self.FK_CelularesMovimiento_OperadorModificacion" FromRole="Operadores" ToRole="CelularesMovimiento" />
           <NavigationProperty Name="CentrosCostos" Relationship="Self.FK_CentrosCostos_OperadorAlta" FromRole="Operadores" ToRole="CentrosCostos" />
           <NavigationProperty Name="CentrosCostos1" Relationship="Self.FK_CentrosCostos_OperadorModificacion" FromRole="Operadores" ToRole="CentrosCostos" />
-          <NavigationProperty Name="Choferes" Relationship="Self.FK_Choferes_OperadorAlta" FromRole="Operadores" ToRole="Choferes" />
-          <NavigationProperty Name="Choferes1" Relationship="Self.FK_Choferes_OperadorModificacion" FromRole="Operadores" ToRole="Choferes" />
           <NavigationProperty Name="ChoferesMontosFavor" Relationship="Self.FK_ChoferesMontosFavor_OperadorAlta" FromRole="Operadores" ToRole="ChoferesMontosFavor" />
           <NavigationProperty Name="ChoferesMontosFavor1" Relationship="Self.FK_ChoferesMontosFavor_OperadorAutoriza" FromRole="Operadores" ToRole="ChoferesMontosFavor" />
           <NavigationProperty Name="ChoferesMontosFavor2" Relationship="Self.FK_ChoferesMontosFavor_OperadorModificacion" FromRole="Operadores" ToRole="ChoferesMontosFavor" />
@@ -4160,6 +4136,8 @@
           <NavigationProperty Name="TiposMovimientosCajas" Relationship="Self.FK_TiposMovimientosCajas_OperadorAlta" FromRole="Operadores" ToRole="TiposMovimientosCajas" />
           <NavigationProperty Name="TiposMovimientosCajas1" Relationship="Self.FK_TiposMovimientosCajas_OperadorModificacion" FromRole="Operadores" ToRole="TiposMovimientosCajas" />
           <NavigationProperty Name="Roles" Relationship="Self.OperadoresRoles" FromRole="Operadores" ToRole="Roles" />
+          <NavigationProperty Name="Choferes" Relationship="GestionAdministrativa.Model.FK_Choferes_OperadorAlta" FromRole="Operadores" ToRole="Chofere" />
+          <NavigationProperty Name="Choferes1" Relationship="GestionAdministrativa.Model.FK_Choferes_OperadorModificacion" FromRole="Operadores" ToRole="Chofere" />
         </EntityType>
         <EntityType Name="OperadoresFunciones">
           <Key>
@@ -4586,8 +4564,6 @@
           <NavigationProperty Name="CelularesMovimiento1" Relationship="Self.FK_CelularesMovimiento_SucursalModificacion" FromRole="Sucursales" ToRole="CelularesMovimiento" />
           <NavigationProperty Name="CentrosCostos" Relationship="Self.FK_CentrosCostos_SucursalAlta" FromRole="Sucursales" ToRole="CentrosCostos" />
           <NavigationProperty Name="CentrosCostos1" Relationship="Self.FK_CentrosCostos_SucursalModificacion" FromRole="Sucursales" ToRole="CentrosCostos" />
-          <NavigationProperty Name="Choferes" Relationship="Self.FK_Choferes_SucursalAlta" FromRole="Sucursales" ToRole="Choferes" />
-          <NavigationProperty Name="Choferes1" Relationship="Self.FK_Choferes_SucursalModificacion" FromRole="Sucursales" ToRole="Choferes" />
           <NavigationProperty Name="ChoferesMontosFavor" Relationship="Self.FK_ChoferesMontosFavor_SucursalAlta" FromRole="Sucursales" ToRole="ChoferesMontosFavor" />
           <NavigationProperty Name="ChoferesMontosFavor1" Relationship="Self.FK_ChoferesMontosFavor_SucursalModificacion" FromRole="Sucursales" ToRole="ChoferesMontosFavor" />
           <NavigationProperty Name="Conceptos" Relationship="Self.FK_Conceptos_SucursalAlta" FromRole="Sucursales" ToRole="Conceptos" />
@@ -4648,6 +4624,8 @@
           <NavigationProperty Name="TiposGastos1" Relationship="Self.FK_TiposGastos_SucursalesModificacion" FromRole="Sucursales" ToRole="TiposGastos" />
           <NavigationProperty Name="TiposMovimientosCajas" Relationship="Self.FK_TiposMovimientosCajas_SucursalAlta" FromRole="Sucursales" ToRole="TiposMovimientosCajas" />
           <NavigationProperty Name="TiposMovimientosCajas1" Relationship="Self.FK_TiposMovimientosCajas_SucursalModificacion" FromRole="Sucursales" ToRole="TiposMovimientosCajas" />
+          <NavigationProperty Name="Choferes" Relationship="GestionAdministrativa.Model.FK_Choferes_SucursalAlta" FromRole="Sucursales" ToRole="Chofere" />
+          <NavigationProperty Name="Choferes1" Relationship="GestionAdministrativa.Model.FK_Choferes_SucursalModificacion" FromRole="Sucursales" ToRole="Chofere" />
         </EntityType>
         <EntityType Name="TiposCelulares">
           <Key>
@@ -5281,66 +5259,6 @@
             </Principal>
             <Dependent Role="OrdenesPago">
               <PropertyRef Name="CentroCostoId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Choferes_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
-          <End Role="Choferes" Type="Self.Choferes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Operadores">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Choferes">
-              <PropertyRef Name="OperadorAltaId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Choferes_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Choferes" Type="Self.Choferes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Operadores">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Choferes">
-              <PropertyRef Name="OperadorModificacionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Choferes_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
-          <End Role="Choferes" Type="Self.Choferes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Sucursales">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Choferes">
-              <PropertyRef Name="SucursalAltaId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Choferes_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Choferes" Type="Self.Choferes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Sucursales">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Choferes">
-              <PropertyRef Name="SucursalModificacionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ChoferesMontosFavor_Choferes">
-          <End Role="Choferes" Type="Self.Choferes" Multiplicity="1" />
-          <End Role="ChoferesMontosFavor" Type="Self.ChoferesMontosFavor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Choferes">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ChoferesMontosFavor">
-              <PropertyRef Name="ChoferId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -6940,7 +6858,6 @@
           <EntitySet Name="Celulares" EntityType="Self.Celulares" />
           <EntitySet Name="CelularesMovimiento" EntityType="Self.CelularesMovimiento" />
           <EntitySet Name="CentrosCostos" EntityType="Self.CentrosCostos" />
-          <EntitySet Name="Choferes" EntityType="Self.Choferes" />
           <EntitySet Name="ChoferesMontosFavor" EntityType="Self.ChoferesMontosFavor" />
           <EntitySet Name="Conceptos" EntityType="Self.Conceptos" />
           <EntitySet Name="CondicionesCompra" EntityType="Self.CondicionesCompra" />
@@ -7147,26 +7064,6 @@
           <AssociationSet Name="FK_OrdenesPago_CentrosCostos" Association="Self.FK_OrdenesPago_CentrosCostos">
             <End Role="CentrosCostos" EntitySet="CentrosCostos" />
             <End Role="OrdenesPago" EntitySet="OrdenesPago" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Choferes_OperadorAlta" Association="Self.FK_Choferes_OperadorAlta">
-            <End Role="Operadores" EntitySet="Operadores" />
-            <End Role="Choferes" EntitySet="Choferes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Choferes_OperadorModificacion" Association="Self.FK_Choferes_OperadorModificacion">
-            <End Role="Operadores" EntitySet="Operadores" />
-            <End Role="Choferes" EntitySet="Choferes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Choferes_SucursalAlta" Association="Self.FK_Choferes_SucursalAlta">
-            <End Role="Sucursales" EntitySet="Sucursales" />
-            <End Role="Choferes" EntitySet="Choferes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Choferes_SucursalModificacion" Association="Self.FK_Choferes_SucursalModificacion">
-            <End Role="Sucursales" EntitySet="Sucursales" />
-            <End Role="Choferes" EntitySet="Choferes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChoferesMontosFavor_Choferes" Association="Self.FK_ChoferesMontosFavor_Choferes">
-            <End Role="Choferes" EntitySet="Choferes" />
-            <End Role="ChoferesMontosFavor" EntitySet="ChoferesMontosFavor" />
           </AssociationSet>
           <AssociationSet Name="FK_ChoferesMontosFavor_OperadorAlta" Association="Self.FK_ChoferesMontosFavor_OperadorAlta">
             <End Role="Operadores" EntitySet="Operadores" />
@@ -7700,7 +7597,111 @@
             <End Role="Operadores" EntitySet="Operadores" />
             <End Role="Roles" EntitySet="Roles" />
           </AssociationSet>
+          <EntitySet Name="Choferes1" EntityType="GestionAdministrativa.Model.Choferes" />
+          <AssociationSet Name="FK_Choferes_OperadorAlta" Association="GestionAdministrativa.Model.FK_Choferes_OperadorAlta">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="Chofere" EntitySet="Choferes1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Choferes_OperadorModificacion" Association="GestionAdministrativa.Model.FK_Choferes_OperadorModificacion">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="Chofere" EntitySet="Choferes1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Choferes_SucursalAlta" Association="GestionAdministrativa.Model.FK_Choferes_SucursalAlta">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="Chofere" EntitySet="Choferes1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Choferes_SucursalModificacion" Association="GestionAdministrativa.Model.FK_Choferes_SucursalModificacion">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="Chofere" EntitySet="Choferes1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChoferesMontosFavor_Choferes" Association="GestionAdministrativa.Model.FK_ChoferesMontosFavor_Choferes">
+            <End Role="Chofere" EntitySet="Choferes1" />
+            <End Role="ChoferesMontosFavor" EntitySet="ChoferesMontosFavor" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Choferes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Dni" Type="Int32" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OperadorAltaId" Type="Guid" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="Int32" Nullable="false" />
+          <Property Name="OperadorModificacionId" Type="Guid" />
+          <Property Name="SucursalModificacionId" Type="Int32" />
+          <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+          <Property Name="FechaModficacion" Type="DateTime" Precision="3" />
+          <Property Name="Activo" Type="Boolean" />
+          <NavigationProperty Name="Operadore" Relationship="GestionAdministrativa.Model.FK_Choferes_OperadorAlta" FromRole="Chofere" ToRole="Operadores" />
+          <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_Choferes_OperadorModificacion" FromRole="Chofere" ToRole="Operadores" />
+          <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_Choferes_SucursalAlta" FromRole="Chofere" ToRole="Sucursales" />
+          <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_Choferes_SucursalModificacion" FromRole="Chofere" ToRole="Sucursales" />
+          <NavigationProperty Name="ChoferesMontosFavors" Relationship="GestionAdministrativa.Model.FK_ChoferesMontosFavor_Choferes" FromRole="Chofere" ToRole="ChoferesMontosFavor" />
+        </EntityType>
+        <Association Name="FK_Choferes_OperadorAlta">
+          <End Type="GestionAdministrativa.Model.Operadores" Role="Operadores" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.Choferes" Role="Chofere" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Chofere">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Choferes_OperadorModificacion">
+          <End Type="GestionAdministrativa.Model.Operadores" Role="Operadores" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.Choferes" Role="Chofere" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Chofere">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Choferes_SucursalAlta">
+          <End Type="GestionAdministrativa.Model.Sucursales" Role="Sucursales" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.Choferes" Role="Chofere" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Chofere">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Choferes_SucursalModificacion">
+          <End Type="GestionAdministrativa.Model.Sucursales" Role="Sucursales" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.Choferes" Role="Chofere" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Chofere">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChoferesMontosFavor_Choferes">
+          <End Type="GestionAdministrativa.Model.Choferes" Role="Chofere" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.ChoferesMontosFavor" Role="ChoferesMontosFavor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chofere">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChoferesMontosFavor">
+              <PropertyRef Name="ChoferId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -7860,24 +7861,6 @@
                 <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
                 <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
                 <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Choferes">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Choferes">
-              <MappingFragment StoreEntitySet="Choferes">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Dni" ColumnName="Dni" />
-                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
-                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
-                <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
-                <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
-                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
-                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -8456,6 +8439,25 @@
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="Choferes1">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Choferes">
+              <MappingFragment StoreEntitySet="Choferes">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="FechaModficacion" ColumnName="FechaModficacion" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
+                <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
+                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
+                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Dni" ColumnName="Dni" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -8470,7 +8472,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

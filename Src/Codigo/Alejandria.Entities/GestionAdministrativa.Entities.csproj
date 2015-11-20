@@ -56,6 +56,11 @@
     <Compile Include="Enums\EstadoCliente.cs" />
     <Compile Include="Funciones.cs" />
     <Compile Include="GestionAdministrativaModel.cs" />
+    <Compile Include="GestionAdministrativaModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="GruposProveedores.cs" />
     <Compile Include="Localidades.cs" />
     <Compile Include="Metadata\ClienteMetadata.cs" />
