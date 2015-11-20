@@ -165,11 +165,13 @@ namespace GestionAdministrativa.Win.Forms
             // FormBase
             // 
             this.ClientSize = new System.Drawing.Size(292, 270);
+            this.Font = new System.Drawing.Font("Aaargh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FormBase";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ThemeName = "TelerikMetro";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

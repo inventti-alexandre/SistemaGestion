@@ -51,5 +51,24 @@ namespace GestionAdministrativa.Win.Forms
                 }
             }
         }
+
+        private void InitializeComponent()
+        {
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // EditFormBase
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Font = new System.Drawing.Font("Aaargh", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name = "EditFormBase";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+            this.ResumeLayout(false);
+
+        }
     }
 }
