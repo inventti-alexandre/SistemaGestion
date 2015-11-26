@@ -20,7 +20,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             InitializeComponent();
         }
 
-#region Propiedades
+    #region Propiedades
 
         public int DNI
         {
@@ -56,12 +56,14 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             set { TxtEmail.Text = value; }
         }
 
-        public string Email
-        {
-            get { return TxtEmail.Text; }
-            set { TxtEmail.Text = value; }
-        }
+        //public string Activo
+        //{
+        //    get { return TxtEmail.Text; }
+        //    set { TxtEmail.Text = value; }
+        //}
 #endregion
+
+
     }
 
 }
