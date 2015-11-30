@@ -42,9 +42,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.WinForm.Comun", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionAdministrativa.Security", "GestionAdministrativa.Security\GestionAdministrativa.Security.csproj", "{336CB85A-BBBB-47D4-911D-14968B3A1924}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionAdministrativa.Data", "Alejandria.Data\GestionAdministrativa.Data.csproj", "{B6A55D5D-FD74-417D-8F0E-F56DBCC0072F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionAdministrativa.Data", "GestionAdministrativa.Data\GestionAdministrativa.Data.csproj", "{B6A55D5D-FD74-417D-8F0E-F56DBCC0072F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionAdministrativa.Entities", "Alejandria.Entities\GestionAdministrativa.Entities.csproj", "{10481CDB-87D9-4D21-8E05-CAFE2E530356}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionAdministrativa.Entities", "GestionAdministrativa.Entities\GestionAdministrativa.Entities.csproj", "{10481CDB-87D9-4D21-8E05-CAFE2E530356}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -82,11 +82,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Alejandria.Data\GestionAdministrativa.Data.csproj">
+    <ProjectReference Include="..\GestionAdministrativa.Data\GestionAdministrativa.Data.csproj">
       <Project>{b6a55d5d-fd74-417d-8f0e-f56dbcc0072f}</Project>
       <Name>GestionAdministrativa.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Alejandria.Entities\GestionAdministrativa.Entities.csproj">
+    <ProjectReference Include="..\GestionAdministrativa.Entities\GestionAdministrativa.Entities.csproj">
       <Project>{10481cdb-87d9-4d21-8e05-cafe2e530356}</Project>
       <Name>GestionAdministrativa.Entities</Name>
     </ProjectReference>

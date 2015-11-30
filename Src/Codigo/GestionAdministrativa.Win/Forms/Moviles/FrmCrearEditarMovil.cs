@@ -32,13 +32,12 @@ namespace GestionAdministrativa.Win.Forms.Moviles
         {
             get
             {
-                
                 return (TxtPatente.Text);
             }
             set { TxtPatente.Text = value; }
         }
 
-        
+      
 
         #endregion
 
