@@ -5,15 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GestionAdministrativa.Entities;
 
 namespace GestionAdministrativa.Security
 {
     public class GestionAdministrativaContext : IGestionAdministrativaContext
     {
-        //public Operador OperadorActual
-        //{
-        //    get { return GestionAdministrativaIdentity.Operador; }
-        //}
+        public Operador OperadorActual
+        {
+            get { return GestionAdministrativaIdentity.Operador; }
+        }
 
         private GestionAdministrativaIdentity GestionAdministrativaIdentity
         {
@@ -32,22 +33,22 @@ namespace GestionAdministrativa.Security
             }
         }
 
-        //public Sucursal SucursalActual
-        //{
-        //    get { return GestionAdministrativaIdentity.Sucursal; }
-        //}
+        public Sucursal SucursalActual
+        {
+            get { return GestionAdministrativaIdentity.Sucursal; }
+        }
 
-        //public Caja CajaActual
-        //{
-        //    get
-        //    {
-        //        return new Caja();
-        //        //using (var cajaNegocio = Ioc.Container.Get<ICajaNegocio>())
-        //        //{
-        //        //    return cajaNegocio.UltimaCaja(this.OperadorActual.Id, this.SucursalActual.Id);
-        //        //}
-        //    }
-        //}
+        public Caja CajaActual
+        {
+            get
+            {
+                return new Caja();
+                //using (var cajaNegocio = Ioc.Container.Get<ICajaNegocio>())
+                //{
+                //    return cajaNegocio.UltimaCaja(this.OperadorActual.Id, this.SucursalActual.Id);
+                //}
+            }
+        }
 
         public bool IsInRole(string role)
         {

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Framework.Common.Utility;
 using GestionAdministrativa.Data.Interfaces;
+using GestionAdministrativa.Entities;
 using GestionAdministrativa.Win.Enums;
 
 
@@ -17,10 +18,14 @@ namespace GestionAdministrativa.Win.Forms.Choferes
     public partial class FrmCrearEditarChofer : EditFormBase
     {
         private readonly ActionFormMode _formMode;
+        private Chofer _chofer;
+        private readonly IClock _clock;
 
         public FrmCrearEditarChofer(IGestionAdministrativaUow uow, IClock clock, Guid id, ActionFormMode mode)
         {
+            Uow = uow;
             _formMode = mode;
+            _clock = clock;
             InitializeComponent();
         }
 
@@ -68,6 +73,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
         //}
 #endregion
 
+
         #region Controles
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
@@ -83,16 +89,27 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             else
             {
                 var entity = ObtenerEntityDesdeForm();
-                //if (_formMode == ActionFormMode.Create)
-                //    Uow.Choferes.Agregar(entity);
-                //else
-                //    Uow.Choferes.Modificar(entity);
+                if (_formMode == ActionFormMode.Create)
+                    Uow.Choferes.Agregar(entity);
+                else
+                    Uow.Choferes.Modificar(entity);
             }
         }
 
-        private object ObtenerEntityDesdeForm()
+        private Chofer ObtenerEntityDesdeForm()
         {
-            throw new NotImplementedException();
+            _chofer.Dni = DNI;
+            _chofer.Apellido = Apellido;
+            _chofer.Nombre = Nombre;
+            _chofer.Telefono = Telefono;
+            _chofer.Email = Email;
+            _chofer.OperadorAltaId = _formMode == ActionFormMode.Create ? Context.OperadorActual.Id : _chofer.OperadorAltaId;
+            _chofer.SucursalAltaId = _formMode == ActionFormMode.Create ? Context.SucursalActual.Id : _chofer.SucursalAltaId;
+            _chofer.FechaAlta = _formMode == ActionFormMode.Create ? _clock.Now : _chofer.FechaAlta;
+            _chofer.OperadorModificacionId =  Context.OperadorActual.Id;
+            _chofer.SucursalModificacionId =Context.SucursalActual.Id;
+            _chofer.FechaModficacion = _formMode == ActionFormMode.Create ? _clock.Now : _chofer.FechaAlta;
+            return _chofer;
         }
 
         #endregion

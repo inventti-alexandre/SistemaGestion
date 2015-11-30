@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Framework.Common.Attributes;
 using Framework.Ioc;
 using GestionAdministrativa.Data.Interfaces;
+using GestionAdministrativa.Security;
 using GestionAdministrativa.Win;
 using GestionAdministrativa.Win.Helpers;
 using Telerik.WinControls.Themes;
@@ -119,7 +120,7 @@ namespace GestionAdministrativa.Win.Forms
             }
         }
 
-        //protected ILaPazContext Context { get; private set; }
+        protected IGestionAdministrativaContext Context { get; private set; }
 
         //protected Operador ObtenerOperadorAdministrador()
         //{
