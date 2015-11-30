@@ -167,6 +167,12 @@
     <Compile Include="Forms\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Moviles\FrmCrearEditarMovil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Moviles\FrmCrearEditarMovil.Designer.cs">
+      <DependentUpon>FrmCrearEditarMovil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserControlBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Moviles\FrmCrearEditarMovil.resx">
+      <DependentUpon>FrmCrearEditarMovil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControlBase.resx">
       <DependentUpon>UserControlBase.cs</DependentUpon>
@@ -335,7 +344,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\Celulares\" />
-    <Folder Include="Forms\Moviles\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
