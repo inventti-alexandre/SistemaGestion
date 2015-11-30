@@ -4,45 +4,45 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="99b1b99db2a04024808ed4cd3dad1108" Name="Diagram1" ZoomLevel="62">
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.Bancos" Width="1.5" PointX="5.25" PointY="64.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.Cajas" Width="1.5" PointX="21.75" PointY="64.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.CajasMovimientos" Width="1.5" PointX="18.75" PointY="71" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.CategoriasOperadores" Width="1.5" PointX="18.75" PointY="59.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.Celulares" Width="1.5" PointX="21.75" PointY="57.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.CelularesMovimiento" Width="1.5" PointX="32.25" PointY="64.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.CentrosCostos" Width="1.5" PointX="21.75" PointY="71.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.ChoferesMontosFavor" Width="1.5" PointX="32.25" PointY="57.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.Conceptos" Width="1.5" PointX="15.75" PointY="72.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.CondicionesCompra" Width="1.5" PointX="24.75" PointY="65.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.Dias" Width="1.5" PointX="19.5" PointY="56.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.Funciones" Width="1.5" PointX="24.75" PointY="60.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.GruposProveedores" Width="1.5" PointX="24.75" PointY="70.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.Localidades" Width="1.5" PointX="24.75" PointY="55.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.Moviles" Width="1.5" PointX="35.25" PointY="59.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.Operadores" Width="1.5" PointX="13.5" PointY="58.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.OperadoresFunciones" Width="1.5" PointX="38.25" PointY="64.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.OperadoresSucursales" Width="1.5" PointX="38.25" PointY="69.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.OrdenesPago" Width="1.5" PointX="15.75" PointY="63.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.OrdenesPagoDetalle" Width="1.5" PointX="27" PointY="64.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.PagosCelular" Width="1.5" PointX="35.25" PointY="64.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.Paises" Width="1.5" PointX="0.75" PointY="66.5" IsExpanded="true" />
+      <Diagram DiagramId="99b1b99db2a04024808ed4cd3dad1108" Name="Diagram1" ZoomLevel="93">
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Banco" Width="1.5" PointX="5.25" PointY="64.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Caja" Width="1.5" PointX="21.75" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.CajaMovimiento" Width="1.5" PointX="18.75" PointY="71" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.CategoriaOperador" Width="1.5" PointX="18.75" PointY="59.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Celular" Width="1.5" PointX="21.75" PointY="57.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.CelularMovimiento" Width="1.5" PointX="32.25" PointY="64.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.CentroCosto" Width="1.5" PointX="21.75" PointY="71.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.ChoferMontoFavor" Width="1.5" PointX="32.25" PointY="57.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Concepto" Width="1.5" PointX="15.75" PointY="72.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.CondicionCompra" Width="1.5" PointX="24.75" PointY="65.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Dia" Width="1.5" PointX="19.5" PointY="56.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Funcion" Width="1.5" PointX="24.75" PointY="60.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.GrupoProveedor" Width="1.5" PointX="24.75" PointY="70.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Localidad" Width="1.5" PointX="24.75" PointY="55.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Movil" Width="1.5" PointX="35.25" PointY="59.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Operador" Width="1.5" PointX="13.5" PointY="58.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.OperadorFuncion" Width="1.5" PointX="38.25" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.OperadorSucursal" Width="1.5" PointX="38.25" PointY="69.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.OrdenPago" Width="1.5" PointX="15.75" PointY="63.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.OrdenPagoDetalle" Width="1.5" PointX="27" PointY="64.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.PagoCelular" Width="1.5" PointX="35.25" PointY="64.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Pais" Width="1.5" PointX="0.75" PointY="66.5" IsExpanded="true" />
         <EntityTypeShape EntityType="GestionAdministrativa.Model.Personal" Width="1.5" PointX="8.25" PointY="64" IsExpanded="true" />
         <EntityTypeShape EntityType="GestionAdministrativa.Model.PersonalConcepto" Width="1.5" PointX="32.25" PointY="70.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.PersonalNovedades" Width="1.5" PointX="35.25" PointY="70" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.Proveedores" Width="1.5" PointX="10.5" PointY="63" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.ProveedoresBanco" Width="1.5" PointX="18.75" PointY="65.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.Provincias" Width="1.5" PointX="3" PointY="65.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.Recibos" Width="1.5" PointX="38.25" PointY="58.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.RecibosDetalle" Width="1.5" PointX="43.5" PointY="64.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.Roles" Width="1.5" PointX="15.75" PointY="127.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.Sucursales" Width="1.5" PointX="30" PointY="56.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.TiposCelulares" Width="1.5" PointX="41.25" PointY="64.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.TiposComprobantes" Width="1.5" PointX="41.25" PointY="70.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.TiposDocumentosIdentidad" Width="1.5" PointX="8.25" PointY="60.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.TiposGastos" Width="1.5" PointX="41.25" PointY="59.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.TiposMovimientosCajas" Width="1.5" PointX="35.25" PointY="54.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.TiposRecibos" Width="1.5" PointX="41.25" PointY="56.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.PersonalNovedad" Width="1.5" PointX="35.25" PointY="70" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Proveedor" Width="1.5" PointX="10.5" PointY="63" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.ProveedorBanco" Width="1.5" PointX="18.75" PointY="65.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Provincia" Width="1.5" PointX="3" PointY="65.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Recibo" Width="1.5" PointX="38.25" PointY="58.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.ReciboDetalle" Width="1.5" PointX="43.5" PointY="64.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Rol" Width="1.5" PointX="15.75" PointY="127.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Sucursal" Width="1.5" PointX="30" PointY="56.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.TipoCelular" Width="1.5" PointX="41.25" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.TipoComprobante" Width="1.5" PointX="41.25" PointY="70.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.TipoDocumentosIdentidad" Width="1.5" PointX="8.25" PointY="60.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.TipoGasto" Width="1.5" PointX="41.25" PointY="59.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.TipoMovimientoCaja" Width="1.5" PointX="35.25" PointY="54.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.TipoRecibo" Width="1.5" PointX="41.25" PointY="56.75" IsExpanded="true" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_Bancos_Localidad" ManuallyRouted="false" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_Bancos_OperadoresAlta" ManuallyRouted="false" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_Bancos_OperadorModificacion" ManuallyRouted="false" />
@@ -220,13 +220,13 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_TiposMovimientosCajas_SucursalAlta" ManuallyRouted="false" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_TiposMovimientosCajas_SucursalModificacion" ManuallyRouted="false" />
         <AssociationConnector Association="GestionAdministrativa.Model.OperadoresRoles" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.Choferes" Width="1.5" PointX="38.25" PointY="74.375" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Chofer" Width="1.5" PointX="38.25" PointY="74.375" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_Choferes_OperadorAlta" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_Choferes_OperadorModificacion" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_Choferes_SucursalAlta" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_Choferes_SucursalModificacion" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMontosFavor_Choferes" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

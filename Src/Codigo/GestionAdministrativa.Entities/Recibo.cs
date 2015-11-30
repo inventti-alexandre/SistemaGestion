@@ -12,25 +12,33 @@ namespace GestionAdministrativa.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class PersonalConcepto
+    public partial class Recibo
     {
-        public System.Guid ID { get; set; }
-        public System.Guid PersonalId { get; set; }
-        public int ConceptoId { get; set; }
-        public string Importe { get; set; }
-        public Nullable<bool> Vigente { get; set; }
-        public System.DateTime FechaAlta { get; set; }
-        public System.Guid OperadorAltaId { get; set; }
-        public Nullable<System.DateTime> FechaModificacion { get; set; }
-        public Nullable<System.Guid> OperadorModificacionId { get; set; }
-        public Nullable<int> SucursalAltaId { get; set; }
-        public Nullable<int> SucursalModificacionId { get; set; }
+        public Recibo()
+        {
+            this.RecibosDetalle = new HashSet<ReciboDetalle>();
+        }
     
-        public virtual Concepto Conceptos { get; set; }
+        public System.Guid Id { get; set; }
+        public string Tipo { get; set; }
+        public Nullable<int> PuntoVenta { get; set; }
+        public string Numero { get; set; }
+        public Nullable<System.DateTime> FechaAnulacion { get; set; }
+        public Nullable<System.DateTime> FechaPago { get; set; }
+        public Nullable<decimal> Total { get; set; }
+        public Nullable<System.Guid> OperadorAuId { get; set; }
+        public System.Guid OperadorAltaId { get; set; }
+        public System.DateTime FechaAlta { get; set; }
+        public int SucursalAltaId { get; set; }
+        public Nullable<System.DateTime> FechaModificacion { get; set; }
+        public Nullable<int> SucursalModificacionId { get; set; }
+        public Nullable<System.Guid> OperadorModificacionId { get; set; }
+    
         public virtual Operador Operadores { get; set; }
         public virtual Operador Operadores1 { get; set; }
-        public virtual Personal Personal { get; set; }
+        public virtual Operador Operadores2 { get; set; }
         public virtual Sucursal Sucursales { get; set; }
         public virtual Sucursal Sucursales1 { get; set; }
+        public virtual ICollection<ReciboDetalle> RecibosDetalle { get; set; }
     }
 }

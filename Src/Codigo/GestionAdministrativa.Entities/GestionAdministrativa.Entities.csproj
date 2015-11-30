@@ -40,45 +40,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bancos.cs">
+    <Compile Include="Banco.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Cajas.cs">
+    <Compile Include="Caja.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CajasMovimientos.cs">
+    <Compile Include="CajaMovimiento.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CategoriasOperadores.cs">
+    <Compile Include="CategoriaOperador.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Celulares.cs">
+    <Compile Include="Celular.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CelularesMovimiento.cs">
+    <Compile Include="CelularMovimiento.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CentrosCostos.cs">
+    <Compile Include="CentroCosto.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Choferes.cs">
+    <Compile Include="Chofer.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ChoferesMontosFavor.cs">
+    <Compile Include="ChoferMontoFavor.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Conceptos.cs">
+    <Compile Include="Concepto.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CondicionesCompra.cs">
+    <Compile Include="CondicionCompra.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Dias.cs">
+    <Compile Include="Dia.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Enums\CondicionVentaEnum.cs" />
     <Compile Include="Enums\EstadoCliente.cs" />
-    <Compile Include="Funciones.cs">
+    <Compile Include="Funcion.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="GestionAdministrativaModel.cs" />
@@ -87,36 +87,36 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="GruposProveedores.cs">
+    <Compile Include="GrupoProveedor.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Localidades.cs">
+    <Compile Include="Localidad.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Metadata\ClienteMetadata.cs" />
     <Compile Include="Metadata\VentaMetadata.cs" />
-    <Compile Include="Moviles.cs">
+    <Compile Include="Movil.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Operadores.cs">
+    <Compile Include="Operador.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="OperadoresFunciones.cs">
+    <Compile Include="OperadorFuncion.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="OperadoresSucursales.cs">
+    <Compile Include="OperadorSucursal.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrdenesPago.cs">
+    <Compile Include="OrdenPago.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrdenesPagoDetalle.cs">
+    <Compile Include="OrdenPagoDetalle.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PagosCelular.cs">
+    <Compile Include="PagoCelular.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Paises.cs">
+    <Compile Include="Pais.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Personal.cs">
@@ -125,47 +125,47 @@
     <Compile Include="PersonalConcepto.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PersonalNovedades.cs">
+    <Compile Include="PersonalNovedad.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Proveedores.cs">
+    <Compile Include="Proveedor.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProveedoresBanco.cs">
+    <Compile Include="ProveedorBanco.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Provincias.cs">
+    <Compile Include="Provincia.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Recibos.cs">
+    <Compile Include="Recibo.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="RecibosDetalle.cs">
+    <Compile Include="ReciboDetalle.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Roles.cs">
+    <Compile Include="Rol.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Sucursales.cs">
+    <Compile Include="Sucursal.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TiposCelulares.cs">
+    <Compile Include="TipoCelular.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TiposComprobantes.cs">
+    <Compile Include="TipoComprobante.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TiposDocumentosIdentidad.cs">
+    <Compile Include="TipoDocumentosIdentidad.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TiposGastos.cs">
+    <Compile Include="TipoGasto.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TiposMovimientosCajas.cs">
+    <Compile Include="TipoMovimientoCaja.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TiposRecibos.cs">
+    <Compile Include="TipoRecibo.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>

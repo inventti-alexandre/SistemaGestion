@@ -6,9 +6,9 @@ namespace GestionAdministrativa.Data.Interfaces
 {
     public interface IGestionAdministrativaUow : IUow
     {
-        IRepository<Cajas> Cajas { get; }
-        IRepository<Choferes> Choferes { get; }
-        IRepository<Moviles> Moviles { get; }
+        IRepository<Caja> Cajas { get; }
+        IRepository<Chofer> Choferes { get; }
+        IRepository<Movil> Moviles { get; }
       
         IReporteRepository Reportes { get; }
 

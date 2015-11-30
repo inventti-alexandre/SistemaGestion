@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using GestionAdministrativa.Entities;
 
 namespace GestionAdministrativa.Win.Forms.Moviles
 {
@@ -37,10 +38,8 @@ namespace GestionAdministrativa.Win.Forms.Moviles
             set { TxtPatente.Text = value; }
         }
 
-      
-
         #endregion
 
-
+        
     }
 }

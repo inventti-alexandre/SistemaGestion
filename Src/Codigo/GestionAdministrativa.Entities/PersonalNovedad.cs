@@ -12,13 +12,18 @@ namespace GestionAdministrativa.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class PersonalConcepto
+    public partial class PersonalNovedad
     {
-        public System.Guid ID { get; set; }
+        public System.Guid Id { get; set; }
         public System.Guid PersonalId { get; set; }
+        public int TipoNovedad { get; set; }
         public int ConceptoId { get; set; }
-        public string Importe { get; set; }
-        public Nullable<bool> Vigente { get; set; }
+        public Nullable<int> Cantidad { get; set; }
+        public int MesImputacion { get; set; }
+        public int AnioImputacion { get; set; }
+        public float Importe { get; set; }
+        public Nullable<float> Total { get; set; }
+        public Nullable<System.Guid> LiquidacionPersonalId { get; set; }
         public System.DateTime FechaAlta { get; set; }
         public System.Guid OperadorAltaId { get; set; }
         public Nullable<System.DateTime> FechaModificacion { get; set; }

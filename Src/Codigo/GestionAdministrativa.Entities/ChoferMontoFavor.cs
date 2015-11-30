@@ -12,25 +12,31 @@ namespace GestionAdministrativa.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class PersonalConcepto
+    public partial class ChoferMontoFavor
     {
-        public System.Guid ID { get; set; }
-        public System.Guid PersonalId { get; set; }
-        public int ConceptoId { get; set; }
-        public string Importe { get; set; }
-        public Nullable<bool> Vigente { get; set; }
+        public System.Guid Id { get; set; }
+        public System.Guid ChoferId { get; set; }
+        public System.DateTime FechaComprobante { get; set; }
+        public int TipoComprobanteId { get; set; }
+        public string Concepto { get; set; }
+        public Nullable<decimal> Importe { get; set; }
+        public Nullable<decimal> ImpOcupado { get; set; }
+        public Nullable<System.DateTime> FechaAnulacion { get; set; }
+        public Nullable<System.Guid> OperadorAutorizaId { get; set; }
+        public string Observaciones { get; set; }
         public System.DateTime FechaAlta { get; set; }
+        public int SucursalAltaId { get; set; }
         public System.Guid OperadorAltaId { get; set; }
         public Nullable<System.DateTime> FechaModificacion { get; set; }
-        public Nullable<System.Guid> OperadorModificacionId { get; set; }
-        public Nullable<int> SucursalAltaId { get; set; }
         public Nullable<int> SucursalModificacionId { get; set; }
+        public Nullable<System.Guid> OperadorModificacionId { get; set; }
     
-        public virtual Concepto Conceptos { get; set; }
         public virtual Operador Operadores { get; set; }
         public virtual Operador Operadores1 { get; set; }
-        public virtual Personal Personal { get; set; }
+        public virtual Operador Operadores2 { get; set; }
         public virtual Sucursal Sucursales { get; set; }
         public virtual Sucursal Sucursales1 { get; set; }
+        public virtual TipoComprobante TiposComprobantes { get; set; }
+        public virtual Chofer Choferes { get; set; }
     }
 }

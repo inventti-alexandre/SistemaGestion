@@ -3690,7 +3690,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GestionAdministrativa.Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Bancos">
+        <EntityType Name="Banco">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -3718,7 +3718,7 @@
           <NavigationProperty Name="Proveedores" Relationship="Self.FK_Proveedores_ProveedorBanco" FromRole="Bancos" ToRole="Proveedores" />
           <NavigationProperty Name="ProveedoresBanco" Relationship="Self.FK_ProveedoresBanco_Bancos" FromRole="Bancos" ToRole="ProveedoresBanco" />
         </EntityType>
-        <EntityType Name="Cajas">
+        <EntityType Name="Caja">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -3748,7 +3748,7 @@
           <NavigationProperty Name="Sucursales2" Relationship="Self.FK_Cajas_SucursalModificacion" FromRole="Cajas" ToRole="Sucursales" />
           <NavigationProperty Name="OrdenesPagoDetalle" Relationship="Self.FK_OrdenesPagoDetalle_Cajas" FromRole="Cajas" ToRole="OrdenesPagoDetalle" />
         </EntityType>
-        <EntityType Name="CajasMovimientos">
+        <EntityType Name="CajaMovimiento">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -3786,7 +3786,7 @@
           <NavigationProperty Name="TiposComprobantes" Relationship="Self.FK_CajasMovimientos_TipoComprobante" FromRole="CajasMovimientos" ToRole="TiposComprobantes" />
           <NavigationProperty Name="TiposMovimientosCajas" Relationship="Self.FK_CajasMovimientos_TipoMovimientoCaja" FromRole="CajasMovimientos" ToRole="TiposMovimientosCajas" />
         </EntityType>
-        <EntityType Name="CategoriasOperadores">
+        <EntityType Name="CategoriaOperador">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -3807,7 +3807,7 @@
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_CategoriasOperadores_SucursalModificacion" FromRole="CategoriasOperadores" ToRole="Sucursales" />
           <NavigationProperty Name="Personal" Relationship="Self.FK_Personal_CategoriasOperadores" FromRole="CategoriasOperadores" ToRole="Personal" />
         </EntityType>
-        <EntityType Name="Celulares">
+        <EntityType Name="Celular">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -3838,7 +3838,7 @@
           <NavigationProperty Name="CelularesMovimiento" Relationship="Self.FK_CelularesMovimiento_Celular" FromRole="Celulares" ToRole="CelularesMovimiento" />
           <NavigationProperty Name="PagosCelular" Relationship="Self.FK_PagosCelular_Celular" FromRole="Celulares" ToRole="PagosCelular" />
         </EntityType>
-        <EntityType Name="CelularesMovimiento">
+        <EntityType Name="CelularMovimiento">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -3863,7 +3863,7 @@
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_CelularesMovimiento_SucursalModificacion" FromRole="CelularesMovimiento" ToRole="Sucursales" />
           <NavigationProperty Name="TiposComprobantes" Relationship="Self.FK_CelularesMovimiento_TipoComprobante" FromRole="CelularesMovimiento" ToRole="TiposComprobantes" />
         </EntityType>
-        <EntityType Name="CentrosCostos">
+        <EntityType Name="CentroCosto">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -3884,7 +3884,7 @@
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_CentrosCostos_SucursalModificacion" FromRole="CentrosCostos" ToRole="Sucursales" />
           <NavigationProperty Name="OrdenesPago" Relationship="Self.FK_OrdenesPago_CentrosCostos" FromRole="CentrosCostos" ToRole="OrdenesPago" />
         </EntityType>
-        <EntityType Name="ChoferesMontosFavor">
+        <EntityType Name="ChoferMontoFavor">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -3910,9 +3910,9 @@
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_ChoferesMontosFavor_SucursalAlta" FromRole="ChoferesMontosFavor" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_ChoferesMontosFavor_SucursalModificacion" FromRole="ChoferesMontosFavor" ToRole="Sucursales" />
           <NavigationProperty Name="TiposComprobantes" Relationship="Self.FK_ChoferesMontosFavor_TipoComprobante" FromRole="ChoferesMontosFavor" ToRole="TiposComprobantes" />
-          <NavigationProperty Name="Chofere" Relationship="GestionAdministrativa.Model.FK_ChoferesMontosFavor_Choferes" FromRole="ChoferesMontosFavor" ToRole="Chofere" />
+          <NavigationProperty Name="Choferes" Relationship="GestionAdministrativa.Model.FK_ChoferesMontosFavor_Choferes" FromRole="ChoferesMontosFavor" ToRole="Choferes" />
         </EntityType>
-        <EntityType Name="Conceptos">
+        <EntityType Name="Concepto">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -3933,7 +3933,7 @@
           <NavigationProperty Name="PersonalConcepto" Relationship="Self.FK_PersonalConcepto_Conceptos" FromRole="Conceptos" ToRole="PersonalConcepto" />
           <NavigationProperty Name="PersonalNovedades" Relationship="Self.FK_PersonalNovedades_Conceptos" FromRole="Conceptos" ToRole="PersonalNovedades" />
         </EntityType>
-        <EntityType Name="CondicionesCompra">
+        <EntityType Name="CondicionCompra">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -3954,7 +3954,7 @@
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_CondicionesCompra_SucursalModificacion" FromRole="CondicionesCompra" ToRole="Sucursales" />
           <NavigationProperty Name="Proveedores" Relationship="Self.FK_Proveedores_CondicionCompra" FromRole="CondicionesCompra" ToRole="Proveedores" />
         </EntityType>
-        <EntityType Name="Dias">
+        <EntityType Name="Dia">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -3962,7 +3962,7 @@
           <Property Name="Descripcion" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Celulares" Relationship="Self.FK_Celulares_DiaPago" FromRole="Dias" ToRole="Celulares" />
         </EntityType>
-        <EntityType Name="Funciones">
+        <EntityType Name="Funcion">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -3982,7 +3982,7 @@
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_Funciones_SucursalAlta" FromRole="Funciones" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_Funciones_SucursalModificacion" FromRole="Funciones" ToRole="Sucursales" />
         </EntityType>
-        <EntityType Name="GruposProveedores">
+        <EntityType Name="GrupoProveedor">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4002,7 +4002,7 @@
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_GruposProveedores_SucursalModificacion" FromRole="GruposProveedores" ToRole="Sucursales" />
           <NavigationProperty Name="Proveedores" Relationship="Self.FK_Proveedores_GrupoProveedor" FromRole="GruposProveedores" ToRole="Proveedores" />
         </EntityType>
-        <EntityType Name="Localidades">
+        <EntityType Name="Localidad">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4025,7 +4025,7 @@
           <NavigationProperty Name="Proveedores" Relationship="Self.FK_Proveedores_Localidad" FromRole="Localidades" ToRole="Proveedores" />
           <NavigationProperty Name="Sucursales2" Relationship="Self.FK_Sucursales_Localidades" FromRole="Localidades" ToRole="Sucursales" />
         </EntityType>
-        <EntityType Name="Moviles">
+        <EntityType Name="Movil">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4043,7 +4043,7 @@
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_Moviles_SucursalAlta" FromRole="Moviles" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_Moviles_SucursalModificacion" FromRole="Moviles" ToRole="Sucursales" />
         </EntityType>
-        <EntityType Name="Operadores">
+        <EntityType Name="Operador">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4136,10 +4136,10 @@
           <NavigationProperty Name="TiposMovimientosCajas" Relationship="Self.FK_TiposMovimientosCajas_OperadorAlta" FromRole="Operadores" ToRole="TiposMovimientosCajas" />
           <NavigationProperty Name="TiposMovimientosCajas1" Relationship="Self.FK_TiposMovimientosCajas_OperadorModificacion" FromRole="Operadores" ToRole="TiposMovimientosCajas" />
           <NavigationProperty Name="Roles" Relationship="Self.OperadoresRoles" FromRole="Operadores" ToRole="Roles" />
-          <NavigationProperty Name="Choferes" Relationship="GestionAdministrativa.Model.FK_Choferes_OperadorAlta" FromRole="Operadores" ToRole="Chofere" />
-          <NavigationProperty Name="Choferes1" Relationship="GestionAdministrativa.Model.FK_Choferes_OperadorModificacion" FromRole="Operadores" ToRole="Chofere" />
-        </EntityType>
-        <EntityType Name="OperadoresFunciones">
+          <NavigationProperty Name="Choferes" Relationship="GestionAdministrativa.Model.FK_Choferes_OperadorAlta" FromRole="Operadores" ToRole="Choferes" />
+          <NavigationProperty Name="Choferes1" Relationship="GestionAdministrativa.Model.FK_Choferes_OperadorModificacion" FromRole="Operadores" ToRole="Choferes" />
+          </EntityType>
+        <EntityType Name="OperadorFuncion">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4158,7 +4158,7 @@
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_OperadoresFunciones_SucursalAlta" FromRole="OperadoresFunciones" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_OperadoresFunciones_SucursalModificacion" FromRole="OperadoresFunciones" ToRole="Sucursales" />
         </EntityType>
-        <EntityType Name="OperadoresSucursales">
+        <EntityType Name="OperadorSucursal">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4177,7 +4177,7 @@
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_OperadoresSucursal_SucursalAlta" FromRole="OperadoresSucursales" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_OperadoresSucursal_SucursalModificacion" FromRole="OperadoresSucursales" ToRole="Sucursales" />
         </EntityType>
-        <EntityType Name="OrdenesPago">
+        <EntityType Name="OrdenPago">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4219,7 +4219,7 @@
           <NavigationProperty Name="TiposGastos" Relationship="Self.FK_OrdenesPago_TipoGasto" FromRole="OrdenesPago" ToRole="TiposGastos" />
           <NavigationProperty Name="OrdenesPagoDetalle" Relationship="Self.FK_OrdenesPagoDetalle_OrdenesPago" FromRole="OrdenesPago" ToRole="OrdenesPagoDetalle" />
         </EntityType>
-        <EntityType Name="OrdenesPagoDetalle">
+        <EntityType Name="OrdenPagoDetalle">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4252,7 +4252,7 @@
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_OrdenesPagoDetalle_SucursalAlta" FromRole="OrdenesPagoDetalle" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_OrdenesPagoDetalle_SucursalModificacion" FromRole="OrdenesPagoDetalle" ToRole="Sucursales" />
         </EntityType>
-        <EntityType Name="PagosCelular">
+        <EntityType Name="PagoCelular">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4276,7 +4276,7 @@
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_PagosCelular_SucursalAlta" FromRole="PagosCelular" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_PagosCelular_SucursalModificacion" FromRole="PagosCelular" ToRole="Sucursales" />
         </EntityType>
-        <EntityType Name="Paises">
+        <EntityType Name="Pais">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4347,7 +4347,7 @@
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_PersonalConcepto_SucursalAlta" FromRole="PersonalConcepto" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_PersonalConcepto_SucursalModificacion" FromRole="PersonalConcepto" ToRole="Sucursales" />
         </EntityType>
-        <EntityType Name="PersonalNovedades">
+        <EntityType Name="PersonalNovedad">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4374,7 +4374,7 @@
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_PersonalNovedades_SucursalAlta" FromRole="PersonalNovedades" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_PersonalNovedades_SucursalModificacion" FromRole="PersonalNovedades" ToRole="Sucursales" />
         </EntityType>
-        <EntityType Name="Proveedores">
+        <EntityType Name="Proveedor">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4422,7 +4422,7 @@
           <NavigationProperty Name="TiposDocumentosIdentidad" Relationship="Self.FK_Proveedores_TipoDocumentoIdentidad" FromRole="Proveedores" ToRole="TiposDocumentosIdentidad" />
           <NavigationProperty Name="ProveedoresBanco" Relationship="Self.FK_ProveedoresBanco_Proveedores" FromRole="Proveedores" ToRole="ProveedoresBanco" />
         </EntityType>
-        <EntityType Name="ProveedoresBanco">
+        <EntityType Name="ProveedorBanco">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4446,7 +4446,7 @@
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_ProveedoresBanco_SucursalAlta" FromRole="ProveedoresBanco" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_ProveedoresBanco_SucursalModificacion" FromRole="ProveedoresBanco" ToRole="Sucursales" />
         </EntityType>
-        <EntityType Name="Provincias">
+        <EntityType Name="Provincia">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4470,7 +4470,7 @@
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_Provincias_SucursalModificacion" FromRole="Provincias" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales2" Relationship="Self.FK_Sucursales_Provincias" FromRole="Provincias" ToRole="Sucursales" />
         </EntityType>
-        <EntityType Name="Recibos">
+        <EntityType Name="Recibo">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4495,7 +4495,7 @@
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_Recibos_SucursalModificacion" FromRole="Recibos" ToRole="Sucursales" />
           <NavigationProperty Name="RecibosDetalle" Relationship="Self.FK_RecibosDetalle_Recibo" FromRole="Recibos" ToRole="RecibosDetalle" />
         </EntityType>
-        <EntityType Name="RecibosDetalle">
+        <EntityType Name="ReciboDetalle">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4517,7 +4517,7 @@
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_RecibosDetalle_SucursalModificacion" FromRole="RecibosDetalle" ToRole="Sucursales" />
           <NavigationProperty Name="TiposRecibos" Relationship="Self.FK_RecibosDetalle_TipoRecibo" FromRole="RecibosDetalle" ToRole="TiposRecibos" />
         </EntityType>
-        <EntityType Name="Roles">
+        <EntityType Name="Rol">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4525,7 +4525,7 @@
           <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Operadores" Relationship="Self.OperadoresRoles" FromRole="Roles" ToRole="Operadores" />
         </EntityType>
-        <EntityType Name="Sucursales">
+        <EntityType Name="Sucursal">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4624,10 +4624,10 @@
           <NavigationProperty Name="TiposGastos1" Relationship="Self.FK_TiposGastos_SucursalesModificacion" FromRole="Sucursales" ToRole="TiposGastos" />
           <NavigationProperty Name="TiposMovimientosCajas" Relationship="Self.FK_TiposMovimientosCajas_SucursalAlta" FromRole="Sucursales" ToRole="TiposMovimientosCajas" />
           <NavigationProperty Name="TiposMovimientosCajas1" Relationship="Self.FK_TiposMovimientosCajas_SucursalModificacion" FromRole="Sucursales" ToRole="TiposMovimientosCajas" />
-          <NavigationProperty Name="Choferes" Relationship="GestionAdministrativa.Model.FK_Choferes_SucursalAlta" FromRole="Sucursales" ToRole="Chofere" />
-          <NavigationProperty Name="Choferes1" Relationship="GestionAdministrativa.Model.FK_Choferes_SucursalModificacion" FromRole="Sucursales" ToRole="Chofere" />
-        </EntityType>
-        <EntityType Name="TiposCelulares">
+          <NavigationProperty Name="Choferes" Relationship="GestionAdministrativa.Model.FK_Choferes_SucursalAlta" FromRole="Sucursales" ToRole="Choferes" />
+          <NavigationProperty Name="Choferes1" Relationship="GestionAdministrativa.Model.FK_Choferes_SucursalModificacion" FromRole="Sucursales" ToRole="Choferes" />
+          </EntityType>
+        <EntityType Name="TipoCelular">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4646,7 +4646,7 @@
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_TiposCelulares_SucursalAlta" FromRole="TiposCelulares" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_TiposCelulares_SucursalModificacion" FromRole="TiposCelulares" ToRole="Sucursales" />
         </EntityType>
-        <EntityType Name="TiposComprobantes">
+        <EntityType Name="TipoComprobante">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4672,7 +4672,7 @@
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_TiposComprobantes_SucursalAlta" FromRole="TiposComprobantes" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_TiposComprobantes_SucursalModificacion" FromRole="TiposComprobantes" ToRole="Sucursales" />
         </EntityType>
-        <EntityType Name="TiposDocumentosIdentidad">
+        <EntityType Name="TipoDocumentosIdentidad">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4684,7 +4684,7 @@
           <Property Name="FechaAlta" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Proveedores" Relationship="Self.FK_Proveedores_TipoDocumentoIdentidad" FromRole="TiposDocumentosIdentidad" ToRole="Proveedores" />
         </EntityType>
-        <EntityType Name="TiposGastos">
+        <EntityType Name="TipoGasto">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4705,7 +4705,7 @@
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_TiposGastos_SucursalesAlta" FromRole="TiposGastos" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_TiposGastos_SucursalesModificacion" FromRole="TiposGastos" ToRole="Sucursales" />
         </EntityType>
-        <EntityType Name="TiposMovimientosCajas">
+        <EntityType Name="TipoMovimientoCaja">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4726,7 +4726,7 @@
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_TiposMovimientosCajas_SucursalAlta" FromRole="TiposMovimientosCajas" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_TiposMovimientosCajas_SucursalModificacion" FromRole="TiposMovimientosCajas" ToRole="Sucursales" />
         </EntityType>
-        <EntityType Name="TiposRecibos">
+        <EntityType Name="TipoRecibo">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -4735,8 +4735,8 @@
           <NavigationProperty Name="RecibosDetalle" Relationship="Self.FK_RecibosDetalle_TipoRecibo" FromRole="TiposRecibos" ToRole="RecibosDetalle" />
         </EntityType>
         <Association Name="FK_Bancos_Localidad">
-          <End Role="Localidades" Type="Self.Localidades" Multiplicity="0..1" />
-          <End Role="Bancos" Type="Self.Bancos" Multiplicity="*" />
+          <End Role="Localidades" Type="GestionAdministrativa.Model.Localidad" Multiplicity="0..1" />
+          <End Role="Bancos" Type="GestionAdministrativa.Model.Banco" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Localidades">
               <PropertyRef Name="Id" />
@@ -4747,8 +4747,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Bancos_OperadoresAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Bancos" Type="Self.Bancos" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Bancos" Type="GestionAdministrativa.Model.Banco" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -4759,8 +4759,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Bancos_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Bancos" Type="Self.Bancos" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Bancos" Type="GestionAdministrativa.Model.Banco" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -4771,8 +4771,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Bancos_Provincia">
-          <End Role="Provincias" Type="Self.Provincias" Multiplicity="0..1" />
-          <End Role="Bancos" Type="Self.Bancos" Multiplicity="*" />
+          <End Role="Provincias" Type="GestionAdministrativa.Model.Provincia" Multiplicity="0..1" />
+          <End Role="Bancos" Type="GestionAdministrativa.Model.Banco" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Provincias">
               <PropertyRef Name="Id" />
@@ -4783,8 +4783,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Bancos_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Bancos" Type="Self.Bancos" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Bancos" Type="GestionAdministrativa.Model.Banco" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -4795,8 +4795,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Bancos_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Bancos" Type="Self.Bancos" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Bancos" Type="GestionAdministrativa.Model.Banco" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -4807,8 +4807,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Proveedores_ProveedorBanco">
-          <End Role="Bancos" Type="Self.Bancos" Multiplicity="0..1" />
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+          <End Role="Bancos" Type="GestionAdministrativa.Model.Banco" Multiplicity="0..1" />
+          <End Role="Proveedores" Type="GestionAdministrativa.Model.Proveedor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Bancos">
               <PropertyRef Name="Id" />
@@ -4819,8 +4819,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ProveedoresBanco_Bancos">
-          <End Role="Bancos" Type="Self.Bancos" Multiplicity="0..1" />
-          <End Role="ProveedoresBanco" Type="Self.ProveedoresBanco" Multiplicity="*" />
+          <End Role="Bancos" Type="GestionAdministrativa.Model.Banco" Multiplicity="0..1" />
+          <End Role="ProveedoresBanco" Type="GestionAdministrativa.Model.ProveedorBanco" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Bancos">
               <PropertyRef Name="Id" />
@@ -4831,8 +4831,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Cajas_Operador">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Cajas" Type="Self.Cajas" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Cajas" Type="GestionAdministrativa.Model.Caja" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -4843,8 +4843,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Cajas_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Cajas" Type="Self.Cajas" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Cajas" Type="GestionAdministrativa.Model.Caja" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -4855,8 +4855,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Cajas_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Cajas" Type="Self.Cajas" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Cajas" Type="GestionAdministrativa.Model.Caja" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -4867,8 +4867,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Cajas_Sucursal">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
-          <End Role="Cajas" Type="Self.Cajas" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="1" />
+          <End Role="Cajas" Type="GestionAdministrativa.Model.Caja" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -4879,8 +4879,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Cajas_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Cajas" Type="Self.Cajas" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Cajas" Type="GestionAdministrativa.Model.Caja" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -4891,8 +4891,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Cajas_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Cajas" Type="Self.Cajas" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Cajas" Type="GestionAdministrativa.Model.Caja" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -4903,8 +4903,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesPagoDetalle_Cajas">
-          <End Role="Cajas" Type="Self.Cajas" Multiplicity="0..1" />
-          <End Role="OrdenesPagoDetalle" Type="Self.OrdenesPagoDetalle" Multiplicity="*" />
+          <End Role="Cajas" Type="GestionAdministrativa.Model.Caja" Multiplicity="0..1" />
+          <End Role="OrdenesPagoDetalle" Type="GestionAdministrativa.Model.OrdenPagoDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cajas">
               <PropertyRef Name="Id" />
@@ -4915,8 +4915,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CajasMovimientos_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="CajasMovimientos" Type="Self.CajasMovimientos" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="CajasMovimientos" Type="GestionAdministrativa.Model.CajaMovimiento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -4927,8 +4927,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CajasMovimientos_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="CajasMovimientos" Type="Self.CajasMovimientos" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="CajasMovimientos" Type="GestionAdministrativa.Model.CajaMovimiento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -4939,8 +4939,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CajasMovimientos_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="CajasMovimientos" Type="Self.CajasMovimientos" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="CajasMovimientos" Type="GestionAdministrativa.Model.CajaMovimiento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -4951,8 +4951,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CajasMovimientos_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="CajasMovimientos" Type="Self.CajasMovimientos" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="CajasMovimientos" Type="GestionAdministrativa.Model.CajaMovimiento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -4963,8 +4963,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CajasMovimientos_TipoComprobante">
-          <End Role="TiposComprobantes" Type="Self.TiposComprobantes" Multiplicity="0..1" />
-          <End Role="CajasMovimientos" Type="Self.CajasMovimientos" Multiplicity="*" />
+          <End Role="TiposComprobantes" Type="GestionAdministrativa.Model.TipoComprobante" Multiplicity="0..1" />
+          <End Role="CajasMovimientos" Type="GestionAdministrativa.Model.CajaMovimiento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TiposComprobantes">
               <PropertyRef Name="Id" />
@@ -4975,8 +4975,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CajasMovimientos_TipoMovimientoCaja">
-          <End Role="TiposMovimientosCajas" Type="Self.TiposMovimientosCajas" Multiplicity="0..1" />
-          <End Role="CajasMovimientos" Type="Self.CajasMovimientos" Multiplicity="*" />
+          <End Role="TiposMovimientosCajas" Type="GestionAdministrativa.Model.TipoMovimientoCaja" Multiplicity="0..1" />
+          <End Role="CajasMovimientos" Type="GestionAdministrativa.Model.CajaMovimiento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TiposMovimientosCajas">
               <PropertyRef Name="Id" />
@@ -4987,8 +4987,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CategoriasOperadores_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="CategoriasOperadores" Type="Self.CategoriasOperadores" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="CategoriasOperadores" Type="GestionAdministrativa.Model.CategoriaOperador" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -4999,8 +4999,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CategoriasOperadores_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="CategoriasOperadores" Type="Self.CategoriasOperadores" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="CategoriasOperadores" Type="GestionAdministrativa.Model.CategoriaOperador" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5011,8 +5011,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CategoriasOperadores_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="CategoriasOperadores" Type="Self.CategoriasOperadores" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="CategoriasOperadores" Type="GestionAdministrativa.Model.CategoriaOperador" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5023,8 +5023,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CategoriasOperadores_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="CategoriasOperadores" Type="Self.CategoriasOperadores" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="CategoriasOperadores" Type="GestionAdministrativa.Model.CategoriaOperador" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5035,7 +5035,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Personal_CategoriasOperadores">
-          <End Role="CategoriasOperadores" Type="Self.CategoriasOperadores" Multiplicity="0..1" />
+          <End Role="CategoriasOperadores" Type="GestionAdministrativa.Model.CategoriaOperador" Multiplicity="0..1" />
           <End Role="Personal" Type="Self.Personal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CategoriasOperadores">
@@ -5047,8 +5047,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Celulares_DiaPago">
-          <End Role="Dias" Type="Self.Dias" Multiplicity="0..1" />
-          <End Role="Celulares" Type="Self.Celulares" Multiplicity="*" />
+          <End Role="Dias" Type="GestionAdministrativa.Model.Dia" Multiplicity="0..1" />
+          <End Role="Celulares" Type="GestionAdministrativa.Model.Celular" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Dias">
               <PropertyRef Name="Id" />
@@ -5059,8 +5059,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Celulares_OperadoresAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Celulares" Type="Self.Celulares" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Celulares" Type="GestionAdministrativa.Model.Celular" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5071,8 +5071,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Celulares_OperadoresModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Celulares" Type="Self.Celulares" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Celulares" Type="GestionAdministrativa.Model.Celular" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5083,8 +5083,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Celulares_SucursalesAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Celulares" Type="Self.Celulares" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Celulares" Type="GestionAdministrativa.Model.Celular" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5095,8 +5095,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Celulares_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Celulares" Type="Self.Celulares" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Celulares" Type="GestionAdministrativa.Model.Celular" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5107,8 +5107,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Celulares_TipoCelular">
-          <End Role="TiposCelulares" Type="Self.TiposCelulares" Multiplicity="0..1" />
-          <End Role="Celulares" Type="Self.Celulares" Multiplicity="*" />
+          <End Role="TiposCelulares" Type="GestionAdministrativa.Model.TipoCelular" Multiplicity="0..1" />
+          <End Role="Celulares" Type="GestionAdministrativa.Model.Celular" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TiposCelulares">
               <PropertyRef Name="Id" />
@@ -5119,8 +5119,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CelularesMovimiento_Celular">
-          <End Role="Celulares" Type="Self.Celulares" Multiplicity="1" />
-          <End Role="CelularesMovimiento" Type="Self.CelularesMovimiento" Multiplicity="*" />
+          <End Role="Celulares" Type="GestionAdministrativa.Model.Celular" Multiplicity="1" />
+          <End Role="CelularesMovimiento" Type="GestionAdministrativa.Model.CelularMovimiento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Celulares">
               <PropertyRef Name="Id" />
@@ -5131,8 +5131,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PagosCelular_Celular">
-          <End Role="Celulares" Type="Self.Celulares" Multiplicity="1" />
-          <End Role="PagosCelular" Type="Self.PagosCelular" Multiplicity="*" />
+          <End Role="Celulares" Type="GestionAdministrativa.Model.Celular" Multiplicity="1" />
+          <End Role="PagosCelular" Type="GestionAdministrativa.Model.PagoCelular" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Celulares">
               <PropertyRef Name="Id" />
@@ -5143,8 +5143,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CelularesMovimiento_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
-          <End Role="CelularesMovimiento" Type="Self.CelularesMovimiento" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="1" />
+          <End Role="CelularesMovimiento" Type="GestionAdministrativa.Model.CelularMovimiento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5155,8 +5155,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CelularesMovimiento_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="CelularesMovimiento" Type="Self.CelularesMovimiento" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="CelularesMovimiento" Type="GestionAdministrativa.Model.CelularMovimiento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5167,8 +5167,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CelularesMovimiento_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
-          <End Role="CelularesMovimiento" Type="Self.CelularesMovimiento" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="1" />
+          <End Role="CelularesMovimiento" Type="GestionAdministrativa.Model.CelularMovimiento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5179,8 +5179,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CelularesMovimiento_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="CelularesMovimiento" Type="Self.CelularesMovimiento" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="CelularesMovimiento" Type="GestionAdministrativa.Model.CelularMovimiento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5191,8 +5191,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CelularesMovimiento_TipoComprobante">
-          <End Role="TiposComprobantes" Type="Self.TiposComprobantes" Multiplicity="0..1" />
-          <End Role="CelularesMovimiento" Type="Self.CelularesMovimiento" Multiplicity="*" />
+          <End Role="TiposComprobantes" Type="GestionAdministrativa.Model.TipoComprobante" Multiplicity="0..1" />
+          <End Role="CelularesMovimiento" Type="GestionAdministrativa.Model.CelularMovimiento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TiposComprobantes">
               <PropertyRef Name="Id" />
@@ -5203,8 +5203,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CentrosCostos_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
-          <End Role="CentrosCostos" Type="Self.CentrosCostos" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="1" />
+          <End Role="CentrosCostos" Type="GestionAdministrativa.Model.CentroCosto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5215,8 +5215,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CentrosCostos_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="CentrosCostos" Type="Self.CentrosCostos" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="CentrosCostos" Type="GestionAdministrativa.Model.CentroCosto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5227,8 +5227,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CentrosCostos_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
-          <End Role="CentrosCostos" Type="Self.CentrosCostos" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="1" />
+          <End Role="CentrosCostos" Type="GestionAdministrativa.Model.CentroCosto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5239,8 +5239,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CentrosCostos_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="CentrosCostos" Type="Self.CentrosCostos" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="CentrosCostos" Type="GestionAdministrativa.Model.CentroCosto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5251,8 +5251,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesPago_CentrosCostos">
-          <End Role="CentrosCostos" Type="Self.CentrosCostos" Multiplicity="0..1" />
-          <End Role="OrdenesPago" Type="Self.OrdenesPago" Multiplicity="*" />
+          <End Role="CentrosCostos" Type="GestionAdministrativa.Model.CentroCosto" Multiplicity="0..1" />
+          <End Role="OrdenesPago" Type="GestionAdministrativa.Model.OrdenPago" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CentrosCostos">
               <PropertyRef Name="Id" />
@@ -5263,8 +5263,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ChoferesMontosFavor_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
-          <End Role="ChoferesMontosFavor" Type="Self.ChoferesMontosFavor" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="1" />
+          <End Role="ChoferesMontosFavor" Type="GestionAdministrativa.Model.ChoferMontoFavor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5275,8 +5275,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ChoferesMontosFavor_OperadorAutoriza">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="ChoferesMontosFavor" Type="Self.ChoferesMontosFavor" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="ChoferesMontosFavor" Type="GestionAdministrativa.Model.ChoferMontoFavor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5287,8 +5287,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ChoferesMontosFavor_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="ChoferesMontosFavor" Type="Self.ChoferesMontosFavor" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="ChoferesMontosFavor" Type="GestionAdministrativa.Model.ChoferMontoFavor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5299,8 +5299,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ChoferesMontosFavor_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
-          <End Role="ChoferesMontosFavor" Type="Self.ChoferesMontosFavor" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="1" />
+          <End Role="ChoferesMontosFavor" Type="GestionAdministrativa.Model.ChoferMontoFavor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5311,8 +5311,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ChoferesMontosFavor_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="ChoferesMontosFavor" Type="Self.ChoferesMontosFavor" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="ChoferesMontosFavor" Type="GestionAdministrativa.Model.ChoferMontoFavor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5323,8 +5323,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ChoferesMontosFavor_TipoComprobante">
-          <End Role="TiposComprobantes" Type="Self.TiposComprobantes" Multiplicity="1" />
-          <End Role="ChoferesMontosFavor" Type="Self.ChoferesMontosFavor" Multiplicity="*" />
+          <End Role="TiposComprobantes" Type="GestionAdministrativa.Model.TipoComprobante" Multiplicity="1" />
+          <End Role="ChoferesMontosFavor" Type="GestionAdministrativa.Model.ChoferMontoFavor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TiposComprobantes">
               <PropertyRef Name="Id" />
@@ -5335,8 +5335,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Conceptos_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Conceptos" Type="Self.Conceptos" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Conceptos" Type="GestionAdministrativa.Model.Concepto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5347,8 +5347,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Conceptos_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Conceptos" Type="Self.Conceptos" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Conceptos" Type="GestionAdministrativa.Model.Concepto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5359,8 +5359,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Conceptos_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Conceptos" Type="Self.Conceptos" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Conceptos" Type="GestionAdministrativa.Model.Concepto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5371,8 +5371,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Conceptos_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Conceptos" Type="Self.Conceptos" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Conceptos" Type="GestionAdministrativa.Model.Concepto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5383,7 +5383,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersonalConcepto_Conceptos">
-          <End Role="Conceptos" Type="Self.Conceptos" Multiplicity="1" />
+          <End Role="Conceptos" Type="GestionAdministrativa.Model.Concepto" Multiplicity="1" />
           <End Role="PersonalConcepto" Type="Self.PersonalConcepto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Conceptos">
@@ -5395,8 +5395,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersonalNovedades_Conceptos">
-          <End Role="Conceptos" Type="Self.Conceptos" Multiplicity="1" />
-          <End Role="PersonalNovedades" Type="Self.PersonalNovedades" Multiplicity="*" />
+          <End Role="Conceptos" Type="GestionAdministrativa.Model.Concepto" Multiplicity="1" />
+          <End Role="PersonalNovedades" Type="GestionAdministrativa.Model.PersonalNovedad" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Conceptos">
               <PropertyRef Name="Id" />
@@ -5407,8 +5407,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CondicionesCompra_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
-          <End Role="CondicionesCompra" Type="Self.CondicionesCompra" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="1" />
+          <End Role="CondicionesCompra" Type="GestionAdministrativa.Model.CondicionCompra" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5419,8 +5419,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CondicionesCompra_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="CondicionesCompra" Type="Self.CondicionesCompra" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="CondicionesCompra" Type="GestionAdministrativa.Model.CondicionCompra" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5431,8 +5431,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CondicionesCompra_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
-          <End Role="CondicionesCompra" Type="Self.CondicionesCompra" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="1" />
+          <End Role="CondicionesCompra" Type="GestionAdministrativa.Model.CondicionCompra" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5443,8 +5443,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CondicionesCompra_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="CondicionesCompra" Type="Self.CondicionesCompra" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="CondicionesCompra" Type="GestionAdministrativa.Model.CondicionCompra" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5455,8 +5455,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Proveedores_CondicionCompra">
-          <End Role="CondicionesCompra" Type="Self.CondicionesCompra" Multiplicity="0..1" />
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+          <End Role="CondicionesCompra" Type="GestionAdministrativa.Model.CondicionCompra" Multiplicity="0..1" />
+          <End Role="Proveedores" Type="GestionAdministrativa.Model.Proveedor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CondicionesCompra">
               <PropertyRef Name="Id" />
@@ -5467,8 +5467,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Funciones_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
-          <End Role="Funciones" Type="Self.Funciones" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="1" />
+          <End Role="Funciones" Type="GestionAdministrativa.Model.Funcion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5479,8 +5479,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Funciones_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Funciones" Type="Self.Funciones" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Funciones" Type="GestionAdministrativa.Model.Funcion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5491,8 +5491,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Funciones_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
-          <End Role="Funciones" Type="Self.Funciones" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="1" />
+          <End Role="Funciones" Type="GestionAdministrativa.Model.Funcion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5503,8 +5503,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Funciones_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Funciones" Type="Self.Funciones" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Funciones" Type="GestionAdministrativa.Model.Funcion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5515,8 +5515,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_GruposProveedores_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="GruposProveedores" Type="Self.GruposProveedores" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="GruposProveedores" Type="GestionAdministrativa.Model.GrupoProveedor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5527,8 +5527,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_GruposProveedores_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="GruposProveedores" Type="Self.GruposProveedores" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="GruposProveedores" Type="GestionAdministrativa.Model.GrupoProveedor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5539,8 +5539,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_GruposProveedores_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="GruposProveedores" Type="Self.GruposProveedores" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="GruposProveedores" Type="GestionAdministrativa.Model.GrupoProveedor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5551,8 +5551,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_GruposProveedores_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="GruposProveedores" Type="Self.GruposProveedores" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="GruposProveedores" Type="GestionAdministrativa.Model.GrupoProveedor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5563,8 +5563,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Proveedores_GrupoProveedor">
-          <End Role="GruposProveedores" Type="Self.GruposProveedores" Multiplicity="0..1" />
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+          <End Role="GruposProveedores" Type="GestionAdministrativa.Model.GrupoProveedor" Multiplicity="0..1" />
+          <End Role="Proveedores" Type="GestionAdministrativa.Model.Proveedor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GruposProveedores">
               <PropertyRef Name="Id" />
@@ -5575,8 +5575,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Localidades_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Localidades" Type="Self.Localidades" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Localidades" Type="GestionAdministrativa.Model.Localidad" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5587,8 +5587,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Localidades_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Localidades" Type="Self.Localidades" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Localidades" Type="GestionAdministrativa.Model.Localidad" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5599,8 +5599,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Localidades_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Localidades" Type="Self.Localidades" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Localidades" Type="GestionAdministrativa.Model.Localidad" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5611,8 +5611,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Localidades_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Localidades" Type="Self.Localidades" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Localidades" Type="GestionAdministrativa.Model.Localidad" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5623,7 +5623,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Personal_Localidad">
-          <End Role="Localidades" Type="Self.Localidades" Multiplicity="0..1" />
+          <End Role="Localidades" Type="GestionAdministrativa.Model.Localidad" Multiplicity="0..1" />
           <End Role="Personal" Type="Self.Personal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Localidades">
@@ -5635,8 +5635,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Proveedores_Localidad">
-          <End Role="Localidades" Type="Self.Localidades" Multiplicity="0..1" />
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+          <End Role="Localidades" Type="GestionAdministrativa.Model.Localidad" Multiplicity="0..1" />
+          <End Role="Proveedores" Type="GestionAdministrativa.Model.Proveedor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Localidades">
               <PropertyRef Name="Id" />
@@ -5647,8 +5647,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Sucursales_Localidades">
-          <End Role="Localidades" Type="Self.Localidades" Multiplicity="0..1" />
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="*" />
+          <End Role="Localidades" Type="GestionAdministrativa.Model.Localidad" Multiplicity="0..1" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Localidades">
               <PropertyRef Name="Id" />
@@ -5659,8 +5659,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Moviles_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
-          <End Role="Moviles" Type="Self.Moviles" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="1" />
+          <End Role="Moviles" Type="GestionAdministrativa.Model.Movil" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5671,8 +5671,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Moviles_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Moviles" Type="Self.Moviles" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Moviles" Type="GestionAdministrativa.Model.Movil" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5683,8 +5683,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Moviles_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
-          <End Role="Moviles" Type="Self.Moviles" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="1" />
+          <End Role="Moviles" Type="GestionAdministrativa.Model.Movil" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5695,8 +5695,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Moviles_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Moviles" Type="Self.Moviles" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Moviles" Type="GestionAdministrativa.Model.Movil" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5707,8 +5707,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Operadores_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Operadores1" Type="Self.Operadores" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Operadores1" Type="GestionAdministrativa.Model.Operador" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5719,8 +5719,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Operadores_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Operadores1" Type="Self.Operadores" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Operadores1" Type="GestionAdministrativa.Model.Operador" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5732,7 +5732,7 @@
         </Association>
         <Association Name="FK_Operadores_Personal">
           <End Role="Personal" Type="Self.Personal" Multiplicity="0..1" />
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Personal">
               <PropertyRef Name="Id" />
@@ -5743,8 +5743,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Operadores_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5755,8 +5755,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Operadores_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -5767,8 +5767,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OperadoresFunciones_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
-          <End Role="OperadoresFunciones" Type="Self.OperadoresFunciones" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="1" />
+          <End Role="OperadoresFunciones" Type="GestionAdministrativa.Model.OperadorFuncion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5779,8 +5779,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OperadoresFunciones_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="OperadoresFunciones" Type="Self.OperadoresFunciones" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="OperadoresFunciones" Type="GestionAdministrativa.Model.OperadorFuncion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5791,8 +5791,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OperadoresSucursal_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
-          <End Role="OperadoresSucursales" Type="Self.OperadoresSucursales" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="1" />
+          <End Role="OperadoresSucursales" Type="GestionAdministrativa.Model.OperadorSucursal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5803,8 +5803,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OperadoresSucursal_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="OperadoresSucursales" Type="Self.OperadoresSucursales" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="OperadoresSucursales" Type="GestionAdministrativa.Model.OperadorSucursal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5815,8 +5815,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesPago_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
-          <End Role="OrdenesPago" Type="Self.OrdenesPago" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="1" />
+          <End Role="OrdenesPago" Type="GestionAdministrativa.Model.OrdenPago" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5827,8 +5827,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesPago_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="OrdenesPago" Type="Self.OrdenesPago" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="OrdenesPago" Type="GestionAdministrativa.Model.OrdenPago" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5839,8 +5839,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesPagoDetalle_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
-          <End Role="OrdenesPagoDetalle" Type="Self.OrdenesPagoDetalle" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="1" />
+          <End Role="OrdenesPagoDetalle" Type="GestionAdministrativa.Model.OrdenPagoDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5851,8 +5851,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesPagoDetalle_OperadorAutoriza">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="OrdenesPagoDetalle" Type="Self.OrdenesPagoDetalle" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="OrdenesPagoDetalle" Type="GestionAdministrativa.Model.OrdenPagoDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5863,8 +5863,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesPagoDetalle_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="OrdenesPagoDetalle" Type="Self.OrdenesPagoDetalle" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="OrdenesPagoDetalle" Type="GestionAdministrativa.Model.OrdenPagoDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5875,8 +5875,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PagosCelular_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
-          <End Role="PagosCelular" Type="Self.PagosCelular" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="1" />
+          <End Role="PagosCelular" Type="GestionAdministrativa.Model.PagoCelular" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5887,8 +5887,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PagosCelular_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="PagosCelular" Type="Self.PagosCelular" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="PagosCelular" Type="GestionAdministrativa.Model.PagoCelular" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5899,7 +5899,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Personal_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
           <End Role="Personal" Type="Self.Personal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
@@ -5911,7 +5911,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Personal_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
           <End Role="Personal" Type="Self.Personal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
@@ -5923,7 +5923,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersonalConcepto_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="1" />
           <End Role="PersonalConcepto" Type="Self.PersonalConcepto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
@@ -5935,7 +5935,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersonalConcepto_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
           <End Role="PersonalConcepto" Type="Self.PersonalConcepto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
@@ -5947,8 +5947,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersonalNovedades_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
-          <End Role="PersonalNovedades" Type="Self.PersonalNovedades" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="1" />
+          <End Role="PersonalNovedades" Type="GestionAdministrativa.Model.PersonalNovedad" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5959,8 +5959,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersonalNovedades_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="PersonalNovedades" Type="Self.PersonalNovedades" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="PersonalNovedades" Type="GestionAdministrativa.Model.PersonalNovedad" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5971,8 +5971,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Proveedores_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="1" />
+          <End Role="Proveedores" Type="GestionAdministrativa.Model.Proveedor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5983,8 +5983,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Proveedores_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Proveedores" Type="GestionAdministrativa.Model.Proveedor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -5995,8 +5995,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ProveedoresBanco_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
-          <End Role="ProveedoresBanco" Type="Self.ProveedoresBanco" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="1" />
+          <End Role="ProveedoresBanco" Type="GestionAdministrativa.Model.ProveedorBanco" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6007,8 +6007,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ProveedoresBanco_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="ProveedoresBanco" Type="Self.ProveedoresBanco" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="ProveedoresBanco" Type="GestionAdministrativa.Model.ProveedorBanco" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6019,8 +6019,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Provincias_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Provincias" Type="Self.Provincias" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Provincias" Type="GestionAdministrativa.Model.Provincia" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6031,8 +6031,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Provincias_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Provincias" Type="Self.Provincias" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Provincias" Type="GestionAdministrativa.Model.Provincia" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6043,8 +6043,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Recibos_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
-          <End Role="Recibos" Type="Self.Recibos" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="1" />
+          <End Role="Recibos" Type="GestionAdministrativa.Model.Recibo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6055,8 +6055,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Recibos_OperadorAutoriza">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Recibos" Type="Self.Recibos" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Recibos" Type="GestionAdministrativa.Model.Recibo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6067,8 +6067,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Recibos_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Recibos" Type="Self.Recibos" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Recibos" Type="GestionAdministrativa.Model.Recibo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6079,8 +6079,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_RecibosDetalle_OperadorALta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="RecibosDetalle" Type="Self.RecibosDetalle" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="RecibosDetalle" Type="GestionAdministrativa.Model.ReciboDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6091,8 +6091,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_RecibosDetalle_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="RecibosDetalle" Type="Self.RecibosDetalle" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="RecibosDetalle" Type="GestionAdministrativa.Model.ReciboDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6103,8 +6103,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Sucursales_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6115,8 +6115,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Sucursales_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6127,8 +6127,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TiposCelulares_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
-          <End Role="TiposCelulares" Type="Self.TiposCelulares" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="1" />
+          <End Role="TiposCelulares" Type="GestionAdministrativa.Model.TipoCelular" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6139,8 +6139,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TiposCelulares_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="TiposCelulares" Type="Self.TiposCelulares" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="TiposCelulares" Type="GestionAdministrativa.Model.TipoCelular" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6151,8 +6151,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TiposComprobantes_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="TiposComprobantes" Type="Self.TiposComprobantes" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="TiposComprobantes" Type="GestionAdministrativa.Model.TipoComprobante" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6163,8 +6163,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TiposComprobantes_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="TiposComprobantes" Type="Self.TiposComprobantes" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="TiposComprobantes" Type="GestionAdministrativa.Model.TipoComprobante" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6175,8 +6175,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TiposGastos_OperadoresAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="TiposGastos" Type="Self.TiposGastos" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="TiposGastos" Type="GestionAdministrativa.Model.TipoGasto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6187,8 +6187,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TiposGastos_OperadoresModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="TiposGastos" Type="Self.TiposGastos" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="TiposGastos" Type="GestionAdministrativa.Model.TipoGasto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6199,8 +6199,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TiposMovimientosCajas_OperadorAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="TiposMovimientosCajas" Type="Self.TiposMovimientosCajas" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="TiposMovimientosCajas" Type="GestionAdministrativa.Model.TipoMovimientoCaja" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6211,8 +6211,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TiposMovimientosCajas_OperadorModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="TiposMovimientosCajas" Type="Self.TiposMovimientosCajas" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="0..1" />
+          <End Role="TiposMovimientosCajas" Type="GestionAdministrativa.Model.TipoMovimientoCaja" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
@@ -6223,8 +6223,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OperadoresFunciones_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
-          <End Role="OperadoresFunciones" Type="Self.OperadoresFunciones" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="1" />
+          <End Role="OperadoresFunciones" Type="GestionAdministrativa.Model.OperadorFuncion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6235,8 +6235,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OperadoresFunciones_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="OperadoresFunciones" Type="Self.OperadoresFunciones" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="OperadoresFunciones" Type="GestionAdministrativa.Model.OperadorFuncion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6247,8 +6247,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OperadoresSucursal_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
-          <End Role="OperadoresSucursales" Type="Self.OperadoresSucursales" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="1" />
+          <End Role="OperadoresSucursales" Type="GestionAdministrativa.Model.OperadorSucursal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6259,8 +6259,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OperadoresSucursal_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="OperadoresSucursales" Type="Self.OperadoresSucursales" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="OperadoresSucursales" Type="GestionAdministrativa.Model.OperadorSucursal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6271,8 +6271,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesPago_Comprobante">
-          <End Role="TiposComprobantes" Type="Self.TiposComprobantes" Multiplicity="0..1" />
-          <End Role="OrdenesPago" Type="Self.OrdenesPago" Multiplicity="*" />
+          <End Role="TiposComprobantes" Type="GestionAdministrativa.Model.TipoComprobante" Multiplicity="0..1" />
+          <End Role="OrdenesPago" Type="GestionAdministrativa.Model.OrdenPago" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TiposComprobantes">
               <PropertyRef Name="Id" />
@@ -6283,8 +6283,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesPago_Proveedores">
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="1" />
-          <End Role="OrdenesPago" Type="Self.OrdenesPago" Multiplicity="*" />
+          <End Role="Proveedores" Type="GestionAdministrativa.Model.Proveedor" Multiplicity="1" />
+          <End Role="OrdenesPago" Type="GestionAdministrativa.Model.OrdenPago" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Proveedores">
               <PropertyRef Name="Id" />
@@ -6295,8 +6295,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesPago_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
-          <End Role="OrdenesPago" Type="Self.OrdenesPago" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="1" />
+          <End Role="OrdenesPago" Type="GestionAdministrativa.Model.OrdenPago" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6307,8 +6307,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesPago_Sucursales">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
-          <End Role="OrdenesPago" Type="Self.OrdenesPago" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="1" />
+          <End Role="OrdenesPago" Type="GestionAdministrativa.Model.OrdenPago" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6319,8 +6319,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesPago_SucursalGasto">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="OrdenesPago" Type="Self.OrdenesPago" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="OrdenesPago" Type="GestionAdministrativa.Model.OrdenPago" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6331,8 +6331,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesPago_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="OrdenesPago" Type="Self.OrdenesPago" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="OrdenesPago" Type="GestionAdministrativa.Model.OrdenPago" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6343,8 +6343,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesPago_TipoGasto">
-          <End Role="TiposGastos" Type="Self.TiposGastos" Multiplicity="0..1" />
-          <End Role="OrdenesPago" Type="Self.OrdenesPago" Multiplicity="*" />
+          <End Role="TiposGastos" Type="GestionAdministrativa.Model.TipoGasto" Multiplicity="0..1" />
+          <End Role="OrdenesPago" Type="GestionAdministrativa.Model.OrdenPago" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TiposGastos">
               <PropertyRef Name="Id" />
@@ -6355,8 +6355,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesPagoDetalle_OrdenesPago">
-          <End Role="OrdenesPago" Type="Self.OrdenesPago" Multiplicity="1" />
-          <End Role="OrdenesPagoDetalle" Type="Self.OrdenesPagoDetalle" Multiplicity="*" />
+          <End Role="OrdenesPago" Type="GestionAdministrativa.Model.OrdenPago" Multiplicity="1" />
+          <End Role="OrdenesPagoDetalle" Type="GestionAdministrativa.Model.OrdenPagoDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="OrdenesPago">
               <PropertyRef Name="Id" />
@@ -6367,8 +6367,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesPagoDetalle_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="OrdenesPagoDetalle" Type="Self.OrdenesPagoDetalle" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="OrdenesPagoDetalle" Type="GestionAdministrativa.Model.OrdenPagoDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6379,8 +6379,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesPagoDetalle_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="OrdenesPagoDetalle" Type="Self.OrdenesPagoDetalle" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="OrdenesPagoDetalle" Type="GestionAdministrativa.Model.OrdenPagoDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6391,8 +6391,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PagosCelular_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
-          <End Role="PagosCelular" Type="Self.PagosCelular" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="1" />
+          <End Role="PagosCelular" Type="GestionAdministrativa.Model.PagoCelular" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6403,8 +6403,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PagosCelular_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="PagosCelular" Type="Self.PagosCelular" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="PagosCelular" Type="GestionAdministrativa.Model.PagoCelular" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6415,8 +6415,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Provincias_Paises">
-          <End Role="Paises" Type="Self.Paises" Multiplicity="0..1" />
-          <End Role="Provincias" Type="Self.Provincias" Multiplicity="*" />
+          <End Role="Paises" Type="GestionAdministrativa.Model.Pais" Multiplicity="0..1" />
+          <End Role="Provincias" Type="GestionAdministrativa.Model.Provincia" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Paises">
               <PropertyRef Name="Id" />
@@ -6427,7 +6427,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Personal_Provincia">
-          <End Role="Provincias" Type="Self.Provincias" Multiplicity="0..1" />
+          <End Role="Provincias" Type="GestionAdministrativa.Model.Provincia" Multiplicity="0..1" />
           <End Role="Personal" Type="Self.Personal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Provincias">
@@ -6439,7 +6439,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Personal_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
           <End Role="Personal" Type="Self.Personal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
@@ -6451,7 +6451,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Personal_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
           <End Role="Personal" Type="Self.Personal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
@@ -6476,7 +6476,7 @@
         </Association>
         <Association Name="FK_PersonalNovedades_Personal">
           <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
-          <End Role="PersonalNovedades" Type="Self.PersonalNovedades" Multiplicity="*" />
+          <End Role="PersonalNovedades" Type="GestionAdministrativa.Model.PersonalNovedad" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Personal">
               <PropertyRef Name="Id" />
@@ -6487,7 +6487,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersonalConcepto_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
           <End Role="PersonalConcepto" Type="Self.PersonalConcepto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
@@ -6499,7 +6499,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersonalConcepto_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
           <End Role="PersonalConcepto" Type="Self.PersonalConcepto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
@@ -6511,8 +6511,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersonalNovedades_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="PersonalNovedades" Type="Self.PersonalNovedades" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="PersonalNovedades" Type="GestionAdministrativa.Model.PersonalNovedad" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6523,8 +6523,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PersonalNovedades_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="PersonalNovedades" Type="Self.PersonalNovedades" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="PersonalNovedades" Type="GestionAdministrativa.Model.PersonalNovedad" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6535,8 +6535,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Proveedores_Provincia">
-          <End Role="Provincias" Type="Self.Provincias" Multiplicity="0..1" />
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+          <End Role="Provincias" Type="GestionAdministrativa.Model.Provincia" Multiplicity="0..1" />
+          <End Role="Proveedores" Type="GestionAdministrativa.Model.Proveedor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Provincias">
               <PropertyRef Name="Id" />
@@ -6547,8 +6547,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Proveedores_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="1" />
+          <End Role="Proveedores" Type="GestionAdministrativa.Model.Proveedor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6559,8 +6559,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Proveedores_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Proveedores" Type="GestionAdministrativa.Model.Proveedor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6571,8 +6571,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Proveedores_TipoDocumentoIdentidad">
-          <End Role="TiposDocumentosIdentidad" Type="Self.TiposDocumentosIdentidad" Multiplicity="0..1" />
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+          <End Role="TiposDocumentosIdentidad" Type="GestionAdministrativa.Model.TipoDocumentosIdentidad" Multiplicity="0..1" />
+          <End Role="Proveedores" Type="GestionAdministrativa.Model.Proveedor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TiposDocumentosIdentidad">
               <PropertyRef Name="Id" />
@@ -6583,8 +6583,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ProveedoresBanco_Proveedores">
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="1" />
-          <End Role="ProveedoresBanco" Type="Self.ProveedoresBanco" Multiplicity="*" />
+          <End Role="Proveedores" Type="GestionAdministrativa.Model.Proveedor" Multiplicity="1" />
+          <End Role="ProveedoresBanco" Type="GestionAdministrativa.Model.ProveedorBanco" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Proveedores">
               <PropertyRef Name="Id" />
@@ -6595,8 +6595,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ProveedoresBanco_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
-          <End Role="ProveedoresBanco" Type="Self.ProveedoresBanco" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="1" />
+          <End Role="ProveedoresBanco" Type="GestionAdministrativa.Model.ProveedorBanco" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6607,8 +6607,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ProveedoresBanco_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="ProveedoresBanco" Type="Self.ProveedoresBanco" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="ProveedoresBanco" Type="GestionAdministrativa.Model.ProveedorBanco" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6619,8 +6619,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Provincias_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Provincias" Type="Self.Provincias" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Provincias" Type="GestionAdministrativa.Model.Provincia" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6631,8 +6631,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Provincias_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Provincias" Type="Self.Provincias" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Provincias" Type="GestionAdministrativa.Model.Provincia" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6643,8 +6643,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Sucursales_Provincias">
-          <End Role="Provincias" Type="Self.Provincias" Multiplicity="0..1" />
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="*" />
+          <End Role="Provincias" Type="GestionAdministrativa.Model.Provincia" Multiplicity="0..1" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Provincias">
               <PropertyRef Name="Id" />
@@ -6655,8 +6655,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Recibos_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
-          <End Role="Recibos" Type="Self.Recibos" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="1" />
+          <End Role="Recibos" Type="GestionAdministrativa.Model.Recibo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6667,8 +6667,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Recibos_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Recibos" Type="Self.Recibos" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Recibos" Type="GestionAdministrativa.Model.Recibo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6679,8 +6679,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_RecibosDetalle_Recibo">
-          <End Role="Recibos" Type="Self.Recibos" Multiplicity="1" />
-          <End Role="RecibosDetalle" Type="Self.RecibosDetalle" Multiplicity="*" />
+          <End Role="Recibos" Type="GestionAdministrativa.Model.Recibo" Multiplicity="1" />
+          <End Role="RecibosDetalle" Type="GestionAdministrativa.Model.ReciboDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Recibos">
               <PropertyRef Name="Id" />
@@ -6691,8 +6691,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_RecibosDetalle_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="RecibosDetalle" Type="Self.RecibosDetalle" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="RecibosDetalle" Type="GestionAdministrativa.Model.ReciboDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6703,8 +6703,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_RecibosDetalle_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="RecibosDetalle" Type="Self.RecibosDetalle" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="RecibosDetalle" Type="GestionAdministrativa.Model.ReciboDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6715,8 +6715,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_RecibosDetalle_TipoRecibo">
-          <End Role="TiposRecibos" Type="Self.TiposRecibos" Multiplicity="1" />
-          <End Role="RecibosDetalle" Type="Self.RecibosDetalle" Multiplicity="*" />
+          <End Role="TiposRecibos" Type="GestionAdministrativa.Model.TipoRecibo" Multiplicity="1" />
+          <End Role="RecibosDetalle" Type="GestionAdministrativa.Model.ReciboDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TiposRecibos">
               <PropertyRef Name="Id" />
@@ -6727,8 +6727,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Sucursales_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Sucursales1" Type="Self.Sucursales" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Sucursales1" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6739,8 +6739,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Sucursales_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="Sucursales1" Type="Self.Sucursales" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="Sucursales1" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6751,8 +6751,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TiposCelulares_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
-          <End Role="TiposCelulares" Type="Self.TiposCelulares" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="1" />
+          <End Role="TiposCelulares" Type="GestionAdministrativa.Model.TipoCelular" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6763,8 +6763,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TiposCelulares_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="TiposCelulares" Type="Self.TiposCelulares" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="TiposCelulares" Type="GestionAdministrativa.Model.TipoCelular" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6775,8 +6775,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TiposComprobantes_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="TiposComprobantes" Type="Self.TiposComprobantes" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="TiposComprobantes" Type="GestionAdministrativa.Model.TipoComprobante" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6787,8 +6787,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TiposComprobantes_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="TiposComprobantes" Type="Self.TiposComprobantes" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="TiposComprobantes" Type="GestionAdministrativa.Model.TipoComprobante" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6799,8 +6799,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TiposGastos_SucursalesAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="TiposGastos" Type="Self.TiposGastos" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="TiposGastos" Type="GestionAdministrativa.Model.TipoGasto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6811,8 +6811,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TiposGastos_SucursalesModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="TiposGastos" Type="Self.TiposGastos" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="TiposGastos" Type="GestionAdministrativa.Model.TipoGasto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6823,8 +6823,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TiposMovimientosCajas_SucursalAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="TiposMovimientosCajas" Type="Self.TiposMovimientosCajas" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="TiposMovimientosCajas" Type="GestionAdministrativa.Model.TipoMovimientoCaja" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6835,8 +6835,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TiposMovimientosCajas_SucursalModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="TiposMovimientosCajas" Type="Self.TiposMovimientosCajas" Multiplicity="*" />
+          <End Role="Sucursales" Type="GestionAdministrativa.Model.Sucursal" Multiplicity="0..1" />
+          <End Role="TiposMovimientosCajas" Type="GestionAdministrativa.Model.TipoMovimientoCaja" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
@@ -6847,48 +6847,48 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="OperadoresRoles">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="*" />
-          <End Role="Roles" Type="Self.Roles" Multiplicity="*" />
+          <End Role="Operadores" Type="GestionAdministrativa.Model.Operador" Multiplicity="*" />
+          <End Role="Roles" Type="GestionAdministrativa.Model.Rol" Multiplicity="*" />
         </Association>
         <EntityContainer Name="GestionAdministrativaDbContext" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Bancos" EntityType="Self.Bancos" />
-          <EntitySet Name="Cajas" EntityType="Self.Cajas" />
-          <EntitySet Name="CajasMovimientos" EntityType="Self.CajasMovimientos" />
-          <EntitySet Name="CategoriasOperadores" EntityType="Self.CategoriasOperadores" />
-          <EntitySet Name="Celulares" EntityType="Self.Celulares" />
-          <EntitySet Name="CelularesMovimiento" EntityType="Self.CelularesMovimiento" />
-          <EntitySet Name="CentrosCostos" EntityType="Self.CentrosCostos" />
-          <EntitySet Name="ChoferesMontosFavor" EntityType="Self.ChoferesMontosFavor" />
-          <EntitySet Name="Conceptos" EntityType="Self.Conceptos" />
-          <EntitySet Name="CondicionesCompra" EntityType="Self.CondicionesCompra" />
-          <EntitySet Name="Dias" EntityType="Self.Dias" />
-          <EntitySet Name="Funciones" EntityType="Self.Funciones" />
-          <EntitySet Name="GruposProveedores" EntityType="Self.GruposProveedores" />
-          <EntitySet Name="Localidades" EntityType="Self.Localidades" />
-          <EntitySet Name="Moviles" EntityType="Self.Moviles" />
-          <EntitySet Name="Operadores" EntityType="Self.Operadores" />
-          <EntitySet Name="OperadoresFunciones" EntityType="Self.OperadoresFunciones" />
-          <EntitySet Name="OperadoresSucursales" EntityType="Self.OperadoresSucursales" />
-          <EntitySet Name="OrdenesPago" EntityType="Self.OrdenesPago" />
-          <EntitySet Name="OrdenesPagoDetalle" EntityType="Self.OrdenesPagoDetalle" />
-          <EntitySet Name="PagosCelular" EntityType="Self.PagosCelular" />
-          <EntitySet Name="Paises" EntityType="Self.Paises" />
-          <EntitySet Name="Personal" EntityType="Self.Personal" />
-          <EntitySet Name="PersonalConcepto" EntityType="Self.PersonalConcepto" />
-          <EntitySet Name="PersonalNovedades" EntityType="Self.PersonalNovedades" />
-          <EntitySet Name="Proveedores" EntityType="Self.Proveedores" />
-          <EntitySet Name="ProveedoresBanco" EntityType="Self.ProveedoresBanco" />
-          <EntitySet Name="Provincias" EntityType="Self.Provincias" />
-          <EntitySet Name="Recibos" EntityType="Self.Recibos" />
-          <EntitySet Name="RecibosDetalle" EntityType="Self.RecibosDetalle" />
-          <EntitySet Name="Roles" EntityType="Self.Roles" />
-          <EntitySet Name="Sucursales" EntityType="Self.Sucursales" />
-          <EntitySet Name="TiposCelulares" EntityType="Self.TiposCelulares" />
-          <EntitySet Name="TiposComprobantes" EntityType="Self.TiposComprobantes" />
-          <EntitySet Name="TiposDocumentosIdentidad" EntityType="Self.TiposDocumentosIdentidad" />
-          <EntitySet Name="TiposGastos" EntityType="Self.TiposGastos" />
-          <EntitySet Name="TiposMovimientosCajas" EntityType="Self.TiposMovimientosCajas" />
-          <EntitySet Name="TiposRecibos" EntityType="Self.TiposRecibos" />
+          <EntitySet Name="Bancos" EntityType="GestionAdministrativa.Model.Banco" />
+          <EntitySet Name="Cajas" EntityType="GestionAdministrativa.Model.Caja" />
+          <EntitySet Name="CajasMovimientos" EntityType="GestionAdministrativa.Model.CajaMovimiento" />
+          <EntitySet Name="CategoriasOperadores" EntityType="GestionAdministrativa.Model.CategoriaOperador" />
+          <EntitySet Name="Celulares" EntityType="GestionAdministrativa.Model.Celular" />
+          <EntitySet Name="CelularesMovimiento" EntityType="GestionAdministrativa.Model.CelularMovimiento" />
+          <EntitySet Name="CentrosCostos" EntityType="GestionAdministrativa.Model.CentroCosto" />
+          <EntitySet Name="ChoferesMontosFavor" EntityType="GestionAdministrativa.Model.ChoferMontoFavor" />
+          <EntitySet Name="Conceptos" EntityType="GestionAdministrativa.Model.Concepto" />
+          <EntitySet Name="CondicionesCompra" EntityType="GestionAdministrativa.Model.CondicionCompra" />
+          <EntitySet Name="Dias" EntityType="GestionAdministrativa.Model.Dia" />
+          <EntitySet Name="Funciones" EntityType="GestionAdministrativa.Model.Funcion" />
+          <EntitySet Name="GruposProveedores" EntityType="GestionAdministrativa.Model.GrupoProveedor" />
+          <EntitySet Name="Localidades" EntityType="GestionAdministrativa.Model.Localidad" />
+          <EntitySet Name="Moviles" EntityType="GestionAdministrativa.Model.Movil" />
+          <EntitySet Name="Operadores" EntityType="GestionAdministrativa.Model.Operador" />
+          <EntitySet Name="OperadoresFunciones" EntityType="GestionAdministrativa.Model.OperadorFuncion" />
+          <EntitySet Name="OperadoresSucursales" EntityType="GestionAdministrativa.Model.OperadorSucursal" />
+          <EntitySet Name="OrdenesPago" EntityType="GestionAdministrativa.Model.OrdenPago" />
+          <EntitySet Name="OrdenesPagoDetalle" EntityType="GestionAdministrativa.Model.OrdenPagoDetalle" />
+          <EntitySet Name="PagosCelular" EntityType="GestionAdministrativa.Model.PagoCelular" />
+          <EntitySet Name="Paises" EntityType="GestionAdministrativa.Model.Pais" />
+          <EntitySet Name="Personales" EntityType="Self.Personal" />
+          <EntitySet Name="PersonalesConceptos" EntityType="Self.PersonalConcepto" />
+          <EntitySet Name="PersonalNovedades" EntityType="GestionAdministrativa.Model.PersonalNovedad" />
+          <EntitySet Name="Proveedores" EntityType="GestionAdministrativa.Model.Proveedor" />
+          <EntitySet Name="ProveedoresBancos" EntityType="GestionAdministrativa.Model.ProveedorBanco" />
+          <EntitySet Name="Provincias" EntityType="GestionAdministrativa.Model.Provincia" />
+          <EntitySet Name="Recibos" EntityType="GestionAdministrativa.Model.Recibo" />
+          <EntitySet Name="RecibosDetalles" EntityType="GestionAdministrativa.Model.ReciboDetalle" />
+          <EntitySet Name="Roles" EntityType="GestionAdministrativa.Model.Rol" />
+          <EntitySet Name="Sucursales" EntityType="GestionAdministrativa.Model.Sucursal" />
+          <EntitySet Name="TiposCelulares" EntityType="GestionAdministrativa.Model.TipoCelular" />
+          <EntitySet Name="TiposComprobantes" EntityType="GestionAdministrativa.Model.TipoComprobante" />
+          <EntitySet Name="TiposDocumentosIdentidad" EntityType="GestionAdministrativa.Model.TipoDocumentosIdentidad" />
+          <EntitySet Name="TiposGastos" EntityType="GestionAdministrativa.Model.TipoGasto" />
+          <EntitySet Name="TiposMovimientosCajas" EntityType="GestionAdministrativa.Model.TipoMovimientoCaja" />
+          <EntitySet Name="TiposRecibos" EntityType="GestionAdministrativa.Model.TipoRecibo" />
           <AssociationSet Name="FK_Bancos_Localidad" Association="Self.FK_Bancos_Localidad">
             <End Role="Localidades" EntitySet="Localidades" />
             <End Role="Bancos" EntitySet="Bancos" />
@@ -6919,7 +6919,7 @@
           </AssociationSet>
           <AssociationSet Name="FK_ProveedoresBanco_Bancos" Association="Self.FK_ProveedoresBanco_Bancos">
             <End Role="Bancos" EntitySet="Bancos" />
-            <End Role="ProveedoresBanco" EntitySet="ProveedoresBanco" />
+            <End Role="ProveedoresBanco" EntitySet="ProveedoresBancos" />
           </AssociationSet>
           <AssociationSet Name="FK_Cajas_Operador" Association="Self.FK_Cajas_Operador">
             <End Role="Operadores" EntitySet="Operadores" />
@@ -6991,7 +6991,7 @@
           </AssociationSet>
           <AssociationSet Name="FK_Personal_CategoriasOperadores" Association="Self.FK_Personal_CategoriasOperadores">
             <End Role="CategoriasOperadores" EntitySet="CategoriasOperadores" />
-            <End Role="Personal" EntitySet="Personal" />
+            <End Role="Personal" EntitySet="Personales" />
           </AssociationSet>
           <AssociationSet Name="FK_Celulares_DiaPago" Association="Self.FK_Celulares_DiaPago">
             <End Role="Dias" EntitySet="Dias" />
@@ -7107,7 +7107,7 @@
           </AssociationSet>
           <AssociationSet Name="FK_PersonalConcepto_Conceptos" Association="Self.FK_PersonalConcepto_Conceptos">
             <End Role="Conceptos" EntitySet="Conceptos" />
-            <End Role="PersonalConcepto" EntitySet="PersonalConcepto" />
+            <End Role="PersonalConcepto" EntitySet="PersonalesConceptos" />
           </AssociationSet>
           <AssociationSet Name="FK_PersonalNovedades_Conceptos" Association="Self.FK_PersonalNovedades_Conceptos">
             <End Role="Conceptos" EntitySet="Conceptos" />
@@ -7187,7 +7187,7 @@
           </AssociationSet>
           <AssociationSet Name="FK_Personal_Localidad" Association="Self.FK_Personal_Localidad">
             <End Role="Localidades" EntitySet="Localidades" />
-            <End Role="Personal" EntitySet="Personal" />
+            <End Role="Personal" EntitySet="Personales" />
           </AssociationSet>
           <AssociationSet Name="FK_Proveedores_Localidad" Association="Self.FK_Proveedores_Localidad">
             <End Role="Localidades" EntitySet="Localidades" />
@@ -7222,7 +7222,7 @@
             <End Role="Operadores1" EntitySet="Operadores" />
           </AssociationSet>
           <AssociationSet Name="FK_Operadores_Personal" Association="Self.FK_Operadores_Personal">
-            <End Role="Personal" EntitySet="Personal" />
+            <End Role="Personal" EntitySet="Personales" />
             <End Role="Operadores" EntitySet="Operadores" />
           </AssociationSet>
           <AssociationSet Name="FK_Operadores_SucursalAlta" Association="Self.FK_Operadores_SucursalAlta">
@@ -7279,19 +7279,19 @@
           </AssociationSet>
           <AssociationSet Name="FK_Personal_OperadorAlta" Association="Self.FK_Personal_OperadorAlta">
             <End Role="Operadores" EntitySet="Operadores" />
-            <End Role="Personal" EntitySet="Personal" />
+            <End Role="Personal" EntitySet="Personales" />
           </AssociationSet>
           <AssociationSet Name="FK_Personal_OperadorModificacion" Association="Self.FK_Personal_OperadorModificacion">
             <End Role="Operadores" EntitySet="Operadores" />
-            <End Role="Personal" EntitySet="Personal" />
+            <End Role="Personal" EntitySet="Personales" />
           </AssociationSet>
           <AssociationSet Name="FK_PersonalConcepto_OperadorAlta" Association="Self.FK_PersonalConcepto_OperadorAlta">
             <End Role="Operadores" EntitySet="Operadores" />
-            <End Role="PersonalConcepto" EntitySet="PersonalConcepto" />
+            <End Role="PersonalConcepto" EntitySet="PersonalesConceptos" />
           </AssociationSet>
           <AssociationSet Name="FK_PersonalConcepto_OperadorModificacion" Association="Self.FK_PersonalConcepto_OperadorModificacion">
             <End Role="Operadores" EntitySet="Operadores" />
-            <End Role="PersonalConcepto" EntitySet="PersonalConcepto" />
+            <End Role="PersonalConcepto" EntitySet="PersonalesConceptos" />
           </AssociationSet>
           <AssociationSet Name="FK_PersonalNovedades_OperadorAlta" Association="Self.FK_PersonalNovedades_OperadorAlta">
             <End Role="Operadores" EntitySet="Operadores" />
@@ -7311,11 +7311,11 @@
           </AssociationSet>
           <AssociationSet Name="FK_ProveedoresBanco_OperadorAlta" Association="Self.FK_ProveedoresBanco_OperadorAlta">
             <End Role="Operadores" EntitySet="Operadores" />
-            <End Role="ProveedoresBanco" EntitySet="ProveedoresBanco" />
+            <End Role="ProveedoresBanco" EntitySet="ProveedoresBancos" />
           </AssociationSet>
           <AssociationSet Name="FK_ProveedoresBanco_OperadorModificacion" Association="Self.FK_ProveedoresBanco_OperadorModificacion">
             <End Role="Operadores" EntitySet="Operadores" />
-            <End Role="ProveedoresBanco" EntitySet="ProveedoresBanco" />
+            <End Role="ProveedoresBanco" EntitySet="ProveedoresBancos" />
           </AssociationSet>
           <AssociationSet Name="FK_Provincias_OperadorAlta" Association="Self.FK_Provincias_OperadorAlta">
             <End Role="Operadores" EntitySet="Operadores" />
@@ -7339,11 +7339,11 @@
           </AssociationSet>
           <AssociationSet Name="FK_RecibosDetalle_OperadorALta" Association="Self.FK_RecibosDetalle_OperadorALta">
             <End Role="Operadores" EntitySet="Operadores" />
-            <End Role="RecibosDetalle" EntitySet="RecibosDetalle" />
+            <End Role="RecibosDetalle" EntitySet="RecibosDetalles" />
           </AssociationSet>
           <AssociationSet Name="FK_RecibosDetalle_OperadorModificacion" Association="Self.FK_RecibosDetalle_OperadorModificacion">
             <End Role="Operadores" EntitySet="Operadores" />
-            <End Role="RecibosDetalle" EntitySet="RecibosDetalle" />
+            <End Role="RecibosDetalle" EntitySet="RecibosDetalles" />
           </AssociationSet>
           <AssociationSet Name="FK_Sucursales_OperadorAlta" Association="Self.FK_Sucursales_OperadorAlta">
             <End Role="Operadores" EntitySet="Operadores" />
@@ -7455,31 +7455,31 @@
           </AssociationSet>
           <AssociationSet Name="FK_Personal_Provincia" Association="Self.FK_Personal_Provincia">
             <End Role="Provincias" EntitySet="Provincias" />
-            <End Role="Personal" EntitySet="Personal" />
+            <End Role="Personal" EntitySet="Personales" />
           </AssociationSet>
           <AssociationSet Name="FK_Personal_SucursalAlta" Association="Self.FK_Personal_SucursalAlta">
             <End Role="Sucursales" EntitySet="Sucursales" />
-            <End Role="Personal" EntitySet="Personal" />
+            <End Role="Personal" EntitySet="Personales" />
           </AssociationSet>
           <AssociationSet Name="FK_Personal_SucursalModificacion" Association="Self.FK_Personal_SucursalModificacion">
             <End Role="Sucursales" EntitySet="Sucursales" />
-            <End Role="Personal" EntitySet="Personal" />
+            <End Role="Personal" EntitySet="Personales" />
           </AssociationSet>
           <AssociationSet Name="FK_PersonalConcepto_Personal" Association="Self.FK_PersonalConcepto_Personal">
-            <End Role="Personal" EntitySet="Personal" />
-            <End Role="PersonalConcepto" EntitySet="PersonalConcepto" />
+            <End Role="Personal" EntitySet="Personales" />
+            <End Role="PersonalConcepto" EntitySet="PersonalesConceptos" />
           </AssociationSet>
           <AssociationSet Name="FK_PersonalNovedades_Personal" Association="Self.FK_PersonalNovedades_Personal">
-            <End Role="Personal" EntitySet="Personal" />
+            <End Role="Personal" EntitySet="Personales" />
             <End Role="PersonalNovedades" EntitySet="PersonalNovedades" />
           </AssociationSet>
           <AssociationSet Name="FK_PersonalConcepto_SucursalAlta" Association="Self.FK_PersonalConcepto_SucursalAlta">
             <End Role="Sucursales" EntitySet="Sucursales" />
-            <End Role="PersonalConcepto" EntitySet="PersonalConcepto" />
+            <End Role="PersonalConcepto" EntitySet="PersonalesConceptos" />
           </AssociationSet>
           <AssociationSet Name="FK_PersonalConcepto_SucursalModificacion" Association="Self.FK_PersonalConcepto_SucursalModificacion">
             <End Role="Sucursales" EntitySet="Sucursales" />
-            <End Role="PersonalConcepto" EntitySet="PersonalConcepto" />
+            <End Role="PersonalConcepto" EntitySet="PersonalesConceptos" />
           </AssociationSet>
           <AssociationSet Name="FK_PersonalNovedades_SucursalAlta" Association="Self.FK_PersonalNovedades_SucursalAlta">
             <End Role="Sucursales" EntitySet="Sucursales" />
@@ -7507,15 +7507,15 @@
           </AssociationSet>
           <AssociationSet Name="FK_ProveedoresBanco_Proveedores" Association="Self.FK_ProveedoresBanco_Proveedores">
             <End Role="Proveedores" EntitySet="Proveedores" />
-            <End Role="ProveedoresBanco" EntitySet="ProveedoresBanco" />
+            <End Role="ProveedoresBanco" EntitySet="ProveedoresBancos" />
           </AssociationSet>
           <AssociationSet Name="FK_ProveedoresBanco_SucursalAlta" Association="Self.FK_ProveedoresBanco_SucursalAlta">
             <End Role="Sucursales" EntitySet="Sucursales" />
-            <End Role="ProveedoresBanco" EntitySet="ProveedoresBanco" />
+            <End Role="ProveedoresBanco" EntitySet="ProveedoresBancos" />
           </AssociationSet>
           <AssociationSet Name="FK_ProveedoresBanco_SucursalModificacion" Association="Self.FK_ProveedoresBanco_SucursalModificacion">
             <End Role="Sucursales" EntitySet="Sucursales" />
-            <End Role="ProveedoresBanco" EntitySet="ProveedoresBanco" />
+            <End Role="ProveedoresBanco" EntitySet="ProveedoresBancos" />
           </AssociationSet>
           <AssociationSet Name="FK_Provincias_SucursalAlta" Association="Self.FK_Provincias_SucursalAlta">
             <End Role="Sucursales" EntitySet="Sucursales" />
@@ -7539,19 +7539,19 @@
           </AssociationSet>
           <AssociationSet Name="FK_RecibosDetalle_Recibo" Association="Self.FK_RecibosDetalle_Recibo">
             <End Role="Recibos" EntitySet="Recibos" />
-            <End Role="RecibosDetalle" EntitySet="RecibosDetalle" />
+            <End Role="RecibosDetalle" EntitySet="RecibosDetalles" />
           </AssociationSet>
           <AssociationSet Name="FK_RecibosDetalle_SucursalAlta" Association="Self.FK_RecibosDetalle_SucursalAlta">
             <End Role="Sucursales" EntitySet="Sucursales" />
-            <End Role="RecibosDetalle" EntitySet="RecibosDetalle" />
+            <End Role="RecibosDetalle" EntitySet="RecibosDetalles" />
           </AssociationSet>
           <AssociationSet Name="FK_RecibosDetalle_SucursalModificacion" Association="Self.FK_RecibosDetalle_SucursalModificacion">
             <End Role="Sucursales" EntitySet="Sucursales" />
-            <End Role="RecibosDetalle" EntitySet="RecibosDetalle" />
+            <End Role="RecibosDetalle" EntitySet="RecibosDetalles" />
           </AssociationSet>
           <AssociationSet Name="FK_RecibosDetalle_TipoRecibo" Association="Self.FK_RecibosDetalle_TipoRecibo">
             <End Role="TiposRecibos" EntitySet="TiposRecibos" />
-            <End Role="RecibosDetalle" EntitySet="RecibosDetalle" />
+            <End Role="RecibosDetalle" EntitySet="RecibosDetalles" />
           </AssociationSet>
           <AssociationSet Name="FK_Sucursales_SucursalAlta" Association="Self.FK_Sucursales_SucursalAlta">
             <End Role="Sucursales" EntitySet="Sucursales" />
@@ -7597,29 +7597,29 @@
             <End Role="Operadores" EntitySet="Operadores" />
             <End Role="Roles" EntitySet="Roles" />
           </AssociationSet>
-          <EntitySet Name="Choferes1" EntityType="GestionAdministrativa.Model.Choferes" />
+          <EntitySet Name="Choferes" EntityType="GestionAdministrativa.Model.Chofer" />
           <AssociationSet Name="FK_Choferes_OperadorAlta" Association="GestionAdministrativa.Model.FK_Choferes_OperadorAlta">
             <End Role="Operadores" EntitySet="Operadores" />
-            <End Role="Chofere" EntitySet="Choferes1" />
+            <End Role="Choferes" EntitySet="Choferes" />
           </AssociationSet>
           <AssociationSet Name="FK_Choferes_OperadorModificacion" Association="GestionAdministrativa.Model.FK_Choferes_OperadorModificacion">
             <End Role="Operadores" EntitySet="Operadores" />
-            <End Role="Chofere" EntitySet="Choferes1" />
+            <End Role="Choferes" EntitySet="Choferes" />
           </AssociationSet>
           <AssociationSet Name="FK_Choferes_SucursalAlta" Association="GestionAdministrativa.Model.FK_Choferes_SucursalAlta">
             <End Role="Sucursales" EntitySet="Sucursales" />
-            <End Role="Chofere" EntitySet="Choferes1" />
+            <End Role="Choferes" EntitySet="Choferes" />
           </AssociationSet>
           <AssociationSet Name="FK_Choferes_SucursalModificacion" Association="GestionAdministrativa.Model.FK_Choferes_SucursalModificacion">
             <End Role="Sucursales" EntitySet="Sucursales" />
-            <End Role="Chofere" EntitySet="Choferes1" />
+            <End Role="Choferes" EntitySet="Choferes" />
           </AssociationSet>
           <AssociationSet Name="FK_ChoferesMontosFavor_Choferes" Association="GestionAdministrativa.Model.FK_ChoferesMontosFavor_Choferes">
-            <End Role="Chofere" EntitySet="Choferes1" />
+            <End Role="Choferes" EntitySet="Choferes" />
             <End Role="ChoferesMontosFavor" EntitySet="ChoferesMontosFavor" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Choferes">
+        <EntityType Name="Chofer">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -7636,65 +7636,65 @@
           <Property Name="FechaAlta" Type="DateTime" Precision="3" />
           <Property Name="FechaModficacion" Type="DateTime" Precision="3" />
           <Property Name="Activo" Type="Boolean" />
-          <NavigationProperty Name="Operadore" Relationship="GestionAdministrativa.Model.FK_Choferes_OperadorAlta" FromRole="Chofere" ToRole="Operadores" />
-          <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_Choferes_OperadorModificacion" FromRole="Chofere" ToRole="Operadores" />
-          <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_Choferes_SucursalAlta" FromRole="Chofere" ToRole="Sucursales" />
-          <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_Choferes_SucursalModificacion" FromRole="Chofere" ToRole="Sucursales" />
-          <NavigationProperty Name="ChoferesMontosFavors" Relationship="GestionAdministrativa.Model.FK_ChoferesMontosFavor_Choferes" FromRole="Chofere" ToRole="ChoferesMontosFavor" />
+          <NavigationProperty Name="Operadores" Relationship="GestionAdministrativa.Model.FK_Choferes_OperadorAlta" FromRole="Choferes" ToRole="Operadores" />
+          <NavigationProperty Name="Operadores1" Relationship="GestionAdministrativa.Model.FK_Choferes_OperadorModificacion" FromRole="Choferes" ToRole="Operadores" />
+          <NavigationProperty Name="Sucursales" Relationship="GestionAdministrativa.Model.FK_Choferes_SucursalAlta" FromRole="Choferes" ToRole="Sucursales" />
+          <NavigationProperty Name="Sucursales1" Relationship="GestionAdministrativa.Model.FK_Choferes_SucursalModificacion" FromRole="Choferes" ToRole="Sucursales" />
+          <NavigationProperty Name="ChoferesMontosFavor" Relationship="GestionAdministrativa.Model.FK_ChoferesMontosFavor_Choferes" FromRole="Choferes" ToRole="ChoferesMontosFavor" />
         </EntityType>
         <Association Name="FK_Choferes_OperadorAlta">
-          <End Type="GestionAdministrativa.Model.Operadores" Role="Operadores" Multiplicity="1" />
-          <End Type="GestionAdministrativa.Model.Choferes" Role="Chofere" Multiplicity="*" />
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operadores" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.Chofer" Role="Choferes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Chofere">
+            <Dependent Role="Choferes">
               <PropertyRef Name="OperadorAltaId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Choferes_OperadorModificacion">
-          <End Type="GestionAdministrativa.Model.Operadores" Role="Operadores" Multiplicity="0..1" />
-          <End Type="GestionAdministrativa.Model.Choferes" Role="Chofere" Multiplicity="*" />
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operadores" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.Chofer" Role="Choferes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Operadores">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Chofere">
+            <Dependent Role="Choferes">
               <PropertyRef Name="OperadorModificacionId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Choferes_SucursalAlta">
-          <End Type="GestionAdministrativa.Model.Sucursales" Role="Sucursales" Multiplicity="1" />
-          <End Type="GestionAdministrativa.Model.Choferes" Role="Chofere" Multiplicity="*" />
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursales" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.Chofer" Role="Choferes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Chofere">
+            <Dependent Role="Choferes">
               <PropertyRef Name="SucursalAltaId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Choferes_SucursalModificacion">
-          <End Type="GestionAdministrativa.Model.Sucursales" Role="Sucursales" Multiplicity="0..1" />
-          <End Type="GestionAdministrativa.Model.Choferes" Role="Chofere" Multiplicity="*" />
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursales" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.Chofer" Role="Choferes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sucursales">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Chofere">
+            <Dependent Role="Choferes">
               <PropertyRef Name="SucursalModificacionId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ChoferesMontosFavor_Choferes">
-          <End Type="GestionAdministrativa.Model.Choferes" Role="Chofere" Multiplicity="1" />
-          <End Type="GestionAdministrativa.Model.ChoferesMontosFavor" Role="ChoferesMontosFavor" Multiplicity="*" />
+          <End Type="GestionAdministrativa.Model.Chofer" Role="Choferes" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.ChoferMontoFavor" Role="ChoferesMontosFavor" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Chofere">
+            <Principal Role="Choferes">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="ChoferesMontosFavor">
@@ -7709,7 +7709,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="GestionAdministrativaModelStoreContainer" CdmEntityContainer="GestionAdministrativaDbContext">
           <EntitySetMapping Name="Bancos">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Bancos">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Banco">
               <MappingFragment StoreEntitySet="Bancos">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -7730,7 +7730,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Cajas">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Cajas">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Caja">
               <MappingFragment StoreEntitySet="Cajas">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="SucursalId" ColumnName="SucursalId" />
@@ -7754,7 +7754,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CajasMovimientos">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.CajasMovimientos">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.CajaMovimiento">
               <MappingFragment StoreEntitySet="CajasMovimientos">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CajaId" ColumnName="CajaId" />
@@ -7787,7 +7787,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CategoriasOperadores">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.CategoriasOperadores">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.CategoriaOperador">
               <MappingFragment StoreEntitySet="CategoriasOperadores">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -7804,7 +7804,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Celulares">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Celulares">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Celular">
               <MappingFragment StoreEntitySet="Celulares">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TipoCelularId" ColumnName="TipoCelularId" />
@@ -7828,7 +7828,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CelularesMovimiento">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.CelularesMovimiento">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.CelularMovimiento">
               <MappingFragment StoreEntitySet="CelularesMovimiento">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CelularId" ColumnName="CelularId" />
@@ -7848,7 +7848,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CentrosCostos">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.CentrosCostos">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.CentroCosto">
               <MappingFragment StoreEntitySet="CentrosCostos">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -7865,7 +7865,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ChoferesMontosFavor">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.ChoferesMontosFavor">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.ChoferMontoFavor">
               <MappingFragment StoreEntitySet="ChoferesMontosFavor">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ChoferId" ColumnName="ChoferId" />
@@ -7887,7 +7887,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Conceptos">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Conceptos">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Concepto">
               <MappingFragment StoreEntitySet="Conceptos">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -7903,7 +7903,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CondicionesCompra">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.CondicionesCompra">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.CondicionCompra">
               <MappingFragment StoreEntitySet="CondicionesCompra">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -7920,7 +7920,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Dias">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Dias">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Dia">
               <MappingFragment StoreEntitySet="Dias">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -7928,7 +7928,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Funciones">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Funciones">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Funcion">
               <MappingFragment StoreEntitySet="Funciones">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -7945,7 +7945,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="GruposProveedores">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.GruposProveedores">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.GrupoProveedor">
               <MappingFragment StoreEntitySet="GruposProveedores">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -7961,7 +7961,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Localidades">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Localidades">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Localidad">
               <MappingFragment StoreEntitySet="Localidades">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -7977,7 +7977,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Moviles">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Moviles">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Movil">
               <MappingFragment StoreEntitySet="Moviles">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Numero" ColumnName="Numero" />
@@ -7992,7 +7992,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Operadores">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Operadores">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Operador">
               <MappingFragment StoreEntitySet="Operadores">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Usuario" ColumnName="Usuario" />
@@ -8011,7 +8011,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OperadoresFunciones">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.OperadoresFunciones">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.OperadorFuncion">
               <MappingFragment StoreEntitySet="OperadoresFunciones">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="OperadorId" ColumnName="OperadorId" />
@@ -8027,7 +8027,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OperadoresSucursales">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.OperadoresSucursales">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.OperadorSucursal">
               <MappingFragment StoreEntitySet="OperadoresSucursales">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="OperadorId" ColumnName="OperadorId" />
@@ -8043,7 +8043,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrdenesPago">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.OrdenesPago">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.OrdenPago">
               <MappingFragment StoreEntitySet="OrdenesPago">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="SucursalId" ColumnName="SucursalId" />
@@ -8075,7 +8075,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrdenesPagoDetalle">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.OrdenesPagoDetalle">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.OrdenPagoDetalle">
               <MappingFragment StoreEntitySet="OrdenesPagoDetalle">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="OrdenPagoId" ColumnName="OrdenPagoId" />
@@ -8102,7 +8102,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PagosCelular">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.PagosCelular">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.PagoCelular">
               <MappingFragment StoreEntitySet="PagosCelular">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Desde" ColumnName="Desde" />
@@ -8122,7 +8122,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Paises">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Paises">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Pais">
               <MappingFragment StoreEntitySet="Paises">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -8132,7 +8132,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Personal">
+          <EntitySetMapping Name="Personales">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.Personal">
               <MappingFragment StoreEntitySet="Personal">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -8161,7 +8161,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PersonalConcepto">
+          <EntitySetMapping Name="PersonalesConceptos">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.PersonalConcepto">
               <MappingFragment StoreEntitySet="PersonalConcepto">
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -8179,7 +8179,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PersonalNovedades">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.PersonalNovedades">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.PersonalNovedad">
               <MappingFragment StoreEntitySet="PersonalNovedades">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="PersonalId" ColumnName="PersonalId" />
@@ -8201,7 +8201,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Proveedores">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Proveedores">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Proveedor">
               <MappingFragment StoreEntitySet="Proveedores">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
@@ -8237,8 +8237,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ProveedoresBanco">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.ProveedoresBanco">
+          <EntitySetMapping Name="ProveedoresBancos">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.ProveedorBanco">
               <MappingFragment StoreEntitySet="ProveedoresBanco">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
@@ -8257,7 +8257,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Provincias">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Provincias">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Provincia">
               <MappingFragment StoreEntitySet="Provincias">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -8273,7 +8273,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Recibos">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Recibos">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Recibo">
               <MappingFragment StoreEntitySet="Recibos">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
@@ -8292,8 +8292,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="RecibosDetalle">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.RecibosDetalle">
+          <EntitySetMapping Name="RecibosDetalles">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.ReciboDetalle">
               <MappingFragment StoreEntitySet="RecibosDetalle">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ReciboId" ColumnName="ReciboId" />
@@ -8310,7 +8310,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Roles">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Roles">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Rol">
               <MappingFragment StoreEntitySet="Roles">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
@@ -8318,7 +8318,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Sucursales">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Sucursales">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Sucursal">
               <MappingFragment StoreEntitySet="Sucursales">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -8344,7 +8344,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TiposCelulares">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.TiposCelulares">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.TipoCelular">
               <MappingFragment StoreEntitySet="TiposCelulares">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
@@ -8359,7 +8359,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TiposComprobantes">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.TiposComprobantes">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.TipoComprobante">
               <MappingFragment StoreEntitySet="TiposComprobantes">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -8378,7 +8378,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TiposDocumentosIdentidad">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.TiposDocumentosIdentidad">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.TipoDocumentosIdentidad">
               <MappingFragment StoreEntitySet="TiposDocumentosIdentidad">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -8390,7 +8390,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TiposGastos">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.TiposGastos">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.TipoGasto">
               <MappingFragment StoreEntitySet="TiposGastos">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -8407,7 +8407,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TiposMovimientosCajas">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.TiposMovimientosCajas">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.TipoMovimientoCaja">
               <MappingFragment StoreEntitySet="TiposMovimientosCajas">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -8424,7 +8424,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TiposRecibos">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.TiposRecibos">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.TipoRecibo">
               <MappingFragment StoreEntitySet="TiposRecibos">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -8439,8 +8439,8 @@
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
-          <EntitySetMapping Name="Choferes1">
-            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Choferes">
+          <EntitySetMapping Name="Choferes">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Chofer">
               <MappingFragment StoreEntitySet="Choferes">
                 <ScalarProperty Name="Activo" ColumnName="Activo" />
                 <ScalarProperty Name="FechaModficacion" ColumnName="FechaModficacion" />
@@ -8472,7 +8472,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

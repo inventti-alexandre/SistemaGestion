@@ -16,9 +16,9 @@ namespace GestionAdministrativa.Entities
     {
         public Personal()
         {
-            this.Operadores = new HashSet<Operadores>();
+            this.Operadores = new HashSet<Operador>();
             this.PersonalConcepto = new HashSet<PersonalConcepto>();
-            this.PersonalNovedades = new HashSet<PersonalNovedades>();
+            this.PersonalNovedades = new HashSet<PersonalNovedad>();
         }
     
         public System.Guid Id { get; set; }
@@ -45,15 +45,15 @@ namespace GestionAdministrativa.Entities
         public Nullable<int> SucursalAltaId { get; set; }
         public Nullable<int> SucursalModificacionId { get; set; }
     
-        public virtual CategoriasOperadores CategoriasOperadores { get; set; }
-        public virtual Localidades Localidades { get; set; }
-        public virtual ICollection<Operadores> Operadores { get; set; }
-        public virtual Operadores Operadores1 { get; set; }
-        public virtual Operadores Operadores2 { get; set; }
-        public virtual Provincias Provincias { get; set; }
-        public virtual Sucursales Sucursales { get; set; }
-        public virtual Sucursales Sucursales1 { get; set; }
+        public virtual CategoriaOperador CategoriasOperadores { get; set; }
+        public virtual Localidad Localidades { get; set; }
+        public virtual ICollection<Operador> Operadores { get; set; }
+        public virtual Operador Operadores1 { get; set; }
+        public virtual Operador Operadores2 { get; set; }
+        public virtual Provincia Provincias { get; set; }
+        public virtual Sucursal Sucursales { get; set; }
+        public virtual Sucursal Sucursales1 { get; set; }
         public virtual ICollection<PersonalConcepto> PersonalConcepto { get; set; }
-        public virtual ICollection<PersonalNovedades> PersonalNovedades { get; set; }
+        public virtual ICollection<PersonalNovedad> PersonalNovedades { get; set; }
     }
 }

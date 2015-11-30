@@ -280,6 +280,10 @@
       <Project>{d61a7021-e8f7-4a80-bc7a-b6384a142607}</Project>
       <Name>GestionAdministrativa.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GestionAdministrativa.Entities\GestionAdministrativa.Entities.csproj">
+      <Project>{10481cdb-87d9-4d21-8e05-cafe2e530356}</Project>
+      <Name>GestionAdministrativa.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GestionAdministrativa.Security\GestionAdministrativa.Security.csproj">
       <Project>{336cb85a-bbbb-47d4-911d-14968b3a1924}</Project>
       <Name>GestionAdministrativa.Security</Name>
