@@ -6,7 +6,7 @@ namespace GestionAdministrativa.Data.Interfaces
     public interface IGestionAdministrativaUow : IUow
     {
         IRepository<Cajas> Cajas { get; }
-        //IRepository<CondicionesIVA> CondicionesIVAs { get; }
+        IRepository<Choferes> Choferes { get; }
         //IRepository<CondicionesVenta> CondicionesVentas { get; }
         //IRepository<Especialidad> Especialidades { get; }
         //IRepository<EstadosCliente> EstadosClientes { get; }

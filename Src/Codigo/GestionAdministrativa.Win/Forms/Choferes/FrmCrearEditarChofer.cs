@@ -11,12 +11,16 @@ using Framework.Common.Utility;
 using GestionAdministrativa.Data.Interfaces;
 using GestionAdministrativa.Win.Enums;
 
+
 namespace GestionAdministrativa.Win.Forms.Choferes
 {
     public partial class FrmCrearEditarChofer : EditFormBase
     {
+        private readonly ActionFormMode _formMode;
+
         public FrmCrearEditarChofer(IGestionAdministrativaUow uow, IClock clock, Guid id, ActionFormMode mode)
         {
+            _formMode = mode;
             InitializeComponent();
         }
 
@@ -56,6 +60,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             set { TxtEmail.Text = value; }
         }
 
+     
         //public string Activo
         //{
         //    get { return TxtEmail.Text; }
@@ -63,7 +68,34 @@ namespace GestionAdministrativa.Win.Forms.Choferes
         //}
 #endregion
 
+        #region Controles
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            CrearEditar();
+        }
 
+        private void CrearEditar()
+        {
+            var esValido = this.ValidarForm();
+
+            if (!esValido)
+                this.DialogResult = DialogResult.None;
+            else
+            {
+                var entity = ObtenerEntityDesdeForm();
+                //if (_formMode == ActionFormMode.Create)
+                //    Uow.Choferes.Agregar(entity);
+                //else
+                //    Uow.Choferes.Modificar(entity);
+            }
+        }
+
+        private object ObtenerEntityDesdeForm()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 
 }

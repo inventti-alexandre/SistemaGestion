@@ -19,7 +19,9 @@ namespace GestionAdministrativa.Data
         }
 
         public IRepository<Cajas> Cajas { get { return GetStandardRepo<Cajas>(); } }
+        public IRepository<Choferes> Choferes { get { return GetStandardRepo<Choferes>(); } }
         public IReporteRepository Reportes { get; private set; }
+       
         //public IRepository<CondicionesIVA> CondicionesIVAs { get { return GetStandardRepo<CondicionesIVA>(); } }
         //public IRepository<CondicionesVenta> CondicionesVentas { get { return GetStandardRepo<CondicionesVenta>(); } }
         //public IRepository<Especialidad> Especialidades { get { return GetStandardRepo<Especialidad>(); } }

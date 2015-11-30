@@ -106,7 +106,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.WinControls, Version=2011.1.11.315, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Pragma\Alejandria\Lib\Telerik\Telerik.WinControls.dll</HintPath>
+      <HintPath>..\..\..\..\..\Libreria\Codigo\LaPaz\Controles\Telerik\Telerik.WinControls.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.GridView, Version=2011.1.11.315, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -114,11 +114,7 @@
     </Reference>
     <Reference Include="Telerik.WinControls.Themes.TelerikMetro, Version=2012.2.912.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Pragma\Libreria\Codigo\LaPaz\Controles\Telerik\Telerik.WinControls.Themes.TelerikMetro.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.TelerikMetroBlue, Version=2012.2.912.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Pragma\Alejandria\Lib\Telerik\Telerik.WinControls.Themes.TelerikMetroBlue.dll</HintPath>
+      <HintPath>..\..\..\..\..\Libreria\Codigo\LaPaz\Controles\Telerik\Telerik.WinControls.Themes.TelerikMetro.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.UI, Version=2011.1.11.315, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -130,7 +126,7 @@
     </Reference>
     <Reference Include="TelerikCommon, Version=2011.1.11.315, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Pragma\Alejandria\Lib\Telerik\TelerikCommon.dll</HintPath>
+      <HintPath>..\..\..\..\..\Libreria\Codigo\LaPaz\Controles\Telerik\TelerikCommon.dll</HintPath>
     </Reference>
     <Reference Include="TelerikData, Version=2011.1.11.315, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
