@@ -8,7 +8,9 @@ using System.Windows.Forms;
 using GestionAdministrativa.Data;
 using GestionAdministrativa.Data.Interfaces;
 using GestionAdministrativa.Win;
+using GestionAdministrativa.Win.Enums;
 using GestionAdministrativa.Win.Forms;
+using GestionAdministrativa.Win.Forms.Moviles;
 using Telerik.WinControls;
 
 namespace GestionAdministrativa.Win.Forms
@@ -22,6 +24,14 @@ namespace GestionAdministrativa.Win.Forms
             Uow = uow;
            // UowFactory = uowFactory;
             InitializeComponent();
+        }
+
+       
+
+        private void radButton1_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmCrearEditarMovil>(Guid.Empty, ActionFormMode.Create);
+            frm.ShowDialog();
         }
 
        
