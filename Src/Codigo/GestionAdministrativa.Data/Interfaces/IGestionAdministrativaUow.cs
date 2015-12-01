@@ -1,21 +1,22 @@
-﻿using Framework.Data.Repository;
+﻿using System;
+using Framework.Data.Repository;
 using GestionAdministrativa.Entities;
 
 
 namespace GestionAdministrativa.Data.Interfaces
 {
-    public interface IGestionAdministrativaUow : IUow
+    public interface IGestionAdministrativaUow : IDisposable
     {
         IRepository<Caja> Cajas { get; }
         IRepository<Chofer> Choferes { get; }
         IRepository<Operador> Operadores { get; }
         IRepository<Movil> Moviles { get; }
       
-        IReporteRepository Reportes { get; }
+       // IReporteRepository Reportes { get; }
         IRepository<Sucursal> Sucursales { get; }
 
 
-        GestionAdministrativaDbContext DbContext { get; }
+       // GestionAdministrativaDbContext DbContext { get; }
         bool IsDisposed { get; }
 
         void Commit();

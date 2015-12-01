@@ -92,16 +92,17 @@ namespace GestionAdministrativa.Win
             using (var uow = Ioc.Container.Get<IGestionAdministrativaUow>())
             {
                 var defaultUserId = Guid.Parse("4FB4CAF7-9FD7-4A39-BF85-B60F14C2E7AB");
-                var defaultSucursalId = 2;
+                var defaultSucursalId = 1;
 
                 //Validate credentials through the authentication service
-                Operador user = uow.Operadores.Obtener(o => o.Id == defaultUserId, o => o.Roles,
-                                                            o => o.Personal
+                Operador user = uow.Operadores.Obtener(o => o.Id == defaultUserId
+                                                        //, o => o.Roles,
+                                                          //  o => o.Personal
                                                           //  ,o => o.Personal.Provincia,
                                                             //o => o.Personal.Localidad,
                                                          //   o => o.OperadorSucursals.Select(op => op.Sucursal)
                                                          );
-
+            
                 Sucursal sucursal = uow.Sucursales.Obtener(s => s.Id == defaultSucursalId);
 
                 //Get the current principal object
