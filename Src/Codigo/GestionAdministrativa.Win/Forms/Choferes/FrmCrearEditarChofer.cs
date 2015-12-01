@@ -27,9 +27,24 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             _formMode = mode;
             _clock = clock;
             InitializeComponent();
+            InicializarForm(mode);
         }
 
-    #region Propiedades
+        private void InicializarForm(ActionFormMode mode)
+        {
+            switch (mode)
+            {
+                case ActionFormMode.Create:
+                    this.Text = "Nuevo chofer";
+                    break;
+                case ActionFormMode.Edit:
+                    this.Text = "Editar chofer";
+                    break;
+            }
+        }
+
+
+        #region Propiedades
 
         public int DNI
         {
@@ -73,13 +88,18 @@ namespace GestionAdministrativa.Win.Forms.Choferes
         //}
 #endregion
 
+        #region Eventos
+        public event EventHandler<Chofer> EntityAgregada;
+        #endregion
 
         #region Controles
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             CrearEditar();
         }
+        #endregion
 
+        #region Métodos
         private void CrearEditar()
         {
             var esValido = this.ValidarForm();
@@ -93,6 +113,13 @@ namespace GestionAdministrativa.Win.Forms.Choferes
                     Uow.Choferes.Agregar(entity);
                 else
                     Uow.Choferes.Modificar(entity);
+
+                Uow.Commit();
+
+                if (_formMode == ActionFormMode.Create)
+                {
+                    OnEntityAgregada(entity);
+                }
             }
         }
 
@@ -112,6 +139,27 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             return _chofer;
         }
 
+        private void OnEntityAgregada(Chofer entity)
+        {
+            if (EntityAgregada != null)
+            {
+                EntityAgregada(this, entity);
+            }
+        }
+
+        protected override object ObtenerEntidad()
+        {
+            return ObtenerEntityDesdeForm();
+        }
+
+        protected override void ValidarControles()
+        {
+            this.ValidarControl(TxtDni, "Dni");
+            this.ValidarControl(TxtApellido, "Apellido");
+            this.ValidarControl(TxtNombre, "Nombre");
+            this.ValidarControl(TxtEmail, "Mail");
+            this.ValidarControl(TxtTelefono, "Telefono");
+        }
         #endregion
     }
 

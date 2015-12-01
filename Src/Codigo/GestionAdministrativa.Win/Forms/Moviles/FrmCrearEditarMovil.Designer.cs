@@ -72,7 +72,6 @@
             this.DtpFechaAlta.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DtpFechaAlta.MinDate = new System.DateTime(((long)(0)));
             this.DtpFechaAlta.Name = "DtpFechaAlta";
-            this.DtpFechaAlta.NullableValue = new System.DateTime(2015, 11, 26, 11, 0, 42, 156);
             this.DtpFechaAlta.NullDate = new System.DateTime(((long)(0)));
             this.DtpFechaAlta.Size = new System.Drawing.Size(318, 24);
             this.DtpFechaAlta.TabIndex = 4;
