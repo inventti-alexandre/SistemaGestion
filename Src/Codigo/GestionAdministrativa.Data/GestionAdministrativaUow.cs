@@ -21,8 +21,10 @@ namespace GestionAdministrativa.Data
 
         public IRepository<Caja> Cajas { get { return GetStandardRepo<Caja>(); } }
         public IRepository<Chofer> Choferes { get { return GetStandardRepo<Chofer>(); } }
+        public IRepository<Operador> Operadores { get; private set; }
         public IRepository<Movil> Moviles { get { return GetStandardRepo<Movil>(); } }
         public IReporteRepository Reportes { get; private set; }
+        public IRepository<Sucursal> Sucursales { get; private set; }
 
         public string ConnectionString
         {

@@ -8,10 +8,11 @@ namespace GestionAdministrativa.Data.Interfaces
     {
         IRepository<Caja> Cajas { get; }
         IRepository<Chofer> Choferes { get; }
+        IRepository<Operador> Operadores { get; }
         IRepository<Movil> Moviles { get; }
       
         IReporteRepository Reportes { get; }
-
+        IRepository<Sucursal> Sucursales { get; }
 
 
         GestionAdministrativaDbContext DbContext { get; }

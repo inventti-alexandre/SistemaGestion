@@ -4,8 +4,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Framework.Common.Tasks;
 using Framework.Ioc;
 using Framework.WinForm.Comun.Notification;
+using GestionAdministrativa.Data.Interfaces;
+using GestionAdministrativa.Entities;
 using GestionAdministrativa.Security;
 using GestionAdministrativa.Win.Forms;
 using Ninject;
@@ -66,9 +69,48 @@ namespace GestionAdministrativa.Win
                             //    }
                             //}
             #endif
+                RunAfterLoginTasks();
                 var mainForm = kernel.Get<FrmPrincipal>();
 
                 Application.Run(mainForm);
+            }
+        }
+
+        private static void RunAfterLoginTasks()
+        {
+            if (Thread.CurrentPrincipal.Identity.IsAuthenticated)
+            {
+                foreach (var task in Ioc.Container.GetAll<IRunAfterLogin>())
+                {
+                    task.Execute();
+                }
+            }
+        }
+
+        private static void MockUser()
+        {
+            using (var uow = Ioc.Container.Get<IGestionAdministrativaUow>())
+            {
+                var defaultUserId = Guid.Parse("4FB4CAF7-9FD7-4A39-BF85-B60F14C2E7AB");
+                var defaultSucursalId = 2;
+
+                //Validate credentials through the authentication service
+                Operador user = uow.Operadores.Obtener(o => o.Id == defaultUserId, o => o.Roles,
+                                                            o => o.Personal
+                                                          //  ,o => o.Personal.Provincia,
+                                                            //o => o.Personal.Localidad,
+                                                         //   o => o.OperadorSucursals.Select(op => op.Sucursal)
+                                                         );
+
+                Sucursal sucursal = uow.Sucursales.Obtener(s => s.Id == defaultSucursalId);
+
+                //Get the current principal object
+                GestionAdministrativaPrincipal gestionAdministrativaPrincipal = Thread.CurrentPrincipal as GestionAdministrativaPrincipal;
+                if (gestionAdministrativaPrincipal == null)
+                    throw new ArgumentException("The application's default thread principal must be set to a CustomPrincipal object on startup.");
+
+                //Authenticate the user
+                gestionAdministrativaPrincipal.Identity = new GestionAdministrativaIdentity(user, sucursal);
             }
         }
 
