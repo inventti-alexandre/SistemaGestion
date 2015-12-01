@@ -12,11 +12,11 @@ namespace GestionAdministrativa.Data.Interfaces
         IRepository<Operador> Operadores { get; }
         IRepository<Movil> Moviles { get; }
       
-       // IReporteRepository Reportes { get; }
+        IReporteRepository Reportes { get; }
         IRepository<Sucursal> Sucursales { get; }
 
 
-       // GestionAdministrativaDbContext DbContext { get; }
+        GestionAdministrativaDbContext DbContext { get; }
         bool IsDisposed { get; }
 
         void Commit();

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Framework.Ioc;
 using GestionAdministrativa.Data.Interfaces;
+using GestionAdministrativa.Security;
 using GestionAdministrativa.Win;
 using Ninject;
 using Ninject.Activation;
@@ -26,7 +27,7 @@ namespace GestionAdministrativa.Win.Forms
 
             this.metroTheme = new Telerik.WinControls.Themes.TelerikMetroTheme();
 
-            //SetAppContext();
+            SetAppContext();
         }
 
         public ErrorProvider UserControlErrorProvider { get; set; }
@@ -35,7 +36,7 @@ namespace GestionAdministrativa.Win.Forms
 
         protected IFormFactory FormFactory { get; set; }
 
-      // protected ILaPazContext Context { get; private set; }
+       protected IGestionAdministrativaContext Context { get; private set; }
 
         protected override void Dispose(bool disposing)
         {
@@ -57,12 +58,12 @@ namespace GestionAdministrativa.Win.Forms
             }
         }
 
-        //private void SetAppContext()
-        //{
-        //    if (Ioc.Container != null)
-        //    {
-        //        Context = Ioc.Container.Get<IGestionAdministrativaContext>();
-        //    }
-        //}
+        private void SetAppContext()
+        {
+            if (Ioc.Container != null)
+            {
+                Context = Ioc.Container.Get<IGestionAdministrativaContext>();
+            }
+        }
     }
 }

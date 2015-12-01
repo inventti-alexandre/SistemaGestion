@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Framework.Common.Attributes;
 using Framework.Ioc;
 using GestionAdministrativa.Data.Interfaces;
+using GestionAdministrativa.Entities;
 using GestionAdministrativa.Security;
 using GestionAdministrativa.Win;
 using GestionAdministrativa.Win.Helpers;
@@ -42,7 +43,7 @@ namespace GestionAdministrativa.Win.Forms
 
         private void SetDefaultProperties()
         {
-            this.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new Font("Aaargh", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             this.StartPosition = FormStartPosition.CenterParent;
             //this.Icon = Resources.LogoLaPaz;
         }
@@ -123,14 +124,14 @@ namespace GestionAdministrativa.Win.Forms
 
         protected IGestionAdministrativaContext Context { get; private set; }
 
-        //protected Operador ObtenerOperadorAdministrador()
-        //{
-        //    if (!EsOperadorAdmin)
-        //    {
-        //        return RequerirAdministrador();
-        //    }
-        //    return this.Context.OperadorActual;
-        //}
+        protected Operador ObtenerOperadorAdministrador()
+        {
+            if (!EsOperadorAdmin)
+            {
+                //return RequerirAdministrador();
+            }
+            return this.Context.OperadorActual;
+        }
 
         protected bool EsOperadorAdmin
         {
@@ -180,7 +181,7 @@ namespace GestionAdministrativa.Win.Forms
         }
 
         //private Operador RequerirAdministrador()
-        //{
+       // {
         //    using (var login = FormFactory.Create<FrmLogin>())
         //    {
         //        login.RolesAceptados = new List<string>() { RolesNames.Admin, RolesNames.SuperAdmin };
@@ -192,7 +193,7 @@ namespace GestionAdministrativa.Win.Forms
         //        else
         //        {
         //            //Cancelado.
-        //            return null;
+                    //return null;
         //        }    
         //    }
         //}

@@ -172,6 +172,7 @@
     <Compile Include="Forms\UserControlBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Helpers\FormRegistry.cs" />
     <Compile Include="Helpers\IFormRegistry.cs" />
     <Compile Include="IFormFactory.cs" />
     <Compile Include="Program.cs" />

@@ -11,8 +11,9 @@ namespace GestionAdministrativa.Security
     {
         Operador OperadorActual { get; }
         Sucursal SucursalActual { get; }
-        //Caja CajaActual { get; }
+        Caja CajaActual { get; }
         bool IsInRole(string roles);
+        bool EsOperadorAdmin { get; }
         //bool EsOpedatorAdmin { get; }
     }
 }

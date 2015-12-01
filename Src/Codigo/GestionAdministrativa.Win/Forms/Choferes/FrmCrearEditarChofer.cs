@@ -19,12 +19,14 @@ namespace GestionAdministrativa.Win.Forms.Choferes
     {
         private readonly ActionFormMode _formMode;
         private Chofer _chofer;
+        private Guid _choferid;
         private readonly IClock _clock;
 
         public FrmCrearEditarChofer(IGestionAdministrativaUow uow, IClock clock, Guid id, ActionFormMode mode)
         {
             Uow = uow;
             _formMode = mode;
+            _choferid = id;
             _clock = clock;
             InitializeComponent();
             InicializarForm(mode);
@@ -43,10 +45,16 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             }
         }
 
+        private void FrmCrearEditarChofer_Load(object sender, EventArgs e)
+        {
+            CargarEntidad(_choferid);
+        }
+
+      
 
         #region Propiedades
 
-        public int DNI
+        public int? DNI
         {
             get
             {
@@ -100,6 +108,26 @@ namespace GestionAdministrativa.Win.Forms.Choferes
         #endregion
 
         #region Métodos
+        private void CargarEntidad(Guid choferid)
+        {
+            if (choferid == default(Guid))
+            {
+                _chofer = new Chofer();
+                return;
+            }
+            else
+            {
+                _chofer = Uow.Choferes.Obtener(c => c.Id == choferid);
+            }
+
+            this.DNI = _chofer.Dni;
+            this.Apellido = _chofer.Apellido;
+            this.Nombre = _chofer.Nombre;
+            this.Telefono = _chofer.Telefono;
+            this.Email = _chofer.Email;
+          
+        }
+
         private void CrearEditar()
         {
             var esValido = this.ValidarForm();
@@ -157,10 +185,10 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             this.ValidarControl(TxtDni, "Dni");
             this.ValidarControl(TxtApellido, "Apellido");
             this.ValidarControl(TxtNombre, "Nombre");
-            this.ValidarControl(TxtEmail, "Mail");
-            this.ValidarControl(TxtTelefono, "Telefono");
         }
         #endregion
+
+       
     }
 
 }

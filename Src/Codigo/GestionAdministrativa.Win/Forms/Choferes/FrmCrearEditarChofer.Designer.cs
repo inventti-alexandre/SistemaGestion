@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.TxtDni = new Telerik.WinControls.UI.RadTextBox();
             this.TxtApellido = new Telerik.WinControls.UI.RadTextBox();
@@ -40,6 +41,7 @@
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.CkActivo = new Telerik.WinControls.UI.RadCheckBox();
             this.BtnGuardar = new Telerik.WinControls.UI.RadButton();
+            this.EpvChofer = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDni)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtApellido)).BeginInit();
@@ -52,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CkActivo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnGuardar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EpvChofer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,18 +72,19 @@
             this.TxtDni.Font = new System.Drawing.Font("Aaargh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtDni.Location = new System.Drawing.Point(131, 32);
             this.TxtDni.Name = "TxtDni";
-            this.TxtDni.Size = new System.Drawing.Size(291, 27);
+            this.TxtDni.Size = new System.Drawing.Size(291, 25);
             this.TxtDni.TabIndex = 1;
             this.TxtDni.TabStop = false;
             this.TxtDni.ThemeName = "TelerikMetro";
             // 
             // TxtApellido
             // 
+            this.TxtApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtApellido.Font = new System.Drawing.Font("Aaargh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtApellido.Location = new System.Drawing.Point(131, 76);
             this.TxtApellido.Name = "TxtApellido";
-            this.TxtApellido.Size = new System.Drawing.Size(291, 27);
-            this.TxtApellido.TabIndex = 3;
+            this.TxtApellido.Size = new System.Drawing.Size(291, 25);
+            this.TxtApellido.TabIndex = 2;
             this.TxtApellido.TabStop = false;
             this.TxtApellido.ThemeName = "TelerikMetro";
             // 
@@ -95,10 +99,11 @@
             // 
             // TxtNombre
             // 
+            this.TxtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtNombre.Font = new System.Drawing.Font("Aaargh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNombre.Location = new System.Drawing.Point(131, 122);
             this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(291, 27);
+            this.TxtNombre.Size = new System.Drawing.Size(291, 25);
             this.TxtNombre.TabIndex = 3;
             this.TxtNombre.TabStop = false;
             this.TxtNombre.ThemeName = "TelerikMetro";
@@ -117,8 +122,8 @@
             this.TxtTelefono.Font = new System.Drawing.Font("Aaargh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtTelefono.Location = new System.Drawing.Point(131, 161);
             this.TxtTelefono.Name = "TxtTelefono";
-            this.TxtTelefono.Size = new System.Drawing.Size(291, 27);
-            this.TxtTelefono.TabIndex = 3;
+            this.TxtTelefono.Size = new System.Drawing.Size(291, 25);
+            this.TxtTelefono.TabIndex = 4;
             this.TxtTelefono.TabStop = false;
             this.TxtTelefono.ThemeName = "TelerikMetro";
             // 
@@ -136,8 +141,8 @@
             this.TxtEmail.Font = new System.Drawing.Font("Aaargh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtEmail.Location = new System.Drawing.Point(131, 201);
             this.TxtEmail.Name = "TxtEmail";
-            this.TxtEmail.Size = new System.Drawing.Size(291, 27);
-            this.TxtEmail.TabIndex = 3;
+            this.TxtEmail.Size = new System.Drawing.Size(291, 25);
+            this.TxtEmail.TabIndex = 5;
             this.TxtEmail.TabStop = false;
             this.TxtEmail.ThemeName = "TelerikMetro";
             // 
@@ -156,7 +161,7 @@
             this.CkActivo.Location = new System.Drawing.Point(353, 243);
             this.CkActivo.Name = "CkActivo";
             this.CkActivo.Size = new System.Drawing.Size(69, 24);
-            this.CkActivo.TabIndex = 4;
+            this.CkActivo.TabIndex = 6;
             this.CkActivo.Text = "Activo";
             this.CkActivo.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
             // 
@@ -166,10 +171,14 @@
             this.BtnGuardar.Location = new System.Drawing.Point(290, 291);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(132, 41);
-            this.BtnGuardar.TabIndex = 5;
+            this.BtnGuardar.TabIndex = 7;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.ThemeName = "TelerikMetro";
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
+            // EpvChofer
+            // 
+            this.EpvChofer.ContainerControl = this;
             // 
             // FrmCrearEditarChofer
             // 
@@ -195,6 +204,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Chofer";
+            this.Load += new System.EventHandler(this.FrmCrearEditarChofer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDni)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtApellido)).EndInit();
@@ -207,6 +217,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CkActivo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnGuardar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EpvChofer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -227,5 +238,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel5;
         private Telerik.WinControls.UI.RadCheckBox CkActivo;
         private Telerik.WinControls.UI.RadButton BtnGuardar;
+        private System.Windows.Forms.ErrorProvider EpvChofer;
     }
 }

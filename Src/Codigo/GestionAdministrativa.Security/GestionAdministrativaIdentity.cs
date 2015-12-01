@@ -15,6 +15,7 @@ namespace GestionAdministrativa.Security
             Name = operador.Usuario;
             Email = string.Empty;
             Roles = operador.Roles.Select(r => r.Description).ToArray();
+            Operador = operador;
             Sucursal = sucursal;
         }
 

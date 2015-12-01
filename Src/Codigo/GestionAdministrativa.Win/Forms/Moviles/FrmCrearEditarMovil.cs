@@ -106,12 +106,12 @@ namespace GestionAdministrativa.Win.Forms.Moviles
             _movil.FechaAlta = DtpFechaAlta.Value;
             _movil.Patente = Patente;
             _movil.Numero = Numero;
+            _movil.SucursalAltaId = _actionForm == ActionFormMode.Create
+               ? Context.SucursalActual.Id
+               : _movil.SucursalAltaId;
             _movil.OperadorAltaId = _actionForm == ActionFormMode.Create
                 ? Context.OperadorActual.Id
                 : _movil.OperadorAltaId;
-            _movil.SucursalAltaId = _actionForm==ActionFormMode.Create 
-                ? Context.SucursalActual.Id 
-                : _movil.SucursalAltaId;
             _movil.FechaAlta = _actionForm == ActionFormMode.Create ? _clock.Now : _movil.FechaAlta;
 
             _movil.OperadorModificacionId = Context.OperadorActual.Id;

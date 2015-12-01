@@ -56,7 +56,7 @@ namespace GestionAdministrativa.Security
         }
 
 
-        public bool EsOpedatorAdmin
+        public bool EsOperadorAdmin
         {
             get
             {

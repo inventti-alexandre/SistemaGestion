@@ -23,7 +23,7 @@ namespace GestionAdministrativa.Data
         public IRepository<Chofer> Choferes { get { return GetStandardRepo<Chofer>(); } }
         public IRepository<Operador> Operadores { get { return GetStandardRepo<Operador>(); } }
         public IRepository<Movil> Moviles { get { return GetStandardRepo<Movil>(); } }
-        //public IReporteRepository Reportes { get; private set; }
+        public IReporteRepository Reportes { get; private set; }
         public IRepository<Sucursal> Sucursales { get { return GetStandardRepo<Sucursal>(); } }
 
         public string ConnectionString
