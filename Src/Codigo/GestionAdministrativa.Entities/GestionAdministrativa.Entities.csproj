@@ -94,6 +94,7 @@
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Metadata\ClienteMetadata.cs" />
+    <Compile Include="Metadata\MovilMetadata.cs" />
     <Compile Include="Metadata\VentaMetadata.cs" />
     <Compile Include="Movil.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>

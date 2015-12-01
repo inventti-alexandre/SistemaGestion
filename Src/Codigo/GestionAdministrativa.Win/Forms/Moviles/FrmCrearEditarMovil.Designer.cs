@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TxtNumero = new Telerik.WinControls.UI.RadTextBox();
             this.TxtPatente = new Telerik.WinControls.UI.RadTextBox();
             this.DtpFechaAlta = new Telerik.WinControls.UI.RadDateTimePicker();
@@ -36,12 +37,14 @@
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnAceptar = new System.Windows.Forms.Button();
+            this.EpvMovil = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.TxtNumero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtPatente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DtpFechaAlta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EpvMovil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,6 +75,7 @@
             this.DtpFechaAlta.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DtpFechaAlta.MinDate = new System.DateTime(((long)(0)));
             this.DtpFechaAlta.Name = "DtpFechaAlta";
+            this.DtpFechaAlta.NullableValue = new System.DateTime(2015, 11, 26, 11, 0, 42, 156);
             this.DtpFechaAlta.NullDate = new System.DateTime(((long)(0)));
             this.DtpFechaAlta.Size = new System.Drawing.Size(318, 24);
             this.DtpFechaAlta.TabIndex = 4;
@@ -125,6 +129,10 @@
             this.BtnAceptar.UseVisualStyleBackColor = true;
             this.BtnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
+            // EpvMovil
+            // 
+            this.EpvMovil.ContainerControl = this;
+            // 
             // FrmCrearEditarMovil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -151,6 +159,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EpvMovil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -167,5 +176,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnAceptar;
+        private System.Windows.Forms.ErrorProvider EpvMovil;
     }
 }

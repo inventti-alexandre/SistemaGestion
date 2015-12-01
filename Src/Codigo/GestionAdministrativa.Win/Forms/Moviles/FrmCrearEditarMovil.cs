@@ -72,6 +72,12 @@ namespace GestionAdministrativa.Win.Forms.Moviles
             CrearEditarMovil();
         }
 
+        private void OnEntityAgregada(Movil movil)
+        {
+            if (MovilAgregado != null)
+                MovilAgregado(this, movil);
+        }
+
         private void CrearEditarMovil()
         {
             var esValido = this.ValidarForm();
@@ -81,25 +87,52 @@ namespace GestionAdministrativa.Win.Forms.Moviles
             else
             {
                 var entity = ObtenerEntityDesdeForm();
-            }
-        
-            Uow.Moviles.Agregar(_movil);
-            Uow.Commit();
+                if (_actionForm==ActionFormMode.Create)
+                    Uow.Moviles.Agregar(entity);
+                else
+                    Uow.Moviles.Modificar(entity);
+                Uow.Commit();
+                if (_actionForm == ActionFormMode.Create)
+                {
+                    OnEntityAgregada(entity);
+                }
+            }    
         }
 
-        private object ObtenerEntityDesdeForm()
+        private Movil ObtenerEntityDesdeForm()
         {
-            
+            _movil = new Movil();
             _movil.Id = Guid.NewGuid();
             _movil.FechaAlta = DtpFechaAlta.Value;
             _movil.Patente = Patente;
             _movil.Numero = Numero;
-            _movil.OperadorAltaId = Guid.Empty;
-            _movil.SucursalAltaId = 1;
-            _movil.FechaAlta = DateTime.Now;
+            _movil.OperadorAltaId = _actionForm == ActionFormMode.Create
+                ? Context.OperadorActual.Id
+                : _movil.OperadorAltaId;
+            _movil.SucursalAltaId = _actionForm==ActionFormMode.Create 
+                ? Context.SucursalActual.Id 
+                : _movil.SucursalAltaId;
+            _movil.FechaAlta = _actionForm == ActionFormMode.Create ? _clock.Now : _movil.FechaAlta;
+
+            _movil.OperadorModificacionId = Context.OperadorActual.Id;
+            _movil.SucursalModificacionId = Context.SucursalActual.Id;
+            _movil.FechaModificacion = _actionForm == ActionFormMode.Edit ? _clock.Now : (DateTime?) null;
+
             return _movil;
         }
-    #endregion
+
+        protected override object ObtenerEntidad()
+        {
+            return (ObtenerEntityDesdeForm());
+        }
+
+        protected override void ValidarControles()
+        {
+            this.ValidarControl(TxtPatente,"Patente");
+            this.ValidarControl(TxtNumero,"Numero");
+        }
+
+        #endregion
 
        
        

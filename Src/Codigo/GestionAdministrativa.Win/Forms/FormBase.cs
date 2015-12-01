@@ -9,6 +9,7 @@ using GestionAdministrativa.Data.Interfaces;
 using GestionAdministrativa.Security;
 using GestionAdministrativa.Win;
 using GestionAdministrativa.Win.Helpers;
+using GestionAdministrativa.Win.Properties;
 using Telerik.WinControls.Themes;
 using Telerik.WinControls.UI;
 
@@ -23,14 +24,14 @@ namespace GestionAdministrativa.Win.Forms
             InitializeControls();
             SetTheme();
             SetDefaultProperties();
-          //  SetAppContext();
+            SetAppContext();
         }
 
         private void InitializeControls()
         {
             this.FormErrorProvider = new ErrorProvider(this);
             this.FormErrorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
-            //this.FormErrorProvider.Icon = Icon.FromHandle(Resources.ErrorIcon.GetHicon());
+            this.FormErrorProvider.Icon = Icon.FromHandle(Resources.ErrorIcon.GetHicon());
         }
 
         private void SetTheme()
@@ -46,13 +47,13 @@ namespace GestionAdministrativa.Win.Forms
             //this.Icon = Resources.LogoLaPaz;
         }
 
-        //private void SetAppContext()
-        //{
-        //    if (Ioc.Container != null)
-        //    {
-        //        Context = Ioc.Container.Get<ILaPazContext>();
-        //    }
-        //}
+        private void SetAppContext()
+        {
+            if (Ioc.Container != null)
+            {
+                Context = Ioc.Container.Get<IGestionAdministrativaContext>();
+            }
+        }
 
         protected ErrorProvider FormErrorProvider { get; set; }
 
@@ -131,10 +132,10 @@ namespace GestionAdministrativa.Win.Forms
         //    return this.Context.OperadorActual;
         //}
 
-        //protected bool EsOperadorAdmin
-        //{
-        //    get { return this.Context.IsInRole(RolesNames.Admin) || this.Context.IsInRole(RolesNames.SuperAdmin); }
-        //}
+        protected bool EsOperadorAdmin
+        {
+            get { return this.Context.IsInRole(RolesNames.Admin) || this.Context.IsInRole(RolesNames.SuperAdmin); }
+        }
 
         protected void CloseTab()
         {
