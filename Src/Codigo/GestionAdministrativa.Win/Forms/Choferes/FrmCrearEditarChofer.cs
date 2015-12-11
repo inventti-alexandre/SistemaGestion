@@ -113,6 +113,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             if (choferid == default(Guid))
             {
                 _chofer = new Chofer();
+                _chofer.Id = Guid.NewGuid();
                 return;
             }
             else

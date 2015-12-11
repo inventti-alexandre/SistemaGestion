@@ -148,6 +148,12 @@
     <Compile Include="Forms\Choferes\FrmCrearEditarChofer.Designer.cs">
       <DependentUpon>FrmCrearEditarChofer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Choferes\ucFiltroChoferes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Choferes\ucFiltroChoferes.Designer.cs">
+      <DependentUpon>ucFiltroChoferes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EditFormBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Choferes\FrmCrearEditarChofer.resx">
       <DependentUpon>FrmCrearEditarChofer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Choferes\ucFiltroChoferes.resx">
+      <DependentUpon>ucFiltroChoferes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditFormBase.resx">
       <DependentUpon>EditFormBase.cs</DependentUpon>
