@@ -175,6 +175,12 @@
     <Compile Include="Forms\Moviles\FrmCrearEditarMovil.Designer.cs">
       <DependentUpon>FrmCrearEditarMovil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Moviles\FrmMovilListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Moviles\FrmMovilListado.Designer.cs">
+      <DependentUpon>FrmMovilListado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserControlBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Moviles\FrmCrearEditarMovil.resx">
       <DependentUpon>FrmCrearEditarMovil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Moviles\FrmMovilListado.resx">
+      <DependentUpon>FrmMovilListado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControlBase.resx">
       <DependentUpon>UserControlBase.cs</DependentUpon>

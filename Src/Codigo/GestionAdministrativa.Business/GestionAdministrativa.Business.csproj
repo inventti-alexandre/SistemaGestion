@@ -55,7 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessBase.cs" />
+    <Compile Include="Interfaces\IMovilesNegocio.cs" />
     <Compile Include="Interfaces\IReporteNegocio.cs" />
+    <Compile Include="MovilesNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

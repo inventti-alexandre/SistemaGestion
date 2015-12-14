@@ -76,6 +76,7 @@
     <Compile Include="Dia.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dto\MovilesDto.cs" />
     <Compile Include="Enums\CondicionVentaEnum.cs" />
     <Compile Include="Enums\EstadoCliente.cs" />
     <Compile Include="Funcion.cs">
@@ -180,9 +181,7 @@
       <Name>Framework.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dto\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="GestionAdministrativaModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

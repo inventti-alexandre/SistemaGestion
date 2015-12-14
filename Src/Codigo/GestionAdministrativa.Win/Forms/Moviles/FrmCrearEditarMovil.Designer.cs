@@ -53,7 +53,7 @@
             this.TxtNumero.Font = new System.Drawing.Font("Aaargh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNumero.Location = new System.Drawing.Point(150, 49);
             this.TxtNumero.Name = "TxtNumero";
-            this.TxtNumero.Size = new System.Drawing.Size(292, 25);
+            this.TxtNumero.Size = new System.Drawing.Size(292, 31);
             this.TxtNumero.TabIndex = 2;
             this.TxtNumero.TabStop = false;
             this.TxtNumero.ThemeName = "TelerikMetro";
@@ -63,24 +63,25 @@
             this.TxtPatente.Font = new System.Drawing.Font("Aaargh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtPatente.Location = new System.Drawing.Point(150, 83);
             this.TxtPatente.Name = "TxtPatente";
-            this.TxtPatente.Size = new System.Drawing.Size(292, 25);
+            this.TxtPatente.Size = new System.Drawing.Size(292, 31);
             this.TxtPatente.TabIndex = 3;
             this.TxtPatente.TabStop = false;
             this.TxtPatente.ThemeName = "TelerikMetro";
             // 
             // DtpFechaAlta
             // 
-            this.DtpFechaAlta.Culture = new System.Globalization.CultureInfo("es-AR");
             this.DtpFechaAlta.Font = new System.Drawing.Font("Aaargh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DtpFechaAlta.Location = new System.Drawing.Point(150, 17);
             this.DtpFechaAlta.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DtpFechaAlta.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DtpFechaAlta.Name = "DtpFechaAlta";
+            this.DtpFechaAlta.NullableValue = new System.DateTime(2015, 12, 1, 19, 30, 46, 0);
             this.DtpFechaAlta.NullDate = new System.DateTime(((long)(0)));
-            this.DtpFechaAlta.Size = new System.Drawing.Size(292, 25);
+            this.DtpFechaAlta.Size = new System.Drawing.Size(292, 30);
             this.DtpFechaAlta.TabIndex = 4;
             this.DtpFechaAlta.TabStop = false;
+            this.DtpFechaAlta.Text = "01/12/2015";
             this.DtpFechaAlta.ThemeName = "ControlDefault";
             this.DtpFechaAlta.Value = new System.DateTime(2015, 12, 1, 19, 30, 46, 0);
             // 
@@ -89,7 +90,7 @@
             this.radLabel1.Font = new System.Drawing.Font("Aaargh", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel1.Location = new System.Drawing.Point(24, 17);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(93, 23);
+            this.radLabel1.Size = new System.Drawing.Size(115, 28);
             this.radLabel1.TabIndex = 5;
             this.radLabel1.Text = "Fecha Alta:";
             // 
@@ -98,7 +99,7 @@
             this.radLabel2.Font = new System.Drawing.Font("Aaargh", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel2.Location = new System.Drawing.Point(24, 49);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(72, 23);
+            this.radLabel2.Size = new System.Drawing.Size(89, 28);
             this.radLabel2.TabIndex = 6;
             this.radLabel2.Text = "Numero:";
             // 
@@ -107,13 +108,14 @@
             this.radLabel3.Font = new System.Drawing.Font("Aaargh", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel3.Location = new System.Drawing.Point(25, 83);
             this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(70, 23);
+            this.radLabel3.Size = new System.Drawing.Size(87, 28);
             this.radLabel3.TabIndex = 6;
             this.radLabel3.Text = "Patente:";
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.Location = new System.Drawing.Point(331, 128);
+            this.BtnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnCancelar.Location = new System.Drawing.Point(328, 136);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(114, 41);
             this.BtnCancelar.TabIndex = 7;
@@ -122,7 +124,7 @@
             // 
             // BtnAceptar
             // 
-            this.BtnAceptar.Location = new System.Drawing.Point(216, 128);
+            this.BtnAceptar.Location = new System.Drawing.Point(213, 136);
             this.BtnAceptar.Name = "BtnAceptar";
             this.BtnAceptar.Size = new System.Drawing.Size(109, 41);
             this.BtnAceptar.TabIndex = 8;
@@ -136,9 +138,11 @@
             // 
             // FrmCrearEditarMovil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.BtnAceptar;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 192);
+            this.CancelButton = this.BtnCancelar;
+            this.ClientSize = new System.Drawing.Size(575, 241);
             this.Controls.Add(this.BtnAceptar);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.radLabel2);
@@ -147,6 +151,7 @@
             this.Controls.Add(this.DtpFechaAlta);
             this.Controls.Add(this.TxtPatente);
             this.Controls.Add(this.TxtNumero);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCrearEditarMovil";
             // 
             // 

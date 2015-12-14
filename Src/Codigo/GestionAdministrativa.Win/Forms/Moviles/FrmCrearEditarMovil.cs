@@ -34,15 +34,14 @@ namespace GestionAdministrativa.Win.Forms.Moviles
             private void InicializarForm(ActionFormMode mode)
             {
                 if (_actionForm == ActionFormMode.Create)
-                    this.Text = "Crear Movil";
+                    this.Text = "Crear Móvil";
                 else
-                    this.Text = "Editar Movil";
+                    this.Text = "Editar Móvil";
             }
         #endregion
             #region Events
             public event EventHandler<Movil> MovilAgregado;
             #endregion
-
             #region Properties
 
             public int Numero

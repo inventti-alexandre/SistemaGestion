@@ -41,6 +41,13 @@ namespace GestionAdministrativa.Win.Forms
             frm.ShowDialog();
         }
 
+
+        private void BtnMovilListado_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmMovilListado>();
+            frm.ShowDialog();
+        }
+
        
       
       

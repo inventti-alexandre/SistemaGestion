@@ -30,8 +30,12 @@
         {
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.BtnChofer = new Telerik.WinControls.UI.RadButton();
+            this.radButton2 = new Telerik.WinControls.UI.RadButton();
+            this.BtnMovilListado = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnChofer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnMovilListado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,13 +57,33 @@
             this.BtnChofer.Text = "Chofer";
             this.BtnChofer.Click += new System.EventHandler(this.BtnChofer_Click);
             // 
+            // radButton2
+            // 
+            this.radButton2.Location = new System.Drawing.Point(208, 12);
+            this.radButton2.Name = "radButton2";
+            this.radButton2.Size = new System.Drawing.Size(130, 24);
+            this.radButton2.TabIndex = 1;
+            this.radButton2.Text = "Movil";
+            // 
+            // BtnMovilListado
+            // 
+            this.BtnMovilListado.Location = new System.Drawing.Point(208, 61);
+            this.BtnMovilListado.Name = "BtnMovilListado";
+            this.BtnMovilListado.Size = new System.Drawing.Size(130, 24);
+            this.BtnMovilListado.TabIndex = 2;
+            this.BtnMovilListado.Text = "Movil Listado";
+            this.BtnMovilListado.Click += new System.EventHandler(this.BtnMovilListado_Click);
+            // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 367);
+            this.ClientSize = new System.Drawing.Size(904, 493);
+            this.Controls.Add(this.BtnMovilListado);
+            this.Controls.Add(this.radButton2);
             this.Controls.Add(this.BtnChofer);
             this.Controls.Add(this.radButton1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPrincipal";
             // 
             // 
@@ -68,6 +92,8 @@
             this.Text = "Getion UpMobile";
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnChofer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnMovilListado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -77,6 +103,8 @@
 
         private Telerik.WinControls.UI.RadButton radButton1;
         private Telerik.WinControls.UI.RadButton BtnChofer;
+        private Telerik.WinControls.UI.RadButton radButton2;
+        private Telerik.WinControls.UI.RadButton BtnMovilListado;
 
 
     }
