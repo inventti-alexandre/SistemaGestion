@@ -64,6 +64,7 @@
             this.radButton2.Size = new System.Drawing.Size(130, 24);
             this.radButton2.TabIndex = 1;
             this.radButton2.Text = "Movil";
+
             // 
             // BtnMovilListado
             // 

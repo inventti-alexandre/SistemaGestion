@@ -45,7 +45,15 @@ namespace GestionAdministrativa.Business
             criteros.SortBy = !string.IsNullOrEmpty(sortBy) ? sortBy : "Denominacion";
             criteros.SortDirection = !string.IsNullOrEmpty(sortDirection) ? sortDirection : "DESC";
 
-            var resultados = Uow.Moviles.Listado(criteros);
+            Expression<Func<Movil,bool> >where=
+                                            x =>
+                                                (x.Numero == numero) &&
+                                                (x.Patente.Contains(patente) &&
+                                                (x.Activo==activo));
+
+            var resultados = Uow.Moviles.Listado(criteros,where,
+                                                    x=> x.Numero);
+
             pageTotal = resultados.PagedMetadata.TotalItemCount;
 
             return resultados.Entities.Project().To<MovilesDto>().ToList();

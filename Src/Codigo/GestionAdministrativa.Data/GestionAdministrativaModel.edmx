@@ -290,6 +290,7 @@
           <Property Name="FechaModificacion" Type="datetime" />
           <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
           <Property Name="SucursalModificacionId" Type="int" />
+          <Property Name="Activo" Type="bit" />
         </EntityType>
         <EntityType Name="Operadores">
           <Key>
@@ -4042,6 +4043,7 @@
           <NavigationProperty Name="Operadores1" Relationship="Self.FK_Moviles_OperadorModificacion" FromRole="Moviles" ToRole="Operadores" />
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_Moviles_SucursalAlta" FromRole="Moviles" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_Moviles_SucursalModificacion" FromRole="Moviles" ToRole="Sucursales" />
+          <Property Name="Activo" Type="Boolean" />
         </EntityType>
         <EntityType Name="Operador">
           <Key>
@@ -7979,6 +7981,7 @@
           <EntitySetMapping Name="Moviles">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.Movil">
               <MappingFragment StoreEntitySet="Moviles">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Numero" ColumnName="Numero" />
                 <ScalarProperty Name="Patente" ColumnName="Patente" />

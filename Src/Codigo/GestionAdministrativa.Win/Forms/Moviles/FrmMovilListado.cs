@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using GestionAdministrativa.Business.Interfaces;
 using GestionAdministrativa.Data.Interfaces;
+using GestionAdministrativa.Win.Enums;
 using Telerik.WinControls;
 
 
@@ -19,9 +20,9 @@ namespace GestionAdministrativa.Win.Forms.Moviles
         private readonly IMovilesNegocio _movilesNegocio;
 
 
-        public FrmMovilListado(IGestionAdministrativaUow uow, IMovilesNegocio movilesNegocio)
+        public FrmMovilListado(IFormFactory formFactory, IGestionAdministrativaUow uow, IMovilesNegocio movilesNegocio)
         {
-            //IFormFactory formFactory, FormFactory = formFactory;
+            FormFactory = formFactory;
             Uow = uow;
             _movilesNegocio = movilesNegocio;
 
@@ -45,24 +46,44 @@ namespace GestionAdministrativa.Win.Forms.Moviles
         {
             base.FormBaseListado_Load(sender,e);
             RefrescarListado();
+            ucFiltroMoviles1.Filtered += Filtered;
+        }
+
+        private void Filtered(object sender, EventArgs e)
+        {
+            RefrescarListado();
         }
 
         public override async Task<int> RefrescarListado()
         {
             int pageTotal = 0;
-            var numero = 1;
-            var patente = "aaa111";
+            var numero = ucFiltroMoviles1.Numero != 0 ? ucFiltroMoviles1.Numero : 1;
+            var patente = ucFiltroMoviles1.Patente != "" ? ucFiltroMoviles1.Patente : "";
+            var activo = ucFiltroMoviles1.Activo;
 
             var moviles =
                 await
                     Task.Run(
                         () =>
-                            _movilesNegocio.Listado(SortColumn, SortDirection, numero, patente, true, 1, 1,
+                            _movilesNegocio.Listado(SortColumn, SortDirection, numero, patente, activo, 1, 50,
                                 out pageTotal));
 
             DgvMovil.DataSource = moviles;
             //return VisualStyleElement.Page.
             return pageTotal;
+        }
+
+        private void BtnCrearCliente_Click(object sender, EventArgs e)
+        {
+            using (var formCrear = FormFactory.Create<FrmCrearEditarMovil>(Guid.Empty, ActionFormMode.Create))
+            {
+                var result = formCrear.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    formCrear.Close();
+                    RefrescarListado();
+                }
+            }
         }
 
     }
