@@ -32,6 +32,9 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.DgvMovil = new Telerik.WinControls.UI.RadGridView();
             this.ucFiltroMoviles = new GestionAdministrativa.Win.Forms.Moviles.ucFiltroMoviles();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -60,27 +63,40 @@
             gridViewTextBoxColumn1.FormatString = "";
             gridViewTextBoxColumn1.HeaderText = "Numero";
             gridViewTextBoxColumn1.Name = "Numero";
-            gridViewTextBoxColumn1.Width = 526;
+            gridViewTextBoxColumn1.Width = 473;
             gridViewTextBoxColumn2.FieldName = "Patente";
             gridViewTextBoxColumn2.FormatString = "";
             gridViewTextBoxColumn2.HeaderText = "Patente";
             gridViewTextBoxColumn2.Name = "Patente";
-            gridViewTextBoxColumn2.Width = 526;
+            gridViewTextBoxColumn2.Width = 473;
             gridViewDateTimeColumn1.FieldName = "FechaAlta";
             gridViewDateTimeColumn1.FormatString = "";
             gridViewDateTimeColumn1.HeaderText = "Fecha Alta";
             gridViewDateTimeColumn1.Name = "FechaAlta";
-            gridViewDateTimeColumn1.Width = 319;
+            gridViewDateTimeColumn1.Width = 287;
+            gridViewCommandColumn1.HeaderText = "";
+            gridViewCommandColumn1.Name = "ColumnaDetalle";
+            gridViewCommandColumn1.Width = 44;
+            gridViewCommandColumn2.HeaderText = "";
+            gridViewCommandColumn2.Name = "ColumnaEditar";
+            gridViewCommandColumn2.Width = 48;
+            gridViewCommandColumn3.HeaderText = "";
+            gridViewCommandColumn3.Name = "ColumnaEliminar";
+            gridViewCommandColumn3.Width = 49;
             this.DgvMovil.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
-            gridViewDateTimeColumn1});
+            gridViewDateTimeColumn1,
+            gridViewCommandColumn1,
+            gridViewCommandColumn2,
+            gridViewCommandColumn3});
             this.DgvMovil.MasterTemplate.EnableGrouping = false;
             this.DgvMovil.Name = "DgvMovil";
             this.DgvMovil.Size = new System.Drawing.Size(1391, 536);
             this.DgvMovil.TabIndex = 0;
             this.DgvMovil.Text = "Listado de Moviles";
             this.DgvMovil.ThemeName = "TelerikMetro";
+            this.DgvMovil.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.DgvMovil_CommandCellClick);
             // 
             // ucFiltroMoviles
             // 

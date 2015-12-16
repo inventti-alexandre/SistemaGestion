@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using GestionAdministrativa.Business.Interfaces;
 using GestionAdministrativa.Data.Interfaces;
+using GestionAdministrativa.Entities.Dto;
 using GestionAdministrativa.Win.Enums;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
 
 
 namespace GestionAdministrativa.Win.Forms.Moviles
@@ -88,6 +91,73 @@ namespace GestionAdministrativa.Win.Forms.Moviles
                 if (result == DialogResult.OK)
                 {
                     ucFiltroMoviles.Numero = formCrear.Numero;
+                    formCrear.Close();
+                    RefrescarListado();
+                }
+            }
+        }
+
+        private void DgvMovil_CommandCellClick(object sender, EventArgs e)
+        {
+            var commandCell = (GridCommandCellElement)sender;
+
+            var selectedRow = this.DgvMovil.SelectedRows.FirstOrDefault();
+
+            if (selectedRow == null)
+                return;
+
+            var movil = selectedRow.DataBoundItem as MovilesDto;
+
+            if (movil == null)
+                return;
+
+            switch (commandCell.ColumnInfo.Name)
+            {
+                case "ColumnaDetalle":
+                    Detalle(movil.Id);
+                    break;
+                case "ColumnaEditar":
+                    Editar(movil.Id);
+                    break;
+                case "ColumnaEliminar":
+                    Eliminar(movil.Id);
+                    break;
+            }
+        }
+
+        private void Eliminar(Guid movilId)
+        {
+            using (var formCrear = FormFactory.Create<FrmCrearEditarMovil>(movilId, ActionFormMode.Delete))
+            {
+                var result = formCrear.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    formCrear.Close();
+                    RefrescarListado();
+                }
+            }
+        }
+
+        private void Editar(Guid movilId)
+        {
+            using (var formCrear = FormFactory.Create<FrmCrearEditarMovil>(movilId, ActionFormMode.Edit))
+            {
+                var result = formCrear.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    formCrear.Close();
+                    RefrescarListado();
+                }
+            }
+        }
+
+        private void Detalle(Guid movilId)
+        {
+            using (var formCrear = FormFactory.Create<FrmCrearEditarMovil>(movilId, ActionFormMode.Detail))
+            {
+                var result = formCrear.ShowDialog();
+                if (result == DialogResult.OK)
+                {
                     formCrear.Close();
                     RefrescarListado();
                 }
