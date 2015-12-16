@@ -10,7 +10,7 @@ namespace GestionAdministrativa.Business.Interfaces
 {
     public interface IMovilesNegocio : IDisposable
     {
-        List<MovilesDto> Listado(string sortBy, string sortDirection, int numero, string patente, bool? activo, int pageIndex, int pageSize, out int pageTotal);
+        List<MovilesDto> Listado(string sortBy, string sortDirection, int? numero, string patente, bool? activo, int pageIndex, int pageSize, out int pageTotal);
         Movil ObtenerPorId(Guid movilId);
     }
 }

@@ -46,7 +46,7 @@ namespace GestionAdministrativa.Win.Forms.Moviles
         {
             base.FormBaseListado_Load(sender,e);
             RefrescarListado();
-            ucFiltroMoviles1.Filtered += Filtered;
+            ucFiltroMoviles.Filtered += Filtered;
         }
 
         private void Filtered(object sender, EventArgs e)
@@ -57,9 +57,11 @@ namespace GestionAdministrativa.Win.Forms.Moviles
         public override async Task<int> RefrescarListado()
         {
             int pageTotal = 0;
-            var numero = ucFiltroMoviles1.Numero != 0 ? ucFiltroMoviles1.Numero : 1;
-            var patente = ucFiltroMoviles1.Patente != "" ? ucFiltroMoviles1.Patente : "";
-            var activo = ucFiltroMoviles1.Activo;
+            var numero = ucFiltroMoviles.Numero != 0 ? ucFiltroMoviles.Numero : 0;
+            var patente = ucFiltroMoviles.Patente != "" ? ucFiltroMoviles.Patente : "";
+            var activo = ucFiltroMoviles.Activo;
+            //if (numero == 0)
+            //    numero = null;
 
             var moviles =
                 await

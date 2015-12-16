@@ -33,7 +33,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.DgvMovil = new Telerik.WinControls.UI.RadGridView();
-            this.ucFiltroMoviles1 = new GestionAdministrativa.Win.Forms.Moviles.ucFiltroMoviles();
+            this.ucFiltroMoviles = new GestionAdministrativa.Win.Forms.Moviles.ucFiltroMoviles();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnCrearCliente = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMovil)).BeginInit();
@@ -76,16 +76,16 @@
             this.DgvMovil.Text = "Listado de Moviles";
             this.DgvMovil.ThemeName = "TelerikMetro";
             // 
-            // ucFiltroMoviles1
+            // ucFiltroMoviles
             // 
-            this.ucFiltroMoviles1.Activo = true;
-            this.ucFiltroMoviles1.Location = new System.Drawing.Point(8, 53);
-            this.ucFiltroMoviles1.Margin = new System.Windows.Forms.Padding(4);
-            this.ucFiltroMoviles1.Name = "ucFiltroMoviles1";
-            this.ucFiltroMoviles1.Numero = 0;
-            this.ucFiltroMoviles1.Patente = "";
-            this.ucFiltroMoviles1.Size = new System.Drawing.Size(937, 100);
-            this.ucFiltroMoviles1.TabIndex = 1;
+            this.ucFiltroMoviles.Activo = true;
+            this.ucFiltroMoviles.Location = new System.Drawing.Point(8, 53);
+            this.ucFiltroMoviles.Margin = new System.Windows.Forms.Padding(4);
+            this.ucFiltroMoviles.Name = "ucFiltroMoviles";
+            this.ucFiltroMoviles.Numero = 0;
+            this.ucFiltroMoviles.Patente = "";
+            this.ucFiltroMoviles.Size = new System.Drawing.Size(937, 100);
+            this.ucFiltroMoviles.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
@@ -120,7 +120,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1397, 714);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.ucFiltroMoviles1);
+            this.Controls.Add(this.ucFiltroMoviles);
             this.Controls.Add(this.DgvMovil);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMovilListado";
@@ -142,7 +142,7 @@
         #endregion
 
         private Telerik.WinControls.UI.RadGridView DgvMovil;
-        private ucFiltroMoviles ucFiltroMoviles1;
+        private ucFiltroMoviles ucFiltroMoviles;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Telerik.WinControls.UI.RadButton BtnCrearCliente;
     }

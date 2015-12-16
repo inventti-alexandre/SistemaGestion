@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Objects.SqlClient;
+using System.Data.Entity.SqlServer;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -36,7 +36,7 @@ namespace GestionAdministrativa.Business
             }
         }
 
-        public List<MovilesDto> Listado(string sortBy, string sortDirection, int numero, string patente, bool? activo, int pageIndex, int pageSize, out int pageTotal)
+        public List<MovilesDto> Listado(string sortBy, string sortDirection, int? numero, string patente, bool? activo, int pageIndex, int pageSize, out int pageTotal)
         {
             var criteros = new PagingCriteria();
 
@@ -47,9 +47,9 @@ namespace GestionAdministrativa.Business
 
             Expression<Func<Movil,bool> >where=
                                             x =>
-                                                (x.Numero == numero) &&
-                                                (x.Patente.Contains(patente) &&
-                                                (x.Activo==activo));
+                                                (numero == 0 || x.Numero==numero) &&
+                                                (string.IsNullOrEmpty(patente)||SqlFunctions.PatIndex(patente,x.Patente)>0) &&
+                                                (x.Activo==activo);
 
             var resultados = Uow.Moviles.Listado(criteros,where,
                                                     x=> x.Numero);

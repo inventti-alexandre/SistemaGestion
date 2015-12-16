@@ -10,7 +10,7 @@ namespace GestionAdministrativa.Entities.Dto
     public class MovilesDto : IMapFrom<Movil>
     {
         public Guid Id { get; set; }
-        public int Numero { get; set; }
+        public int? Numero { get; set; }
         public string Patente { get; set; }
         public bool? Activo { get; set; }
         public DateTime FechaAlta { get; set; }
