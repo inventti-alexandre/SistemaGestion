@@ -46,6 +46,7 @@
             this.radButton1.Size = new System.Drawing.Size(130, 24);
             this.radButton1.TabIndex = 0;
             this.radButton1.Text = "Movil";
+            this.radButton1.ThemeName = "TelerikMetro";
             this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
             // BtnChofer
@@ -55,6 +56,7 @@
             this.BtnChofer.Size = new System.Drawing.Size(130, 24);
             this.BtnChofer.TabIndex = 1;
             this.BtnChofer.Text = "Chofer";
+            this.BtnChofer.ThemeName = "TelerikMetro";
             this.BtnChofer.Click += new System.EventHandler(this.BtnChofer_Click);
             // 
             // radButton2
@@ -64,6 +66,7 @@
             this.radButton2.Size = new System.Drawing.Size(130, 24);
             this.radButton2.TabIndex = 1;
             this.radButton2.Text = "Movil";
+            this.radButton2.ThemeName = "TelerikMetro";
             // 
             // BtnMovilListado
             // 
@@ -72,6 +75,7 @@
             this.BtnMovilListado.Size = new System.Drawing.Size(130, 24);
             this.BtnMovilListado.TabIndex = 2;
             this.BtnMovilListado.Text = "Movil Listado";
+            this.BtnMovilListado.ThemeName = "TelerikMetro";
             this.BtnMovilListado.Click += new System.EventHandler(this.BtnMovilListado_Click);
             // 
             // FrmPrincipal

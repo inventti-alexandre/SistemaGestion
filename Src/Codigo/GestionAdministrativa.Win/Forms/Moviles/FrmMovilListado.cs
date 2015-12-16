@@ -32,6 +32,9 @@ namespace GestionAdministrativa.Win.Forms.Moviles
             InitializeComponent();
             //InicializarPaginador();
 
+
+
+            this.DgvMovil.CellFormatting += this.Grilla_CellFormatting;
             MainGrid = DgvMovil;
 
         }
@@ -47,6 +50,8 @@ namespace GestionAdministrativa.Win.Forms.Moviles
             base.FormBaseListado_Load(sender,e);
             RefrescarListado();
             ucFiltroMoviles.Filtered += Filtered;
+            this.DgvMovil.Columns["FechaAlta"].DataType = typeof(DateTime);
+            this.DgvMovil.Columns["FechaAlta"].FormatString = "{0: dd/M/yyyy}";
         }
 
         private void Filtered(object sender, EventArgs e)
