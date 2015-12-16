@@ -64,7 +64,6 @@
             this.radButton2.Size = new System.Drawing.Size(130, 24);
             this.radButton2.TabIndex = 1;
             this.radButton2.Text = "Movil";
-
             // 
             // BtnMovilListado
             // 
@@ -91,6 +90,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Getion UpMobile";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnChofer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();

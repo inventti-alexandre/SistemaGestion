@@ -34,8 +34,7 @@ namespace GestionAdministrativa.Win.Forms.Moviles
 
             public int  Numero 
             {
-                //get { return (Convert.ToInt16(TxtNumero.Text.ToString()) != 0 ? TxtNumero.Text: 1); }
-                get {return (Convert.ToInt16(TxtNumero.Text != "" ? TxtNumero.Text : "0")); }
+                get { return (Convert.ToInt16(TxtNumero.Text != "" ? TxtNumero.Text : "0")); }
                 set { TxtNumero.Text = value.ToString(); }
             }
 

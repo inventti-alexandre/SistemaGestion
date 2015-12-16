@@ -57,7 +57,7 @@ namespace GestionAdministrativa.Win.Forms.Moviles
         public override async Task<int> RefrescarListado()
         {
             int pageTotal = 0;
-            var numero = ucFiltroMoviles.Numero != 0 ? ucFiltroMoviles.Numero : 0;
+            int? numero = ucFiltroMoviles.Numero;
             var patente = ucFiltroMoviles.Patente != "" ? ucFiltroMoviles.Patente : "";
             var activo = ucFiltroMoviles.Activo;
             //if (numero == 0)
@@ -82,6 +82,7 @@ namespace GestionAdministrativa.Win.Forms.Moviles
                 var result = formCrear.ShowDialog();
                 if (result == DialogResult.OK)
                 {
+                    ucFiltroMoviles.Numero = formCrear.Numero;
                     formCrear.Close();
                     RefrescarListado();
                 }
