@@ -79,17 +79,37 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             _limpiandoFiltros = false;
         }
            
-
+        
+        private void LimpiarFiltros()
+        {
+ 	        TxtDNI.Text= string.Empty;
+            TxtNombre.Text = string.Empty;
+            TxtTitular.Text = string.Empty;
+            DdlMoviles.SelectedValue = null;
+        }
         #endregion
 
-        private void DdlMoviles_SelectedValueChanged(object sender, EventArgs e)
+      
+
+        #region Controles
+          private void DdlMoviles_SelectedValueChanged(object sender, EventArgs e)
         {
             if (!_limpiandoFiltros)
                 OnFiltered();
         }
 
-        #region Controles
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            OnFiltered();
+        }
+
         #endregion
+
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarFiltros();
+        }
+
 
     }
     
