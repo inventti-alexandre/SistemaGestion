@@ -88,12 +88,12 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             set { TxtEmail.Text = value; }
         }
 
-     
-        //public string Activo
-        //{
-        //    get { return TxtEmail.Text; }
-        //    set { TxtEmail.Text = value; }
-        //}
+
+        public bool? Activo
+        {
+            get { return CkActivo.Checked; }
+            set { CkActivo.Checked = value ?? true; }
+        }
 #endregion
 
         #region Eventos
@@ -126,7 +126,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             this.Nombre = _chofer.Nombre;
             this.Telefono = _chofer.Telefono;
             this.Email = _chofer.Email;
-          
+            this.Activo = _chofer.Activo;
         }
 
         private void CrearEditar()
@@ -159,6 +159,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             _chofer.Nombre = Nombre;
             _chofer.Telefono = Telefono;
             _chofer.Email = Email;
+            _chofer.Activo = Activo;
             _chofer.OperadorAltaId = _formMode == ActionFormMode.Create ? Context.OperadorActual.Id : _chofer.OperadorAltaId;
             _chofer.SucursalAltaId = _formMode == ActionFormMode.Create ? Context.SucursalActual.Id : _chofer.SucursalAltaId;
             _chofer.FechaAlta = _formMode == ActionFormMode.Create ? _clock.Now : _chofer.FechaAlta;
@@ -187,6 +188,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             this.ValidarControl(TxtApellido, "Apellido");
             this.ValidarControl(TxtNombre, "Nombre");
         }
+
         #endregion
 
        
