@@ -43,7 +43,7 @@ namespace GestionAdministrativa.Win.Forms
 
         private void SetDefaultProperties()
         {
-            this.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new Font("Aaargh", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             this.StartPosition = FormStartPosition.CenterParent;
             //this.Icon = Resources.LogoLaPaz;
         }
