@@ -142,7 +142,6 @@
             this.BtnBuscar.TabIndex = 8;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.ThemeName = "TelerikMetro";
-            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // BtnLimpiar
             // 
@@ -153,7 +152,6 @@
             this.BtnLimpiar.TabIndex = 9;
             this.BtnLimpiar.Text = "Limpiar Filtros";
             this.BtnLimpiar.ThemeName = "TelerikMetro";
-            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
             // ucFiltroChoferes
             // 
