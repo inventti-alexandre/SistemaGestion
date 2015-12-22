@@ -76,8 +76,9 @@
     <Compile Include="Dia.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Dto\ChoferesDto.cs" />
     <Compile Include="Dto\MovilesDto.cs" />
+    <Compile Include="Enums\CondicionVentaEnum.cs" />
+    <Compile Include="Enums\EstadoCliente.cs" />
     <Compile Include="Funcion.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
@@ -93,8 +94,10 @@
     <Compile Include="Localidad.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Metadata\ClienteMetadata.cs" />
     <Compile Include="Metadata\ChoferMetadata.cs" />
     <Compile Include="Metadata\MovilMetadata.cs" />
+    <Compile Include="Metadata\VentaMetadata.cs" />
     <Compile Include="Movil.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
@@ -178,9 +181,7 @@
       <Name>Framework.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Enums\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="GestionAdministrativaModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

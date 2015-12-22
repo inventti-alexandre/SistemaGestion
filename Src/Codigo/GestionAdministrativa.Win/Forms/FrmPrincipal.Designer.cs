@@ -32,12 +32,10 @@
             this.BtnChofer = new Telerik.WinControls.UI.RadButton();
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
             this.BtnMovilListado = new Telerik.WinControls.UI.RadButton();
-            this.BtnChoferListado = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnChofer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMovilListado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnChoferListado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,22 +78,11 @@
             this.BtnMovilListado.ThemeName = "TelerikMetro";
             this.BtnMovilListado.Click += new System.EventHandler(this.BtnMovilListado_Click);
             // 
-            // BtnChoferListado
-            // 
-            this.BtnChoferListado.Location = new System.Drawing.Point(12, 106);
-            this.BtnChoferListado.Name = "BtnChoferListado";
-            this.BtnChoferListado.Size = new System.Drawing.Size(130, 24);
-            this.BtnChoferListado.TabIndex = 3;
-            this.BtnChoferListado.Text = "Chofer Listado";
-            this.BtnChoferListado.ThemeName = "TelerikMetro";
-            this.BtnChoferListado.Click += new System.EventHandler(this.BtnChoferListado_Click);
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(904, 493);
-            this.Controls.Add(this.BtnChoferListado);
             this.Controls.Add(this.BtnMovilListado);
             this.Controls.Add(this.radButton2);
             this.Controls.Add(this.BtnChofer);
@@ -112,7 +99,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnChofer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMovilListado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnChoferListado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -124,7 +110,6 @@
         private Telerik.WinControls.UI.RadButton BtnChofer;
         private Telerik.WinControls.UI.RadButton radButton2;
         private Telerik.WinControls.UI.RadButton BtnMovilListado;
-        private Telerik.WinControls.UI.RadButton BtnChoferListado;
 
 
     }

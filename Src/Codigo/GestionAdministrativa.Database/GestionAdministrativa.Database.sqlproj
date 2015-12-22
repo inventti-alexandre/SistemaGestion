@@ -62,8 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="GestionAdministrativa.Database.publish.xml" />
-    <None Include="GestionAdministrativa.Database.dbmdl" />
-    <None Include="GestionAdministrativa.Database.sqlproj.user" />
+    <None Include="Alejandria_1.Database.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="GestionAdministrativa.Database.refactorlog" />

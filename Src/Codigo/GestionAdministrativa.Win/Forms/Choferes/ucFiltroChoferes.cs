@@ -7,9 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GestionAdministrativa.Entities;
-using Framework.Ioc;
-using GestionAdministrativa.Data.Interfaces;
+using GestionAdministrativa.Entities
 
 namespace GestionAdministrativa.Win.Forms.Choferes
 {
@@ -19,18 +17,12 @@ namespace GestionAdministrativa.Win.Forms.Choferes
 
         public ucFiltroChoferes()
         {
-            if (Ioc.Container != null)
-            {
-                Uow = Ioc.Container.Get<IGestionAdministrativaUow>();
-            }
-
             InitializeComponent();
         }
 
         private void ucFiltroChoferes_Load(object sender, EventArgs e)
         {
             CargarCombos();
-            LimpiarFiltros();
         }
 
         #region Eventos
@@ -46,14 +38,10 @@ namespace GestionAdministrativa.Win.Forms.Choferes
         #endregion
 
         #region Propiedades
-        public int? DNI
+        public string DNI
         {
-            get 
-            {
-                int dni;
-                return int.TryParse(TxtDNI.Text, out dni) ? dni: 0; 
-            }
-            set{TxtDNI.Text=value.ToString(); }
+            get { return TxtDNI.Text; }
+            set{TxtDNI.Text=value; }
         }
                
         public string Denominacion 
@@ -62,7 +50,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             set { TxtNombre.Text = value; } 
         }
 
-        private Guid MovilId 
+        public Guid Movil 
         {
             get { return (Guid)DdlMoviles.SelectedValue; }
             set { DdlMoviles.SelectedValue = value; } 
@@ -82,7 +70,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
              _limpiandoFiltros = true;
 
             var moviles = Uow.Moviles.Listado().Where(m => m.Activo == true).OrderBy(m => m.Numero).ToList();
-            //moviles.Insert(0, new Movil() { Numero = 00 , Id = Guid.Empty });
+           // moviles.Insert(0, new Movil() { Numero = "Seleccione un movil" , Id = 0 });
            
             DdlMoviles.DisplayMember = "Numero";
             DdlMoviles.ValueMember = "Id";
@@ -98,10 +86,10 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             TxtNombre.Text = string.Empty;
             TxtTitular.Text = string.Empty;
             DdlMoviles.SelectedValue = null;
-            OnFiltered();
-
         }
         #endregion
+
+      
 
         #region Controles
           private void DdlMoviles_SelectedValueChanged(object sender, EventArgs e)
@@ -114,13 +102,13 @@ namespace GestionAdministrativa.Win.Forms.Choferes
         {
             OnFiltered();
         }
-                
+
+        #endregion
+
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarFiltros();
         }
-        #endregion
-
 
 
     }

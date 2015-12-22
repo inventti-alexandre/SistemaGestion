@@ -145,12 +145,6 @@
     <Compile Include="Controls\EditColumn.cs" />
     <Compile Include="Controls\PayColumn.cs" />
     <Compile Include="Enums\FormMode.cs" />
-    <Compile Include="Forms\Choferes\FrmChoferesListado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Choferes\FrmChoferesListado.Designer.cs">
-      <DependentUpon>FrmChoferesListado.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Choferes\FrmCrearEditarChofer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,9 +204,6 @@
     <Compile Include="IFormFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Choferes\FrmChoferesListado.resx">
-      <DependentUpon>FrmChoferesListado.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Choferes\FrmCrearEditarChofer.resx">
       <DependentUpon>FrmCrearEditarChofer.cs</DependentUpon>
     </EmbeddedResource>
