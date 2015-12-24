@@ -226,6 +226,7 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_Choferes_SucursalAlta" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_Choferes_SucursalModificacion" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMontosFavor_Choferes" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Choferes_Moviles" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -14,6 +14,11 @@ namespace GestionAdministrativa.Entities
     
     public partial class Movil
     {
+        public Movil()
+        {
+            this.Choferes = new HashSet<Chofer>();
+        }
+    
         public System.Guid Id { get; set; }
         public int Numero { get; set; }
         public string Patente { get; set; }
@@ -29,5 +34,6 @@ namespace GestionAdministrativa.Entities
         public virtual Operador Operadores1 { get; set; }
         public virtual Sucursal Sucursales { get; set; }
         public virtual Sucursal Sucursales1 { get; set; }
+        public virtual ICollection<Chofer> Choferes { get; set; }
     }
 }

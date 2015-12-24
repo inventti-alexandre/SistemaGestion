@@ -48,6 +48,12 @@ namespace GestionAdministrativa.Win.Forms
             frm.ShowDialog();
         }
 
+        private void BtnChoferListado_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmChoferesListado>();
+            frm.ShowDialog();
+        }
+
        
 
        
