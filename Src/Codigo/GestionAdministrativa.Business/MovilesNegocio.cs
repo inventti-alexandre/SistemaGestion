@@ -47,8 +47,8 @@ namespace GestionAdministrativa.Business
 
             Expression<Func<Movil,bool> >where=
                                             x =>
-                                                (numero == 0 || x.Numero==numero) &&
-                                                (string.IsNullOrEmpty(patente)||SqlFunctions.PatIndex(patente,x.Patente)>0) &&
+                                                (numero == 0 || x.Numero.ToString().Contains(numero.ToString())) &&
+                                                (string.IsNullOrEmpty(patente) || x.Patente.Contains(patente)) &&
                                                 (x.Activo==activo);
 
             var resultados = Uow.Moviles.Listado(criteros,where,

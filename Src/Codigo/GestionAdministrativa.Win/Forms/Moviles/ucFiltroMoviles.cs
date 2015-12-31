@@ -70,6 +70,32 @@ namespace GestionAdministrativa.Win.Forms.Moviles
                     OnFiltered();
             }
         #endregion
+
+            private void BtnLimpiar_Click(object sender, EventArgs e)
+            {
+                LimpiarFiltros();
+            }
+
+            private void LimpiarFiltros()
+            {
+                _limpiandoFiltros = true;
+                TxtNumero.Text = "0";
+                TxtPatente.Text = string.Empty;
+                ChkActivo.Checked = true;
+                OnFiltered();
+                _limpiandoFiltros = false;
+                TxtNumero.Focus();
+            }
+
+            private void BtnBuscar_Click(object sender, EventArgs e)
+            {
+                Buscar();
+            }
+
+            private void Buscar()
+            {
+                OnFiltered();
+            }
         
     }
     

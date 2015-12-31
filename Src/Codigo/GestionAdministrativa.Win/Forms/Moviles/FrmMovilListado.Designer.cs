@@ -59,30 +59,53 @@
             this.DgvMovil.MasterTemplate.AllowAddNewRow = false;
             this.DgvMovil.MasterTemplate.AllowEditRow = false;
             this.DgvMovil.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewTextBoxColumn1.AllowHide = false;
+            gridViewTextBoxColumn1.AllowReorder = false;
+            gridViewTextBoxColumn1.AllowResize = false;
+            gridViewTextBoxColumn1.AllowSort = false;
             gridViewTextBoxColumn1.FieldName = "Numero";
             gridViewTextBoxColumn1.FormatString = "";
             gridViewTextBoxColumn1.HeaderText = "Numero";
             gridViewTextBoxColumn1.Name = "Numero";
-            gridViewTextBoxColumn1.Width = 473;
+            gridViewTextBoxColumn1.Width = 37;
             gridViewTextBoxColumn2.FieldName = "Patente";
             gridViewTextBoxColumn2.FormatString = "";
             gridViewTextBoxColumn2.HeaderText = "Patente";
             gridViewTextBoxColumn2.Name = "Patente";
-            gridViewTextBoxColumn2.Width = 473;
+            gridViewTextBoxColumn2.Width = 767;
             gridViewDateTimeColumn1.FieldName = "FechaAlta";
             gridViewDateTimeColumn1.FormatString = "";
             gridViewDateTimeColumn1.HeaderText = "Fecha Alta";
             gridViewDateTimeColumn1.Name = "FechaAlta";
-            gridViewDateTimeColumn1.Width = 287;
+            gridViewDateTimeColumn1.Width = 465;
+            gridViewCommandColumn1.AllowHide = false;
+            gridViewCommandColumn1.AllowReorder = false;
+            gridViewCommandColumn1.AllowResize = false;
+            gridViewCommandColumn1.AllowSort = false;
             gridViewCommandColumn1.HeaderText = "";
+            gridViewCommandColumn1.Image = global::GestionAdministrativa.Win.Properties.Resources.View_Details;
+            gridViewCommandColumn1.MinWidth = 35;
             gridViewCommandColumn1.Name = "ColumnaDetalle";
-            gridViewCommandColumn1.Width = 44;
+            gridViewCommandColumn1.Width = 35;
+            gridViewCommandColumn2.AllowHide = false;
+            gridViewCommandColumn2.AllowReorder = false;
+            gridViewCommandColumn2.AllowResize = false;
+            gridViewCommandColumn2.AllowSort = false;
             gridViewCommandColumn2.HeaderText = "";
+            gridViewCommandColumn2.Image = global::GestionAdministrativa.Win.Properties.Resources.Data_Edit;
+            gridViewCommandColumn2.MinWidth = 35;
             gridViewCommandColumn2.Name = "ColumnaEditar";
-            gridViewCommandColumn2.Width = 48;
+            gridViewCommandColumn2.Width = 35;
+            gridViewCommandColumn3.AllowHide = false;
+            gridViewCommandColumn3.AllowReorder = false;
+            gridViewCommandColumn3.AllowResize = false;
+            gridViewCommandColumn3.AllowSort = false;
             gridViewCommandColumn3.HeaderText = "";
+            gridViewCommandColumn3.Image = global::GestionAdministrativa.Win.Properties.Resources.Garbage_Closed;
+            gridViewCommandColumn3.MinWidth = 35;
             gridViewCommandColumn3.Name = "ColumnaEliminar";
-            gridViewCommandColumn3.Width = 49;
+            gridViewCommandColumn3.RowSpan = 35;
+            gridViewCommandColumn3.Width = 35;
             this.DgvMovil.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -92,7 +115,7 @@
             gridViewCommandColumn3});
             this.DgvMovil.MasterTemplate.EnableGrouping = false;
             this.DgvMovil.Name = "DgvMovil";
-            this.DgvMovil.Size = new System.Drawing.Size(1391, 536);
+            this.DgvMovil.Size = new System.Drawing.Size(1391, 493);
             this.DgvMovil.TabIndex = 0;
             this.DgvMovil.Text = "Listado de Moviles";
             this.DgvMovil.ThemeName = "TelerikMetro";
@@ -106,7 +129,7 @@
             this.ucFiltroMoviles.Name = "ucFiltroMoviles";
             this.ucFiltroMoviles.Numero = 0;
             this.ucFiltroMoviles.Patente = "";
-            this.ucFiltroMoviles.Size = new System.Drawing.Size(937, 100);
+            this.ucFiltroMoviles.Size = new System.Drawing.Size(937, 155);
             this.ucFiltroMoviles.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -138,15 +161,15 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.DgvMovil, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 172);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 215);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1397, 542);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1397, 499);
             this.tableLayoutPanel1.TabIndex = 17;
             // 
             // FrmMovilListado

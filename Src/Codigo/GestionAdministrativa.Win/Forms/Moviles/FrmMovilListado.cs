@@ -127,12 +127,12 @@ namespace GestionAdministrativa.Win.Forms.Moviles
 
         private void Eliminar(Guid movilId)
         {
-            using (var formCrear = FormFactory.Create<FrmCrearEditarMovil>(movilId, ActionFormMode.Delete))
+            using (var formDelete = FormFactory.Create<FrmDetalleEliminarMovil>(movilId, ActionFormMode.Delete))
             {
-                var result = formCrear.ShowDialog();
+                var result = formDelete.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    formCrear.Close();
+                    formDelete.Close();
                     RefrescarListado();
                 }
             }
@@ -153,16 +153,17 @@ namespace GestionAdministrativa.Win.Forms.Moviles
 
         private void Detalle(Guid movilId)
         {
-            using (var formCrear = FormFactory.Create<FrmCrearEditarMovil>(movilId, ActionFormMode.Detail))
+            using (var formDetalle = FormFactory.Create<FrmDetalleEliminarMovil>(movilId, ActionFormMode.Detail))
             {
-                var result = formCrear.ShowDialog();
+                var result = formDetalle.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    formCrear.Close();
+                    formDetalle.Close();
                     RefrescarListado();
                 }
             }
         }
+
 
     }
 }

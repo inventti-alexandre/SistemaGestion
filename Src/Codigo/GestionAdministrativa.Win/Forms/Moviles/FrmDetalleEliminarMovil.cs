@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Framework.Common.Utility;
+using Framework.WinForm.Comun.Notification;
 using GestionAdministrativa.Data.Interfaces;
 using Telerik.WinControls;
 using GestionAdministrativa.Entities;
@@ -19,6 +20,7 @@ namespace GestionAdministrativa.Win.Forms.Moviles
             private ActionFormMode _actionForm;
             private IClock _clock;
             private Movil _movil;
+            private readonly IMessageBoxDisplayService _messageBoxDisplayService;
         private Guid _movilId;
 
         public FrmDetalleEliminarMovil(ActionFormMode mode, IGestionAdministrativaUow uow, IClock clock, Guid id)
@@ -33,10 +35,17 @@ namespace GestionAdministrativa.Win.Forms.Moviles
 
             private void InicializarForm(ActionFormMode mode)
             {
-                if (_actionForm == ActionFormMode.Create)
-                    this.Text = "Crear Móvil";
+                if (_actionForm == ActionFormMode.Detail)
+                {
+                    this.Text = "Detalle del Móvil";
+                    BtnEliminar.Visible = false;
+                }
                 else
-                    this.Text = "Editar Móvil";
+                {
+                    this.Text = "Eliminar Móvil";
+                    BtnEliminar.Visible = true;
+                }
+                
             }
         #endregion
             
@@ -74,10 +83,7 @@ namespace GestionAdministrativa.Win.Forms.Moviles
         #endregion
 
         #region Methods
-            private void BtnAceptar_Click(object sender, EventArgs e)
-            {
-                CrearEditarMovil();
-            }
+           
 
             private void OnEntityAgregada(Movil movil)
             {
@@ -147,7 +153,6 @@ namespace GestionAdministrativa.Win.Forms.Moviles
             {
                 CargarMovil(_movilId);
             }
-
             private void CargarMovil(Guid _movilId)
             {
                 if (_movilId == Guid.Empty)
@@ -159,11 +164,30 @@ namespace GestionAdministrativa.Win.Forms.Moviles
                 {
                     _movil = Uow.Moviles.Obtener(m=>m.Id==_movilId);
                 }
-
                 this.Activo = _movil.Activo;
                 this.Numero = _movil.Numero;
                 this.Patente = _movil.Patente;
             }
+
+            private void BtnEliminar_Click(object sender, EventArgs e)
+            {
+
+                DialogResult result = MessageBox.Show("Esta seguro que desea eliminar el móvil?", "Confirmation", MessageBoxButtons.YesNoCancel);
+                if(result == DialogResult.Yes)
+                {
+                    Movil movil = Uow.Moviles.Obtener(m => m.Id == _movilId);
+                    movil.Activo = false;
+                    Uow.Moviles.Modificar(movil);
+                    Uow.Commit();
+                }
+                else
+                {
+                    return;
+                } 
+                
+            }
+
+           
 
        
 
