@@ -33,11 +33,13 @@
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
             this.BtnMovilListado = new Telerik.WinControls.UI.RadButton();
             this.BtnChoferListado = new Telerik.WinControls.UI.RadButton();
+            this.BtnCelulares = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnChofer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMovilListado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnChoferListado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCelulares)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +84,7 @@
             // 
             // BtnChoferListado
             // 
-            this.BtnChoferListado.Location = new System.Drawing.Point(208, 120);
+            this.BtnChoferListado.Location = new System.Drawing.Point(208, 111);
             this.BtnChoferListado.Name = "BtnChoferListado";
             this.BtnChoferListado.Size = new System.Drawing.Size(130, 24);
             this.BtnChoferListado.TabIndex = 3;
@@ -90,11 +92,21 @@
             this.BtnChoferListado.ThemeName = "TelerikMetro";
             this.BtnChoferListado.Click += new System.EventHandler(this.BtnChoferListado_Click);
             // 
+            // BtnCelulares
+            // 
+            this.BtnCelulares.Location = new System.Drawing.Point(208, 163);
+            this.BtnCelulares.Name = "BtnCelulares";
+            this.BtnCelulares.Size = new System.Drawing.Size(130, 24);
+            this.BtnCelulares.TabIndex = 4;
+            this.BtnCelulares.Text = "Celulares";
+            this.BtnCelulares.ThemeName = "TelerikMetro";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 493);
+            this.ClientSize = new System.Drawing.Size(901, 493);
+            this.Controls.Add(this.BtnCelulares);
             this.Controls.Add(this.BtnChoferListado);
             this.Controls.Add(this.BtnMovilListado);
             this.Controls.Add(this.radButton2);
@@ -113,6 +125,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMovilListado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnChoferListado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCelulares)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -125,6 +138,7 @@
         private Telerik.WinControls.UI.RadButton radButton2;
         private Telerik.WinControls.UI.RadButton BtnMovilListado;
         private Telerik.WinControls.UI.RadButton BtnChoferListado;
+        private Telerik.WinControls.UI.RadButton BtnCelulares;
 
 
     }
