@@ -145,6 +145,18 @@
     <Compile Include="Controls\EditColumn.cs" />
     <Compile Include="Controls\PayColumn.cs" />
     <Compile Include="Enums\FormMode.cs" />
+    <Compile Include="Forms\Celulares\FrmCrearEditarCelular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Celulares\FrmCrearEditarCelular.Designer.cs">
+      <DependentUpon>FrmCrearEditarCelular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Celulares\ucFiltroCelulares.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Celulares\ucFiltroCelulares.Designer.cs">
+      <DependentUpon>ucFiltroCelulares.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Choferes\FrmChoferesListado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +222,12 @@
     <Compile Include="IFormFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Celulares\FrmCrearEditarCelular.resx">
+      <DependentUpon>FrmCrearEditarCelular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Celulares\ucFiltroCelulares.resx">
+      <DependentUpon>ucFiltroCelulares.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Choferes\FrmChoferesListado.resx">
       <DependentUpon>FrmChoferesListado.cs</DependentUpon>
     </EmbeddedResource>
@@ -391,9 +409,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\Celulares\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

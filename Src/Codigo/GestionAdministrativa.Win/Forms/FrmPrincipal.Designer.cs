@@ -100,6 +100,7 @@
             this.BtnCelulares.TabIndex = 4;
             this.BtnCelulares.Text = "Celulares";
             this.BtnCelulares.ThemeName = "TelerikMetro";
+            this.BtnCelulares.Click += new System.EventHandler(this.BtnCelulares_Click);
             // 
             // FrmPrincipal
             // 

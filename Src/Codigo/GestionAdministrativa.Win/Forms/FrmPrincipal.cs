@@ -10,6 +10,7 @@ using GestionAdministrativa.Data.Interfaces;
 using GestionAdministrativa.Win;
 using GestionAdministrativa.Win.Enums;
 using GestionAdministrativa.Win.Forms;
+using GestionAdministrativa.Win.Forms.Celulares;
 using GestionAdministrativa.Win.Forms.Choferes;
 using GestionAdministrativa.Win.Forms.Moviles;
 using Telerik.WinControls;
@@ -51,6 +52,12 @@ namespace GestionAdministrativa.Win.Forms
         private void BtnChoferListado_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmChoferesListado>();
+            frm.ShowDialog();
+        }
+
+        private void BtnCelulares_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmCrearEditarCelular>(Guid.Empty, ActionFormMode.Create);
             frm.ShowDialog();
         }
 

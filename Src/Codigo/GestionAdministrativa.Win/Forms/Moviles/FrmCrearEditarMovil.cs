@@ -15,11 +15,12 @@ namespace GestionAdministrativa.Win.Forms.Moviles
 {
     public partial class FrmCrearEditarMovil : EditFormBase
     {
-        #region InitializeComponents
+            #region InitializeComponents
+            
             private ActionFormMode _actionForm;
             private IClock _clock;
             private Movil _movil;
-        private Guid _movilId;
+            private Guid _movilId;
 
             public FrmCrearEditarMovil(ActionFormMode mode, IGestionAdministrativaUow uow,IClock clock,Guid id)
             {
@@ -135,6 +136,9 @@ namespace GestionAdministrativa.Win.Forms.Moviles
                         movil.FechaAlta = FechaAlta;
                         movil.Activo = Activo;
                         movil.Patente = Patente;
+                        movil.OperadorModificacionId = Context.OperadorActual.Id;
+                        movil.SucursalModificacionId = Context.SucursalActual.Id;
+                        movil.FechaModificacion = _actionForm == ActionFormMode.Edit ? _clock.Now : (DateTime?)null;
 
                         Uow.Moviles.Modificar(movil);
                         Uow.Commit();
