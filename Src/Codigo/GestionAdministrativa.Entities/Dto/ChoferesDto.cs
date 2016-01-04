@@ -15,6 +15,7 @@ namespace GestionAdministrativa.Entities.Dto
         public string Nombre { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
-
+        public int? MovilNumero { get; set; }
+        public string CelularObservacion { get; set; }
     }
 }

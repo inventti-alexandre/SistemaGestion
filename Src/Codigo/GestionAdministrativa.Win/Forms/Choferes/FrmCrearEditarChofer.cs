@@ -47,9 +47,9 @@ namespace GestionAdministrativa.Win.Forms.Choferes
 
         private void FrmCrearEditarChofer_Load(object sender, EventArgs e)
         {
+            CargarCombos();
             CargarEntidad(_choferid);
         }
-
       
 
         #region Propiedades
@@ -94,6 +94,13 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             get { return CkActivo.Checked; }
             set { CkActivo.Checked = value ?? true; }
         }
+
+        public Guid? MovilId
+        {
+            get { return (Guid)DdlMoviles.SelectedValue; }
+            set { DdlMoviles.SelectedValue = value; }
+        }
+
 #endregion
 
         #region Eventos
@@ -103,11 +110,31 @@ namespace GestionAdministrativa.Win.Forms.Choferes
         #region Controles
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
+            var chofer = Uow.Choferes.Obtener(c=>c.Dni == DNI);
+            if(chofer!=null)
+            {
+                MessageBox.Show("Un chofer con ese DNi ya existe en la base de datos.");
+                return;
+            }
             CrearEditar();
         }
         #endregion
 
         #region Métodos
+
+        private void CargarCombos()
+        {
+            //_limpiandoFiltros = true;
+
+            var moviles = Uow.Moviles.Listado().Where(m => m.Activo == true).OrderBy(m => m.Numero).ToList();
+            moviles.Insert(0, new Movil() { Numero = 00, Id = Guid.Empty });
+
+            DdlMoviles.DisplayMember = "Numero";
+            DdlMoviles.ValueMember = "Id";
+            DdlMoviles.DataSource = moviles;
+
+            //_limpiandoFiltros = false;
+        }
         private void CargarEntidad(Guid choferid)
         {
             if (choferid == default(Guid))
@@ -127,6 +154,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             this.Telefono = _chofer.Telefono;
             this.Email = _chofer.Email;
             this.Activo = _chofer.Activo;
+            this.MovilId = _chofer.MovilId;
         }
 
         private void CrearEditar()
@@ -160,6 +188,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             _chofer.Telefono = Telefono;
             _chofer.Email = Email;
             _chofer.Activo = Activo;
+            _chofer.MovilId = MovilId == Guid.Empty ? null : MovilId;
             _chofer.OperadorAltaId = _formMode == ActionFormMode.Create ? Context.OperadorActual.Id : _chofer.OperadorAltaId;
             _chofer.SucursalAltaId = _formMode == ActionFormMode.Create ? Context.SucursalActual.Id : _chofer.SucursalAltaId;
             _chofer.FechaAlta = _formMode == ActionFormMode.Create ? _clock.Now : _chofer.FechaAlta;
@@ -190,6 +219,11 @@ namespace GestionAdministrativa.Win.Forms.Choferes
         }
 
         #endregion
+
+        private void radLabel6_Click(object sender, EventArgs e)
+        {
+
+        }
 
        
     }

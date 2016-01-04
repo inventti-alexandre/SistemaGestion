@@ -35,10 +35,11 @@ namespace GestionAdministrativa.Business
                                             x =>
                                                 (dni == 0 || x.Dni == dni) 
                                                 && (string.IsNullOrEmpty(apellido) || SqlFunctions.PatIndex(apellido, x.Apellido) > 0)
+                                                && (movilId == null || x.MovilId == movilId)
                                                  && (x.Activo == activo)
                                                 ;
 
-            var resultados = Uow.Choferes.Listado(criteros, where);
+            var resultados = Uow.Choferes.Listado(criteros, where, x=> x.Movil);
 
             pageTotal = resultados.PagedMetadata.TotalItemCount;
 

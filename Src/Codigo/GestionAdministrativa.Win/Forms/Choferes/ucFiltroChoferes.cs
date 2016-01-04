@@ -25,12 +25,14 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             }
 
             InitializeComponent();
+            //CargarCombos();
+           
         }
 
         private void ucFiltroChoferes_Load(object sender, EventArgs e)
         {
-            CargarCombos();
             LimpiarFiltros();
+                       
         }
 
         #region Eventos
@@ -62,9 +64,9 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             set { TxtNombre.Text = value; } 
         }
 
-        private Guid MovilId 
+        public Guid? MovilId 
         {
-            get { return (Guid)DdlMoviles.SelectedValue; }
+            get { return (Guid?)DdlMoviles.SelectedValue ?? Guid.Empty; }
             set { DdlMoviles.SelectedValue = value; } 
         }
 
@@ -100,6 +102,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             DdlMoviles.SelectedValue = null;
             OnFiltered();
 
+
         }
         #endregion
 
@@ -119,10 +122,32 @@ namespace GestionAdministrativa.Win.Forms.Choferes
         {
             LimpiarFiltros();
         }
+     
+
+        private void TxtDNI_KeyUp(object sender, KeyEventArgs e)
+        {
+            OnEnterPressed(e);
+        }
+
+        private void TxtNombre_KeyUp(object sender, KeyEventArgs e)
+        {
+            OnEnterPressed(e);
+        }
+
+        private void TxtTitular_KeyUp(object sender, KeyEventArgs e)
+        {
+            OnEnterPressed(e);
+        }
+
+        private void OnEnterPressed(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!_limpiandoFiltros)
+                    OnFiltered();
+            }
+        }
         #endregion
-
-
-
     }
     
 }

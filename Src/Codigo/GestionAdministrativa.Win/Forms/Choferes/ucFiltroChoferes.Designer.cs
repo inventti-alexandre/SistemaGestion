@@ -99,6 +99,7 @@
             this.TxtDNI.TabIndex = 4;
             this.TxtDNI.TabStop = false;
             this.TxtDNI.ThemeName = "TelerikMetro";
+            this.TxtDNI.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtDNI_KeyUp);
             // 
             // TxtNombre
             // 
@@ -109,6 +110,7 @@
             this.TxtNombre.TabIndex = 5;
             this.TxtNombre.TabStop = false;
             this.TxtNombre.ThemeName = "TelerikMetro";
+            this.TxtNombre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtNombre_KeyUp);
             // 
             // TxtTitular
             // 
@@ -119,6 +121,7 @@
             this.TxtTitular.TabIndex = 6;
             this.TxtTitular.TabStop = false;
             this.TxtTitular.ThemeName = "TelerikMetro";
+            this.TxtTitular.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtTitular_KeyUp);
             // 
             // DdlMoviles
             // 

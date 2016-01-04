@@ -33,12 +33,14 @@ namespace GestionAdministrativa.Entities
         public Nullable<System.DateTime> FechaModficacion { get; set; }
         public Nullable<bool> Activo { get; set; }
         public Nullable<System.Guid> MovilId { get; set; }
+        public Nullable<System.Guid> CelularId { get; set; }
     
-        public virtual Operador Operadores { get; set; }
-        public virtual Operador Operadores1 { get; set; }
-        public virtual Sucursal Sucursales { get; set; }
-        public virtual Sucursal Sucursales1 { get; set; }
+        public virtual Operador OperadorAlta { get; set; }
+        public virtual Operador OperadorModificacion { get; set; }
+        public virtual Sucursal SucursalAlta { get; set; }
+        public virtual Sucursal SucursalModificacion { get; set; }
         public virtual ICollection<ChoferMontoFavor> ChoferesMontosFavor { get; set; }
-        public virtual Movil Moviles { get; set; }
+        public virtual Movil Movil { get; set; }
+        public virtual Celular Celular { get; set; }
     }
 }

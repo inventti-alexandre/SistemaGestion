@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="99b1b99db2a04024808ed4cd3dad1108" Name="Diagram1" ZoomLevel="33">
+      <Diagram DiagramId="99b1b99db2a04024808ed4cd3dad1108" Name="Diagram1" ZoomLevel="72">
         <EntityTypeShape EntityType="GestionAdministrativa.Model.Banco" Width="1.5" PointX="5.25" PointY="64.875" IsExpanded="true" />
         <EntityTypeShape EntityType="GestionAdministrativa.Model.Caja" Width="1.5" PointX="21.75" PointY="64.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GestionAdministrativa.Model.CajaMovimiento" Width="1.5" PointX="18.75" PointY="71" IsExpanded="true" />
@@ -227,6 +227,7 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_Choferes_SucursalModificacion" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMontosFavor_Choferes" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_Choferes_Moviles" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Choferes_Celulares" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
