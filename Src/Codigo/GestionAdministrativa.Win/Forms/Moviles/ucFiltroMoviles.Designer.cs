@@ -49,9 +49,10 @@
             // TxtNumero
             // 
             this.TxtNumero.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNumero.Location = new System.Drawing.Point(128, 3);
+            this.TxtNumero.Location = new System.Drawing.Point(160, 4);
+            this.TxtNumero.Margin = new System.Windows.Forms.Padding(4);
             this.TxtNumero.Name = "TxtNumero";
-            this.TxtNumero.Size = new System.Drawing.Size(100, 27);
+            this.TxtNumero.Size = new System.Drawing.Size(125, 27);
             this.TxtNumero.TabIndex = 0;
             this.TxtNumero.TabStop = false;
             this.TxtNumero.TextChanged += new System.EventHandler(this.TxtNumero_TextChanged);
@@ -59,7 +60,8 @@
             // radLabel1
             // 
             this.radLabel1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(37, 5);
+            this.radLabel1.Location = new System.Drawing.Point(46, 7);
+            this.radLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(70, 25);
             this.radLabel1.TabIndex = 1;
@@ -68,7 +70,8 @@
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.Location = new System.Drawing.Point(37, 43);
+            this.radLabel2.Location = new System.Drawing.Point(46, 59);
+            this.radLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(80, 25);
             this.radLabel2.TabIndex = 3;
@@ -77,9 +80,10 @@
             // TxtPatente
             // 
             this.TxtPatente.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPatente.Location = new System.Drawing.Point(128, 41);
+            this.TxtPatente.Location = new System.Drawing.Point(160, 56);
+            this.TxtPatente.Margin = new System.Windows.Forms.Padding(4);
             this.TxtPatente.Name = "TxtPatente";
-            this.TxtPatente.Size = new System.Drawing.Size(100, 27);
+            this.TxtPatente.Size = new System.Drawing.Size(125, 27);
             this.TxtPatente.TabIndex = 2;
             this.TxtPatente.TabStop = false;
             this.TxtPatente.TextChanged += new System.EventHandler(this.TxtPatente_TextChanged);
@@ -87,7 +91,8 @@
             // ChkActivo
             // 
             this.ChkActivo.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChkActivo.Location = new System.Drawing.Point(128, 71);
+            this.ChkActivo.Location = new System.Drawing.Point(160, 98);
+            this.ChkActivo.Margin = new System.Windows.Forms.Padding(4);
             this.ChkActivo.Name = "ChkActivo";
             this.ChkActivo.Size = new System.Drawing.Size(15, 15);
             this.ChkActivo.TabIndex = 4;
@@ -97,7 +102,8 @@
             // radLabel3
             // 
             this.radLabel3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel3.Location = new System.Drawing.Point(37, 71);
+            this.radLabel3.Location = new System.Drawing.Point(46, 98);
+            this.radLabel3.Margin = new System.Windows.Forms.Padding(4);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(70, 25);
             this.radLabel3.TabIndex = 4;
@@ -106,9 +112,10 @@
             // BtnLimpiar
             // 
             this.BtnLimpiar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLimpiar.Location = new System.Drawing.Point(386, 98);
+            this.BtnLimpiar.Location = new System.Drawing.Point(356, 107);
+            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnLimpiar.Name = "BtnLimpiar";
-            this.BtnLimpiar.Size = new System.Drawing.Size(170, 39);
+            this.BtnLimpiar.Size = new System.Drawing.Size(205, 41);
             this.BtnLimpiar.TabIndex = 11;
             this.BtnLimpiar.Text = "Limpiar Filtros";
             this.BtnLimpiar.ThemeName = "TelerikMetro";
@@ -117,9 +124,10 @@
             // BtnBuscar
             // 
             this.BtnBuscar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBuscar.Location = new System.Drawing.Point(575, 98);
+            this.BtnBuscar.Location = new System.Drawing.Point(593, 107);
+            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(130, 39);
+            this.BtnBuscar.Size = new System.Drawing.Size(205, 41);
             this.BtnBuscar.TabIndex = 10;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.ThemeName = "TelerikMetro";
@@ -127,7 +135,7 @@
             // 
             // ucFiltroMoviles
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.BtnBuscar);
@@ -137,9 +145,10 @@
             this.Controls.Add(this.TxtPatente);
             this.Controls.Add(this.radLabel1);
             this.Controls.Add(this.TxtNumero);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "ucFiltroMoviles";
-            this.Size = new System.Drawing.Size(728, 158);
+            this.Size = new System.Drawing.Size(819, 164);
             ((System.ComponentModel.ISupportInitialize)(this.TxtNumero)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();

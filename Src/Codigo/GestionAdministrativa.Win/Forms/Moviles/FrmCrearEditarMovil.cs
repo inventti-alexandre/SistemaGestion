@@ -34,7 +34,10 @@ namespace GestionAdministrativa.Win.Forms.Moviles
             private void InicializarForm(ActionFormMode mode)
             {
                 if (_actionForm == ActionFormMode.Create)
+                {
                     this.Text = "Crear Móvil";
+                    FechaAlta = _clock.Now;
+                }
                 else
                     this.Text = "Editar Móvil";
             }
@@ -71,13 +74,24 @@ namespace GestionAdministrativa.Win.Forms.Moviles
                 set { ChkActivo.Checked = value ?? false; }
             }
 
+        public DateTime FechaAlta {
+            get { return DtpFechaAlta.Value; }
+            set { DtpFechaAlta.Value = value; }
+        }
+        
+
         #endregion
 
         #region Methods
             private void BtnAceptar_Click(object sender, EventArgs e)
             {
-                CrearEditarMovil();
+                if (_actionForm==ActionFormMode.Create)
+                    CrearMovil();
+                else
+                    EditarMovil(_movilId);
             }
+
+            
 
             private void OnEntityAgregada(Movil movil)
             {
@@ -85,7 +99,7 @@ namespace GestionAdministrativa.Win.Forms.Moviles
                     EntityAgregada(this, movil);
             }
 
-            private void CrearEditarMovil()
+            private void CrearMovil()
             {
                 var esValido = this.ValidarForm();
 
@@ -106,12 +120,34 @@ namespace GestionAdministrativa.Win.Forms.Moviles
                     }
                 }    
             }
+            private void EditarMovil(Guid movilId)
+            {
+                var esValido = this.ValidarForm();
+                if(!esValido)
+                    this.DialogResult=DialogResult.None;
+                else
+                {
+                    Movil movil = Uow.Moviles.Obtener(m => m.Id == movilId);
+                    
+                    if (movil != null)
+                    {
+                        movil.Numero = Numero;
+                        movil.FechaAlta = FechaAlta;
+                        movil.Activo = Activo;
+                        movil.Patente = Patente;
+
+                        Uow.Moviles.Modificar(movil);
+                        Uow.Commit();
+                    }
+
+                }
+            }
 
             private Movil ObtenerEntityDesdeForm()
             {
                 _movil = new Movil();
                 _movil.Id = Guid.NewGuid();
-                _movil.FechaAlta = DtpFechaAlta.Value;
+                _movil.FechaAlta = FechaAlta;
                 _movil.Patente = Patente;
                 _movil.Numero = Numero;
                 _movil.Activo = Activo;

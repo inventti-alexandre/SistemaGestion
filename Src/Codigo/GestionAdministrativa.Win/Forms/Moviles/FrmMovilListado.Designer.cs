@@ -52,6 +52,7 @@
             // 
             this.DgvMovil.AutoSizeRows = true;
             this.DgvMovil.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvMovil.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DgvMovil.Location = new System.Drawing.Point(3, 3);
             // 
             // DgvMovil
@@ -67,17 +68,17 @@
             gridViewTextBoxColumn1.FormatString = "";
             gridViewTextBoxColumn1.HeaderText = "Numero";
             gridViewTextBoxColumn1.Name = "Numero";
-            gridViewTextBoxColumn1.Width = 37;
+            gridViewTextBoxColumn1.Width = 75;
             gridViewTextBoxColumn2.FieldName = "Patente";
             gridViewTextBoxColumn2.FormatString = "";
             gridViewTextBoxColumn2.HeaderText = "Patente";
             gridViewTextBoxColumn2.Name = "Patente";
-            gridViewTextBoxColumn2.Width = 767;
+            gridViewTextBoxColumn2.Width = 743;
             gridViewDateTimeColumn1.FieldName = "FechaAlta";
             gridViewDateTimeColumn1.FormatString = "";
             gridViewDateTimeColumn1.HeaderText = "Fecha Alta";
             gridViewDateTimeColumn1.Name = "FechaAlta";
-            gridViewDateTimeColumn1.Width = 465;
+            gridViewDateTimeColumn1.Width = 451;
             gridViewCommandColumn1.AllowHide = false;
             gridViewCommandColumn1.AllowReorder = false;
             gridViewCommandColumn1.AllowResize = false;
@@ -124,6 +125,7 @@
             // ucFiltroMoviles
             // 
             this.ucFiltroMoviles.Activo = true;
+            this.ucFiltroMoviles.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ucFiltroMoviles.Location = new System.Drawing.Point(8, 53);
             this.ucFiltroMoviles.Margin = new System.Windows.Forms.Padding(4);
             this.ucFiltroMoviles.Name = "ucFiltroMoviles";
@@ -138,6 +140,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.BtnCrearCliente, 0, 0);
+            this.tableLayoutPanel2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel2.Location = new System.Drawing.Point(8, 8);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -149,7 +152,7 @@
             // BtnCrearCliente
             // 
             this.BtnCrearCliente.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.BtnCrearCliente.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCrearCliente.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCrearCliente.Location = new System.Drawing.Point(4, 4);
             this.BtnCrearCliente.Margin = new System.Windows.Forms.Padding(4, 4, 53, 4);
             this.BtnCrearCliente.Name = "BtnCrearCliente";
@@ -165,6 +168,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.DgvMovil, 0, 0);
+            this.tableLayoutPanel1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 215);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -180,6 +184,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.ucFiltroMoviles);
+            this.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMovilListado";
             // 
