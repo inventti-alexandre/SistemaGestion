@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[EmpresaCelular]
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+    [Descripcion] NVARCHAR(50) NOT NULL
+)

@@ -59,6 +59,7 @@
     <Folder Include="Properties" />
     <Folder Include="Tables" />
     <Folder Include="Stored Procedures" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GestionAdministrativa.Database.publish.xml" />
@@ -109,5 +110,10 @@
     <Build Include="Tables\PagosCelular.sql" />
     <Build Include="Tables\CelularesMovimientos.sql" />
     <Build Include="Tables\ChoferesMontosFavor.sql" />
+    <Build Include="Tables\EmpresaCelular.sql" />
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\Dias.sql" />
   </ItemGroup>
 </Project>

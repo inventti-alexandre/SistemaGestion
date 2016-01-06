@@ -48,7 +48,17 @@ namespace GestionAdministrativa.Win.Forms.Celulares
 
         #region Properties
 
-        
+        public bool Activo 
+        {
+            get { return ChkActivo.Checked; }
+            set {  ChkActivo.Checked = value; }
+        }
+
+        public bool Pagare 
+        {
+            get { return ChkPagare.Checked; }
+            set { ChkActivo.Checked = value; }
+        }
 
         #endregion
 

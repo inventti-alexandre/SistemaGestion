@@ -28,91 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
+            this.TxtPagare = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.radDropDownList1 = new Telerik.WinControls.UI.RadDropDownList();
-            this.radDateTimePicker1 = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.DdlMod = new Telerik.WinControls.UI.RadDropDownList();
+            this.DtpFechaAlta = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.ChkActivo = new Telerik.WinControls.UI.RadCheckBox();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
-            this.radCheckBox1 = new Telerik.WinControls.UI.RadCheckBox();
+            this.ChkPagare = new Telerik.WinControls.UI.RadCheckBox();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
-            this.radCheckBox2 = new Telerik.WinControls.UI.RadCheckBox();
+            this.ChkHabilitado = new Telerik.WinControls.UI.RadCheckBox();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
-            this.radDateTimePicker2 = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.DtpFechaUltimoPago = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
-            this.radDateTimePicker3 = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.radDropDownList2 = new Telerik.WinControls.UI.RadDropDownList();
+            this.DtpFechaProximoPago = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.DdlDiaPago = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
-            this.radDateTimePicker4 = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.DtpFechaVencimientoPago = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
             this.BtnAceptar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.radLabel11 = new Telerik.WinControls.UI.RadLabel();
-            this.radTextBox2 = new Telerik.WinControls.UI.RadTextBox();
+            this.TxtImei = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
-            this.radDropDownList3 = new Telerik.WinControls.UI.RadDropDownList();
+            this.DdlEmpresa = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
-            this.radTextBox3 = new Telerik.WinControls.UI.RadTextBox();
-            this.radDropDownList4 = new Telerik.WinControls.UI.RadDropDownList();
+            this.TxtSim = new Telerik.WinControls.UI.RadTextBox();
+            this.DdlModelo = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel14 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel15 = new Telerik.WinControls.UI.RadLabel();
-            this.radTextBox4 = new Telerik.WinControls.UI.RadTextBox();
+            this.TxtGmail = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel16 = new Telerik.WinControls.UI.RadLabel();
-            this.radTextBox5 = new Telerik.WinControls.UI.RadTextBox();
-            this.radDropDownList5 = new Telerik.WinControls.UI.RadDropDownList();
+            this.TxtNumeroTelefono = new Telerik.WinControls.UI.RadTextBox();
+            this.DdlDiaCarga = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel17 = new Telerik.WinControls.UI.RadLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtPagare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DdlMod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaAlta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChkActivo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChkPagare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChkHabilitado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaUltimoPago)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaProximoPago)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DdlDiaPago)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaVencimientoPago)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtImei)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DdlEmpresa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtSim)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DdlModelo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtGmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtNumeroTelefono)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DdlDiaCarga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // radTextBox1
+            // TxtPagare
             // 
-            this.radTextBox1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox1.Location = new System.Drawing.Point(341, 154);
-            this.radTextBox1.Name = "radTextBox1";
-            this.radTextBox1.Size = new System.Drawing.Size(195, 28);
-            this.radTextBox1.TabIndex = 0;
-            this.radTextBox1.TabStop = false;
-            this.radTextBox1.Text = "radTextBox1";
-            this.radTextBox1.ThemeName = "TelerikMetro";
+            this.TxtPagare.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPagare.Location = new System.Drawing.Point(341, 154);
+            this.TxtPagare.Name = "TxtPagare";
+            this.TxtPagare.Size = new System.Drawing.Size(195, 28);
+            this.TxtPagare.TabIndex = 0;
+            this.TxtPagare.TabStop = false;
+            this.TxtPagare.Text = "radTextBox1";
+            this.TxtPagare.ThemeName = "TelerikMetro";
             // 
             // radLabel1
             // 
@@ -123,34 +123,34 @@
             this.radLabel1.TabIndex = 1;
             this.radLabel1.Text = "Tipo Celular:";
             // 
-            // radDropDownList1
+            // DdlMod
             // 
-            this.radDropDownList1.DropDownAnimationEnabled = true;
-            this.radDropDownList1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radDropDownList1.Location = new System.Drawing.Point(253, 23);
-            this.radDropDownList1.MaxDropDownItems = 0;
-            this.radDropDownList1.Name = "radDropDownList1";
-            this.radDropDownList1.ShowImageInEditorArea = true;
-            this.radDropDownList1.Size = new System.Drawing.Size(285, 29);
-            this.radDropDownList1.TabIndex = 2;
-            this.radDropDownList1.ThemeName = "TelerikMetro";
+            this.DdlMod.DropDownAnimationEnabled = true;
+            this.DdlMod.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DdlMod.Location = new System.Drawing.Point(253, 23);
+            this.DdlMod.MaxDropDownItems = 0;
+            this.DdlMod.Name = "DdlMod";
+            this.DdlMod.ShowImageInEditorArea = true;
+            this.DdlMod.Size = new System.Drawing.Size(285, 29);
+            this.DdlMod.TabIndex = 2;
+            this.DdlMod.ThemeName = "TelerikMetro";
             // 
-            // radDateTimePicker1
+            // DtpFechaAlta
             // 
-            this.radDateTimePicker1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.radDateTimePicker1.Location = new System.Drawing.Point(252, 95);
-            this.radDateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.radDateTimePicker1.MinDate = new System.DateTime(((long)(0)));
-            this.radDateTimePicker1.Name = "radDateTimePicker1";
-            this.radDateTimePicker1.NullableValue = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
-            this.radDateTimePicker1.NullDate = new System.DateTime(((long)(0)));
-            this.radDateTimePicker1.Size = new System.Drawing.Size(285, 31);
-            this.radDateTimePicker1.TabIndex = 3;
-            this.radDateTimePicker1.TabStop = false;
-            this.radDateTimePicker1.Text = "lunes, 04 de enero de 2016";
-            this.radDateTimePicker1.ThemeName = "TelerikMetro";
-            this.radDateTimePicker1.Value = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
+            this.DtpFechaAlta.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DtpFechaAlta.Location = new System.Drawing.Point(252, 95);
+            this.DtpFechaAlta.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DtpFechaAlta.MinDate = new System.DateTime(((long)(0)));
+            this.DtpFechaAlta.Name = "DtpFechaAlta";
+            this.DtpFechaAlta.NullableValue = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
+            this.DtpFechaAlta.NullDate = new System.DateTime(((long)(0)));
+            this.DtpFechaAlta.Size = new System.Drawing.Size(285, 31);
+            this.DtpFechaAlta.TabIndex = 3;
+            this.DtpFechaAlta.TabStop = false;
+            this.DtpFechaAlta.Text = "lunes, 04 de enero de 2016";
+            this.DtpFechaAlta.ThemeName = "TelerikMetro";
+            this.DtpFechaAlta.Value = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
             // 
             // radLabel2
             // 
@@ -180,15 +180,15 @@
             this.radLabel4.TabIndex = 10;
             this.radLabel4.Text = "Activo:";
             // 
-            // radCheckBox1
+            // ChkPagare
             // 
-            this.radCheckBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radCheckBox1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.radCheckBox1.Location = new System.Drawing.Point(252, 159);
-            this.radCheckBox1.Name = "radCheckBox1";
-            this.radCheckBox1.Size = new System.Drawing.Size(15, 15);
-            this.radCheckBox1.TabIndex = 13;
-            this.radCheckBox1.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.ChkPagare.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkPagare.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ChkPagare.Location = new System.Drawing.Point(252, 159);
+            this.ChkPagare.Name = "ChkPagare";
+            this.ChkPagare.Size = new System.Drawing.Size(15, 15);
+            this.ChkPagare.TabIndex = 13;
+            this.ChkPagare.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
             // 
             // radLabel3
             // 
@@ -199,15 +199,15 @@
             this.radLabel3.TabIndex = 12;
             this.radLabel3.Text = "Pagare:";
             // 
-            // radCheckBox2
+            // ChkHabilitado
             // 
-            this.radCheckBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radCheckBox2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.radCheckBox2.Location = new System.Drawing.Point(252, 184);
-            this.radCheckBox2.Name = "radCheckBox2";
-            this.radCheckBox2.Size = new System.Drawing.Size(15, 15);
-            this.radCheckBox2.TabIndex = 15;
-            this.radCheckBox2.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.ChkHabilitado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkHabilitado.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ChkHabilitado.Location = new System.Drawing.Point(252, 184);
+            this.ChkHabilitado.Name = "ChkHabilitado";
+            this.ChkHabilitado.Size = new System.Drawing.Size(15, 15);
+            this.ChkHabilitado.TabIndex = 15;
+            this.ChkHabilitado.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
             // 
             // radLabel5
             // 
@@ -227,22 +227,22 @@
             this.radLabel6.TabIndex = 4;
             this.radLabel6.Text = "Fecha Ultimo pago:";
             // 
-            // radDateTimePicker2
+            // DtpFechaUltimoPago
             // 
-            this.radDateTimePicker2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.radDateTimePicker2.Location = new System.Drawing.Point(252, 205);
-            this.radDateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.radDateTimePicker2.MinDate = new System.DateTime(((long)(0)));
-            this.radDateTimePicker2.Name = "radDateTimePicker2";
-            this.radDateTimePicker2.NullableValue = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
-            this.radDateTimePicker2.NullDate = new System.DateTime(((long)(0)));
-            this.radDateTimePicker2.Size = new System.Drawing.Size(284, 31);
-            this.radDateTimePicker2.TabIndex = 5;
-            this.radDateTimePicker2.TabStop = false;
-            this.radDateTimePicker2.Text = "lunes, 04 de enero de 2016";
-            this.radDateTimePicker2.ThemeName = "TelerikMetro";
-            this.radDateTimePicker2.Value = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
+            this.DtpFechaUltimoPago.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtpFechaUltimoPago.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DtpFechaUltimoPago.Location = new System.Drawing.Point(252, 205);
+            this.DtpFechaUltimoPago.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DtpFechaUltimoPago.MinDate = new System.DateTime(((long)(0)));
+            this.DtpFechaUltimoPago.Name = "DtpFechaUltimoPago";
+            this.DtpFechaUltimoPago.NullableValue = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
+            this.DtpFechaUltimoPago.NullDate = new System.DateTime(((long)(0)));
+            this.DtpFechaUltimoPago.Size = new System.Drawing.Size(284, 31);
+            this.DtpFechaUltimoPago.TabIndex = 5;
+            this.DtpFechaUltimoPago.TabStop = false;
+            this.DtpFechaUltimoPago.Text = "lunes, 04 de enero de 2016";
+            this.DtpFechaUltimoPago.ThemeName = "TelerikMetro";
+            this.DtpFechaUltimoPago.Value = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
             // 
             // radLabel7
             // 
@@ -253,34 +253,34 @@
             this.radLabel7.TabIndex = 5;
             this.radLabel7.Text = "Fecha Próximo Pago:";
             // 
-            // radDateTimePicker3
+            // DtpFechaProximoPago
             // 
-            this.radDateTimePicker3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radDateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.radDateTimePicker3.Location = new System.Drawing.Point(252, 242);
-            this.radDateTimePicker3.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.radDateTimePicker3.MinDate = new System.DateTime(((long)(0)));
-            this.radDateTimePicker3.Name = "radDateTimePicker3";
-            this.radDateTimePicker3.NullableValue = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
-            this.radDateTimePicker3.NullDate = new System.DateTime(((long)(0)));
-            this.radDateTimePicker3.Size = new System.Drawing.Size(284, 31);
-            this.radDateTimePicker3.TabIndex = 6;
-            this.radDateTimePicker3.TabStop = false;
-            this.radDateTimePicker3.Text = "lunes, 04 de enero de 2016";
-            this.radDateTimePicker3.ThemeName = "TelerikMetro";
-            this.radDateTimePicker3.Value = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
+            this.DtpFechaProximoPago.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtpFechaProximoPago.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DtpFechaProximoPago.Location = new System.Drawing.Point(252, 242);
+            this.DtpFechaProximoPago.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DtpFechaProximoPago.MinDate = new System.DateTime(((long)(0)));
+            this.DtpFechaProximoPago.Name = "DtpFechaProximoPago";
+            this.DtpFechaProximoPago.NullableValue = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
+            this.DtpFechaProximoPago.NullDate = new System.DateTime(((long)(0)));
+            this.DtpFechaProximoPago.Size = new System.Drawing.Size(284, 31);
+            this.DtpFechaProximoPago.TabIndex = 6;
+            this.DtpFechaProximoPago.TabStop = false;
+            this.DtpFechaProximoPago.Text = "lunes, 04 de enero de 2016";
+            this.DtpFechaProximoPago.ThemeName = "TelerikMetro";
+            this.DtpFechaProximoPago.Value = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
             // 
-            // radDropDownList2
+            // DdlDiaPago
             // 
-            this.radDropDownList2.DropDownAnimationEnabled = true;
-            this.radDropDownList2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radDropDownList2.Location = new System.Drawing.Point(252, 279);
-            this.radDropDownList2.MaxDropDownItems = 0;
-            this.radDropDownList2.Name = "radDropDownList2";
-            this.radDropDownList2.ShowImageInEditorArea = true;
-            this.radDropDownList2.Size = new System.Drawing.Size(285, 29);
-            this.radDropDownList2.TabIndex = 4;
-            this.radDropDownList2.ThemeName = "TelerikMetro";
+            this.DdlDiaPago.DropDownAnimationEnabled = true;
+            this.DdlDiaPago.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DdlDiaPago.Location = new System.Drawing.Point(252, 279);
+            this.DdlDiaPago.MaxDropDownItems = 0;
+            this.DdlDiaPago.Name = "DdlDiaPago";
+            this.DdlDiaPago.ShowImageInEditorArea = true;
+            this.DdlDiaPago.Size = new System.Drawing.Size(285, 29);
+            this.DdlDiaPago.TabIndex = 4;
+            this.DdlDiaPago.ThemeName = "TelerikMetro";
             // 
             // radLabel8
             // 
@@ -300,22 +300,22 @@
             this.radLabel9.TabIndex = 7;
             this.radLabel9.Text = "Fecha Vencimiento Pago:";
             // 
-            // radDateTimePicker4
+            // DtpFechaVencimientoPago
             // 
-            this.radDateTimePicker4.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radDateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.radDateTimePicker4.Location = new System.Drawing.Point(252, 314);
-            this.radDateTimePicker4.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.radDateTimePicker4.MinDate = new System.DateTime(((long)(0)));
-            this.radDateTimePicker4.Name = "radDateTimePicker4";
-            this.radDateTimePicker4.NullableValue = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
-            this.radDateTimePicker4.NullDate = new System.DateTime(((long)(0)));
-            this.radDateTimePicker4.Size = new System.Drawing.Size(285, 31);
-            this.radDateTimePicker4.TabIndex = 8;
-            this.radDateTimePicker4.TabStop = false;
-            this.radDateTimePicker4.Text = "lunes, 04 de enero de 2016";
-            this.radDateTimePicker4.ThemeName = "TelerikMetro";
-            this.radDateTimePicker4.Value = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
+            this.DtpFechaVencimientoPago.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtpFechaVencimientoPago.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DtpFechaVencimientoPago.Location = new System.Drawing.Point(252, 314);
+            this.DtpFechaVencimientoPago.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DtpFechaVencimientoPago.MinDate = new System.DateTime(((long)(0)));
+            this.DtpFechaVencimientoPago.Name = "DtpFechaVencimientoPago";
+            this.DtpFechaVencimientoPago.NullableValue = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
+            this.DtpFechaVencimientoPago.NullDate = new System.DateTime(((long)(0)));
+            this.DtpFechaVencimientoPago.Size = new System.Drawing.Size(285, 31);
+            this.DtpFechaVencimientoPago.TabIndex = 8;
+            this.DtpFechaVencimientoPago.TabStop = false;
+            this.DtpFechaVencimientoPago.Text = "lunes, 04 de enero de 2016";
+            this.DtpFechaVencimientoPago.ThemeName = "TelerikMetro";
+            this.DtpFechaVencimientoPago.Value = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
             // 
             // radLabel10
             // 
@@ -357,15 +357,15 @@
             this.radLabel11.TabIndex = 19;
             this.radLabel11.Text = "IMEI:";
             // 
-            // radTextBox2
+            // TxtImei
             // 
-            this.radTextBox2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox2.Location = new System.Drawing.Point(130, 102);
-            this.radTextBox2.Name = "radTextBox2";
-            this.radTextBox2.Size = new System.Drawing.Size(285, 28);
-            this.radTextBox2.TabIndex = 18;
-            this.radTextBox2.TabStop = false;
-            this.radTextBox2.ThemeName = "TelerikMetro";
+            this.TxtImei.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtImei.Location = new System.Drawing.Point(130, 102);
+            this.TxtImei.Name = "TxtImei";
+            this.TxtImei.Size = new System.Drawing.Size(285, 28);
+            this.TxtImei.TabIndex = 18;
+            this.TxtImei.TabStop = false;
+            this.TxtImei.ThemeName = "TelerikMetro";
             // 
             // radLabel12
             // 
@@ -376,17 +376,17 @@
             this.radLabel12.TabIndex = 21;
             this.radLabel12.Text = "Empresa:";
             // 
-            // radDropDownList3
+            // DdlEmpresa
             // 
-            this.radDropDownList3.DropDownAnimationEnabled = true;
-            this.radDropDownList3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radDropDownList3.Location = new System.Drawing.Point(130, 33);
-            this.radDropDownList3.MaxDropDownItems = 0;
-            this.radDropDownList3.Name = "radDropDownList3";
-            this.radDropDownList3.ShowImageInEditorArea = true;
-            this.radDropDownList3.Size = new System.Drawing.Size(285, 29);
-            this.radDropDownList3.TabIndex = 22;
-            this.radDropDownList3.ThemeName = "TelerikMetro";
+            this.DdlEmpresa.DropDownAnimationEnabled = true;
+            this.DdlEmpresa.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DdlEmpresa.Location = new System.Drawing.Point(130, 33);
+            this.DdlEmpresa.MaxDropDownItems = 0;
+            this.DdlEmpresa.Name = "DdlEmpresa";
+            this.DdlEmpresa.ShowImageInEditorArea = true;
+            this.DdlEmpresa.Size = new System.Drawing.Size(285, 29);
+            this.DdlEmpresa.TabIndex = 22;
+            this.DdlEmpresa.ThemeName = "TelerikMetro";
             // 
             // radLabel13
             // 
@@ -397,27 +397,27 @@
             this.radLabel13.TabIndex = 21;
             this.radLabel13.Text = "SIM:";
             // 
-            // radTextBox3
+            // TxtSim
             // 
-            this.radTextBox3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox3.Location = new System.Drawing.Point(130, 136);
-            this.radTextBox3.Name = "radTextBox3";
-            this.radTextBox3.Size = new System.Drawing.Size(285, 28);
-            this.radTextBox3.TabIndex = 20;
-            this.radTextBox3.TabStop = false;
-            this.radTextBox3.ThemeName = "TelerikMetro";
+            this.TxtSim.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSim.Location = new System.Drawing.Point(130, 136);
+            this.TxtSim.Name = "TxtSim";
+            this.TxtSim.Size = new System.Drawing.Size(285, 28);
+            this.TxtSim.TabIndex = 20;
+            this.TxtSim.TabStop = false;
+            this.TxtSim.ThemeName = "TelerikMetro";
             // 
-            // radDropDownList4
+            // DdlModelo
             // 
-            this.radDropDownList4.DropDownAnimationEnabled = true;
-            this.radDropDownList4.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radDropDownList4.Location = new System.Drawing.Point(252, 60);
-            this.radDropDownList4.MaxDropDownItems = 0;
-            this.radDropDownList4.Name = "radDropDownList4";
-            this.radDropDownList4.ShowImageInEditorArea = true;
-            this.radDropDownList4.Size = new System.Drawing.Size(285, 29);
-            this.radDropDownList4.TabIndex = 24;
-            this.radDropDownList4.ThemeName = "TelerikMetro";
+            this.DdlModelo.DropDownAnimationEnabled = true;
+            this.DdlModelo.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DdlModelo.Location = new System.Drawing.Point(252, 60);
+            this.DdlModelo.MaxDropDownItems = 0;
+            this.DdlModelo.Name = "DdlModelo";
+            this.DdlModelo.ShowImageInEditorArea = true;
+            this.DdlModelo.Size = new System.Drawing.Size(285, 29);
+            this.DdlModelo.TabIndex = 24;
+            this.DdlModelo.ThemeName = "TelerikMetro";
             // 
             // radLabel14
             // 
@@ -437,15 +437,15 @@
             this.radLabel15.TabIndex = 23;
             this.radLabel15.Text = "Gmail:";
             // 
-            // radTextBox4
+            // TxtGmail
             // 
-            this.radTextBox4.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox4.Location = new System.Drawing.Point(130, 173);
-            this.radTextBox4.Name = "radTextBox4";
-            this.radTextBox4.Size = new System.Drawing.Size(285, 28);
-            this.radTextBox4.TabIndex = 22;
-            this.radTextBox4.TabStop = false;
-            this.radTextBox4.ThemeName = "TelerikMetro";
+            this.TxtGmail.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtGmail.Location = new System.Drawing.Point(130, 173);
+            this.TxtGmail.Name = "TxtGmail";
+            this.TxtGmail.Size = new System.Drawing.Size(285, 28);
+            this.TxtGmail.TabIndex = 22;
+            this.TxtGmail.TabStop = false;
+            this.TxtGmail.ThemeName = "TelerikMetro";
             // 
             // radLabel16
             // 
@@ -456,27 +456,27 @@
             this.radLabel16.TabIndex = 25;
             this.radLabel16.Text = "Nro Tel:";
             // 
-            // radTextBox5
+            // TxtNumeroTelefono
             // 
-            this.radTextBox5.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox5.Location = new System.Drawing.Point(130, 68);
-            this.radTextBox5.Name = "radTextBox5";
-            this.radTextBox5.Size = new System.Drawing.Size(285, 28);
-            this.radTextBox5.TabIndex = 24;
-            this.radTextBox5.TabStop = false;
-            this.radTextBox5.ThemeName = "TelerikMetro";
+            this.TxtNumeroTelefono.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNumeroTelefono.Location = new System.Drawing.Point(130, 68);
+            this.TxtNumeroTelefono.Name = "TxtNumeroTelefono";
+            this.TxtNumeroTelefono.Size = new System.Drawing.Size(285, 28);
+            this.TxtNumeroTelefono.TabIndex = 24;
+            this.TxtNumeroTelefono.TabStop = false;
+            this.TxtNumeroTelefono.ThemeName = "TelerikMetro";
             // 
-            // radDropDownList5
+            // DdlDiaCarga
             // 
-            this.radDropDownList5.DropDownAnimationEnabled = true;
-            this.radDropDownList5.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radDropDownList5.Location = new System.Drawing.Point(130, 210);
-            this.radDropDownList5.MaxDropDownItems = 0;
-            this.radDropDownList5.Name = "radDropDownList5";
-            this.radDropDownList5.ShowImageInEditorArea = true;
-            this.radDropDownList5.Size = new System.Drawing.Size(285, 29);
-            this.radDropDownList5.TabIndex = 27;
-            this.radDropDownList5.ThemeName = "TelerikMetro";
+            this.DdlDiaCarga.DropDownAnimationEnabled = true;
+            this.DdlDiaCarga.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DdlDiaCarga.Location = new System.Drawing.Point(130, 210);
+            this.DdlDiaCarga.MaxDropDownItems = 0;
+            this.DdlDiaCarga.Name = "DdlDiaCarga";
+            this.DdlDiaCarga.ShowImageInEditorArea = true;
+            this.DdlDiaCarga.Size = new System.Drawing.Size(285, 29);
+            this.DdlDiaCarga.TabIndex = 27;
+            this.DdlDiaCarga.ThemeName = "TelerikMetro";
             // 
             // radLabel17
             // 
@@ -489,18 +489,18 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radDropDownList3);
-            this.groupBox1.Controls.Add(this.radDropDownList5);
-            this.groupBox1.Controls.Add(this.radTextBox2);
+            this.groupBox1.Controls.Add(this.DdlEmpresa);
+            this.groupBox1.Controls.Add(this.DdlDiaCarga);
+            this.groupBox1.Controls.Add(this.TxtImei);
             this.groupBox1.Controls.Add(this.radLabel17);
             this.groupBox1.Controls.Add(this.radLabel11);
             this.groupBox1.Controls.Add(this.radLabel16);
             this.groupBox1.Controls.Add(this.radLabel12);
-            this.groupBox1.Controls.Add(this.radTextBox5);
-            this.groupBox1.Controls.Add(this.radTextBox3);
+            this.groupBox1.Controls.Add(this.TxtNumeroTelefono);
+            this.groupBox1.Controls.Add(this.TxtSim);
             this.groupBox1.Controls.Add(this.radLabel15);
             this.groupBox1.Controls.Add(this.radLabel13);
-            this.groupBox1.Controls.Add(this.radTextBox4);
+            this.groupBox1.Controls.Add(this.TxtGmail);
             this.groupBox1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(804, 25);
             this.groupBox1.Name = "groupBox1";
@@ -517,30 +517,30 @@
             this.CancelButton = this.BtnCancelar;
             this.ClientSize = new System.Drawing.Size(1325, 567);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.radDropDownList4);
+            this.Controls.Add(this.DdlModelo);
             this.Controls.Add(this.radLabel14);
             this.Controls.Add(this.BtnAceptar);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.radLabel10);
             this.Controls.Add(this.radLabel9);
-            this.Controls.Add(this.radDropDownList2);
-            this.Controls.Add(this.radDateTimePicker4);
+            this.Controls.Add(this.DdlDiaPago);
+            this.Controls.Add(this.DtpFechaVencimientoPago);
             this.Controls.Add(this.radLabel8);
             this.Controls.Add(this.radLabel7);
-            this.Controls.Add(this.radDateTimePicker3);
+            this.Controls.Add(this.DtpFechaProximoPago);
             this.Controls.Add(this.radLabel6);
-            this.Controls.Add(this.radDateTimePicker2);
-            this.Controls.Add(this.radCheckBox2);
-            this.Controls.Add(this.radCheckBox1);
+            this.Controls.Add(this.DtpFechaUltimoPago);
+            this.Controls.Add(this.ChkHabilitado);
+            this.Controls.Add(this.ChkPagare);
             this.Controls.Add(this.radLabel5);
             this.Controls.Add(this.ChkActivo);
             this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.radLabel4);
             this.Controls.Add(this.radLabel2);
-            this.Controls.Add(this.radDateTimePicker1);
-            this.Controls.Add(this.radDropDownList1);
+            this.Controls.Add(this.DtpFechaAlta);
+            this.Controls.Add(this.DdlMod);
             this.Controls.Add(this.radLabel1);
-            this.Controls.Add(this.radTextBox1);
+            this.Controls.Add(this.TxtPagare);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCrearEditarCelular";
             // 
@@ -548,39 +548,39 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "FrmCrearEditarCelular";
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtPagare)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DdlMod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaAlta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChkActivo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChkPagare)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChkHabilitado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaUltimoPago)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaProximoPago)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DdlDiaPago)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaVencimientoPago)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtImei)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DdlEmpresa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtSim)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DdlModelo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtGmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtNumeroTelefono)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DdlDiaCarga)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -592,41 +592,41 @@
 
         #endregion
 
-        private Telerik.WinControls.UI.RadTextBox radTextBox1;
+        private Telerik.WinControls.UI.RadTextBox TxtPagare;
         private Telerik.WinControls.UI.RadLabel radLabel1;
-        private Telerik.WinControls.UI.RadDropDownList radDropDownList1;
-        private Telerik.WinControls.UI.RadDateTimePicker radDateTimePicker1;
+        private Telerik.WinControls.UI.RadDropDownList DdlMod;
+        private Telerik.WinControls.UI.RadDateTimePicker DtpFechaAlta;
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadCheckBox ChkActivo;
         private Telerik.WinControls.UI.RadLabel radLabel4;
-        private Telerik.WinControls.UI.RadCheckBox radCheckBox1;
+        private Telerik.WinControls.UI.RadCheckBox ChkPagare;
         private Telerik.WinControls.UI.RadLabel radLabel3;
-        private Telerik.WinControls.UI.RadCheckBox radCheckBox2;
+        private Telerik.WinControls.UI.RadCheckBox ChkHabilitado;
         private Telerik.WinControls.UI.RadLabel radLabel5;
         private Telerik.WinControls.UI.RadLabel radLabel6;
-        private Telerik.WinControls.UI.RadDateTimePicker radDateTimePicker2;
+        private Telerik.WinControls.UI.RadDateTimePicker DtpFechaUltimoPago;
         private Telerik.WinControls.UI.RadLabel radLabel7;
-        private Telerik.WinControls.UI.RadDateTimePicker radDateTimePicker3;
-        private Telerik.WinControls.UI.RadDropDownList radDropDownList2;
+        private Telerik.WinControls.UI.RadDateTimePicker DtpFechaProximoPago;
+        private Telerik.WinControls.UI.RadDropDownList DdlDiaPago;
         private Telerik.WinControls.UI.RadLabel radLabel8;
         private Telerik.WinControls.UI.RadLabel radLabel9;
-        private Telerik.WinControls.UI.RadDateTimePicker radDateTimePicker4;
+        private Telerik.WinControls.UI.RadDateTimePicker DtpFechaVencimientoPago;
         private Telerik.WinControls.UI.RadLabel radLabel10;
         private System.Windows.Forms.Button BtnAceptar;
         private System.Windows.Forms.Button BtnCancelar;
         private Telerik.WinControls.UI.RadLabel radLabel11;
-        private Telerik.WinControls.UI.RadTextBox radTextBox2;
+        private Telerik.WinControls.UI.RadTextBox TxtImei;
         private Telerik.WinControls.UI.RadLabel radLabel12;
-        private Telerik.WinControls.UI.RadDropDownList radDropDownList3;
+        private Telerik.WinControls.UI.RadDropDownList DdlEmpresa;
         private Telerik.WinControls.UI.RadLabel radLabel13;
-        private Telerik.WinControls.UI.RadTextBox radTextBox3;
-        private Telerik.WinControls.UI.RadDropDownList radDropDownList4;
+        private Telerik.WinControls.UI.RadTextBox TxtSim;
+        private Telerik.WinControls.UI.RadDropDownList DdlModelo;
         private Telerik.WinControls.UI.RadLabel radLabel14;
         private Telerik.WinControls.UI.RadLabel radLabel15;
-        private Telerik.WinControls.UI.RadTextBox radTextBox4;
+        private Telerik.WinControls.UI.RadTextBox TxtGmail;
         private Telerik.WinControls.UI.RadLabel radLabel16;
-        private Telerik.WinControls.UI.RadTextBox radTextBox5;
-        private Telerik.WinControls.UI.RadDropDownList radDropDownList5;
+        private Telerik.WinControls.UI.RadTextBox TxtNumeroTelefono;
+        private Telerik.WinControls.UI.RadDropDownList DdlDiaCarga;
         private Telerik.WinControls.UI.RadLabel radLabel17;
         private System.Windows.Forms.GroupBox groupBox1;
     }
