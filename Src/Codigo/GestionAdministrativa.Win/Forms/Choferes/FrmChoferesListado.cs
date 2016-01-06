@@ -1,6 +1,7 @@
 ﻿using GestionAdministrativa.Business.Interfaces;
 using GestionAdministrativa.Data.Interfaces;
 using GestionAdministrativa.Entities.Dto;
+using GestionAdministrativa.Win.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,20 +58,59 @@ namespace GestionAdministrativa.Win.Forms.Choferes
         }
 
 
-        private void Delete(Guid guid)
+        private void Delete(Guid choferid)
         {
-            throw new NotImplementedException();
+            using (var formCrear = FormFactory.Create<FrmDetalleEliminarChofer>(choferid, ActionFormMode.Delete))
+            {
+                var result = formCrear.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    formCrear.Close();
+                    RefrescarListado();
+                }
+            }
         }
 
-        private void Edit(Guid guid)
+        private void Edit(Guid choferid)
         {
-            throw new NotImplementedException();
+            using (var formCrear = FormFactory.Create<FrmCrearEditarChofer>(choferid, ActionFormMode.Edit))
+            {
+                var result = formCrear.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    formCrear.Close();
+                    RefrescarListado();
+                }
+            }
         }
 
-        private void Detail(Guid guid)
+        private void Detail(Guid choferid)
         {
-            throw new NotImplementedException();
+            using (var formCrear = FormFactory.Create<FrmDetalleEliminarChofer>(choferid, ActionFormMode.Detail))
+            {
+                var result = formCrear.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    formCrear.Close();
+                    RefrescarListado();
+                }
+            }
         }
+
+        private void CreateChofer()
+        {
+            using (var formCrear = FormFactory.Create<FrmCrearEditarChofer>(Guid.Empty, ActionFormMode.Create))
+            {
+                var result = formCrear.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    formCrear.Close();
+                    RefrescarListado();
+                }
+            }
+        }
+
+
         #endregion
 
         #region Controles
@@ -92,7 +132,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
                 case "Detail":
                     Detail(chofer.Id);
                     break;
-                case "Editar":
+                case "Edit":
                     Edit(chofer.Id);
                     break;
                 case "Delete":
@@ -101,6 +141,14 @@ namespace GestionAdministrativa.Win.Forms.Choferes
 
             }
         }
+
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            CreateChofer();
+        }
+
         #endregion
+
     }
 }

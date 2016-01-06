@@ -108,14 +108,9 @@ namespace GestionAdministrativa.Win.Forms.Choferes
         #endregion
 
         #region Controles
-        private void BtnGuardar_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
-            var chofer = Uow.Choferes.Obtener(c=>c.Dni == DNI);
-            if(chofer!=null)
-            {
-                MessageBox.Show("Un chofer con ese DNi ya existe en la base de datos.");
-                return;
-            }
+            
             CrearEditar();
         }
         #endregion
@@ -159,6 +154,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
 
         private void CrearEditar()
         {
+           
             var esValido = this.ValidarForm();
 
             if (!esValido)
@@ -167,7 +163,16 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             {
                 var entity = ObtenerEntityDesdeForm();
                 if (_formMode == ActionFormMode.Create)
+                {
+                    var chofer = Uow.Choferes.Obtener(c => c.Dni == DNI);
+                    if (chofer != null)
+                    {
+                        MessageBox.Show("Un chofer con ese DNi ya existe en la base de datos.");
+                        return;
+                    }
+
                     Uow.Choferes.Agregar(entity);
+                }
                 else
                     Uow.Choferes.Modificar(entity);
 
@@ -220,12 +225,9 @@ namespace GestionAdministrativa.Win.Forms.Choferes
 
         #endregion
 
-        private void radLabel6_Click(object sender, EventArgs e)
-        {
+     
 
-        }
-
-       
+              
     }
 
 }
