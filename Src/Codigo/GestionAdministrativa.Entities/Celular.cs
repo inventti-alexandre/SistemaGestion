@@ -39,6 +39,14 @@ namespace GestionAdministrativa.Entities
         public Nullable<int> SucursalModificacionId { get; set; }
         public Nullable<System.DateTime> FechaAlta { get; set; }
         public Nullable<System.DateTime> FechaModificacion { get; set; }
+        public Nullable<int> EmpresaCelular { get; set; }
+        public Nullable<int> Numero { get; set; }
+        public string Imei { get; set; }
+        public string SIM { get; set; }
+        public string Email { get; set; }
+        public Nullable<int> DiaCargaId { get; set; }
+        public Nullable<int> ModeloCelularId { get; set; }
+        public Nullable<int> NumeroPagare { get; set; }
     
         public virtual Dia Dias { get; set; }
         public virtual Operador Operadores { get; set; }
@@ -49,5 +57,8 @@ namespace GestionAdministrativa.Entities
         public virtual ICollection<CelularMovimiento> CelularesMovimiento { get; set; }
         public virtual ICollection<PagoCelular> PagosCelular { get; set; }
         public virtual ICollection<Chofer> Choferes { get; set; }
+        public virtual EmpresasCelulare EmpresasCelulare { get; set; }
+        public virtual Dia Dia1 { get; set; }
+        public virtual ModelosCelulare ModelosCelulare { get; set; }
     }
 }

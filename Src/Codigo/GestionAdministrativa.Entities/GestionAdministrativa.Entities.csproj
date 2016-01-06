@@ -78,6 +78,9 @@
     </Compile>
     <Compile Include="Dto\ChoferesDto.cs" />
     <Compile Include="Dto\MovilesDto.cs" />
+    <Compile Include="EmpresasCelulare.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Enums\CondicionVentaEnum.cs" />
     <Compile Include="Enums\EstadoCliente.cs" />
     <Compile Include="Funcion.cs">
@@ -99,6 +102,9 @@
     <Compile Include="Metadata\ChoferMetadata.cs" />
     <Compile Include="Metadata\MovilMetadata.cs" />
     <Compile Include="Metadata\VentaMetadata.cs" />
+    <Compile Include="ModelosCelulare.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Movil.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>

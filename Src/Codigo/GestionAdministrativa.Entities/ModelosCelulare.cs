@@ -12,18 +12,16 @@ namespace GestionAdministrativa.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Dia
+    public partial class ModelosCelulare
     {
-        public Dia()
+        public ModelosCelulare()
         {
             this.Celulares = new HashSet<Celular>();
-            this.Celulares1 = new HashSet<Celular>();
         }
     
         public int Id { get; set; }
         public string Descripcion { get; set; }
     
         public virtual ICollection<Celular> Celulares { get; set; }
-        public virtual ICollection<Celular> Celulares1 { get; set; }
     }
 }

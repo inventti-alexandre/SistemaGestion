@@ -7,9 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using GestionAdministrativa.Entities;
+
 namespace GestionAdministrativa.Data
 {
-    using GestionAdministrativa.Entities;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
@@ -65,5 +66,7 @@ namespace GestionAdministrativa.Data
         public virtual DbSet<TipoMovimientoCaja> TiposMovimientosCajas { get; set; }
         public virtual DbSet<TipoRecibo> TiposRecibos { get; set; }
         public virtual DbSet<Chofer> Choferes { get; set; }
+        public virtual DbSet<EmpresasCelulare> EmpresasCelulares { get; set; }
+        public virtual DbSet<ModelosCelulare> ModelosCelulares { get; set; }
     }
 }

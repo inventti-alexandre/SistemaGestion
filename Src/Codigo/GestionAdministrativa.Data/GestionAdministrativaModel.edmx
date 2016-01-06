@@ -118,6 +118,14 @@
           <Property Name="SucursalModificacionId" Type="int" />
           <Property Name="FechaAlta" Type="datetime" />
           <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="EmpresaCelular" Type="int" />
+          <Property Name="Numero" Type="int" />
+          <Property Name="Imei" Type="nvarchar" MaxLength="50" />
+          <Property Name="SIM" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="DiaCargaId" Type="int" />
+          <Property Name="ModeloCelularId" Type="int" />
+          <Property Name="NumeroPagare" Type="int" />
         </EntityType>
         <EntityType Name="CelularesMovimiento">
           <Key>
@@ -233,6 +241,13 @@
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Descripcion" Type="nchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="EmpresasCelulares">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Funciones">
           <Key>
             <PropertyRef Name="Id" />
@@ -278,6 +293,13 @@
           <Property Name="FechaModificacion" Type="datetime" />
           <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
           <Property Name="SucursalModificacionId" Type="int" />
+        </EntityType>
+        <EntityType Name="ModelosCelulares">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Moviles">
           <Key>
@@ -992,6 +1014,42 @@
             </Principal>
             <Dependent Role="Celulares">
               <PropertyRef Name="DiaPagoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Celulares_EmpresaCelular">
+          <End Role="EmpresasCelulares" Type="Self.EmpresasCelulares" Multiplicity="0..1" />
+          <End Role="Celulares" Type="Self.Celulares" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpresasCelulares">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Celulares">
+              <PropertyRef Name="EmpresaCelular" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Celulares_Id">
+          <End Role="Dias" Type="Self.Dias" Multiplicity="0..1" />
+          <End Role="Celulares" Type="Self.Celulares" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dias">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Celulares">
+              <PropertyRef Name="DiaCargaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Celulares_Modelo">
+          <End Role="ModelosCelulares" Type="Self.ModelosCelulares" Multiplicity="0..1" />
+          <End Role="Celulares" Type="Self.Celulares" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelosCelulares">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Celulares">
+              <PropertyRef Name="ModeloCelularId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2952,9 +3010,11 @@
           <EntitySet Name="Conceptos" EntityType="Self.Conceptos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CondicionesCompra" EntityType="Self.CondicionesCompra" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Dias" EntityType="Self.Dias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmpresasCelulares" EntityType="Self.EmpresasCelulares" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Funciones" EntityType="Self.Funciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GruposProveedores" EntityType="Self.GruposProveedores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Localidades" EntityType="Self.Localidades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ModelosCelulares" EntityType="Self.ModelosCelulares" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Moviles" EntityType="Self.Moviles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Operadores" EntityType="Self.Operadores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OperadoresFunciones" EntityType="Self.OperadoresFunciones" Schema="dbo" store:Type="Tables" />
@@ -3070,6 +3130,18 @@
           </AssociationSet>
           <AssociationSet Name="FK_Celulares_DiaPago" Association="Self.FK_Celulares_DiaPago">
             <End Role="Dias" EntitySet="Dias" />
+            <End Role="Celulares" EntitySet="Celulares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Celulares_EmpresaCelular" Association="Self.FK_Celulares_EmpresaCelular">
+            <End Role="EmpresasCelulares" EntitySet="EmpresasCelulares" />
+            <End Role="Celulares" EntitySet="Celulares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Celulares_Id" Association="Self.FK_Celulares_Id">
+            <End Role="Dias" EntitySet="Dias" />
+            <End Role="Celulares" EntitySet="Celulares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Celulares_Modelo" Association="Self.FK_Celulares_Modelo">
+            <End Role="ModelosCelulares" EntitySet="ModelosCelulares" />
             <End Role="Celulares" EntitySet="Celulares" />
           </AssociationSet>
           <AssociationSet Name="FK_Celulares_OperadoresAlta" Association="Self.FK_Celulares_OperadoresAlta">
@@ -3873,6 +3945,17 @@
           <NavigationProperty Name="CelularesMovimiento" Relationship="Self.FK_CelularesMovimiento_Celular" FromRole="Celulares" ToRole="CelularesMovimiento" />
           <NavigationProperty Name="PagosCelular" Relationship="Self.FK_PagosCelular_Celular" FromRole="Celulares" ToRole="PagosCelular" />
           <NavigationProperty Name="Choferes" Relationship="GestionAdministrativa.Model.FK_Choferes_Celulares" FromRole="Celular" ToRole="Chofer" />
+          <Property Name="EmpresaCelular" Type="Int32" />
+          <Property Name="Numero" Type="Int32" />
+          <Property Name="Imei" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SIM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiaCargaId" Type="Int32" />
+          <Property Name="ModeloCelularId" Type="Int32" />
+          <Property Name="NumeroPagare" Type="Int32" />
+          <NavigationProperty Name="EmpresasCelulare" Relationship="GestionAdministrativa.Model.FK_Celulares_EmpresaCelular" FromRole="Celular" ToRole="EmpresasCelulare" />
+          <NavigationProperty Name="Dia1" Relationship="GestionAdministrativa.Model.FK_Celulares_Id" FromRole="Celular" ToRole="Dia" />
+          <NavigationProperty Name="ModelosCelulare" Relationship="GestionAdministrativa.Model.FK_Celulares_Modelo" FromRole="Celular" ToRole="ModelosCelulare" />
         </EntityType>
         <EntityType Name="CelularMovimiento">
           <Key>
@@ -3997,6 +4080,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Celulares" Relationship="Self.FK_Celulares_DiaPago" FromRole="Dias" ToRole="Celulares" />
+          <NavigationProperty Name="Celulares1" Relationship="GestionAdministrativa.Model.FK_Celulares_Id" FromRole="Dia" ToRole="Celular" />
         </EntityType>
         <EntityType Name="Funcion">
           <Key>
@@ -7664,6 +7748,20 @@
             <End Role="Celular" EntitySet="Celulares" />
             <End Role="Chofer" EntitySet="Choferes" />
           </AssociationSet>
+          <EntitySet Name="EmpresasCelulares" EntityType="GestionAdministrativa.Model.EmpresasCelulare" />
+          <EntitySet Name="ModelosCelulares" EntityType="GestionAdministrativa.Model.ModelosCelulare" />
+          <AssociationSet Name="FK_Celulares_EmpresaCelular" Association="GestionAdministrativa.Model.FK_Celulares_EmpresaCelular">
+            <End Role="EmpresasCelulare" EntitySet="EmpresasCelulares" />
+            <End Role="Celular" EntitySet="Celulares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Celulares_Id" Association="GestionAdministrativa.Model.FK_Celulares_Id">
+            <End Role="Dia" EntitySet="Dias" />
+            <End Role="Celular" EntitySet="Celulares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Celulares_Modelo" Association="GestionAdministrativa.Model.FK_Celulares_Modelo">
+            <End Role="ModelosCelulare" EntitySet="ModelosCelulares" />
+            <End Role="Celular" EntitySet="Celulares" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Chofer">
           <Key>
@@ -7776,6 +7874,58 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="EmpresasCelulare">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Celulares" Relationship="GestionAdministrativa.Model.FK_Celulares_EmpresaCelular" FromRole="EmpresasCelulare" ToRole="Celular" />
+        </EntityType>
+        <EntityType Name="ModelosCelulare">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Celulares" Relationship="GestionAdministrativa.Model.FK_Celulares_Modelo" FromRole="ModelosCelulare" ToRole="Celular" />
+        </EntityType>
+        <Association Name="FK_Celulares_EmpresaCelular">
+          <End Type="GestionAdministrativa.Model.EmpresasCelulare" Role="EmpresasCelulare" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.Celular" Role="Celular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmpresasCelulare">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Celular">
+              <PropertyRef Name="EmpresaCelular" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Celulares_Id">
+          <End Type="GestionAdministrativa.Model.Dia" Role="Dia" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.Celular" Role="Celular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Celular">
+              <PropertyRef Name="DiaCargaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Celulares_Modelo">
+          <End Type="GestionAdministrativa.Model.ModelosCelulare" Role="ModelosCelulare" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.Celular" Role="Celular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelosCelulare">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Celular">
+              <PropertyRef Name="ModeloCelularId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -7880,6 +8030,14 @@
           <EntitySetMapping Name="Celulares">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.Celular">
               <MappingFragment StoreEntitySet="Celulares">
+                <ScalarProperty Name="NumeroPagare" ColumnName="NumeroPagare" />
+                <ScalarProperty Name="ModeloCelularId" ColumnName="ModeloCelularId" />
+                <ScalarProperty Name="DiaCargaId" ColumnName="DiaCargaId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="SIM" ColumnName="SIM" />
+                <ScalarProperty Name="Imei" ColumnName="Imei" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="EmpresaCelular" ColumnName="EmpresaCelular" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TipoCelularId" ColumnName="TipoCelularId" />
                 <ScalarProperty Name="Alta" ColumnName="Alta" />
@@ -8535,6 +8693,22 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="EmpresasCelulares">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.EmpresasCelulare">
+              <MappingFragment StoreEntitySet="EmpresasCelulares">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ModelosCelulares">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.ModelosCelulare">
+              <MappingFragment StoreEntitySet="ModelosCelulares">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -8549,7 +8723,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
