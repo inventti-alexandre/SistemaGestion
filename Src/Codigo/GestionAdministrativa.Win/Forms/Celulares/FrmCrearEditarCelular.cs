@@ -207,9 +207,11 @@ namespace GestionAdministrativa.Win.Forms.Celulares
 
         private void CargarCombos()
         {
-            var dias = Uow.Dias.Listado().ToList();
-            CbxDiaCarga.DataSource = dias;
-            CbxDiaPago.DataSource = dias;
+            var diasCarga = Uow.Dias.Listado().ToList();
+            var diasPago = Uow.Dias.Listado().ToList();
+            
+            CbxDiaCarga.DataSource = diasCarga;
+            CbxDiaPago.DataSource = diasPago;
 
             var tipoCelular = Uow.TiposCelulares.Listado().ToList();
             CbxTipoCelular.DataSource = tipoCelular;

@@ -114,7 +114,6 @@
             this.TxtPagare.Size = new System.Drawing.Size(195, 28);
             this.TxtPagare.TabIndex = 0;
             this.TxtPagare.TabStop = false;
-            this.TxtPagare.Text = "radTextBox1";
             this.TxtPagare.ThemeName = "TelerikMetro";
             // 
             // radLabel1
