@@ -40,11 +40,11 @@
             this.TxtEmail = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.CkActivo = new Telerik.WinControls.UI.RadCheckBox();
-            this.BtnCancelar = new Telerik.WinControls.UI.RadButton();
             this.EpvChofer = new System.Windows.Forms.ErrorProvider(this.components);
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
             this.DdlMoviles = new Telerik.WinControls.UI.RadDropDownList();
             this.BtnEliminar = new Telerik.WinControls.UI.RadButton();
+            this.BtnCancelar = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDni)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtApellido)).BeginInit();
@@ -56,11 +56,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CkActivo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EpvChofer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DdlMoviles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnEliminar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,17 +182,6 @@
             this.CkActivo.Text = "Activo";
             this.CkActivo.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
             // 
-            // BtnCancelar
-            // 
-            this.BtnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnCancelar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(290, 348);
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(132, 41);
-            this.BtnCancelar.TabIndex = 7;
-            this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.ThemeName = "TelerikMetro";
-            // 
             // EpvChofer
             // 
             this.EpvChofer.ContainerControl = this;
@@ -231,6 +220,17 @@
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.ThemeName = "TelerikMetro";
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            // 
+            // BtnCancelar
+            // 
+            this.BtnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnCancelar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancelar.Location = new System.Drawing.Point(290, 348);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(132, 41);
+            this.BtnCancelar.TabIndex = 7;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.ThemeName = "TelerikMetro";
             // 
             // FrmDetalleEliminarChofer
             // 
@@ -271,11 +271,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CkActivo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EpvChofer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DdlMoviles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnEliminar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -295,10 +295,10 @@
         private Telerik.WinControls.UI.RadTextBox TxtEmail;
         private Telerik.WinControls.UI.RadLabel radLabel5;
         private Telerik.WinControls.UI.RadCheckBox CkActivo;
-        private Telerik.WinControls.UI.RadButton BtnCancelar;
         private System.Windows.Forms.ErrorProvider EpvChofer;
         private Telerik.WinControls.UI.RadLabel radLabel6;
         private Telerik.WinControls.UI.RadDropDownList DdlMoviles;
         private Telerik.WinControls.UI.RadButton BtnEliminar;
+        private Telerik.WinControls.UI.RadButton BtnCancelar;
     }
 }
