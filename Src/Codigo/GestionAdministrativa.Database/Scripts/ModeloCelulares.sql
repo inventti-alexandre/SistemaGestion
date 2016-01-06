@@ -9,9 +9,6 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+Insert into [dbo].ModelosCelulares([Id],[Descripcion]) 
+select 1, N'LG F60' WHERE NOT EXISTS (SELECT 1 FROM [DBO].ModelosCelulares WHERE Id = 1)
 
-:r .\Dias.sql
-:r .\Dias.sql
-:r .\EmpresasCelulares.sql
-:r .\ModeloCelulares.sql
-:r .\TiposCelulares.sql

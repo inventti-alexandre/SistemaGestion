@@ -26,6 +26,10 @@ namespace GestionAdministrativa.Data
         public IRepository<Celular> Celulares { get { return GetStandardRepo<Celular>(); } }
         public IReporteRepository Reportes { get; private set; }
         public IRepository<Sucursal> Sucursales { get { return GetStandardRepo<Sucursal>(); } }
+        public IRepository<Dia> Dias { get { return GetStandardRepo<Dia>(); } }
+        public IRepository<EmpresasCelulare> EmpresasCelulares{get { return GetStandardRepo<EmpresasCelulare>(); }}
+        public IRepository<ModelosCelulare> ModelosCelulares { get { return GetStandardRepo<ModelosCelulare>(); } }
+        public IRepository<TipoCelular> TiposCelulares { get { return GetStandardRepo<TipoCelular>(); } }
 
         public string ConnectionString
         {
@@ -108,5 +112,8 @@ namespace GestionAdministrativa.Data
         }
 
         #endregion
+
+
+        
     }
 }

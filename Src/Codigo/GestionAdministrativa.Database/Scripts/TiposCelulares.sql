@@ -9,9 +9,5 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-
-:r .\Dias.sql
-:r .\Dias.sql
-:r .\EmpresasCelulares.sql
-:r .\ModeloCelulares.sql
-:r .\TiposCelulares.sql
+Insert into [dbo].TiposCelulares ([Id],[Tipo],[Monto],FechaAlta,OperadorAltaId,SucursalAltaId) 
+select 1, N'Propio',0,N'1900-01-01 01:00:00.923',N'4FB4CAF7-9FD7-4A39-BF85-B60F14C2E7AB',1 WHERE NOT EXISTS (SELECT 1 FROM [DBO].TiposCelulares WHERE Id = 1)

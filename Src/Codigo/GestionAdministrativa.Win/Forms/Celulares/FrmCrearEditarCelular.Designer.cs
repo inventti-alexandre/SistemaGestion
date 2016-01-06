@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TxtPagare = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.DdlTipoCelular = new Telerik.WinControls.UI.RadDropDownList();
+            this.CbxTipoCelular = new Telerik.WinControls.UI.RadDropDownList();
             this.DtpFechaAlta = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.ChkActivo = new Telerik.WinControls.UI.RadCheckBox();
@@ -43,7 +44,7 @@
             this.DtpFechaUltimoPago = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             this.DtpFechaProximoPago = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.DdlDiaPago = new Telerik.WinControls.UI.RadDropDownList();
+            this.CbxDiaPago = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             this.DtpFechaVencimientoPago = new Telerik.WinControls.UI.RadDateTimePicker();
@@ -53,21 +54,22 @@
             this.radLabel11 = new Telerik.WinControls.UI.RadLabel();
             this.TxtImei = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
-            this.DdlEmpresa = new Telerik.WinControls.UI.RadDropDownList();
+            this.CbxEmpresa = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
             this.TxtSim = new Telerik.WinControls.UI.RadTextBox();
-            this.DdlModelo = new Telerik.WinControls.UI.RadDropDownList();
+            this.CbxModelo = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel14 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel15 = new Telerik.WinControls.UI.RadLabel();
             this.TxtGmail = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel16 = new Telerik.WinControls.UI.RadLabel();
             this.TxtNumeroCelular = new Telerik.WinControls.UI.RadTextBox();
-            this.DdlDiaCarga = new Telerik.WinControls.UI.RadDropDownList();
+            this.CbxDiaCarga = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel17 = new Telerik.WinControls.UI.RadLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.EpvCelular = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.TxtPagare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DdlTipoCelular)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbxTipoCelular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DtpFechaAlta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChkActivo)).BeginInit();
@@ -80,7 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DtpFechaUltimoPago)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DtpFechaProximoPago)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DdlDiaPago)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbxDiaPago)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DtpFechaVencimientoPago)).BeginInit();
@@ -88,18 +90,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtImei)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DdlEmpresa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbxEmpresa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSim)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DdlModelo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbxModelo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtGmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtNumeroCelular)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DdlDiaCarga)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbxDiaCarga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EpvCelular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,17 +126,17 @@
             this.radLabel1.TabIndex = 1;
             this.radLabel1.Text = "Tipo Celular:";
             // 
-            // DdlTipoCelular
+            // CbxTipoCelular
             // 
-            this.DdlTipoCelular.DropDownAnimationEnabled = true;
-            this.DdlTipoCelular.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DdlTipoCelular.Location = new System.Drawing.Point(253, 23);
-            this.DdlTipoCelular.MaxDropDownItems = 0;
-            this.DdlTipoCelular.Name = "DdlTipoCelular";
-            this.DdlTipoCelular.ShowImageInEditorArea = true;
-            this.DdlTipoCelular.Size = new System.Drawing.Size(285, 29);
-            this.DdlTipoCelular.TabIndex = 2;
-            this.DdlTipoCelular.ThemeName = "TelerikMetro";
+            this.CbxTipoCelular.DropDownAnimationEnabled = true;
+            this.CbxTipoCelular.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbxTipoCelular.Location = new System.Drawing.Point(253, 23);
+            this.CbxTipoCelular.MaxDropDownItems = 0;
+            this.CbxTipoCelular.Name = "CbxTipoCelular";
+            this.CbxTipoCelular.ShowImageInEditorArea = true;
+            this.CbxTipoCelular.Size = new System.Drawing.Size(285, 29);
+            this.CbxTipoCelular.TabIndex = 2;
+            this.CbxTipoCelular.ThemeName = "TelerikMetro";
             // 
             // DtpFechaAlta
             // 
@@ -270,17 +273,17 @@
             this.DtpFechaProximoPago.ThemeName = "TelerikMetro";
             this.DtpFechaProximoPago.Value = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
             // 
-            // DdlDiaPago
+            // CbxDiaPago
             // 
-            this.DdlDiaPago.DropDownAnimationEnabled = true;
-            this.DdlDiaPago.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DdlDiaPago.Location = new System.Drawing.Point(252, 279);
-            this.DdlDiaPago.MaxDropDownItems = 0;
-            this.DdlDiaPago.Name = "DdlDiaPago";
-            this.DdlDiaPago.ShowImageInEditorArea = true;
-            this.DdlDiaPago.Size = new System.Drawing.Size(285, 29);
-            this.DdlDiaPago.TabIndex = 4;
-            this.DdlDiaPago.ThemeName = "TelerikMetro";
+            this.CbxDiaPago.DropDownAnimationEnabled = true;
+            this.CbxDiaPago.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbxDiaPago.Location = new System.Drawing.Point(252, 279);
+            this.CbxDiaPago.MaxDropDownItems = 0;
+            this.CbxDiaPago.Name = "CbxDiaPago";
+            this.CbxDiaPago.ShowImageInEditorArea = true;
+            this.CbxDiaPago.Size = new System.Drawing.Size(285, 29);
+            this.CbxDiaPago.TabIndex = 4;
+            this.CbxDiaPago.ThemeName = "TelerikMetro";
             // 
             // radLabel8
             // 
@@ -336,6 +339,7 @@
             this.BtnAceptar.TabIndex = 17;
             this.BtnAceptar.Text = "Aceptar";
             this.BtnAceptar.UseVisualStyleBackColor = true;
+            this.BtnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // BtnCancelar
             // 
@@ -376,17 +380,17 @@
             this.radLabel12.TabIndex = 21;
             this.radLabel12.Text = "Empresa:";
             // 
-            // DdlEmpresa
+            // CbxEmpresa
             // 
-            this.DdlEmpresa.DropDownAnimationEnabled = true;
-            this.DdlEmpresa.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DdlEmpresa.Location = new System.Drawing.Point(130, 33);
-            this.DdlEmpresa.MaxDropDownItems = 0;
-            this.DdlEmpresa.Name = "DdlEmpresa";
-            this.DdlEmpresa.ShowImageInEditorArea = true;
-            this.DdlEmpresa.Size = new System.Drawing.Size(285, 29);
-            this.DdlEmpresa.TabIndex = 22;
-            this.DdlEmpresa.ThemeName = "TelerikMetro";
+            this.CbxEmpresa.DropDownAnimationEnabled = true;
+            this.CbxEmpresa.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbxEmpresa.Location = new System.Drawing.Point(130, 33);
+            this.CbxEmpresa.MaxDropDownItems = 0;
+            this.CbxEmpresa.Name = "CbxEmpresa";
+            this.CbxEmpresa.ShowImageInEditorArea = true;
+            this.CbxEmpresa.Size = new System.Drawing.Size(285, 29);
+            this.CbxEmpresa.TabIndex = 22;
+            this.CbxEmpresa.ThemeName = "TelerikMetro";
             // 
             // radLabel13
             // 
@@ -407,17 +411,17 @@
             this.TxtSim.TabStop = false;
             this.TxtSim.ThemeName = "TelerikMetro";
             // 
-            // DdlModelo
+            // CbxModelo
             // 
-            this.DdlModelo.DropDownAnimationEnabled = true;
-            this.DdlModelo.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DdlModelo.Location = new System.Drawing.Point(252, 60);
-            this.DdlModelo.MaxDropDownItems = 0;
-            this.DdlModelo.Name = "DdlModelo";
-            this.DdlModelo.ShowImageInEditorArea = true;
-            this.DdlModelo.Size = new System.Drawing.Size(285, 29);
-            this.DdlModelo.TabIndex = 24;
-            this.DdlModelo.ThemeName = "TelerikMetro";
+            this.CbxModelo.DropDownAnimationEnabled = true;
+            this.CbxModelo.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbxModelo.Location = new System.Drawing.Point(252, 60);
+            this.CbxModelo.MaxDropDownItems = 0;
+            this.CbxModelo.Name = "CbxModelo";
+            this.CbxModelo.ShowImageInEditorArea = true;
+            this.CbxModelo.Size = new System.Drawing.Size(285, 29);
+            this.CbxModelo.TabIndex = 24;
+            this.CbxModelo.ThemeName = "TelerikMetro";
             // 
             // radLabel14
             // 
@@ -466,17 +470,17 @@
             this.TxtNumeroCelular.TabStop = false;
             this.TxtNumeroCelular.ThemeName = "TelerikMetro";
             // 
-            // DdlDiaCarga
+            // CbxDiaCarga
             // 
-            this.DdlDiaCarga.DropDownAnimationEnabled = true;
-            this.DdlDiaCarga.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DdlDiaCarga.Location = new System.Drawing.Point(130, 210);
-            this.DdlDiaCarga.MaxDropDownItems = 0;
-            this.DdlDiaCarga.Name = "DdlDiaCarga";
-            this.DdlDiaCarga.ShowImageInEditorArea = true;
-            this.DdlDiaCarga.Size = new System.Drawing.Size(285, 29);
-            this.DdlDiaCarga.TabIndex = 27;
-            this.DdlDiaCarga.ThemeName = "TelerikMetro";
+            this.CbxDiaCarga.DropDownAnimationEnabled = true;
+            this.CbxDiaCarga.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbxDiaCarga.Location = new System.Drawing.Point(130, 210);
+            this.CbxDiaCarga.MaxDropDownItems = 0;
+            this.CbxDiaCarga.Name = "CbxDiaCarga";
+            this.CbxDiaCarga.ShowImageInEditorArea = true;
+            this.CbxDiaCarga.Size = new System.Drawing.Size(285, 29);
+            this.CbxDiaCarga.TabIndex = 27;
+            this.CbxDiaCarga.ThemeName = "TelerikMetro";
             // 
             // radLabel17
             // 
@@ -489,8 +493,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.DdlEmpresa);
-            this.groupBox1.Controls.Add(this.DdlDiaCarga);
+            this.groupBox1.Controls.Add(this.CbxEmpresa);
+            this.groupBox1.Controls.Add(this.CbxDiaCarga);
             this.groupBox1.Controls.Add(this.TxtImei);
             this.groupBox1.Controls.Add(this.radLabel17);
             this.groupBox1.Controls.Add(this.radLabel11);
@@ -509,6 +513,10 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de celulares propios";
             // 
+            // EpvCelular
+            // 
+            this.EpvCelular.ContainerControl = this;
+            // 
             // FrmCrearEditarCelular
             // 
             this.AcceptButton = this.BtnAceptar;
@@ -517,13 +525,13 @@
             this.CancelButton = this.BtnCancelar;
             this.ClientSize = new System.Drawing.Size(1325, 567);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.DdlModelo);
+            this.Controls.Add(this.CbxModelo);
             this.Controls.Add(this.radLabel14);
             this.Controls.Add(this.BtnAceptar);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.radLabel10);
             this.Controls.Add(this.radLabel9);
-            this.Controls.Add(this.DdlDiaPago);
+            this.Controls.Add(this.CbxDiaPago);
             this.Controls.Add(this.DtpFechaVencimientoPago);
             this.Controls.Add(this.radLabel8);
             this.Controls.Add(this.radLabel7);
@@ -538,7 +546,7 @@
             this.Controls.Add(this.radLabel4);
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.DtpFechaAlta);
-            this.Controls.Add(this.DdlTipoCelular);
+            this.Controls.Add(this.CbxTipoCelular);
             this.Controls.Add(this.radLabel1);
             this.Controls.Add(this.TxtPagare);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -551,7 +559,7 @@
             this.Load += new System.EventHandler(this.FrmCrearEditarCelular_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TxtPagare)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DdlTipoCelular)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbxTipoCelular)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DtpFechaAlta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChkActivo)).EndInit();
@@ -564,7 +572,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DtpFechaUltimoPago)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DtpFechaProximoPago)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DdlDiaPago)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbxDiaPago)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DtpFechaVencimientoPago)).EndInit();
@@ -572,19 +580,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtImei)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DdlEmpresa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbxEmpresa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSim)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DdlModelo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbxModelo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtGmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtNumeroCelular)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DdlDiaCarga)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbxDiaCarga)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EpvCelular)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -595,7 +604,7 @@
 
         private Telerik.WinControls.UI.RadTextBox TxtPagare;
         private Telerik.WinControls.UI.RadLabel radLabel1;
-        private Telerik.WinControls.UI.RadDropDownList DdlTipoCelular;
+        private Telerik.WinControls.UI.RadDropDownList CbxTipoCelular;
         private Telerik.WinControls.UI.RadDateTimePicker DtpFechaAlta;
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadCheckBox ChkActivo;
@@ -608,7 +617,7 @@
         private Telerik.WinControls.UI.RadDateTimePicker DtpFechaUltimoPago;
         private Telerik.WinControls.UI.RadLabel radLabel7;
         private Telerik.WinControls.UI.RadDateTimePicker DtpFechaProximoPago;
-        private Telerik.WinControls.UI.RadDropDownList DdlDiaPago;
+        private Telerik.WinControls.UI.RadDropDownList CbxDiaPago;
         private Telerik.WinControls.UI.RadLabel radLabel8;
         private Telerik.WinControls.UI.RadLabel radLabel9;
         private Telerik.WinControls.UI.RadDateTimePicker DtpFechaVencimientoPago;
@@ -618,17 +627,18 @@
         private Telerik.WinControls.UI.RadLabel radLabel11;
         private Telerik.WinControls.UI.RadTextBox TxtImei;
         private Telerik.WinControls.UI.RadLabel radLabel12;
-        private Telerik.WinControls.UI.RadDropDownList DdlEmpresa;
+        private Telerik.WinControls.UI.RadDropDownList CbxEmpresa;
         private Telerik.WinControls.UI.RadLabel radLabel13;
         private Telerik.WinControls.UI.RadTextBox TxtSim;
-        private Telerik.WinControls.UI.RadDropDownList DdlModelo;
+        private Telerik.WinControls.UI.RadDropDownList CbxModelo;
         private Telerik.WinControls.UI.RadLabel radLabel14;
         private Telerik.WinControls.UI.RadLabel radLabel15;
         private Telerik.WinControls.UI.RadTextBox TxtGmail;
         private Telerik.WinControls.UI.RadLabel radLabel16;
         private Telerik.WinControls.UI.RadTextBox TxtNumeroCelular;
-        private Telerik.WinControls.UI.RadDropDownList DdlDiaCarga;
+        private Telerik.WinControls.UI.RadDropDownList CbxDiaCarga;
         private Telerik.WinControls.UI.RadLabel radLabel17;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ErrorProvider EpvCelular;
     }
 }

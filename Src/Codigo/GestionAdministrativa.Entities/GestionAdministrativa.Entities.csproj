@@ -77,6 +77,7 @@
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Dto\ChoferesDto.cs" />
+    <Compile Include="Dto\CelularDto.cs" />
     <Compile Include="Dto\MovilesDto.cs" />
     <Compile Include="EmpresasCelulare.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
@@ -100,6 +101,7 @@
     </Compile>
     <Compile Include="Metadata\ClienteMetadata.cs" />
     <Compile Include="Metadata\ChoferMetadata.cs" />
+    <Compile Include="Metadata\CelularMetadata.cs" />
     <Compile Include="Metadata\MovilMetadata.cs" />
     <Compile Include="Metadata\VentaMetadata.cs" />
     <Compile Include="ModelosCelulare.cs">

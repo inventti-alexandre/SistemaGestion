@@ -9,9 +9,5 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-
-:r .\Dias.sql
-:r .\Dias.sql
-:r .\EmpresasCelulares.sql
-:r .\ModeloCelulares.sql
-:r .\TiposCelulares.sql
+Insert into [dbo].[EmpresasCelulares] ([Id],[Descripcion]) 
+select 1, N'Personal' WHERE NOT EXISTS (SELECT 1 FROM [DBO].EmpresasCelulares WHERE Id = 1)

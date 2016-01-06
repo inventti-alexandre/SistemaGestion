@@ -33,6 +33,6 @@
     CONSTRAINT [FK_Celulares_OperadoresModificacion] FOREIGN KEY (OperadorModificacionId) REFERENCES Operadores(Id), 
     CONSTRAINT [FK_Celulares_SucursalModificacion] FOREIGN KEY (SucursalModificacionId) REFERENCES Sucursales(Id), 
     CONSTRAINT [FK_Celulares_EmpresaCelular] FOREIGN KEY (EmpresaCelular) REFERENCES EmpresasCelulares(Id), 
-    CONSTRAINT [FK_Celulares_Id] FOREIGN KEY ([DiaCargaId]) REFERENCES Dias(Id), 
+    CONSTRAINT [FK_Celulares_DiaCarga] FOREIGN KEY ([DiaCargaId]) REFERENCES Dias(Id), 
     CONSTRAINT [FK_Celulares_Modelo] FOREIGN KEY ([ModeloCelularId]) REFERENCES ModelosCelulares(Id)
 )

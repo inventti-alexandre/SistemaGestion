@@ -1005,6 +1005,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Celulares_DiaCarga">
+          <End Role="Dias" Type="Self.Dias" Multiplicity="0..1" />
+          <End Role="Celulares" Type="Self.Celulares" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dias">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Celulares">
+              <PropertyRef Name="DiaCargaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Celulares_DiaPago">
           <End Role="Dias" Type="Self.Dias" Multiplicity="0..1" />
           <End Role="Celulares" Type="Self.Celulares" Multiplicity="*" />
@@ -1026,18 +1038,6 @@
             </Principal>
             <Dependent Role="Celulares">
               <PropertyRef Name="EmpresaCelular" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Celulares_Id">
-          <End Role="Dias" Type="Self.Dias" Multiplicity="0..1" />
-          <End Role="Celulares" Type="Self.Celulares" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Dias">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Celulares">
-              <PropertyRef Name="DiaCargaId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3128,16 +3128,16 @@
             <End Role="Sucursales" EntitySet="Sucursales" />
             <End Role="CategoriasOperadores" EntitySet="CategoriasOperadores" />
           </AssociationSet>
+          <AssociationSet Name="FK_Celulares_DiaCarga" Association="Self.FK_Celulares_DiaCarga">
+            <End Role="Dias" EntitySet="Dias" />
+            <End Role="Celulares" EntitySet="Celulares" />
+          </AssociationSet>
           <AssociationSet Name="FK_Celulares_DiaPago" Association="Self.FK_Celulares_DiaPago">
             <End Role="Dias" EntitySet="Dias" />
             <End Role="Celulares" EntitySet="Celulares" />
           </AssociationSet>
           <AssociationSet Name="FK_Celulares_EmpresaCelular" Association="Self.FK_Celulares_EmpresaCelular">
             <End Role="EmpresasCelulares" EntitySet="EmpresasCelulares" />
-            <End Role="Celulares" EntitySet="Celulares" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Celulares_Id" Association="Self.FK_Celulares_Id">
-            <End Role="Dias" EntitySet="Dias" />
             <End Role="Celulares" EntitySet="Celulares" />
           </AssociationSet>
           <AssociationSet Name="FK_Celulares_Modelo" Association="Self.FK_Celulares_Modelo">
@@ -3936,7 +3936,7 @@
           <Property Name="SucursalModificacionId" Type="Int32" />
           <Property Name="FechaAlta" Type="DateTime" Precision="3" />
           <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Dias" Relationship="Self.FK_Celulares_DiaPago" FromRole="Celulares" ToRole="Dias" />
+          <NavigationProperty Name="DiaPago" Relationship="Self.FK_Celulares_DiaPago" FromRole="Celulares" ToRole="Dias" />
           <NavigationProperty Name="Operadores" Relationship="Self.FK_Celulares_OperadoresAlta" FromRole="Celulares" ToRole="Operadores" />
           <NavigationProperty Name="Operadores1" Relationship="Self.FK_Celulares_OperadoresModificacion" FromRole="Celulares" ToRole="Operadores" />
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_Celulares_SucursalesAlta" FromRole="Celulares" ToRole="Sucursales" />
@@ -3954,7 +3954,7 @@
           <Property Name="ModeloCelularId" Type="Int32" />
           <Property Name="NumeroPagare" Type="Int32" />
           <NavigationProperty Name="EmpresasCelulare" Relationship="GestionAdministrativa.Model.FK_Celulares_EmpresaCelular" FromRole="Celular" ToRole="EmpresasCelulare" />
-          <NavigationProperty Name="Dia1" Relationship="GestionAdministrativa.Model.FK_Celulares_Id" FromRole="Celular" ToRole="Dia" />
+          <NavigationProperty Name="DiaCarga" Relationship="GestionAdministrativa.Model.FK_Celulares_Id" FromRole="Celular" ToRole="Dia" />
           <NavigationProperty Name="ModelosCelulare" Relationship="GestionAdministrativa.Model.FK_Celulares_Modelo" FromRole="Celular" ToRole="ModelosCelulare" />
         </EntityType>
         <EntityType Name="CelularMovimiento">

@@ -113,6 +113,9 @@
     <Build Include="Tables\EmpresasCelulares.sql" />
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
     <Build Include="Tables\ModelosCelulares.sql" />
+    <None Include="Scripts\EmpresasCelulares.sql" />
+    <None Include="Scripts\TiposCelulares.sql" />
+    <None Include="Scripts\ModeloCelulares.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Dias.sql" />

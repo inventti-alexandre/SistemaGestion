@@ -15,6 +15,10 @@ namespace GestionAdministrativa.Data.Interfaces
         IReporteRepository Reportes { get; }
         IRepository<Sucursal> Sucursales { get; }
         IRepository<Celular> Celulares { get; }
+        IRepository<Dia> Dias { get; }
+        IRepository<EmpresasCelulare> EmpresasCelulares { get; }
+        IRepository<TipoCelular> TiposCelulares { get; }
+        IRepository<ModelosCelulare> ModelosCelulares { get; }
         GestionAdministrativaDbContext DbContext { get; }
         bool IsDisposed { get; }
 

@@ -48,7 +48,7 @@ namespace GestionAdministrativa.Entities
         public Nullable<int> ModeloCelularId { get; set; }
         public Nullable<int> NumeroPagare { get; set; }
     
-        public virtual Dia Dias { get; set; }
+        public virtual Dia DiaPago { get; set; }
         public virtual Operador Operadores { get; set; }
         public virtual Operador Operadores1 { get; set; }
         public virtual Sucursal Sucursales { get; set; }
@@ -58,7 +58,7 @@ namespace GestionAdministrativa.Entities
         public virtual ICollection<PagoCelular> PagosCelular { get; set; }
         public virtual ICollection<Chofer> Choferes { get; set; }
         public virtual EmpresasCelulare EmpresasCelulare { get; set; }
-        public virtual Dia Dia1 { get; set; }
+        public virtual Dia DiaCarga { get; set; }
         public virtual ModelosCelulare ModelosCelulare { get; set; }
     }
 }
