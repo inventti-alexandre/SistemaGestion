@@ -139,7 +139,7 @@
             this.ucFiltroChoferes.Margin = new System.Windows.Forms.Padding(4);
             this.ucFiltroChoferes.MovilId = new System.Guid("00000000-0000-0000-0000-000000000000");
             this.ucFiltroChoferes.Name = "ucFiltroChoferes";
-            this.ucFiltroChoferes.Size = new System.Drawing.Size(838, 147);
+            this.ucFiltroChoferes.Size = new System.Drawing.Size(1150, 147);
             this.ucFiltroChoferes.TabIndex = 2;
             this.ucFiltroChoferes.Titular = "";
             // 
