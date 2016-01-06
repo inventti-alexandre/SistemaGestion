@@ -63,7 +63,7 @@
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.Location = new System.Drawing.Point(28, 65);
+            this.radLabel2.Location = new System.Drawing.Point(28, 79);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(80, 25);
             this.radLabel2.TabIndex = 1;
@@ -83,7 +83,7 @@
             // radLabel4
             // 
             this.radLabel4.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel4.Location = new System.Drawing.Point(410, 65);
+            this.radLabel4.Location = new System.Drawing.Point(410, 79);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(90, 25);
             this.radLabel4.TabIndex = 3;
@@ -104,7 +104,7 @@
             // TxtNombre
             // 
             this.TxtNombre.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNombre.Location = new System.Drawing.Point(141, 65);
+            this.TxtNombre.Location = new System.Drawing.Point(141, 79);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(247, 28);
             this.TxtNombre.TabIndex = 5;
@@ -115,7 +115,7 @@
             // TxtTitular
             // 
             this.TxtTitular.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTitular.Location = new System.Drawing.Point(523, 65);
+            this.TxtTitular.Location = new System.Drawing.Point(523, 79);
             this.TxtTitular.Name = "TxtTitular";
             this.TxtTitular.Size = new System.Drawing.Size(247, 28);
             this.TxtTitular.TabIndex = 6;
@@ -139,9 +139,9 @@
             // BtnBuscar
             // 
             this.BtnBuscar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBuscar.Location = new System.Drawing.Point(640, 108);
+            this.BtnBuscar.Location = new System.Drawing.Point(1012, 107);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(130, 39);
+            this.BtnBuscar.Size = new System.Drawing.Size(156, 39);
             this.BtnBuscar.TabIndex = 8;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.ThemeName = "TelerikMetro";
@@ -150,9 +150,9 @@
             // BtnLimpiar
             // 
             this.BtnLimpiar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLimpiar.Location = new System.Drawing.Point(451, 108);
+            this.BtnLimpiar.Location = new System.Drawing.Point(787, 107);
             this.BtnLimpiar.Name = "BtnLimpiar";
-            this.BtnLimpiar.Size = new System.Drawing.Size(170, 39);
+            this.BtnLimpiar.Size = new System.Drawing.Size(206, 39);
             this.BtnLimpiar.TabIndex = 9;
             this.BtnLimpiar.Text = "Limpiar Filtros";
             this.BtnLimpiar.ThemeName = "TelerikMetro";
@@ -174,7 +174,7 @@
             this.Controls.Add(this.radLabel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ucFiltroChoferes";
-            this.Size = new System.Drawing.Size(838, 168);
+            this.Size = new System.Drawing.Size(1196, 168);
             this.Load += new System.EventHandler(this.ucFiltroChoferes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
