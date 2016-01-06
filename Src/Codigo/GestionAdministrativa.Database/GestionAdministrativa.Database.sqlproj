@@ -110,8 +110,9 @@
     <Build Include="Tables\PagosCelular.sql" />
     <Build Include="Tables\CelularesMovimientos.sql" />
     <Build Include="Tables\ChoferesMontosFavor.sql" />
-    <Build Include="Tables\EmpresaCelular.sql" />
+    <Build Include="Tables\EmpresasCelulares.sql" />
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
+    <Build Include="Tables\ModelosCelulares.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Dias.sql" />

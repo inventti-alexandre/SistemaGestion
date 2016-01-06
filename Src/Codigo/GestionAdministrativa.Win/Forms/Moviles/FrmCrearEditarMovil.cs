@@ -84,7 +84,30 @@ namespace GestionAdministrativa.Win.Forms.Moviles
         #endregion
 
         #region Methods
-            private void BtnAceptar_Click(object sender, EventArgs e)
+        private void FrmCrearEditarMovil_Load(object sender, EventArgs e)
+        {
+            CargarMovil(_movilId);
+        }
+
+        private void CargarMovil(Guid _movilId)
+        {
+            if (_movilId == Guid.Empty)
+            {
+                _movil = new Movil();
+                return;
+            }
+            else
+            {
+                _movil = Uow.Moviles.Obtener(m => m.Id == _movilId);
+            }
+
+            this.Activo = _movil.Activo;
+            this.Numero = _movil.Numero;
+            this.Patente = _movil.Patente;
+        }
+           
+        
+        private void BtnAceptar_Click(object sender, EventArgs e)
             {
                 if (_actionForm==ActionFormMode.Create)
                     CrearMovil();
@@ -183,27 +206,7 @@ namespace GestionAdministrativa.Win.Forms.Moviles
 
         #endregion
 
-            private void FrmCrearEditarMovil_Load(object sender, EventArgs e)
-            {
-                CargarMovil(_movilId);
-            }
-
-            private void CargarMovil(Guid _movilId)
-            {
-                if (_movilId == Guid.Empty)
-                {
-                    _movil=new Movil();
-                    return;
-                }
-                else
-                {
-                    _movil = Uow.Moviles.Obtener(m=>m.Id==_movilId);
-                }
-
-                this.Activo = _movil.Activo;
-                this.Numero = _movil.Numero;
-                this.Patente = _movil.Patente;
-            }
+            
 
        
 

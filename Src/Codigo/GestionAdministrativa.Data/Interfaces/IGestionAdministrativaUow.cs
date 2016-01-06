@@ -14,8 +14,7 @@ namespace GestionAdministrativa.Data.Interfaces
       
         IReporteRepository Reportes { get; }
         IRepository<Sucursal> Sucursales { get; }
-
-
+        IRepository<Celular> Celulares { get; }
         GestionAdministrativaDbContext DbContext { get; }
         bool IsDisposed { get; }
 
