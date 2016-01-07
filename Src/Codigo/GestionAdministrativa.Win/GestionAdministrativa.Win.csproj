@@ -220,6 +220,18 @@
     <Compile Include="Forms\Moviles\ucFiltroMoviles.Designer.cs">
       <DependentUpon>ucFiltroMoviles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Pagos\FrmPagoSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pagos\FrmPagoSistema.Designer.cs">
+      <DependentUpon>FrmPagoSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pagos\ucBuscardorChoferMovil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Pagos\ucBuscardorChoferMovil.Designer.cs">
+      <DependentUpon>ucBuscardorChoferMovil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserControlBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -270,6 +282,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Moviles\ucFiltroMoviles.resx">
       <DependentUpon>ucFiltroMoviles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pagos\FrmPagoSistema.resx">
+      <DependentUpon>FrmPagoSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pagos\ucBuscardorChoferMovil.resx">
+      <DependentUpon>ucBuscardorChoferMovil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControlBase.resx">
       <DependentUpon>UserControlBase.cs</DependentUpon>
