@@ -151,12 +151,6 @@
     <Compile Include="Forms\Celulares\FrmCrearEditarCelular.Designer.cs">
       <DependentUpon>FrmCrearEditarCelular.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Celulares\FrmCelularListado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Celulares\FrmCelularListado.Designer.cs">
-      <DependentUpon>FrmCelularListado.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Celulares\ucFiltroCelulares.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -226,19 +220,21 @@
     <Compile Include="Forms\Moviles\ucFiltroMoviles.Designer.cs">
       <DependentUpon>ucFiltroMoviles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pagos\FrmPagoSistema.cs" />
+    <Compile Include="Forms\Pagos\FrmPagoSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Pagos\FrmPagoSistema.Designer.cs">
       <DependentUpon>FrmPagoSistema.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pagos\ucBuscardorChoferMovil.cs" />
+    <Compile Include="Forms\Pagos\ucBuscardorChoferMovil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Pagos\ucBuscardorChoferMovil.Designer.cs">
       <DependentUpon>ucBuscardorChoferMovil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pagos\ucDetallePagos.cs" />
-    <Compile Include="Forms\Pagos\ucDetallePagos.Designer.cs">
-      <DependentUpon>ucDetallePagos.cs</DependentUpon>
+    <Compile Include="Forms\Pagos\ucEstadoCuentaChofer.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Pagos\ucEstadoCuentaChofer.cs" />
     <Compile Include="Forms\Pagos\ucEstadoCuentaChofer.Designer.cs">
       <DependentUpon>ucEstadoCuentaChofer.cs</DependentUpon>
     </Compile>
@@ -252,9 +248,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Celulares\FrmCrearEditarCelular.resx">
       <DependentUpon>FrmCrearEditarCelular.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Celulares\FrmCelularListado.resx">
-      <DependentUpon>FrmCelularListado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Celulares\ucFiltroCelulares.resx">
       <DependentUpon>ucFiltroCelulares.cs</DependentUpon>
@@ -302,9 +295,6 @@
     <EmbeddedResource Include="Forms\Pagos\ucBuscardorChoferMovil.resx">
       <DependentUpon>ucBuscardorChoferMovil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Pagos\ucDetallePagos.resx">
-      <DependentUpon>ucDetallePagos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pagos\ucEstadoCuentaChofer.resx">
       <DependentUpon>ucEstadoCuentaChofer.cs</DependentUpon>
     </EmbeddedResource>
@@ -344,6 +334,7 @@
     <Content Include="Resources\Bullets.png" />
     <Content Include="Resources\cancel-cross.png" />
     <None Include="Resources\Car02.png" />
+    <None Include="Resources\Car01.png" />
     <Content Include="Resources\Cash.png" />
     <None Include="Resources\Cell01.png" />
     <Content Include="Resources\Cheque-01.png" />
@@ -368,6 +359,7 @@
     <Content Include="Resources\logo.png" />
     <Content Include="Resources\Money-Credit-Card.png" />
     <Content Include="Resources\Pagar.png" />
+    <None Include="Resources\pago01.png" />
     <Content Include="Resources\Print-16x16.png" />
     <Content Include="Resources\Purchase-Order.png" />
     <Content Include="Resources\Reload.png" />
