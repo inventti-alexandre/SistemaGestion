@@ -16,5 +16,10 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         {
             InitializeComponent();
         }
+
+        private void radLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
