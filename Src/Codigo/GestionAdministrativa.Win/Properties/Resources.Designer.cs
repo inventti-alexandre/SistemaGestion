@@ -103,6 +103,16 @@ namespace GestionAdministrativa.Win.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Car01 {
+            get {
+                object obj = ResourceManager.GetObject("Car01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Car02 {
             get {
                 object obj = ResourceManager.GetObject("Car02", resourceCulture);
@@ -1230,6 +1240,16 @@ namespace GestionAdministrativa.Win.Properties {
         internal static System.Drawing.Bitmap Pagar {
             get {
                 object obj = ResourceManager.GetObject("Pagar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pago01 {
+            get {
+                object obj = ResourceManager.GetObject("pago01", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

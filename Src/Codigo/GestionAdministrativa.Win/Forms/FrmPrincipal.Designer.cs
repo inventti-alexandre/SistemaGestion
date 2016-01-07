@@ -37,6 +37,7 @@
             this.Menu = new Telerik.WinControls.UI.RadMenu();
             this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
+            this.btnPagos = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnChofer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
@@ -44,17 +45,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnChoferListado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCelulares)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radButton1
             // 
+            this.radButton1.AutoSize = true;
             this.radButton1.BackColor = System.Drawing.Color.White;
             this.radButton1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radButton1.Image = global::GestionAdministrativa.Win.Properties.Resources.Car02;
-            this.radButton1.Location = new System.Drawing.Point(44, 277);
+            this.radButton1.Image = global::GestionAdministrativa.Win.Properties.Resources.Car01;
+            this.radButton1.Location = new System.Drawing.Point(315, 12);
             this.radButton1.Name = "radButton1";
-            this.radButton1.Size = new System.Drawing.Size(258, 261);
+            this.radButton1.Size = new System.Drawing.Size(132, 132);
             this.radButton1.TabIndex = 0;
             this.radButton1.Text = "Moviles";
             this.radButton1.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -92,13 +95,14 @@
             // 
             // BtnChoferListado
             // 
+            this.BtnChoferListado.AutoSize = true;
             this.BtnChoferListado.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnChoferListado.ForeColor = System.Drawing.Color.White;
             this.BtnChoferListado.Image = global::GestionAdministrativa.Win.Properties.Resources.chofer01;
             this.BtnChoferListado.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnChoferListado.Location = new System.Drawing.Point(44, 12);
+            this.BtnChoferListado.Location = new System.Drawing.Point(177, 12);
             this.BtnChoferListado.Name = "BtnChoferListado";
-            this.BtnChoferListado.Size = new System.Drawing.Size(258, 259);
+            this.BtnChoferListado.Size = new System.Drawing.Size(132, 132);
             this.BtnChoferListado.TabIndex = 3;
             this.BtnChoferListado.Text = "Choferes";
             this.BtnChoferListado.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -107,11 +111,12 @@
             // 
             // BtnCelulares
             // 
+            this.BtnCelulares.AutoSize = true;
             this.BtnCelulares.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCelulares.Image = global::GestionAdministrativa.Win.Properties.Resources.Cell01;
-            this.BtnCelulares.Location = new System.Drawing.Point(308, 12);
+            this.BtnCelulares.Location = new System.Drawing.Point(453, 12);
             this.BtnCelulares.Name = "BtnCelulares";
-            this.BtnCelulares.Size = new System.Drawing.Size(260, 262);
+            this.BtnCelulares.Size = new System.Drawing.Size(132, 132);
             this.BtnCelulares.TabIndex = 4;
             this.BtnCelulares.Text = "Celulares";
             this.BtnCelulares.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -158,11 +163,26 @@
             this.radMenuItem2.Text = "Menu 02";
             this.radMenuItem2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
+            // btnPagos
+            // 
+            this.btnPagos.AutoSize = true;
+            this.btnPagos.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagos.Image = global::GestionAdministrativa.Win.Properties.Resources.pago01;
+            this.btnPagos.Location = new System.Drawing.Point(177, 157);
+            this.btnPagos.Name = "btnPagos";
+            this.btnPagos.Size = new System.Drawing.Size(132, 132);
+            this.btnPagos.TabIndex = 6;
+            this.btnPagos.Text = "Pagos";
+            this.btnPagos.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPagos.ThemeName = "TelerikMetro";
+            this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1340, 652);
+            this.Controls.Add(this.btnPagos);
             this.Controls.Add(this.BtnCelulares);
             this.Controls.Add(this.Menu);
             this.Controls.Add(this.BtnChoferListado);
@@ -185,6 +205,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnChoferListado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCelulares)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPagos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -202,6 +223,7 @@
         private Telerik.WinControls.UI.RadMenu Menu;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem1;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem2;
+        private Telerik.WinControls.UI.RadButton btnPagos;
 
 
     }

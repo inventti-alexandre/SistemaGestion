@@ -14,6 +14,7 @@ using GestionAdministrativa.Win.Forms.Celulares;
 using GestionAdministrativa.Win.Forms.Choferes;
 using GestionAdministrativa.Win.Forms.Moviles;
 using Telerik.WinControls;
+using GestionAdministrativa.Win.Forms.Pagos;
 
 namespace GestionAdministrativa.Win.Forms
 {
@@ -58,6 +59,12 @@ namespace GestionAdministrativa.Win.Forms
         private void BtnCelulares_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmCrearEditarCelular>(Guid.Empty, ActionFormMode.Create);
+            frm.ShowDialog();
+        }
+
+        private void btnPagos_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmPagoSistema>();
             frm.ShowDialog();
         }
 

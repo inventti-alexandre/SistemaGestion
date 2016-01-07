@@ -232,6 +232,12 @@
     <Compile Include="Forms\Pagos\ucBuscardorChoferMovil.Designer.cs">
       <DependentUpon>ucBuscardorChoferMovil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Pagos\ucEstadoCuentaChofer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Pagos\ucEstadoCuentaChofer.Designer.cs">
+      <DependentUpon>ucEstadoCuentaChofer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserControlBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -289,6 +295,9 @@
     <EmbeddedResource Include="Forms\Pagos\ucBuscardorChoferMovil.resx">
       <DependentUpon>ucBuscardorChoferMovil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pagos\ucEstadoCuentaChofer.resx">
+      <DependentUpon>ucEstadoCuentaChofer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControlBase.resx">
       <DependentUpon>UserControlBase.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +334,7 @@
     <Content Include="Resources\Bullets.png" />
     <Content Include="Resources\cancel-cross.png" />
     <None Include="Resources\Car02.png" />
+    <None Include="Resources\Car01.png" />
     <Content Include="Resources\Cash.png" />
     <None Include="Resources\Cell01.png" />
     <Content Include="Resources\Cheque-01.png" />
@@ -349,6 +359,7 @@
     <Content Include="Resources\logo.png" />
     <Content Include="Resources\Money-Credit-Card.png" />
     <Content Include="Resources\Pagar.png" />
+    <None Include="Resources\pago01.png" />
     <Content Include="Resources\Print-16x16.png" />
     <Content Include="Resources\Purchase-Order.png" />
     <Content Include="Resources\Reload.png" />

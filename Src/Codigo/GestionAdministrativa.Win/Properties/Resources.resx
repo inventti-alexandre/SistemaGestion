@@ -211,6 +211,9 @@
   <data name="devolver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\devolver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Car01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Car01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MessageSuccessVentaExitosa" xml:space="preserve">
     <value>La venta se realizó con éxito</value>
   </data>
@@ -292,8 +295,8 @@
   <data name="Counting-Machine" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Counting-Machine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="van" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\van.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LabelConfirmarCerrarCaja" xml:space="preserve">
+    <value>¿Esta seguro que cerrar la caja para el usuario actual: {0}?</value>
   </data>
   <data name="LabelPresupuesto" xml:space="preserve">
     <value>Presupuesto</value>
@@ -333,9 +336,6 @@
   </data>
   <data name="ConsignacionCliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ConsignacionCliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LabelConfirmarCerrarCaja" xml:space="preserve">
-    <value>¿Esta seguro que cerrar la caja para el usuario actual: {0}?</value>
   </data>
   <data name="Data-Files" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Data-Files.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -406,6 +406,9 @@
   <data name="LabelAnularSenia" xml:space="preserve">
     <value>Anular Seña</value>
   </data>
+  <data name="Cell01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cell01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LabelDetalleAutor" xml:space="preserve">
     <value>Detalle de Autor</value>
   </data>
@@ -462,6 +465,9 @@
   </data>
   <data name="Login-01_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login-01_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="van" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\van.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LabelEliminarLibro" xml:space="preserve">
     <value>Eliminar Libro</value>
@@ -556,7 +562,7 @@
   <data name="Pagar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pagar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cell01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cell01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pago01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pago01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

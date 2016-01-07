@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.ucBuscardorChoferMovil1 = new GestionAdministrativa.Win.Forms.Pagos.ucBuscardorChoferMovil();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.ucEstadoCuentaChofer1 = new GestionAdministrativa.Win.Forms.Pagos.ucEstadoCuentaChofer();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -45,22 +46,31 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.3167F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.6833F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.27255F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.72745F));
             this.tableLayoutPanel1.Controls.Add(this.ucBuscardorChoferMovil1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ucEstadoCuentaChofer1, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.67797F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.32204F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1042, 590);
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.28496F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.71504F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 330F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1042, 710);
             this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // ucEstadoCuentaChofer1
+            // 
+            this.ucEstadoCuentaChofer1.Location = new System.Drawing.Point(3, 186);
+            this.ucEstadoCuentaChofer1.Name = "ucEstadoCuentaChofer1";
+            this.ucEstadoCuentaChofer1.Size = new System.Drawing.Size(496, 190);
+            this.ucEstadoCuentaChofer1.TabIndex = 1;
             // 
             // FrmPagoSistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1066, 614);
+            this.ClientSize = new System.Drawing.Size(1066, 734);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmPagoSistema";
             // 
@@ -78,5 +88,6 @@
 
         private ucBuscardorChoferMovil ucBuscardorChoferMovil1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private ucEstadoCuentaChofer ucEstadoCuentaChofer1;
     }
 }
