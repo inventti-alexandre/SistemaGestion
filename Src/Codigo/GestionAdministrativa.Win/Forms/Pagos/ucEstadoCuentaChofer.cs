@@ -16,5 +16,10 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         {
             InitializeComponent();
         }
+
+        private void ucEstadoCuentaChofer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

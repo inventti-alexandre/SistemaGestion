@@ -232,6 +232,18 @@
     <Compile Include="Forms\Pagos\ucBuscardorChoferMovil.Designer.cs">
       <DependentUpon>ucBuscardorChoferMovil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Pagos\ucDetalleDeuda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Pagos\ucDetalleDeuda.Designer.cs">
+      <DependentUpon>ucDetalleDeuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pagos\ucDetallePagos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Pagos\ucDetallePagos.Designer.cs">
+      <DependentUpon>ucDetallePagos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Pagos\ucEstadoCuentaChofer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -294,6 +306,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pagos\ucBuscardorChoferMovil.resx">
       <DependentUpon>ucBuscardorChoferMovil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pagos\ucDetalleDeuda.resx">
+      <DependentUpon>ucDetalleDeuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pagos\ucDetallePagos.resx">
+      <DependentUpon>ucDetallePagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pagos\ucEstadoCuentaChofer.resx">
       <DependentUpon>ucEstadoCuentaChofer.cs</DependentUpon>

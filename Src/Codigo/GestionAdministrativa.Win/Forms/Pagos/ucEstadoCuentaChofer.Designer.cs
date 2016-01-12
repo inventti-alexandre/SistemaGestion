@@ -53,7 +53,7 @@
             // radLabel1
             // 
             this.radLabel1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(26, 20);
+            this.radLabel1.Location = new System.Drawing.Point(9, 11);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(80, 25);
             this.radLabel1.TabIndex = 0;
@@ -62,7 +62,7 @@
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.Location = new System.Drawing.Point(26, 54);
+            this.radLabel2.Location = new System.Drawing.Point(9, 45);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(70, 25);
             this.radLabel2.TabIndex = 1;
@@ -71,7 +71,7 @@
             // radLabel3
             // 
             this.radLabel3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel3.Location = new System.Drawing.Point(26, 88);
+            this.radLabel3.Location = new System.Drawing.Point(9, 79);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(100, 25);
             this.radLabel3.TabIndex = 2;
@@ -80,7 +80,7 @@
             // radLabel4
             // 
             this.radLabel4.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel4.Location = new System.Drawing.Point(26, 122);
+            this.radLabel4.Location = new System.Drawing.Point(9, 113);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(151, 25);
             this.radLabel4.TabIndex = 3;
@@ -89,7 +89,7 @@
             // radLabel5
             // 
             this.radLabel5.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel5.Location = new System.Drawing.Point(26, 156);
+            this.radLabel5.Location = new System.Drawing.Point(9, 147);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(121, 25);
             this.radLabel5.TabIndex = 4;
@@ -98,7 +98,7 @@
             // radTextBox1
             // 
             this.radTextBox1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox1.Location = new System.Drawing.Point(193, 119);
+            this.radTextBox1.Location = new System.Drawing.Point(176, 110);
             this.radTextBox1.Name = "radTextBox1";
             this.radTextBox1.Size = new System.Drawing.Size(294, 28);
             this.radTextBox1.TabIndex = 5;
@@ -108,7 +108,7 @@
             // radTextBox2
             // 
             this.radTextBox2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox2.Location = new System.Drawing.Point(193, 85);
+            this.radTextBox2.Location = new System.Drawing.Point(176, 76);
             this.radTextBox2.Name = "radTextBox2";
             this.radTextBox2.Size = new System.Drawing.Size(294, 28);
             this.radTextBox2.TabIndex = 6;
@@ -118,7 +118,7 @@
             // radTextBox3
             // 
             this.radTextBox3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox3.Location = new System.Drawing.Point(193, 51);
+            this.radTextBox3.Location = new System.Drawing.Point(176, 42);
             this.radTextBox3.Name = "radTextBox3";
             this.radTextBox3.Size = new System.Drawing.Size(294, 28);
             this.radTextBox3.TabIndex = 6;
@@ -128,7 +128,7 @@
             // radTextBox4
             // 
             this.radTextBox4.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox4.Location = new System.Drawing.Point(193, 17);
+            this.radTextBox4.Location = new System.Drawing.Point(176, 8);
             this.radTextBox4.Name = "radTextBox4";
             this.radTextBox4.Size = new System.Drawing.Size(294, 28);
             this.radTextBox4.TabIndex = 6;
@@ -138,7 +138,7 @@
             // radTextBox5
             // 
             this.radTextBox5.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox5.Location = new System.Drawing.Point(193, 153);
+            this.radTextBox5.Location = new System.Drawing.Point(176, 144);
             this.radTextBox5.Name = "radTextBox5";
             this.radTextBox5.Size = new System.Drawing.Size(294, 28);
             this.radTextBox5.TabIndex = 7;
@@ -160,7 +160,8 @@
             this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.radLabel1);
             this.Name = "ucEstadoCuentaChofer";
-            this.Size = new System.Drawing.Size(513, 202);
+            this.Size = new System.Drawing.Size(480, 181);
+            this.Load += new System.EventHandler(this.ucEstadoCuentaChofer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
