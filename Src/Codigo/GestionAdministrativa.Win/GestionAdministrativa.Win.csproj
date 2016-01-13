@@ -250,6 +250,12 @@
     <Compile Include="Forms\Pagos\ucEstadoCuentaChofer.Designer.cs">
       <DependentUpon>ucEstadoCuentaChofer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Pagos\ucPagos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Pagos\ucPagos.Designer.cs">
+      <DependentUpon>ucPagos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserControlBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -315,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pagos\ucEstadoCuentaChofer.resx">
       <DependentUpon>ucEstadoCuentaChofer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pagos\ucPagos.resx">
+      <DependentUpon>ucPagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControlBase.resx">
       <DependentUpon>UserControlBase.cs</DependentUpon>

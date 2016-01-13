@@ -66,7 +66,7 @@
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.Location = new System.Drawing.Point(26, 60);
+            this.radLabel2.Location = new System.Drawing.Point(303, 25);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(70, 25);
             this.radLabel2.TabIndex = 1;
@@ -94,7 +94,7 @@
             // 
             this.dtpHasta.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(102, 56);
+            this.dtpHasta.Location = new System.Drawing.Point(379, 21);
             this.dtpHasta.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpHasta.MinDate = new System.DateTime(((long)(0)));
             this.dtpHasta.Name = "dtpHasta";
@@ -110,7 +110,7 @@
             // radLabel3
             // 
             this.radLabel3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel3.Location = new System.Drawing.Point(26, 95);
+            this.radLabel3.Location = new System.Drawing.Point(26, 60);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(59, 25);
             this.radLabel3.TabIndex = 4;
@@ -121,7 +121,7 @@
             // 
             this.radDropDownList1.DropDownAnimationEnabled = true;
             this.radDropDownList1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radDropDownList1.Location = new System.Drawing.Point(102, 91);
+            this.radDropDownList1.Location = new System.Drawing.Point(102, 56);
             this.radDropDownList1.MaxDropDownItems = 0;
             this.radDropDownList1.Name = "radDropDownList1";
             this.radDropDownList1.ShowImageInEditorArea = true;
@@ -133,7 +133,7 @@
             // radLabel4
             // 
             this.radLabel4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel4.Location = new System.Drawing.Point(253, 99);
+            this.radLabel4.Location = new System.Drawing.Point(105, 91);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(169, 21);
             this.radLabel4.TabIndex = 6;
@@ -142,7 +142,7 @@
             // radLabel5
             // 
             this.radLabel5.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel5.Location = new System.Drawing.Point(26, 129);
+            this.radLabel5.Location = new System.Drawing.Point(303, 59);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(70, 25);
             this.radLabel5.TabIndex = 7;
@@ -152,7 +152,7 @@
             // txtMonto
             // 
             this.txtMonto.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonto.Location = new System.Drawing.Point(102, 126);
+            this.txtMonto.Location = new System.Drawing.Point(379, 56);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(145, 28);
             this.txtMonto.TabIndex = 8;
@@ -162,7 +162,7 @@
             // radLabel6
             // 
             this.radLabel6.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel6.Location = new System.Drawing.Point(26, 163);
+            this.radLabel6.Location = new System.Drawing.Point(26, 118);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(70, 25);
             this.radLabel6.TabIndex = 9;
@@ -172,7 +172,7 @@
             // TxtTotal
             // 
             this.TxtTotal.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotal.Location = new System.Drawing.Point(102, 160);
+            this.TxtTotal.Location = new System.Drawing.Point(102, 115);
             this.TxtTotal.Name = "TxtTotal";
             this.TxtTotal.Size = new System.Drawing.Size(145, 28);
             this.TxtTotal.TabIndex = 10;
@@ -186,7 +186,7 @@
             this.BtnAceptar.FlatAppearance.BorderSize = 0;
             this.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAceptar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAceptar.Location = new System.Drawing.Point(303, 187);
+            this.BtnAceptar.Location = new System.Drawing.Point(405, 115);
             this.BtnAceptar.Name = "BtnAceptar";
             this.BtnAceptar.Size = new System.Drawing.Size(119, 35);
             this.BtnAceptar.TabIndex = 11;
@@ -210,7 +210,7 @@
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.radLabel1);
             this.Name = "ucDetallePagos";
-            this.Size = new System.Drawing.Size(459, 225);
+            this.Size = new System.Drawing.Size(604, 161);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpDesde)).EndInit();
