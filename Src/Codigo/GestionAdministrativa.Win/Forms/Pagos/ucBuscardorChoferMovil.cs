@@ -51,11 +51,11 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             get
             {
                 int movil;
-                return int.TryParse(TxtMovil.Text, out movil) ? movil : movil;
+                return int.TryParse("Corregir", out movil) ? movil : movil;
             }
             set 
             { 
-                TxtMovil.Text = value.ToString();
+                DdlMoviles.Text = value.ToString();
             } 
         }
         #endregion
@@ -92,7 +92,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         {
             _limpiandoFiltros = true;
             TxtChofer.Text = string.Empty;
-            TxtMovil.Text = string.Empty;
+            //DdlMoviles.Text = string.Empty;
             _limpiandoFiltros = false;
             // OnFiltered();
         }
