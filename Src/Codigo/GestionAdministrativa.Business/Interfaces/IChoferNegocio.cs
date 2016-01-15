@@ -11,5 +11,6 @@ namespace GestionAdministrativa.Business.Interfaces
     public interface IChoferNegocio :IDisposable
     {
         List<ChoferesDto> Listado(string sortBy, string sortDirection, int? dni, string apellido, Guid? movilId, bool? activo, int pageIndex, int pageSize, out int pageTotal);
+      
     }
 }
