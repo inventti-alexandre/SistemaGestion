@@ -181,6 +181,7 @@
             this.BtnCrear.TabIndex = 10;
             this.BtnCrear.Text = "Crear";
             this.BtnCrear.UseVisualStyleBackColor = false;
+            this.BtnCrear.Click += new System.EventHandler(this.BtnCrear_Click);
             // 
             // FrmChoferesListado
             // 
