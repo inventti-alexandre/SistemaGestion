@@ -14,6 +14,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 {
     public partial class FrmPagoSistema : FormBase
     {
+        private Chofer _chofer;
         public FrmPagoSistema()
         {
             InitializeComponent();
@@ -55,7 +56,20 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
         private void ActualizarChofer(Chofer chofer)
         {
-            throw new NotImplementedException();
+            if (chofer.Activo == false)
+            {
+                MessageBox.Show("Este chofer no se encuentra activo");
+                return;
+            }
+
+            _chofer = chofer;
+
+            //Deuda Sistema
+            //var deudaTotal = _clienteNegocio.DeudaTotal(_cliente.Id, this.Context.SucursalActual.Id);
+            //var deudaVencida = _clienteNegocio.DeudaVencida(_cliente.Id, this.Context.SucursalActual.Id);
+
+
+            ucEstadoCuentaChofer1.ActualizarChofer(_chofer);
         }
 
         #endregion

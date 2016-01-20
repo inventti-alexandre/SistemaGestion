@@ -76,7 +76,6 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 BuscarFinished(this, choferes);
             }
         }
-      
         private void BuscarChoferMovil()
         {
              System.Linq.Expressions.Expression<Func<Chofer, bool>> where =
@@ -101,7 +100,6 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 Cursor.Current = Cursors.Default;
             }
         }
-
         private void LimpiarFiltros()
         {
             _limpiandoFiltros = true;

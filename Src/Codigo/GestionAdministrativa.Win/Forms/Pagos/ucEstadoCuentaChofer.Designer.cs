@@ -33,21 +33,24 @@
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
-            this.radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
-            this.radTextBox2 = new Telerik.WinControls.UI.RadTextBox();
-            this.radTextBox3 = new Telerik.WinControls.UI.RadTextBox();
-            this.radTextBox4 = new Telerik.WinControls.UI.RadTextBox();
-            this.radTextBox5 = new Telerik.WinControls.UI.RadTextBox();
+            this.TxtDeudaSistema = new Telerik.WinControls.UI.RadTextBox();
+            this.TxtTelefono = new Telerik.WinControls.UI.RadTextBox();
+            this.TxtMovilNro = new Telerik.WinControls.UI.RadTextBox();
+            this.TxtApellido = new Telerik.WinControls.UI.RadTextBox();
+            this.TxtDeudaBase = new Telerik.WinControls.UI.RadTextBox();
+            this.LnkEditarChofer = new System.Windows.Forms.LinkLabel();
+            this.TxtNombre = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtDeudaSistema)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtTelefono)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtMovilNro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtApellido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtDeudaBase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtNombre)).BeginInit();
             this.SuspendLayout();
             // 
             // radLabel1
@@ -95,83 +98,108 @@
             this.radLabel5.TabIndex = 4;
             this.radLabel5.Text = "Deuda base:";
             // 
-            // radTextBox1
+            // TxtDeudaSistema
             // 
-            this.radTextBox1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox1.Location = new System.Drawing.Point(176, 110);
-            this.radTextBox1.Name = "radTextBox1";
-            this.radTextBox1.Size = new System.Drawing.Size(294, 28);
-            this.radTextBox1.TabIndex = 5;
-            this.radTextBox1.TabStop = false;
-            this.radTextBox1.ThemeName = "TelerikMetro";
+            this.TxtDeudaSistema.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtDeudaSistema.Location = new System.Drawing.Point(176, 110);
+            this.TxtDeudaSistema.Name = "TxtDeudaSistema";
+            this.TxtDeudaSistema.Size = new System.Drawing.Size(294, 28);
+            this.TxtDeudaSistema.TabIndex = 5;
+            this.TxtDeudaSistema.TabStop = false;
+            this.TxtDeudaSistema.ThemeName = "TelerikMetro";
             // 
-            // radTextBox2
+            // TxtTelefono
             // 
-            this.radTextBox2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox2.Location = new System.Drawing.Point(176, 76);
-            this.radTextBox2.Name = "radTextBox2";
-            this.radTextBox2.Size = new System.Drawing.Size(294, 28);
-            this.radTextBox2.TabIndex = 6;
-            this.radTextBox2.TabStop = false;
-            this.radTextBox2.ThemeName = "TelerikMetro";
+            this.TxtTelefono.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTelefono.Location = new System.Drawing.Point(176, 76);
+            this.TxtTelefono.Name = "TxtTelefono";
+            this.TxtTelefono.Size = new System.Drawing.Size(294, 28);
+            this.TxtTelefono.TabIndex = 6;
+            this.TxtTelefono.TabStop = false;
+            this.TxtTelefono.ThemeName = "TelerikMetro";
             // 
-            // radTextBox3
+            // TxtMovilNro
             // 
-            this.radTextBox3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox3.Location = new System.Drawing.Point(176, 42);
-            this.radTextBox3.Name = "radTextBox3";
-            this.radTextBox3.Size = new System.Drawing.Size(294, 28);
-            this.radTextBox3.TabIndex = 6;
-            this.radTextBox3.TabStop = false;
-            this.radTextBox3.ThemeName = "TelerikMetro";
+            this.TxtMovilNro.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtMovilNro.Location = new System.Drawing.Point(176, 42);
+            this.TxtMovilNro.Name = "TxtMovilNro";
+            this.TxtMovilNro.Size = new System.Drawing.Size(294, 28);
+            this.TxtMovilNro.TabIndex = 6;
+            this.TxtMovilNro.TabStop = false;
+            this.TxtMovilNro.ThemeName = "TelerikMetro";
             // 
-            // radTextBox4
+            // TxtApellido
             // 
-            this.radTextBox4.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox4.Location = new System.Drawing.Point(176, 8);
-            this.radTextBox4.Name = "radTextBox4";
-            this.radTextBox4.Size = new System.Drawing.Size(294, 28);
-            this.radTextBox4.TabIndex = 6;
-            this.radTextBox4.TabStop = false;
-            this.radTextBox4.ThemeName = "TelerikMetro";
+            this.TxtApellido.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtApellido.Location = new System.Drawing.Point(176, 8);
+            this.TxtApellido.Name = "TxtApellido";
+            this.TxtApellido.Size = new System.Drawing.Size(150, 28);
+            this.TxtApellido.TabIndex = 6;
+            this.TxtApellido.TabStop = false;
+            this.TxtApellido.ThemeName = "TelerikMetro";
             // 
-            // radTextBox5
+            // TxtDeudaBase
             // 
-            this.radTextBox5.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox5.Location = new System.Drawing.Point(176, 144);
-            this.radTextBox5.Name = "radTextBox5";
-            this.radTextBox5.Size = new System.Drawing.Size(294, 28);
-            this.radTextBox5.TabIndex = 7;
-            this.radTextBox5.TabStop = false;
-            this.radTextBox5.ThemeName = "TelerikMetro";
+            this.TxtDeudaBase.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtDeudaBase.Location = new System.Drawing.Point(176, 144);
+            this.TxtDeudaBase.Name = "TxtDeudaBase";
+            this.TxtDeudaBase.Size = new System.Drawing.Size(294, 28);
+            this.TxtDeudaBase.TabIndex = 7;
+            this.TxtDeudaBase.TabStop = false;
+            this.TxtDeudaBase.ThemeName = "TelerikMetro";
+            // 
+            // LnkEditarChofer
+            // 
+            this.LnkEditarChofer.AutoSize = true;
+            this.LnkEditarChofer.Enabled = false;
+            this.LnkEditarChofer.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LnkEditarChofer.Location = new System.Drawing.Point(317, 186);
+            this.LnkEditarChofer.Name = "LnkEditarChofer";
+            this.LnkEditarChofer.Size = new System.Drawing.Size(153, 23);
+            this.LnkEditarChofer.TabIndex = 8;
+            this.LnkEditarChofer.TabStop = true;
+            this.LnkEditarChofer.Text = "Editar chofer";
+            // 
+            // TxtNombre
+            // 
+            this.TxtNombre.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNombre.Location = new System.Drawing.Point(332, 8);
+            this.TxtNombre.Name = "TxtNombre";
+            this.TxtNombre.Size = new System.Drawing.Size(138, 28);
+            this.TxtNombre.TabIndex = 7;
+            this.TxtNombre.TabStop = false;
+            this.TxtNombre.ThemeName = "TelerikMetro";
             // 
             // ucEstadoCuentaChofer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.radTextBox5);
-            this.Controls.Add(this.radTextBox4);
-            this.Controls.Add(this.radTextBox3);
-            this.Controls.Add(this.radTextBox2);
-            this.Controls.Add(this.radTextBox1);
+            this.Controls.Add(this.TxtNombre);
+            this.Controls.Add(this.LnkEditarChofer);
+            this.Controls.Add(this.TxtDeudaBase);
+            this.Controls.Add(this.TxtApellido);
+            this.Controls.Add(this.TxtMovilNro);
+            this.Controls.Add(this.TxtTelefono);
+            this.Controls.Add(this.TxtDeudaSistema);
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.radLabel5);
             this.Controls.Add(this.radLabel4);
             this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.radLabel1);
             this.Name = "ucEstadoCuentaChofer";
-            this.Size = new System.Drawing.Size(480, 181);
+            this.Size = new System.Drawing.Size(480, 219);
             this.Load += new System.EventHandler(this.ucEstadoCuentaChofer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtDeudaSistema)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtTelefono)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtMovilNro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtApellido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtDeudaBase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtNombre)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,10 +212,12 @@
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.UI.RadLabel radLabel4;
         private Telerik.WinControls.UI.RadLabel radLabel5;
-        private Telerik.WinControls.UI.RadTextBox radTextBox1;
-        private Telerik.WinControls.UI.RadTextBox radTextBox2;
-        private Telerik.WinControls.UI.RadTextBox radTextBox3;
-        private Telerik.WinControls.UI.RadTextBox radTextBox4;
-        private Telerik.WinControls.UI.RadTextBox radTextBox5;
+        private Telerik.WinControls.UI.RadTextBox TxtDeudaSistema;
+        private Telerik.WinControls.UI.RadTextBox TxtTelefono;
+        private Telerik.WinControls.UI.RadTextBox TxtMovilNro;
+        private Telerik.WinControls.UI.RadTextBox TxtApellido;
+        private Telerik.WinControls.UI.RadTextBox TxtDeudaBase;
+        private System.Windows.Forms.LinkLabel LnkEditarChofer;
+        private Telerik.WinControls.UI.RadTextBox TxtNombre;
     }
 }

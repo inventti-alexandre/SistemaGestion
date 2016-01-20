@@ -46,6 +46,15 @@ namespace GestionAdministrativa.Business
             return resultados.Entities.Project().To<ChoferesDto>().ToList();
         }
 
+        //public decimal DeudaSistema(Guid choferId)
+        //{
+        //    var cuentasCorrientes = Uow.ClientesCuentasCorrientes.Listado()
+        //                                                         .Where(cc => cc.ClienteId == clienteId &&
+        //                                                               (!sucursalId.HasValue || cc.SucursalAltaId == sucursalId));
+
+        //    return (decimal)cuentasCorrientes.Select(cc => cc.Importe - cc.Pagado).DefaultIfEmpty(0).Sum();
+        //}
+
      
     }
 }
