@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -40,14 +39,12 @@
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.GridChoferes = new Telerik.WinControls.UI.RadGridView();
-            this.ucFiltroChoferes = new GestionAdministrativa.Win.Forms.Choferes.ucFiltroChoferes();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnCrear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridChoferes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridChoferes.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
-            this.radPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -131,23 +128,10 @@
             this.GridChoferes.ThemeName = "TelerikMetro";
             this.GridChoferes.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.GridChoferes_CommandCellClick);
             // 
-            // ucFiltroChoferes
-            // 
-            this.ucFiltroChoferes.Denominacion = "";
-            this.ucFiltroChoferes.DNI = 0;
-            this.ucFiltroChoferes.Location = new System.Drawing.Point(4, 4);
-            this.ucFiltroChoferes.Margin = new System.Windows.Forms.Padding(4);
-            this.ucFiltroChoferes.MovilId = new System.Guid("00000000-0000-0000-0000-000000000000");
-            this.ucFiltroChoferes.Name = "ucFiltroChoferes";
-            this.ucFiltroChoferes.Size = new System.Drawing.Size(1189, 147);
-            this.ucFiltroChoferes.TabIndex = 2;
-            this.ucFiltroChoferes.Titular = "";
-            // 
             // radPanel1
             // 
             this.radPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radPanel1.Controls.Add(this.ucFiltroChoferes);
             this.radPanel1.Location = new System.Drawing.Point(3, 57);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(1332, 166);
@@ -181,6 +165,7 @@
             this.BtnCrear.TabIndex = 10;
             this.BtnCrear.Text = "Crear";
             this.BtnCrear.UseVisualStyleBackColor = false;
+            this.BtnCrear.Click += new System.EventHandler(this.BtnCrear_Click);
             // 
             // FrmChoferesListado
             // 
@@ -198,7 +183,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridChoferes.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridChoferes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
-            this.radPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
