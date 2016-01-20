@@ -150,11 +150,5 @@ namespace GestionAdministrativa.Win.Forms.Choferes
 
         #endregion
 
-        private void BtnCrear_Click(object sender, EventArgs e)
-        {
-            var frm = FormFactory.Create<FrmCrearEditarChofer>(Guid.Empty, ActionFormMode.Create);
-            frm.ShowDialog();
-        }
-
     }
 }
