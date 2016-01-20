@@ -25,7 +25,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             }
 
             InitializeComponent();
-            //CargarCombos();
+            CargarCombos();
            
         }
 

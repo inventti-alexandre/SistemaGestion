@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ucBuscardorChoferMovil1 = new GestionAdministrativa.Win.Forms.Pagos.ucBuscardorChoferMovil();
+            this.ucBuscardorChoferMovil = new GestionAdministrativa.Win.Forms.Pagos.ucBuscardorChoferMovil();
             this.ucEstadoCuentaChofer1 = new GestionAdministrativa.Win.Forms.Pagos.ucEstadoCuentaChofer();
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
@@ -54,12 +54,14 @@
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // ucBuscardorChoferMovil1
+            // ucBuscardorChoferMovil
             // 
-            this.ucBuscardorChoferMovil1.Location = new System.Drawing.Point(17, 5);
-            this.ucBuscardorChoferMovil1.Name = "ucBuscardorChoferMovil1";
-            this.ucBuscardorChoferMovil1.Size = new System.Drawing.Size(464, 159);
-            this.ucBuscardorChoferMovil1.TabIndex = 0;
+            this.ucBuscardorChoferMovil.DniChofer = 0;
+            this.ucBuscardorChoferMovil.Location = new System.Drawing.Point(17, 5);
+            this.ucBuscardorChoferMovil.MovilId = new System.Guid("00000000-0000-0000-0000-000000000000");
+            this.ucBuscardorChoferMovil.Name = "ucBuscardorChoferMovil";
+            this.ucBuscardorChoferMovil.Size = new System.Drawing.Size(464, 159);
+            this.ucBuscardorChoferMovil.TabIndex = 0;
             // 
             // ucEstadoCuentaChofer1
             // 
@@ -137,7 +139,7 @@
             // 
             // radPanel5
             // 
-            this.radPanel5.Controls.Add(this.ucBuscardorChoferMovil1);
+            this.radPanel5.Controls.Add(this.ucBuscardorChoferMovil);
             this.radPanel5.Location = new System.Drawing.Point(16, 12);
             this.radPanel5.Name = "radPanel5";
             this.radPanel5.Size = new System.Drawing.Size(501, 174);
@@ -160,6 +162,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Registrar pago de sistema";
+            this.Load += new System.EventHandler(this.FrmPagoSistema_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).EndInit();
             this.radPanel2.ResumeLayout(false);
             this.radPanel2.PerformLayout();
@@ -179,7 +182,7 @@
 
         #endregion
 
-        private ucBuscardorChoferMovil ucBuscardorChoferMovil1;
+        private ucBuscardorChoferMovil ucBuscardorChoferMovil;
         private ucEstadoCuentaChofer ucEstadoCuentaChofer1;
         private Telerik.WinControls.UI.RadPanel radPanel2;
         private Telerik.WinControls.UI.RadPanel radPanel1;

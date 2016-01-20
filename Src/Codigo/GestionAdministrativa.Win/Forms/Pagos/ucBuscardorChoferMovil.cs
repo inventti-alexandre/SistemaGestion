@@ -11,6 +11,7 @@ using GestionAdministrativa.Data.Interfaces;
 using Framework.Ioc;
 using GestionAdministrativa.Entities;
 using GestionAdministrativa.Business.Interfaces;
+using System.Data.Entity.SqlServer;
 
 namespace GestionAdministrativa.Win.Forms.Pagos
 {
@@ -26,10 +27,11 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             }
 
             InitializeComponent();
+
         }
 
         #region Eventos
-        public EventHandler<List<Chofer>> BuscarFinished;
+        public event EventHandler<List<Chofer>> BuscarFinished;
         #endregion
 
         #region Propiedades
@@ -46,17 +48,10 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             } 
         }
 
-        public int MovilNumero 
-        { 
-            get
-            {
-                int movil;
-                return int.TryParse("Corregir", out movil) ? movil : movil;
-            }
-            set 
-            { 
-                DdlMoviles.Text = value.ToString();
-            } 
+       public Guid? MovilId 
+        {
+            get { return (Guid?)DdlMoviles.SelectedValue ?? Guid.Empty; }
+            set { DdlMoviles.SelectedValue = value; } 
         }
         #endregion
 
@@ -66,7 +61,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             _limpiandoFiltros = true;
 
             var moviles = Uow.Moviles.Listado().Where(m => m.Activo == true).OrderBy(m => m.Numero).ToList();
-            //moviles.Insert(0, new Movil() { Numero = 00 , Id = Guid.Empty });
+            moviles.Insert(0, new Movil() { Numero = 00 , Id = Guid.Empty });
 
             DdlMoviles.DisplayMember = "Numero";
             DdlMoviles.ValueMember = "Id";
@@ -84,17 +79,37 @@ namespace GestionAdministrativa.Win.Forms.Pagos
       
         private void BuscarChoferMovil()
         {
-            IChoferNegocio _choferNegocio ;
-            //var choferes = _choferNegocio.Listado(null,null,DniChofer,null,null)
+             System.Linq.Expressions.Expression<Func<Chofer, bool>> where =
+                x =>
+                (DniChofer == null || x.Dni == DniChofer) ||
+                (MovilId == null || x.Movil.Id == MovilId);
+
+            Cursor.Current = Cursors.WaitCursor;
+
+            try
+            {
+                var choferes = Uow.Choferes.Listado(x => x.Movil)
+                .Where(@where)
+                .OrderBy(c => c.Apellido)
+                .ToList();
+
+                Cursor.Current = Cursors.Default;
+                OnBuscarFinished(choferes);
+            }
+            catch (Exception e)
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
 
         private void LimpiarFiltros()
         {
             _limpiandoFiltros = true;
             TxtChofer.Text = string.Empty;
-            //DdlMoviles.Text = string.Empty;
+            DdlMoviles.SelectedValue = null;
             _limpiandoFiltros = false;
-            // OnFiltered();
+
+            OnBuscarFinished(null);
         }
 
        #endregion
@@ -105,7 +120,6 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             BuscarChoferMovil();
         }
 
-       
         private void TxtMovil_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -128,6 +142,11 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         }
 
         #endregion
+
+        private void ucBuscardorChoferMovil_Load(object sender, EventArgs e)
+        {
+            CargarCombos();
+        }
 
     }
 }

@@ -121,6 +121,7 @@
             this.Controls.Add(this.radLabel1);
             this.Name = "ucBuscardorChoferMovil";
             this.Size = new System.Drawing.Size(443, 142);
+            this.Load += new System.EventHandler(this.ucBuscardorChoferMovil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TxtChofer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
