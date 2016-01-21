@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessBase.cs" />
+    <Compile Include="Interfaces\IPagoCelularNegocio.cs" />
+    <Compile Include="PagoCelularNegocio.cs" />
     <Compile Include="ChoferNegocio.cs" />
     <Compile Include="Interfaces\IChoferNegocio.cs" />
     <Compile Include="Interfaces\IMovilesNegocio.cs" />

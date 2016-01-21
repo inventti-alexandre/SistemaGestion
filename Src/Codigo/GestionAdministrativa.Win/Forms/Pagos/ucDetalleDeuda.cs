@@ -17,6 +17,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
     {
         private PagoCelular _pagoCelular;
         private IPagoCelularNegocio _pagoCelularNegocio;
+        private List<PagoCelular> _aPagar;
         public ucDetalleDeuda()
         {
             if (Ioc.Container != null)
@@ -25,6 +26,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             }
 
             InitializeComponent();
+            GrillaAPagar.DataSource = _aPagar;
         }
 
         public void ActualizarEstadoCuenta(Celular celular)
@@ -41,7 +43,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 _pagoCelular = _pagoCelularNegocio.PagoCelularSemanal(celular.Id, celular.TiposCelulares.Monto);                
             }
 
-            
+            _aPagar.Add(_pagoCelular);
         }
 
     }

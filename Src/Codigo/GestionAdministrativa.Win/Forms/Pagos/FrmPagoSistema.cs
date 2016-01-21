@@ -70,6 +70,12 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
 
             ucEstadoCuentaChofer1.ActualizarChofer(_chofer);
+            var celular = Uow.Celulares.Listado(c=>c.TiposCelulares).Where(c=>c.Id == chofer.CelularId).FirstOrDefault();
+            if (celular != null)
+            {
+                ucDetalleDeuda1.ActualizarEstadoCuenta(celular);
+            }
+            
         }
 
         #endregion
