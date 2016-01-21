@@ -11,3 +11,5 @@ Post-Deployment Script Template
 */
 Insert into [dbo].[EmpresasCelulares] ([Id],[Descripcion]) 
 select 1, N'Personal' WHERE NOT EXISTS (SELECT 1 FROM [DBO].EmpresasCelulares WHERE Id = 1)
+Insert into [dbo].[EmpresasCelulares] ([Id],[Descripcion]) 
+select 2, N'Claro' WHERE NOT EXISTS (SELECT 1 FROM [DBO].EmpresasCelulares WHERE Id = 2)

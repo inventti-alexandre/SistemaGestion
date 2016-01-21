@@ -178,6 +178,12 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             CargarCelular(_celularId);
             DefinirCombos();
             CargarCombos();
+            HabilitarControles();
+        }
+
+        private void HabilitarControles()
+        {
+            GbDatosCelulares.Enabled = false;
         }
 
         private void DefinirCombos()
@@ -287,9 +293,9 @@ namespace GestionAdministrativa.Win.Forms.Celulares
                     celular.ModeloCelularId = ModeloCelular;
                     celular.FechaAlta = FechaAlta;
                     celular.Activo = Activo;
-                    celular.Pagare = Pagare;
+                    celular.NumeroPagare = Activo == true ? NumeroPagare : 0;
+                    
                     celular.Habilitado = Habilitado;
-                    celular.NumeroPagare = NumeroPagare;
                     celular.FechaUltimoPago = FechaUltimoPago;
                     celular.FechaProximoPago = FechaProximoPago;
                     celular.DiaPagoId = DiaPago;
@@ -314,9 +320,15 @@ namespace GestionAdministrativa.Win.Forms.Celulares
         private void CrearEntity()
         {
             var esValido = this.ValidarForm();
-
-            if (!esValido)
+            var esUnico = this.ValidarCelular(NumeroCelular);
+            if (!esValido || !esUnico)
+            {
+                if (!esUnico)
+                    EpvCelular.SetError(TxtNumeroCelular,"El número de Celular debe ser único.");
+                
                 this.DialogResult = DialogResult.None;
+            }
+           
             else
             {
                 var entity = ObtenerEntityDesdeForm();
@@ -377,14 +389,24 @@ namespace GestionAdministrativa.Win.Forms.Celulares
         {
             this.ValidarControl(TxtGmail, "Gmail");
             this.ValidarControl(TxtImei, "Imei");
-           // this.ValidarControl(TxtNumeroCelular,"Numero");
+        }
+
+        private bool ValidarCelular(int? celularNumero)
+        {
+            var a = Uow.Celulares.Obtener(c => c.Numero == celularNumero && c.Numero > 0);
+            return a == null;
+        }
+
+        private void ChkPagare_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        {
+            TxtPagare.Enabled = Pagare == true;
         }
 
         #endregion
 
-      
-
-       
-        
+        private void CbxTipoCelular_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            GbDatosCelulares.Enabled = e.Position > 0;
+        }
     }
 }

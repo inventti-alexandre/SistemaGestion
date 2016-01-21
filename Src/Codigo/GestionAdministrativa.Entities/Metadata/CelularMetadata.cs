@@ -14,8 +14,8 @@ namespace GestionAdministrativa.Entities
 
     public class CelularMetadata
     {
-        //[Required(ErrorMessage = "Debe ingresar un número de celular")]
-        //[Range(1, 9999999999999, ErrorMessage = "Debe ingresar un celular válido")]
+        
+        //[IsUnique("Numero")]
         //public string Numero { get; set; }
 
        
