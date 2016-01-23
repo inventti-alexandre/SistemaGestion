@@ -9,5 +9,11 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-Insert into [dbo].TiposCelulares ([Id],[Tipo],[Monto],FechaAlta,OperadorAltaId,SucursalAltaId) 
-select 1, N'Propio',0,N'1900-01-01 01:00:00.923',N'4FB4CAF7-9FD7-4A39-BF85-B60F14C2E7AB',1 WHERE NOT EXISTS (SELECT 1 FROM [DBO].TiposCelulares WHERE Id = 1)
+Insert into [dbo].TiposCelulares ([Tipo],[Monto],FechaAlta,OperadorAltaId,SucursalAltaId) 
+select  N'Propio',25,N'1900-01-01 01:00:00.923',N'4FB4CAF7-9FD7-4A39-BF85-B60F14C2E7AB',1 
+WHERE NOT EXISTS (SELECT 1 FROM [DBO].TiposCelulares WHERE Tipo = 'Propio')
+
+Insert into [dbo].TiposCelulares ([Tipo],[Monto],FechaAlta,OperadorAltaId,SucursalAltaId) 
+select N'Apipe',31,N'1900-01-01 01:00:00.923',N'4FB4CAF7-9FD7-4A39-BF85-B60F14C2E7AB',1 
+WHERE NOT EXISTS (SELECT 1 FROM [DBO].TiposCelulares WHERE Tipo = 'Apipe')
+

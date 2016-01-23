@@ -11,6 +11,7 @@ using Framework.Data.Helpers;
 using GestionAdministrativa.Data.Interfaces;
 using GestionAdministrativa.Entities;
 using GestionAdministrativa.Win.Enums;
+using GestionAdministrativa.Win.Forms.Choferes;
 using Telerik.WinControls;
 
 namespace GestionAdministrativa.Win.Forms.Celulares
@@ -23,6 +24,7 @@ namespace GestionAdministrativa.Win.Forms.Celulares
         private IClock _clock;
         private Celular _celular;
         private Guid _celularId;
+        private Chofer _chofer;
 
         public FrmCrearEditarCelular(ActionFormMode mode,IGestionAdministrativaUow uow, IClock clock,Guid id)
         {
@@ -179,6 +181,58 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             DefinirCombos();
             CargarCombos();
             HabilitarControles();
+            ucBuscardorChoferMovil.BuscarFinished+=ucBuscardorChoferMovil_BuscarFinished;
+        }
+
+        private void ucBuscardorChoferMovil_BuscarFinished(object sender, List<Chofer> choferes)
+        {
+            if (choferes.Any())
+            {
+                if (choferes.Count == 1)
+                {
+                    ActualizarChofer(choferes.Single());
+                }
+                else
+                {
+                    using (var seleccionarChofer = new FrmSeleccionarChofer(choferes))
+                    {
+                        seleccionarChofer.ChoferSelected += (o, chofer) =>
+                        {
+                            ActualizarChofer(chofer);
+                            seleccionarChofer.Close();
+                        };
+
+                        seleccionarChofer.ShowDialog();
+                    }
+                }
+            }
+            else
+            {
+                //CrearCelular
+            }
+        }
+
+        private void ActualizarChofer(Chofer chofer)
+        {
+            if (chofer.Activo == false)
+            {
+                MessageBox.Show("Este chofer no se encuentra activo");
+                return;
+            }
+
+            _chofer = chofer;
+
+            //Deuda Sistema
+            //var deudaTotal = _clienteNegocio.DeudaTotal(_cliente.Id, this.Context.SucursalActual.Id);
+            //var deudaVencida = _clienteNegocio.DeudaVencida(_cliente.Id, this.Context.SucursalActual.Id);
+
+
+            ucEstadoCuentaChofer.ActualizarChofer(_chofer);
+            var celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where(c => c.Id == chofer.CelularId).FirstOrDefault();
+            if (celular != null)
+            {
+                //ucDetalleDeuda.ActualizarEstadoCuenta(celular);
+            }
         }
 
         private void HabilitarControles()

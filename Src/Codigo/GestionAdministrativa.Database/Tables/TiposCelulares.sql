@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[TiposCelulares]
 (
-	[Id] INT NOT NULL PRIMARY KEY, 
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
     [Tipo] VARCHAR(50) NOT NULL, 
     [Monto] MONEY NOT NULL, 
     [FechaAlta] DATETIME NOT NULL, 

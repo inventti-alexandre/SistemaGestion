@@ -68,8 +68,8 @@
             this.GbDatosCelulares = new System.Windows.Forms.GroupBox();
             this.EpvCelular = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ucBuscardorChoferMovil1 = new GestionAdministrativa.Win.Forms.Pagos.ucBuscardorChoferMovil();
-            this.ucEstadoCuentaChofer1 = new GestionAdministrativa.Win.Forms.Pagos.ucEstadoCuentaChofer();
+            this.ucBuscardorChoferMovil = new GestionAdministrativa.Win.Forms.Pagos.ucBuscardorChoferMovil();
+            this.ucEstadoCuentaChofer = new GestionAdministrativa.Win.Forms.Pagos.ucEstadoCuentaChofer();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.TxtPagare)).BeginInit();
@@ -556,26 +556,40 @@
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             // 
-            // ucBuscardorChoferMovil1
+            // ucBuscardorChoferMovil
             // 
-            this.ucBuscardorChoferMovil1.DniChofer = 0;
-            this.ucBuscardorChoferMovil1.Location = new System.Drawing.Point(21, 19);
-            this.ucBuscardorChoferMovil1.MovilId = new System.Guid("00000000-0000-0000-0000-000000000000");
-            this.ucBuscardorChoferMovil1.Name = "ucBuscardorChoferMovil1";
-            this.ucBuscardorChoferMovil1.Size = new System.Drawing.Size(443, 142);
-            this.ucBuscardorChoferMovil1.TabIndex = 30;
+            this.ucBuscardorChoferMovil.DniChofer = 0;
+            this.ucBuscardorChoferMovil.Location = new System.Drawing.Point(21, 19);
+            this.ucBuscardorChoferMovil.MovilId = new System.Guid("00000000-0000-0000-0000-000000000000");
+            this.ucBuscardorChoferMovil.Name = "ucBuscardorChoferMovil";
+            this.ucBuscardorChoferMovil.Size = new System.Drawing.Size(443, 142);
+            this.ucBuscardorChoferMovil.TabIndex = 30;
             // 
-            // ucEstadoCuentaChofer1
+            // ucEstadoCuentaChofer
             // 
-            this.ucEstadoCuentaChofer1.Location = new System.Drawing.Point(21, 188);
-            this.ucEstadoCuentaChofer1.Name = "ucEstadoCuentaChofer1";
-            this.ucEstadoCuentaChofer1.Size = new System.Drawing.Size(480, 181);
-            this.ucEstadoCuentaChofer1.TabIndex = 31;
+            this.ucEstadoCuentaChofer.Apelildo = "";
+            this.ucEstadoCuentaChofer.DeudaBase = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.ucEstadoCuentaChofer.DeudaSistema = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.ucEstadoCuentaChofer.Location = new System.Drawing.Point(21, 188);
+            this.ucEstadoCuentaChofer.MovilNumero = "";
+            this.ucEstadoCuentaChofer.Name = "ucEstadoCuentaChofer";
+            this.ucEstadoCuentaChofer.Nombre = "";
+            this.ucEstadoCuentaChofer.Size = new System.Drawing.Size(480, 181);
+            this.ucEstadoCuentaChofer.TabIndex = 31;
+            this.ucEstadoCuentaChofer.Telefono = "";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.ucBuscardorChoferMovil1);
-            this.groupBox3.Controls.Add(this.ucEstadoCuentaChofer1);
+            this.groupBox3.Controls.Add(this.ucBuscardorChoferMovil);
+            this.groupBox3.Controls.Add(this.ucEstadoCuentaChofer);
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(510, 378);
@@ -698,8 +712,8 @@
         private System.Windows.Forms.GroupBox GbDatosCelulares;
         private System.Windows.Forms.ErrorProvider EpvCelular;
         private System.Windows.Forms.GroupBox groupBox2;
-        private Pagos.ucEstadoCuentaChofer ucEstadoCuentaChofer1;
-        private Pagos.ucBuscardorChoferMovil ucBuscardorChoferMovil1;
+        private Pagos.ucEstadoCuentaChofer ucEstadoCuentaChofer;
+        private Pagos.ucBuscardorChoferMovil ucBuscardorChoferMovil;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
     }
