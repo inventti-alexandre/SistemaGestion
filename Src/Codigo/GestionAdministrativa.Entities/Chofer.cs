@@ -41,6 +41,6 @@ namespace GestionAdministrativa.Entities
         public virtual Sucursal SucursalModificacion { get; set; }
         public virtual ICollection<ChoferMontoFavor> ChoferesMontosFavor { get; set; }
         public virtual Movil Movil { get; set; }
-        public virtual Celular Celular { get; set; }
+        public virtual Celular Celulare { get; set; }
     }
 }

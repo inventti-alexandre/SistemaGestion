@@ -29,10 +29,10 @@ namespace GestionAdministrativa.Entities
         public Nullable<System.Guid> OperadorModificacionId { get; set; }
         public Nullable<int> SucursalModificacionId { get; set; }
     
-        public virtual ICollection<Celular> Celulares { get; set; }
         public virtual Operador Operadores { get; set; }
         public virtual Operador Operadores1 { get; set; }
         public virtual Sucursal Sucursales { get; set; }
         public virtual Sucursal Sucursales1 { get; set; }
+        public virtual ICollection<Celular> Celulares { get; set; }
     }
 }

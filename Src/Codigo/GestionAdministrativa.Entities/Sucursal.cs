@@ -25,8 +25,6 @@ namespace GestionAdministrativa.Entities
             this.CajasMovimientos1 = new HashSet<CajaMovimiento>();
             this.CategoriasOperadores = new HashSet<CategoriaOperador>();
             this.CategoriasOperadores1 = new HashSet<CategoriaOperador>();
-            this.Celulares = new HashSet<Celular>();
-            this.Celulares1 = new HashSet<Celular>();
             this.CelularesMovimiento = new HashSet<CelularMovimiento>();
             this.CelularesMovimiento1 = new HashSet<CelularMovimiento>();
             this.CentrosCostos = new HashSet<CentroCosto>();
@@ -87,6 +85,8 @@ namespace GestionAdministrativa.Entities
             this.TiposMovimientosCajas1 = new HashSet<TipoMovimientoCaja>();
             this.Choferes = new HashSet<Chofer>();
             this.Choferes1 = new HashSet<Chofer>();
+            this.Celulares = new HashSet<Celular>();
+            this.Celulares1 = new HashSet<Celular>();
         }
     
         public int Id { get; set; }
@@ -119,8 +119,6 @@ namespace GestionAdministrativa.Entities
         public virtual ICollection<CajaMovimiento> CajasMovimientos1 { get; set; }
         public virtual ICollection<CategoriaOperador> CategoriasOperadores { get; set; }
         public virtual ICollection<CategoriaOperador> CategoriasOperadores1 { get; set; }
-        public virtual ICollection<Celular> Celulares { get; set; }
-        public virtual ICollection<Celular> Celulares1 { get; set; }
         public virtual ICollection<CelularMovimiento> CelularesMovimiento { get; set; }
         public virtual ICollection<CelularMovimiento> CelularesMovimiento1 { get; set; }
         public virtual ICollection<CentroCosto> CentrosCostos { get; set; }
@@ -187,5 +185,7 @@ namespace GestionAdministrativa.Entities
         public virtual ICollection<TipoMovimientoCaja> TiposMovimientosCajas1 { get; set; }
         public virtual ICollection<Chofer> Choferes { get; set; }
         public virtual ICollection<Chofer> Choferes1 { get; set; }
+        public virtual ICollection<Celular> Celulares { get; set; }
+        public virtual ICollection<Celular> Celulares1 { get; set; }
     }
 }

@@ -16,9 +16,9 @@ namespace GestionAdministrativa.Entities
     {
         public Celular()
         {
-            this.CelularesMovimiento = new HashSet<CelularMovimiento>();
-            this.PagosCelular = new HashSet<PagoCelular>();
+            this.CelularesMovimientoes = new HashSet<CelularMovimiento>();
             this.Choferes = new HashSet<Chofer>();
+            this.PagosCelulars = new HashSet<PagoCelular>();
         }
     
         public System.Guid Id { get; set; }
@@ -40,25 +40,25 @@ namespace GestionAdministrativa.Entities
         public Nullable<System.DateTime> FechaAlta { get; set; }
         public Nullable<System.DateTime> FechaModificacion { get; set; }
         public Nullable<int> EmpresaCelular { get; set; }
-        public Nullable<int> Numero { get; set; }
+        public string Numero { get; set; }
         public string Imei { get; set; }
         public string SIM { get; set; }
         public string Email { get; set; }
         public Nullable<int> DiaCargaId { get; set; }
         public Nullable<int> ModeloCelularId { get; set; }
-        public Nullable<int> NumeroPagare { get; set; }
+        public string NumeroPagare { get; set; }
     
-        public virtual Dia DiaPago { get; set; }
-        public virtual Operador Operadores { get; set; }
-        public virtual Operador Operadores1 { get; set; }
-        public virtual Sucursal Sucursales { get; set; }
-        public virtual Sucursal Sucursales1 { get; set; }
-        public virtual TipoCelular TiposCelulares { get; set; }
-        public virtual ICollection<CelularMovimiento> CelularesMovimiento { get; set; }
-        public virtual ICollection<PagoCelular> PagosCelular { get; set; }
-        public virtual ICollection<Chofer> Choferes { get; set; }
+        public virtual Dia Dia { get; set; }
+        public virtual Dia Dia1 { get; set; }
         public virtual EmpresasCelulare EmpresasCelulare { get; set; }
-        public virtual Dia DiaCarga { get; set; }
         public virtual ModelosCelulare ModelosCelulare { get; set; }
+        public virtual Operador Operadore { get; set; }
+        public virtual Operador Operadore1 { get; set; }
+        public virtual Sucursal Sucursale { get; set; }
+        public virtual Sucursal Sucursale1 { get; set; }
+        public virtual TipoCelular TiposCelulares { get; set; }
+        public virtual ICollection<CelularMovimiento> CelularesMovimientoes { get; set; }
+        public virtual ICollection<Chofer> Choferes { get; set; }
+        public virtual ICollection<PagoCelular> PagosCelulars { get; set; }
     }
 }

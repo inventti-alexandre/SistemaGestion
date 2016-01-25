@@ -29,10 +29,10 @@ namespace GestionAdministrativa.Entities
         public Nullable<int> SucursalModificacionId { get; set; }
         public Nullable<System.DateTime> FechaModificacion { get; set; }
     
-        public virtual Celular Celulares { get; set; }
         public virtual Operador Operadores { get; set; }
         public virtual Operador Operadores1 { get; set; }
         public virtual Sucursal Sucursales { get; set; }
         public virtual Sucursal Sucursales1 { get; set; }
+        public virtual Celular Celulare { get; set; }
     }
 }

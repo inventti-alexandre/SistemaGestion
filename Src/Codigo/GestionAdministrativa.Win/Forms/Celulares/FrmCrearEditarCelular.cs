@@ -95,14 +95,13 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             set { ChkHabilitado.Checked = value ?? false; }
         }
 
-        public int? NumeroPagare 
+        public string NumeroPagare 
         {
             get
             {
-                int j = 0;
-                return (int.TryParse(TxtPagare.Text, out j) ? j : (int?)0);
+                return (TxtPagare.Text);
             }
-            set { TxtPagare.Text = value.ToString() ; }
+            set { TxtPagare.Text = value ?? "" ; }
         }
 
         public DateTime? FechaUltimoPago
@@ -134,14 +133,14 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             set { CbxEmpresa.SelectedValue = value; }
         }
 
-        public int? NumeroCelular
+        public string NumeroCelular
         {
 
             get
-            {   int j =0;  
-                return (int.TryParse(TxtNumeroCelular.Text,out j)? j:(int?)0);
+            {
+                return (TxtNumeroCelular.Text);
             }
-            set { TxtNumeroCelular.Text = value.ToString(); }
+            set { TxtNumeroCelular.Text = value ?? "";  }
         }
 
         public string Imei
@@ -347,7 +346,7 @@ namespace GestionAdministrativa.Win.Forms.Celulares
                     celular.ModeloCelularId = ModeloCelular;
                     celular.FechaAlta = FechaAlta;
                     celular.Activo = Activo;
-                    celular.NumeroPagare = Activo == true ? NumeroPagare : 0;
+                    celular.NumeroPagare = Activo == true ? NumeroPagare : "";
                     
                     celular.Habilitado = Habilitado;
                     celular.FechaUltimoPago = FechaUltimoPago;
@@ -445,9 +444,9 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             this.ValidarControl(TxtImei, "Imei");
         }
 
-        private bool ValidarCelular(int? celularNumero)
+        private bool ValidarCelular(string celularNumero)
         {
-            var a = Uow.Celulares.Obtener(c => c.Numero == celularNumero && c.Numero > 0);
+            var a = Uow.Celulares.Obtener(c => c.Numero == celularNumero && c.Numero != "");
             return a == null;
         }
 

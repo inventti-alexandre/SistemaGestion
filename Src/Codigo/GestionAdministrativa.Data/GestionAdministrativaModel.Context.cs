@@ -31,7 +31,6 @@ namespace GestionAdministrativa.Data
         public virtual DbSet<Caja> Cajas { get; set; }
         public virtual DbSet<CajaMovimiento> CajasMovimientos { get; set; }
         public virtual DbSet<CategoriaOperador> CategoriasOperadores { get; set; }
-        public virtual DbSet<Celular> Celulares { get; set; }
         public virtual DbSet<CelularMovimiento> CelularesMovimiento { get; set; }
         public virtual DbSet<CentroCosto> CentrosCostos { get; set; }
         public virtual DbSet<ChoferMontoFavor> ChoferesMontosFavor { get; set; }
@@ -68,5 +67,7 @@ namespace GestionAdministrativa.Data
         public virtual DbSet<Chofer> Choferes { get; set; }
         public virtual DbSet<EmpresasCelulare> EmpresasCelulares { get; set; }
         public virtual DbSet<ModelosCelulare> ModelosCelulares { get; set; }
+        public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
+        public virtual DbSet<Celular> Celulares { get; set; }
     }
 }
