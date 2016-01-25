@@ -48,8 +48,7 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             else
                 this.Text = "Editar Celular";   
         }
-
-       
+ 
 
         #endregion
         #region Events
@@ -166,6 +165,7 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             set { CbxDiaCarga.SelectedValue = value; }
         }
         #endregion
+
         #region Methods
         private void SetearFechasDtps()
         {
@@ -294,7 +294,6 @@ namespace GestionAdministrativa.Win.Forms.Celulares
                 _celular = Uow.Celulares.Obtener(m => m.Id == celularId);
             }
 
-           
             this.TipoCelular = _celular.TipoCelularId;
             this.ModeloCelular = _celular.ModeloCelularId;
             this.FechaAlta = _celular.FechaAlta;
@@ -374,14 +373,15 @@ namespace GestionAdministrativa.Win.Forms.Celulares
         {
             var esValido = this.ValidarForm();
             var esUnico = this.ValidarCelular(NumeroCelular);
-            if (!esValido || !esUnico)
+            
+            if ((!esValido || !esUnico) )
             {
                 if (!esUnico)
                     EpvCelular.SetError(TxtNumeroCelular,"El número de Celular debe ser único.");
+               
                 
                 this.DialogResult = DialogResult.None;
             }
-           
             else
             {
                 var entity = ObtenerEntityDesdeForm();
@@ -389,13 +389,20 @@ namespace GestionAdministrativa.Win.Forms.Celulares
                     Uow.Celulares.Agregar(entity);
                 else
                     Uow.Celulares.Modificar(entity);
+
+                if (_chofer != null)
+                {
+                    _chofer.CelularId = entity.Id;
+                    Uow.Choferes.Modificar(_chofer);
+                }
+
                 Uow.Commit();
 
                 if (_actionForm == ActionFormMode.Create)
                 {
                     OnEntityAgregada(entity);
                 }
-            }    
+            }
         }
 
         private Celular ObtenerEntityDesdeForm()
@@ -433,6 +440,8 @@ namespace GestionAdministrativa.Win.Forms.Celulares
 
             return _celular;
         }
+
+
         protected override object ObtenerEntidad()
         {
             return (ObtenerEntityDesdeForm());
@@ -454,12 +463,12 @@ namespace GestionAdministrativa.Win.Forms.Celulares
         {
             TxtPagare.Enabled = Pagare == true;
         }
-
-        #endregion
-
         private void CbxTipoCelular_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             GbDatosCelulares.Enabled = e.Position > 0;
         }
+        #endregion
+
+     
     }
 }

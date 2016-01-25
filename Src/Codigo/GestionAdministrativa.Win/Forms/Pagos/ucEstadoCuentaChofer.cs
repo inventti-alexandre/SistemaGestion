@@ -15,6 +15,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
     public partial class ucEstadoCuentaChofer : UserControlBase
     {
         private Chofer _chofer;
+        private Guid _choferId;
         public ucEstadoCuentaChofer()
         {
             if (Ioc.Container != null)
@@ -35,9 +36,19 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         #endregion
 
         #region Propiedades
+
+        public Guid IdChofer
+        {
+            get { return _choferId; }
+            set { _choferId = value; }
+        }
+
         public string Apelildo 
         {
-            get { return TxtApellido.Text;}
+            get
+            {
+                return TxtApellido.Text;
+            }
             set { TxtApellido.Text = value;} 
         }
 

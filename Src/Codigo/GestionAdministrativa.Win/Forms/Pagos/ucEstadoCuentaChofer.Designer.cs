@@ -40,6 +40,7 @@
             this.TxtDeudaBase = new Telerik.WinControls.UI.RadTextBox();
             this.LnkEditarChofer = new System.Windows.Forms.LinkLabel();
             this.TxtNombre = new Telerik.WinControls.UI.RadTextBox();
+            this.radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
@@ -49,8 +50,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtTelefono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMovilNro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtApellido)).BeginInit();
+            this.TxtApellido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDeudaBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtNombre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // radLabel1
@@ -130,6 +133,7 @@
             // 
             // TxtApellido
             // 
+            this.TxtApellido.Controls.Add(this.radTextBox1);
             this.TxtApellido.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtApellido.Location = new System.Drawing.Point(176, 8);
             this.TxtApellido.Name = "TxtApellido";
@@ -170,6 +174,16 @@
             this.TxtNombre.TabStop = false;
             this.TxtNombre.ThemeName = "TelerikMetro";
             // 
+            // radTextBox1
+            // 
+            this.radTextBox1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radTextBox1.Location = new System.Drawing.Point(8, 8);
+            this.radTextBox1.Name = "radTextBox1";
+            this.radTextBox1.Size = new System.Drawing.Size(150, 28);
+            this.radTextBox1.TabIndex = 7;
+            this.radTextBox1.TabStop = false;
+            this.radTextBox1.ThemeName = "TelerikMetro";
+            // 
             // ucEstadoCuentaChofer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -198,8 +212,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtTelefono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMovilNro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtApellido)).EndInit();
+            this.TxtApellido.ResumeLayout(false);
+            this.TxtApellido.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDeudaBase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtNombre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,5 +236,6 @@
         private Telerik.WinControls.UI.RadTextBox TxtDeudaBase;
         private System.Windows.Forms.LinkLabel LnkEditarChofer;
         private Telerik.WinControls.UI.RadTextBox TxtNombre;
+        private Telerik.WinControls.UI.RadTextBox radTextBox1;
     }
 }
