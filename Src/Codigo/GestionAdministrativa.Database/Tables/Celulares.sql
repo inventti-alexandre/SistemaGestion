@@ -26,6 +26,7 @@
     [DiaCargaId] INT NULL, 
     [ModeloCelularId] INT NULL, 
     [NumeroPagare] NCHAR(40) NULL, 
+    [Caja] INT NULL, 
     CONSTRAINT [FK_Celulares_TipoCelular] FOREIGN KEY (TipoCelularId) REFERENCES TiposCelulares(Id), 
     CONSTRAINT [FK_Celulares_DiaPago] FOREIGN KEY (DiaPagoId) REFERENCES Dias(Id), 
     CONSTRAINT [FK_Celulares_OperadoresAlta] FOREIGN KEY (OperadorAltaId) REFERENCES Operadores(Id), 

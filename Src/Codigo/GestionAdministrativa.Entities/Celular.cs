@@ -47,6 +47,7 @@ namespace GestionAdministrativa.Entities
         public Nullable<int> DiaCargaId { get; set; }
         public Nullable<int> ModeloCelularId { get; set; }
         public string NumeroPagare { get; set; }
+        public Nullable<int> Caja { get; set; }
     
         public virtual Dia Dia { get; set; }
         public virtual Dia Dia1 { get; set; }

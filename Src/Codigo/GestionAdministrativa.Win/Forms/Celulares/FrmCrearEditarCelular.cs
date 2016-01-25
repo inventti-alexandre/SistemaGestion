@@ -24,7 +24,6 @@ namespace GestionAdministrativa.Win.Forms.Celulares
         private IClock _clock;
         private Celular _celular;
         private Guid _celularId;
-        private Chofer _chofer;
 
         public FrmCrearEditarCelular(ActionFormMode mode,IGestionAdministrativaUow uow, IClock clock,Guid id)
         {
@@ -43,7 +42,6 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             {
                 this.Text = "Crear Celular";
                 SetearFechasDtps();
-
             }
             else
                 this.Text = "Editar Celular";   
@@ -164,6 +162,22 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             get { return (int)CbxDiaCarga.SelectedValue; }
             set { CbxDiaCarga.SelectedValue = value; }
         }
+
+        public string Observaciones
+        {
+            get { return TxtObservaciones.Text; }
+            set { TxtObservaciones.Text = value; }
+        }
+        public int? CajaNumero
+        {
+            get
+            {
+                int j;
+                return int.TryParse(TxtCaja.Text,out j) ? j : 0;
+            }
+            set { TxtCaja.Text = value.ToString(); }
+        }
+
         #endregion
 
         #region Methods
@@ -180,60 +194,10 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             DefinirCombos();
             CargarCombos();
             HabilitarControles();
-            ucBuscardorChoferMovil.BuscarFinished+=ucBuscardorChoferMovil_BuscarFinished;
         }
 
-        private void ucBuscardorChoferMovil_BuscarFinished(object sender, List<Chofer> choferes)
-        {
-            if (choferes.Any())
-            {
-                if (choferes.Count == 1)
-                {
-                    ActualizarChofer(choferes.Single());
-                }
-                else
-                {
-                    using (var seleccionarChofer = new FrmSeleccionarChofer(choferes))
-                    {
-                        seleccionarChofer.ChoferSelected += (o, chofer) =>
-                        {
-                            ActualizarChofer(chofer);
-                            seleccionarChofer.Close();
-                        };
 
-                        seleccionarChofer.ShowDialog();
-                    }
-                }
-            }
-            else
-            {
-                //CrearCelular
-            }
-        }
-
-        private void ActualizarChofer(Chofer chofer)
-        {
-            if (chofer.Activo == false)
-            {
-                MessageBox.Show("Este chofer no se encuentra activo");
-                return;
-            }
-
-            _chofer = chofer;
-
-            //Deuda Sistema
-            //var deudaTotal = _clienteNegocio.DeudaTotal(_cliente.Id, this.Context.SucursalActual.Id);
-            //var deudaVencida = _clienteNegocio.DeudaVencida(_cliente.Id, this.Context.SucursalActual.Id);
-
-
-            ucEstadoCuentaChofer.ActualizarChofer(_chofer);
-            var celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where(c => c.Id == chofer.CelularId).FirstOrDefault();
-            if (celular != null)
-            {
-                //ucDetalleDeuda.ActualizarEstadoCuenta(celular);
-            }
-        }
-
+       
         private void HabilitarControles()
         {
             GbDatosCelulares.Enabled = false;
@@ -311,6 +275,7 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             this.Sim = _celular.SIM;
             this.Gmail = _celular.Email;
             this.DiaCarga = _celular.DiaCargaId;
+            this.Observaciones = _celular.Observacion;
 
 
         }
@@ -361,6 +326,7 @@ namespace GestionAdministrativa.Win.Forms.Celulares
                     celular.OperadorModificacionId = Context.OperadorActual.Id;
                     celular.SucursalModificacionId = Context.SucursalActual.Id;
                     celular.FechaModificacion = _actionForm == ActionFormMode.Edit ? _clock.Now : (DateTime?)null;
+                    celular.Observacion = Observaciones;
 
                     Uow.Celulares.Modificar(celular);
                     Uow.Commit();
@@ -390,11 +356,7 @@ namespace GestionAdministrativa.Win.Forms.Celulares
                 else
                     Uow.Celulares.Modificar(entity);
 
-                if (_chofer != null)
-                {
-                    _chofer.CelularId = entity.Id;
-                    Uow.Choferes.Modificar(_chofer);
-                }
+               
 
                 Uow.Commit();
 
@@ -437,6 +399,7 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             _celular.OperadorModificacionId = Context.OperadorActual.Id;
             _celular.SucursalModificacionId = Context.SucursalActual.Id;
             _celular.FechaModificacion = _actionForm == ActionFormMode.Edit ? _clock.Now : (DateTime?)null;
+            _celular.Observacion = Observaciones;
 
             return _celular;
         }
@@ -469,6 +432,5 @@ namespace GestionAdministrativa.Win.Forms.Celulares
         }
         #endregion
 
-     
     }
 }

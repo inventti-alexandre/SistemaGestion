@@ -101,6 +101,11 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             set { DdlMoviles.SelectedValue = value; }
         }
 
+        public Guid? CelularId
+        {
+            get { return (Guid)DdlCelular.SelectedValue; }
+            set { DdlCelular.SelectedValue = value; }
+        }
 #endregion
 
         #region Eventos
@@ -128,6 +133,9 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             DdlMoviles.ValueMember = "Id";
             DdlMoviles.DataSource = moviles;
 
+          
+            
+            
             //_limpiandoFiltros = false;
         }
         private void CargarEntidad(Guid choferid)
@@ -150,6 +158,10 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             this.Email = _chofer.Email;
             this.Activo = _chofer.Activo;
             this.MovilId = _chofer.MovilId;
+            this.CelularId = _chofer.CelularId;
+            //control si es nulo, cambiar a txt
+            var celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where(e=>e.Id==_chofer.CelularId).ToList();
+            DdlCelular.Text = celular.FirstOrDefault().TiposCelulares.Tipo;
         }
 
         private void CrearEditar()
@@ -225,6 +237,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
 
         #endregion
 
+     
      
 
               

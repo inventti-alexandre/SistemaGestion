@@ -132,6 +132,7 @@
           <Property Name="DiaCargaId" Type="int" />
           <Property Name="ModeloCelularId" Type="int" />
           <Property Name="NumeroPagare" Type="nchar" MaxLength="40" />
+          <Property Name="Caja" Type="int" />
         </EntityType>
         <EntityType Name="CelularesMovimiento">
           <Key>
@@ -7795,6 +7796,7 @@
           <NavigationProperty Name="CelularesMovimientoes" Relationship="GestionAdministrativa.Model.FK_CelularesMovimiento_Celular" FromRole="Celulare" ToRole="CelularMovimiento" />
           <NavigationProperty Name="Choferes" Relationship="GestionAdministrativa.Model.FK_Choferes_Celulares" FromRole="Celulare" ToRole="Chofer" />
           <NavigationProperty Name="PagosCelulars" Relationship="GestionAdministrativa.Model.FK_PagosCelular_Celular" FromRole="Celulare" ToRole="PagoCelular" />
+          <Property Name="Caja" Type="Int32" />
         </EntityType>
         <Association Name="FK_Celulares_DiaCarga">
           <End Type="GestionAdministrativa.Model.Dia" Role="Dia" Multiplicity="0..1" />
@@ -8701,6 +8703,7 @@
           <EntitySetMapping Name="Celulares">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.Celular">
               <MappingFragment StoreEntitySet="Celulares">
+                <ScalarProperty Name="Caja" ColumnName="Caja" />
                 <ScalarProperty Name="NumeroPagare" ColumnName="NumeroPagare" />
                 <ScalarProperty Name="ModeloCelularId" ColumnName="ModeloCelularId" />
                 <ScalarProperty Name="DiaCargaId" ColumnName="DiaCargaId" />

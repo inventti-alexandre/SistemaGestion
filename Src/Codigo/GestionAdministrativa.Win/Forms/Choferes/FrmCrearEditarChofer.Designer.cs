@@ -44,6 +44,8 @@
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
             this.DdlMoviles = new Telerik.WinControls.UI.RadDropDownList();
             this.BtnSave = new Telerik.WinControls.UI.RadButton();
+            this.DdlCelular = new Telerik.WinControls.UI.RadDropDownList();
+            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDni)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtApellido)).BeginInit();
@@ -59,6 +61,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DdlMoviles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSave)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DdlCelular)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,7 +166,7 @@
             // CkActivo
             // 
             this.CkActivo.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CkActivo.Location = new System.Drawing.Point(344, 301);
+            this.CkActivo.Location = new System.Drawing.Point(344, 326);
             this.CkActivo.Name = "CkActivo";
             this.CkActivo.Size = new System.Drawing.Size(84, 25);
             this.CkActivo.TabIndex = 6;
@@ -198,7 +202,7 @@
             // 
             this.BtnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnSave.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSave.Location = new System.Drawing.Point(299, 349);
+            this.BtnSave.Location = new System.Drawing.Point(298, 390);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(130, 36);
             this.BtnSave.TabIndex = 10;
@@ -206,11 +210,34 @@
             this.BtnSave.ThemeName = "TelerikMetro";
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
+            // DdlCelular
+            // 
+            this.DdlCelular.DropDownAnimationEnabled = true;
+            this.DdlCelular.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DdlCelular.Location = new System.Drawing.Point(131, 287);
+            this.DdlCelular.MaxDropDownItems = 0;
+            this.DdlCelular.Name = "DdlCelular";
+            this.DdlCelular.ShowImageInEditorArea = true;
+            this.DdlCelular.Size = new System.Drawing.Size(291, 29);
+            this.DdlCelular.TabIndex = 12;
+            this.DdlCelular.ThemeName = "TelerikMetro";
+            // 
+            // radLabel7
+            // 
+            this.radLabel7.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel7.Location = new System.Drawing.Point(35, 287);
+            this.radLabel7.Name = "radLabel7";
+            this.radLabel7.Size = new System.Drawing.Size(90, 25);
+            this.radLabel7.TabIndex = 11;
+            this.radLabel7.Text = "Celular:";
+            // 
             // FrmCrearEditarChofer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(669, 482);
+            this.Controls.Add(this.DdlCelular);
+            this.Controls.Add(this.radLabel7);
             this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.DdlMoviles);
             this.Controls.Add(this.radLabel6);
@@ -247,6 +274,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DdlMoviles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DdlCelular)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -271,5 +300,7 @@
         private Telerik.WinControls.UI.RadLabel radLabel6;
         private Telerik.WinControls.UI.RadDropDownList DdlMoviles;
         private Telerik.WinControls.UI.RadButton BtnSave;
+        private Telerik.WinControls.UI.RadDropDownList DdlCelular;
+        private Telerik.WinControls.UI.RadLabel radLabel7;
     }
 }
