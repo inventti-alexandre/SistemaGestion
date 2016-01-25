@@ -93,6 +93,16 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
             LnkEditarChofer.Enabled = true;
         }
+
+        public void Limpiar()
+        {
+            Apelildo = null;
+            Nombre = null;
+            MovilNumero = null;
+            Telefono = null;
+            DeudaBase = 0;
+            DeudaSistema = 0;
+        }
         #endregion
     }
 }
