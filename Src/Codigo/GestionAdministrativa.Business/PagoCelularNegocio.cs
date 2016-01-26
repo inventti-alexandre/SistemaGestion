@@ -22,8 +22,25 @@ namespace GestionAdministrativa.Business
         public PagoCelularNegocio(IGestionAdministrativaUow uow, IClock clock)
         {
             Uow = uow;
+            _clock = clock;
         }
 
+        public PagoCelular AutoPago(Guid celularId)
+        {
+            var nuevoPago = Uow.PagosCelulares.Listado().Where(p=> p.CelularId == celularId).OrderByDescending(pc => pc.FechaAlta).FirstOrDefault();
+            var celular = Uow.Celulares.Obtener(c=>c.Id == celularId, c=>c.TiposCelulares);
+            if (nuevoPago == null)
+            {
+                nuevoPago = PagoCelularInicial(celularId, celular.TiposCelulares.Monto);
+            }
+            else
+            {
+                nuevoPago = PagoCelularSemanal(celularId, celular.TiposCelulares.Monto);
+            }
+
+      
+            return nuevoPago;
+        }
         public PagoCelular PagoCelularInicial(Guid celularId, decimal monto)
         {
             PagoCelular nuevoPago = new PagoCelular();

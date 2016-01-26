@@ -1,4 +1,6 @@
-﻿using GestionAdministrativa.Entities;
+﻿using GestionAdministrativa.Business.Interfaces;
+using GestionAdministrativa.Data.Interfaces;
+using GestionAdministrativa.Entities;
 using GestionAdministrativa.Win.Forms.Choferes;
 using System;
 using System.Collections.Generic;
@@ -15,8 +17,11 @@ namespace GestionAdministrativa.Win.Forms.Pagos
     public partial class FrmPagoSistema : FormBase
     {
         private Chofer _chofer;
-        public FrmPagoSistema()
+        private IPagoCelularNegocio _iPagoCelularNegocio;
+        public FrmPagoSistema(IGestionAdministrativaUow uow, IPagoCelularNegocio pagoCelularNegocio)
         {
+            Uow = uow;
+            _iPagoCelularNegocio = pagoCelularNegocio;
             InitializeComponent();
         }
 
@@ -75,11 +80,12 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
 
             ucEstadoCuentaChofer1.ActualizarChofer(_chofer);
-            //var celular = Uow.Celulares.Listado(c=>c.TiposCelulares).Where(c=>c.Id == chofer.CelularId).FirstOrDefault();
-            //if (celular != null)
-            //{
-            //    ucDetalleDeuda1.ActualizarEstadoCuenta(celular);
-            //}
+            var celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where(c => c.Id == chofer.CelularId).FirstOrDefault();
+            if (celular != null)
+            {
+                var pago = _iPagoCelularNegocio.AutoPago(celular.Id);
+                ucDetalleDeuda1.ActualizarNuevoPago(pago);
+            }
             
         }
 

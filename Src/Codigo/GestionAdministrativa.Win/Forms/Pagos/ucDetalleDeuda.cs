@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Framework.Ioc;
 using GestionAdministrativa.Entities;
 using GestionAdministrativa.Business.Interfaces;
+using GestionAdministrativa.Data.Interfaces;
 
 namespace GestionAdministrativa.Win.Forms.Pagos
 {
@@ -23,27 +24,18 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             if (Ioc.Container != null)
             {
                 FormFactory = Ioc.Container.Get<IFormFactory>();
+                
             }
-
             InitializeComponent();
             GrillaAPagar.DataSource = _aPagar;
         }
 
-        public void ActualizarEstadoCuenta(Celular celular)
+        public void ActualizarNuevoPago(PagoCelular pago)
         {
-            var ultimopago = Uow.PagosCelulares.Listado().Where(pc => pc.CelularId == celular.Id).OrderByDescending(pc => pc.FechaAlta).FirstOrDefault();
-            if (ultimopago == null)
-            {
-                //Generar Inicial //Generar Context
-                _pagoCelular = _pagoCelularNegocio.PagoCelularInicial(celular.Id, 20);                
-            }
-            else
-            {
-                //Generar Nuevo ppago
-                _pagoCelular = _pagoCelularNegocio.PagoCelularSemanal(celular.Id, celular.TiposCelulares.Monto);                
-            }
+            _pagoCelular = pago;
 
             _aPagar.Add(_pagoCelular);
+            GrillaAPagar.DataSource = _pagoCelular;
         }
 
     }
