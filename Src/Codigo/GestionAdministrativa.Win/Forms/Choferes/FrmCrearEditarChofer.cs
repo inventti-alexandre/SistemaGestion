@@ -11,6 +11,7 @@ using Framework.Common.Utility;
 using GestionAdministrativa.Data.Interfaces;
 using GestionAdministrativa.Entities;
 using GestionAdministrativa.Win.Enums;
+using GestionAdministrativa.Win.Forms.Celulares;
 
 
 namespace GestionAdministrativa.Win.Forms.Choferes
@@ -21,13 +22,15 @@ namespace GestionAdministrativa.Win.Forms.Choferes
         private Chofer _chofer;
         private Guid _choferid;
         private readonly IClock _clock;
+        private IFormFactory _iFormFactory;
 
-        public FrmCrearEditarChofer(IGestionAdministrativaUow uow, IClock clock, Guid id, ActionFormMode mode)
+        public FrmCrearEditarChofer(IGestionAdministrativaUow uow, IClock clock, Guid id, ActionFormMode mode,IFormFactory formFactory)
         {
             Uow = uow;
             _formMode = mode;
             _choferid = id;
             _clock = clock;
+            _iFormFactory = formFactory;
             InitializeComponent();
             InicializarForm(mode);
         }
@@ -110,6 +113,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
 
         #region Eventos
         public event EventHandler<Chofer> EntityAgregada;
+        public event EventHandler<Celular> CelularAgregado; 
         #endregion
 
         #region Controles
@@ -236,6 +240,36 @@ namespace GestionAdministrativa.Win.Forms.Choferes
         }
 
         #endregion
+
+        private void BtnAgregarCelular_Click(object sender, EventArgs e)
+        {
+            //using (var seleccionarCliente =  _iFormFactory.Create<FrmCrearEditarCelular>(Guid.Empty, ActionFormMode.Create))
+            //{
+            //    seleccionarCliente.EntityAgregada += (o, celular) =>
+            //    {
+            //        DdlCelular.Text=(celular.Id.ToString());
+            //       // seleccionarCliente.Close();
+            //    };
+            //    seleccionarCliente.Celular.Id
+            //    seleccionarCliente.ShowDialog();
+            //}
+
+            using (var formCrear =new  FrmCrearEditarCelular(ActionFormMode.Create, Uow,_clock,Guid.Empty))
+            {
+                var result = formCrear.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    MessageBox.Show(formCrear.Celular.Id.ToString());
+                    //formCrear.Close();
+                }
+            }
+
+          
+              
+            
+        }
+
+    
 
      
      

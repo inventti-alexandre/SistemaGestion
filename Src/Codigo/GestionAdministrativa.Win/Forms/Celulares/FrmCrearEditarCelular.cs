@@ -55,6 +55,11 @@ namespace GestionAdministrativa.Win.Forms.Celulares
 
         #region Properties
 
+        public Celular Celular
+        {
+            get { return _celular; }
+        }
+
         public int? TipoCelular 
         {
             get { return (int) CbxTipoCelular.SelectedValue; }

@@ -66,6 +66,8 @@
             this.CbxDiaCarga = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel17 = new Telerik.WinControls.UI.RadLabel();
             this.GbDatosCelulares = new System.Windows.Forms.GroupBox();
+            this.radLabel19 = new Telerik.WinControls.UI.RadLabel();
+            this.TxtCaja = new Telerik.WinControls.UI.RadTextBox();
             this.EpvCelular = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -73,8 +75,6 @@
             this.radLabel18 = new Telerik.WinControls.UI.RadLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.radLabel19 = new Telerik.WinControls.UI.RadLabel();
-            this.TxtCaja = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.TxtPagare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbxTipoCelular)).BeginInit();
@@ -110,23 +110,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.CbxDiaCarga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).BeginInit();
             this.GbDatosCelulares.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EpvCelular)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TxtObservaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel18)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtPagare
             // 
             this.TxtPagare.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPagare.Location = new System.Drawing.Point(347, 161);
+            this.TxtPagare.Location = new System.Drawing.Point(361, 161);
             this.TxtPagare.Name = "TxtPagare";
-            this.TxtPagare.Size = new System.Drawing.Size(222, 28);
+            this.TxtPagare.Size = new System.Drawing.Size(251, 28);
             this.TxtPagare.TabIndex = 0;
             this.TxtPagare.TabStop = false;
             this.TxtPagare.ThemeName = "TelerikMetro";
@@ -144,11 +144,11 @@
             // 
             this.CbxTipoCelular.DropDownAnimationEnabled = true;
             this.CbxTipoCelular.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbxTipoCelular.Location = new System.Drawing.Point(259, 30);
+            this.CbxTipoCelular.Location = new System.Drawing.Point(273, 30);
             this.CbxTipoCelular.MaxDropDownItems = 0;
             this.CbxTipoCelular.Name = "CbxTipoCelular";
             this.CbxTipoCelular.ShowImageInEditorArea = true;
-            this.CbxTipoCelular.Size = new System.Drawing.Size(312, 29);
+            this.CbxTipoCelular.Size = new System.Drawing.Size(341, 29);
             this.CbxTipoCelular.TabIndex = 2;
             this.CbxTipoCelular.ThemeName = "TelerikMetro";
             this.CbxTipoCelular.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.CbxTipoCelular_SelectedIndexChanged);
@@ -157,13 +157,13 @@
             // 
             this.DtpFechaAlta.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DtpFechaAlta.Location = new System.Drawing.Point(258, 102);
+            this.DtpFechaAlta.Location = new System.Drawing.Point(272, 102);
             this.DtpFechaAlta.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DtpFechaAlta.MinDate = new System.DateTime(((long)(0)));
             this.DtpFechaAlta.Name = "DtpFechaAlta";
             this.DtpFechaAlta.NullableValue = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
             this.DtpFechaAlta.NullDate = new System.DateTime(((long)(0)));
-            this.DtpFechaAlta.Size = new System.Drawing.Size(312, 31);
+            this.DtpFechaAlta.Size = new System.Drawing.Size(341, 31);
             this.DtpFechaAlta.TabIndex = 3;
             this.DtpFechaAlta.TabStop = false;
             this.DtpFechaAlta.Text = "lunes, 04 de enero de 2016";
@@ -183,7 +183,7 @@
             // 
             this.ChkActivo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChkActivo.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ChkActivo.Location = new System.Drawing.Point(258, 139);
+            this.ChkActivo.Location = new System.Drawing.Point(272, 139);
             this.ChkActivo.Name = "ChkActivo";
             this.ChkActivo.Size = new System.Drawing.Size(15, 15);
             this.ChkActivo.TabIndex = 11;
@@ -202,7 +202,7 @@
             // 
             this.ChkPagare.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChkPagare.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ChkPagare.Location = new System.Drawing.Point(258, 166);
+            this.ChkPagare.Location = new System.Drawing.Point(272, 166);
             this.ChkPagare.Name = "ChkPagare";
             this.ChkPagare.Size = new System.Drawing.Size(15, 15);
             this.ChkPagare.TabIndex = 13;
@@ -222,7 +222,7 @@
             // 
             this.ChkHabilitado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChkHabilitado.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ChkHabilitado.Location = new System.Drawing.Point(258, 191);
+            this.ChkHabilitado.Location = new System.Drawing.Point(272, 191);
             this.ChkHabilitado.Name = "ChkHabilitado";
             this.ChkHabilitado.Size = new System.Drawing.Size(15, 15);
             this.ChkHabilitado.TabIndex = 15;
@@ -250,13 +250,13 @@
             // 
             this.DtpFechaUltimoPago.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtpFechaUltimoPago.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DtpFechaUltimoPago.Location = new System.Drawing.Point(258, 212);
+            this.DtpFechaUltimoPago.Location = new System.Drawing.Point(272, 212);
             this.DtpFechaUltimoPago.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DtpFechaUltimoPago.MinDate = new System.DateTime(((long)(0)));
             this.DtpFechaUltimoPago.Name = "DtpFechaUltimoPago";
             this.DtpFechaUltimoPago.NullableValue = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
             this.DtpFechaUltimoPago.NullDate = new System.DateTime(((long)(0)));
-            this.DtpFechaUltimoPago.Size = new System.Drawing.Size(311, 31);
+            this.DtpFechaUltimoPago.Size = new System.Drawing.Size(340, 31);
             this.DtpFechaUltimoPago.TabIndex = 5;
             this.DtpFechaUltimoPago.TabStop = false;
             this.DtpFechaUltimoPago.Text = "lunes, 04 de enero de 2016";
@@ -276,13 +276,13 @@
             // 
             this.DtpFechaProximoPago.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtpFechaProximoPago.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DtpFechaProximoPago.Location = new System.Drawing.Point(258, 249);
+            this.DtpFechaProximoPago.Location = new System.Drawing.Point(272, 249);
             this.DtpFechaProximoPago.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DtpFechaProximoPago.MinDate = new System.DateTime(((long)(0)));
             this.DtpFechaProximoPago.Name = "DtpFechaProximoPago";
             this.DtpFechaProximoPago.NullableValue = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
             this.DtpFechaProximoPago.NullDate = new System.DateTime(((long)(0)));
-            this.DtpFechaProximoPago.Size = new System.Drawing.Size(311, 31);
+            this.DtpFechaProximoPago.Size = new System.Drawing.Size(340, 31);
             this.DtpFechaProximoPago.TabIndex = 6;
             this.DtpFechaProximoPago.TabStop = false;
             this.DtpFechaProximoPago.Text = "lunes, 04 de enero de 2016";
@@ -293,11 +293,11 @@
             // 
             this.CbxDiaPago.DropDownAnimationEnabled = true;
             this.CbxDiaPago.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbxDiaPago.Location = new System.Drawing.Point(258, 286);
+            this.CbxDiaPago.Location = new System.Drawing.Point(272, 286);
             this.CbxDiaPago.MaxDropDownItems = 0;
             this.CbxDiaPago.Name = "CbxDiaPago";
             this.CbxDiaPago.ShowImageInEditorArea = true;
-            this.CbxDiaPago.Size = new System.Drawing.Size(312, 29);
+            this.CbxDiaPago.Size = new System.Drawing.Size(341, 29);
             this.CbxDiaPago.TabIndex = 4;
             this.CbxDiaPago.ThemeName = "TelerikMetro";
             // 
@@ -323,13 +323,13 @@
             // 
             this.DtpFechaVencimientoPago.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtpFechaVencimientoPago.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DtpFechaVencimientoPago.Location = new System.Drawing.Point(258, 321);
+            this.DtpFechaVencimientoPago.Location = new System.Drawing.Point(272, 321);
             this.DtpFechaVencimientoPago.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DtpFechaVencimientoPago.MinDate = new System.DateTime(((long)(0)));
             this.DtpFechaVencimientoPago.Name = "DtpFechaVencimientoPago";
             this.DtpFechaVencimientoPago.NullableValue = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
             this.DtpFechaVencimientoPago.NullDate = new System.DateTime(((long)(0)));
-            this.DtpFechaVencimientoPago.Size = new System.Drawing.Size(312, 31);
+            this.DtpFechaVencimientoPago.Size = new System.Drawing.Size(341, 31);
             this.DtpFechaVencimientoPago.TabIndex = 8;
             this.DtpFechaVencimientoPago.TabStop = false;
             this.DtpFechaVencimientoPago.Text = "lunes, 04 de enero de 2016";
@@ -371,7 +371,7 @@
             // radLabel11
             // 
             this.radLabel11.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel11.Location = new System.Drawing.Point(189, 141);
+            this.radLabel11.Location = new System.Drawing.Point(134, 138);
             this.radLabel11.Name = "radLabel11";
             this.radLabel11.Size = new System.Drawing.Size(59, 25);
             this.radLabel11.TabIndex = 19;
@@ -380,7 +380,7 @@
             // TxtImei
             // 
             this.TxtImei.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtImei.Location = new System.Drawing.Point(254, 141);
+            this.TxtImei.Location = new System.Drawing.Point(199, 138);
             this.TxtImei.Name = "TxtImei";
             this.TxtImei.Size = new System.Drawing.Size(285, 28);
             this.TxtImei.TabIndex = 18;
@@ -390,7 +390,7 @@
             // radLabel12
             // 
             this.radLabel12.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel12.Location = new System.Drawing.Point(158, 37);
+            this.radLabel12.Location = new System.Drawing.Point(103, 34);
             this.radLabel12.Name = "radLabel12";
             this.radLabel12.Size = new System.Drawing.Size(90, 25);
             this.radLabel12.TabIndex = 21;
@@ -400,7 +400,7 @@
             // 
             this.CbxEmpresa.DropDownAnimationEnabled = true;
             this.CbxEmpresa.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbxEmpresa.Location = new System.Drawing.Point(254, 36);
+            this.CbxEmpresa.Location = new System.Drawing.Point(199, 33);
             this.CbxEmpresa.MaxDropDownItems = 0;
             this.CbxEmpresa.Name = "CbxEmpresa";
             this.CbxEmpresa.ShowImageInEditorArea = true;
@@ -411,7 +411,7 @@
             // radLabel13
             // 
             this.radLabel13.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel13.Location = new System.Drawing.Point(199, 175);
+            this.radLabel13.Location = new System.Drawing.Point(144, 172);
             this.radLabel13.Name = "radLabel13";
             this.radLabel13.Size = new System.Drawing.Size(49, 25);
             this.radLabel13.TabIndex = 21;
@@ -420,7 +420,7 @@
             // TxtSim
             // 
             this.TxtSim.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtSim.Location = new System.Drawing.Point(254, 175);
+            this.TxtSim.Location = new System.Drawing.Point(199, 172);
             this.TxtSim.Name = "TxtSim";
             this.TxtSim.Size = new System.Drawing.Size(285, 28);
             this.TxtSim.TabIndex = 20;
@@ -431,11 +431,11 @@
             // 
             this.CbxModelo.DropDownAnimationEnabled = true;
             this.CbxModelo.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbxModelo.Location = new System.Drawing.Point(258, 67);
+            this.CbxModelo.Location = new System.Drawing.Point(272, 67);
             this.CbxModelo.MaxDropDownItems = 0;
             this.CbxModelo.Name = "CbxModelo";
             this.CbxModelo.ShowImageInEditorArea = true;
-            this.CbxModelo.Size = new System.Drawing.Size(312, 29);
+            this.CbxModelo.Size = new System.Drawing.Size(341, 29);
             this.CbxModelo.TabIndex = 24;
             this.CbxModelo.ThemeName = "TelerikMetro";
             // 
@@ -451,7 +451,7 @@
             // radLabel15
             // 
             this.radLabel15.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel15.Location = new System.Drawing.Point(178, 212);
+            this.radLabel15.Location = new System.Drawing.Point(123, 209);
             this.radLabel15.Name = "radLabel15";
             this.radLabel15.Size = new System.Drawing.Size(70, 25);
             this.radLabel15.TabIndex = 23;
@@ -460,7 +460,7 @@
             // TxtGmail
             // 
             this.TxtGmail.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtGmail.Location = new System.Drawing.Point(254, 212);
+            this.TxtGmail.Location = new System.Drawing.Point(199, 209);
             this.TxtGmail.Name = "TxtGmail";
             this.TxtGmail.Size = new System.Drawing.Size(285, 28);
             this.TxtGmail.TabIndex = 22;
@@ -470,7 +470,7 @@
             // radLabel16
             // 
             this.radLabel16.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel16.Location = new System.Drawing.Point(158, 107);
+            this.radLabel16.Location = new System.Drawing.Point(103, 104);
             this.radLabel16.Name = "radLabel16";
             this.radLabel16.Size = new System.Drawing.Size(90, 25);
             this.radLabel16.TabIndex = 25;
@@ -479,7 +479,7 @@
             // TxtNumeroCelular
             // 
             this.TxtNumeroCelular.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNumeroCelular.Location = new System.Drawing.Point(254, 107);
+            this.TxtNumeroCelular.Location = new System.Drawing.Point(199, 104);
             this.TxtNumeroCelular.Name = "TxtNumeroCelular";
             this.TxtNumeroCelular.Size = new System.Drawing.Size(285, 28);
             this.TxtNumeroCelular.TabIndex = 24;
@@ -490,7 +490,7 @@
             // 
             this.CbxDiaCarga.DropDownAnimationEnabled = true;
             this.CbxDiaCarga.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbxDiaCarga.Location = new System.Drawing.Point(254, 249);
+            this.CbxDiaCarga.Location = new System.Drawing.Point(199, 246);
             this.CbxDiaCarga.MaxDropDownItems = 0;
             this.CbxDiaCarga.Name = "CbxDiaCarga";
             this.CbxDiaCarga.ShowImageInEditorArea = true;
@@ -501,7 +501,7 @@
             // radLabel17
             // 
             this.radLabel17.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel17.Location = new System.Drawing.Point(138, 250);
+            this.radLabel17.Location = new System.Drawing.Point(83, 247);
             this.radLabel17.Name = "radLabel17";
             this.radLabel17.Size = new System.Drawing.Size(110, 25);
             this.radLabel17.TabIndex = 26;
@@ -524,12 +524,31 @@
             this.GbDatosCelulares.Controls.Add(this.radLabel13);
             this.GbDatosCelulares.Controls.Add(this.TxtGmail);
             this.GbDatosCelulares.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GbDatosCelulares.Location = new System.Drawing.Point(606, 12);
+            this.GbDatosCelulares.Location = new System.Drawing.Point(662, 12);
             this.GbDatosCelulares.Name = "GbDatosCelulares";
-            this.GbDatosCelulares.Size = new System.Drawing.Size(553, 378);
+            this.GbDatosCelulares.Size = new System.Drawing.Size(497, 378);
             this.GbDatosCelulares.TabIndex = 28;
             this.GbDatosCelulares.TabStop = false;
             this.GbDatosCelulares.Text = "Datos de celulares Apipe";
+            // 
+            // radLabel19
+            // 
+            this.radLabel19.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel19.Location = new System.Drawing.Point(134, 71);
+            this.radLabel19.Name = "radLabel19";
+            this.radLabel19.Size = new System.Drawing.Size(59, 25);
+            this.radLabel19.TabIndex = 25;
+            this.radLabel19.Text = "Caja:";
+            // 
+            // TxtCaja
+            // 
+            this.TxtCaja.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCaja.Location = new System.Drawing.Point(199, 68);
+            this.TxtCaja.Name = "TxtCaja";
+            this.TxtCaja.Size = new System.Drawing.Size(285, 28);
+            this.TxtCaja.TabIndex = 24;
+            this.TxtCaja.TabStop = false;
+            this.TxtCaja.ThemeName = "TelerikMetro";
             // 
             // EpvCelular
             // 
@@ -561,7 +580,7 @@
             this.groupBox2.Controls.Add(this.radLabel6);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(588, 378);
+            this.groupBox2.Size = new System.Drawing.Size(644, 378);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             // 
@@ -609,25 +628,6 @@
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Observaciones";
-            // 
-            // radLabel19
-            // 
-            this.radLabel19.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel19.Location = new System.Drawing.Point(189, 74);
-            this.radLabel19.Name = "radLabel19";
-            this.radLabel19.Size = new System.Drawing.Size(59, 25);
-            this.radLabel19.TabIndex = 25;
-            this.radLabel19.Text = "Caja:";
-            // 
-            // TxtCaja
-            // 
-            this.TxtCaja.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCaja.Location = new System.Drawing.Point(254, 71);
-            this.TxtCaja.Name = "TxtCaja";
-            this.TxtCaja.Size = new System.Drawing.Size(285, 28);
-            this.TxtCaja.TabIndex = 24;
-            this.TxtCaja.TabStop = false;
-            this.TxtCaja.ThemeName = "TelerikMetro";
             // 
             // FrmCrearEditarCelular
             // 
@@ -684,6 +684,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).EndInit();
             this.GbDatosCelulares.ResumeLayout(false);
             this.GbDatosCelulares.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCaja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EpvCelular)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -692,8 +694,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel18)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtCaja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

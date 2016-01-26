@@ -46,6 +46,7 @@
             this.BtnSave = new Telerik.WinControls.UI.RadButton();
             this.DdlCelular = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
+            this.BtnAgregarCelular = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDni)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtApellido)).BeginInit();
@@ -63,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DdlCelular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnAgregarCelular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -231,11 +233,25 @@
             this.radLabel7.TabIndex = 11;
             this.radLabel7.Text = "Celular:";
             // 
+            // BtnAgregarCelular
+            // 
+            this.BtnAgregarCelular.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BtnAgregarCelular.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregarCelular.Image = global::GestionAdministrativa.Win.Properties.Resources.Add_New_blue;
+            this.BtnAgregarCelular.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnAgregarCelular.Location = new System.Drawing.Point(439, 287);
+            this.BtnAgregarCelular.Name = "BtnAgregarCelular";
+            this.BtnAgregarCelular.Size = new System.Drawing.Size(29, 29);
+            this.BtnAgregarCelular.TabIndex = 11;
+            this.BtnAgregarCelular.ThemeName = "TelerikMetro";
+            this.BtnAgregarCelular.Click += new System.EventHandler(this.BtnAgregarCelular_Click);
+            // 
             // FrmCrearEditarChofer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(669, 482);
+            this.Controls.Add(this.BtnAgregarCelular);
             this.Controls.Add(this.DdlCelular);
             this.Controls.Add(this.radLabel7);
             this.Controls.Add(this.BtnSave);
@@ -276,6 +292,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DdlCelular)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnAgregarCelular)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -302,5 +319,6 @@
         private Telerik.WinControls.UI.RadButton BtnSave;
         private Telerik.WinControls.UI.RadDropDownList DdlCelular;
         private Telerik.WinControls.UI.RadLabel radLabel7;
+        private Telerik.WinControls.UI.RadButton BtnAgregarCelular;
     }
 }
