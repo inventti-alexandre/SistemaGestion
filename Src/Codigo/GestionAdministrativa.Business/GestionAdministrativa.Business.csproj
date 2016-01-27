@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessBase.cs" />
+    <Compile Include="Data\PagosTipo.cs" />
     <Compile Include="Interfaces\IPagoCelularNegocio.cs" />
     <Compile Include="PagoCelularNegocio.cs" />
     <Compile Include="ChoferNegocio.cs" />

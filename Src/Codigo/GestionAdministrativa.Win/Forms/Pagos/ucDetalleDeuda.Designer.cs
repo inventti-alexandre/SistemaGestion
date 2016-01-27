@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.radGridView1 = new Telerik.WinControls.UI.MasterGridViewTemplate();
             this.radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
-            this.radTextBox2 = new Telerik.WinControls.UI.RadTextBox();
+            this.TxtTotalDeuda = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.GrillaAPagar = new Telerik.WinControls.UI.RadGridView();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtTotalDeuda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaAPagar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaAPagar.MasterTemplate)).BeginInit();
@@ -55,22 +55,22 @@
             this.radGridView1.AllowColumnReorder = false;
             this.radGridView1.AllowDragToGroup = false;
             this.radGridView1.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.FormatString = "";
-            gridViewTextBoxColumn1.HeaderText = "Movil";
-            gridViewTextBoxColumn1.Name = "column1";
-            gridViewTextBoxColumn1.Width = 156;
-            gridViewTextBoxColumn2.FormatString = "";
-            gridViewTextBoxColumn2.HeaderText = "Descripcion";
-            gridViewTextBoxColumn2.Name = "column2";
-            gridViewTextBoxColumn2.Width = 156;
-            gridViewTextBoxColumn3.FormatString = "";
-            gridViewTextBoxColumn3.HeaderText = "Monto";
-            gridViewTextBoxColumn3.Name = "column3";
-            gridViewTextBoxColumn3.Width = 157;
+            gridViewTextBoxColumn7.FormatString = "";
+            gridViewTextBoxColumn7.HeaderText = "Movil";
+            gridViewTextBoxColumn7.Name = "column1";
+            gridViewTextBoxColumn7.Width = 156;
+            gridViewTextBoxColumn8.FormatString = "";
+            gridViewTextBoxColumn8.HeaderText = "Descripcion";
+            gridViewTextBoxColumn8.Name = "column2";
+            gridViewTextBoxColumn8.Width = 156;
+            gridViewTextBoxColumn9.FormatString = "";
+            gridViewTextBoxColumn9.HeaderText = "Monto";
+            gridViewTextBoxColumn9.Name = "column3";
+            gridViewTextBoxColumn9.Width = 157;
             this.radGridView1.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3});
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9});
             // 
             // radTextBox1
             // 
@@ -82,15 +82,15 @@
             this.radTextBox1.TabStop = false;
             this.radTextBox1.ThemeName = "TelerikMetro";
             // 
-            // radTextBox2
+            // TxtTotalDeuda
             // 
-            this.radTextBox2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox2.Location = new System.Drawing.Point(488, 243);
-            this.radTextBox2.Name = "radTextBox2";
-            this.radTextBox2.Size = new System.Drawing.Size(100, 28);
-            this.radTextBox2.TabIndex = 3;
-            this.radTextBox2.TabStop = false;
-            this.radTextBox2.ThemeName = "TelerikMetro";
+            this.TxtTotalDeuda.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTotalDeuda.Location = new System.Drawing.Point(488, 243);
+            this.TxtTotalDeuda.Name = "TxtTotalDeuda";
+            this.TxtTotalDeuda.Size = new System.Drawing.Size(100, 28);
+            this.TxtTotalDeuda.TabIndex = 3;
+            this.TxtTotalDeuda.TabStop = false;
+            this.TxtTotalDeuda.ThemeName = "TelerikMetro";
             // 
             // radLabel2
             // 
@@ -110,23 +110,27 @@
             this.GrillaAPagar.MasterTemplate.AllowAddNewRow = false;
             this.GrillaAPagar.MasterTemplate.AllowColumnReorder = false;
             this.GrillaAPagar.MasterTemplate.AllowDragToGroup = false;
+            this.GrillaAPagar.MasterTemplate.AutoGenerateColumns = false;
             this.GrillaAPagar.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn4.FormatString = "";
-            gridViewTextBoxColumn4.HeaderText = "Movil";
-            gridViewTextBoxColumn4.Name = "column1";
-            gridViewTextBoxColumn4.Width = 185;
-            gridViewTextBoxColumn5.FormatString = "";
-            gridViewTextBoxColumn5.HeaderText = "Descripcion";
-            gridViewTextBoxColumn5.Name = "column2";
-            gridViewTextBoxColumn5.Width = 185;
-            gridViewTextBoxColumn6.FormatString = "";
-            gridViewTextBoxColumn6.HeaderText = "Monto";
-            gridViewTextBoxColumn6.Name = "column3";
-            gridViewTextBoxColumn6.Width = 187;
+            gridViewTextBoxColumn10.FieldName = "Desde";
+            gridViewTextBoxColumn10.FormatString = "";
+            gridViewTextBoxColumn10.HeaderText = "Desde";
+            gridViewTextBoxColumn10.Name = "Desde";
+            gridViewTextBoxColumn10.Width = 185;
+            gridViewTextBoxColumn11.FieldName = "Hasta";
+            gridViewTextBoxColumn11.FormatString = "";
+            gridViewTextBoxColumn11.HeaderText = "Hasta";
+            gridViewTextBoxColumn11.Name = "Hasta";
+            gridViewTextBoxColumn11.Width = 185;
+            gridViewTextBoxColumn12.FieldName = "Monto";
+            gridViewTextBoxColumn12.FormatString = "";
+            gridViewTextBoxColumn12.HeaderText = "Monto";
+            gridViewTextBoxColumn12.Name = "Monto";
+            gridViewTextBoxColumn12.Width = 187;
             this.GrillaAPagar.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6});
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12});
             this.GrillaAPagar.Name = "GrillaAPagar";
             this.GrillaAPagar.ReadOnly = true;
             this.GrillaAPagar.Size = new System.Drawing.Size(577, 199);
@@ -147,15 +151,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.radTextBox2);
+            this.Controls.Add(this.TxtTotalDeuda);
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.GrillaAPagar);
             this.Controls.Add(this.radLabel1);
             this.Name = "ucDetalleDeuda";
             this.Size = new System.Drawing.Size(604, 285);
+            this.Load += new System.EventHandler(this.ucDetalleDeuda_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtTotalDeuda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaAPagar.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaAPagar)).EndInit();
@@ -169,7 +174,7 @@
 
         private Telerik.WinControls.UI.MasterGridViewTemplate radGridView1;
         private Telerik.WinControls.UI.RadTextBox radTextBox1;
-        private Telerik.WinControls.UI.RadTextBox radTextBox2;
+        private Telerik.WinControls.UI.RadTextBox TxtTotalDeuda;
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadGridView GrillaAPagar;
         private Telerik.WinControls.UI.RadLabel radLabel1;

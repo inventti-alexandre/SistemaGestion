@@ -43,11 +43,12 @@ namespace GestionAdministrativa.Business
         }
         public PagoCelular PagoCelularInicial(Guid celularId, decimal monto)
         {
+            var _monto = 20; //Ver Contexto
+            monto = 20;
             PagoCelular nuevoPago = new PagoCelular();
             nuevoPago.Desde = _clock.Now;
-            nuevoPago.Desde = _clock.Now.AddDays(4);
-            nuevoPago.Efectivo = monto * 5;
-            nuevoPago.Monto = monto;
+            nuevoPago.Hasta = _clock.Now.AddDays(4);
+            nuevoPago.Monto = monto * 5;
             nuevoPago.CelularId = celularId;
             nuevoPago.FechaAlta = _clock.Now;
             //nuevoPago.OperadorAltaId=
@@ -60,9 +61,8 @@ namespace GestionAdministrativa.Business
         {
             PagoCelular nuevoPago = new PagoCelular();
             nuevoPago.Desde = _clock.Now;
-            nuevoPago.Desde = _clock.Now.AddDays(6);
-            nuevoPago.Efectivo = monto * 7;
-            nuevoPago.Monto = monto;
+            nuevoPago.Hasta = _clock.Now.AddDays(6);
+            nuevoPago.Monto = monto * 7;
             nuevoPago.CelularId = celularId;
             nuevoPago.FechaAlta = _clock.Now;
             //nuevoPago.OperadorAltaId=

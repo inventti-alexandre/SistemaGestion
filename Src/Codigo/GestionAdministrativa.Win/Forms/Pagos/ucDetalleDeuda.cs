@@ -18,7 +18,8 @@ namespace GestionAdministrativa.Win.Forms.Pagos
     {
         private PagoCelular _pagoCelular;
         private IPagoCelularNegocio _pagoCelularNegocio;
-        private List<PagoCelular> _aPagar;
+        private IList<PagoCelular> _aPagar = new List<PagoCelular>();
+        
         public ucDetalleDeuda()
         {
             if (Ioc.Container != null)
@@ -27,15 +28,42 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 
             }
             InitializeComponent();
-            GrillaAPagar.DataSource = _aPagar;
         }
 
-        public void ActualizarNuevoPago(PagoCelular pago)
+        public IList<PagoCelular> APagar
+        {
+            get { return _aPagar; }
+        }
+        public PagoCelular ActualizarNuevoPago(PagoCelular pago)
         {
             _pagoCelular = pago;
 
-            _aPagar.Add(_pagoCelular);
-            GrillaAPagar.DataSource = _pagoCelular;
+            APagar.Add(_pagoCelular);
+            RefrescarDeuda();
+            return _pagoCelular;
+        }
+
+        public void RefrescarDeuda()
+        {
+            GrillaAPagar.DataSource = APagar.ToList();
+            var total = TotalPagos();
+            TxtTotalDeuda.Text = total.ToString("n2");
+            //FaltaPagar = TotalPagar - total;// +_intereses;
+        }
+
+        public decimal TotalPagos()
+        {
+            return this.APagar.Sum(p => p.Monto);
+            
+        }
+
+        private void ucDetalleDeuda_Load(object sender, EventArgs e)
+        {
+            this.GrillaAPagar.Columns["Desde"].DataType = typeof(DateTime);
+            this.GrillaAPagar.Columns["Desde"].FormatString = "{0: dd/M/yyyy}";
+            this.GrillaAPagar.Columns["Hasta"].DataType = typeof(DateTime);
+            this.GrillaAPagar.Columns["Hasta"].FormatString = "{0: dd/M/yyyy}";
+            RefrescarDeuda();
         }
 
     }

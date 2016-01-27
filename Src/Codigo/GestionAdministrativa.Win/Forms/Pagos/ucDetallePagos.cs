@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GestionAdministrativa.Entities;
 
 namespace GestionAdministrativa.Win.Forms.Pagos
 {
@@ -16,5 +17,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         {
             InitializeComponent();
         }
+
+       
     }
 }

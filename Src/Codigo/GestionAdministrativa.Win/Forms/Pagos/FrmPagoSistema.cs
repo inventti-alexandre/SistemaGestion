@@ -18,6 +18,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
     {
         private Chofer _chofer;
         private IPagoCelularNegocio _iPagoCelularNegocio;
+        private PagoCelular _pagoCelular;
         public FrmPagoSistema(IGestionAdministrativaUow uow, IPagoCelularNegocio pagoCelularNegocio)
         {
             Uow = uow;
@@ -84,7 +85,8 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             if (celular != null)
             {
                 var pago = _iPagoCelularNegocio.AutoPago(celular.Id);
-                ucDetalleDeuda1.ActualizarNuevoPago(pago);
+                _pagoCelular = ucDetalleDeuda1.ActualizarNuevoPago(pago);
+                ucPagos1.ActualizarNuevoPago("Efectivo", pago.Monto);
             }
             
         }
