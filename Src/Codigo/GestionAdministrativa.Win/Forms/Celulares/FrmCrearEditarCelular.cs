@@ -200,8 +200,6 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             CargarCombos();
             HabilitarControles();
         }
-
-
        
         private void HabilitarControles()
         {
@@ -281,8 +279,6 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             this.Gmail = _celular.Email;
             this.DiaCarga = _celular.DiaCargaId;
             this.Observaciones = _celular.Observacion;
-
-
         }
         private void OnEntityAgregada(Celular celular)
         {
@@ -355,13 +351,12 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             }
             else
             {
+                
                 var entity = ObtenerEntityDesdeForm();
                 if (_actionForm == ActionFormMode.Create)
                     Uow.Celulares.Agregar(entity);
                 else
                     Uow.Celulares.Modificar(entity);
-
-               
 
                 Uow.Commit();
 
@@ -408,7 +403,6 @@ namespace GestionAdministrativa.Win.Forms.Celulares
 
             return _celular;
         }
-
 
         protected override object ObtenerEntidad()
         {

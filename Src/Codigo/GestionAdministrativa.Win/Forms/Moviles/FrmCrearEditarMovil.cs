@@ -74,6 +74,10 @@ namespace GestionAdministrativa.Win.Forms.Moviles
                 get { return ChkActivo.IsChecked; }
                 set { ChkActivo.Checked = value ?? false; }
             }
+            public Movil Movil
+            {
+                get { return _movil; }
+            }
 
         public DateTime FechaAlta {
             get { return DtpFechaAlta.Value; }

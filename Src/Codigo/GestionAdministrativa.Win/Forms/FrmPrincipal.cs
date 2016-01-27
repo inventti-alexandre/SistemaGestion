@@ -40,7 +40,7 @@ namespace GestionAdministrativa.Win.Forms
         private void BtnChofer_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmCrearEditarChofer>(Guid.Empty, ActionFormMode.Create);
-            frm.ShowDialog();
+            frm.Show();
         }
 
 
@@ -53,7 +53,7 @@ namespace GestionAdministrativa.Win.Forms
         private void BtnChoferListado_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmChoferesListado>();
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void BtnCelulares_Click(object sender, EventArgs e)

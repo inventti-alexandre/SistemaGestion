@@ -12,6 +12,7 @@ using GestionAdministrativa.Data.Interfaces;
 using GestionAdministrativa.Entities;
 using GestionAdministrativa.Win.Enums;
 using GestionAdministrativa.Win.Forms.Celulares;
+using GestionAdministrativa.Win.Forms.Moviles;
 
 
 namespace GestionAdministrativa.Win.Forms.Choferes
@@ -20,6 +21,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
     {
         private readonly ActionFormMode _formMode;
         private Chofer _chofer;
+        private Celular _celular;
         private Guid _choferid;
         private readonly IClock _clock;
         private IFormFactory _iFormFactory;
@@ -104,11 +106,12 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             set { DdlMoviles.SelectedValue = value; }
         }
 
-        public Guid? CelularId
+        public string Celular
         {
-            get { return (Guid)DdlCelular.SelectedValue; }
-            set { DdlCelular.SelectedValue = value; }
+            get { return TxtCelular.Text; }
+            set { TxtCelular.Text = value; }
         }
+
 #endregion
 
         #region Eventos
@@ -136,11 +139,6 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             DdlMoviles.DisplayMember = "Numero";
             DdlMoviles.ValueMember = "Id";
             DdlMoviles.DataSource = moviles;
-
-          
-            
-            
-            //_limpiandoFiltros = false;
         }
         private void CargarEntidad(Guid choferid)
         {
@@ -162,10 +160,10 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             this.Email = _chofer.Email;
             this.Activo = _chofer.Activo;
             this.MovilId = _chofer.MovilId;
-            this.CelularId = _chofer.CelularId;
+            this.Celular = _celular.TiposCelulares.Tipo;
             //control si es nulo, cambiar a txt
             var celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where(e=>e.Id==_chofer.CelularId).ToList();
-            DdlCelular.Text = celular.FirstOrDefault().TiposCelulares.Tipo;
+            Celular = celular.FirstOrDefault().TiposCelulares.Tipo;
         }
 
         private void CrearEditar()
@@ -198,6 +196,8 @@ namespace GestionAdministrativa.Win.Forms.Choferes
                 {
                     OnEntityAgregada(entity);
                 }
+                this.Close();
+                
             }
         }
 
@@ -216,6 +216,8 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             _chofer.OperadorModificacionId =  Context.OperadorActual.Id;
             _chofer.SucursalModificacionId =Context.SucursalActual.Id;
             _chofer.FechaModficacion = _formMode == ActionFormMode.Create ? _clock.Now : _chofer.FechaAlta;
+            if (_celular!=null)
+             _chofer.CelularId = _celular.Id;
             return _chofer;
         }
 
@@ -243,30 +245,32 @@ namespace GestionAdministrativa.Win.Forms.Choferes
 
         private void BtnAgregarCelular_Click(object sender, EventArgs e)
         {
-            //using (var seleccionarCliente =  _iFormFactory.Create<FrmCrearEditarCelular>(Guid.Empty, ActionFormMode.Create))
-            //{
-            //    seleccionarCliente.EntityAgregada += (o, celular) =>
-            //    {
-            //        DdlCelular.Text=(celular.Id.ToString());
-            //       // seleccionarCliente.Close();
-            //    };
-            //    seleccionarCliente.Celular.Id
-            //    seleccionarCliente.ShowDialog();
-            //}
-
-            using (var formCrear =new  FrmCrearEditarCelular(ActionFormMode.Create, Uow,_clock,Guid.Empty))
+            using (var seleccionarCelular =  _iFormFactory.Create<FrmCrearEditarCelular>(Guid.Empty, ActionFormMode.Create))
             {
-                var result = formCrear.ShowDialog();
-                if (result == DialogResult.OK)
+                seleccionarCelular.EntityAgregada += (o, celular) =>
                 {
-                    MessageBox.Show(formCrear.Celular.Id.ToString());
-                    //formCrear.Close();
-                }
-            }
 
-          
-              
+                    _celular = celular;
+                    Celular = _celular.TiposCelulares.Tipo;
+
+                };
+                seleccionarCelular.ShowDialog();
+            }
             
+        }
+
+        private void BtnAgregarMovil_Click(object sender, EventArgs e)
+        {
+            using (var seleccionarMovil = _iFormFactory.Create<FrmCrearEditarMovil>(Guid.Empty, ActionFormMode.Create))
+            {
+                seleccionarMovil.EntityAgregada += (o, movil) =>
+                {
+                    CargarCombos();
+                    DdlMoviles.SelectedValue = seleccionarMovil.Movil.Id;
+
+                };
+                seleccionarMovil.ShowDialog();
+            }
         }
 
     
