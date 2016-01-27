@@ -232,6 +232,12 @@
     <Compile Include="Forms\Pagos\FrmPagoSistema.Designer.cs">
       <DependentUpon>FrmPagoSistema.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Pagos\FrmTipoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pagos\FrmTipoPago.Designer.cs">
+      <DependentUpon>FrmTipoPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Pagos\ucBuscardorChoferMovil.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -318,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pagos\FrmPagoSistema.resx">
       <DependentUpon>FrmPagoSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pagos\FrmTipoPago.resx">
+      <DependentUpon>FrmTipoPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pagos\ucBuscardorChoferMovil.resx">
       <DependentUpon>ucBuscardorChoferMovil.cs</DependentUpon>
