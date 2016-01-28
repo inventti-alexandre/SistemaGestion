@@ -48,6 +48,48 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         {
             return this.Pagos.Sum(p => p.Importe);
 
-        }    
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            using (var tipoPago = new FrmTipoPago())
+            {
+                tipoPago.PagoAgregado += (o, pago) =>
+                {
+                    //Pagos.Add(pago);
+                    AgregarPago(pago);
+                    RefrescarPagos();
+                    tipoPago.Close();
+                };
+
+                tipoPago.ShowDialog();
+            }
+
+        }
+
+        private void AgregarPago(PagosTipo pago)
+        {
+            if (Pagos != null)
+            {
+                bool agregar = true;
+                foreach (var p in Pagos)
+                {
+                    if (p.TipoPago == pago.TipoPago)
+                    {
+                        p.Importe += pago.Importe;
+                        agregar = false;
+                    }
+                    else
+                    {
+                        if (pago.TipoPago!="Efectivo" && p.TipoPago== "Efectivo")
+                        {
+                            p.Importe -= pago.Importe;
+                        }
+                    }
+                }
+                if (agregar)
+                    Pagos.Add(pago);
+            }
+        }
     }
 }

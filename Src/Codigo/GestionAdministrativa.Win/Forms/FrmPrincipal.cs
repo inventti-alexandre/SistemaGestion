@@ -65,7 +65,7 @@ namespace GestionAdministrativa.Win.Forms
         private void btnPagos_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmPagoSistema>();
-            frm.ShowDialog();
+            frm.Show();
         }
 
        

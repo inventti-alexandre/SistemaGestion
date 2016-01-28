@@ -30,6 +30,7 @@
         {
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.TxtTotal = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.BtnAgregar = new System.Windows.Forms.Button();
@@ -68,6 +69,7 @@
             this.BtnAgregar.TabIndex = 1;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // gridPagos
             // 
@@ -84,15 +86,22 @@
             gridViewTextBoxColumn1.FormatString = "";
             gridViewTextBoxColumn1.HeaderText = "Tipo";
             gridViewTextBoxColumn1.Name = "column1";
-            gridViewTextBoxColumn1.Width = 272;
+            gridViewTextBoxColumn1.Width = 250;
             gridViewTextBoxColumn2.FieldName = "Importe";
             gridViewTextBoxColumn2.FormatString = "";
             gridViewTextBoxColumn2.HeaderText = "Monto";
             gridViewTextBoxColumn2.Name = "column3";
-            gridViewTextBoxColumn2.Width = 274;
+            gridViewTextBoxColumn2.Width = 267;
+            gridViewCommandColumn1.HeaderText = "";
+            gridViewCommandColumn1.Image = global::GestionAdministrativa.Win.Properties.Resources.delete;
+            gridViewCommandColumn1.MaxWidth = 30;
+            gridViewCommandColumn1.MinWidth = 30;
+            gridViewCommandColumn1.Name = "Eliminar";
+            gridViewCommandColumn1.Width = 30;
             this.gridPagos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2});
+            gridViewTextBoxColumn2,
+            gridViewCommandColumn1});
             this.gridPagos.Name = "gridPagos";
             this.gridPagos.ReadOnly = true;
             this.gridPagos.Size = new System.Drawing.Size(567, 150);
