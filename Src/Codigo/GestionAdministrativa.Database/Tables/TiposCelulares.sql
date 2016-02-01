@@ -3,6 +3,7 @@
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
     [Tipo] VARCHAR(50) NOT NULL, 
     [Monto] MONEY NOT NULL, 
+	[MontoInicial] MONEY NOT NULL, 
     [FechaAlta] DATETIME NOT NULL, 
     [OperadorAltaId] UNIQUEIDENTIFIER NOT NULL, 
     [SucursalAltaId] INT NOT NULL, 

@@ -673,6 +673,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Tipo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Monto" Type="money" Nullable="false" />
+          <Property Name="MontoInicial" Type="money" Nullable="false" />
           <Property Name="FechaAlta" Type="datetime" Nullable="false" />
           <Property Name="OperadorAltaId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="SucursalAltaId" Type="int" Nullable="false" />
@@ -4732,6 +4733,7 @@
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_TiposCelulares_SucursalAlta" FromRole="TiposCelulares" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_TiposCelulares_SucursalModificacion" FromRole="TiposCelulares" ToRole="Sucursales" />
           <NavigationProperty Name="Celulares" Relationship="GestionAdministrativa.Model.FK_Celulares_TipoCelular" FromRole="TipoCelular" ToRole="Celulare" />
+          <Property Name="MontoInicial" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
         </EntityType>
         <EntityType Name="TipoComprobante">
           <Key>
@@ -8563,6 +8565,7 @@
           <EntitySetMapping Name="TiposCelulares">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.TipoCelular">
               <MappingFragment StoreEntitySet="TiposCelulares">
+                <ScalarProperty Name="MontoInicial" ColumnName="MontoInicial" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
                 <ScalarProperty Name="Monto" ColumnName="Monto" />
