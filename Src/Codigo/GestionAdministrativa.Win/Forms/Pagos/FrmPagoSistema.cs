@@ -84,7 +84,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             var celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where(c => c.Id == chofer.CelularId).FirstOrDefault();
             if (celular != null)
             {
-                var pago = _iPagoCelularNegocio.AutoPago(celular.Id);
+                var pago = _iPagoCelularNegocio.AutoPago(celular);
                 _pagoCelular = ucDetalleDeuda1.ActualizarNuevoPago(pago);
                 ucPagos1.ActualizarNuevoPago("Efectivo", pago.Monto);
             }

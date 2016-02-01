@@ -25,31 +25,31 @@ namespace GestionAdministrativa.Business
             _clock = clock;
         }
 
-        public PagoCelular AutoPago(Guid celularId)
+        public PagoCelular AutoPago(Celular _celular)
         {
-            var nuevoPago = Uow.PagosCelulares.Listado().Where(p=> p.CelularId == celularId).OrderByDescending(pc => pc.FechaAlta).FirstOrDefault();
-            var celular = Uow.Celulares.Obtener(c=>c.Id == celularId, c=>c.TiposCelulares);
+            var nuevoPago = Uow.PagosCelulares.Listado().Where(p=> p.CelularId == _celular.Id).OrderByDescending(pc => pc.FechaAlta).FirstOrDefault();
+            var celular = Uow.Celulares.Obtener(c => c.Id == _celular.Id, c => c.TiposCelulares);
             if (nuevoPago == null)
             {
-                nuevoPago = PagoCelularInicial(celularId, celular.TiposCelulares.Monto);
+                nuevoPago = PagoCelularInicial(_celular);
             }
             else
             {
-                nuevoPago = PagoCelularSemanal(celularId, celular.TiposCelulares.Monto);
+                nuevoPago = PagoCelularSemanal(_celular);
             }
 
       
             return nuevoPago;
         }
-        public PagoCelular PagoCelularInicial(Guid celularId, decimal monto)
+        public PagoCelular PagoCelularInicial(Celular celular)
         {
-            var _monto = 20; //Ver Contexto
-            monto = 20;
+            var _monto = celular.TiposCelulares.MontoInicial; //Ver Contexto
+            //monto = celular.TiposCelulares.MontoInicial;
             PagoCelular nuevoPago = new PagoCelular();
             nuevoPago.Desde = _clock.Now;
             nuevoPago.Hasta = _clock.Now.AddDays(4);
-            nuevoPago.Monto = monto * 5;
-            nuevoPago.CelularId = celularId;
+            nuevoPago.Monto = _monto * 5;
+            nuevoPago.CelularId = celular.Id;
             nuevoPago.FechaAlta = _clock.Now;
             //nuevoPago.OperadorAltaId=
             //nuevoPago.SucursalAltaId=
@@ -57,13 +57,13 @@ namespace GestionAdministrativa.Business
             return nuevoPago;
         }
 
-        public PagoCelular PagoCelularSemanal(Guid celularId, decimal monto)
+        public PagoCelular PagoCelularSemanal(Celular celular)
         {
             PagoCelular nuevoPago = new PagoCelular();
             nuevoPago.Desde = _clock.Now;
             nuevoPago.Hasta = _clock.Now.AddDays(6);
-            nuevoPago.Monto = monto * 7;
-            nuevoPago.CelularId = celularId;
+            nuevoPago.Monto = celular.TiposCelulares.Monto * 7;
+            nuevoPago.CelularId = celular.Id;
             nuevoPago.FechaAlta = _clock.Now;
             //nuevoPago.OperadorAltaId=
             //nuevoPago.SucursalAltaId=
