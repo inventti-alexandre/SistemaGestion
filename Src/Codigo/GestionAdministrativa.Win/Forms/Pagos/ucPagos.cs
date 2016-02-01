@@ -28,6 +28,29 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         {
             get { return _pagos; }
         }
+
+        #region Propiedades
+
+        public string Tipo
+        {
+            get { return ddlTipo.Text; }
+            set { ddlTipo.Text = value; }
+        }
+
+        public decimal Importe
+        {
+            get
+            {
+                decimal importe;
+                return decimal.TryParse(txtImporte.Text, out importe) ? importe : 0;
+            }
+            set
+            { txtImporte.Text = value.ToString(); }
+        }
+
+        #endregion
+
+        #region Metodos
         public void ActualizarNuevoPago(string tipo, decimal importe)
         {
             _pago.TipoPago = tipo;
@@ -50,21 +73,28 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             return this.Pagos.Sum(p => p.Importe);
 
         }
-
+#endregion
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            using (var tipoPago = new FrmTipoPago())
-            {
-                tipoPago.PagoAgregado += (o, pago) =>
-                {
-                    //Pagos.Add(pago);
-                    AgregarPago(pago);
-                    RefrescarPagos();
-                    tipoPago.Close();
-                };
+            //using (var tipoPago = new FrmTipoPago())
+            //{
+            //    tipoPago.PagoAgregado += (o, pago) =>
+            //    {
+            //        //Pagos.Add(pago);
+            //        AgregarPago(pago);
+            //        RefrescarPagos();
+            //        tipoPago.Close();
+            //    };
 
-                tipoPago.ShowDialog();
-            }
+            //    tipoPago.ShowDialog();
+            //}
+            var tipoPago = new PagosTipo();
+            tipoPago.TipoPago = Tipo;
+            tipoPago.Importe = Importe;
+
+            AgregarPago(tipoPago);
+            RefrescarPagos();
+            Importe = 0;
 
         }
 
@@ -75,18 +105,25 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 bool agregar = true;
                 foreach (var p in Pagos)
                 {
-                    if (p.TipoPago == pago.TipoPago)
-                    {
-                        p.Importe += pago.Importe;
-                        agregar = false;
-                    }
-                    else
-                    {
+                    //if (p.TipoPago == pago.TipoPago)
+                    //{
+                    //    p.Importe += pago.Importe;
+                    //    agregar = false;
+                    //}
+                    //else
+                    //{
                         if (pago.TipoPago!="Efectivo" && p.TipoPago== "Efectivo")
                         {
                             p.Importe -= pago.Importe;
+                            if (p.Importe < 0)
+                                p.Importe = 0;
                         }
-                    }
+                    else if (pago.TipoPago=="Efectivo" && p.TipoPago== "Efectivo")
+                        {
+                            p.Importe = pago.Importe;
+                            agregar = false;
+                        }
+                    //}
                 }
                 if (agregar)
                     Pagos.Add(pago);
@@ -130,6 +167,11 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 }
                  RefrescarPagos();
             }
+        }
+
+        private void ucPagos_Load(object sender, EventArgs e)
+        {
+            ddlTipo.SelectedIndex = 0;
         }
 
     }
