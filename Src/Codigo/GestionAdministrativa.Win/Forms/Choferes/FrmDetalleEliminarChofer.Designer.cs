@@ -42,9 +42,11 @@
             this.CkActivo = new Telerik.WinControls.UI.RadCheckBox();
             this.EpvChofer = new System.Windows.Forms.ErrorProvider(this.components);
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
-            this.DdlMoviles = new Telerik.WinControls.UI.RadDropDownList();
             this.BtnEliminar = new Telerik.WinControls.UI.RadButton();
             this.BtnCancelar = new Telerik.WinControls.UI.RadButton();
+            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
+            this.Txtcelular = new Telerik.WinControls.UI.RadTextBox();
+            this.TxtMovil = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDni)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtApellido)).BeginInit();
@@ -58,9 +60,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.CkActivo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EpvChofer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DdlMoviles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCancelar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Txtcelular)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtMovil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -175,7 +179,7 @@
             // 
             this.CkActivo.Enabled = false;
             this.CkActivo.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CkActivo.Location = new System.Drawing.Point(344, 301);
+            this.CkActivo.Location = new System.Drawing.Point(338, 336);
             this.CkActivo.Name = "CkActivo";
             this.CkActivo.Size = new System.Drawing.Size(84, 25);
             this.CkActivo.TabIndex = 6;
@@ -196,24 +200,11 @@
             this.radLabel6.TabIndex = 8;
             this.radLabel6.Text = "Movil:";
             // 
-            // DdlMoviles
-            // 
-            this.DdlMoviles.DropDownAnimationEnabled = true;
-            this.DdlMoviles.Enabled = false;
-            this.DdlMoviles.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DdlMoviles.Location = new System.Drawing.Point(131, 245);
-            this.DdlMoviles.MaxDropDownItems = 0;
-            this.DdlMoviles.Name = "DdlMoviles";
-            this.DdlMoviles.ShowImageInEditorArea = true;
-            this.DdlMoviles.Size = new System.Drawing.Size(291, 29);
-            this.DdlMoviles.TabIndex = 9;
-            this.DdlMoviles.ThemeName = "TelerikMetro";
-            // 
             // BtnEliminar
             // 
             this.BtnEliminar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnEliminar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEliminar.Location = new System.Drawing.Point(152, 348);
+            this.BtnEliminar.Location = new System.Drawing.Point(146, 383);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(132, 41);
             this.BtnEliminar.TabIndex = 10;
@@ -225,21 +216,55 @@
             // 
             this.BtnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnCancelar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(290, 348);
+            this.BtnCancelar.Location = new System.Drawing.Point(284, 383);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(132, 41);
             this.BtnCancelar.TabIndex = 7;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.ThemeName = "TelerikMetro";
             // 
+            // radLabel7
+            // 
+            this.radLabel7.Enabled = false;
+            this.radLabel7.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel7.Location = new System.Drawing.Point(35, 288);
+            this.radLabel7.Name = "radLabel7";
+            this.radLabel7.Size = new System.Drawing.Size(90, 25);
+            this.radLabel7.TabIndex = 11;
+            this.radLabel7.Text = "Celular:";
+            // 
+            // Txtcelular
+            // 
+            this.Txtcelular.Enabled = false;
+            this.Txtcelular.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txtcelular.Location = new System.Drawing.Point(131, 285);
+            this.Txtcelular.Name = "Txtcelular";
+            this.Txtcelular.Size = new System.Drawing.Size(291, 28);
+            this.Txtcelular.TabIndex = 12;
+            this.Txtcelular.TabStop = false;
+            this.Txtcelular.ThemeName = "TelerikMetro";
+            // 
+            // TxtMovil
+            // 
+            this.TxtMovil.Enabled = false;
+            this.TxtMovil.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtMovil.Location = new System.Drawing.Point(131, 242);
+            this.TxtMovil.Name = "TxtMovil";
+            this.TxtMovil.Size = new System.Drawing.Size(291, 28);
+            this.TxtMovil.TabIndex = 13;
+            this.TxtMovil.TabStop = false;
+            this.TxtMovil.ThemeName = "TelerikMetro";
+            // 
             // FrmDetalleEliminarChofer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnCancelar;
-            this.ClientSize = new System.Drawing.Size(728, 510);
+            this.ClientSize = new System.Drawing.Size(728, 591);
+            this.Controls.Add(this.TxtMovil);
+            this.Controls.Add(this.Txtcelular);
+            this.Controls.Add(this.radLabel7);
             this.Controls.Add(this.BtnEliminar);
-            this.Controls.Add(this.DdlMoviles);
             this.Controls.Add(this.radLabel6);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.CkActivo);
@@ -273,9 +298,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.CkActivo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EpvChofer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DdlMoviles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCancelar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Txtcelular)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtMovil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -297,8 +324,10 @@
         private Telerik.WinControls.UI.RadCheckBox CkActivo;
         private System.Windows.Forms.ErrorProvider EpvChofer;
         private Telerik.WinControls.UI.RadLabel radLabel6;
-        private Telerik.WinControls.UI.RadDropDownList DdlMoviles;
         private Telerik.WinControls.UI.RadButton BtnEliminar;
         private Telerik.WinControls.UI.RadButton BtnCancelar;
+        private Telerik.WinControls.UI.RadTextBox Txtcelular;
+        private Telerik.WinControls.UI.RadLabel radLabel7;
+        private Telerik.WinControls.UI.RadTextBox TxtMovil;
     }
 }

@@ -75,16 +75,6 @@ namespace GestionAdministrativa.Win.Forms.Choferes
         {
             var frm = FormFactory.Create<FrmCrearEditarChofer>(choferid, ActionFormMode.Edit);
             frm.Show();
-
-            //using (var formCrear = FormFactory.Create<FrmCrearEditarChofer>(choferid, ActionFormMode.Edit))
-            //{
-            //    //var result = formCrear.Show();
-            //    //if (result == DialogResult.OK)
-            //    //{
-            //        //formCrear.Close();
-            //        //RefrescarListado();
-            //    //}
-            //}
         }
 
         private void Detail(Guid choferid)

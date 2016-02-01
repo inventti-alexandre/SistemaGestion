@@ -99,11 +99,30 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             set { CkActivo.Checked = value ?? true; }
         }
 
-        public Guid? MovilId
+        public int? MovilNumero
         {
-            get { return (Guid)DdlMoviles.SelectedValue; }
-            set { DdlMoviles.SelectedValue = value; }
+            get
+            {
+                int numero;
+                return int.TryParse(TxtMovil.Text, out numero) ? numero : 0; 
+            }
+            set { TxtMovil.Text = value.ToString(); }
         }
+
+        public string CelularTipo
+        {
+            get
+            {
+                return Txtcelular.Text;
+            }
+            set { Txtcelular.Text = value; }
+        }
+
+        //public Guid? MovilId
+        //{
+        //    get { return (Guid)DdlMoviles.SelectedValue; }
+        //    set { DdlMoviles.SelectedValue = value; }
+        //}
 
 #endregion
 
@@ -124,13 +143,16 @@ namespace GestionAdministrativa.Win.Forms.Choferes
         #region Métodos
         private void CargarChofer(Guid _choferid)
         {
-            var chofer = Uow.Choferes.Obtener(c => c.Id == _choferid);
+            var chofer = Uow.Choferes.Obtener(c => c.Id == _choferid, c=>c.Movil, c=>c.Celulare);
             this.DNI = chofer.Dni;
             this.Apellido = chofer.Apellido;
             this.Nombre = chofer.Nombre;
             this.Telefono = chofer.Telefono;
             this.Email = chofer.Email;
             this.Activo = chofer.Activo;
+            this.MovilNumero = chofer.Movil.Numero;
+            var tipo = Uow.TiposCelulares.Obtener(t => t.Id == chofer.Celulare.TipoCelularId);
+            this.CelularTipo = tipo.Tipo;
         }
 
 

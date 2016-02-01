@@ -160,19 +160,16 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             this.Email = _chofer.Email;
             this.Activo = _chofer.Activo;
             this.MovilId = _chofer.MovilId;
-            if (_celular != null)
+
+            var celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where(e => e.Id == _chofer.CelularId).ToList();
+            if (celular != null)
             {
-                this.Celular = _celular.TiposCelulares.Tipo;
-                //control si es nulo, cambiar a txt
-                var celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where(e => e.Id == _chofer.CelularId).ToList();
                 Celular = celular.FirstOrDefault().TiposCelulares.Tipo;
             }
-                
         }
 
         private void CrearEditar()
         {
-           
             var esValido = this.ValidarForm();
 
             if (!esValido)
