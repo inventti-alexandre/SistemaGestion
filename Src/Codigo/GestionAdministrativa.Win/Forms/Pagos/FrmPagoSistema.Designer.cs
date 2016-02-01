@@ -123,7 +123,7 @@
             this.radPanel3.Controls.Add(this.ucDetallePagos);
             this.radPanel3.Location = new System.Drawing.Point(527, 12);
             this.radPanel3.Name = "radPanel3";
-            this.radPanel3.Size = new System.Drawing.Size(618, 476);
+            this.radPanel3.Size = new System.Drawing.Size(618, 200);
             this.radPanel3.TabIndex = 5;
             this.radPanel3.ThemeName = "TelerikMetro";
             // 
@@ -131,22 +131,28 @@
             // 
             this.ucDetallePagos.Location = new System.Drawing.Point(4, 4);
             this.ucDetallePagos.Name = "ucDetallePagos";
-            this.ucDetallePagos.Size = new System.Drawing.Size(602, 469);
+            this.ucDetallePagos.Size = new System.Drawing.Size(602, 170);
             this.ucDetallePagos.TabIndex = 0;
             // 
             // ucPagos1
             // 
+            this.ucPagos1.Importe = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.ucPagos1.Location = new System.Drawing.Point(7, 9);
             this.ucPagos1.Name = "ucPagos1";
-            this.ucPagos1.Size = new System.Drawing.Size(604, 243);
+            this.ucPagos1.Size = new System.Drawing.Size(604, 443);
             this.ucPagos1.TabIndex = 6;
+            this.ucPagos1.Tipo = "Vales";
             // 
             // radPanel4
             // 
             this.radPanel4.Controls.Add(this.ucPagos1);
-            this.radPanel4.Location = new System.Drawing.Point(527, 494);
+            this.radPanel4.Location = new System.Drawing.Point(523, 218);
             this.radPanel4.Name = "radPanel4";
-            this.radPanel4.Size = new System.Drawing.Size(618, 256);
+            this.radPanel4.Size = new System.Drawing.Size(618, 475);
             this.radPanel4.TabIndex = 7;
             this.radPanel4.ThemeName = "TelerikMetro";
             // 
