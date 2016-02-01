@@ -36,7 +36,7 @@
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.ucDetalleDeuda1 = new GestionAdministrativa.Win.Forms.Pagos.ucDetalleDeuda();
             this.radPanel3 = new Telerik.WinControls.UI.RadPanel();
-            this.ucDetallePagos1 = new GestionAdministrativa.Win.Forms.Pagos.ucDetallePagos();
+            this.ucDetallePagos = new GestionAdministrativa.Win.Forms.Pagos.ucDetallePagos();
             this.ucPagos1 = new GestionAdministrativa.Win.Forms.Pagos.ucPagos();
             this.radPanel4 = new Telerik.WinControls.UI.RadPanel();
             this.radPanel5 = new Telerik.WinControls.UI.RadPanel();
@@ -44,7 +44,6 @@
             this.radPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
-            this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
             this.radPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel4)).BeginInit();
@@ -65,10 +64,25 @@
             // 
             // ucEstadoCuentaChofer1
             // 
+            this.ucEstadoCuentaChofer1.Apelildo = "";
+            this.ucEstadoCuentaChofer1.DeudaBase = new decimal(new int[] {
+            0,
+            0,
+            0,
+            131072});
+            this.ucEstadoCuentaChofer1.DeudaSistema = new decimal(new int[] {
+            0,
+            0,
+            0,
+            131072});
+            this.ucEstadoCuentaChofer1.IdChofer = new System.Guid("00000000-0000-0000-0000-000000000000");
             this.ucEstadoCuentaChofer1.Location = new System.Drawing.Point(2, 46);
+            this.ucEstadoCuentaChofer1.MovilNumero = "";
             this.ucEstadoCuentaChofer1.Name = "ucEstadoCuentaChofer1";
+            this.ucEstadoCuentaChofer1.Nombre = "";
             this.ucEstadoCuentaChofer1.Size = new System.Drawing.Size(489, 211);
             this.ucEstadoCuentaChofer1.TabIndex = 1;
+            this.ucEstadoCuentaChofer1.Telefono = "";
             // 
             // radPanel2
             // 
@@ -91,35 +105,34 @@
             // 
             // radPanel1
             // 
-            this.radPanel1.Controls.Add(this.ucDetalleDeuda1);
-            this.radPanel1.Location = new System.Drawing.Point(527, 192);
+            this.radPanel1.Location = new System.Drawing.Point(131, 534);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(618, 296);
+            this.radPanel1.Size = new System.Drawing.Size(330, 123);
             this.radPanel1.TabIndex = 4;
             this.radPanel1.ThemeName = "TelerikMetro";
             // 
             // ucDetalleDeuda1
             // 
-            this.ucDetalleDeuda1.Location = new System.Drawing.Point(3, 3);
+            this.ucDetalleDeuda1.Location = new System.Drawing.Point(18, 503);
             this.ucDetalleDeuda1.Name = "ucDetalleDeuda1";
-            this.ucDetalleDeuda1.Size = new System.Drawing.Size(603, 285);
+            this.ucDetalleDeuda1.Size = new System.Drawing.Size(489, 220);
             this.ucDetalleDeuda1.TabIndex = 0;
             // 
             // radPanel3
             // 
-            this.radPanel3.Controls.Add(this.ucDetallePagos1);
+            this.radPanel3.Controls.Add(this.ucDetallePagos);
             this.radPanel3.Location = new System.Drawing.Point(527, 12);
             this.radPanel3.Name = "radPanel3";
-            this.radPanel3.Size = new System.Drawing.Size(618, 174);
+            this.radPanel3.Size = new System.Drawing.Size(618, 476);
             this.radPanel3.TabIndex = 5;
             this.radPanel3.ThemeName = "TelerikMetro";
             // 
-            // ucDetallePagos1
+            // ucDetallePagos
             // 
-            this.ucDetallePagos1.Location = new System.Drawing.Point(4, 4);
-            this.ucDetallePagos1.Name = "ucDetallePagos1";
-            this.ucDetallePagos1.Size = new System.Drawing.Size(602, 160);
-            this.ucDetallePagos1.TabIndex = 0;
+            this.ucDetallePagos.Location = new System.Drawing.Point(4, 4);
+            this.ucDetallePagos.Name = "ucDetallePagos";
+            this.ucDetallePagos.Size = new System.Drawing.Size(602, 469);
+            this.ucDetallePagos.TabIndex = 0;
             // 
             // ucPagos1
             // 
@@ -151,6 +164,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1155, 788);
+            this.Controls.Add(this.ucDetalleDeuda1);
             this.Controls.Add(this.radPanel5);
             this.Controls.Add(this.radPanel4);
             this.Controls.Add(this.radPanel3);
@@ -168,7 +182,6 @@
             this.radPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
-            this.radPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).EndInit();
             this.radPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel4)).EndInit();
@@ -189,7 +202,7 @@
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private ucDetalleDeuda ucDetalleDeuda1;
         private Telerik.WinControls.UI.RadPanel radPanel3;
-        private ucDetallePagos ucDetallePagos1;
+        private ucDetallePagos ucDetallePagos;
         private ucPagos ucPagos1;
         private Telerik.WinControls.UI.RadPanel radPanel4;
         private Telerik.WinControls.UI.RadPanel radPanel5;
