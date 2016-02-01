@@ -15,10 +15,12 @@ namespace GestionAdministrativa.Win.Forms.Pagos
     {
         private PagoCelular _pagoCelular;
         private IList<PagoCelular> _aPagar = new List<PagoCelular>();
+       
         public ucDetallePagos()
         {
             InitializeComponent();
         }
+
         #region Properties
 
         public DateTime FechaDesde 
@@ -31,6 +33,18 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         {
             get { return dtpHasta.Value; }
             set { dtpHasta.Value = value; }
+        }
+
+        public double Total
+        {
+            get { return Double.Parse(TxtTotal.Text); }
+            set { TxtTotal.Text = value.ToString(); }
+        }
+
+        public decimal Monto
+        {
+            get { return decimal.Parse(txtMonto.Text); }
+            set { txtMonto.Text = value.ToString(); }
         }
 
         public IList<PagoCelular> APagar
@@ -61,7 +75,13 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             TxtTotal.Text = total.ToString("n2");
             //FaltaPagar = TotalPagar - total;// +_intereses;
         }
-#endregion
+
+        public void ActualizarMonto(Celular celular)
+        {
+            Monto = (celular.TiposCelulares.Monto);
+        }
+
+        #endregion
 
 
     }

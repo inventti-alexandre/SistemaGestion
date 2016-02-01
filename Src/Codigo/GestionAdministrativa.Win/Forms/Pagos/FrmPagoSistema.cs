@@ -87,7 +87,8 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 var pago = _iPagoCelularNegocio.AutoPago(celular);
                 _pagoCelular = ucDetalleDeuda1.ActualizarNuevoPago(pago);
                 ucPagos1.ActualizarNuevoPago("Efectivo", pago.Monto);
-                _pagoCelular = ucDetalleDeuda1.ActualizarNuevoPago(pago);
+                _pagoCelular = ucDetallePagos.ActualizarNuevoPago(pago);
+                ucDetallePagos.ActualizarMonto(celular);
             }
             
         }
