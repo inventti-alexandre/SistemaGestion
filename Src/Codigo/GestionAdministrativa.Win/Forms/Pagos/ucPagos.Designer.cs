@@ -108,6 +108,7 @@
             this.gridPagos.TabIndex = 0;
             this.gridPagos.Text = "radGridView1";
             this.gridPagos.ThemeName = "TelerikMetro";
+            this.gridPagos.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.gridPagos_CommandCellClick);
             // 
             // ucPagos
             // 

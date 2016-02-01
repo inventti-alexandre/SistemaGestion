@@ -35,24 +35,26 @@
             this.txtImporte = new Telerik.WinControls.UI.RadTextBox();
             this.ddlTipo = new Telerik.WinControls.UI.RadDropDownList();
             this.BtnAgregar = new System.Windows.Forms.Button();
+            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtImporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlTipo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radLabel1
             // 
-            this.radLabel1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(47, 36);
+            this.radLabel1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel1.Location = new System.Drawing.Point(29, 39);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(66, 28);
+            this.radLabel1.Size = new System.Drawing.Size(59, 25);
             this.radLabel1.TabIndex = 0;
             this.radLabel1.Text = "Tipo:";
             // 
             // txtImporte
             // 
-            this.txtImporte.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtImporte.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtImporte.Location = new System.Drawing.Point(125, 74);
             this.txtImporte.Name = "txtImporte";
             this.txtImporte.Size = new System.Drawing.Size(183, 28);
@@ -93,11 +95,21 @@
             this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
+            // radLabel2
+            // 
+            this.radLabel2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel2.Location = new System.Drawing.Point(29, 74);
+            this.radLabel2.Name = "radLabel2";
+            this.radLabel2.Size = new System.Drawing.Size(90, 25);
+            this.radLabel2.TabIndex = 4;
+            this.radLabel2.Text = "Importe:";
+            // 
             // FrmTipoPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 168);
+            this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.ddlTipo);
             this.Controls.Add(this.txtImporte);
@@ -111,6 +123,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtImporte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlTipo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -123,5 +136,6 @@
         private Telerik.WinControls.UI.RadTextBox txtImporte;
         private Telerik.WinControls.UI.RadDropDownList ddlTipo;
         private System.Windows.Forms.Button BtnAgregar;
+        private Telerik.WinControls.UI.RadLabel radLabel2;
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GestionAdministrativa.Entities;
 using GestionAdministrativa.Business.Data;
+using Telerik.WinControls.UI;
 
 namespace GestionAdministrativa.Win.Forms.Pagos
 {
@@ -91,5 +92,45 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                     Pagos.Add(pago);
             }
         }
+
+        private void gridPagos_CommandCellClick(object sender, EventArgs e)
+        {
+            var commandcell = (GridCommandCellElement)sender;
+
+            var selectedRow = gridPagos.SelectedRows.FirstOrDefault();
+
+            if (selectedRow == null)
+                return;
+
+            var pago = selectedRow.DataBoundItem as PagosTipo;
+            if (pago == null)
+                return;
+
+            switch (commandcell.ColumnInfo.Name)
+            {
+                case "Eliminar":
+                    Eliminar(pago);
+                    break;
+            }
+        }
+
+        private void Eliminar(PagosTipo pago)
+        {
+            if (pago.TipoPago!= "Efectivo")
+            {
+                var importe = pago.Importe;
+                Pagos.Remove(pago);
+               
+                foreach (var p in Pagos)
+                {
+                    if (p.TipoPago=="Efectivo")
+                    {
+                        p.Importe+=importe;
+                    }
+                }
+                 RefrescarPagos();
+            }
+        }
+
     }
 }

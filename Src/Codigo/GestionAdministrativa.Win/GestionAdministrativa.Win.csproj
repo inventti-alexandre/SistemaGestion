@@ -226,6 +226,12 @@
     <Compile Include="Forms\Moviles\ucFiltroMoviles.Designer.cs">
       <DependentUpon>ucFiltroMoviles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Pagos\FrmPagoCelular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pagos\FrmPagoCelular.Designer.cs">
+      <DependentUpon>FrmPagoCelular.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Pagos\FrmPagoSistema.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +328,9 @@
     <EmbeddedResource Include="Forms\Moviles\ucFiltroMoviles.resx">
       <DependentUpon>ucFiltroMoviles.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pagos\FrmPagoCelular.resx">
+      <DependentUpon>FrmPagoCelular.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pagos\FrmPagoSistema.resx">
       <DependentUpon>FrmPagoSistema.cs</DependentUpon>
     </EmbeddedResource>
@@ -396,6 +405,7 @@
     <None Include="Resources\delete.png" />
     <Content Include="Resources\devoluviones.png" />
     <Content Include="Resources\devolver.png" />
+    <None Include="Resources\edit.png" />
     <Content Include="Resources\error.png" />
     <Content Include="Resources\Garbage-Closed.png" />
     <Content Include="Resources\loading.gif" />
