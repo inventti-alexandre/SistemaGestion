@@ -40,14 +40,6 @@
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.ChkHabilitado = new Telerik.WinControls.UI.RadCheckBox();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
-            this.DtpFechaUltimoPago = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
-            this.DtpFechaProximoPago = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.CbxDiaPago = new Telerik.WinControls.UI.RadDropDownList();
-            this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
-            this.DtpFechaVencimientoPago = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
             this.BtnAceptar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
@@ -86,14 +78,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChkHabilitado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaUltimoPago)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaProximoPago)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CbxDiaPago)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaVencimientoPago)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtImei)).BeginInit();
@@ -236,105 +220,6 @@
             this.radLabel5.Size = new System.Drawing.Size(121, 25);
             this.radLabel5.TabIndex = 14;
             this.radLabel5.Text = "Habilitado:";
-            // 
-            // radLabel6
-            // 
-            this.radLabel6.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel6.Location = new System.Drawing.Point(59, 214);
-            this.radLabel6.Name = "radLabel6";
-            this.radLabel6.Size = new System.Drawing.Size(192, 25);
-            this.radLabel6.TabIndex = 4;
-            this.radLabel6.Text = "Fecha Ultimo pago:";
-            // 
-            // DtpFechaUltimoPago
-            // 
-            this.DtpFechaUltimoPago.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtpFechaUltimoPago.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DtpFechaUltimoPago.Location = new System.Drawing.Point(272, 212);
-            this.DtpFechaUltimoPago.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DtpFechaUltimoPago.MinDate = new System.DateTime(((long)(0)));
-            this.DtpFechaUltimoPago.Name = "DtpFechaUltimoPago";
-            this.DtpFechaUltimoPago.NullableValue = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
-            this.DtpFechaUltimoPago.NullDate = new System.DateTime(((long)(0)));
-            this.DtpFechaUltimoPago.Size = new System.Drawing.Size(340, 31);
-            this.DtpFechaUltimoPago.TabIndex = 5;
-            this.DtpFechaUltimoPago.TabStop = false;
-            this.DtpFechaUltimoPago.Text = "lunes, 04 de enero de 2016";
-            this.DtpFechaUltimoPago.ThemeName = "TelerikMetro";
-            this.DtpFechaUltimoPago.Value = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
-            // 
-            // radLabel7
-            // 
-            this.radLabel7.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel7.Location = new System.Drawing.Point(49, 249);
-            this.radLabel7.Name = "radLabel7";
-            this.radLabel7.Size = new System.Drawing.Size(202, 25);
-            this.radLabel7.TabIndex = 5;
-            this.radLabel7.Text = "Fecha Próximo Pago:";
-            // 
-            // DtpFechaProximoPago
-            // 
-            this.DtpFechaProximoPago.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtpFechaProximoPago.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DtpFechaProximoPago.Location = new System.Drawing.Point(272, 249);
-            this.DtpFechaProximoPago.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DtpFechaProximoPago.MinDate = new System.DateTime(((long)(0)));
-            this.DtpFechaProximoPago.Name = "DtpFechaProximoPago";
-            this.DtpFechaProximoPago.NullableValue = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
-            this.DtpFechaProximoPago.NullDate = new System.DateTime(((long)(0)));
-            this.DtpFechaProximoPago.Size = new System.Drawing.Size(340, 31);
-            this.DtpFechaProximoPago.TabIndex = 6;
-            this.DtpFechaProximoPago.TabStop = false;
-            this.DtpFechaProximoPago.Text = "lunes, 04 de enero de 2016";
-            this.DtpFechaProximoPago.ThemeName = "TelerikMetro";
-            this.DtpFechaProximoPago.Value = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
-            // 
-            // CbxDiaPago
-            // 
-            this.CbxDiaPago.DropDownAnimationEnabled = true;
-            this.CbxDiaPago.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbxDiaPago.Location = new System.Drawing.Point(272, 286);
-            this.CbxDiaPago.MaxDropDownItems = 0;
-            this.CbxDiaPago.Name = "CbxDiaPago";
-            this.CbxDiaPago.ShowImageInEditorArea = true;
-            this.CbxDiaPago.Size = new System.Drawing.Size(341, 29);
-            this.CbxDiaPago.TabIndex = 4;
-            this.CbxDiaPago.ThemeName = "TelerikMetro";
-            // 
-            // radLabel8
-            // 
-            this.radLabel8.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel8.Location = new System.Drawing.Point(120, 288);
-            this.radLabel8.Name = "radLabel8";
-            this.radLabel8.Size = new System.Drawing.Size(131, 25);
-            this.radLabel8.TabIndex = 3;
-            this.radLabel8.Text = "Dia de pago:";
-            // 
-            // radLabel9
-            // 
-            this.radLabel9.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel9.Location = new System.Drawing.Point(8, 323);
-            this.radLabel9.Name = "radLabel9";
-            this.radLabel9.Size = new System.Drawing.Size(243, 25);
-            this.radLabel9.TabIndex = 7;
-            this.radLabel9.Text = "Fecha Vencimiento Pago:";
-            // 
-            // DtpFechaVencimientoPago
-            // 
-            this.DtpFechaVencimientoPago.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtpFechaVencimientoPago.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DtpFechaVencimientoPago.Location = new System.Drawing.Point(272, 321);
-            this.DtpFechaVencimientoPago.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DtpFechaVencimientoPago.MinDate = new System.DateTime(((long)(0)));
-            this.DtpFechaVencimientoPago.Name = "DtpFechaVencimientoPago";
-            this.DtpFechaVencimientoPago.NullableValue = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
-            this.DtpFechaVencimientoPago.NullDate = new System.DateTime(((long)(0)));
-            this.DtpFechaVencimientoPago.Size = new System.Drawing.Size(341, 31);
-            this.DtpFechaVencimientoPago.TabIndex = 8;
-            this.DtpFechaVencimientoPago.TabStop = false;
-            this.DtpFechaVencimientoPago.Text = "lunes, 04 de enero de 2016";
-            this.DtpFechaVencimientoPago.ThemeName = "TelerikMetro";
-            this.DtpFechaVencimientoPago.Value = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
             // 
             // radLabel10
             // 
@@ -566,18 +451,10 @@
             this.groupBox2.Controls.Add(this.radLabel4);
             this.groupBox2.Controls.Add(this.radLabel10);
             this.groupBox2.Controls.Add(this.radLabel3);
-            this.groupBox2.Controls.Add(this.radLabel9);
             this.groupBox2.Controls.Add(this.ChkActivo);
-            this.groupBox2.Controls.Add(this.CbxDiaPago);
             this.groupBox2.Controls.Add(this.radLabel5);
-            this.groupBox2.Controls.Add(this.DtpFechaVencimientoPago);
             this.groupBox2.Controls.Add(this.ChkPagare);
-            this.groupBox2.Controls.Add(this.radLabel8);
             this.groupBox2.Controls.Add(this.ChkHabilitado);
-            this.groupBox2.Controls.Add(this.radLabel7);
-            this.groupBox2.Controls.Add(this.DtpFechaUltimoPago);
-            this.groupBox2.Controls.Add(this.DtpFechaProximoPago);
-            this.groupBox2.Controls.Add(this.radLabel6);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(644, 378);
@@ -659,14 +536,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChkHabilitado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaUltimoPago)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaProximoPago)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CbxDiaPago)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaVencimientoPago)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtImei)).EndInit();
@@ -712,14 +581,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.UI.RadCheckBox ChkHabilitado;
         private Telerik.WinControls.UI.RadLabel radLabel5;
-        private Telerik.WinControls.UI.RadLabel radLabel6;
-        private Telerik.WinControls.UI.RadDateTimePicker DtpFechaUltimoPago;
-        private Telerik.WinControls.UI.RadLabel radLabel7;
-        private Telerik.WinControls.UI.RadDateTimePicker DtpFechaProximoPago;
-        private Telerik.WinControls.UI.RadDropDownList CbxDiaPago;
-        private Telerik.WinControls.UI.RadLabel radLabel8;
-        private Telerik.WinControls.UI.RadLabel radLabel9;
-        private Telerik.WinControls.UI.RadDateTimePicker DtpFechaVencimientoPago;
         private Telerik.WinControls.UI.RadLabel radLabel10;
         private System.Windows.Forms.Button BtnAceptar;
         private System.Windows.Forms.Button BtnCancelar;

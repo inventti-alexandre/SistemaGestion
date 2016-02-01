@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Framework.Common.Utility;
 
 namespace GestionAdministrativa.Win.Forms.Pagos
 {
@@ -19,9 +20,11 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private Chofer _chofer;
         private IPagoCelularNegocio _iPagoCelularNegocio;
         private PagoCelular _pagoCelular;
-        public FrmPagoSistema(IGestionAdministrativaUow uow, IPagoCelularNegocio pagoCelularNegocio)
+        private IClock _clock;
+        public FrmPagoSistema(IGestionAdministrativaUow uow, IPagoCelularNegocio pagoCelularNegocio,IClock clock)
         {
             Uow = uow;
+            _clock = clock;
             _iPagoCelularNegocio = pagoCelularNegocio;
             InitializeComponent();
         }
@@ -84,7 +87,16 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             var celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where(c => c.Id == chofer.CelularId).FirstOrDefault();
             if (celular != null)
             {
-                var pago = _iPagoCelularNegocio.AutoPago(celular);
+                var cantidadDias = 6;
+                if (celular.FechaUltimoPago == null)
+                    cantidadDias = 4;
+               
+                    DateTime date = celular.FechaUltimoPago ?? DateTime.Now;
+                    var pago = _iPagoCelularNegocio.AutoPago(celular, date, date.AddDays(cantidadDias));
+                ucDetallePagos.FechaDesde = date;
+                ucDetallePagos.FechaHasta = date.AddDays(cantidadDias);
+                
+                    
                 _pagoCelular = ucDetalleDeuda1.ActualizarNuevoPago(pago);
                 ucPagos1.ActualizarNuevoPago("Efectivo", pago.Monto);
                 _pagoCelular = ucDetallePagos.ActualizarNuevoPago(pago);

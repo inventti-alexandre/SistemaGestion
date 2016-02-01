@@ -10,8 +10,8 @@ namespace GestionAdministrativa.Business.Interfaces
 {
     public interface IPagoCelularNegocio : IDisposable
     {
-        PagoCelular AutoPago(Celular celular);
-        PagoCelular PagoCelularInicial(Celular _celular);
-        PagoCelular PagoCelularSemanal(Celular _celular);
+        PagoCelular AutoPago(Celular celular, DateTime desde, DateTime hasta);
+        PagoCelular PagoCelularInicial(Celular _celular,DateTime desde,DateTime hasta);
+        PagoCelular PagoCelularSemanal(Celular _celular,DateTime desde,DateTime hasta);
     }
 }

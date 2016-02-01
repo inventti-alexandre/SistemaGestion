@@ -38,13 +38,13 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         public double Total
         {
             get { return Double.Parse(TxtTotal.Text); }
-            set { TxtTotal.Text = value.ToString(); }
+            set { TxtTotal.Text = value.ToString("N2"); }
         }
 
         public decimal Monto
         {
             get { return decimal.Parse(txtMonto.Text); }
-            set { txtMonto.Text = value.ToString(); }
+            set { txtMonto.Text = value.ToString("N2"); }
         }
 
         public IList<PagoCelular> APagar
@@ -70,10 +70,8 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         }
         public void RefrescarDeuda()
         {
-            // GrillaAPagar.DataSource = APagar.ToList();
             var total = TotalPagos();
             TxtTotal.Text = total.ToString("n2");
-            //FaltaPagar = TotalPagar - total;// +_intereses;
         }
 
         public void ActualizarMonto(Celular celular)
@@ -82,6 +80,13 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         }
 
         #endregion
+
+        private void ucDetallePagos_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+       
 
 
     }

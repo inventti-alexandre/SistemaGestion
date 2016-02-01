@@ -32,9 +32,6 @@
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.dtpDesde = new Telerik.WinControls.UI.RadDateTimePicker();
             this.dtpHasta = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
-            this.radDropDownList1 = new Telerik.WinControls.UI.RadDropDownList();
-            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.txtMonto = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
@@ -44,9 +41,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpDesde)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpHasta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMonto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
@@ -86,7 +80,7 @@
             this.dtpDesde.Size = new System.Drawing.Size(145, 29);
             this.dtpDesde.TabIndex = 2;
             this.dtpDesde.TabStop = false;
-            this.dtpDesde.Text = "7/1/2016";
+            this.dtpDesde.Text = "07/01/2016";
             this.dtpDesde.ThemeName = "TelerikMetro";
             this.dtpDesde.Value = new System.DateTime(2016, 1, 7, 11, 46, 3, 884);
             // 
@@ -103,46 +97,14 @@
             this.dtpHasta.Size = new System.Drawing.Size(145, 29);
             this.dtpHasta.TabIndex = 3;
             this.dtpHasta.TabStop = false;
-            this.dtpHasta.Text = "7/1/2016";
+            this.dtpHasta.Text = "07/01/2016";
             this.dtpHasta.ThemeName = "TelerikMetro";
             this.dtpHasta.Value = new System.DateTime(2016, 1, 7, 11, 46, 3, 884);
-            // 
-            // radLabel3
-            // 
-            this.radLabel3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel3.Location = new System.Drawing.Point(26, 60);
-            this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(59, 25);
-            this.radLabel3.TabIndex = 4;
-            this.radLabel3.Text = "Tipo:";
-            this.radLabel3.ThemeName = "TelerikMetro";
-            // 
-            // radDropDownList1
-            // 
-            this.radDropDownList1.DropDownAnimationEnabled = true;
-            this.radDropDownList1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radDropDownList1.Location = new System.Drawing.Point(102, 56);
-            this.radDropDownList1.MaxDropDownItems = 0;
-            this.radDropDownList1.Name = "radDropDownList1";
-            this.radDropDownList1.ShowImageInEditorArea = true;
-            this.radDropDownList1.Size = new System.Drawing.Size(145, 29);
-            this.radDropDownList1.TabIndex = 5;
-            this.radDropDownList1.Text = "Diario, semanal, inicial, taller";
-            this.radDropDownList1.ThemeName = "TelerikMetro";
-            // 
-            // radLabel4
-            // 
-            this.radLabel4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel4.Location = new System.Drawing.Point(105, 91);
-            this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(169, 21);
-            this.radLabel4.TabIndex = 6;
-            this.radLabel4.Text = "*Agregar en la base";
             // 
             // radLabel5
             // 
             this.radLabel5.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel5.Location = new System.Drawing.Point(303, 59);
+            this.radLabel5.Location = new System.Drawing.Point(26, 53);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(70, 25);
             this.radLabel5.TabIndex = 7;
@@ -151,18 +113,20 @@
             // 
             // txtMonto
             // 
+            this.txtMonto.Enabled = false;
             this.txtMonto.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonto.Location = new System.Drawing.Point(379, 56);
+            this.txtMonto.Location = new System.Drawing.Point(102, 53);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(145, 28);
             this.txtMonto.TabIndex = 8;
             this.txtMonto.TabStop = false;
+            this.txtMonto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtMonto.ThemeName = "TelerikMetro";
             // 
             // radLabel6
             // 
             this.radLabel6.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel6.Location = new System.Drawing.Point(26, 118);
+            this.radLabel6.Location = new System.Drawing.Point(303, 53);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(70, 25);
             this.radLabel6.TabIndex = 9;
@@ -171,12 +135,14 @@
             // 
             // TxtTotal
             // 
+            this.TxtTotal.Enabled = false;
             this.TxtTotal.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotal.Location = new System.Drawing.Point(102, 115);
+            this.TxtTotal.Location = new System.Drawing.Point(379, 53);
             this.TxtTotal.Name = "TxtTotal";
             this.TxtTotal.Size = new System.Drawing.Size(145, 28);
             this.TxtTotal.TabIndex = 10;
             this.TxtTotal.TabStop = false;
+            this.TxtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtTotal.ThemeName = "TelerikMetro";
             // 
             // BtnAceptar
@@ -186,9 +152,9 @@
             this.BtnAceptar.FlatAppearance.BorderSize = 0;
             this.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAceptar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAceptar.Location = new System.Drawing.Point(405, 115);
+            this.BtnAceptar.Location = new System.Drawing.Point(379, 87);
             this.BtnAceptar.Name = "BtnAceptar";
-            this.BtnAceptar.Size = new System.Drawing.Size(119, 35);
+            this.BtnAceptar.Size = new System.Drawing.Size(145, 35);
             this.BtnAceptar.TabIndex = 11;
             this.BtnAceptar.Text = "Agregar";
             this.BtnAceptar.UseVisualStyleBackColor = false;
@@ -202,22 +168,17 @@
             this.Controls.Add(this.radLabel6);
             this.Controls.Add(this.txtMonto);
             this.Controls.Add(this.radLabel5);
-            this.Controls.Add(this.radLabel4);
-            this.Controls.Add(this.radDropDownList1);
-            this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.dtpHasta);
             this.Controls.Add(this.dtpDesde);
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.radLabel1);
             this.Name = "ucDetallePagos";
             this.Size = new System.Drawing.Size(604, 161);
+            this.Load += new System.EventHandler(this.ucDetallePagos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpDesde)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpHasta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMonto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
@@ -233,9 +194,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadDateTimePicker dtpDesde;
         private Telerik.WinControls.UI.RadDateTimePicker dtpHasta;
-        private Telerik.WinControls.UI.RadLabel radLabel3;
-        private Telerik.WinControls.UI.RadDropDownList radDropDownList1;
-        private Telerik.WinControls.UI.RadLabel radLabel4;
         private Telerik.WinControls.UI.RadLabel radLabel5;
         private Telerik.WinControls.UI.RadTextBox txtMonto;
         private Telerik.WinControls.UI.RadLabel radLabel6;

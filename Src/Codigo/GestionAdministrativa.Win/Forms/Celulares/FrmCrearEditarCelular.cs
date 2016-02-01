@@ -106,29 +106,6 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             set { TxtPagare.Text = value ?? "" ; }
         }
 
-        public DateTime? FechaUltimoPago
-        {
-            get { return DtpFechaUltimoPago.Value; }
-            set { DtpFechaUltimoPago.Value = value ?? _clock.Now; }
-        }
-        public DateTime? FechaProximoPago
-        {
-            get { return DtpFechaProximoPago.Value; }
-            set { DtpFechaProximoPago.Value = value ?? _clock.Now; }
-        }
-
-        public int? DiaPago
-        {
-            get { return (int)CbxDiaPago.SelectedValue; }
-            set { CbxDiaPago.SelectedValue = value; }
-        }
-
-        public DateTime? FechaVencimientoPago
-        {
-            get { return DtpFechaVencimientoPago.Value; }
-            set { DtpFechaVencimientoPago.Value = value ?? _clock.Now; }
-        }
-
         public int? EmpresaCelular
         {
             get { return (int)CbxEmpresa.SelectedValue; }
@@ -189,9 +166,6 @@ namespace GestionAdministrativa.Win.Forms.Celulares
         private void SetearFechasDtps()
         {
             FechaAlta = _clock.Now;
-            FechaUltimoPago = _clock.Now;
-            FechaProximoPago = _clock.Now;
-            FechaVencimientoPago = _clock.Now;
         }
         private void FrmCrearEditarCelular_Load(object sender, EventArgs e)
         {
@@ -212,9 +186,6 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             CbxDiaCarga.DisplayMember = "Descripcion";
             CbxDiaCarga.ValueMember = "Id";
 
-            //Dia Pago
-            CbxDiaPago.DisplayMember = "Descripcion";
-            CbxDiaPago.ValueMember = "Id";
 
             //Empresa Celular
             CbxEmpresa.DisplayMember = "Descripcion";
@@ -237,7 +208,6 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             var diasPago = Uow.Dias.Listado().ToList();
             
             CbxDiaCarga.DataSource = diasCarga;
-            CbxDiaPago.DataSource = diasPago;
 
             var tipoCelular = Uow.TiposCelulares.Listado().ToList();
             CbxTipoCelular.DataSource = tipoCelular;
@@ -267,11 +237,7 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             this.Activo = _celular.Activo;
             this.Pagare = _celular.Pagare;
             this.Habilitado = _celular.Habilitado;
-            this.NumeroPagare = _celular.NumeroPagare;
-            this.FechaUltimoPago = _celular.FechaUltimoPago;
-            this.FechaProximoPago = _celular.FechaProximoPago;
-            this.DiaPago = _celular.DiaPagoId;
-            this.FechaVencimientoPago = _celular.FechaVencimientoPago;
+            this.NumeroPagare = _celular.NumeroPagare;    
             this.EmpresaCelular = _celular.EmpresaCelular;
             this.NumeroCelular = _celular.Numero;
             this.Imei = _celular.Imei;
@@ -312,12 +278,8 @@ namespace GestionAdministrativa.Win.Forms.Celulares
                     celular.FechaAlta = FechaAlta;
                     celular.Activo = Activo;
                     celular.NumeroPagare = Activo == true ? NumeroPagare : "";
-                    
+
                     celular.Habilitado = Habilitado;
-                    celular.FechaUltimoPago = FechaUltimoPago;
-                    celular.FechaProximoPago = FechaProximoPago;
-                    celular.DiaPagoId = DiaPago;
-                    celular.FechaVencimientoPago = FechaVencimientoPago;
                     celular.EmpresaCelular = EmpresaCelular;
                     celular.Numero = NumeroCelular;
                     celular.Imei = Imei;
@@ -378,10 +340,6 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             _celular.Pagare = Pagare;
             _celular.Habilitado = Habilitado;
             _celular.NumeroPagare = NumeroPagare;
-            _celular.FechaUltimoPago = FechaUltimoPago;
-            _celular.FechaProximoPago = FechaProximoPago;
-            _celular.DiaPagoId = DiaPago;
-            _celular.FechaVencimientoPago = FechaVencimientoPago;
             _celular.EmpresaCelular = EmpresaCelular;
             _celular.Numero = NumeroCelular;
             _celular.Imei = Imei;
