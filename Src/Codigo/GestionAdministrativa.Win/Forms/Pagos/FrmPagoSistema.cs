@@ -97,7 +97,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                     ucDetallePagos.esPagoInicial = true;
                 }
 
-                DateTime date = _celular.FechaUltimoPago ?? DateTime.Now;
+                DateTime date = _celular.FechaVencimientoPago ?? DateTime.Now;
                 var pago = _iPagoCelularNegocio.AutoPago(_celular, date, date.AddDays(cantidadDias));
                 
                 ucDetallePagos.FechaDesde = date;
