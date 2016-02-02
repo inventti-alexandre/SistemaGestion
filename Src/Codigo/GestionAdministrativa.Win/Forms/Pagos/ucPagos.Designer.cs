@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             this.TxtTotal = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.BtnAgregar = new System.Windows.Forms.Button();
@@ -93,26 +93,26 @@
             this.gridPagos.MasterTemplate.AllowDragToGroup = false;
             this.gridPagos.MasterTemplate.AutoGenerateColumns = false;
             this.gridPagos.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn3.FieldName = "TipoPago";
-            gridViewTextBoxColumn3.FormatString = "";
-            gridViewTextBoxColumn3.HeaderText = "Tipo";
-            gridViewTextBoxColumn3.Name = "column1";
-            gridViewTextBoxColumn3.Width = 250;
-            gridViewTextBoxColumn4.FieldName = "Importe";
-            gridViewTextBoxColumn4.FormatString = "";
-            gridViewTextBoxColumn4.HeaderText = "Monto";
-            gridViewTextBoxColumn4.Name = "column3";
-            gridViewTextBoxColumn4.Width = 267;
-            gridViewCommandColumn2.HeaderText = "";
-            gridViewCommandColumn2.Image = global::GestionAdministrativa.Win.Properties.Resources.delete;
-            gridViewCommandColumn2.MaxWidth = 30;
-            gridViewCommandColumn2.MinWidth = 30;
-            gridViewCommandColumn2.Name = "Eliminar";
-            gridViewCommandColumn2.Width = 30;
+            gridViewTextBoxColumn1.FieldName = "TipoPago";
+            gridViewTextBoxColumn1.FormatString = "";
+            gridViewTextBoxColumn1.HeaderText = "Tipo";
+            gridViewTextBoxColumn1.Name = "column1";
+            gridViewTextBoxColumn1.Width = 250;
+            gridViewTextBoxColumn2.FieldName = "Importe";
+            gridViewTextBoxColumn2.FormatString = "";
+            gridViewTextBoxColumn2.HeaderText = "Monto";
+            gridViewTextBoxColumn2.Name = "Importe";
+            gridViewTextBoxColumn2.Width = 267;
+            gridViewCommandColumn1.HeaderText = "";
+            gridViewCommandColumn1.Image = global::GestionAdministrativa.Win.Properties.Resources.delete;
+            gridViewCommandColumn1.MaxWidth = 30;
+            gridViewCommandColumn1.MinWidth = 30;
+            gridViewCommandColumn1.Name = "Eliminar";
+            gridViewCommandColumn1.Width = 30;
             this.gridPagos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewCommandColumn2});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewCommandColumn1});
             this.gridPagos.Name = "gridPagos";
             this.gridPagos.ReadOnly = true;
             this.gridPagos.Size = new System.Drawing.Size(567, 276);
@@ -126,15 +126,15 @@
             this.ddlTipo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.ddlTipo.DropDownAnimationEnabled = true;
             this.ddlTipo.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            radListDataItem4.Text = "Vales";
-            radListDataItem4.TextWrap = true;
-            radListDataItem5.Text = "Efectivo";
-            radListDataItem5.TextWrap = true;
-            radListDataItem6.Text = "Descuento";
-            radListDataItem6.TextWrap = true;
-            this.ddlTipo.Items.Add(radListDataItem4);
-            this.ddlTipo.Items.Add(radListDataItem5);
-            this.ddlTipo.Items.Add(radListDataItem6);
+            radListDataItem1.Text = "Vales";
+            radListDataItem1.TextWrap = true;
+            radListDataItem2.Text = "Efectivo";
+            radListDataItem2.TextWrap = true;
+            radListDataItem3.Text = "Descuento";
+            radListDataItem3.TextWrap = true;
+            this.ddlTipo.Items.Add(radListDataItem1);
+            this.ddlTipo.Items.Add(radListDataItem2);
+            this.ddlTipo.Items.Add(radListDataItem3);
             this.ddlTipo.Location = new System.Drawing.Point(80, 12);
             this.ddlTipo.MaxDropDownItems = 0;
             this.ddlTipo.Name = "ddlTipo";
