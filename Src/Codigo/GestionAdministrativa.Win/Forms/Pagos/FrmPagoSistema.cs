@@ -101,14 +101,29 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 ucDetallePagos.FechaHasta = date.AddDays(cantidadDias);
                 
                     
-                _pagoCelular = ucDetalleDeuda1.ActualizarNuevoPago(pago);
+                //_pagoCelular = 
+                    ucDetalleDeuda1.ActualizarNuevoPago(pago);
                 ucPagos1.ActualizarNuevoPago("Efectivo", pago.Monto);
-                _pagoCelular = ucDetallePagos.ActualizarNuevoPago(pago);
+                //var pagoNuevo = 
+                    ucDetallePagos.ActualizarNuevoPago(pago);
+                //_pagoCelular 
                 ucDetallePagos.ActualizarMonto(celular);
+                _pagoCelular = pago;
             }
             
         }
 
         #endregion
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Guardar();
+        }
+
+        private void Guardar()
+        {
+            Uow.PagosCelulares.Agregar(_pagoCelular);
+            Uow.Commit();
+        }
     }
 }

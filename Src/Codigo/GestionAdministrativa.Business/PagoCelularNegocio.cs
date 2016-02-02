@@ -46,14 +46,15 @@ namespace GestionAdministrativa.Business
             var _monto = celular.TiposCelulares.MontoInicial; //Ver Contexto
             //monto = celular.TiposCelulares.MontoInicial;
             PagoCelular nuevoPago = new PagoCelular();
+            nuevoPago.Id = Guid.NewGuid();
             nuevoPago.Desde = desde;
             TimeSpan dias = hasta - desde;
             nuevoPago.Hasta = hasta;
             nuevoPago.Monto = _monto * (dias.Days+1);
             nuevoPago.CelularId = celular.Id;
             nuevoPago.FechaAlta = _clock.Now;
-            //nuevoPago.OperadorAltaId=
-            //nuevoPago.SucursalAltaId=
+            nuevoPago.OperadorAltaId = Guid.Parse("4fb4caf7-9fd7-4a39-bf85-b60f14c2e7ab");
+            nuevoPago.SucursalAltaId=1;
             
             return nuevoPago;
         }
@@ -61,14 +62,15 @@ namespace GestionAdministrativa.Business
         public PagoCelular PagoCelularSemanal(Celular celular,DateTime desde,DateTime hasta)
         {
             PagoCelular nuevoPago = new PagoCelular();
+            nuevoPago.Id = Guid.NewGuid();
             nuevoPago.Desde = desde;
             nuevoPago.Hasta = hasta;
             TimeSpan dias = hasta - desde;            
             nuevoPago.Monto = celular.TiposCelulares.Monto * dias.Days;
             nuevoPago.CelularId = celular.Id;
             nuevoPago.FechaAlta = _clock.Now;
-            //nuevoPago.OperadorAltaId=
-            //nuevoPago.SucursalAltaId=
+            nuevoPago.OperadorAltaId = Guid.Parse("4fb4caf7-9fd7-4a39-bf85-b60f14c2e7ab");
+            nuevoPago.SucursalAltaId = 1;
 
             return nuevoPago;
         }

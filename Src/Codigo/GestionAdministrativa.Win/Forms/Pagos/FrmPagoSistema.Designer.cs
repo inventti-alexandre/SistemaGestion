@@ -40,6 +40,7 @@
             this.ucPagos1 = new GestionAdministrativa.Win.Forms.Pagos.ucPagos();
             this.radPanel4 = new Telerik.WinControls.UI.RadPanel();
             this.radPanel5 = new Telerik.WinControls.UI.RadPanel();
+            this.btnGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
             this.radPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
@@ -123,7 +124,7 @@
             this.radPanel3.Controls.Add(this.ucDetallePagos);
             this.radPanel3.Location = new System.Drawing.Point(527, 12);
             this.radPanel3.Name = "radPanel3";
-            this.radPanel3.Size = new System.Drawing.Size(618, 200);
+            this.radPanel3.Size = new System.Drawing.Size(618, 174);
             this.radPanel3.TabIndex = 5;
             this.radPanel3.ThemeName = "TelerikMetro";
             // 
@@ -136,15 +137,15 @@
             0,
             0,
             0,
-            0});
+            131072});
             this.ucDetallePagos.Name = "ucDetallePagos";
-            this.ucDetallePagos.Size = new System.Drawing.Size(602, 170);
+            this.ucDetallePagos.Size = new System.Drawing.Size(602, 144);
             this.ucDetallePagos.TabIndex = 0;
             this.ucDetallePagos.Total = new decimal(new int[] {
             0,
             0,
             0,
-            0});
+            131072});
             // 
             // ucPagos1
             // 
@@ -155,16 +156,16 @@
             0});
             this.ucPagos1.Location = new System.Drawing.Point(7, 9);
             this.ucPagos1.Name = "ucPagos1";
-            this.ucPagos1.Size = new System.Drawing.Size(604, 443);
+            this.ucPagos1.Size = new System.Drawing.Size(604, 389);
             this.ucPagos1.TabIndex = 6;
             this.ucPagos1.Tipo = "Vales";
             // 
             // radPanel4
             // 
             this.radPanel4.Controls.Add(this.ucPagos1);
-            this.radPanel4.Location = new System.Drawing.Point(523, 218);
+            this.radPanel4.Location = new System.Drawing.Point(527, 192);
             this.radPanel4.Name = "radPanel4";
-            this.radPanel4.Size = new System.Drawing.Size(618, 463);
+            this.radPanel4.Size = new System.Drawing.Size(618, 401);
             this.radPanel4.TabIndex = 7;
             this.radPanel4.ThemeName = "TelerikMetro";
             // 
@@ -177,11 +178,26 @@
             this.radPanel5.TabIndex = 8;
             this.radPanel5.ThemeName = "TelerikMetro";
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.Yellow;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Location = new System.Drawing.Point(973, 629);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(142, 42);
+            this.btnGuardar.TabIndex = 9;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // FrmPagoSistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1155, 788);
+            this.ClientSize = new System.Drawing.Size(1155, 730);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.ucDetalleDeuda1);
             this.Controls.Add(this.radPanel5);
             this.Controls.Add(this.radPanel4);
@@ -224,5 +240,6 @@
         private ucPagos ucPagos1;
         private Telerik.WinControls.UI.RadPanel radPanel4;
         private Telerik.WinControls.UI.RadPanel radPanel5;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }
