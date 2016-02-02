@@ -15,6 +15,8 @@ namespace GestionAdministrativa.Win.Forms.Pagos
     {
         private PagoCelular _pagoCelular;
         private IList<PagoCelular> _aPagar = new List<PagoCelular>();
+        public bool esPagoInicial = true;
+
        
         public ucDetallePagos()
         {
@@ -22,6 +24,8 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         }
 
         #region Properties
+
+        
 
         public DateTime FechaDesde 
         {
@@ -98,6 +102,17 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private void ucDetallePagos_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void dtpDesde_ValueChanged(object sender, EventArgs e)
+        {
+            if (_pagoCelular != null)
+            {
+                TimeSpan? dias = (_pagoCelular.Desde - _pagoCelular.Hasta);
+                dias
+                if ()
+               FechaHasta= FechaDesde.AddDays(4);
+            }
         }
 
        

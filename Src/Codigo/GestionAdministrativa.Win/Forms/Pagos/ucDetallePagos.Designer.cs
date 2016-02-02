@@ -83,6 +83,7 @@
             this.dtpDesde.Text = "07/01/2016";
             this.dtpDesde.ThemeName = "TelerikMetro";
             this.dtpDesde.Value = new System.DateTime(2016, 1, 7, 11, 46, 3, 884);
+            this.dtpDesde.ValueChanged += new System.EventHandler(this.dtpDesde_ValueChanged);
             // 
             // dtpHasta
             // 
