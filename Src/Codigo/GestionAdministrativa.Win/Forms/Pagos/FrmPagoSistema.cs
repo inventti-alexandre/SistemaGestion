@@ -21,6 +21,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private IPagoCelularNegocio _iPagoCelularNegocio;
         private PagoCelular _pagoCelular;
         private IClock _clock;
+        private Celular _celular;
         public FrmPagoSistema(IGestionAdministrativaUow uow, IPagoCelularNegocio pagoCelularNegocio,IClock clock)
         {
             Uow = uow;
@@ -84,20 +85,20 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
 
             ucEstadoCuentaChofer1.ActualizarChofer(_chofer);
-            var celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where(c => c.Id == chofer.CelularId).FirstOrDefault();
-            if (celular != null)
+            _celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where(c => c.Id == chofer.CelularId).FirstOrDefault();
+            if (_celular != null)
             {
                 var cantidadDias = 6;
                 ucDetallePagos.esPagoInicial = false;
-                if (celular.FechaUltimoPago == null)
+                if (_celular.FechaUltimoPago == null)
                 {
                     cantidadDias = 4;
                     ucDetallePagos.DeshabilitarControlesPagoInicial();
                     ucDetallePagos.esPagoInicial = true;
                 }
 
-                DateTime date = celular.FechaUltimoPago ?? DateTime.Now;
-                    var pago = _iPagoCelularNegocio.AutoPago(celular, date, date.AddDays(cantidadDias));
+                DateTime date = _celular.FechaUltimoPago ?? DateTime.Now;
+                var pago = _iPagoCelularNegocio.AutoPago(_celular, date, date.AddDays(cantidadDias));
                 
                 ucDetallePagos.FechaDesde = date;
                 ucDetallePagos.FechaHasta = date.AddDays(cantidadDias);
@@ -109,7 +110,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 //var pagoNuevo = 
                     ucDetallePagos.ActualizarNuevoPago(pago);
                 //_pagoCelular 
-                ucDetallePagos.ActualizarMonto(celular);
+                    ucDetallePagos.ActualizarMonto(_celular);
                 _pagoCelular = pago;
             }
             
@@ -124,6 +125,12 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
         private void Guardar()
         {
+            _celular.FechaUltimoPago = _clock.Now;
+            _celular.FechaVencimientoPago = _pagoCelular.Hasta;
+            DateTime proximo = _pagoCelular.Hasta ?? _clock.Now;
+            _celular.FechaProximoPago = proximo.AddDays(-2);
+
+            Uow.Celulares.Modificar(_celular);
             Uow.PagosCelulares.Agregar(_pagoCelular);
             Uow.Commit();
         }
