@@ -143,7 +143,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
         private void ucBuscardorChoferMovil_Load(object sender, EventArgs e)
         {
-            //CargarCombos();
+            CargarCombos();
         }
 
     }
