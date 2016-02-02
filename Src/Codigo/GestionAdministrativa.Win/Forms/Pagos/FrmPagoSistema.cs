@@ -88,10 +88,12 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             if (celular != null)
             {
                 var cantidadDias = 6;
+                ucDetallePagos.esPagoInicial = false;
                 if (celular.FechaUltimoPago == null)
                 {
                     cantidadDias = 4;
                     ucDetallePagos.DeshabilitarControlesPagoInicial();
+                    ucDetallePagos.esPagoInicial = true;
                 }
 
                 DateTime date = celular.FechaUltimoPago ?? DateTime.Now;

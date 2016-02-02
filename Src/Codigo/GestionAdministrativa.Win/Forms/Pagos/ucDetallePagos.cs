@@ -108,10 +108,15 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         {
             if (_pagoCelular != null)
             {
-                TimeSpan? dias = (_pagoCelular.Desde - _pagoCelular.Hasta);
-                dias
-                if ()
-               FechaHasta= FechaDesde.AddDays(4);
+
+                if (esPagoInicial)
+                {
+                    FechaHasta = FechaDesde.AddDays(4);
+                }
+                else
+                {
+                    FechaHasta = FechaDesde.AddDays(6);
+                }
             }
         }
 
