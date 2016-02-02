@@ -90,6 +90,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             {
                 var cantidadDias = 6;
                 ucDetallePagos.esPagoInicial = false;
+                ucDetallePagos.DeshabilitarControlesPago();
                 if (_celular.FechaUltimoPago == null)
                 {
                     cantidadDias = 4;
@@ -97,7 +98,8 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                     ucDetallePagos.esPagoInicial = true;
                 }
 
-                DateTime date = _celular.FechaVencimientoPago ?? DateTime.Now;
+                DateTime date = _celular.FechaVencimientoPago ?? DateTime.Now.AddDays(-1);
+                date = date.AddDays(1);
                 var pago = _iPagoCelularNegocio.AutoPago(_celular, date, date.AddDays(cantidadDias));
                 
                 ucDetallePagos.FechaDesde = date;
