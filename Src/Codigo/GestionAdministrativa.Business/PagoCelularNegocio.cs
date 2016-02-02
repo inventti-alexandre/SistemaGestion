@@ -49,12 +49,12 @@ namespace GestionAdministrativa.Business
             nuevoPago.Desde = desde;
             TimeSpan dias = hasta - desde;
             nuevoPago.Hasta = hasta;
-            nuevoPago.Monto = _monto * dias.Days;
+            nuevoPago.Monto = _monto * (dias.Days+1);
             nuevoPago.CelularId = celular.Id;
             nuevoPago.FechaAlta = _clock.Now;
             //nuevoPago.OperadorAltaId=
             //nuevoPago.SucursalAltaId=
-
+            
             return nuevoPago;
         }
 

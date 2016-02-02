@@ -104,7 +104,7 @@
             // radLabel5
             // 
             this.radLabel5.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel5.Location = new System.Drawing.Point(26, 53);
+            this.radLabel5.Location = new System.Drawing.Point(26, 57);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(70, 25);
             this.radLabel5.TabIndex = 7;
@@ -115,7 +115,7 @@
             // 
             this.txtMonto.Enabled = false;
             this.txtMonto.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonto.Location = new System.Drawing.Point(102, 53);
+            this.txtMonto.Location = new System.Drawing.Point(102, 57);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(145, 28);
             this.txtMonto.TabIndex = 8;
@@ -126,7 +126,7 @@
             // radLabel6
             // 
             this.radLabel6.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel6.Location = new System.Drawing.Point(303, 53);
+            this.radLabel6.Location = new System.Drawing.Point(303, 57);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(70, 25);
             this.radLabel6.TabIndex = 9;
@@ -137,7 +137,7 @@
             // 
             this.TxtTotal.Enabled = false;
             this.TxtTotal.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotal.Location = new System.Drawing.Point(379, 53);
+            this.TxtTotal.Location = new System.Drawing.Point(379, 57);
             this.TxtTotal.Name = "TxtTotal";
             this.TxtTotal.Size = new System.Drawing.Size(145, 28);
             this.TxtTotal.TabIndex = 10;
@@ -152,7 +152,7 @@
             this.BtnAceptar.FlatAppearance.BorderSize = 0;
             this.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAceptar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAceptar.Location = new System.Drawing.Point(379, 87);
+            this.BtnAceptar.Location = new System.Drawing.Point(379, 92);
             this.BtnAceptar.Name = "BtnAceptar";
             this.BtnAceptar.Size = new System.Drawing.Size(145, 35);
             this.BtnAceptar.TabIndex = 11;

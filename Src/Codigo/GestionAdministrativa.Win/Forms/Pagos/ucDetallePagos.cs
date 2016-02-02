@@ -35,16 +35,25 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             set { dtpHasta.Value = value; }
         }
 
-        public double Total
+        public decimal Total 
         {
-            get { return Double.Parse(TxtTotal.Text); }
-            set { TxtTotal.Text = value.ToString("N2"); }
+
+            get
+            {
+                decimal o;
+                return decimal.TryParse(TxtTotal.Text, out o) ? o : 0;
+            }
+            set { TxtTotal.Text = value.ToString("n2"); }
         }
 
         public decimal Monto
         {
-            get { return decimal.Parse(txtMonto.Text); }
-            set { txtMonto.Text = value.ToString("N2"); }
+            get
+            {
+                decimal o;
+                return decimal.TryParse(txtMonto.Text, out o) ? o : 0;
+            }
+            set { txtMonto.Text = value.ToString("n2"); }
         }
 
         public IList<PagoCelular> APagar
@@ -77,6 +86,11 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         public void ActualizarMonto(Celular celular)
         {
             Monto = (celular.TiposCelulares.Monto);
+        }
+
+        public void DeshabilitarControlesPagoInicial()
+        {
+            dtpHasta.Enabled = false;
         }
 
         #endregion

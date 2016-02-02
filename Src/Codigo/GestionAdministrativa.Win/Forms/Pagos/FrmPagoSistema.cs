@@ -89,10 +89,14 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             {
                 var cantidadDias = 6;
                 if (celular.FechaUltimoPago == null)
+                {
                     cantidadDias = 4;
-               
-                    DateTime date = celular.FechaUltimoPago ?? DateTime.Now;
+                    ucDetallePagos.DeshabilitarControlesPagoInicial();
+                }
+
+                DateTime date = celular.FechaUltimoPago ?? DateTime.Now;
                     var pago = _iPagoCelularNegocio.AutoPago(celular, date, date.AddDays(cantidadDias));
+                
                 ucDetallePagos.FechaDesde = date;
                 ucDetallePagos.FechaHasta = date.AddDays(cantidadDias);
                 

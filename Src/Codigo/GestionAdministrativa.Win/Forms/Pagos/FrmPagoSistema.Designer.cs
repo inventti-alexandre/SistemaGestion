@@ -129,10 +129,22 @@
             // 
             // ucDetallePagos
             // 
+            this.ucDetallePagos.FechaDesde = new System.DateTime(2016, 1, 7, 11, 46, 3, 884);
+            this.ucDetallePagos.FechaHasta = new System.DateTime(2016, 1, 7, 11, 46, 3, 884);
             this.ucDetallePagos.Location = new System.Drawing.Point(4, 4);
+            this.ucDetallePagos.Monto = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.ucDetallePagos.Name = "ucDetallePagos";
             this.ucDetallePagos.Size = new System.Drawing.Size(602, 170);
             this.ucDetallePagos.TabIndex = 0;
+            this.ucDetallePagos.Total = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             // 
             // ucPagos1
             // 
@@ -152,7 +164,7 @@
             this.radPanel4.Controls.Add(this.ucPagos1);
             this.radPanel4.Location = new System.Drawing.Point(523, 218);
             this.radPanel4.Name = "radPanel4";
-            this.radPanel4.Size = new System.Drawing.Size(618, 475);
+            this.radPanel4.Size = new System.Drawing.Size(618, 463);
             this.radPanel4.TabIndex = 7;
             this.radPanel4.ThemeName = "TelerikMetro";
             // 
