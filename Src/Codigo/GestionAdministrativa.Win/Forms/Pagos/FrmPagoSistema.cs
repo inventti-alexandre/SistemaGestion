@@ -33,9 +33,15 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private void FrmPagoSistema_Load(object sender, EventArgs e)
         {
             ucBuscardorChoferMovil.BuscarFinished += ucBuscardorChoferMovilOnBuscarFinished;
+            ucDetallePagos.FechasSelected += ucDetallePagosOnFechasSelected;
         }
 
         #region Metodos
+        private void ucDetallePagosOnFechasSelected(object sender, PagoCelular pago)
+        {
+            DateTime hasta = (pago.Hasta ?? _clock.Now).AddDays(1);
+            GenerarDeudaPago(pago.Desde, hasta);
+        }
         private void ucBuscardorChoferMovilOnBuscarFinished(object sender, List<Chofer> choferes)
         {
             if (choferes == null)
@@ -100,22 +106,25 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
                 DateTime date = _celular.FechaVencimientoPago ?? DateTime.Now.AddDays(-1);
                 date = date.AddDays(1);
-                var pago = _iPagoCelularNegocio.AutoPago(_celular, date, date.AddDays(cantidadDias));
+               
                 
                 ucDetallePagos.FechaDesde = date;
                 ucDetallePagos.FechaHasta = date.AddDays(cantidadDias);
-                
+                GenerarDeudaPago(date, date.AddDays(cantidadDias));
                     
-                //_pagoCelular = 
-                    ucDetalleDeuda1.ActualizarNuevoPago(pago);
-                ucPagos1.ActualizarNuevoPago("Efectivo", pago.Monto);
-                //var pagoNuevo = 
-                    ucDetallePagos.ActualizarNuevoPago(pago);
-                //_pagoCelular 
-                    ucDetallePagos.ActualizarMonto(_celular);
-                _pagoCelular = pago;
+                
             }
             
+        }
+
+        private void GenerarDeudaPago(DateTime? desde, DateTime? hasta)
+        {
+            var pago = _iPagoCelularNegocio.AutoPago(_celular, desde ?? _clock.Now,hasta ?? _clock.Now);
+            ucDetalleDeuda1.ActualizarNuevoPago(pago);
+            ucPagos1.ActualizarNuevoPago("Efectivo", pago.Monto);
+            ucDetallePagos.ActualizarNuevoPago(pago);
+            ucDetallePagos.ActualizarMonto(_celular);
+            _pagoCelular = pago;
         }
 
         #endregion
@@ -136,5 +145,6 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             Uow.PagosCelulares.Agregar(_pagoCelular);
             Uow.Commit();
         }
+
     }
 }

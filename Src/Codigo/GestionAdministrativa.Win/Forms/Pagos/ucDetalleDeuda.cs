@@ -37,6 +37,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         }
         public PagoCelular ActualizarNuevoPago(PagoCelular pago)
         {
+            APagar.Clear();
             _pagoCelular = pago;
 
             APagar.Add(_pagoCelular);

@@ -23,6 +23,14 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             InitializeComponent();
         }
 
+        public event EventHandler<PagoCelular> FechasSelected;
+
+        public void OnFechasSelected(PagoCelular pago)
+        {
+            if (FechasSelected != null)
+                FechasSelected(this, pago);
+        }
+
         #region Properties
 
         
@@ -70,6 +78,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         #region Methods
         public PagoCelular ActualizarNuevoPago(PagoCelular pago)
         {
+            APagar.Clear();
             _pagoCelular = pago;
 
             APagar.Add(_pagoCelular);
@@ -123,6 +132,18 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 {
                     FechaHasta = FechaDesde.AddDays(6);
                 }
+            }
+        }
+
+        private void dtpHasta_ValueChanged(object sender, EventArgs e)
+        {
+            if (_pagoCelular != null)
+            {
+                _pagoCelular.Desde = FechaDesde;
+                _pagoCelular.Hasta = FechaHasta;
+                _pagoCelular.Monto = Monto;
+
+                OnFechasSelected(_pagoCelular);
             }
         }
 

@@ -80,7 +80,7 @@
             this.dtpDesde.Size = new System.Drawing.Size(145, 29);
             this.dtpDesde.TabIndex = 2;
             this.dtpDesde.TabStop = false;
-            this.dtpDesde.Text = "07/01/2016";
+            this.dtpDesde.Text = "7/1/2016";
             this.dtpDesde.ThemeName = "TelerikMetro";
             this.dtpDesde.Value = new System.DateTime(2016, 1, 7, 11, 46, 3, 884);
             this.dtpDesde.ValueChanged += new System.EventHandler(this.dtpDesde_ValueChanged);
@@ -98,9 +98,10 @@
             this.dtpHasta.Size = new System.Drawing.Size(145, 29);
             this.dtpHasta.TabIndex = 3;
             this.dtpHasta.TabStop = false;
-            this.dtpHasta.Text = "07/01/2016";
+            this.dtpHasta.Text = "7/1/2016";
             this.dtpHasta.ThemeName = "TelerikMetro";
             this.dtpHasta.Value = new System.DateTime(2016, 1, 7, 11, 46, 3, 884);
+            this.dtpHasta.ValueChanged += new System.EventHandler(this.dtpHasta_ValueChanged);
             // 
             // radLabel5
             // 

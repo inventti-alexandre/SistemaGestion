@@ -62,6 +62,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         #region Metodos
         public void ActualizarNuevoPago(string tipo, decimal importe)
         {
+            Pagos.Clear();
             _pago.TipoPago = tipo;
             _pago.Importe = importe;
 
