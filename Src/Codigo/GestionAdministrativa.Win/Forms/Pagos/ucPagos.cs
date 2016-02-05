@@ -57,6 +57,15 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             { txtImporte.Text = value.ToString(); }
         }
 
+        public decimal? Total
+        {
+            get
+            {
+                decimal total;
+                return decimal.TryParse(TxtTotal.Text, out total) ? total : 0 ;
+            }
+            set { TxtTotal.Text = value.ToString();}
+        }
         #endregion
 
         #region Metodos
@@ -74,7 +83,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         {
             gridPagos.DataSource = Pagos.ToList();
             var total = TotalPagos();
-            TxtTotal.Text = total.ToString();
+            Total= total;
             //FaltaPagar = TotalPagar - total;// +_intereses;
         }
 
@@ -84,7 +93,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
         }
 
-        private void AgregarPago(PagosTipo pago)
+        public void AgregarPago(PagosTipo pago)
         {
             if (Pagos != null)
             {

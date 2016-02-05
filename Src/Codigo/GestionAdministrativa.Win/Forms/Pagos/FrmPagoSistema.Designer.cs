@@ -33,8 +33,6 @@
             this.ucEstadoCuentaChofer1 = new GestionAdministrativa.Win.Forms.Pagos.ucEstadoCuentaChofer();
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
-            this.ucDetalleDeuda1 = new GestionAdministrativa.Win.Forms.Pagos.ucDetalleDeuda();
             this.radPanel3 = new Telerik.WinControls.UI.RadPanel();
             this.ucDetallePagos = new GestionAdministrativa.Win.Forms.Pagos.ucDetallePagos();
             this.ucPagos1 = new GestionAdministrativa.Win.Forms.Pagos.ucPagos();
@@ -44,7 +42,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
             this.radPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
             this.radPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel4)).BeginInit();
@@ -104,42 +101,30 @@
             this.radLabel1.TabIndex = 2;
             this.radLabel1.Text = "Detalle chofer";
             // 
-            // radPanel1
-            // 
-            this.radPanel1.Location = new System.Drawing.Point(131, 534);
-            this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(330, 123);
-            this.radPanel1.TabIndex = 4;
-            this.radPanel1.ThemeName = "TelerikMetro";
-            // 
-            // ucDetalleDeuda1
-            // 
-            this.ucDetalleDeuda1.Location = new System.Drawing.Point(18, 503);
-            this.ucDetalleDeuda1.Name = "ucDetalleDeuda1";
-            this.ucDetalleDeuda1.Size = new System.Drawing.Size(489, 220);
-            this.ucDetalleDeuda1.TabIndex = 0;
-            // 
             // radPanel3
             // 
             this.radPanel3.Controls.Add(this.ucDetallePagos);
+            this.radPanel3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radPanel3.Location = new System.Drawing.Point(527, 12);
             this.radPanel3.Name = "radPanel3";
-            this.radPanel3.Size = new System.Drawing.Size(618, 174);
+            this.radPanel3.Size = new System.Drawing.Size(633, 174);
             this.radPanel3.TabIndex = 5;
+            this.radPanel3.Text = "A PAGAR";
+            this.radPanel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.radPanel3.ThemeName = "TelerikMetro";
             // 
             // ucDetallePagos
             // 
             this.ucDetallePagos.FechaDesde = new System.DateTime(2016, 1, 7, 11, 46, 3, 884);
             this.ucDetallePagos.FechaHasta = new System.DateTime(2016, 1, 7, 11, 46, 3, 884);
-            this.ucDetallePagos.Location = new System.Drawing.Point(4, 4);
+            this.ucDetallePagos.Location = new System.Drawing.Point(3, 27);
             this.ucDetallePagos.Monto = new decimal(new int[] {
             0,
             0,
             0,
             131072});
             this.ucDetallePagos.Name = "ucDetallePagos";
-            this.ucDetallePagos.Size = new System.Drawing.Size(602, 144);
+            this.ucDetallePagos.Size = new System.Drawing.Size(627, 144);
             this.ucDetallePagos.TabIndex = 0;
             this.ucDetallePagos.Total = new decimal(new int[] {
             0,
@@ -156,16 +141,21 @@
             0});
             this.ucPagos1.Location = new System.Drawing.Point(7, 9);
             this.ucPagos1.Name = "ucPagos1";
-            this.ucPagos1.Size = new System.Drawing.Size(604, 389);
+            this.ucPagos1.Size = new System.Drawing.Size(615, 389);
             this.ucPagos1.TabIndex = 6;
             this.ucPagos1.Tipo = "Vales";
+            this.ucPagos1.Total = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             // 
             // radPanel4
             // 
             this.radPanel4.Controls.Add(this.ucPagos1);
             this.radPanel4.Location = new System.Drawing.Point(527, 192);
             this.radPanel4.Name = "radPanel4";
-            this.radPanel4.Size = new System.Drawing.Size(618, 401);
+            this.radPanel4.Size = new System.Drawing.Size(633, 401);
             this.radPanel4.TabIndex = 7;
             this.radPanel4.ThemeName = "TelerikMetro";
             // 
@@ -183,7 +173,7 @@
             this.btnGuardar.BackColor = System.Drawing.Color.Yellow;
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(973, 629);
+            this.btnGuardar.Location = new System.Drawing.Point(1015, 621);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(142, 42);
             this.btnGuardar.TabIndex = 9;
@@ -196,13 +186,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1155, 730);
+            this.ClientSize = new System.Drawing.Size(1191, 730);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.ucDetalleDeuda1);
             this.Controls.Add(this.radPanel5);
             this.Controls.Add(this.radPanel4);
             this.Controls.Add(this.radPanel3);
-            this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radPanel2);
             this.Name = "FrmPagoSistema";
             // 
@@ -215,7 +203,6 @@
             this.radPanel2.ResumeLayout(false);
             this.radPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).EndInit();
             this.radPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel4)).EndInit();
@@ -232,9 +219,7 @@
         private ucBuscardorChoferMovil ucBuscardorChoferMovil;
         private ucEstadoCuentaChofer ucEstadoCuentaChofer1;
         private Telerik.WinControls.UI.RadPanel radPanel2;
-        private Telerik.WinControls.UI.RadPanel radPanel1;
         private Telerik.WinControls.UI.RadLabel radLabel1;
-        private ucDetalleDeuda ucDetalleDeuda1;
         private Telerik.WinControls.UI.RadPanel radPanel3;
         private ucDetallePagos ucDetallePagos;
         private ucPagos ucPagos1;

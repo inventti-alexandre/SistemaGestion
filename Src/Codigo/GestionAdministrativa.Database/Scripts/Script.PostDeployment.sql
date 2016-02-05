@@ -15,3 +15,4 @@ Post-Deployment Script Template
 :r .\EmpresasCelulares.sql
 :r .\ModeloCelulares.sql
 :r .\TiposCelulares.sql
+:r .\TipoComprobante.sql

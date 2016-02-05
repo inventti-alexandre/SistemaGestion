@@ -15,6 +15,7 @@ using GestionAdministrativa.Win.Forms.Choferes;
 using GestionAdministrativa.Win.Forms.Moviles;
 using Telerik.WinControls;
 using GestionAdministrativa.Win.Forms.Pagos;
+using GestionAdministrativa.Win.Forms.Cajas;
 
 namespace GestionAdministrativa.Win.Forms
 {
@@ -65,6 +66,12 @@ namespace GestionAdministrativa.Win.Forms
         private void btnPagos_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmPagoSistema>();
+            frm.Show();
+        }
+
+        private void BtnCaja_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<AbrirCaja>();
             frm.Show();
         }
 

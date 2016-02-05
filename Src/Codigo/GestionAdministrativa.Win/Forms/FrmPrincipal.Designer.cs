@@ -38,6 +38,7 @@
             this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
             this.btnPagos = new Telerik.WinControls.UI.RadButton();
+            this.BtnCaja = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnChofer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
@@ -46,6 +47,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnCelulares)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPagos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -177,11 +179,26 @@
             this.btnPagos.ThemeName = "TelerikMetro";
             this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
             // 
+            // BtnCaja
+            // 
+            this.BtnCaja.AutoSize = true;
+            this.BtnCaja.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCaja.Image = global::GestionAdministrativa.Win.Properties.Resources.caja;
+            this.BtnCaja.Location = new System.Drawing.Point(315, 157);
+            this.BtnCaja.Name = "BtnCaja";
+            this.BtnCaja.Size = new System.Drawing.Size(132, 132);
+            this.BtnCaja.TabIndex = 7;
+            this.BtnCaja.Text = "Abrir Caja";
+            this.BtnCaja.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnCaja.ThemeName = "TelerikMetro";
+            this.BtnCaja.Click += new System.EventHandler(this.BtnCaja_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1340, 652);
+            this.Controls.Add(this.BtnCaja);
             this.Controls.Add(this.btnPagos);
             this.Controls.Add(this.BtnCelulares);
             this.Controls.Add(this.Menu);
@@ -206,6 +223,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnCelulares)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPagos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCaja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -224,6 +242,7 @@
         private Telerik.WinControls.UI.RadMenuItem radMenuItem1;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem2;
         private Telerik.WinControls.UI.RadButton btnPagos;
+        private Telerik.WinControls.UI.RadButton BtnCaja;
 
 
     }

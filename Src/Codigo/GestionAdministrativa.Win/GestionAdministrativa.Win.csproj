@@ -145,6 +145,12 @@
     <Compile Include="Controls\EditColumn.cs" />
     <Compile Include="Controls\PayColumn.cs" />
     <Compile Include="Enums\FormMode.cs" />
+    <Compile Include="Forms\Cajas\AbrirCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cajas\AbrirCaja.Designer.cs">
+      <DependentUpon>AbrirCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Celulares\FrmCrearEditarCelular.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +288,9 @@
     <Compile Include="IFormFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Cajas\AbrirCaja.resx">
+      <DependentUpon>AbrirCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Celulares\FrmCrearEditarCelular.resx">
       <DependentUpon>FrmCrearEditarCelular.cs</DependentUpon>
     </EmbeddedResource>
@@ -386,6 +395,7 @@
     <Content Include="Resources\Bank.png" />
     <Content Include="Resources\Book-Open.png" />
     <Content Include="Resources\Bullets.png" />
+    <None Include="Resources\caja.png" />
     <Content Include="Resources\cancel-cross.png" />
     <None Include="Resources\Car02.png" />
     <None Include="Resources\Car01.png" />

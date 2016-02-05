@@ -18,7 +18,9 @@ namespace GestionAdministrativa.Data.Interfaces
         IRepository<Dia> Dias { get; }
         IRepository<EmpresasCelulare> EmpresasCelulares { get; }
         IRepository<TipoCelular> TiposCelulares { get; }
+        IRepository<ChoferMontoFavor> ChoferesMontosFavor { get; }
         IRepository<ModelosCelulare> ModelosCelulares { get; }
+        IRepository<CajaMovimiento> CajaMovimientos { get; }
         GestionAdministrativaDbContext DbContext { get; }
         bool IsDisposed { get; }
 

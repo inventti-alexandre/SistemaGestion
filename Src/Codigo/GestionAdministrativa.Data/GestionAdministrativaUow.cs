@@ -31,6 +31,8 @@ namespace GestionAdministrativa.Data
         public IRepository<EmpresasCelulare> EmpresasCelulares{get { return GetStandardRepo<EmpresasCelulare>(); }}
         public IRepository<ModelosCelulare> ModelosCelulares { get { return GetStandardRepo<ModelosCelulare>(); } }
         public IRepository<TipoCelular> TiposCelulares { get { return GetStandardRepo<TipoCelular>(); } }
+        public IRepository<ChoferMontoFavor> ChoferesMontosFavor { get { return GetStandardRepo<ChoferMontoFavor>(); } }
+        public IRepository<CajaMovimiento> CajaMovimientos { get { return GetStandardRepo<CajaMovimiento>(); } }
 
         public string ConnectionString
         {

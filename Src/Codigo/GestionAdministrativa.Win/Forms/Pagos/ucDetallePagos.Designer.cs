@@ -50,7 +50,7 @@
             // radLabel1
             // 
             this.radLabel1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(26, 25);
+            this.radLabel1.Location = new System.Drawing.Point(15, 16);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(70, 25);
             this.radLabel1.TabIndex = 0;
@@ -60,7 +60,7 @@
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.Location = new System.Drawing.Point(303, 25);
+            this.radLabel2.Location = new System.Drawing.Point(233, 16);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(70, 25);
             this.radLabel2.TabIndex = 1;
@@ -71,13 +71,13 @@
             // 
             this.dtpDesde.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(102, 21);
+            this.dtpDesde.Location = new System.Drawing.Point(101, 12);
             this.dtpDesde.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpDesde.MinDate = new System.DateTime(((long)(0)));
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.NullableValue = new System.DateTime(2016, 1, 7, 11, 46, 3, 884);
             this.dtpDesde.NullDate = new System.DateTime(((long)(0)));
-            this.dtpDesde.Size = new System.Drawing.Size(145, 29);
+            this.dtpDesde.Size = new System.Drawing.Size(104, 29);
             this.dtpDesde.TabIndex = 2;
             this.dtpDesde.TabStop = false;
             this.dtpDesde.Text = "7/1/2016";
@@ -89,13 +89,13 @@
             // 
             this.dtpHasta.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(379, 21);
+            this.dtpHasta.Location = new System.Drawing.Point(309, 12);
             this.dtpHasta.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpHasta.MinDate = new System.DateTime(((long)(0)));
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.NullableValue = new System.DateTime(2016, 1, 7, 11, 46, 3, 884);
             this.dtpHasta.NullDate = new System.DateTime(((long)(0)));
-            this.dtpHasta.Size = new System.Drawing.Size(145, 29);
+            this.dtpHasta.Size = new System.Drawing.Size(104, 29);
             this.dtpHasta.TabIndex = 3;
             this.dtpHasta.TabStop = false;
             this.dtpHasta.Text = "7/1/2016";
@@ -106,20 +106,20 @@
             // radLabel5
             // 
             this.radLabel5.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel5.Location = new System.Drawing.Point(26, 57);
+            this.radLabel5.Location = new System.Drawing.Point(446, 16);
             this.radLabel5.Name = "radLabel5";
-            this.radLabel5.Size = new System.Drawing.Size(70, 25);
+            this.radLabel5.Size = new System.Drawing.Size(80, 25);
             this.radLabel5.TabIndex = 7;
-            this.radLabel5.Text = "Monto:";
+            this.radLabel5.Text = "Diario:";
             this.radLabel5.ThemeName = "TelerikMetro";
             // 
             // txtMonto
             // 
             this.txtMonto.Enabled = false;
             this.txtMonto.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonto.Location = new System.Drawing.Point(102, 57);
+            this.txtMonto.Location = new System.Drawing.Point(532, 13);
             this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(145, 28);
+            this.txtMonto.Size = new System.Drawing.Size(76, 28);
             this.txtMonto.TabIndex = 8;
             this.txtMonto.TabStop = false;
             this.txtMonto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -127,10 +127,10 @@
             // 
             // radLabel6
             // 
-            this.radLabel6.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel6.Location = new System.Drawing.Point(303, 57);
+            this.radLabel6.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel6.Location = new System.Drawing.Point(15, 62);
             this.radLabel6.Name = "radLabel6";
-            this.radLabel6.Size = new System.Drawing.Size(70, 25);
+            this.radLabel6.Size = new System.Drawing.Size(88, 32);
             this.radLabel6.TabIndex = 9;
             this.radLabel6.Text = "Total:";
             this.radLabel6.ThemeName = "TelerikMetro";
@@ -138,10 +138,10 @@
             // TxtTotal
             // 
             this.TxtTotal.Enabled = false;
-            this.TxtTotal.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotal.Location = new System.Drawing.Point(379, 57);
+            this.TxtTotal.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTotal.Location = new System.Drawing.Point(107, 59);
             this.TxtTotal.Name = "TxtTotal";
-            this.TxtTotal.Size = new System.Drawing.Size(145, 28);
+            this.TxtTotal.Size = new System.Drawing.Size(145, 33);
             this.TxtTotal.TabIndex = 10;
             this.TxtTotal.TabStop = false;
             this.TxtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -154,12 +154,13 @@
             this.BtnAceptar.FlatAppearance.BorderSize = 0;
             this.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAceptar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAceptar.Location = new System.Drawing.Point(379, 92);
+            this.BtnAceptar.Location = new System.Drawing.Point(453, 57);
             this.BtnAceptar.Name = "BtnAceptar";
             this.BtnAceptar.Size = new System.Drawing.Size(145, 35);
             this.BtnAceptar.TabIndex = 11;
             this.BtnAceptar.Text = "Agregar";
             this.BtnAceptar.UseVisualStyleBackColor = false;
+            this.BtnAceptar.Visible = false;
             // 
             // ucDetallePagos
             // 
@@ -175,7 +176,7 @@
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.radLabel1);
             this.Name = "ucDetallePagos";
-            this.Size = new System.Drawing.Size(604, 161);
+            this.Size = new System.Drawing.Size(622, 104);
             this.Load += new System.EventHandler(this.ucDetallePagos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
