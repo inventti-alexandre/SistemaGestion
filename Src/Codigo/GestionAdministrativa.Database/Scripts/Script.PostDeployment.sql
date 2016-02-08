@@ -16,3 +16,4 @@ Post-Deployment Script Template
 :r .\ModeloCelulares.sql
 :r .\TiposCelulares.sql
 :r .\TipoComprobante.sql
+:r .\TipoMovimientoCaja.sql

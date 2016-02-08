@@ -171,7 +171,10 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                     _pagoCelular.Vales =  _pagoCelular.Vales?? 0 + item.Importe;
                 else if (item.TipoPago == "Descuento")
                     _pagoCelular.Taller = _pagoCelular.Taller ?? 0 + item.Importe;
+                else if (item.TipoPago == "A Favor")
+                    _pagoCelular.Senia = _pagoCelular.Senia ?? 0 + item.Importe;
             }
+            _pagoCelular.Monto = ucDetallePagos.Total;
             Uow.PagosCelulares.Agregar(_pagoCelular);
 
             RegistrarCajaYCajaMovimiento();
@@ -183,7 +186,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private void RegistrarCajaYCajaMovimiento()
         {
             var caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id && c.FCierre == null).FirstOrDefault();
-            caja.Ingresos = caja.Ingresos ?? 0 + ucPagos1.Total;
+            caja.Ingresos = (caja.Ingresos ?? 0) + ucPagos1.Total;
             caja.FechaModificacion = _clock.Now;
             caja.OperadorModificacionId = Context.OperadorActual.Id;
             caja.SucursalModificacionId = Context.SucursalActual.Id;
@@ -193,7 +196,18 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             var cajaMovimiento = new CajaMovimiento();
             cajaMovimiento.Id = Guid.NewGuid();
             cajaMovimiento.CajaId = caja.Id;
+            cajaMovimiento.TipoMovimientoCajaId = 1; //Pago de sistema
+            cajaMovimiento.TipoComprobante = 2; //Pago de sistema
+            cajaMovimiento.ComprobanteId = _pagoCelular.Id; //id del pago Celular
+            cajaMovimiento.Senia = _pagoCelular.Senia;
+            cajaMovimiento.Importe = _pagoCelular.Monto;
+            cajaMovimiento.ImpFac = _pagoCelular.Monto;
+            cajaMovimiento.Efectivo = _pagoCelular.Efectivo;
+            cajaMovimiento.FechaAlta = _clock.Now;
+            cajaMovimiento.OperadorAltaId = Context.OperadorActual.Id;
+            cajaMovimiento.SucursalAltaId = Context.SucursalActual.Id;
 
+            Uow.CajaMovimientos.Agregar(cajaMovimiento);
         }
 
         private void UsarMontoAFavor()

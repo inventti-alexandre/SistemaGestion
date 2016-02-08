@@ -117,6 +117,7 @@
     <None Include="Scripts\EmpresasCelulares.sql" />
     <None Include="Scripts\TiposCelulares.sql" />
     <None Include="Scripts\ModeloCelulares.sql" />
+    <None Include="Scripts\TipoMovimientoCaja.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Dias.sql" />

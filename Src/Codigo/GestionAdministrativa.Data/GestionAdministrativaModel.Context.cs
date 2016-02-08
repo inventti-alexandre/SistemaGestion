@@ -7,10 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using GestionAdministrativa.Entities;
-
 namespace GestionAdministrativa.Data
 {
+    using GestionAdministrativa.Entities;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;

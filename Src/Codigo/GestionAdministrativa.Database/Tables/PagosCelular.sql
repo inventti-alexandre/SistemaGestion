@@ -6,6 +6,7 @@
     [Efectivo] MONEY NULL, 
     [Vales] MONEY NULL, 
     [Taller] MONEY NULL, 
+	[Senia] MONEY NULL,
     [Monto] MONEY NOT NULL, 
     [CelularId] UNIQUEIDENTIFIER NOT NULL, 
     [FechaAlta] DATETIME NOT NULL, 
@@ -14,6 +15,7 @@
     [OperadorModificacionId] UNIQUEIDENTIFIER NULL, 
     [SucursalModificacionId] INT NULL, 
     [FechaModificacion] DATETIME NULL, 
+   
     CONSTRAINT [FK_PagosCelular_Celular] FOREIGN KEY (CelularId) REFERENCES Celulares(Id), 
     CONSTRAINT [FK_PagosCelular_OperadorAlta] FOREIGN KEY (OperadorAltaId) REFERENCES Operadores(Id), 
     CONSTRAINT [FK_PagosCelular_SucursalAlta] FOREIGN KEY (SucursalAltaId) REFERENCES Sucursales(Id), 

@@ -446,6 +446,7 @@
           <Property Name="Efectivo" Type="money" />
           <Property Name="Vales" Type="money" />
           <Property Name="Taller" Type="money" />
+          <Property Name="Senia" Type="money" />
           <Property Name="Monto" Type="money" Nullable="false" />
           <Property Name="CelularId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="FechaAlta" Type="datetime" Nullable="false" />
@@ -4363,6 +4364,7 @@
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_PagosCelular_SucursalAlta" FromRole="PagosCelular" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_PagosCelular_SucursalModificacion" FromRole="PagosCelular" ToRole="Sucursales" />
           <NavigationProperty Name="Celulare" Relationship="GestionAdministrativa.Model.FK_PagosCelular_Celular" FromRole="PagoCelular" ToRole="Celulare" />
+          <Property Name="Senia" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
         <EntityType Name="Pais">
           <Key>
@@ -8323,6 +8325,7 @@
           <EntitySetMapping Name="PagosCelular">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.PagoCelular">
               <MappingFragment StoreEntitySet="PagosCelular">
+                <ScalarProperty Name="Senia" ColumnName="Senia" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Desde" ColumnName="Desde" />
                 <ScalarProperty Name="Hasta" ColumnName="Hasta" />
