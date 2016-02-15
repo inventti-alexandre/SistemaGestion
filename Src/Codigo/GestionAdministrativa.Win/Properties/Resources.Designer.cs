@@ -73,6 +73,16 @@ namespace GestionAdministrativa.Win.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap balance {
+            get {
+                object obj = ResourceManager.GetObject("balance", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bank {
             get {
                 object obj = ResourceManager.GetObject("Bank", resourceCulture);
@@ -489,6 +499,16 @@ namespace GestionAdministrativa.Win.Properties {
         internal static System.Drawing.Bitmap Garbage_Closed {
             get {
                 object obj = ResourceManager.GetObject("Garbage_Closed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap infCaja {
+            get {
+                object obj = ResourceManager.GetObject("infCaja", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

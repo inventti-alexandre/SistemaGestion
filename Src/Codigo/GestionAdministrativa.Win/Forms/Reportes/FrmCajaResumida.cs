@@ -1,4 +1,5 @@
 ﻿using GestionAdministrativa.Business.Interfaces;
+using GestionAdministrativa.Data.Interfaces;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
@@ -15,8 +16,10 @@ namespace GestionAdministrativa.Win.Forms.Reportes
     public partial class FrmCajaResumida : FormBase
     {
         private readonly IReporteNegocio _reporteNegocio;
-        public FrmCajaResumida()
+        public FrmCajaResumida(IFormFactory formFactory, IGestionAdministrativaUow uow, IReporteNegocio reporteNegocio)
         {
+            _reporteNegocio = reporteNegocio;
+
             InitializeComponent();
         }
 

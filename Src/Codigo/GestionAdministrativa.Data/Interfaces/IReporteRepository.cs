@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionAdministrativa.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,8 @@ namespace GestionAdministrativa.Data.Interfaces
         //IQueryable<ComprobantesByVentaId_Result> ComprobantesByVentaId(Guid ventaId);
         //IQueryable<ComprobantesDelDia1_Result> ComprobantesDelDia();
         //IQueryable<ProximasCuotasByCobrador_Result> ProximasCuotasByCobrador(int cobradorId);
-        
+
+        List<Reporte_CajaResumida_Ingresos_Result> CajaResumidaIngresos(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId);
     }
 
 }

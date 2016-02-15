@@ -10,7 +10,7 @@ using GestionAdministrativa.Entities;
 
 namespace GestionAdministrativa.Business
 {
-    public  class ReporteNegocio: BusinessBase, IReporteNegocio
+    public  class ReporteNegocio: BusinessBase, GestionAdministrativa.Business.Interfaces.IReporteNegocio   
     {
         private IClock _clock;
 
@@ -22,8 +22,7 @@ namespace GestionAdministrativa.Business
 
         public List<Reporte_CajaResumida_Ingresos_Result> CajaResumidaIngresos(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId)
         {
-            //return Uow.Reportes(inicio, fin, sucursalId, operadorId);
-            return new List<Reporte_CajaResumida_Ingresos_Result>();
+            return Uow.Reportes.CajaResumidaIngresos(inicio, fin, sucursalId, operadorId);
         }
     }
 }

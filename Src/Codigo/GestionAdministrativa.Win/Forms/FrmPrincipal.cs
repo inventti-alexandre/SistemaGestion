@@ -19,6 +19,7 @@ using GestionAdministrativa.Win.Forms.Moviles;
 using Telerik.WinControls;
 using GestionAdministrativa.Win.Forms.Pagos;
 using GestionAdministrativa.Win.Forms.Cajas;
+using GestionAdministrativa.Win.Forms.Reportes;
 
 namespace GestionAdministrativa.Win.Forms
 {
@@ -175,10 +176,11 @@ namespace GestionAdministrativa.Win.Forms
             
         }
 
-       
-
-       
-      
-      
+        private void btnCajaResumida_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmCajaResumida>();
+            frm.Show();
+        }
+     
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GestionAdministrativa.Data.Interfaces;
-
+using GestionAdministrativa.Entities;
 namespace GestionAdministrativa.Data.Repository
 {
     public class ReporteRepository : EFBaseRepository, IReporteRepository
@@ -19,6 +19,10 @@ namespace GestionAdministrativa.Data.Repository
         {
         }
 
+        public List<Reporte_CajaResumida_Ingresos_Result> CajaResumidaIngresos(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId)
+        {
+            return GestionAdministrativaDbContext.Reporte_CajaResumida_Ingresos(sucursalId, inicio, fin, operadorId).ToList();
+        }
         //public IQueryable<ComprobantesByVentaId_Result> ComprobantesByVentaId(Guid ventaId)
         //{
         //    return AlejandriaDbContext.ComprobantesByVentaId(ventaId).AsQueryable();

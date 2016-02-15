@@ -401,6 +401,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Add-New-blue.png" />
+    <None Include="Resources\balance.png" />
     <Content Include="Resources\Bank.png" />
     <Content Include="Resources\Book-Open.png" />
     <Content Include="Resources\Bullets.png" />
@@ -427,6 +428,7 @@
     <None Include="Resources\edit.png" />
     <Content Include="Resources\error.png" />
     <Content Include="Resources\Garbage-Closed.png" />
+    <None Include="Resources\infCaja.png" />
     <Content Include="Resources\loading.gif" />
     <Content Include="Resources\Login-01.png" />
     <Content Include="Resources\Login-01_16x16.png" />
