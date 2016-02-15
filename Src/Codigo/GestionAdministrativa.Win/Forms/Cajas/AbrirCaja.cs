@@ -44,7 +44,7 @@ namespace GestionAdministrativa.Win.Forms.Cajas
             caja.OperadorId = Context.OperadorActual.Id;
             caja.Fecha = _clock.Now;
             caja.Inicio = Inicio;
-            //caja.PcAlta = 
+            caja.PcAlta = System.Environment.MachineName;
             caja.FechaAlta = _clock.Now;
             caja.OperadorAltaId = Context.OperadorActual.Id;
             caja.SucursalId = Context.SucursalActual.Id;

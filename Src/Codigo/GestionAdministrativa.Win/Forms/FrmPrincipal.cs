@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Framework.Common.Utility;
 using GestionAdministrativa.Data;
 using GestionAdministrativa.Data.Interfaces;
+using GestionAdministrativa.Entities;
 using GestionAdministrativa.Win;
 using GestionAdministrativa.Win.Enums;
 using GestionAdministrativa.Win.Forms;
@@ -21,11 +24,13 @@ namespace GestionAdministrativa.Win.Forms
 {
     public partial class FrmPrincipal : FormBase
     {
-
-        public FrmPrincipal(IFormFactory formFactory, IGestionAdministrativaUow uow)//, IUowFactory uowFactory)
+        public IClock _clock;
+        private Caja _caja;
+        public FrmPrincipal(IFormFactory formFactory, IGestionAdministrativaUow uow,IClock clock)//, IUowFactory uowFactory)
         {
             FormFactory = formFactory;
             Uow = uow;
+            _clock = clock;
            // UowFactory = uowFactory;
             InitializeComponent();
         }
@@ -71,8 +76,88 @@ namespace GestionAdministrativa.Win.Forms
 
         private void BtnCaja_Click(object sender, EventArgs e)
         {
-            var frm = FormFactory.Create<AbrirCaja>();
-            frm.Show();
+            using (var formCrear = FormFactory.Create<AbrirCaja>())
+            {
+                var result = formCrear.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    formCrear.Close();
+                    HabilitarControlesCajaAbierta();
+                }
+            }
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            ControlCaja();
+        }
+
+        private void ControlCaja()
+        {
+            _caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id && c.FCierre == null).FirstOrDefault();
+            if (_caja == null)
+            {
+                // no existe caja de ese usuario, se debe abrir una
+                MessageBox.Show("Debe abrir una caja.");
+              
+                btnPagos.Enabled = false;
+                BtnCerrarCaja.Enabled = false;
+               
+            }
+            else if (_caja.FechaAlta.Value.Hour < 16 && _clock.Now.Hour == 16)
+            {
+                // estamos en las 16hs y se debe forzar el cierre de caja y la apertura de una nueva.
+                MessageBox.Show("Debe abrir una caja.");
+                DeshabilitarControlesPago();
+                CerrarCaja(_caja);
+
+              
+                btnPagos.Enabled = false;
+               
+
+                    
+
+            }
+            else
+            {
+                HabilitarControlesCajaAbierta();
+            }
+        }
+
+        private void HabilitarControlesCajaAbierta()
+        {
+            btnPagos.Enabled = true;
+            BtnAbrirCaja.Enabled = false;
+            BtnCerrarCaja.Enabled = true;
+        }
+
+        private void CerrarCaja(Entities.Caja caja)
+        {
+            if (caja==null)
+                caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id && c.FCierre == null).FirstOrDefault();
+            
+            caja.FCierre = _clock.Now;
+            caja.FechaModificacion = _clock.Now;
+            caja.OperadorModificacionId = Context.OperadorActual.Id;
+            Uow.Cajas.Modificar(caja);
+            Uow.Commit();
+        }
+
+        private void DeshabilitarControlesPago()
+        {
+            
+        }
+
+        private void BtnCerrarCaja_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea cerrar la caja?", "Cierre de caja", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                CerrarCaja(_caja);
+                btnPagos.Enabled = false;
+                BtnAbrirCaja.Enabled = true;
+                BtnCerrarCaja.Enabled = false;
+            }
+            
         }
 
        
