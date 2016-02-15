@@ -280,6 +280,12 @@
     <Compile Include="Forms\Pagos\ucPagos.Designer.cs">
       <DependentUpon>ucPagos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Reportes\FrmCajaResumida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reportes\FrmCajaResumida.Designer.cs">
+      <DependentUpon>FrmCajaResumida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserControlBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -360,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pagos\ucPagos.resx">
       <DependentUpon>ucPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reportes\FrmCajaResumida.resx">
+      <DependentUpon>FrmCajaResumida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControlBase.resx">
       <DependentUpon>UserControlBase.cs</DependentUpon>

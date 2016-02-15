@@ -9,10 +9,12 @@
 
 namespace GestionAdministrativa.Data
 {
-    using GestionAdministrativa.Entities;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
+    using GestionAdministrativa.Entities;
     
     public partial class GestionAdministrativaDbContext : DbContext
     {
@@ -68,5 +70,26 @@ namespace GestionAdministrativa.Data
         public virtual DbSet<ModelosCelulare> ModelosCelulares { get; set; }
         public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
         public virtual DbSet<Celular> Celulares { get; set; }
+    
+        public virtual ObjectResult<Reporte_CajaResumida_Ingresos_Result> Reporte_CajaResumida_Ingresos(Nullable<int> sucursalId, Nullable<System.DateTime> fechaInicio, Nullable<System.DateTime> fechaFin, Nullable<System.Guid> operadorId)
+        {
+            var sucursalIdParameter = sucursalId.HasValue ?
+                new ObjectParameter("SucursalId", sucursalId) :
+                new ObjectParameter("SucursalId", typeof(int));
+    
+            var fechaInicioParameter = fechaInicio.HasValue ?
+                new ObjectParameter("FechaInicio", fechaInicio) :
+                new ObjectParameter("FechaInicio", typeof(System.DateTime));
+    
+            var fechaFinParameter = fechaFin.HasValue ?
+                new ObjectParameter("FechaFin", fechaFin) :
+                new ObjectParameter("FechaFin", typeof(System.DateTime));
+    
+            var operadorIdParameter = operadorId.HasValue ?
+                new ObjectParameter("OperadorId", operadorId) :
+                new ObjectParameter("OperadorId", typeof(System.Guid));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Reporte_CajaResumida_Ingresos_Result>("Reporte_CajaResumida_Ingresos", sucursalIdParameter, fechaInicioParameter, fechaFinParameter, operadorIdParameter);
+        }
     }
 }

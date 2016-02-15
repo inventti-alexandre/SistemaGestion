@@ -159,6 +159,9 @@
     <Compile Include="ReciboDetalle.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Reporte_CajaResumida_Ingresos_Result.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Rol.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
