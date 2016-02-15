@@ -29,7 +29,7 @@ namespace GestionAdministrativa.Business
 
             criteros.PageNumber = pageIndex;
             criteros.PageSize = pageSize;
-            criteros.SortBy = !string.IsNullOrEmpty(sortBy) ? sortBy : "Apellido";
+            criteros.SortBy = !string.IsNullOrEmpty(sortBy) ? sortBy : "FechaAlta";
             criteros.SortDirection = !string.IsNullOrEmpty(sortDirection) ? sortDirection : "ASC";
 
             System.Linq.Expressions.Expression<Func<Caja, bool>> where =
@@ -37,10 +37,11 @@ namespace GestionAdministrativa.Business
                                                 (operador == null || x.OperadorAltaId == operador) 
                                                 //&& (x.FCierre != null || x.FCierre == fechaCierre)
                                                 //&& (movilId == null || x.MovilId == movilId)
+                                                && (x.FCierre !=null)
                                                  && (x.Aprobada == aprobado)
                                                 ;
 
-            var resultados = Uow.Cajas.Listado(criteros, where, x=> x.Id);
+            var resultados = Uow.Cajas.Listado(criteros, where);
 
             pageTotal = resultados.PagedMetadata.TotalItemCount;
 

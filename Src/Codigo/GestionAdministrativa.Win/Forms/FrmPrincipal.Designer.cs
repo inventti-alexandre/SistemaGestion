@@ -209,6 +209,7 @@
             this.BtnCajas.Text = "Cajas";
             this.BtnCajas.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnCajas.ThemeName = "TelerikMetro";
+            this.BtnCajas.Click += new System.EventHandler(this.BtnCajas_Click);
             // 
             // btnCajaResumida
             // 

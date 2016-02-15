@@ -10,6 +10,8 @@
 	[Saldo] MONEY NULL,
 	[Cheques] MONEY NULL,
 	[Bonos] MONEY NULL,
+	[Vales] MONEY NULL,
+	[Efectivo] MONEY NULL,
 	[PcAlta] [nvarchar](20) NULL,
 	[FechaAlta] [datetime] NULL,
 	[OperadorAltaId] [uniqueidentifier] NULL,
@@ -17,7 +19,8 @@
 	[FechaModificacion] [datetime] NULL,
 	[OperadorModificacionId] [uniqueidentifier] NULL,
 	[SucursalModificacionId] [int] NULL,
- [Aprobada] BIT NULL DEFAULT 0, 
+	[Aprobada] BIT NULL DEFAULT 0, 
+     
     CONSTRAINT [PK_Cajas] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC

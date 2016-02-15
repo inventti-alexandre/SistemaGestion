@@ -12,6 +12,8 @@
 	[Tarjeta] [money] NULL,
 	[Cheque] [money] NULL,
 	[Bono] [money] NULL,
+	[Vales] MONEY NULL,
+	[Transferencia] [money] NULL,
 	[fpcBono] [nvarchar](20) NULL,
 	[Deposito] [money] NULL,
 	[CajaIdAnt] [nchar](20) NULL,
@@ -25,7 +27,7 @@
 	[FechaModificacion] [datetime] NULL,
 	[OperadorModificacionId] [uniqueidentifier] NULL,
 	[SucursalModificacionId] [int] NULL,
-	[Transferencia] [money] NULL,
+	
  CONSTRAINT [PK_CajasMovimientos] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC

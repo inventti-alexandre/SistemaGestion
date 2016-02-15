@@ -20,6 +20,8 @@ namespace GestionAdministrativa.Entities.Dto
         public Nullable<decimal> Saldo { get; set; }
         public Nullable<decimal> Cheques { get; set; }
         public Nullable<decimal> Bonos { get; set; }
+        public Nullable<decimal> Efectivo { get; set; }
+        public Nullable<decimal> Vales { get; set; }
         public string PcAlta { get; set; }
         public Nullable<System.DateTime> FechaAlta { get; set; }
         public Nullable<System.Guid> OperadorAltaId { get; set; }

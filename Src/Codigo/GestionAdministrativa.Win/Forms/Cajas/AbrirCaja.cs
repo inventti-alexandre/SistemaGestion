@@ -48,6 +48,7 @@ namespace GestionAdministrativa.Win.Forms.Cajas
             caja.FechaAlta = _clock.Now;
             caja.OperadorAltaId = Context.OperadorActual.Id;
             caja.SucursalId = Context.SucursalActual.Id;
+            caja.Aprobada = false;
 
             Uow.Cajas.Agregar(caja);
             Uow.Commit();

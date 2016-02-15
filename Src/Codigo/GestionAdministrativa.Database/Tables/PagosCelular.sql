@@ -6,6 +6,7 @@
     [Efectivo] MONEY NULL, 
     [Vales] MONEY NULL, 
     [Taller] MONEY NULL, 
+	[Descuento] [money] NULL,
 	[Senia] MONEY NULL,
     [Monto] MONEY NOT NULL, 
     [CelularId] UNIQUEIDENTIFIER NOT NULL, 

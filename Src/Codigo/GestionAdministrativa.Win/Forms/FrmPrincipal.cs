@@ -118,7 +118,21 @@ namespace GestionAdministrativa.Win.Forms
                 btnPagos.Enabled = false;
                
             }
-            else if (_caja.FechaAlta.Value.Hour < 16 && _clock.Now.Hour == 16)
+            //else if (_caja.FechaAlta.Value.Date < _clock.Now.Date)
+            //{
+            //    // estamos en las 16hs y se debe forzar el cierre de caja y la apertura de una nueva.
+            //    MessageBox.Show("Debe abrir una caja.");
+            //    DeshabilitarControlesPago();
+            //    CerrarCaja(_caja);
+
+
+            //    btnPagos.Enabled = false;
+
+
+
+
+            //}
+            else if ((_caja.FechaAlta.Value.Hour < 16 && _clock.Now.Hour > 15)||(_caja.FechaAlta.Value.Date != _clock.Now.Date))
             {
                 // estamos en las 16hs y se debe forzar el cierre de caja y la apertura de una nueva.
                 MessageBox.Show("Debe abrir una caja.");
@@ -132,6 +146,7 @@ namespace GestionAdministrativa.Win.Forms
                     
 
             }
+          
             else
             {
                 HabilitarControlesCajaAbierta();
@@ -179,6 +194,12 @@ namespace GestionAdministrativa.Win.Forms
         private void btnCajaResumida_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmCajaResumida>();
+            frm.Show();
+        }
+
+        private void BtnCajas_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmCajasListado>();
             frm.Show();
         }
      

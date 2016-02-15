@@ -29,6 +29,7 @@ namespace GestionAdministrativa.Entities
         public Nullable<int> SucursalModificacionId { get; set; }
         public Nullable<System.DateTime> FechaModificacion { get; set; }
         public Nullable<decimal> Senia { get; set; }
+        public Nullable<decimal> Descuento { get; set; }
     
         public virtual Operador Operadores { get; set; }
         public virtual Operador Operadores1 { get; set; }

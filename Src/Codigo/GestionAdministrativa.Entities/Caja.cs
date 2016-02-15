@@ -38,6 +38,8 @@ namespace GestionAdministrativa.Entities
         public Nullable<System.Guid> OperadorModificacionId { get; set; }
         public Nullable<int> SucursalModificacionId { get; set; }
         public Nullable<bool> Aprobada { get; set; }
+        public Nullable<decimal> Vales { get; set; }
+        public Nullable<decimal> Efectivo { get; set; }
     
         public virtual Operador Operadores { get; set; }
         public virtual Operador Operadores1 { get; set; }

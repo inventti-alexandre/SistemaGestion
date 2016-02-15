@@ -23,7 +23,7 @@ namespace GestionAdministrativa.Win.Forms.Cajas
             Uow = uow;
             _cajaNegocio = cajaNegocio;
 
-            SortColumn = "Apellido";
+            SortColumn = "FechaAlta";
             SortDirection = "ASC";
 
             InitializeComponent();
@@ -32,6 +32,7 @@ namespace GestionAdministrativa.Win.Forms.Cajas
         private void FrmChoferesListado_Load(object sender, EventArgs e)
         {
             //ucFiltroChoferes.Filtered += ucFiltroChoferesOnFiltered;
+            RefrescarListado();
         }
 
         private void ucFiltroChoferesOnFiltered(object sender, EventArgs eventArgs)
@@ -44,9 +45,9 @@ namespace GestionAdministrativa.Win.Forms.Cajas
         public override async Task<int> RefrescarListado()
         {
             int pageTotal = 0;
-            Guid? operador = Guid.Empty;
+            Guid? operador = Guid.Parse("4fb4caf7-9fd7-4a39-bf85-b60f14c2e7ab");
             //var apellido = ucFiltroChoferes.Denominacion != "" ? ucFiltroChoferes.Denominacion : "";
-            var aprobado = true;//  ucFiltroChoferes.MovilId;
+            var aprobado = false;//  ucFiltroChoferes.MovilId;
             //if (movil == Guid.Empty)
             //    movil = null;
 
