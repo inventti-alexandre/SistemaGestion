@@ -76,15 +76,29 @@ namespace GestionAdministrativa.Win.Forms
 
         private void BtnCaja_Click(object sender, EventArgs e)
         {
-            using (var formCrear = FormFactory.Create<AbrirCaja>())
+            if (BtnAbrirCaja.Text == "Abrir Caja")
             {
-                var result = formCrear.ShowDialog();
-                if (result == DialogResult.OK)
+                using (var formCrear = FormFactory.Create<AbrirCaja>())
                 {
-                    formCrear.Close();
-                    HabilitarControlesCajaAbierta();
+                    var result = formCrear.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        formCrear.Close();
+                        HabilitarControlesCajaAbierta();
+                    }
                 }
             }
+            else
+            {
+                if (MessageBox.Show("Desea cerrar la caja?", "Cierre de caja", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    CerrarCaja(_caja);
+                    btnPagos.Enabled = false;
+                    BtnAbrirCaja.Text = "Abrir Caja";
+                
+                }
+            }
+            
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
@@ -101,7 +115,6 @@ namespace GestionAdministrativa.Win.Forms
                 MessageBox.Show("Debe abrir una caja.");
               
                 btnPagos.Enabled = false;
-                BtnCerrarCaja.Enabled = false;
                
             }
             else if (_caja.FechaAlta.Value.Hour < 16 && _clock.Now.Hour == 16)
@@ -127,8 +140,10 @@ namespace GestionAdministrativa.Win.Forms
         private void HabilitarControlesCajaAbierta()
         {
             btnPagos.Enabled = true;
-            BtnAbrirCaja.Enabled = false;
-            BtnCerrarCaja.Enabled = true;
+
+            BtnAbrirCaja.Text = "Cerrar Caja";
+            
+ 
         }
 
         private void CerrarCaja(Entities.Caja caja)
@@ -154,8 +169,8 @@ namespace GestionAdministrativa.Win.Forms
             {
                 CerrarCaja(_caja);
                 btnPagos.Enabled = false;
-                BtnAbrirCaja.Enabled = true;
-                BtnCerrarCaja.Enabled = false;
+                BtnAbrirCaja.Text = "Abrir Caja";
+
             }
             
         }

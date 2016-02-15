@@ -39,7 +39,6 @@
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
             this.btnPagos = new Telerik.WinControls.UI.RadButton();
             this.BtnAbrirCaja = new Telerik.WinControls.UI.RadButton();
-            this.BtnCerrarCaja = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnChofer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
@@ -49,7 +48,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnAbrirCaja)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCerrarCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -195,26 +193,11 @@
             this.BtnAbrirCaja.ThemeName = "TelerikMetro";
             this.BtnAbrirCaja.Click += new System.EventHandler(this.BtnCaja_Click);
             // 
-            // BtnCerrarCaja
-            // 
-            this.BtnCerrarCaja.AutoSize = true;
-            this.BtnCerrarCaja.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCerrarCaja.Image = global::GestionAdministrativa.Win.Properties.Resources.caja;
-            this.BtnCerrarCaja.Location = new System.Drawing.Point(453, 157);
-            this.BtnCerrarCaja.Name = "BtnCerrarCaja";
-            this.BtnCerrarCaja.Size = new System.Drawing.Size(136, 132);
-            this.BtnCerrarCaja.TabIndex = 8;
-            this.BtnCerrarCaja.Text = "Cerrar Caja";
-            this.BtnCerrarCaja.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnCerrarCaja.ThemeName = "TelerikMetro";
-            this.BtnCerrarCaja.Click += new System.EventHandler(this.BtnCerrarCaja_Click);
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1340, 652);
-            this.Controls.Add(this.BtnCerrarCaja);
             this.Controls.Add(this.BtnAbrirCaja);
             this.Controls.Add(this.btnPagos);
             this.Controls.Add(this.BtnCelulares);
@@ -242,7 +225,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Menu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPagos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnAbrirCaja)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCerrarCaja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -262,7 +244,6 @@
         private Telerik.WinControls.UI.RadMenuItem radMenuItem2;
         private Telerik.WinControls.UI.RadButton btnPagos;
         private Telerik.WinControls.UI.RadButton BtnAbrirCaja;
-        private Telerik.WinControls.UI.RadButton BtnCerrarCaja;
 
 
     }

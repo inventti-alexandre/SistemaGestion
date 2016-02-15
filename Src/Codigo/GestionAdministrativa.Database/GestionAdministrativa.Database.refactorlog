@@ -224,4 +224,46 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="DiaCargaId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="fceb4919-0e97-4fd4-b708-74e9f922de7d" ChangeDateTime="02/15/2016 15:30:11">
+    <Property Name="ElementName" Value="[dbo].[CajaBalance].[Sucursal]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CajaBalance]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SucursalAlta" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="cc4c56da-2f3c-463b-b55c-062ab62e1613" ChangeDateTime="02/15/2016 15:31:03">
+    <Property Name="ElementName" Value="[dbo].[CajaBalance].[Operador]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CajaBalance]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OperadorModificacion" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7bde0884-181a-48b4-be71-c56484600003" ChangeDateTime="02/15/2016 15:34:13">
+    <Property Name="ElementName" Value="[dbo].[CajaBalance].[SucursalAlta]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CajaBalance]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SucursalAltaId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e1c21284-d490-45c1-9b65-c659059b1c34" ChangeDateTime="02/15/2016 15:34:15">
+    <Property Name="ElementName" Value="[dbo].[CajaBalance].[OperadorAlta]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CajaBalance]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OperadorAltaId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4a5264ef-d86b-4a9a-9314-5ec9626c245a" ChangeDateTime="02/15/2016 15:34:18">
+    <Property Name="ElementName" Value="[dbo].[CajaBalance].[SucursalModificacion]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CajaBalance]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SucursalModificacionId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9c5d28f6-1387-49a5-931e-6cf977044794" ChangeDateTime="02/15/2016 15:34:21">
+    <Property Name="ElementName" Value="[dbo].[CajaBalance].[OperadorModificacion]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CajaBalance]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OperadorModificacionId" />
+  </Operation>
 </Operations>

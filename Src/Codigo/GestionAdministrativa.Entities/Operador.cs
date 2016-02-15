@@ -89,6 +89,8 @@ namespace GestionAdministrativa.Entities
             this.Choferes1 = new HashSet<Chofer>();
             this.Celulares = new HashSet<Celular>();
             this.Celulares1 = new HashSet<Celular>();
+            this.CajaBalances = new HashSet<CajaBalance>();
+            this.CajaBalances1 = new HashSet<CajaBalance>();
         }
     
         public System.Guid Id { get; set; }
@@ -183,5 +185,7 @@ namespace GestionAdministrativa.Entities
         public virtual ICollection<Chofer> Choferes1 { get; set; }
         public virtual ICollection<Celular> Celulares { get; set; }
         public virtual ICollection<Celular> Celulares1 { get; set; }
+        public virtual ICollection<CajaBalance> CajaBalances { get; set; }
+        public virtual ICollection<CajaBalance> CajaBalances1 { get; set; }
     }
 }

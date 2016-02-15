@@ -17,7 +17,8 @@
 	[FechaModificacion] [datetime] NULL,
 	[OperadorModificacionId] [uniqueidentifier] NULL,
 	[SucursalModificacionId] [int] NULL,
- CONSTRAINT [PK_Cajas] PRIMARY KEY CLUSTERED 
+ [Aprobada] BIT NULL DEFAULT 0, 
+    CONSTRAINT [PK_Cajas] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 90) ON [PRIMARY]

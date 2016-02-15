@@ -31,6 +31,20 @@
           <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
           <Property Name="SucursalModificacionId" Type="int" />
         </EntityType>
+        <EntityType Name="CajaBalance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Ingresos" Type="money" />
+          <Property Name="Egresos" Type="money" />
+          <Property Name="SucursalAltaId" Type="int" />
+          <Property Name="OperadorAltaId" Type="uniqueidentifier" />
+          <Property Name="FechaAlta" Type="datetime" />
+          <Property Name="SucursalModificacionId" Type="int" />
+          <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
+          <Property Name="FechaModificacion" Type="datetime" />
+        </EntityType>
         <EntityType Name="Cajas">
           <Key>
             <PropertyRef Name="Id" />
@@ -53,6 +67,7 @@
           <Property Name="FechaModificacion" Type="datetime" />
           <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
           <Property Name="SucursalModificacionId" Type="int" />
+          <Property Name="Aprobada" Type="bit" />
         </EntityType>
         <EntityType Name="CajasMovimientos">
           <Key>
@@ -818,6 +833,54 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Bancos">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CajaBalance_OperadorAlta">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="CajaBalance" Type="Self.CajaBalance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CajaBalance">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CajaBalance_OperadorModificacion">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="CajaBalance" Type="Self.CajaBalance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CajaBalance">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CajaBalance_SucursalAlta">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="CajaBalance" Type="Self.CajaBalance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CajaBalance">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CajaBalance_SucursalModificacion">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="CajaBalance" Type="Self.CajaBalance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CajaBalance">
               <PropertyRef Name="SucursalModificacionId" />
             </Dependent>
           </ReferentialConstraint>
@@ -3015,6 +3078,7 @@
         <EntityContainer Name="GestionAdministrativaModelStoreContainer">
           <EntitySet Name="__RefactorLog" EntityType="Self.__RefactorLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bancos" EntityType="Self.Bancos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CajaBalance" EntityType="Self.CajaBalance" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cajas" EntityType="Self.Cajas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CajasMovimientos" EntityType="Self.CajasMovimientos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CategoriasOperadores" EntityType="Self.CategoriasOperadores" Schema="dbo" store:Type="Tables" />
@@ -3079,6 +3143,22 @@
           <AssociationSet Name="FK_Bancos_SucursalModificacion" Association="Self.FK_Bancos_SucursalModificacion">
             <End Role="Sucursales" EntitySet="Sucursales" />
             <End Role="Bancos" EntitySet="Bancos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CajaBalance_OperadorAlta" Association="Self.FK_CajaBalance_OperadorAlta">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="CajaBalance" EntitySet="CajaBalance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CajaBalance_OperadorModificacion" Association="Self.FK_CajaBalance_OperadorModificacion">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="CajaBalance" EntitySet="CajaBalance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CajaBalance_SucursalAlta" Association="Self.FK_CajaBalance_SucursalAlta">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="CajaBalance" EntitySet="CajaBalance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CajaBalance_SucursalModificacion" Association="Self.FK_CajaBalance_SucursalModificacion">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="CajaBalance" EntitySet="CajaBalance" />
           </AssociationSet>
           <AssociationSet Name="FK_Cajas_Operador" Association="Self.FK_Cajas_Operador">
             <End Role="Operadores" EntitySet="Operadores" />
@@ -3870,6 +3950,7 @@
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_Cajas_SucursalAlta" FromRole="Cajas" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales2" Relationship="Self.FK_Cajas_SucursalModificacion" FromRole="Cajas" ToRole="Sucursales" />
           <NavigationProperty Name="OrdenesPagoDetalle" Relationship="Self.FK_OrdenesPagoDetalle_Cajas" FromRole="Cajas" ToRole="OrdenesPagoDetalle" />
+          <Property Name="Aprobada" Type="Boolean" />
         </EntityType>
         <EntityType Name="CajaMovimiento">
           <Key>
@@ -4233,6 +4314,8 @@
           <NavigationProperty Name="Choferes1" Relationship="GestionAdministrativa.Model.FK_Choferes_OperadorModificacion" FromRole="Operadores" ToRole="Choferes" />
           <NavigationProperty Name="Celulares" Relationship="GestionAdministrativa.Model.FK_Celulares_OperadoresAlta" FromRole="Operador" ToRole="Celulare" />
           <NavigationProperty Name="Celulares1" Relationship="GestionAdministrativa.Model.FK_Celulares_OperadoresModificacion" FromRole="Operador" ToRole="Celulare" />
+          <NavigationProperty Name="CajaBalances" Relationship="GestionAdministrativa.Model.FK_CajaBalance_OperadorAlta" FromRole="Operador" ToRole="CajaBalance" />
+          <NavigationProperty Name="CajaBalances1" Relationship="GestionAdministrativa.Model.FK_CajaBalance_OperadorModificacion" FromRole="Operador" ToRole="CajaBalance" />
           </EntityType>
         <EntityType Name="OperadorFuncion">
           <Key>
@@ -4722,6 +4805,8 @@
           <NavigationProperty Name="Choferes1" Relationship="GestionAdministrativa.Model.FK_Choferes_SucursalModificacion" FromRole="Sucursales" ToRole="Choferes" />
           <NavigationProperty Name="Celulares" Relationship="GestionAdministrativa.Model.FK_Celulares_SucursalesAlta" FromRole="Sucursal" ToRole="Celulare" />
           <NavigationProperty Name="Celulares1" Relationship="GestionAdministrativa.Model.FK_Celulares_SucursalModificacion" FromRole="Sucursal" ToRole="Celulare" />
+          <NavigationProperty Name="CajaBalances" Relationship="GestionAdministrativa.Model.FK_CajaBalance_SucursalAlta" FromRole="Sucursal" ToRole="CajaBalance" />
+          <NavigationProperty Name="CajaBalances1" Relationship="GestionAdministrativa.Model.FK_CajaBalance_SucursalModificacion" FromRole="Sucursal" ToRole="CajaBalance" />
           </EntityType>
         <EntityType Name="TipoCelular">
           <Key>
@@ -7648,6 +7733,23 @@
             <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
             <Parameter Name="OperadorId" Mode="In" Type="Guid" />
           </FunctionImport>
+          <EntitySet Name="CajaBalances" EntityType="GestionAdministrativa.Model.CajaBalance" />
+          <AssociationSet Name="FK_CajaBalance_OperadorAlta" Association="GestionAdministrativa.Model.FK_CajaBalance_OperadorAlta">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="CajaBalance" EntitySet="CajaBalances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CajaBalance_OperadorModificacion" Association="GestionAdministrativa.Model.FK_CajaBalance_OperadorModificacion">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="CajaBalance" EntitySet="CajaBalances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CajaBalance_SucursalAlta" Association="GestionAdministrativa.Model.FK_CajaBalance_SucursalAlta">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="CajaBalance" EntitySet="CajaBalances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CajaBalance_SucursalModificacion" Association="GestionAdministrativa.Model.FK_CajaBalance_SucursalModificacion">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="CajaBalance" EntitySet="CajaBalances" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Chofer">
           <Key>
@@ -7963,6 +8065,72 @@
           <Property Type="Int32" Name="Cantidad" Nullable="false" />
           <Property Type="Decimal" Name="Total" Nullable="false" Precision="19" />
         </ComplexType>
+        <EntityType Name="CajaBalance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Ingresos" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Egresos" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SucursalAltaId" Type="Int32" />
+          <Property Name="OperadorAltaId" Type="Guid" />
+          <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+          <Property Name="SucursalModificacionId" Type="Int32" />
+          <Property Name="OperadorModificacionId" Type="Guid" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OperadorAlta" Relationship="GestionAdministrativa.Model.FK_CajaBalance_OperadorAlta" FromRole="CajaBalance" ToRole="Operador" />
+          <NavigationProperty Name="OperadorModificacion" Relationship="GestionAdministrativa.Model.FK_CajaBalance_OperadorModificacion" FromRole="CajaBalance" ToRole="Operador" />
+          <NavigationProperty Name="SucursalAlta" Relationship="GestionAdministrativa.Model.FK_CajaBalance_SucursalAlta" FromRole="CajaBalance" ToRole="Sucursal" />
+          <NavigationProperty Name="SucursalModificacion" Relationship="GestionAdministrativa.Model.FK_CajaBalance_SucursalModificacion" FromRole="CajaBalance" ToRole="Sucursal" />
+        </EntityType>
+        <Association Name="FK_CajaBalance_OperadorAlta">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.CajaBalance" Role="CajaBalance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CajaBalance">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CajaBalance_OperadorModificacion">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.CajaBalance" Role="CajaBalance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CajaBalance">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CajaBalance_SucursalAlta">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.CajaBalance" Role="CajaBalance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CajaBalance">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CajaBalance_SucursalModificacion">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.CajaBalance" Role="CajaBalance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CajaBalance">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -7993,6 +8161,7 @@
           <EntitySetMapping Name="Cajas">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.Caja">
               <MappingFragment StoreEntitySet="Cajas">
+                <ScalarProperty Name="Aprobada" ColumnName="Aprobada" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="SucursalId" ColumnName="SucursalId" />
                 <ScalarProperty Name="OperadorId" ColumnName="OperadorId" />
@@ -8765,6 +8934,21 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="CajaBalances">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.CajaBalance">
+              <MappingFragment StoreEntitySet="CajaBalance">
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
+                <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
+                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
+                <ScalarProperty Name="Egresos" ColumnName="Egresos" />
+                <ScalarProperty Name="Ingresos" ColumnName="Ingresos" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

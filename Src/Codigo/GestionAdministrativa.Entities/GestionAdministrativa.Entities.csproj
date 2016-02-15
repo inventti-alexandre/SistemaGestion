@@ -46,6 +46,9 @@
     <Compile Include="Caja.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CajaBalance.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="CajaMovimiento.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>

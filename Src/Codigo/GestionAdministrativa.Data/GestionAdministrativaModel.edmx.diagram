@@ -234,6 +234,11 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_CelularesMovimiento_Celular" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_Choferes_Celulares" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosCelular_Celular" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.CajaBalance" Width="1.5" PointX="32.25" PointY="76" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CajaBalance_OperadorAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CajaBalance_OperadorModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CajaBalance_SucursalAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_CajaBalance_SucursalModificacion" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
