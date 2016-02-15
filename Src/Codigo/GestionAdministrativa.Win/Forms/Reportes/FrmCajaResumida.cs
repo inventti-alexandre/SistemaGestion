@@ -1,4 +1,5 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using GestionAdministrativa.Business.Interfaces;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace GestionAdministrativa.Win.Forms.Reportes
 {
     public partial class FrmCajaResumida : FormBase
     {
+        private readonly IReporteNegocio _reporteNegocio;
         public FrmCajaResumida()
         {
             InitializeComponent();
@@ -42,7 +44,29 @@ namespace GestionAdministrativa.Win.Forms.Reportes
             //                   : ucFiltroOperadores.Operador.Usuario;
 
 
-            //var ingresos = _reporteNegocio.CajaResumidaIngresos(inicio, fin, Context.SucursalActual.Id, operadorId);
+            var ingresos = _reporteNegocio.CajaResumidaIngresos(inicio, fin, Context.SucursalActual.Id, null);
+
+            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Ingresos", ingresos));
+
+            var sucursal = Context.SucursalActual.Nombre;
+            var fecha = DateTime.Now.ToShortDateString();
+            var hora = DateTime.Now.ToShortTimeString();
+            var sucursalId = Context.SucursalActual.Id;
+
+            var parametros = new List<ReportParameter>
+                                {
+                                    new ReportParameter("Sucursal", sucursal),
+                                    new ReportParameter("SucursalId", sucursalId.ToString()),
+                                    new ReportParameter("Fecha", fecha),
+                                    new ReportParameter("Hora", hora),
+                                    new ReportParameter("Desde", dtDesde.Value.ToShortDateString()),
+                                    new ReportParameter("Hasta", dtHasta.Value.ToShortDateString()),
+                                    //new ReportParameter("Operador", operador)
+                                    new ReportParameter("Operador", "")
+                                };
+            reportViewer.LocalReport.SetParameters(parametros);
+            this.reportViewer.RefreshReport();
+            this.Cursor = Cursors.Default;
         }
         private DateTime SetTimeToZero(DateTime fecha)
         {

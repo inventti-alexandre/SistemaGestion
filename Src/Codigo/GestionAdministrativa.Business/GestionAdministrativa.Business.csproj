@@ -67,6 +67,7 @@
     <Compile Include="Interfaces\IReporteNegocio.cs" />
     <Compile Include="MovilesNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReporteNegocio.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

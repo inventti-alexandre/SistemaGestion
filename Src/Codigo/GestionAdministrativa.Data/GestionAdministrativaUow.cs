@@ -19,13 +19,14 @@ namespace GestionAdministrativa.Data
             RepositoryProvider = repositoryProvider;
         }
 
+        public IReporteRepository Reportes { get { return GetRepo<IReporteRepository>(); } }
         public IRepository<Caja> Cajas { get { return GetStandardRepo<Caja>(); } }
         public IRepository<Chofer> Choferes { get { return GetStandardRepo<Chofer>(); } }
         public IRepository<Operador> Operadores { get { return GetStandardRepo<Operador>(); } }
         public IRepository<Movil> Moviles { get { return GetStandardRepo<Movil>(); } }
         public IRepository<PagoCelular> PagosCelulares { get { return GetStandardRepo<PagoCelular>(); } }
         public IRepository<Celular> Celulares { get { return GetStandardRepo<Celular>(); } }
-        public IReporteRepository Reportes { get; private set; }
+        //public IReporteRepository Reportes { get; private set; }
         public IRepository<Sucursal> Sucursales { get { return GetStandardRepo<Sucursal>(); } }
         public IRepository<Dia> Dias { get { return GetStandardRepo<Dia>(); } }
         public IRepository<EmpresasCelulare> EmpresasCelulares{get { return GetStandardRepo<EmpresasCelulare>(); }}
