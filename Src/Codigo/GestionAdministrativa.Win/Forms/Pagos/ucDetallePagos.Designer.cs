@@ -77,7 +77,7 @@
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.NullableValue = new System.DateTime(2016, 1, 7, 11, 46, 3, 884);
             this.dtpDesde.NullDate = new System.DateTime(((long)(0)));
-            this.dtpDesde.Size = new System.Drawing.Size(104, 29);
+            this.dtpDesde.Size = new System.Drawing.Size(126, 29);
             this.dtpDesde.TabIndex = 2;
             this.dtpDesde.TabStop = false;
             this.dtpDesde.Text = "7/1/2016";
@@ -95,7 +95,7 @@
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.NullableValue = new System.DateTime(2016, 1, 7, 11, 46, 3, 884);
             this.dtpHasta.NullDate = new System.DateTime(((long)(0)));
-            this.dtpHasta.Size = new System.Drawing.Size(104, 29);
+            this.dtpHasta.Size = new System.Drawing.Size(131, 29);
             this.dtpHasta.TabIndex = 3;
             this.dtpHasta.TabStop = false;
             this.dtpHasta.Text = "7/1/2016";

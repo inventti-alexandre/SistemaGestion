@@ -63,13 +63,13 @@ namespace GestionAdministrativa.Business
         {
             PagoCelular nuevoPago = new PagoCelular();
             nuevoPago.Id = Guid.NewGuid();
-            nuevoPago.Desde = desde;
-            nuevoPago.Hasta = hasta;
+            nuevoPago.Desde = desde.Date;
+            nuevoPago.Hasta = hasta.Date;
             TimeSpan dias = hasta - desde;            
             nuevoPago.Monto = celular.TiposCelulares.Monto * (dias.Days+1);
             nuevoPago.CelularId = celular.Id;
             nuevoPago.FechaAlta = _clock.Now;
-            nuevoPago.OperadorAltaId = Guid.Parse("4fb4caf7-9fd7-4a39-bf85-b60f14c2e7ab");
+            nuevoPago.OperadorAltaId =  Guid.Parse("4fb4caf7-9fd7-4a39-bf85-b60f14c2e7ab");
             nuevoPago.SucursalAltaId = 1;
 
             return nuevoPago;

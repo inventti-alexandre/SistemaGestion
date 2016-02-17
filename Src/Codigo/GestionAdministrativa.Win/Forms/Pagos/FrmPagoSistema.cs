@@ -41,7 +41,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         #region Metodos
         private void ucDetallePagosOnFechasSelected(object sender, PagoCelular pago)
         {
-            DateTime hasta = (pago.Hasta ?? _clock.Now).AddDays(1);
+            DateTime hasta = (pago.Hasta ?? _clock.Now);//.AddDays(1);
             GenerarDeudaPago(pago.Desde, hasta);
         }
         private void ucBuscardorChoferMovilOnBuscarFinished(object sender, List<Chofer> choferes)
@@ -108,15 +108,36 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
                 DateTime date = _celular.FechaVencimientoPago ?? DateTime.Now.AddDays(-1);
                 date = date.AddDays(1);
+                DateTime hasta = date.AddDays(cantidadDias);
                
                 
                 ucDetallePagos.FechaDesde = date;
+                if (cantidadDias == 4)
+                {
+                    //ucDetallePagos.FechaHasta = date.AddDays(cantidadDias);
+                }
+                else
+                {
+                    DateTime hastaIdeal = _clock.Now.AddDays(3);
+                    if (hasta < hastaIdeal)
+                    {
+                        MessageBox.Show("Atrasado");
+                        TimeSpan ts = hastaIdeal - date;
+                        cantidadDias = ts.Days;
+                        hasta = date.AddDays(cantidadDias);
+                        //ucDetallePagos.FechaHasta = hasta;
+                    }
+                       
+                }
                 ucDetallePagos.FechaHasta = date.AddDays(cantidadDias);
-                GenerarDeudaPago(date, date.AddDays(cantidadDias));
+                GenerarDeudaPago(date,hasta);
                     
                 
             }
-
+            else
+            {
+                MessageBox.Show("Este chofer no tiene celular asociado");
+            }
              _montosAFavor = Uow.ChoferesMontosFavor.Listado().Where(m => m.ChoferId == _chofer.Id && m.Importe > m.ImpOcupado).ToList();
             if (_montosAFavor != null)
             {
@@ -149,7 +170,6 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             Guardar();
             this.Close();
         }
-
        
         private void Guardar()
         {
