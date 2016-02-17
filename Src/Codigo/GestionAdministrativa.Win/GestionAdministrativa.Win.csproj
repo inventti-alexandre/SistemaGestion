@@ -157,6 +157,12 @@
     <Compile Include="Forms\Cajas\FrmCajasListado.Designer.cs">
       <DependentUpon>FrmCajasListado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Cajas\FrmCrearEditarCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cajas\FrmCrearEditarCaja.Designer.cs">
+      <DependentUpon>FrmCrearEditarCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Celulares\FrmCrearEditarCelular.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Cajas\FrmCajasListado.resx">
       <DependentUpon>FrmCajasListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cajas\FrmCrearEditarCaja.resx">
+      <DependentUpon>FrmCrearEditarCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Celulares\FrmCrearEditarCelular.resx">
       <DependentUpon>FrmCrearEditarCelular.cs</DependentUpon>

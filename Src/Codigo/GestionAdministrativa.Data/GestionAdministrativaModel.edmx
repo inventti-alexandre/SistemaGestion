@@ -61,7 +61,9 @@
           <Property Name="Cheques" Type="money" />
           <Property Name="Bonos" Type="money" />
           <Property Name="Vales" Type="money" />
+          <Property Name="ValesReal" Type="money" />
           <Property Name="Efectivo" Type="money" />
+          <Property Name="EfectivoReal" Type="money" />
           <Property Name="PcAlta" Type="nvarchar" MaxLength="20" />
           <Property Name="FechaAlta" Type="datetime" />
           <Property Name="OperadorAltaId" Type="uniqueidentifier" />
@@ -3963,6 +3965,8 @@
           <Property Name="Aprobada" Type="Boolean" />
           <Property Name="Vales" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Efectivo" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ValesReal" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="EfectivoReal" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
         <EntityType Name="CajaMovimiento">
           <Key>
@@ -8185,6 +8189,8 @@
           <EntitySetMapping Name="Cajas">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.Caja">
               <MappingFragment StoreEntitySet="Cajas">
+                <ScalarProperty Name="EfectivoReal" ColumnName="EfectivoReal" />
+                <ScalarProperty Name="ValesReal" ColumnName="ValesReal" />
                 <ScalarProperty Name="Efectivo" ColumnName="Efectivo" />
                 <ScalarProperty Name="Vales" ColumnName="Vales" />
                 <ScalarProperty Name="Aprobada" ColumnName="Aprobada" />

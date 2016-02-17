@@ -54,7 +54,7 @@ namespace GestionAdministrativa.Win.Forms.Cajas
             var activo = true;
 
             var cajas = _cajaNegocio.Listado(SortColumn, SortDirection, operador, aprobado, 1, 5000, out pageTotal);
-            GridChoferes.DataSource = cajas.ToList();
+            GridCajas.DataSource = cajas.ToList();
             return pageTotal;
         }
 
@@ -110,30 +110,7 @@ namespace GestionAdministrativa.Win.Forms.Cajas
         #region Controles
         private void GridChoferes_CommandCellClick(object sender, EventArgs e)
         {
-            var commandCell = (Telerik.WinControls.UI.GridCommandCellElement)sender;
 
-            var selectedRow = this.GridChoferes.SelectedRows.FirstOrDefault();
-            if (selectedRow == null)
-                return;
-
-            var chofer = selectedRow.DataBoundItem as ChoferesDto;
-
-            if (chofer == null)
-                return;
-
-            switch (commandCell.ColumnInfo.Name)
-            {
-                case "Detail":
-                    Detail(chofer.Id);
-                    break;
-                case "Edit":
-                    Edit(chofer.Id);
-                    break;
-                case "Delete":
-                    Delete(chofer.Id);
-                    break;
-
-            }
         }
 
 

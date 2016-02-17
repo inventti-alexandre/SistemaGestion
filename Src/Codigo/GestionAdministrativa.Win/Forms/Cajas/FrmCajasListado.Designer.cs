@@ -37,24 +37,20 @@
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn4 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn5 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn6 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.GridChoferes = new Telerik.WinControls.UI.MasterGridViewTemplate();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
+            this.GridCajas = new Telerik.WinControls.UI.RadGridView();
             ((System.ComponentModel.ISupportInitialize)(this.GridChoferes)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridCajas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridCajas.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
-            // 
-            // radPanel1
-            // 
-            this.radPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.radPanel1.Location = new System.Drawing.Point(3, 3);
-            this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(1332, 181);
-            this.radPanel1.TabIndex = 3;
-            this.radPanel1.ThemeName = "TelerikMetro";
             // 
             // GridChoferes
             // 
@@ -115,36 +111,84 @@
             gridViewCommandColumn2,
             gridViewCommandColumn3});
             // 
-            // tableLayoutPanel1
+            // GridCajas
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.radPanel1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 26);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 391F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1338, 620);
-            this.tableLayoutPanel1.TabIndex = 9;
+            this.GridCajas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridCajas.Location = new System.Drawing.Point(18, 258);
+            // 
+            // GridCajas
+            // 
+            this.GridCajas.MasterTemplate.AllowColumnReorder = false;
+            this.GridCajas.MasterTemplate.AllowDragToGroup = false;
+            this.GridCajas.MasterTemplate.AutoGenerateColumns = false;
+            this.GridCajas.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewTextBoxColumn7.FieldName = "Fecha";
+            gridViewTextBoxColumn7.HeaderText = "Fecha";
+            gridViewTextBoxColumn7.Name = "Fecha";
+            gridViewTextBoxColumn7.Width = 749;
+            gridViewTextBoxColumn8.FieldName = "Ingresos";
+            gridViewTextBoxColumn8.HeaderText = "Ingresos";
+            gridViewTextBoxColumn8.Name = "Ingresos";
+            gridViewTextBoxColumn8.Width = 189;
+            gridViewTextBoxColumn9.FieldName = "Egresos";
+            gridViewTextBoxColumn9.HeaderText = "Egresos";
+            gridViewTextBoxColumn9.Name = "Egresos";
+            gridViewTextBoxColumn9.Width = 189;
+            gridViewTextBoxColumn10.FieldName = "Aprobada";
+            gridViewTextBoxColumn10.HeaderText = "Aprobada";
+            gridViewTextBoxColumn10.Name = "Aprobada";
+            gridViewTextBoxColumn10.Width = 99;
+            gridViewCommandColumn4.HeaderText = "";
+            gridViewCommandColumn4.Image = global::GestionAdministrativa.Win.Properties.Resources.Data_Edit;
+            gridViewCommandColumn4.MaxWidth = 30;
+            gridViewCommandColumn4.MinWidth = 30;
+            gridViewCommandColumn4.Name = "Edit";
+            gridViewCommandColumn4.Width = 30;
+            gridViewCommandColumn5.HeaderText = "";
+            gridViewCommandColumn5.Image = global::GestionAdministrativa.Win.Properties.Resources.Data_Files;
+            gridViewCommandColumn5.MaxWidth = 30;
+            gridViewCommandColumn5.MinWidth = 30;
+            gridViewCommandColumn5.Name = "Detail";
+            gridViewCommandColumn5.Width = 30;
+            gridViewCommandColumn6.HeaderText = "";
+            gridViewCommandColumn6.Image = global::GestionAdministrativa.Win.Properties.Resources.Garbage_Closed;
+            gridViewCommandColumn6.MaxWidth = 30;
+            gridViewCommandColumn6.MinWidth = 30;
+            gridViewCommandColumn6.Name = "Delete";
+            gridViewCommandColumn6.Width = 30;
+            this.GridCajas.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10,
+            gridViewCommandColumn4,
+            gridViewCommandColumn5,
+            gridViewCommandColumn6});
+            this.GridCajas.Name = "GridCajas";
+            this.GridCajas.ReadOnly = true;
+            this.GridCajas.Size = new System.Drawing.Size(1332, 388);
+            this.GridCajas.TabIndex = 2;
+            this.GridCajas.Text = "Listado de Choferes";
+            this.GridCajas.ThemeName = "TelerikMetro";
             // 
             // FrmCajasListado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 658);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.GridCajas);
             this.Name = "FrmCajasListado";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "Listado de Choferes";
+            this.Text = "Listado de Cajas";
             this.Load += new System.EventHandler(this.FrmChoferesListado_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridChoferes)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridCajas.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridCajas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -152,9 +196,8 @@
 
         #endregion
 
-        private Telerik.WinControls.UI.RadPanel radPanel1;
         private Telerik.WinControls.UI.MasterGridViewTemplate GridChoferes;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Telerik.WinControls.UI.RadGridView GridCajas;
 
     }
 }

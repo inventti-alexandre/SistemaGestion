@@ -40,6 +40,8 @@ namespace GestionAdministrativa.Entities
         public Nullable<bool> Aprobada { get; set; }
         public Nullable<decimal> Vales { get; set; }
         public Nullable<decimal> Efectivo { get; set; }
+        public Nullable<decimal> ValesReal { get; set; }
+        public Nullable<decimal> EfectivoReal { get; set; }
     
         public virtual Operador Operadores { get; set; }
         public virtual Operador Operadores1 { get; set; }
