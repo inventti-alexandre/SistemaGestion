@@ -106,7 +106,7 @@
             // radLabel5
             // 
             this.radLabel5.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel5.Location = new System.Drawing.Point(446, 16);
+            this.radLabel5.Location = new System.Drawing.Point(15, 57);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(80, 25);
             this.radLabel5.TabIndex = 7;
@@ -117,9 +117,9 @@
             // 
             this.txtMonto.Enabled = false;
             this.txtMonto.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonto.Location = new System.Drawing.Point(532, 13);
+            this.txtMonto.Location = new System.Drawing.Point(101, 54);
             this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(76, 28);
+            this.txtMonto.Size = new System.Drawing.Size(126, 28);
             this.txtMonto.TabIndex = 8;
             this.txtMonto.TabStop = false;
             this.txtMonto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -127,10 +127,10 @@
             // 
             // radLabel6
             // 
-            this.radLabel6.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel6.Location = new System.Drawing.Point(15, 62);
+            this.radLabel6.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel6.Location = new System.Drawing.Point(233, 57);
             this.radLabel6.Name = "radLabel6";
-            this.radLabel6.Size = new System.Drawing.Size(88, 32);
+            this.radLabel6.Size = new System.Drawing.Size(77, 28);
             this.radLabel6.TabIndex = 9;
             this.radLabel6.Text = "Total:";
             this.radLabel6.ThemeName = "TelerikMetro";
@@ -139,9 +139,9 @@
             // 
             this.TxtTotal.Enabled = false;
             this.TxtTotal.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotal.Location = new System.Drawing.Point(107, 59);
+            this.TxtTotal.Location = new System.Drawing.Point(309, 54);
             this.TxtTotal.Name = "TxtTotal";
-            this.TxtTotal.Size = new System.Drawing.Size(145, 33);
+            this.TxtTotal.Size = new System.Drawing.Size(131, 33);
             this.TxtTotal.TabIndex = 10;
             this.TxtTotal.TabStop = false;
             this.TxtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -154,7 +154,7 @@
             this.BtnAceptar.FlatAppearance.BorderSize = 0;
             this.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAceptar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAceptar.Location = new System.Drawing.Point(453, 57);
+            this.BtnAceptar.Location = new System.Drawing.Point(462, 57);
             this.BtnAceptar.Name = "BtnAceptar";
             this.BtnAceptar.Size = new System.Drawing.Size(145, 35);
             this.BtnAceptar.TabIndex = 11;

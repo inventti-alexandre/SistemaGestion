@@ -107,7 +107,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 }
 
                 DateTime date = _celular.FechaVencimientoPago ?? DateTime.Now.AddDays(-1);
-                date = date.AddDays(1);
+                date = date.Date.AddDays(1);
                 DateTime hasta = date.AddDays(cantidadDias);
                
                 
@@ -163,14 +163,12 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             _pagoCelular = pago;
         }
 
-        #endregion
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
             this.Close();
         }
-       
+
         private void Guardar()
         {
             _celular.FechaUltimoPago = _clock.Now;
@@ -182,13 +180,13 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
             NuevoMontoAFavor();
             UsarMontoAFavor();
-            
+
             foreach (var item in ucPagos1.Pagos)
             {
                 if (item.TipoPago == "Efectivo")
                     _pagoCelular.Efectivo = _pagoCelular.Efectivo ?? 0 + item.Importe;
                 else if (item.TipoPago == "Vales")
-                    _pagoCelular.Vales =  _pagoCelular.Vales?? 0 + item.Importe;
+                    _pagoCelular.Vales = _pagoCelular.Vales ?? 0 + item.Importe;
                 else if (item.TipoPago == "Descuento")
                     _pagoCelular.Taller = _pagoCelular.Taller ?? 0 + item.Importe;
                 else if (item.TipoPago == "A Favor")
@@ -270,6 +268,9 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             }
         }
 
+        #endregion
+
+       
         
     }
 }

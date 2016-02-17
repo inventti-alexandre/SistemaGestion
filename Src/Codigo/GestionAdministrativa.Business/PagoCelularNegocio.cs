@@ -65,7 +65,7 @@ namespace GestionAdministrativa.Business
             nuevoPago.Id = Guid.NewGuid();
             nuevoPago.Desde = desde.Date;
             nuevoPago.Hasta = hasta.Date;
-            TimeSpan dias = hasta - desde;            
+            TimeSpan dias = hasta.Date - desde.Date;            
             nuevoPago.Monto = celular.TiposCelulares.Monto * (dias.Days+1);
             nuevoPago.CelularId = celular.Id;
             nuevoPago.FechaAlta = _clock.Now;

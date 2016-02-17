@@ -55,7 +55,7 @@
             // TxtTotal
             // 
             this.TxtTotal.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotal.Location = new System.Drawing.Point(433, 344);
+            this.TxtTotal.Location = new System.Drawing.Point(433, 298);
             this.TxtTotal.Name = "TxtTotal";
             this.TxtTotal.Size = new System.Drawing.Size(149, 30);
             this.TxtTotal.TabIndex = 3;
@@ -65,7 +65,7 @@
             // radLabel1
             // 
             this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(318, 344);
+            this.radLabel1.Location = new System.Drawing.Point(318, 298);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(108, 28);
             this.radLabel1.TabIndex = 2;
@@ -115,7 +115,7 @@
             gridViewCommandColumn1});
             this.gridPagos.Name = "gridPagos";
             this.gridPagos.ReadOnly = true;
-            this.gridPagos.Size = new System.Drawing.Size(567, 276);
+            this.gridPagos.Size = new System.Drawing.Size(567, 220);
             this.gridPagos.TabIndex = 0;
             this.gridPagos.Text = "radGridView1";
             this.gridPagos.ThemeName = "TelerikMetro";
@@ -164,9 +164,9 @@
             // txtImporte
             // 
             this.txtImporte.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImporte.Location = new System.Drawing.Point(309, 13);
+            this.txtImporte.Location = new System.Drawing.Point(318, 13);
             this.txtImporte.Name = "txtImporte";
-            this.txtImporte.Size = new System.Drawing.Size(117, 28);
+            this.txtImporte.Size = new System.Drawing.Size(108, 28);
             this.txtImporte.TabIndex = 2;
             this.txtImporte.TabStop = false;
             this.txtImporte.ThemeName = "TelerikMetro";
@@ -184,7 +184,7 @@
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.gridPagos);
             this.Name = "ucPagos";
-            this.Size = new System.Drawing.Size(604, 388);
+            this.Size = new System.Drawing.Size(604, 339);
             this.Load += new System.EventHandler(this.ucPagos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TxtTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();

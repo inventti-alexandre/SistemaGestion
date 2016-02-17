@@ -117,14 +117,14 @@
             // 
             this.ucDetallePagos.FechaDesde = new System.DateTime(2016, 1, 7, 11, 46, 3, 884);
             this.ucDetallePagos.FechaHasta = new System.DateTime(2016, 1, 7, 11, 46, 3, 884);
-            this.ucDetallePagos.Location = new System.Drawing.Point(3, 27);
+            this.ucDetallePagos.Location = new System.Drawing.Point(20, 33);
             this.ucDetallePagos.Monto = new decimal(new int[] {
             0,
             0,
             0,
             131072});
             this.ucDetallePagos.Name = "ucDetallePagos";
-            this.ucDetallePagos.Size = new System.Drawing.Size(627, 144);
+            this.ucDetallePagos.Size = new System.Drawing.Size(477, 109);
             this.ucDetallePagos.TabIndex = 0;
             this.ucDetallePagos.Total = new decimal(new int[] {
             0,
@@ -141,7 +141,7 @@
             0});
             this.ucPagos1.Location = new System.Drawing.Point(7, 9);
             this.ucPagos1.Name = "ucPagos1";
-            this.ucPagos1.Size = new System.Drawing.Size(615, 389);
+            this.ucPagos1.Size = new System.Drawing.Size(615, 339);
             this.ucPagos1.TabIndex = 6;
             this.ucPagos1.Tipo = "Vales";
             this.ucPagos1.Total = new decimal(new int[] {
@@ -155,7 +155,7 @@
             this.radPanel4.Controls.Add(this.ucPagos1);
             this.radPanel4.Location = new System.Drawing.Point(527, 192);
             this.radPanel4.Name = "radPanel4";
-            this.radPanel4.Size = new System.Drawing.Size(633, 401);
+            this.radPanel4.Size = new System.Drawing.Size(633, 360);
             this.radPanel4.TabIndex = 7;
             this.radPanel4.ThemeName = "TelerikMetro";
             // 
@@ -173,7 +173,7 @@
             this.btnGuardar.BackColor = System.Drawing.Color.Yellow;
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(1015, 621);
+            this.btnGuardar.Location = new System.Drawing.Point(1015, 570);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(142, 42);
             this.btnGuardar.TabIndex = 9;
@@ -186,7 +186,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1191, 730);
+            this.ClientSize = new System.Drawing.Size(1191, 658);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.radPanel5);
             this.Controls.Add(this.radPanel4);
