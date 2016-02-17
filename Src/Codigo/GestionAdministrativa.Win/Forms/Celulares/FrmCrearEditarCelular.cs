@@ -49,6 +49,7 @@ namespace GestionAdministrativa.Win.Forms.Celulares
  
 
         #endregion
+
         #region Events
         public event EventHandler<Celular> EntityAgregada;
         #endregion
@@ -78,8 +79,7 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             set { DtpFechaAlta.Value = value ?? _clock.Now; }
         }
 
-
-        public bool? Activo 
+                public bool? Activo 
         {
             get { return ChkActivo.Checked; }
             set { ChkActivo.Checked = value ?? false; }
@@ -95,6 +95,12 @@ namespace GestionAdministrativa.Win.Forms.Celulares
         {
             get { return ChkHabilitado.Checked; }
             set { ChkHabilitado.Checked = value ?? false; }
+        }
+
+        public bool? Baja
+        {
+            get { return ChkEliminado.Checked; }
+            set { ChkEliminado.Checked = value ?? false; }
         }
 
         public string NumeroPagare 
@@ -169,10 +175,11 @@ namespace GestionAdministrativa.Win.Forms.Celulares
         }
         private void FrmCrearEditarCelular_Load(object sender, EventArgs e)
         {
-            CargarCelular(_celularId);
+            
             DefinirCombos();
             CargarCombos();
             HabilitarControles();
+            CargarCelular(_celularId);
         }
        
         private void HabilitarControles()
@@ -224,6 +231,7 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             if (celularId == Guid.Empty)
             {
                 _celular = new Celular();
+                _celular.Id = Guid.NewGuid();
                 return;
             }
             else
@@ -245,6 +253,8 @@ namespace GestionAdministrativa.Win.Forms.Celulares
             this.Gmail = _celular.Email;
             this.DiaCarga = _celular.DiaCargaId;
             this.Observaciones = _celular.Observacion;
+
+            CbxTipoCelular.Enabled = false;
         }
         private void OnEntityAgregada(Celular celular)
         {
@@ -253,62 +263,23 @@ namespace GestionAdministrativa.Win.Forms.Celulares
         }
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
+            CrearEditar();
+           
+        }
+
+        private void CrearEditar()
+        {
+            var esValido = this.ValidarForm();
+             var esUnico =true;
+
             if (_actionForm == ActionFormMode.Create)
-                CrearEntity();
-            else
-            {
-                EditarEntity(_celularId);
-            }
-
-        }
-
-        private void EditarEntity(Guid celularId)
-        {
-            var esValido = this.ValidarForm();
-            if (!esValido)
-                this.DialogResult = DialogResult.None;
-            else
-            {
-                Celular celular = Uow.Celulares.Obtener(m => m.Id == celularId);
-
-                if (celular != null)
-                {
-                    celular.TipoCelularId = TipoCelular;
-                    celular.ModeloCelularId = ModeloCelular;
-                    celular.FechaAlta = FechaAlta;
-                    celular.Activo = Activo;
-                    celular.NumeroPagare = Activo == true ? NumeroPagare : "";
-
-                    celular.Habilitado = Habilitado;
-                    celular.EmpresaCelular = EmpresaCelular;
-                    celular.Numero = NumeroCelular;
-                    celular.Imei = Imei;
-                    celular.SIM = Sim;
-                    celular.Email = Gmail;
-                    celular.DiaCargaId = DiaCarga;
-                    celular.OperadorModificacionId = Context.OperadorActual.Id;
-                    celular.SucursalModificacionId = Context.SucursalActual.Id;
-                    celular.FechaModificacion = _actionForm == ActionFormMode.Edit ? _clock.Now : (DateTime?)null;
-                    celular.Observacion = Observaciones;
-
-                    Uow.Celulares.Modificar(celular);
-                    Uow.Commit();
-                }
-
-            }
-        }
-
-        private void CrearEntity()
-        {
-            var esValido = this.ValidarForm();
-            var esUnico = this.ValidarCelular(NumeroCelular);
+                esUnico = this.ValidarCelular(NumeroCelular);
             
             if ((!esValido || !esUnico) )
             {
                 if (!esUnico)
-                    EpvCelular.SetError(TxtNumeroCelular,"El número de Celular debe ser único.");
-               
-                
+                    EpvCelular.SetError(TxtNumeroCelular,"El número de celular debe ser único.");
+                               
                 this.DialogResult = DialogResult.None;
             }
             else
@@ -316,26 +287,49 @@ namespace GestionAdministrativa.Win.Forms.Celulares
                 
                 var entity = ObtenerEntityDesdeForm();
                 if (_actionForm == ActionFormMode.Create)
+                    //var celularAnterior = Uow.Celulares.Listado().Where(c=>c.ChoferId == )
+
+                    //Controlar si el chofer ya tuvo el sistema
                     Uow.Celulares.Agregar(entity);
                 else
+                {
                     Uow.Celulares.Modificar(entity);
+                    if (entity.Baja.HasValue)
+                    {
+                        var chofer = Uow.Choferes.Listado().Where(c => c.CelularId == entity.Id).FirstOrDefault();
+                        if (chofer != null)
+                        {
+                            chofer.CelularId = null;
+                            Uow.Choferes.Modificar(chofer);
+                        }
+                    }
+                }
+                   
+
 
                 Uow.Commit();
 
-                if (_actionForm == ActionFormMode.Create)
-                {
+                //if (_actionForm == ActionFormMode.Create)
+                //{
                     OnEntityAgregada(entity);
-                }
+                //}
             }
         }
 
         private Celular ObtenerEntityDesdeForm()
         {
-            _celular = new Celular();
-            _celular.Id = Guid.NewGuid();
+            //_celular = new Celular();
+            //_celular.Id = Guid.NewGuid();
             _celular.TipoCelularId = TipoCelular;
             _celular.ModeloCelularId = ModeloCelular;
             _celular.FechaAlta = FechaAlta;
+            _celular.Alta = _actionForm == ActionFormMode.Create ? _clock.Now : _celular.Alta;
+            if (Baja == true)
+            {
+                _celular.Baja = _clock.Now;
+            }
+                
+
             _celular.Activo = Activo;
             _celular.Pagare = Pagare;
             _celular.Habilitado = Habilitado;

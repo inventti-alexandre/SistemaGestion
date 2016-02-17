@@ -161,10 +161,17 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             this.Activo = _chofer.Activo;
             this.MovilId = _chofer.MovilId;
 
-            var celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where(e => e.Id == _chofer.CelularId).ToList();
-            if (celular != null)
+            //var celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where((c => c.Id == _chofer.CelularId && !c.Baja.HasValue)).FirstOrDefault();
+            //if (celular != null)
+            //{
+            //    Celular = celular.TiposCelulares.Tipo;
+            //}
+
+            _celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where((c => c.Id == _chofer.CelularId && !c.Baja.HasValue)).FirstOrDefault();
+
+            if (_celular != null)
             {
-                Celular = celular.FirstOrDefault().TiposCelulares.Tipo;
+                Celular = _celular.TiposCelulares.Tipo;
             }
         }
 
@@ -217,8 +224,10 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             _chofer.OperadorModificacionId =  Context.OperadorActual.Id;
             _chofer.SucursalModificacionId =Context.SucursalActual.Id;
             _chofer.FechaModficacion = _formMode == ActionFormMode.Create ? _clock.Now : _chofer.FechaAlta;
-            if (_celular!=null)
-             _chofer.CelularId = _celular.Id;
+            if (_celular != null)
+                _chofer.CelularId = _celular.Id;
+            else
+                _chofer.CelularId = null;
             return _chofer;
         }
 
@@ -246,18 +255,38 @@ namespace GestionAdministrativa.Win.Forms.Choferes
 
         private void BtnAgregarCelular_Click(object sender, EventArgs e)
         {
-            using (var seleccionarCelular =  _iFormFactory.Create<FrmCrearEditarCelular>(Guid.Empty, ActionFormMode.Create))
+            if (_celular != null)
             {
-                seleccionarCelular.EntityAgregada += (o, celular) =>
+                using (var seleccionarCelular = _iFormFactory.Create<FrmCrearEditarCelular>(_celular.Id, ActionFormMode.Edit))
                 {
+                    seleccionarCelular.EntityAgregada += (o, celular) =>
+                    {
+                        //_celular = celular;
+                        //Celular = _celular.TiposCelulares.Tipo;
+                        if (celular.Baja.HasValue)
+                        {
+                            _celular = null;
+                            Celular = "";
+                        }
 
-                    _celular = celular;
-                    Celular = _celular.TiposCelulares.Tipo;
-
-                };
-                seleccionarCelular.ShowDialog();
+                    };
+                    seleccionarCelular.ShowDialog();
+                }
             }
-            
+            else
+            { 
+                using (var seleccionarCelular =  _iFormFactory.Create<FrmCrearEditarCelular>(Guid.Empty, ActionFormMode.Create))
+                {
+                    seleccionarCelular.EntityAgregada += (o, celular) =>
+                    {
+
+                        _celular = celular;
+                        Celular = _celular.TiposCelulares.Tipo;
+
+                    };
+                    seleccionarCelular.ShowDialog();
+                }
+            }
         }
 
         private void BtnAgregarMovil_Click(object sender, EventArgs e)

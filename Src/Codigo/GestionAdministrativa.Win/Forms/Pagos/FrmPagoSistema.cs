@@ -175,6 +175,9 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             _celular.FechaVencimientoPago = _pagoCelular.Hasta;
             DateTime proximo = _pagoCelular.Hasta ?? _clock.Now;
             _celular.FechaProximoPago = proximo.AddDays(-2);
+            _celular.FechaModificacion = _clock.Now;
+            _celular.SucursalModificacionId = Context.SucursalActual.Id;
+            _celular.OperadorModificacionId = Context.OperadorActual.Id;
 
             Uow.Celulares.Modificar(_celular);
 
