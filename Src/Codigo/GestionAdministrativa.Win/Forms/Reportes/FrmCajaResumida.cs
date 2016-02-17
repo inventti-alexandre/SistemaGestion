@@ -1,4 +1,5 @@
-﻿using GestionAdministrativa.Business.Interfaces;
+﻿using Framework.Common.Utility;
+using GestionAdministrativa.Business.Interfaces;
 using GestionAdministrativa.Data.Interfaces;
 using Microsoft.Reporting.WinForms;
 using System;
@@ -16,16 +17,18 @@ namespace GestionAdministrativa.Win.Forms.Reportes
     public partial class FrmCajaResumida : FormBase
     {
         private readonly IReporteNegocio _reporteNegocio;
-        public FrmCajaResumida(IFormFactory formFactory, IGestionAdministrativaUow uow, IReporteNegocio reporteNegocio)
+        private IClock _clock;
+        public FrmCajaResumida(IFormFactory formFactory, IGestionAdministrativaUow uow, IReporteNegocio reporteNegocio, IClock clock)
         {
             _reporteNegocio = reporteNegocio;
-
+            _clock = clock;
             InitializeComponent();
         }
 
         private void FrmCajaResumida_Load(object sender, EventArgs e)
         {
-
+            dtDesde.Value = _clock.Now;
+            dtHasta.Value = _clock.Now;
             this.reportViewer.RefreshReport();
         }
 
@@ -48,8 +51,10 @@ namespace GestionAdministrativa.Win.Forms.Reportes
 
 
             var ingresos = _reporteNegocio.CajaResumidaIngresos(inicio, fin, Context.SucursalActual.Id, null);
+            var ingresosComposicion = _reporteNegocio.CajaResumidaIngresosComposicion(inicio, fin, Context.SucursalActual.Id, null);
 
             reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Ingresos", ingresos));
+            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("ComposicionIngresos", ingresosComposicion));
 
             var sucursal = Context.SucursalActual.Nombre;
             var fecha = DateTime.Now.ToShortDateString();

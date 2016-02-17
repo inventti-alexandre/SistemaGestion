@@ -14,6 +14,7 @@ namespace GestionAdministrativa.Data.Interfaces
         //IQueryable<ProximasCuotasByCobrador_Result> ProximasCuotasByCobrador(int cobradorId);
 
         List<Reporte_CajaResumida_Ingresos_Result> CajaResumidaIngresos(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId);
+        List<Reporte_CajaResumida_ComposicionIngresos_Result> CajaResumidaIngresosComposicion(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId);
     }
 
 }

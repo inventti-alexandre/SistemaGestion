@@ -204,6 +204,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             cajaMovimiento.Importe = _pagoCelular.Monto;
             cajaMovimiento.ImpFac = _pagoCelular.Monto;
             cajaMovimiento.Efectivo = _pagoCelular.Efectivo;
+            cajaMovimiento.Vales = _pagoCelular.Vales;
             cajaMovimiento.FechaAlta = _clock.Now;
             cajaMovimiento.OperadorAltaId = Context.OperadorActual.Id;
             cajaMovimiento.SucursalAltaId = Context.SucursalActual.Id;

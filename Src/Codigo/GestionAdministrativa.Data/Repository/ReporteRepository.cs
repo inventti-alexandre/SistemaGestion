@@ -23,6 +23,11 @@ namespace GestionAdministrativa.Data.Repository
         {
             return GestionAdministrativaDbContext.Reporte_CajaResumida_Ingresos(sucursalId, inicio, fin, operadorId).ToList();
         }
+
+        public List<Reporte_CajaResumida_ComposicionIngresos_Result> CajaResumidaIngresosComposicion(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId)
+        {
+            return GestionAdministrativaDbContext.Reporte_CajaResumida_ComposicionIngresos(sucursalId, inicio, fin, operadorId).ToList();
+        }
         //public IQueryable<ComprobantesByVentaId_Result> ComprobantesByVentaId(Guid ventaId)
         //{
         //    return AlejandriaDbContext.ComprobantesByVentaId(ventaId).AsQueryable();

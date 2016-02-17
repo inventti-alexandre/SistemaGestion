@@ -24,5 +24,10 @@ namespace GestionAdministrativa.Business
         {
             return Uow.Reportes.CajaResumidaIngresos(inicio, fin, sucursalId, operadorId);
         }
+
+        public List<Reporte_CajaResumida_ComposicionIngresos_Result> CajaResumidaIngresosComposicion(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId)
+        {
+            return Uow.Reportes.CajaResumidaIngresosComposicion(inicio, fin, sucursalId, operadorId);
+        }
     }
 }
