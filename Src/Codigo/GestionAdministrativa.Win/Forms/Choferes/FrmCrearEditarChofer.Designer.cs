@@ -74,7 +74,7 @@
             // 
             this.TxtCelular.Enabled = false;
             this.TxtCelular.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCelular.Location = new System.Drawing.Point(131, 284);
+            this.TxtCelular.Location = new System.Drawing.Point(188, 287);
             this.TxtCelular.Name = "TxtCelular";
             this.TxtCelular.Size = new System.Drawing.Size(291, 28);
             this.TxtCelular.TabIndex = 6;
@@ -87,7 +87,7 @@
             this.BtnAgregarCelular.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregarCelular.Image = global::GestionAdministrativa.Win.Properties.Resources.Add_New_blue;
             this.BtnAgregarCelular.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnAgregarCelular.Location = new System.Drawing.Point(439, 287);
+            this.BtnAgregarCelular.Location = new System.Drawing.Point(496, 290);
             this.BtnAgregarCelular.Name = "BtnAgregarCelular";
             this.BtnAgregarCelular.Size = new System.Drawing.Size(29, 29);
             this.BtnAgregarCelular.TabIndex = 11;
@@ -97,7 +97,7 @@
             // radLabel7
             // 
             this.radLabel7.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel7.Location = new System.Drawing.Point(35, 287);
+            this.radLabel7.Location = new System.Drawing.Point(92, 290);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(90, 25);
             this.radLabel7.TabIndex = 11;
@@ -107,7 +107,7 @@
             // 
             this.BtnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnSave.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSave.Location = new System.Drawing.Point(298, 357);
+            this.BtnSave.Location = new System.Drawing.Point(355, 360);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(130, 36);
             this.BtnSave.TabIndex = 10;
@@ -119,7 +119,7 @@
             // 
             this.DdlMoviles.DropDownAnimationEnabled = true;
             this.DdlMoviles.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DdlMoviles.Location = new System.Drawing.Point(131, 245);
+            this.DdlMoviles.Location = new System.Drawing.Point(188, 248);
             this.DdlMoviles.MaxDropDownItems = 0;
             this.DdlMoviles.Name = "DdlMoviles";
             this.DdlMoviles.ShowImageInEditorArea = true;
@@ -130,7 +130,7 @@
             // radLabel6
             // 
             this.radLabel6.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel6.Location = new System.Drawing.Point(55, 245);
+            this.radLabel6.Location = new System.Drawing.Point(92, 248);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(70, 25);
             this.radLabel6.TabIndex = 8;
@@ -139,7 +139,7 @@
             // CkActivo
             // 
             this.CkActivo.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CkActivo.Location = new System.Drawing.Point(344, 326);
+            this.CkActivo.Location = new System.Drawing.Point(401, 329);
             this.CkActivo.Name = "CkActivo";
             this.CkActivo.Size = new System.Drawing.Size(84, 25);
             this.CkActivo.TabIndex = 6;
@@ -149,7 +149,7 @@
             // TxtEmail
             // 
             this.TxtEmail.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtEmail.Location = new System.Drawing.Point(131, 201);
+            this.TxtEmail.Location = new System.Drawing.Point(188, 204);
             this.TxtEmail.Name = "TxtEmail";
             this.TxtEmail.Size = new System.Drawing.Size(291, 28);
             this.TxtEmail.TabIndex = 5;
@@ -159,7 +159,7 @@
             // TxtTelefono
             // 
             this.TxtTelefono.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTelefono.Location = new System.Drawing.Point(131, 161);
+            this.TxtTelefono.Location = new System.Drawing.Point(188, 164);
             this.TxtTelefono.Name = "TxtTelefono";
             this.TxtTelefono.Size = new System.Drawing.Size(291, 28);
             this.TxtTelefono.TabIndex = 4;
@@ -169,7 +169,7 @@
             // radLabel5
             // 
             this.radLabel5.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel5.Location = new System.Drawing.Point(55, 201);
+            this.radLabel5.Location = new System.Drawing.Point(92, 204);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(70, 25);
             this.radLabel5.TabIndex = 2;
@@ -178,7 +178,7 @@
             // radLabel4
             // 
             this.radLabel4.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel4.Location = new System.Drawing.Point(25, 161);
+            this.radLabel4.Location = new System.Drawing.Point(92, 164);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(100, 25);
             this.radLabel4.TabIndex = 2;
@@ -188,7 +188,7 @@
             // 
             this.TxtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtNombre.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNombre.Location = new System.Drawing.Point(131, 122);
+            this.TxtNombre.Location = new System.Drawing.Point(188, 125);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(291, 28);
             this.TxtNombre.TabIndex = 3;
@@ -199,7 +199,7 @@
             // 
             this.TxtApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtApellido.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtApellido.Location = new System.Drawing.Point(131, 76);
+            this.TxtApellido.Location = new System.Drawing.Point(188, 79);
             this.TxtApellido.Name = "TxtApellido";
             this.TxtApellido.Size = new System.Drawing.Size(291, 28);
             this.TxtApellido.TabIndex = 2;
@@ -209,7 +209,7 @@
             // radLabel3
             // 
             this.radLabel3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel3.Location = new System.Drawing.Point(45, 122);
+            this.radLabel3.Location = new System.Drawing.Point(92, 125);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(80, 25);
             this.radLabel3.TabIndex = 2;
@@ -218,7 +218,7 @@
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.Location = new System.Drawing.Point(25, 76);
+            this.radLabel2.Location = new System.Drawing.Point(92, 79);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(100, 25);
             this.radLabel2.TabIndex = 2;
@@ -227,7 +227,7 @@
             // TxtDni
             // 
             this.TxtDni.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDni.Location = new System.Drawing.Point(131, 32);
+            this.TxtDni.Location = new System.Drawing.Point(188, 35);
             this.TxtDni.Name = "TxtDni";
             this.TxtDni.Size = new System.Drawing.Size(291, 28);
             this.TxtDni.TabIndex = 1;
@@ -237,7 +237,7 @@
             // radLabel1
             // 
             this.radLabel1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(76, 32);
+            this.radLabel1.Location = new System.Drawing.Point(92, 35);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(49, 25);
             this.radLabel1.TabIndex = 0;
@@ -253,7 +253,7 @@
             this.BtnAgregarMovil.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregarMovil.Image = global::GestionAdministrativa.Win.Properties.Resources.Add_New_blue;
             this.BtnAgregarMovil.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnAgregarMovil.Location = new System.Drawing.Point(439, 245);
+            this.BtnAgregarMovil.Location = new System.Drawing.Point(496, 248);
             this.BtnAgregarMovil.Name = "BtnAgregarMovil";
             this.BtnAgregarMovil.Size = new System.Drawing.Size(29, 29);
             this.BtnAgregarMovil.TabIndex = 12;
