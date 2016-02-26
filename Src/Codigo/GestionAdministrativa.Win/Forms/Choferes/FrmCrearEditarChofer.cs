@@ -25,6 +25,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
         private Guid _choferid;
         private readonly IClock _clock;
         private IFormFactory _iFormFactory;
+        private bool NuevoMovil = true;
 
         public FrmCrearEditarChofer(IGestionAdministrativaUow uow, IClock clock, Guid id, ActionFormMode mode,IFormFactory formFactory)
         {
@@ -46,6 +47,9 @@ namespace GestionAdministrativa.Win.Forms.Choferes
                     break;
                 case ActionFormMode.Edit:
                     this.Text = "Editar chofer";
+                    DdlMoviles.Enabled = false;
+                    BtnAgregarMovil.Visible = false;
+                    BtnAgregarCelular.Visible = false;
                     break;
             }
         }
@@ -102,7 +106,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
 
         public Guid? MovilId
         {
-            get { return (Guid)DdlMoviles.SelectedValue; }
+            get { return (Guid?)DdlMoviles.SelectedValue ?? Guid.Empty; }
             set { DdlMoviles.SelectedValue = value; }
         }
 
@@ -151,6 +155,8 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             else
             {
                 _chofer = Uow.Choferes.Obtener(c => c.Id == choferid);
+                if (_chofer.MovilId != null)
+                    NuevoMovil = false;
             }
 
             this.DNI = _chofer.Dni;
@@ -160,19 +166,20 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             this.Email = _chofer.Email;
             this.Activo = _chofer.Activo;
             this.MovilId = _chofer.MovilId;
-
-            //var celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where((c => c.Id == _chofer.CelularId && !c.Baja.HasValue)).FirstOrDefault();
-            //if (celular != null)
-            //{
-            //    Celular = celular.TiposCelulares.Tipo;
-            //}
-
-            _celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where((c => c.Id == _chofer.CelularId && !c.Baja.HasValue)).FirstOrDefault();
-
-            if (_celular != null)
+            if (MovilId == Guid.Empty)
             {
-                Celular = _celular.TiposCelulares.Tipo;
+                BtnAgregarMovil.Visible = true;
+                DdlMoviles.Enabled = true;
             }
+               
+
+               _celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where((c => c.Id == _chofer.CelularId && !c.Baja.HasValue)).FirstOrDefault();
+
+               if (_celular != null)
+               {
+                   Celular = _celular.TiposCelulares.Tipo;
+               }
+               else { BtnAgregarCelular.Visible = true; }
         }
 
         private void CrearEditar()
@@ -194,9 +201,35 @@ namespace GestionAdministrativa.Win.Forms.Choferes
                     }
 
                     Uow.Choferes.Agregar(entity);
+                    if (entity.Movil != null)
+                    {
+                        var choferMovil = new ChoferesMovil();
+                        choferMovil.Choferid = entity.Id;
+                        choferMovil.MovilId = entity.MovilId;
+                        choferMovil.Alta = _clock.Now;
+                        choferMovil.FechaAlta = _clock.Now;
+                        choferMovil.OperadorAltaId = Context.OperadorActual.Id;
+                        choferMovil.SucursalAltaId = Context.SucursalActual.Id;
+
+                        Uow.ChoferesMoviles.Agregar(choferMovil);
+                    }
                 }
                 else
+                {
+                    if (NuevoMovil)
+                    {
+                        var choferMovil = new ChoferesMovil();
+                        choferMovil.Choferid = entity.Id;
+                        choferMovil.MovilId = entity.MovilId;
+                        choferMovil.Alta = _clock.Now;
+                        choferMovil.FechaAlta = _clock.Now;
+                        choferMovil.OperadorAltaId = Context.OperadorActual.Id;
+                        choferMovil.SucursalAltaId = Context.SucursalActual.Id;
+
+                        Uow.ChoferesMoviles.Agregar(choferMovil);
+                    }
                     Uow.Choferes.Modificar(entity);
+                }
 
                 Uow.Commit();
 
@@ -261,9 +294,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
                 {
                     seleccionarCelular.EntityAgregada += (o, celular) =>
                     {
-                        //_celular = celular;
-                        //Celular = _celular.TiposCelulares.Tipo;
-                        if (celular.Baja.HasValue)
+                       if (celular.Baja.HasValue)
                         {
                             _celular = null;
                             Celular = "";

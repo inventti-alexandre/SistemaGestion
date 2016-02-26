@@ -41,6 +41,7 @@
             this.BtnAbrirCaja = new Telerik.WinControls.UI.RadButton();
             this.BtnCajas = new Telerik.WinControls.UI.RadButton();
             this.btnCajaResumida = new Telerik.WinControls.UI.RadButton();
+            this.btnCambioCelularMovil = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnChofer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
@@ -52,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnAbrirCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCajas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCajaResumida)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCambioCelularMovil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +63,7 @@
             this.radButton1.BackColor = System.Drawing.Color.White;
             this.radButton1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radButton1.Image = global::GestionAdministrativa.Win.Properties.Resources.Car01;
-            this.radButton1.Location = new System.Drawing.Point(315, 12);
+            this.radButton1.Location = new System.Drawing.Point(330, 12);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(132, 132);
             this.radButton1.TabIndex = 0;
@@ -72,7 +74,7 @@
             // 
             // BtnChofer
             // 
-            this.BtnChofer.Location = new System.Drawing.Point(981, 247);
+            this.BtnChofer.Location = new System.Drawing.Point(1102, 561);
             this.BtnChofer.Name = "BtnChofer";
             this.BtnChofer.Size = new System.Drawing.Size(130, 24);
             this.BtnChofer.TabIndex = 1;
@@ -82,7 +84,7 @@
             // 
             // radButton2
             // 
-            this.radButton2.Location = new System.Drawing.Point(981, 157);
+            this.radButton2.Location = new System.Drawing.Point(1102, 471);
             this.radButton2.Name = "radButton2";
             this.radButton2.Size = new System.Drawing.Size(130, 24);
             this.radButton2.TabIndex = 1;
@@ -91,7 +93,7 @@
             // 
             // BtnMovilListado
             // 
-            this.BtnMovilListado.Location = new System.Drawing.Point(981, 206);
+            this.BtnMovilListado.Location = new System.Drawing.Point(1102, 520);
             this.BtnMovilListado.Name = "BtnMovilListado";
             this.BtnMovilListado.Size = new System.Drawing.Size(130, 24);
             this.BtnMovilListado.TabIndex = 2;
@@ -120,7 +122,7 @@
             this.BtnCelulares.AutoSize = true;
             this.BtnCelulares.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCelulares.Image = global::GestionAdministrativa.Win.Properties.Resources.Cell01;
-            this.BtnCelulares.Location = new System.Drawing.Point(453, 12);
+            this.BtnCelulares.Location = new System.Drawing.Point(483, 12);
             this.BtnCelulares.Name = "BtnCelulares";
             this.BtnCelulares.Size = new System.Drawing.Size(132, 132);
             this.BtnCelulares.TabIndex = 4;
@@ -174,7 +176,7 @@
             this.btnPagos.AutoSize = true;
             this.btnPagos.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPagos.Image = global::GestionAdministrativa.Win.Properties.Resources.pago01;
-            this.btnPagos.Location = new System.Drawing.Point(177, 157);
+            this.btnPagos.Location = new System.Drawing.Point(330, 166);
             this.btnPagos.Name = "btnPagos";
             this.btnPagos.Size = new System.Drawing.Size(132, 132);
             this.btnPagos.TabIndex = 6;
@@ -188,7 +190,7 @@
             this.BtnAbrirCaja.AutoSize = true;
             this.BtnAbrirCaja.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAbrirCaja.Image = global::GestionAdministrativa.Win.Properties.Resources.caja;
-            this.BtnAbrirCaja.Location = new System.Drawing.Point(835, 21);
+            this.BtnAbrirCaja.Location = new System.Drawing.Point(177, 166);
             this.BtnAbrirCaja.Name = "BtnAbrirCaja";
             this.BtnAbrirCaja.Size = new System.Drawing.Size(132, 132);
             this.BtnAbrirCaja.TabIndex = 7;
@@ -202,7 +204,7 @@
             this.BtnCajas.AutoSize = true;
             this.BtnCajas.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCajas.Image = global::GestionAdministrativa.Win.Properties.Resources.balance;
-            this.BtnCajas.Location = new System.Drawing.Point(177, 310);
+            this.BtnCajas.Location = new System.Drawing.Point(177, 317);
             this.BtnCajas.Name = "BtnCajas";
             this.BtnCajas.Size = new System.Drawing.Size(132, 132);
             this.BtnCajas.TabIndex = 8;
@@ -216,7 +218,7 @@
             this.btnCajaResumida.AutoSize = true;
             this.btnCajaResumida.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCajaResumida.Image = global::GestionAdministrativa.Win.Properties.Resources.infCaja;
-            this.btnCajaResumida.Location = new System.Drawing.Point(315, 157);
+            this.btnCajaResumida.Location = new System.Drawing.Point(483, 166);
             this.btnCajaResumida.Name = "btnCajaResumida";
             this.btnCajaResumida.Size = new System.Drawing.Size(147, 132);
             this.btnCajaResumida.TabIndex = 9;
@@ -225,11 +227,26 @@
             this.btnCajaResumida.ThemeName = "TelerikMetro";
             this.btnCajaResumida.Click += new System.EventHandler(this.btnCajaResumida_Click);
             // 
+            // btnCambioCelularMovil
+            // 
+            this.btnCambioCelularMovil.AutoSize = true;
+            this.btnCambioCelularMovil.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambioCelularMovil.Image = global::GestionAdministrativa.Win.Properties.Resources.celChange;
+            this.btnCambioCelularMovil.Location = new System.Drawing.Point(641, 12);
+            this.btnCambioCelularMovil.Name = "btnCambioCelularMovil";
+            this.btnCambioCelularMovil.Size = new System.Drawing.Size(132, 132);
+            this.btnCambioCelularMovil.TabIndex = 10;
+            this.btnCambioCelularMovil.Text = "Cambios";
+            this.btnCambioCelularMovil.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCambioCelularMovil.ThemeName = "TelerikMetro";
+            this.btnCambioCelularMovil.Click += new System.EventHandler(this.btnCambioCelularMovil_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1340, 652);
+            this.Controls.Add(this.btnCambioCelularMovil);
             this.Controls.Add(this.btnCajaResumida);
             this.Controls.Add(this.BtnCajas);
             this.Controls.Add(this.BtnAbrirCaja);
@@ -261,6 +278,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnAbrirCaja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCajas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCajaResumida)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCambioCelularMovil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -282,6 +300,7 @@
         private Telerik.WinControls.UI.RadButton BtnAbrirCaja;
         private Telerik.WinControls.UI.RadButton BtnCajas;
         private Telerik.WinControls.UI.RadButton btnCajaResumida;
+        private Telerik.WinControls.UI.RadButton btnCambioCelularMovil;
 
 
     }

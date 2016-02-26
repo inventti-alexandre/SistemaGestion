@@ -239,6 +239,13 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_CajaBalance_OperadorModificacion" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_CajaBalance_SucursalAlta" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_CajaBalance_SucursalModificacion" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.ChoferesMovil" Width="1.5" PointX="43.5" PointY="69.875" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMovil_Chofer" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMovil_Movil" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMovil_OperadorAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMovil_OperadorModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMovil_SucursalAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMovil_SucursalModificacion" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

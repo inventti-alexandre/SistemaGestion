@@ -230,6 +230,22 @@
           <Property Name="SucursalModificacionId" Type="int" />
           <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
         </EntityType>
+        <EntityType Name="ChoferesMovil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Choferid" Type="uniqueidentifier" />
+          <Property Name="MovilId" Type="uniqueidentifier" />
+          <Property Name="Alta" Type="datetime" />
+          <Property Name="Baja" Type="datetime" />
+          <Property Name="FechaAlta" Type="datetime" />
+          <Property Name="OperadorAltaId" Type="uniqueidentifier" />
+          <Property Name="SucursalAltaId" Type="int" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
+          <Property Name="SucursalModificacionId" Type="int" />
+        </EntityType>
         <EntityType Name="Conceptos">
           <Key>
             <PropertyRef Name="Id" />
@@ -1464,6 +1480,78 @@
             </Principal>
             <Dependent Role="ChoferesMontosFavor">
               <PropertyRef Name="TipoComprobanteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChoferesMovil_Chofer">
+          <End Role="Choferes" Type="Self.Choferes" Multiplicity="0..1" />
+          <End Role="ChoferesMovil" Type="Self.ChoferesMovil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Choferes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChoferesMovil">
+              <PropertyRef Name="Choferid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChoferesMovil_Movil">
+          <End Role="Moviles" Type="Self.Moviles" Multiplicity="0..1" />
+          <End Role="ChoferesMovil" Type="Self.ChoferesMovil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Moviles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChoferesMovil">
+              <PropertyRef Name="MovilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChoferesMovil_OperadorAlta">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="ChoferesMovil" Type="Self.ChoferesMovil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChoferesMovil">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChoferesMovil_OperadorModificacion">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="ChoferesMovil" Type="Self.ChoferesMovil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChoferesMovil">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChoferesMovil_SucursalAlta">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="ChoferesMovil" Type="Self.ChoferesMovil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChoferesMovil">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChoferesMovil_SucursalModificacion">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="ChoferesMovil" Type="Self.ChoferesMovil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChoferesMovil">
+              <PropertyRef Name="SucursalModificacionId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3099,6 +3187,7 @@
           <EntitySet Name="CentrosCostos" EntityType="Self.CentrosCostos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Choferes" EntityType="Self.Choferes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChoferesMontosFavor" EntityType="Self.ChoferesMontosFavor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChoferesMovil" EntityType="Self.ChoferesMovil" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Conceptos" EntityType="Self.Conceptos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CondicionesCompra" EntityType="Self.CondicionesCompra" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Dias" EntityType="Self.Dias" Schema="dbo" store:Type="Tables" />
@@ -3363,6 +3452,30 @@
           <AssociationSet Name="FK_ChoferesMontosFavor_TipoComprobante" Association="Self.FK_ChoferesMontosFavor_TipoComprobante">
             <End Role="TiposComprobantes" EntitySet="TiposComprobantes" />
             <End Role="ChoferesMontosFavor" EntitySet="ChoferesMontosFavor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChoferesMovil_Chofer" Association="Self.FK_ChoferesMovil_Chofer">
+            <End Role="Choferes" EntitySet="Choferes" />
+            <End Role="ChoferesMovil" EntitySet="ChoferesMovil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChoferesMovil_Movil" Association="Self.FK_ChoferesMovil_Movil">
+            <End Role="Moviles" EntitySet="Moviles" />
+            <End Role="ChoferesMovil" EntitySet="ChoferesMovil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChoferesMovil_OperadorAlta" Association="Self.FK_ChoferesMovil_OperadorAlta">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="ChoferesMovil" EntitySet="ChoferesMovil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChoferesMovil_OperadorModificacion" Association="Self.FK_ChoferesMovil_OperadorModificacion">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="ChoferesMovil" EntitySet="ChoferesMovil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChoferesMovil_SucursalAlta" Association="Self.FK_ChoferesMovil_SucursalAlta">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="ChoferesMovil" EntitySet="ChoferesMovil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChoferesMovil_SucursalModificacion" Association="Self.FK_ChoferesMovil_SucursalModificacion">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="ChoferesMovil" EntitySet="ChoferesMovil" />
           </AssociationSet>
           <AssociationSet Name="FK_Conceptos_OperadorAlta" Association="Self.FK_Conceptos_OperadorAlta">
             <End Role="Operadores" EntitySet="Operadores" />
@@ -4235,6 +4348,7 @@
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_Moviles_SucursalModificacion" FromRole="Moviles" ToRole="Sucursales" />
           <Property Name="Activo" Type="Boolean" />
           <NavigationProperty Name="Choferes" Relationship="GestionAdministrativa.Model.FK_Choferes_Moviles" FromRole="Movil" ToRole="Chofer" />
+          <NavigationProperty Name="ChoferesMovils" Relationship="GestionAdministrativa.Model.FK_ChoferesMovil_Movil" FromRole="Movil" ToRole="ChoferesMovil" />
         </EntityType>
         <EntityType Name="Operador">
           <Key>
@@ -4333,6 +4447,8 @@
           <NavigationProperty Name="Celulares1" Relationship="GestionAdministrativa.Model.FK_Celulares_OperadoresModificacion" FromRole="Operador" ToRole="Celulare" />
           <NavigationProperty Name="CajaBalances" Relationship="GestionAdministrativa.Model.FK_CajaBalance_OperadorAlta" FromRole="Operador" ToRole="CajaBalance" />
           <NavigationProperty Name="CajaBalances1" Relationship="GestionAdministrativa.Model.FK_CajaBalance_OperadorModificacion" FromRole="Operador" ToRole="CajaBalance" />
+          <NavigationProperty Name="ChoferesMovils" Relationship="GestionAdministrativa.Model.FK_ChoferesMovil_OperadorAlta" FromRole="Operador" ToRole="ChoferesMovil" />
+          <NavigationProperty Name="ChoferesMovils1" Relationship="GestionAdministrativa.Model.FK_ChoferesMovil_OperadorModificacion" FromRole="Operador" ToRole="ChoferesMovil" />
           </EntityType>
         <EntityType Name="OperadorFuncion">
           <Key>
@@ -4825,6 +4941,8 @@
           <NavigationProperty Name="Celulares1" Relationship="GestionAdministrativa.Model.FK_Celulares_SucursalModificacion" FromRole="Sucursal" ToRole="Celulare" />
           <NavigationProperty Name="CajaBalances" Relationship="GestionAdministrativa.Model.FK_CajaBalance_SucursalAlta" FromRole="Sucursal" ToRole="CajaBalance" />
           <NavigationProperty Name="CajaBalances1" Relationship="GestionAdministrativa.Model.FK_CajaBalance_SucursalModificacion" FromRole="Sucursal" ToRole="CajaBalance" />
+          <NavigationProperty Name="ChoferesMovils" Relationship="GestionAdministrativa.Model.FK_ChoferesMovil_SucursalAlta" FromRole="Sucursal" ToRole="ChoferesMovil" />
+          <NavigationProperty Name="ChoferesMovils1" Relationship="GestionAdministrativa.Model.FK_ChoferesMovil_SucursalModificacion" FromRole="Sucursal" ToRole="ChoferesMovil" />
           </EntityType>
         <EntityType Name="TipoCelular">
           <Key>
@@ -7774,6 +7892,31 @@
             <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
             <Parameter Name="OperadorId" Mode="In" Type="Guid" />
           </FunctionImport>
+          <EntitySet Name="ChoferesMovils" EntityType="GestionAdministrativa.Model.ChoferesMovil" />
+          <AssociationSet Name="FK_ChoferesMovil_Chofer" Association="GestionAdministrativa.Model.FK_ChoferesMovil_Chofer">
+            <End Role="Chofer" EntitySet="Choferes" />
+            <End Role="ChoferesMovil" EntitySet="ChoferesMovils" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChoferesMovil_Movil" Association="GestionAdministrativa.Model.FK_ChoferesMovil_Movil">
+            <End Role="Movil" EntitySet="Moviles" />
+            <End Role="ChoferesMovil" EntitySet="ChoferesMovils" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChoferesMovil_OperadorAlta" Association="GestionAdministrativa.Model.FK_ChoferesMovil_OperadorAlta">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="ChoferesMovil" EntitySet="ChoferesMovils" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChoferesMovil_OperadorModificacion" Association="GestionAdministrativa.Model.FK_ChoferesMovil_OperadorModificacion">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="ChoferesMovil" EntitySet="ChoferesMovils" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChoferesMovil_SucursalAlta" Association="GestionAdministrativa.Model.FK_ChoferesMovil_SucursalAlta">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="ChoferesMovil" EntitySet="ChoferesMovils" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChoferesMovil_SucursalModificacion" Association="GestionAdministrativa.Model.FK_ChoferesMovil_SucursalModificacion">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="ChoferesMovil" EntitySet="ChoferesMovils" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Chofer">
           <Key>
@@ -7801,6 +7944,7 @@
           <NavigationProperty Name="Movil" Relationship="GestionAdministrativa.Model.FK_Choferes_Moviles" FromRole="Chofer" ToRole="Movil" />
           <Property Name="CelularId" Type="Guid" />
           <NavigationProperty Name="Celulare" Relationship="GestionAdministrativa.Model.FK_Choferes_Celulares" FromRole="Chofer" ToRole="Celulare" />
+          <NavigationProperty Name="ChoferesMovils" Relationship="GestionAdministrativa.Model.FK_ChoferesMovil_Chofer" FromRole="Chofer" ToRole="ChoferesMovil" />
         </EntityType>
         <Association Name="FK_Choferes_OperadorAlta">
           <End Type="GestionAdministrativa.Model.Operador" Role="Operadores" Multiplicity="1" />
@@ -8159,6 +8303,100 @@
           <Property Type="Decimal" Name="Efectivo" Nullable="false" Precision="19" />
           <Property Type="Decimal" Name="Vales" Nullable="false" Precision="19" />
         </ComplexType>
+        <EntityType Name="ChoferesMovil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Choferid" Type="Guid" />
+          <Property Name="MovilId" Type="Guid" />
+          <Property Name="Alta" Type="DateTime" Precision="3" />
+          <Property Name="Baja" Type="DateTime" Precision="3" />
+          <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+          <Property Name="OperadorAltaId" Type="Guid" />
+          <Property Name="SucursalAltaId" Type="Int32" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="OperadorModificacionId" Type="Guid" />
+          <Property Name="SucursalModificacionId" Type="Int32" />
+          <NavigationProperty Name="Chofere" Relationship="GestionAdministrativa.Model.FK_ChoferesMovil_Chofer" FromRole="ChoferesMovil" ToRole="Chofer" />
+          <NavigationProperty Name="Movile" Relationship="GestionAdministrativa.Model.FK_ChoferesMovil_Movil" FromRole="ChoferesMovil" ToRole="Movil" />
+          <NavigationProperty Name="Operadore" Relationship="GestionAdministrativa.Model.FK_ChoferesMovil_OperadorAlta" FromRole="ChoferesMovil" ToRole="Operador" />
+          <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_ChoferesMovil_OperadorModificacion" FromRole="ChoferesMovil" ToRole="Operador" />
+          <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_ChoferesMovil_SucursalAlta" FromRole="ChoferesMovil" ToRole="Sucursal" />
+          <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_ChoferesMovil_SucursalModificacion" FromRole="ChoferesMovil" ToRole="Sucursal" />
+        </EntityType>
+        <Association Name="FK_ChoferesMovil_Chofer">
+          <End Type="GestionAdministrativa.Model.Chofer" Role="Chofer" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.ChoferesMovil" Role="ChoferesMovil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chofer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChoferesMovil">
+              <PropertyRef Name="Choferid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChoferesMovil_Movil">
+          <End Type="GestionAdministrativa.Model.Movil" Role="Movil" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.ChoferesMovil" Role="ChoferesMovil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movil">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChoferesMovil">
+              <PropertyRef Name="MovilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChoferesMovil_OperadorAlta">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.ChoferesMovil" Role="ChoferesMovil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChoferesMovil">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChoferesMovil_OperadorModificacion">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.ChoferesMovil" Role="ChoferesMovil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChoferesMovil">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChoferesMovil_SucursalAlta">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.ChoferesMovil" Role="ChoferesMovil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChoferesMovil">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChoferesMovil_SucursalModificacion">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.ChoferesMovil" Role="ChoferesMovil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChoferesMovil">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -8991,6 +9229,23 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="ChoferesMovils">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.ChoferesMovil">
+              <MappingFragment StoreEntitySet="ChoferesMovil">
+                <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
+                <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
+                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="Baja" ColumnName="Baja" />
+                <ScalarProperty Name="Alta" ColumnName="Alta" />
+                <ScalarProperty Name="MovilId" ColumnName="MovilId" />
+                <ScalarProperty Name="Choferid" ColumnName="Choferid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -46,7 +46,7 @@
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(293, 92);
+            this.btnBuscar.Location = new System.Drawing.Point(200, 86);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(138, 40);
             this.btnBuscar.TabIndex = 4;
@@ -59,7 +59,7 @@
             this.TxtChofer.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtChofer.Location = new System.Drawing.Point(165, 52);
             this.TxtChofer.Name = "TxtChofer";
-            this.TxtChofer.Size = new System.Drawing.Size(247, 28);
+            this.TxtChofer.Size = new System.Drawing.Size(173, 28);
             this.TxtChofer.TabIndex = 3;
             this.TxtChofer.TabStop = false;
             this.TxtChofer.ThemeName = "TelerikMetro";
@@ -89,7 +89,7 @@
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(107, 92);
+            this.btnLimpiar.Location = new System.Drawing.Point(14, 86);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(180, 40);
             this.btnLimpiar.TabIndex = 5;
@@ -105,7 +105,7 @@
             this.DdlMoviles.MaxDropDownItems = 0;
             this.DdlMoviles.Name = "DdlMoviles";
             this.DdlMoviles.ShowImageInEditorArea = true;
-            this.DdlMoviles.Size = new System.Drawing.Size(247, 29);
+            this.DdlMoviles.Size = new System.Drawing.Size(173, 29);
             this.DdlMoviles.TabIndex = 8;
             this.DdlMoviles.ThemeName = "TelerikMetro";
             // 
@@ -120,7 +120,7 @@
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.radLabel1);
             this.Name = "ucBuscardorChoferMovil";
-            this.Size = new System.Drawing.Size(443, 142);
+            this.Size = new System.Drawing.Size(367, 142);
             this.Load += new System.EventHandler(this.ucBuscardorChoferMovil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TxtChofer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();

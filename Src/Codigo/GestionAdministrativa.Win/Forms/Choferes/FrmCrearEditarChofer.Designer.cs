@@ -264,7 +264,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 538);
+            this.ClientSize = new System.Drawing.Size(829, 607);
             this.Controls.Add(this.BtnAgregarMovil);
             this.Controls.Add(this.TxtCelular);
             this.Controls.Add(this.BtnAgregarCelular);

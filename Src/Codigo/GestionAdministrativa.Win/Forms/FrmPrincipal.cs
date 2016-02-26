@@ -20,6 +20,7 @@ using Telerik.WinControls;
 using GestionAdministrativa.Win.Forms.Pagos;
 using GestionAdministrativa.Win.Forms.Cajas;
 using GestionAdministrativa.Win.Forms.Reportes;
+using GestionAdministrativa.Win.Forms.Cambios;
 
 namespace GestionAdministrativa.Win.Forms
 {
@@ -200,6 +201,12 @@ namespace GestionAdministrativa.Win.Forms
         private void BtnCajas_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmCajasListado>();
+            frm.Show();
+        }
+
+        private void btnCambioCelularMovil_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmCambioCelularChofer>();
             frm.Show();
         }
      

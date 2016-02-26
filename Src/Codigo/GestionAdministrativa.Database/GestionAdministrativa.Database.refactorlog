@@ -266,4 +266,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="OperadorModificacionId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="98805548-7342-4331-acae-322fa5e3f6eb" ChangeDateTime="02/26/2016 16:19:57">
+    <Property Name="ElementName" Value="[dbo].[ChoferesMovil].[SucursalAltaID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ChoferesMovil]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SucursalAltaId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a9cc4a9a-1d5f-4f1c-a060-be9dd935654c" ChangeDateTime="02/26/2016 16:22:02">
+    <Property Name="ElementName" Value="[dbo].[FK_ChoferesMovil_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[ChoferesMovil]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_ChoferesMovil_OperadorAlta]" />
+  </Operation>
 </Operations>
