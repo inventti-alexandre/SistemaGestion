@@ -100,7 +100,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 Cursor.Current = Cursors.Default;
             }
         }
-        private void LimpiarFiltros()
+        public void LimpiarFiltros()
         {
             _limpiandoFiltros = true;
             TxtChofer.Text = string.Empty;
@@ -144,6 +144,14 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private void ucBuscardorChoferMovil_Load(object sender, EventArgs e)
         {
             CargarCombos();
+        }
+
+        private void DdlMoviles_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BuscarChoferMovil();
+            }
         }
 
     }

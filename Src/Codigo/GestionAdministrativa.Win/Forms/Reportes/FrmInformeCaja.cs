@@ -14,11 +14,11 @@ using System.Windows.Forms;
 
 namespace GestionAdministrativa.Win.Forms.Reportes
 {
-    public partial class FrmCajaResumida : FormBase
+    public partial class FrmInformeCaja : FormBase
     {
         private readonly IReporteNegocio _reporteNegocio;
         private IClock _clock;
-        public FrmCajaResumida(IFormFactory formFactory, IGestionAdministrativaUow uow, IReporteNegocio reporteNegocio, IClock clock)
+        public FrmInformeCaja(IFormFactory formFactory, IGestionAdministrativaUow uow, IReporteNegocio reporteNegocio, IClock clock)
         {
             Uow = uow;
             _reporteNegocio = reporteNegocio;
@@ -26,8 +26,9 @@ namespace GestionAdministrativa.Win.Forms.Reportes
             InitializeComponent();
         }
 
-        private void FrmCajaResumida_Load(object sender, EventArgs e)
+        private void FrmInformeCaja_Load(object sender, EventArgs e)
         {
+
             dtDesde.Value = _clock.Now;
             dtHasta.Value = _clock.Now;
             this.reportViewer.RefreshReport();
@@ -38,24 +39,19 @@ namespace GestionAdministrativa.Win.Forms.Reportes
             reportViewer.LocalReport.DataSources.Clear();
             reportViewer.ProcessingMode = ProcessingMode.Local;
             string appPath = Application.StartupPath.Replace("\\bin\\Debug", "");
-            string reportPath = @"\RDLS\CajaResumida.rdl";
+            string reportPath = @"\RDLS\InformeCaja.rdl";
             reportViewer.LocalReport.ReportPath = appPath + reportPath;
 
             var inicio = SetTimeToZero(dtDesde.Value);
             var fin = SetTimeToZero(dtHasta.Value.AddDays(1));
 
-            //Guid? operadorId = ucFiltroOperadores.OperadorId;
+            var caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id).OrderByDescending(c => c.FechaAlta).FirstOrDefault().Id;
 
-            //var operador = operadorId == null
-            //                   ? "TODOS"
-            //                   : ucFiltroOperadores.Operador.Usuario;
-
-            var caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id).OrderByDescending(c=>c.FechaAlta).FirstOrDefault().Id;
-            var ingresos = _reporteNegocio.CajaResumidaIngresos(inicio, fin, Context.SucursalActual.Id, null, caja);
-            var ingresosComposicion = _reporteNegocio.CajaResumidaIngresosComposicion(inicio, fin, Context.SucursalActual.Id, null, caja);
+            var ingresos = _reporteNegocio.InformeCaja(inicio, fin, Context.SucursalActual.Id, null, caja);
+           // var ingresosComposicion = _reporteNegocio.CajaResumidaIngresosComposicion(inicio, fin, Context.SucursalActual.Id, null, caja);
 
             reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Ingresos", ingresos));
-            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("ComposicionIngresos", ingresosComposicion));
+           // reportViewer.LocalReport.DataSources.Add(new ReportDataSource("ComposicionIngresos", ingresosComposicion));
 
             var sucursal = Context.SucursalActual.Nombre;
             var fecha = DateTime.Now.ToShortDateString();
@@ -82,6 +78,5 @@ namespace GestionAdministrativa.Win.Forms.Reportes
             return new DateTime(fecha.Year, fecha.Month, fecha.Day, 0, 0, 0);
         }
 
-     
     }
 }

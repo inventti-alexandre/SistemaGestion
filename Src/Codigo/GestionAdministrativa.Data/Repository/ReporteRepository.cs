@@ -19,14 +19,19 @@ namespace GestionAdministrativa.Data.Repository
         {
         }
 
-        public List<Reporte_CajaResumida_Ingresos_Result> CajaResumidaIngresos(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId)
+        public List<Reporte_CajaResumida_Ingresos_Result> CajaResumidaIngresos(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId, Guid? cajaId)
         {
-            return GestionAdministrativaDbContext.Reporte_CajaResumida_Ingresos(sucursalId, inicio, fin, operadorId).ToList();
+            return GestionAdministrativaDbContext.Reporte_CajaResumida_Ingresos(sucursalId, inicio, fin, operadorId, cajaId).ToList();
         }
 
-        public List<Reporte_CajaResumida_ComposicionIngresos_Result> CajaResumidaIngresosComposicion(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId)
+        public List<Reporte_CajaResumida_ComposicionIngresos_Result> CajaResumidaIngresosComposicion(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId, Guid? cajaId)
         {
-            return GestionAdministrativaDbContext.Reporte_CajaResumida_ComposicionIngresos(sucursalId, inicio, fin, operadorId).ToList();
+            return GestionAdministrativaDbContext.Reporte_CajaResumida_ComposicionIngresos(sucursalId, inicio, fin, operadorId, cajaId).ToList();
+        }
+
+        public List<InformeCaja_Result> InformeCaja(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId, Guid? cajaId)
+        {
+            return GestionAdministrativaDbContext.InformeCaja(sucursalId, inicio, fin, operadorId, cajaId).ToList();
         }
         //public IQueryable<ComprobantesByVentaId_Result> ComprobantesByVentaId(Guid ventaId)
         //{

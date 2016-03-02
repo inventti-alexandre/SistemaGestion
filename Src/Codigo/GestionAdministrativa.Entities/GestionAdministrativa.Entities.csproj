@@ -106,6 +106,9 @@
     <Compile Include="GrupoProveedor.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="InformeCaja_Result.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Localidad.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>

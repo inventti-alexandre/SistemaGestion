@@ -264,6 +264,7 @@ namespace GestionAdministrativa.Win.Forms.Celulares
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
             CrearEditar();
+          
            
         }
 
@@ -290,7 +291,22 @@ namespace GestionAdministrativa.Win.Forms.Celulares
                     //var celularAnterior = Uow.Celulares.Listado().Where(c=>c.ChoferId == )
 
                     //Controlar si el chofer ya tuvo el sistema
+                {
                     Uow.Celulares.Agregar(entity);
+                    if (chkExistente.Checked)
+                    {
+                        var pagoCelular = new PagoCelular();
+                        pagoCelular.Desde = _clock.Now;
+                        pagoCelular.Hasta = _clock.Now;
+                        pagoCelular.CelularId = entity.Id;
+                        pagoCelular.FechaAlta = _clock.Now;
+                        pagoCelular.OperadorAltaId = Context.OperadorActual.Id;
+                        pagoCelular.SucursalAltaId = Context.SucursalActual.Id;
+                        Uow.PagosCelulares.Agregar(pagoCelular);
+                        Uow.Commit();
+                    }
+                }
+                    
                 else
                 {
                     Uow.Celulares.Modificar(entity);
@@ -304,15 +320,13 @@ namespace GestionAdministrativa.Win.Forms.Celulares
                         }
                     }
                 }
-                   
 
+               
 
                 Uow.Commit();
 
-                //if (_actionForm == ActionFormMode.Create)
-                //{
                     OnEntityAgregada(entity);
-                //}
+
             }
         }
 

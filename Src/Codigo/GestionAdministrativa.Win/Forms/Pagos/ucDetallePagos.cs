@@ -76,6 +76,14 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         #endregion
 
         #region Methods
+
+        public void Limpiar()
+        {
+            FechaDesde = DateTime.Now;
+            FechaHasta = DateTime.Now;
+            Total = 0;
+            Monto = 0;
+        }
         public PagoCelular ActualizarNuevoPago(PagoCelular pago)
         {
             APagar.Clear();

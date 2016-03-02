@@ -41,7 +41,7 @@ namespace GestionAdministrativa.Win.Forms
 
         private void radButton1_Click(object sender, EventArgs e)
         {
-            var frm = FormFactory.Create<FrmCrearEditarMovil>(Guid.Empty, ActionFormMode.Create);
+            var frm = FormFactory.Create<FrmMovilListado>(Guid.Empty, ActionFormMode.Create);
             frm.ShowDialog();
         }
 
@@ -106,6 +106,7 @@ namespace GestionAdministrativa.Win.Forms
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             ControlCaja();
+            lblUsuario.Text = "Usuario: " + Context.OperadorActual.Usuario;
         }
 
         private void ControlCaja()
@@ -207,6 +208,12 @@ namespace GestionAdministrativa.Win.Forms
         private void btnCambioCelularMovil_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmCambioCelularChofer>();
+            frm.Show();
+        }
+
+        private void btnInformeCaja_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmInformeCaja>();
             frm.Show();
         }
      

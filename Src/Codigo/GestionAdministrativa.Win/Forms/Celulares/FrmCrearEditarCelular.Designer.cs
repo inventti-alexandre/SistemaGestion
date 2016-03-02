@@ -67,6 +67,8 @@
             this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
             this.TxtGmail = new Telerik.WinControls.UI.RadTextBox();
             this.EpvCelular = new System.Windows.Forms.ErrorProvider(this.components);
+            this.chkExistente = new Telerik.WinControls.UI.RadCheckBox();
+            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TxtObservaciones)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -102,6 +104,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtGmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EpvCelular)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkExistente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
+            this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,7 +117,7 @@
             this.BtnAceptar.FlatAppearance.BorderSize = 0;
             this.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAceptar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAceptar.Location = new System.Drawing.Point(671, 481);
+            this.BtnAceptar.Location = new System.Drawing.Point(780, 21);
             this.BtnAceptar.Name = "BtnAceptar";
             this.BtnAceptar.Size = new System.Drawing.Size(121, 41);
             this.BtnAceptar.TabIndex = 17;
@@ -127,7 +132,7 @@
             this.BtnCancelar.FlatAppearance.BorderSize = 0;
             this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancelar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(821, 481);
+            this.BtnCancelar.Location = new System.Drawing.Point(907, 21);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(114, 41);
             this.BtnCancelar.TabIndex = 16;
@@ -516,6 +521,27 @@
             // 
             this.EpvCelular.ContainerControl = this;
             // 
+            // chkExistente
+            // 
+            this.chkExistente.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkExistente.Location = new System.Drawing.Point(21, 38);
+            this.chkExistente.Name = "chkExistente";
+            this.chkExistente.Size = new System.Drawing.Size(109, 24);
+            this.chkExistente.TabIndex = 35;
+            this.chkExistente.Text = "Existente";
+            // 
+            // radPanel1
+            // 
+            this.radPanel1.Controls.Add(this.BtnAceptar);
+            this.radPanel1.Controls.Add(this.chkExistente);
+            this.radPanel1.Controls.Add(this.BtnCancelar);
+            this.radPanel1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radPanel1.Location = new System.Drawing.Point(34, 481);
+            this.radPanel1.Name = "radPanel1";
+            this.radPanel1.Size = new System.Drawing.Size(1044, 78);
+            this.radPanel1.TabIndex = 36;
+            this.radPanel1.ThemeName = "TelerikMetro";
+            // 
             // FrmCrearEditarCelular
             // 
             this.AcceptButton = this.BtnAceptar;
@@ -523,8 +549,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnCancelar;
             this.ClientSize = new System.Drawing.Size(1247, 690);
-            this.Controls.Add(this.BtnCancelar);
-            this.Controls.Add(this.BtnAceptar);
+            this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.GbDatosCelulares);
@@ -574,6 +599,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtGmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EpvCelular)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkExistente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
+            this.radPanel1.ResumeLayout(false);
+            this.radPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -619,5 +648,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Telerik.WinControls.UI.RadCheckBox ChkEliminado;
         private Telerik.WinControls.UI.RadLabel radLabel6;
+        private Telerik.WinControls.UI.RadCheckBox chkExistente;
+        private Telerik.WinControls.UI.RadPanel radPanel1;
     }
 }

@@ -25,23 +25,23 @@ namespace GestionAdministrativa.Business
             _clock = clock;
         }
 
-        public PagoCelular AutoPago(Celular _celular,DateTime desde,DateTime hasta)
+        public PagoCelular AutoPago(Celular _celular, DateTime desde, DateTime hasta, Guid operadorId)
         {
             var nuevoPago = Uow.PagosCelulares.Listado().Where(p=> p.CelularId == _celular.Id).OrderByDescending(pc => pc.FechaAlta).FirstOrDefault();
             var celular = Uow.Celulares.Obtener(c => c.Id == _celular.Id, c => c.TiposCelulares);
             if (nuevoPago == null)
             {
-                nuevoPago = PagoCelularInicial(_celular,desde,hasta);
+                nuevoPago = PagoCelularInicial(_celular,desde,hasta, operadorId);
             }
             else
             {
-                nuevoPago = PagoCelularSemanal(_celular,desde,hasta);
+                nuevoPago = PagoCelularSemanal(_celular,desde,hasta,operadorId);
             }
 
       
             return nuevoPago;
         }
-        public PagoCelular PagoCelularInicial(Celular celular,DateTime desde,DateTime hasta)
+        public PagoCelular PagoCelularInicial(Celular celular,DateTime desde,DateTime hasta, Guid operadorId)
         {
             var _monto = celular.TiposCelulares.MontoInicial; //Ver Contexto
             //monto = celular.TiposCelulares.MontoInicial;
@@ -53,13 +53,13 @@ namespace GestionAdministrativa.Business
             nuevoPago.Monto = _monto * (dias.Days+1);
             nuevoPago.CelularId = celular.Id;
             nuevoPago.FechaAlta = _clock.Now;
-            nuevoPago.OperadorAltaId = Guid.Parse("4fb4caf7-9fd7-4a39-bf85-b60f14c2e7ab");
+            nuevoPago.OperadorAltaId = operadorId;
             nuevoPago.SucursalAltaId=1;
             
             return nuevoPago;
         }
 
-        public PagoCelular PagoCelularSemanal(Celular celular,DateTime desde,DateTime hasta)
+        public PagoCelular PagoCelularSemanal(Celular celular, DateTime desde, DateTime hasta, Guid operadorId)
         {
             PagoCelular nuevoPago = new PagoCelular();
             nuevoPago.Id = Guid.NewGuid();
@@ -69,7 +69,7 @@ namespace GestionAdministrativa.Business
             nuevoPago.Monto = celular.TiposCelulares.Monto * (dias.Days+1);
             nuevoPago.CelularId = celular.Id;
             nuevoPago.FechaAlta = _clock.Now;
-            nuevoPago.OperadorAltaId =  Guid.Parse("4fb4caf7-9fd7-4a39-bf85-b60f14c2e7ab");
+            nuevoPago.OperadorAltaId =  operadorId;
             nuevoPago.SucursalAltaId = 1;
 
             return nuevoPago;

@@ -20,14 +20,19 @@ namespace GestionAdministrativa.Business
             _clock = clock;
         }
 
-        public List<Reporte_CajaResumida_Ingresos_Result> CajaResumidaIngresos(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId)
+        public List<Reporte_CajaResumida_Ingresos_Result> CajaResumidaIngresos(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId, Guid? cajaId)
         {
-            return Uow.Reportes.CajaResumidaIngresos(inicio, fin, sucursalId, operadorId);
+            return Uow.Reportes.CajaResumidaIngresos(inicio, fin, sucursalId, operadorId, cajaId);
         }
 
-        public List<Reporte_CajaResumida_ComposicionIngresos_Result> CajaResumidaIngresosComposicion(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId)
+        public List<Reporte_CajaResumida_ComposicionIngresos_Result> CajaResumidaIngresosComposicion(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId, Guid? cajaId)
         {
-            return Uow.Reportes.CajaResumidaIngresosComposicion(inicio, fin, sucursalId, operadorId);
+            return Uow.Reportes.CajaResumidaIngresosComposicion(inicio, fin, sucursalId, operadorId,  cajaId);
+        }
+
+        public List<InformeCaja_Result> InformeCaja(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId, Guid? cajaId)
+        {
+            return Uow.Reportes.InformeCaja(inicio, fin, sucursalId, operadorId, cajaId);
         }
     }
 }

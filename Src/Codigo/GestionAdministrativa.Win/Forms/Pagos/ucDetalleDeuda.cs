@@ -35,6 +35,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         {
             get { return _aPagar; }
         }
+        
         public PagoCelular ActualizarNuevoPago(PagoCelular pago)
         {
             APagar.Clear();

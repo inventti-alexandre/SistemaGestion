@@ -78,17 +78,18 @@
             // 
             this.TxtEfectivo.Enabled = false;
             this.TxtEfectivo.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtEfectivo.Location = new System.Drawing.Point(233, 278);
+            this.TxtEfectivo.Location = new System.Drawing.Point(233, 237);
             this.TxtEfectivo.Name = "TxtEfectivo";
-            this.TxtEfectivo.Size = new System.Drawing.Size(341, 28);
+            this.TxtEfectivo.Size = new System.Drawing.Size(276, 28);
             this.TxtEfectivo.TabIndex = 6;
             this.TxtEfectivo.TabStop = false;
+            this.TxtEfectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtEfectivo.ThemeName = "TelerikMetro";
             // 
             // radLabel7
             // 
             this.radLabel7.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel7.Location = new System.Drawing.Point(127, 281);
+            this.radLabel7.Location = new System.Drawing.Point(35, 240);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(100, 25);
             this.radLabel7.TabIndex = 11;
@@ -98,7 +99,7 @@
             // 
             this.BtnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnSave.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSave.Location = new System.Drawing.Point(308, 439);
+            this.BtnSave.Location = new System.Drawing.Point(248, 407);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(130, 36);
             this.BtnSave.TabIndex = 10;
@@ -109,7 +110,7 @@
             // radLabel6
             // 
             this.radLabel6.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel6.Location = new System.Drawing.Point(157, 241);
+            this.radLabel6.Location = new System.Drawing.Point(35, 280);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(70, 25);
             this.radLabel6.TabIndex = 8;
@@ -121,9 +122,10 @@
             this.TxtEgreso.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtEgreso.Location = new System.Drawing.Point(233, 198);
             this.TxtEgreso.Name = "TxtEgreso";
-            this.TxtEgreso.Size = new System.Drawing.Size(341, 28);
+            this.TxtEgreso.Size = new System.Drawing.Size(276, 28);
             this.TxtEgreso.TabIndex = 5;
             this.TxtEgreso.TabStop = false;
+            this.TxtEgreso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtEgreso.ThemeName = "TelerikMetro";
             // 
             // TxtIngreso
@@ -132,15 +134,16 @@
             this.TxtIngreso.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtIngreso.Location = new System.Drawing.Point(233, 158);
             this.TxtIngreso.Name = "TxtIngreso";
-            this.TxtIngreso.Size = new System.Drawing.Size(341, 28);
+            this.TxtIngreso.Size = new System.Drawing.Size(276, 28);
             this.TxtIngreso.TabIndex = 4;
             this.TxtIngreso.TabStop = false;
+            this.TxtIngreso.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtIngreso.ThemeName = "TelerikMetro";
             // 
             // radLabel5
             // 
             this.radLabel5.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel5.Location = new System.Drawing.Point(147, 198);
+            this.radLabel5.Location = new System.Drawing.Point(35, 198);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(80, 25);
             this.radLabel5.TabIndex = 2;
@@ -149,7 +152,7 @@
             // radLabel4
             // 
             this.radLabel4.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel4.Location = new System.Drawing.Point(137, 158);
+            this.radLabel4.Location = new System.Drawing.Point(35, 158);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(90, 25);
             this.radLabel4.TabIndex = 2;
@@ -162,15 +165,16 @@
             this.TxtInicio.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtInicio.Location = new System.Drawing.Point(233, 118);
             this.TxtInicio.Name = "TxtInicio";
-            this.TxtInicio.Size = new System.Drawing.Size(341, 28);
+            this.TxtInicio.Size = new System.Drawing.Size(276, 28);
             this.TxtInicio.TabIndex = 3;
             this.TxtInicio.TabStop = false;
+            this.TxtInicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtInicio.ThemeName = "TelerikMetro";
             // 
             // radLabel3
             // 
             this.radLabel3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel3.Location = new System.Drawing.Point(147, 118);
+            this.radLabel3.Location = new System.Drawing.Point(35, 118);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(80, 25);
             this.radLabel3.TabIndex = 2;
@@ -179,7 +183,7 @@
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.Location = new System.Drawing.Point(55, 73);
+            this.radLabel2.Location = new System.Drawing.Point(35, 73);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(172, 25);
             this.radLabel2.TabIndex = 2;
@@ -202,7 +206,7 @@
             // 
             this.radButton1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.radButton1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radButton1.Location = new System.Drawing.Point(444, 439);
+            this.radButton1.Location = new System.Drawing.Point(384, 407);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(130, 36);
             this.radButton1.TabIndex = 11;
@@ -220,10 +224,10 @@
             this.DtpFechaAlta.Name = "DtpFechaAlta";
             this.DtpFechaAlta.NullableValue = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
             this.DtpFechaAlta.NullDate = new System.DateTime(((long)(0)));
-            this.DtpFechaAlta.Size = new System.Drawing.Size(341, 31);
+            this.DtpFechaAlta.Size = new System.Drawing.Size(276, 31);
             this.DtpFechaAlta.TabIndex = 13;
             this.DtpFechaAlta.TabStop = false;
-            this.DtpFechaAlta.Text = "lunes, 04 de enero de 2016";
+            this.DtpFechaAlta.Text = "lunes, 4 de enero de 2016";
             this.DtpFechaAlta.ThemeName = "TelerikMetro";
             this.DtpFechaAlta.Value = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
             // 
@@ -238,10 +242,10 @@
             this.DtpFechaCierre.Name = "DtpFechaCierre";
             this.DtpFechaCierre.NullableValue = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
             this.DtpFechaCierre.NullDate = new System.DateTime(((long)(0)));
-            this.DtpFechaCierre.Size = new System.Drawing.Size(341, 31);
+            this.DtpFechaCierre.Size = new System.Drawing.Size(276, 31);
             this.DtpFechaCierre.TabIndex = 4;
             this.DtpFechaCierre.TabStop = false;
-            this.DtpFechaCierre.Text = "lunes, 04 de enero de 2016";
+            this.DtpFechaCierre.Text = "lunes, 4 de enero de 2016";
             this.DtpFechaCierre.ThemeName = "TelerikMetro";
             this.DtpFechaCierre.Value = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
             // 
@@ -249,17 +253,18 @@
             // 
             this.TxtEfectivoReal.Enabled = false;
             this.TxtEfectivoReal.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtEfectivoReal.Location = new System.Drawing.Point(233, 358);
+            this.TxtEfectivoReal.Location = new System.Drawing.Point(233, 322);
             this.TxtEfectivoReal.Name = "TxtEfectivoReal";
-            this.TxtEfectivoReal.Size = new System.Drawing.Size(341, 28);
+            this.TxtEfectivoReal.Size = new System.Drawing.Size(276, 28);
             this.TxtEfectivoReal.TabIndex = 12;
             this.TxtEfectivoReal.TabStop = false;
+            this.TxtEfectivoReal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtEfectivoReal.ThemeName = "TelerikMetro";
             // 
             // radLabel8
             // 
             this.radLabel8.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel8.Location = new System.Drawing.Point(76, 361);
+            this.radLabel8.Location = new System.Drawing.Point(35, 325);
             this.radLabel8.Name = "radLabel8";
             this.radLabel8.Size = new System.Drawing.Size(151, 25);
             this.radLabel8.TabIndex = 15;
@@ -268,7 +273,7 @@
             // radLabel9
             // 
             this.radLabel9.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel9.Location = new System.Drawing.Point(106, 321);
+            this.radLabel9.Location = new System.Drawing.Point(35, 365);
             this.radLabel9.Name = "radLabel9";
             this.radLabel9.Size = new System.Drawing.Size(121, 25);
             this.radLabel9.TabIndex = 13;
@@ -278,29 +283,31 @@
             // 
             this.TxtVales.Enabled = false;
             this.TxtVales.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtVales.Location = new System.Drawing.Point(233, 238);
+            this.TxtVales.Location = new System.Drawing.Point(233, 277);
             this.TxtVales.Name = "TxtVales";
-            this.TxtVales.Size = new System.Drawing.Size(341, 28);
+            this.TxtVales.Size = new System.Drawing.Size(276, 28);
             this.TxtVales.TabIndex = 7;
             this.TxtVales.TabStop = false;
+            this.TxtVales.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtVales.ThemeName = "TelerikMetro";
             // 
             // TxtValesReal
             // 
             this.TxtValesReal.Enabled = false;
             this.TxtValesReal.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtValesReal.Location = new System.Drawing.Point(233, 318);
+            this.TxtValesReal.Location = new System.Drawing.Point(233, 362);
             this.TxtValesReal.Name = "TxtValesReal";
-            this.TxtValesReal.Size = new System.Drawing.Size(341, 28);
+            this.TxtValesReal.Size = new System.Drawing.Size(276, 28);
             this.TxtValesReal.TabIndex = 13;
             this.TxtValesReal.TabStop = false;
+            this.TxtValesReal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtValesReal.ThemeName = "TelerikMetro";
             // 
             // FrmCrearEditarCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 487);
+            this.ClientSize = new System.Drawing.Size(890, 622);
             this.Controls.Add(this.TxtValesReal);
             this.Controls.Add(this.TxtVales);
             this.Controls.Add(this.TxtEfectivoReal);

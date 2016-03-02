@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 
 namespace GestionAdministrativa.Win.Forms.Cajas
 {
@@ -45,7 +46,7 @@ namespace GestionAdministrativa.Win.Forms.Cajas
         public override async Task<int> RefrescarListado()
         {
             int pageTotal = 0;
-            Guid? operador = Guid.Parse("4fb4caf7-9fd7-4a39-bf85-b60f14c2e7ab");
+            Guid? operador = Context.OperadorActual.Id;// Guid.Parse("4fb4caf7-9fd7-4a39-bf85-b60f14c2e7ab");
             //var apellido = ucFiltroChoferes.Denominacion != "" ? ucFiltroChoferes.Denominacion : "";
             var aprobado = false;//  ucFiltroChoferes.MovilId;
             //if (movil == Guid.Empty)
@@ -72,60 +73,68 @@ namespace GestionAdministrativa.Win.Forms.Cajas
             //}
         }
 
-        private void Edit(Guid choferid)
+        private void Edit(Guid cajaId)
         {
-            //var frm = FormFactory.Create<FrmCrearEditarChofer>(choferid, ActionFormMode.Edit);
-            //frm.Show();
+            using (var formCrear = FormFactory.Create<FrmCrearEditarCaja>(cajaId, ActionFormMode.Edit))
+            {
+                var result = formCrear.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    formCrear.Close();
+                    RefrescarListado();
+                }
+            }
         }
 
-        private void Detail(Guid choferid)
+        private void Detail(Guid cajaId)
         {
-            //using (var formCrear = FormFactory.Create<FrmDetalleEliminarChofer>(choferid, ActionFormMode.Detail))
-            //{
-            //    var result = formCrear.ShowDialog();
-            //    if (result == DialogResult.OK)
-            //    {
-            //        formCrear.Close();
-            //        RefrescarListado();
-            //    }
-            //}
+            using (var formCrear = FormFactory.Create<FrmCrearEditarCaja>(cajaId, ActionFormMode.Detail))
+            {
+                var result = formCrear.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    formCrear.Close();
+                    RefrescarListado();
+                }
+            }
         }
 
-        private void CreateChofer()
+        private void GridCajas_CommandCellClick(object sender, EventArgs e)
         {
-            //using (var formCrear = FormFactory.Create<FrmCrearEditarChofer>(Guid.Empty, ActionFormMode.Create))
-            //{
-            //    var result = formCrear.ShowDialog();
-            //    if (result == DialogResult.OK)
-            //    {
-            //        formCrear.Close();
-            //        RefrescarListado();
-            //    }
-            //}
+            var commandCell = (GridCommandCellElement)sender;
+
+            var selectedRow = this.GridCajas.SelectedRows.FirstOrDefault();
+
+            if (selectedRow == null)
+                return;
+
+            var caja = selectedRow.DataBoundItem as CajasDto;
+
+            if (caja == null)
+                return;
+
+            switch (commandCell.ColumnInfo.Name)
+            {
+                case "Detail":
+                    Detail(caja.Id);
+                    break;
+                case "Edit":
+                    Edit(caja.Id);
+                    break;
+               
+            }
+        }
+
+       
         }
 
 
         #endregion
 
         #region Controles
-        private void GridChoferes_CommandCellClick(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-            CreateChofer();
-        }
+       
 
         #endregion
 
-        private void BtnCrear_Click(object sender, EventArgs e)
-        {
-            //var frm = FormFactory.Create<FrmCrearEditarChofer>(Guid.Empty, ActionFormMode.Create);
-            //frm.Show();
-        }
-
-    }
+    
 }

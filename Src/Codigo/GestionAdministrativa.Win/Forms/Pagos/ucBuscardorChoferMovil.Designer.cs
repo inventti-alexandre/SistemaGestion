@@ -108,6 +108,7 @@
             this.DdlMoviles.Size = new System.Drawing.Size(173, 29);
             this.DdlMoviles.TabIndex = 8;
             this.DdlMoviles.ThemeName = "TelerikMetro";
+            this.DdlMoviles.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DdlMoviles_KeyUp);
             // 
             // ucBuscardorChoferMovil
             // 

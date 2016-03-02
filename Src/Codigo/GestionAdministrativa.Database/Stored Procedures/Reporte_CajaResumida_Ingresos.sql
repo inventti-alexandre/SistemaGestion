@@ -2,7 +2,8 @@
 	@SucursalId int,
 	@FechaInicio datetime,
 	@FechaFin datetime,
-	@OperadorId uniqueidentifier = null
+	@OperadorId uniqueidentifier = null,
+	@CajaId uniqueidentifier = null
 AS
 	
 	DECLARE @Conceptos TABLE
@@ -35,6 +36,7 @@ AS
 			AND CM.FechaAlta < @FechaFin
 			AND CM.SucursalAltaId = @SucursalId
 			AND (@OperadorId IS NULL OR @OperadorId = CM.OperadorAltaId)
+			AND (@CajaId IS NULL OR @CajaId = CM.CajaId)
 	GROUP BY C.Nombre
 		
 	SELECT C.Nombre,

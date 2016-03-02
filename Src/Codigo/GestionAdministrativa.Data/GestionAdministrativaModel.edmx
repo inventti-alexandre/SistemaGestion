@@ -3163,17 +3163,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="InformeCaja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SucursalId" Type="int" Mode="In" />
+          <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+          <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+          <Parameter Name="OperadorId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CajaId" Type="uniqueidentifier" Mode="In" />
+        </Function>
         <Function Name="Reporte_CajaResumida_ComposicionIngresos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="SucursalId" Type="int" Mode="In" />
           <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
           <Parameter Name="FechaFin" Type="datetime" Mode="In" />
           <Parameter Name="OperadorId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CajaId" Type="uniqueidentifier" Mode="In" />
         </Function>
         <Function Name="Reporte_CajaResumida_Ingresos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="SucursalId" Type="int" Mode="In" />
           <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
           <Parameter Name="FechaFin" Type="datetime" Mode="In" />
           <Parameter Name="OperadorId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CajaId" Type="uniqueidentifier" Mode="In" />
         </Function>
         <EntityContainer Name="GestionAdministrativaModelStoreContainer">
           <EntitySet Name="__RefactorLog" EntityType="Self.__RefactorLog" Schema="dbo" store:Type="Tables" />
@@ -7868,6 +7877,7 @@
             <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
             <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
             <Parameter Name="OperadorId" Mode="In" Type="Guid" />
+            <Parameter Name="CajaId" Mode="In" Type="Guid" />
           </FunctionImport>
           <EntitySet Name="CajaBalances" EntityType="GestionAdministrativa.Model.CajaBalance" />
           <AssociationSet Name="FK_CajaBalance_OperadorAlta" Association="GestionAdministrativa.Model.FK_CajaBalance_OperadorAlta">
@@ -7891,6 +7901,7 @@
             <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
             <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
             <Parameter Name="OperadorId" Mode="In" Type="Guid" />
+            <Parameter Name="CajaId" Mode="In" Type="Guid" />
           </FunctionImport>
           <EntitySet Name="ChoferesMovils" EntityType="GestionAdministrativa.Model.ChoferesMovil" />
           <AssociationSet Name="FK_ChoferesMovil_Chofer" Association="GestionAdministrativa.Model.FK_ChoferesMovil_Chofer">
@@ -7917,6 +7928,13 @@
             <End Role="Sucursal" EntitySet="Sucursales" />
             <End Role="ChoferesMovil" EntitySet="ChoferesMovils" />
           </AssociationSet>
+          <FunctionImport Name="InformeCaja" ReturnType="Collection(GestionAdministrativa.Model.InformeCaja_Result)">
+            <Parameter Name="SucursalId" Mode="In" Type="Int32" />
+            <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
+            <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
+            <Parameter Name="OperadorId" Mode="In" Type="Guid" />
+            <Parameter Name="CajaId" Mode="In" Type="Guid" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Chofer">
           <Key>
@@ -8397,6 +8415,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="InformeCaja_Result">
+          <Property Type="String" Name="Tipo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Titulo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Movil" Nullable="true" MaxLength="20" />
+          <Property Type="DateTime" Name="Fecha" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Concepto" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Chofer" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Operador" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="ImpFac" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Importe" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Efectivo" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Vales" Nullable="true" Precision="19" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -9246,6 +9277,23 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="InformeCaja" FunctionName="GestionAdministrativa.Model.Store.InformeCaja">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GestionAdministrativa.Model.InformeCaja_Result">
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="Movil" ColumnName="Movil" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+                <ScalarProperty Name="Chofer" ColumnName="Chofer" />
+                <ScalarProperty Name="Operador" ColumnName="Operador" />
+                <ScalarProperty Name="ImpFac" ColumnName="ImpFac" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Efectivo" ColumnName="Efectivo" />
+                <ScalarProperty Name="Vales" ColumnName="Vales" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

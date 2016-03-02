@@ -69,6 +69,14 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         #endregion
 
         #region Metodos
+        public void Limpiar()
+        {
+            Pagos.Clear();
+            gridPagos.DataSource = null;
+            gridPagos.Rows.Clear();
+            RefrescarPagos();
+           // Total= 0;
+        }
         public void ActualizarNuevoPago(string tipo, decimal importe)
         {
             Pagos.Clear();

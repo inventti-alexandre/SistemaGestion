@@ -2,7 +2,8 @@
 		@SucursalId int,
 	@FechaInicio datetime,
 	@FechaFin datetime,
-	@OperadorId uniqueidentifier = null
+	@OperadorId uniqueidentifier = null,
+	@CajaId uniqueidentifier = null
 AS
 	SELECT Efectivo = ISNULL(SUM(CM.Efectivo), 0),
 		   Vales = ISNULL(SUM(CM.Vales), 0)
@@ -17,4 +18,5 @@ AS
 			AND CM.FechaAlta < @FechaFin
 			AND CM.SucursalAltaId = @SucursalId
 			AND (@OperadorId IS NULL OR @OperadorId = CM.OperadorAltaId)
+			AND (@CajaId IS NULL OR @CajaId = CM.CajaId)
 

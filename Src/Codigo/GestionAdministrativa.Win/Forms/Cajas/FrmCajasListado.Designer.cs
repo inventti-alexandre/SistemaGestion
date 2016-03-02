@@ -116,7 +116,7 @@
             this.GridCajas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GridCajas.Location = new System.Drawing.Point(18, 258);
+            this.GridCajas.Location = new System.Drawing.Point(12, 54);
             // 
             // GridCajas
             // 
@@ -127,19 +127,19 @@
             gridViewTextBoxColumn7.FieldName = "Fecha";
             gridViewTextBoxColumn7.HeaderText = "Fecha";
             gridViewTextBoxColumn7.Name = "Fecha";
-            gridViewTextBoxColumn7.Width = 749;
+            gridViewTextBoxColumn7.Width = 469;
             gridViewTextBoxColumn8.FieldName = "Ingresos";
             gridViewTextBoxColumn8.HeaderText = "Ingresos";
             gridViewTextBoxColumn8.Name = "Ingresos";
-            gridViewTextBoxColumn8.Width = 189;
+            gridViewTextBoxColumn8.Width = 118;
             gridViewTextBoxColumn9.FieldName = "Egresos";
             gridViewTextBoxColumn9.HeaderText = "Egresos";
             gridViewTextBoxColumn9.Name = "Egresos";
-            gridViewTextBoxColumn9.Width = 189;
+            gridViewTextBoxColumn9.Width = 118;
             gridViewTextBoxColumn10.FieldName = "Aprobada";
             gridViewTextBoxColumn10.HeaderText = "Aprobada";
             gridViewTextBoxColumn10.Name = "Aprobada";
-            gridViewTextBoxColumn10.Width = 99;
+            gridViewTextBoxColumn10.Width = 62;
             gridViewCommandColumn4.HeaderText = "";
             gridViewCommandColumn4.Image = global::GestionAdministrativa.Win.Properties.Resources.Data_Edit;
             gridViewCommandColumn4.MaxWidth = 30;
@@ -154,6 +154,7 @@
             gridViewCommandColumn5.Width = 30;
             gridViewCommandColumn6.HeaderText = "";
             gridViewCommandColumn6.Image = global::GestionAdministrativa.Win.Properties.Resources.Garbage_Closed;
+            gridViewCommandColumn6.IsVisible = false;
             gridViewCommandColumn6.MaxWidth = 30;
             gridViewCommandColumn6.MinWidth = 30;
             gridViewCommandColumn6.Name = "Delete";
@@ -168,16 +169,17 @@
             gridViewCommandColumn6});
             this.GridCajas.Name = "GridCajas";
             this.GridCajas.ReadOnly = true;
-            this.GridCajas.Size = new System.Drawing.Size(1332, 388);
+            this.GridCajas.Size = new System.Drawing.Size(844, 403);
             this.GridCajas.TabIndex = 2;
             this.GridCajas.Text = "Listado de Choferes";
             this.GridCajas.ThemeName = "TelerikMetro";
+            this.GridCajas.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.GridCajas_CommandCellClick);
             // 
             // FrmCajasListado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 658);
+            this.ClientSize = new System.Drawing.Size(868, 577);
             this.Controls.Add(this.GridCajas);
             this.Name = "FrmCajasListado";
             // 

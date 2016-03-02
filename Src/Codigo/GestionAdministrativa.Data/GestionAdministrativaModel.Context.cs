@@ -73,7 +73,7 @@ namespace GestionAdministrativa.Data
         public virtual DbSet<CajaBalance> CajaBalances { get; set; }
         public virtual DbSet<ChoferesMovil> ChoferesMovils { get; set; }
     
-        public virtual ObjectResult<Reporte_CajaResumida_Ingresos_Result> Reporte_CajaResumida_Ingresos(Nullable<int> sucursalId, Nullable<System.DateTime> fechaInicio, Nullable<System.DateTime> fechaFin, Nullable<System.Guid> operadorId)
+        public virtual ObjectResult<Reporte_CajaResumida_Ingresos_Result> Reporte_CajaResumida_Ingresos(Nullable<int> sucursalId, Nullable<System.DateTime> fechaInicio, Nullable<System.DateTime> fechaFin, Nullable<System.Guid> operadorId, Nullable<System.Guid> cajaId)
         {
             var sucursalIdParameter = sucursalId.HasValue ?
                 new ObjectParameter("SucursalId", sucursalId) :
@@ -91,10 +91,14 @@ namespace GestionAdministrativa.Data
                 new ObjectParameter("OperadorId", operadorId) :
                 new ObjectParameter("OperadorId", typeof(System.Guid));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Reporte_CajaResumida_Ingresos_Result>("Reporte_CajaResumida_Ingresos", sucursalIdParameter, fechaInicioParameter, fechaFinParameter, operadorIdParameter);
+            var cajaIdParameter = cajaId.HasValue ?
+                new ObjectParameter("CajaId", cajaId) :
+                new ObjectParameter("CajaId", typeof(System.Guid));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Reporte_CajaResumida_Ingresos_Result>("Reporte_CajaResumida_Ingresos", sucursalIdParameter, fechaInicioParameter, fechaFinParameter, operadorIdParameter, cajaIdParameter);
         }
     
-        public virtual ObjectResult<Reporte_CajaResumida_ComposicionIngresos_Result> Reporte_CajaResumida_ComposicionIngresos(Nullable<int> sucursalId, Nullable<System.DateTime> fechaInicio, Nullable<System.DateTime> fechaFin, Nullable<System.Guid> operadorId)
+        public virtual ObjectResult<Reporte_CajaResumida_ComposicionIngresos_Result> Reporte_CajaResumida_ComposicionIngresos(Nullable<int> sucursalId, Nullable<System.DateTime> fechaInicio, Nullable<System.DateTime> fechaFin, Nullable<System.Guid> operadorId, Nullable<System.Guid> cajaId)
         {
             var sucursalIdParameter = sucursalId.HasValue ?
                 new ObjectParameter("SucursalId", sucursalId) :
@@ -112,7 +116,36 @@ namespace GestionAdministrativa.Data
                 new ObjectParameter("OperadorId", operadorId) :
                 new ObjectParameter("OperadorId", typeof(System.Guid));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Reporte_CajaResumida_ComposicionIngresos_Result>("Reporte_CajaResumida_ComposicionIngresos", sucursalIdParameter, fechaInicioParameter, fechaFinParameter, operadorIdParameter);
+            var cajaIdParameter = cajaId.HasValue ?
+                new ObjectParameter("CajaId", cajaId) :
+                new ObjectParameter("CajaId", typeof(System.Guid));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Reporte_CajaResumida_ComposicionIngresos_Result>("Reporte_CajaResumida_ComposicionIngresos", sucursalIdParameter, fechaInicioParameter, fechaFinParameter, operadorIdParameter, cajaIdParameter);
+        }
+    
+        public virtual ObjectResult<InformeCaja_Result> InformeCaja(Nullable<int> sucursalId, Nullable<System.DateTime> fechaInicio, Nullable<System.DateTime> fechaFin, Nullable<System.Guid> operadorId, Nullable<System.Guid> cajaId)
+        {
+            var sucursalIdParameter = sucursalId.HasValue ?
+                new ObjectParameter("SucursalId", sucursalId) :
+                new ObjectParameter("SucursalId", typeof(int));
+    
+            var fechaInicioParameter = fechaInicio.HasValue ?
+                new ObjectParameter("FechaInicio", fechaInicio) :
+                new ObjectParameter("FechaInicio", typeof(System.DateTime));
+    
+            var fechaFinParameter = fechaFin.HasValue ?
+                new ObjectParameter("FechaFin", fechaFin) :
+                new ObjectParameter("FechaFin", typeof(System.DateTime));
+    
+            var operadorIdParameter = operadorId.HasValue ?
+                new ObjectParameter("OperadorId", operadorId) :
+                new ObjectParameter("OperadorId", typeof(System.Guid));
+    
+            var cajaIdParameter = cajaId.HasValue ?
+                new ObjectParameter("CajaId", cajaId) :
+                new ObjectParameter("CajaId", typeof(System.Guid));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<InformeCaja_Result>("InformeCaja", sucursalIdParameter, fechaInicioParameter, fechaFinParameter, operadorIdParameter, cajaIdParameter);
         }
     }
 }

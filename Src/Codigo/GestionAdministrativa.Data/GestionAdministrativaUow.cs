@@ -36,6 +36,7 @@ namespace GestionAdministrativa.Data
         public IRepository<CajaMovimiento> CajaMovimientos { get { return GetStandardRepo<CajaMovimiento>(); } }
         public IRepository<ChoferesMovil> ChoferesMoviles { get { return GetStandardRepo<ChoferesMovil>(); } }
         public IRepository<OperadorSucursal> OperadorSucursales { get { return GetStandardRepo<OperadorSucursal>(); } }
+        public IRepository<CajaBalance> CajaBalances { get { return GetStandardRepo<CajaBalance>(); } }
         public string ConnectionString
         {
             get
