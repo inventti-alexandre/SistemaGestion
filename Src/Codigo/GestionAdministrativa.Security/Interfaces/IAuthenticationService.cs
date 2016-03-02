@@ -1,4 +1,5 @@
 ﻿
+using GestionAdministrativa.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace GestionAdministrativa.Security.Interfaces
 {
     public interface IAuthenticationService : IDisposable
     {
-        //Operador AuthenticateUser(string username, string password);
+        Operador AuthenticateUser(string username, string password);
     }
 }

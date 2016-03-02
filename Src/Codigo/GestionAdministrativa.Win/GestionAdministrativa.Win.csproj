@@ -145,6 +145,12 @@
     <Compile Include="Controls\EditColumn.cs" />
     <Compile Include="Controls\PayColumn.cs" />
     <Compile Include="Enums\FormMode.cs" />
+    <Compile Include="Forms\Autenticacion\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Autenticacion\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Cajas\AbrirCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,12 +256,6 @@
     <Compile Include="Forms\Moviles\ucFiltroMoviles.Designer.cs">
       <DependentUpon>ucFiltroMoviles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pagos\FrmPagoCelular.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Pagos\FrmPagoCelular.Designer.cs">
-      <DependentUpon>FrmPagoCelular.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Pagos\FrmPagoSistema.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -307,11 +307,26 @@
     <Compile Include="Forms\UserControlBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\Util\ucFiltroSucursal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Util\ucFiltroSucursal.Designer.cs">
+      <DependentUpon>ucFiltroSucursal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Util\UcUsuariosLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Util\UcUsuariosLogin.Designer.cs">
+      <DependentUpon>UcUsuariosLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\FormRegistry.cs" />
     <Compile Include="Helpers\IFormRegistry.cs" />
     <Compile Include="IFormFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Autenticacion\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Cajas\AbrirCaja.resx">
       <DependentUpon>AbrirCaja.cs</DependentUpon>
     </EmbeddedResource>
@@ -370,9 +385,6 @@
     <EmbeddedResource Include="Forms\Moviles\ucFiltroMoviles.resx">
       <DependentUpon>ucFiltroMoviles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Pagos\FrmPagoCelular.resx">
-      <DependentUpon>FrmPagoCelular.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pagos\FrmPagoSistema.resx">
       <DependentUpon>FrmPagoSistema.cs</DependentUpon>
     </EmbeddedResource>
@@ -399,6 +411,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControlBase.resx">
       <DependentUpon>UserControlBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Util\ucFiltroSucursal.resx">
+      <DependentUpon>ucFiltroSucursal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Util\UcUsuariosLogin.resx">
+      <DependentUpon>UcUsuariosLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -11,8 +11,10 @@ using GestionAdministrativa.Data.Interfaces;
 using GestionAdministrativa.Entities;
 using GestionAdministrativa.Security;
 using GestionAdministrativa.Win.Forms;
+//using GestionAdministrativa.Win;
 using Ninject;
 using log4net;
+using GestionAdministrativa.Win.Forms.Autenticacion;
 
 namespace GestionAdministrativa.Win
 {
@@ -45,6 +47,7 @@ namespace GestionAdministrativa.Win
 
                 //Set global container.
                 Ioc.Container = new NinjectIocContainer(kernel);
+                //Framework.Ioc.Ninject. = new NinjectIocContainer(kernel);
 
                 //Config log4net
                 log4net.Config.DOMConfigurator.Configure();
@@ -58,16 +61,16 @@ namespace GestionAdministrativa.Win
             #if(MOCK_SECURITY)
                             MockUser();
             #else
-                            //using (var login = kernel.Get<FrmLogin>())
-                            //{
-                            //    var result = login.ShowDialog();
+                using (var login = kernel.Get<FrmLogin>())
+                {
+                    var result = login.ShowDialog();
 
-                            //    if (result == DialogResult.Cancel)
-                            //    {
-                            //        Application.Exit();
-                            //        return;
-                            //    }
-                            //}
+                    if (result == DialogResult.Cancel)
+                    {
+                        Application.Exit();
+                        return;
+                    }
+                }
             #endif
                 RunAfterLoginTasks();
                 var mainForm = kernel.Get<FrmPrincipal>();
