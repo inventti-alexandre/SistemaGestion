@@ -28,7 +28,6 @@ namespace GestionAdministrativa.Win.Forms.Reportes
 
         private void FrmInformeCaja_Load(object sender, EventArgs e)
         {
-
             dtDesde.Value = _clock.Now;
             dtHasta.Value = _clock.Now;
             this.reportViewer.RefreshReport();
@@ -46,6 +45,11 @@ namespace GestionAdministrativa.Win.Forms.Reportes
             var fin = SetTimeToZero(dtHasta.Value.AddDays(1));
 
             var caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id).OrderByDescending(c => c.FechaAlta).FirstOrDefault().Id;
+            if (caja == null)
+            {
+                MessageBox.Show("No tiene caja abierta.");
+                return;
+            }
 
             var ingresos = _reporteNegocio.InformeCaja(inicio, fin, Context.SucursalActual.Id, null, caja);
            // var ingresosComposicion = _reporteNegocio.CajaResumidaIngresosComposicion(inicio, fin, Context.SucursalActual.Id, null, caja);

@@ -24,5 +24,7 @@ namespace GestionAdministrativa.Entities
         public Nullable<decimal> Importe { get; set; }
         public Nullable<decimal> Efectivo { get; set; }
         public Nullable<decimal> Vales { get; set; }
+        public Nullable<System.DateTime> Desde { get; set; }
+        public Nullable<System.DateTime> Hasta { get; set; }
     }
 }

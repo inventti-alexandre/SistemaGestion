@@ -292,10 +292,13 @@ namespace GestionAdministrativa.Win.Forms.Celulares
 
                     //Controlar si el chofer ya tuvo el sistema
                 {
-                    Uow.Celulares.Agregar(entity);
+                  
                     if (chkExistente.Checked)
                     {
+                        entity.FechaUltimoPago = _clock.Now;
+
                         var pagoCelular = new PagoCelular();
+                        pagoCelular.Id = Guid.NewGuid();
                         pagoCelular.Desde = _clock.Now;
                         pagoCelular.Hasta = _clock.Now;
                         pagoCelular.CelularId = entity.Id;
@@ -305,6 +308,7 @@ namespace GestionAdministrativa.Win.Forms.Celulares
                         Uow.PagosCelulares.Agregar(pagoCelular);
                         Uow.Commit();
                     }
+                    Uow.Celulares.Agregar(entity);
                 }
                     
                 else

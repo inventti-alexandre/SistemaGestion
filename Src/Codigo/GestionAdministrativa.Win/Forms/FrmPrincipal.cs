@@ -168,12 +168,17 @@ namespace GestionAdministrativa.Win.Forms
         {
             if (caja==null)
                 caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id && c.FCierre == null).FirstOrDefault();
-            
+
+         
+
             caja.FCierre = _clock.Now;
             caja.FechaModificacion = _clock.Now;
             caja.OperadorModificacionId = Context.OperadorActual.Id;
             Uow.Cajas.Modificar(caja);
             Uow.Commit();
+
+            var frm = FormFactory.Create<FrmCajaResumida>();
+            frm.Show();
         }
 
         private void DeshabilitarControlesPago()

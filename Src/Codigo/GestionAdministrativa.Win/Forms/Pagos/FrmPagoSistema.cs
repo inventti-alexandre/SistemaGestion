@@ -94,6 +94,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
             ucEstadoCuentaChofer1.ActualizarChofer(_chofer);
             _celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where(c => c.Id == chofer.CelularId).FirstOrDefault();
+
             if (_celular != null)
             {
                 var cantidadDias = 6;
@@ -223,7 +224,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
         private void RegistrarCajaYCajaMovimiento()
         {
-            var caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id && c.FCierre == null).FirstOrDefault();
+            var caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id && c.FCierre == null).OrderByDescending(c=>c.FechaAlta ).FirstOrDefault();
             caja.Ingresos = (caja.Ingresos ?? 0) + ucPagos1.Total;
             caja.Saldo = (caja.Saldo ?? 0) + ucPagos1.Total;
             caja.Efectivo = _pagoCelular.Efectivo;
@@ -242,7 +243,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             cajaMovimiento.ComprobanteId = _pagoCelular.Id; //id del pago Celular
             cajaMovimiento.Senia = _pagoCelular.Senia;
             cajaMovimiento.Importe = _pagoCelular.Monto;
-            cajaMovimiento.ImpFac = _pagoCelular.Monto;
+            cajaMovimiento.ImpFac = _pagoCelular.Efectivo + _pagoCelular.Vales;// ucPagos1.Total; //_pagoCelular.Monto;
             cajaMovimiento.Efectivo = _pagoCelular.Efectivo;
             cajaMovimiento.Vales = _pagoCelular.Vales;
             cajaMovimiento.FechaAlta = _clock.Now;

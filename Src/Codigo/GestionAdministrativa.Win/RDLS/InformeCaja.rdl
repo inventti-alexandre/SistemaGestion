@@ -57,9 +57,17 @@
           <DataField>Chofer</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="Desde">
+          <DataField>Desde</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
         <Field Name="Concepto">
           <DataField>Concepto</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Hasta">
+          <DataField>Hasta</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="ImpFac">
           <DataField>ImpFac</DataField>
@@ -347,7 +355,7 @@
             <Top>14.78492mm</Top>
             <Left>1.5mm</Left>
             <Height>15.78958mm</Height>
-            <Width>158.95541mm</Width>
+            <Width>183.17632mm</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
@@ -379,7 +387,7 @@
             <Top>37.2745mm</Top>
             <Left>1.5mm</Left>
             <Height>6.17361mm</Height>
-            <Width>158.95541mm</Width>
+            <Width>183.17632mm</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
@@ -407,13 +415,19 @@
                   <Width>27.72493mm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>22.67166mm</Width>
+                  <Width>22.76882mm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>22.50667mm</Width>
+                  <Width>19.86708mm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>21.62299mm</Width>
+                  <Width>16.11mm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>14.46334mm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>17.81298mm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -503,6 +517,70 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox59</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox11">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Desde</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox13">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Hasta</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -621,7 +699,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>6.20416mm</Height>
+                  <Height>4.93416mm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -633,7 +711,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Fecha.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -653,7 +733,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -666,7 +745,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Movil.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -696,13 +777,81 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Chofer.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Chofer</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Desde">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Desde.Value</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <Format>dd/MM/yyyy</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Desde</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Hasta">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Hasta.Value</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <Format>dd/MM/yyyy</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Hasta</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -727,6 +876,7 @@
                                 <TextRun>
                                   <Value>=Fields!Efectivo.Value</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <Format>'$'0.00;('$'0.00)</Format>
                                     <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                                   </Style>
@@ -762,6 +912,7 @@
                                 <TextRun>
                                   <Value>=Fields!Vales.Value</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <Format>'$'0.00;('$'0.00)</Format>
                                     <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                                   </Style>
@@ -788,15 +939,16 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Importe1">
+                        <Textbox Name="ImpFac">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Importe.Value</Value>
+                                  <Value>=Fields!ImpFac.Value</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <Format>'$'0.00;('$'0.00)</Format>
                                     <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                                   </Style>
@@ -807,7 +959,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Importe1</rd:DefaultName>
+                          <rd:DefaultName>ImpFac</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -833,6 +985,8 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -848,8 +1002,8 @@
             <DataSetName>Ingresos</DataSetName>
             <Top>49.657mm</Top>
             <Left>4.33917mm</Left>
-            <Height>10.92666mm</Height>
-            <Width>156.11625mm</Width>
+            <Height>9.65666mm</Height>
+            <Width>180.33714mm</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
@@ -877,7 +1031,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=Sum(Fields!Importe.Value, "Ingresos")</Value>
+                    <Value>=Sum(Fields!ImpFac.Value, "Ingresos")</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                       <Format>'$'#,0.00</Format>
@@ -885,7 +1039,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value xml:space="preserve">                </Value>
+                    <Value xml:space="preserve">                              </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -912,7 +1066,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>            VALES</Value>
+                    <Value>                          VALES</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                       <Format>'$'#,0.00</Format>
@@ -948,7 +1102,7 @@
             <Top>73.66mm</Top>
             <Left>1.5mm</Left>
             <Height>6mm</Height>
-            <Width>158.95541mm</Width>
+            <Width>183.17632mm</Width>
             <ZIndex>8</ZIndex>
             <Style>
               <Border>
@@ -968,7 +1122,7 @@
           </Border>
         </Style>
       </Body>
-      <Width>173.19mm</Width>
+      <Width>186.96042mm</Width>
       <Page>
         <PageFooter>
           <Height>11.43mm</Height>

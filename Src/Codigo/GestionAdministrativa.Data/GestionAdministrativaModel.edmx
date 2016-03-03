@@ -8427,6 +8427,8 @@
           <Property Type="Decimal" Name="Importe" Nullable="true" Precision="19" />
           <Property Type="Decimal" Name="Efectivo" Nullable="true" Precision="19" />
           <Property Type="Decimal" Name="Vales" Nullable="true" Precision="19" />
+          <Property Type="DateTime" Name="Desde" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="Hasta" Nullable="true" Precision="23" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -9291,6 +9293,8 @@
                 <ScalarProperty Name="Importe" ColumnName="Importe" />
                 <ScalarProperty Name="Efectivo" ColumnName="Efectivo" />
                 <ScalarProperty Name="Vales" ColumnName="Vales" />
+                <ScalarProperty Name="Desde" ColumnName="Desde" />
+                <ScalarProperty Name="Hasta" ColumnName="Hasta" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

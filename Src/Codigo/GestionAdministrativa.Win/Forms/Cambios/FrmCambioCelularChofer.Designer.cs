@@ -36,6 +36,7 @@
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.ucBuscardorChoferMovil = new GestionAdministrativa.Win.Forms.Pagos.ucBuscardorChoferMovil();
             this.ucEstadoCuentaChofer = new GestionAdministrativa.Win.Forms.Pagos.ucEstadoCuentaChofer();
+            this.PageCelular = new Telerik.WinControls.UI.RadPageViewPage();
             ((System.ComponentModel.ISupportInitialize)(this.rad)).BeginInit();
             this.rad.SuspendLayout();
             this.PageMovil.SuspendLayout();
@@ -47,9 +48,10 @@
             // rad
             // 
             this.rad.Controls.Add(this.PageMovil);
+            this.rad.Controls.Add(this.PageCelular);
             this.rad.Location = new System.Drawing.Point(12, 237);
             this.rad.Name = "rad";
-            this.rad.SelectedPage = this.PageMovil;
+            this.rad.SelectedPage = this.PageCelular;
             this.rad.Size = new System.Drawing.Size(1100, 314);
             this.rad.TabIndex = 1;
             this.rad.Text = "radPageView1";
@@ -131,6 +133,13 @@
             this.ucEstadoCuentaChofer.TabIndex = 3;
             this.ucEstadoCuentaChofer.Telefono = "";
             // 
+            // PageCelular
+            // 
+            this.PageCelular.Location = new System.Drawing.Point(5, 36);
+            this.PageCelular.Name = "PageCelular";
+            this.PageCelular.Size = new System.Drawing.Size(1090, 273);
+            this.PageCelular.Text = "De Celular";
+            // 
             // FrmCambioCelularChofer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -166,5 +175,6 @@
         private System.Windows.Forms.Button BtnCambiarMovil;
         private Telerik.WinControls.UI.RadDropDownList ddlMoviles;
         private Telerik.WinControls.UI.RadLabel radLabel1;
+        private Telerik.WinControls.UI.RadPageViewPage PageCelular;
     }
 }
