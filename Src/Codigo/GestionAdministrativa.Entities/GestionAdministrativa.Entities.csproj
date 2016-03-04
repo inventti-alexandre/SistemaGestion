@@ -67,6 +67,9 @@
     <Compile Include="Chofer.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ChoferCelular.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ChoferesMovil.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>

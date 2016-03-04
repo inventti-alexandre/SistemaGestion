@@ -22,6 +22,7 @@ namespace GestionAdministrativa.Data.Interfaces
         IRepository<ModelosCelulare> ModelosCelulares { get; }
         IRepository<CajaMovimiento> CajaMovimientos { get; }
         IRepository<ChoferesMovil> ChoferesMoviles { get; }
+        IRepository<ChoferCelular> ChoferCelulares { get; }
         IRepository<OperadorSucursal> OperadorSucursales { get; }
         IRepository<CajaBalance> CajaBalances { get; }
         GestionAdministrativaDbContext DbContext { get; }

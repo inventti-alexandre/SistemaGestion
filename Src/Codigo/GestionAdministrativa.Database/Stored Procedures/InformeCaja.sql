@@ -58,7 +58,7 @@ AS
 		AND CM.SucursalAltaId = @SucursalId
 		AND (@OperadorId IS NULL OR CM.OperadorAltaId = @OperadorId)
 		AND (@CajaId IS NULL OR CM.CajaId = @CajaId)
-	
+		AND  PC.Monto IS NOT NULL
 	
 	SELECT * 
 	FROM @Temp

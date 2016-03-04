@@ -140,13 +140,7 @@ namespace GestionAdministrativa.Win.Forms
                 MessageBox.Show("Debe abrir una caja.");
                 DeshabilitarControlesPago();
                 CerrarCaja(_caja);
-
-              
                 btnPagos.Enabled = false;
-               
-
-                    
-
             }
           
             else

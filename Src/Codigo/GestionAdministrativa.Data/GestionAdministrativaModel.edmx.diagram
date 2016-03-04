@@ -246,6 +246,13 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMovil_OperadorModificacion" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMovil_SucursalAlta" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMovil_SucursalModificacion" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.ChoferCelular" Width="1.5" PointX="45.75" PointY="55.25" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesCelular_Celular" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesCelular_Chofer" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesCelular_OperadorAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesCelular_OperadorModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesCelular_SucursalAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesCelular_SucursalModificacion" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

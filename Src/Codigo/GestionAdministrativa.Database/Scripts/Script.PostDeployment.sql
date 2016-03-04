@@ -17,3 +17,5 @@ Post-Deployment Script Template
 :r .\TiposCelulares.sql
 :r .\TipoComprobante.sql
 :r .\TipoMovimientoCaja.sql
+:r .\Usuarios.sql
+:r .\UsuariosSucursal.sql

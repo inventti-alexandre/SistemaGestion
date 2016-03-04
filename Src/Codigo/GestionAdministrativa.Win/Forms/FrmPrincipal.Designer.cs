@@ -122,6 +122,7 @@
             this.Menu.TabIndex = 5;
             this.Menu.Text = "radMenu1";
             this.Menu.ThemeName = "TelerikMetro";
+            this.Menu.Visible = false;
             // 
             // radMenuItem1
             // 
@@ -181,6 +182,7 @@
             this.BtnCajas.Text = "Cajas";
             this.BtnCajas.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnCajas.ThemeName = "TelerikMetro";
+            this.BtnCajas.Visible = false;
             this.BtnCajas.Click += new System.EventHandler(this.BtnCajas_Click);
             // 
             // btnCajaResumida
@@ -195,6 +197,7 @@
             this.btnCajaResumida.Text = "Caja Resumida";
             this.btnCajaResumida.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCajaResumida.ThemeName = "TelerikMetro";
+            this.btnCajaResumida.Visible = false;
             this.btnCajaResumida.Click += new System.EventHandler(this.btnCajaResumida_Click);
             // 
             // btnCambioCelularMovil

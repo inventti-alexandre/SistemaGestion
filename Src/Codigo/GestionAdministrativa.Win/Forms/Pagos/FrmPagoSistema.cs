@@ -139,11 +139,11 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             {
                 MessageBox.Show("Este chofer no tiene celular asociado");
             }
-             _montosAFavor = Uow.ChoferesMontosFavor.Listado().Where(m => m.ChoferId == _chofer.Id && m.Importe > m.ImpOcupado).ToList();
+             _montosAFavor = Uow.ChoferesMontosFavor.Listado().Where(m => m.ChoferId == _chofer.Id && m.Importe != m.ImpOcupado).ToList();
             if (_montosAFavor != null)
             {
                 var total = _montosAFavor.Sum(m => m.Importe ?? 0 - m.ImpOcupado ?? 0);
-                if (total > 0)
+                if (total != 0)
                 {
                     var pago = new PagosTipo();
                     pago.TipoPago = "A Favor";
@@ -243,7 +243,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             cajaMovimiento.ComprobanteId = _pagoCelular.Id; //id del pago Celular
             cajaMovimiento.Senia = _pagoCelular.Senia;
             cajaMovimiento.Importe = _pagoCelular.Monto;
-            cajaMovimiento.ImpFac = _pagoCelular.Efectivo + _pagoCelular.Vales;// ucPagos1.Total; //_pagoCelular.Monto;
+            cajaMovimiento.ImpFac = (_pagoCelular.Efectivo ?? 0) + (_pagoCelular.Vales ?? 0);// ucPagos1.Total; //_pagoCelular.Monto;
             cajaMovimiento.Efectivo = _pagoCelular.Efectivo;
             cajaMovimiento.Vales = _pagoCelular.Vales;
             cajaMovimiento.FechaAlta = _clock.Now;

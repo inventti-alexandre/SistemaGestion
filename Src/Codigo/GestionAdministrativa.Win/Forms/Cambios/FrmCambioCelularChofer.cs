@@ -1,6 +1,8 @@
 ﻿using Framework.Common.Utility;
 using GestionAdministrativa.Data.Interfaces;
 using GestionAdministrativa.Entities;
+using GestionAdministrativa.Win.Enums;
+using GestionAdministrativa.Win.Forms.Celulares;
 using GestionAdministrativa.Win.Forms.Choferes;
 using System;
 using System.Collections.Generic;
@@ -18,10 +20,13 @@ namespace GestionAdministrativa.Win.Forms.Cambios
     {
         private IClock _clock;
         private Chofer _chofer;
-        private Celular _celular;
-        public FrmCambioCelularChofer(IGestionAdministrativaUow uow, IClock clock)
+        private Celular _celularAnterior;
+        private Celular _celularNuevo;
+        private IFormFactory _iFormFactory;
+        public FrmCambioCelularChofer(IGestionAdministrativaUow uow, IClock clock, IFormFactory formFactory)
         {
             Uow = uow;
+            _iFormFactory = formFactory;
             _clock = clock;
             InitializeComponent();
         }
@@ -38,6 +43,47 @@ namespace GestionAdministrativa.Win.Forms.Cambios
             get { return (Guid) ddlMoviles.SelectedValue;}
             set { ddlMoviles.SelectedValue = value;} 
         }
+
+        public string CelularAnterior
+        {
+            get { return TxtCelularAnterior.Text; }
+            set { TxtCelularAnterior.Text = value; }
+        }
+
+        public string CelularNuevo
+        {
+            get { return TxtCelularNuevo.Text; }
+            set { TxtCelularNuevo.Text = value; }
+        }
+
+        public int DiferenciaDias
+        {
+            get {
+                int dias;
+                return int.TryParse(txtDias.Text, out dias) ? dias : 0; 
+            }
+            set { txtDias.Text = value.ToString(); }
+        }
+
+        public decimal DiferenciaMonto
+        {
+            get {
+                decimal monto;
+                return decimal.TryParse(txtMonto.Text, out monto) ? monto : 0; 
+            }
+            set { txtMonto.Text = value.ToString("n2"); }
+        }
+
+        public decimal MontoAFavor
+        {
+            get {
+                decimal afavor;
+                return decimal.TryParse(txtAFavor.Text, out afavor) ? afavor : 0; 
+            }
+            set { txtAFavor.Text = value.ToString("n2"); }
+        }
+
+     
 #endregion
 
 
@@ -87,13 +133,14 @@ namespace GestionAdministrativa.Win.Forms.Cambios
             //Deuda Sistema
             //var deudaTotal = _clienteNegocio.DeudaTotal(_cliente.Id, this.Context.SucursalActual.Id);
             //var deudaVencida = _clienteNegocio.DeudaVencida(_cliente.Id, this.Context.SucursalActual.Id);
+            _celularAnterior = Uow.Celulares.Listado(c => c.TiposCelulares).Where((c => c.Id == _chofer.CelularId && !c.Baja.HasValue)).FirstOrDefault();
 
 
             ucEstadoCuentaChofer.ActualizarChofer(_chofer);
-            _celular = Uow.Celulares.Listado(c => c.TiposCelulares).Where(c => c.Id == chofer.CelularId).FirstOrDefault();
-            if (_celular != null)
+            _celularAnterior = Uow.Celulares.Listado(c => c.TiposCelulares).Where(c => c.Id == chofer.CelularId).FirstOrDefault();
+            if (_celularAnterior != null)
             {
-          
+                CelularAnterior = _celularAnterior.TiposCelulares.Tipo;
             }
             else
             {
@@ -147,6 +194,106 @@ namespace GestionAdministrativa.Win.Forms.Cambios
             Uow.Commit();
             MessageBox.Show("Se ha cambiado el móvil satisfactoriamente.");
 
+        }
+
+        private void BtnAgregarCelular_Click(object sender, EventArgs e)
+        {
+            if (_celularAnterior != null)
+            {
+                using (var seleccionarCelular = _iFormFactory.Create<FrmCrearEditarCelular>(Guid.Empty, ActionFormMode.Create))
+                {
+                    seleccionarCelular.EntityAgregada += (o, celular) =>
+                    {
+                        _celularNuevo = celular;
+                        CambioCelular(celular);
+
+                    };
+                    seleccionarCelular.ShowDialog();
+                    
+                }
+            }
+        }
+
+        private void CambioCelular(Celular celular)
+        {
+            var chofer = Uow.Choferes.Obtener(c => c.Id == _chofer.Id);
+            chofer.CelularId = celular.Id;
+
+            Uow.Choferes.Modificar(chofer);
+
+            _celularAnterior.Baja = _clock.Now;
+            Uow.Celulares.Modificar(_celularAnterior);
+            var historialAnterior = Uow.ChoferCelulares.Listado().Where(c => c.CelularId == _celularAnterior.Id).FirstOrDefault();
+            if (historialAnterior != null)
+            {
+                historialAnterior.Baja = _clock.Now;
+                historialAnterior.FechaModificacion = _clock.Now;
+                historialAnterior.OperadorModificacionId = Context.OperadorActual.Id;
+                historialAnterior.SucursalModificacionId = Context.SucursalActual.Id;
+
+                Uow.ChoferCelulares.Modificar(historialAnterior);
+            }
+
+            //Historial de ChoferCelular
+            var historial = new ChoferCelular();
+            historial.Choferid = _chofer.Id;
+            historial.CelularId = _celularNuevo.Id;
+            historial.Alta = _clock.Now;
+            historial.FechaAlta = _clock.Now;
+            historial.OperadorAltaId = Context.OperadorActual.Id;
+            historial.SucursalAltaId = Context.SucursalActual.Id;
+            Uow.ChoferCelulares.Agregar(historial);
+
+
+            //Copiar las fechas de ultimos pagos
+
+            _celularNuevo.FechaProximoPago = _celularAnterior.FechaProximoPago;
+            _celularNuevo.FechaUltimoPago = _celularAnterior.FechaUltimoPago;
+            _celularNuevo.FechaVencimientoPago = _celularAnterior.FechaVencimientoPago;
+
+            Uow.Celulares.Modificar(_celularNuevo);
+
+            //MontoAFavor
+            TimeSpan diferenciaDias = (_celularAnterior.FechaVencimientoPago ?? _clock.Now) - _clock.Now;
+            DiferenciaDias = diferenciaDias.Days;
+
+            DiferenciaMonto = _celularAnterior.TiposCelulares.Monto - _celularNuevo.TiposCelulares.Monto;
+            MontoAFavor = DiferenciaDias * DiferenciaMonto;
+
+            var montoAFavor = new ChoferMontoFavor();
+            montoAFavor.Id = Guid.NewGuid();
+            montoAFavor.ChoferId = _chofer.Id;
+            montoAFavor.FechaComprobante = _clock.Now;
+            montoAFavor.TipoComprobanteId = 1;
+            montoAFavor.Concepto = "Cambio de celular";
+            montoAFavor.Importe = MontoAFavor;
+            montoAFavor.ImpOcupado = 0;
+            montoAFavor.FechaAlta = _clock.Now;
+            montoAFavor.OperadorAltaId = Context.OperadorActual.Id;
+            montoAFavor.SucursalAltaId = Context.SucursalActual.Id;
+
+            Uow.ChoferesMontosFavor.Agregar(montoAFavor);
+
+            //Generar PagoCelular
+            var pagoCelular = new PagoCelular();
+            pagoCelular.Id = Guid.NewGuid();
+            pagoCelular.Desde = _clock.Now;
+            pagoCelular.Hasta = _clock.Now;
+            pagoCelular.CelularId = _celularNuevo.Id;
+            pagoCelular.FechaAlta = _clock.Now;
+            pagoCelular.OperadorAltaId = Context.OperadorActual.Id;
+            pagoCelular.SucursalAltaId = Context.SucursalActual.Id;
+            Uow.PagosCelulares.Agregar(pagoCelular);
+
+            // _celular = celular;
+            CelularNuevo = _celularNuevo.TiposCelulares.Tipo;
+        }
+
+        private void btnCambioCel_Click(object sender, EventArgs e)
+        {
+            Uow.Commit();
+            MessageBox.Show("Se ha realizado el cambio correctamente.");
+            this.Close();
         }
 
     }
