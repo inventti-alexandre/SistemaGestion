@@ -9,13 +9,11 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-
-:r .\Dias.sql
+:r .\Usuarios.sql
+:r .\UsuariosSucursal.sql
 :r .\Dias.sql
 :r .\EmpresasCelulares.sql
 :r .\ModeloCelulares.sql
 :r .\TiposCelulares.sql
 :r .\TipoComprobante.sql
 :r .\TipoMovimientoCaja.sql
-:r .\Usuarios.sql
-:r .\UsuariosSucursal.sql

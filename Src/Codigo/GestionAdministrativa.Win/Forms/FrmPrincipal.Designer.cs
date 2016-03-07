@@ -61,7 +61,7 @@
             this.radButton1.BackColor = System.Drawing.Color.White;
             this.radButton1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radButton1.Image = global::GestionAdministrativa.Win.Properties.Resources.Car01;
-            this.radButton1.Location = new System.Drawing.Point(330, 12);
+            this.radButton1.Location = new System.Drawing.Point(298, 55);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(132, 132);
             this.radButton1.TabIndex = 0;
@@ -77,7 +77,7 @@
             this.BtnChoferListado.ForeColor = System.Drawing.Color.White;
             this.BtnChoferListado.Image = global::GestionAdministrativa.Win.Properties.Resources.chofer01;
             this.BtnChoferListado.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnChoferListado.Location = new System.Drawing.Point(177, 12);
+            this.BtnChoferListado.Location = new System.Drawing.Point(145, 55);
             this.BtnChoferListado.Name = "BtnChoferListado";
             this.BtnChoferListado.Size = new System.Drawing.Size(132, 132);
             this.BtnChoferListado.TabIndex = 3;
@@ -91,7 +91,7 @@
             this.BtnCelulares.AutoSize = true;
             this.BtnCelulares.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCelulares.Image = global::GestionAdministrativa.Win.Properties.Resources.Cell01;
-            this.BtnCelulares.Location = new System.Drawing.Point(630, 12);
+            this.BtnCelulares.Location = new System.Drawing.Point(598, 55);
             this.BtnCelulares.Name = "BtnCelulares";
             this.BtnCelulares.Size = new System.Drawing.Size(132, 132);
             this.BtnCelulares.TabIndex = 4;
@@ -147,7 +147,7 @@
             this.btnPagos.AutoSize = true;
             this.btnPagos.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPagos.Image = global::GestionAdministrativa.Win.Properties.Resources.pago01;
-            this.btnPagos.Location = new System.Drawing.Point(177, 166);
+            this.btnPagos.Location = new System.Drawing.Point(145, 209);
             this.btnPagos.Name = "btnPagos";
             this.btnPagos.Size = new System.Drawing.Size(132, 132);
             this.btnPagos.TabIndex = 6;
@@ -161,7 +161,7 @@
             this.BtnAbrirCaja.AutoSize = true;
             this.BtnAbrirCaja.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAbrirCaja.Image = global::GestionAdministrativa.Win.Properties.Resources.caja;
-            this.BtnAbrirCaja.Location = new System.Drawing.Point(1109, 12);
+            this.BtnAbrirCaja.Location = new System.Drawing.Point(1077, 55);
             this.BtnAbrirCaja.Name = "BtnAbrirCaja";
             this.BtnAbrirCaja.Size = new System.Drawing.Size(132, 132);
             this.BtnAbrirCaja.TabIndex = 7;
@@ -175,7 +175,7 @@
             this.BtnCajas.AutoSize = true;
             this.BtnCajas.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCajas.Image = global::GestionAdministrativa.Win.Properties.Resources.balance;
-            this.BtnCajas.Location = new System.Drawing.Point(177, 317);
+            this.BtnCajas.Location = new System.Drawing.Point(145, 360);
             this.BtnCajas.Name = "BtnCajas";
             this.BtnCajas.Size = new System.Drawing.Size(132, 132);
             this.BtnCajas.TabIndex = 8;
@@ -190,7 +190,7 @@
             this.btnCajaResumida.AutoSize = true;
             this.btnCajaResumida.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCajaResumida.Image = global::GestionAdministrativa.Win.Properties.Resources.infCaja;
-            this.btnCajaResumida.Location = new System.Drawing.Point(483, 166);
+            this.btnCajaResumida.Location = new System.Drawing.Point(451, 209);
             this.btnCajaResumida.Name = "btnCajaResumida";
             this.btnCajaResumida.Size = new System.Drawing.Size(158, 132);
             this.btnCajaResumida.TabIndex = 9;
@@ -205,7 +205,7 @@
             this.btnCambioCelularMovil.AutoSize = true;
             this.btnCambioCelularMovil.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambioCelularMovil.Image = global::GestionAdministrativa.Win.Properties.Resources.celChange;
-            this.btnCambioCelularMovil.Location = new System.Drawing.Point(483, 12);
+            this.btnCambioCelularMovil.Location = new System.Drawing.Point(451, 55);
             this.btnCambioCelularMovil.Name = "btnCambioCelularMovil";
             this.btnCambioCelularMovil.Size = new System.Drawing.Size(132, 132);
             this.btnCambioCelularMovil.TabIndex = 10;
@@ -217,7 +217,7 @@
             // lblUsuario
             // 
             this.lblUsuario.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(177, 591);
+            this.lblUsuario.Location = new System.Drawing.Point(44, 12);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(111, 28);
             this.lblUsuario.TabIndex = 11;
@@ -228,7 +228,7 @@
             this.btnInformeCaja.AutoSize = true;
             this.btnInformeCaja.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInformeCaja.Image = global::GestionAdministrativa.Win.Properties.Resources.infCaja;
-            this.btnInformeCaja.Location = new System.Drawing.Point(330, 166);
+            this.btnInformeCaja.Location = new System.Drawing.Point(298, 209);
             this.btnInformeCaja.Name = "btnInformeCaja";
             this.btnInformeCaja.Size = new System.Drawing.Size(147, 132);
             this.btnInformeCaja.TabIndex = 10;

@@ -68,6 +68,7 @@
     <None Include="Scripts\TipoComprobante.sql" />
     <None Include="Scripts\Usuarios.sql" />
     <None Include="Scripts\UsuariosSucursal.sql" />
+    <None Include="Production.GestionAdministrativa.Database.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="GestionAdministrativa.Database.refactorlog" />
