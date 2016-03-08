@@ -37,10 +37,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.ckCajas = new Telerik.WinControls.UI.RadCheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtHasta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesde)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckCajas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +62,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ckCajas);
             this.panel1.Controls.Add(this.BtnGenerar);
             this.panel1.Controls.Add(this.dtHasta);
             this.panel1.Controls.Add(this.dtDesde);
@@ -122,11 +125,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(609, 37);
+            this.label3.Location = new System.Drawing.Point(766, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 23);
             this.label3.TabIndex = 2;
             this.label3.Text = "Usuario:";
+            this.label3.Visible = false;
             // 
             // label2
             // 
@@ -154,6 +158,16 @@
             this.reportViewer.Size = new System.Drawing.Size(1098, 397);
             this.reportViewer.TabIndex = 1;
             // 
+            // ckCajas
+            // 
+            this.ckCajas.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckCajas.Location = new System.Drawing.Point(557, 37);
+            this.ckCajas.Name = "ckCajas";
+            this.ckCajas.Size = new System.Drawing.Size(178, 25);
+            this.ckCajas.TabIndex = 6;
+            this.ckCajas.Text = "Todas las cajas";
+            this.ckCajas.ThemeName = "TelerikMetro";
+            // 
             // FrmCajaResumida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -172,6 +186,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtHasta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesde)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckCajas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -188,5 +203,6 @@
         private Telerik.WinControls.UI.RadDateTimePicker dtHasta;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
         private System.Windows.Forms.Button BtnGenerar;
+        private Telerik.WinControls.UI.RadCheckBox ckCajas;
     }
 }

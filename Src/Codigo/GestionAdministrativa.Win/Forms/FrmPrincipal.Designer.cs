@@ -197,7 +197,6 @@
             this.btnCajaResumida.Text = "Caja Resumida";
             this.btnCajaResumida.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCajaResumida.ThemeName = "TelerikMetro";
-            this.btnCajaResumida.Visible = false;
             this.btnCajaResumida.Click += new System.EventHandler(this.btnCajaResumida_Click);
             // 
             // btnCambioCelularMovil

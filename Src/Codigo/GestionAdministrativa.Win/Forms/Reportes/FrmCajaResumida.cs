@@ -50,7 +50,10 @@ namespace GestionAdministrativa.Win.Forms.Reportes
             //                   ? "TODOS"
             //                   : ucFiltroOperadores.Operador.Usuario;
 
-            var caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id).OrderByDescending(c=>c.FechaAlta).FirstOrDefault().Id;
+            Guid? caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id).OrderByDescending(c=>c.FechaAlta).FirstOrDefault().Id;
+            if (ckCajas.Checked)
+                caja = null;
+
             var ingresos = _reporteNegocio.CajaResumidaIngresos(inicio, fin, Context.SucursalActual.Id, null, caja);
             var ingresosComposicion = _reporteNegocio.CajaResumidaIngresosComposicion(inicio, fin, Context.SucursalActual.Id, null, caja);
 

@@ -44,12 +44,14 @@ namespace GestionAdministrativa.Win.Forms.Reportes
             var inicio = SetTimeToZero(dtDesde.Value);
             var fin = SetTimeToZero(dtHasta.Value.AddDays(1));
 
-            var caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id).OrderByDescending(c => c.FechaAlta).FirstOrDefault().Id;
+            Guid? caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id).OrderByDescending(c => c.FechaAlta).FirstOrDefault().Id;
             if (caja == null)
             {
                 MessageBox.Show("No tiene caja abierta.");
                 return;
             }
+            if (ckCajas.Checked)
+                caja = null;
 
             var ingresos = _reporteNegocio.InformeCaja(inicio, fin, Context.SucursalActual.Id, null, caja);
            // var ingresosComposicion = _reporteNegocio.CajaResumidaIngresosComposicion(inicio, fin, Context.SucursalActual.Id, null, caja);
