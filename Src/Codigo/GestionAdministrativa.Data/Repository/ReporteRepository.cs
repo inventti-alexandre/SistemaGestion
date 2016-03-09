@@ -33,6 +33,11 @@ namespace GestionAdministrativa.Data.Repository
         {
             return GestionAdministrativaDbContext.InformeCaja(sucursalId, inicio, fin, operadorId, cajaId).ToList();
         }
+        public List<MovilesPorCajaId_Result> MovilesPorCajaId(Guid? cajaId)
+        {
+            return GestionAdministrativaDbContext.MovilesPorCajaId(cajaId).ToList();
+        }
+
         //public IQueryable<ComprobantesByVentaId_Result> ComprobantesByVentaId(Guid ventaId)
         //{
         //    return AlejandriaDbContext.ComprobantesByVentaId(ventaId).AsQueryable();

@@ -20,7 +20,9 @@ AS
 		ImpFac money,
 		Importe money,
 		Efectivo money,
-		Vales money
+		Vales money,
+		Taller money,
+		Descuento money
 	)
 
 	-----------------------------------------------------------
@@ -40,7 +42,9 @@ AS
 			ISNULL(CM.ImpFac, 0),
 			ISNULL(CM.Importe, 0),
 			ISNULL(CM.Efectivo, 0),
-			ISNULL(CM.Vales, 0)
+			ISNULL(CM.Vales, 0),
+			ISNULL(PC.Taller, 0),
+			ISNULL(PC.Descuento, 0)
 	FROM CajasMovimientos CM
 		LEFT JOIN PagosCelular PC
 			ON CM.ComprobanteId = PC.Id

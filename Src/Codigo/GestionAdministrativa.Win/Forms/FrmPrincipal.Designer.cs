@@ -28,63 +28,125 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radButton1 = new Telerik.WinControls.UI.RadButton();
-            this.BtnChoferListado = new Telerik.WinControls.UI.RadButton();
+            this.btnInformeCaja = new Telerik.WinControls.UI.RadButton();
+            this.lblUsuario = new Telerik.WinControls.UI.RadLabel();
+            this.btnCambioCelularMovil = new Telerik.WinControls.UI.RadButton();
+            this.btnCajaResumida = new Telerik.WinControls.UI.RadButton();
+            this.BtnCajas = new Telerik.WinControls.UI.RadButton();
+            this.BtnAbrirCaja = new Telerik.WinControls.UI.RadButton();
+            this.btnPagos = new Telerik.WinControls.UI.RadButton();
             this.BtnCelulares = new Telerik.WinControls.UI.RadButton();
             this.Menu = new Telerik.WinControls.UI.RadMenu();
             this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
-            this.btnPagos = new Telerik.WinControls.UI.RadButton();
-            this.BtnAbrirCaja = new Telerik.WinControls.UI.RadButton();
-            this.BtnCajas = new Telerik.WinControls.UI.RadButton();
-            this.btnCajaResumida = new Telerik.WinControls.UI.RadButton();
-            this.btnCambioCelularMovil = new Telerik.WinControls.UI.RadButton();
-            this.lblUsuario = new Telerik.WinControls.UI.RadLabel();
-            this.btnInformeCaja = new Telerik.WinControls.UI.RadButton();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnChoferListado)).BeginInit();
+            this.BtnChoferListado = new Telerik.WinControls.UI.RadButton();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
+            ((System.ComponentModel.ISupportInitialize)(this.btnInformeCaja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCambioCelularMovil)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCajaResumida)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCajas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnAbrirCaja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCelulares)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPagos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnAbrirCaja)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCajas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCajaResumida)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCambioCelularMovil)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblUsuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnInformeCaja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnChoferListado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // radButton1
+            // btnInformeCaja
             // 
-            this.radButton1.AutoSize = true;
-            this.radButton1.BackColor = System.Drawing.Color.White;
-            this.radButton1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radButton1.Image = global::GestionAdministrativa.Win.Properties.Resources.Car01;
-            this.radButton1.Location = new System.Drawing.Point(298, 55);
-            this.radButton1.Name = "radButton1";
-            this.radButton1.Size = new System.Drawing.Size(132, 132);
-            this.radButton1.TabIndex = 0;
-            this.radButton1.Text = "Moviles";
-            this.radButton1.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            this.radButton1.ThemeName = "TelerikMetro";
-            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
+            this.btnInformeCaja.AutoSize = true;
+            this.btnInformeCaja.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformeCaja.Image = global::GestionAdministrativa.Win.Properties.Resources.infCaja;
+            this.btnInformeCaja.Location = new System.Drawing.Point(298, 209);
+            this.btnInformeCaja.Name = "btnInformeCaja";
+            this.btnInformeCaja.Size = new System.Drawing.Size(147, 132);
+            this.btnInformeCaja.TabIndex = 10;
+            this.btnInformeCaja.Text = "Informe Caja";
+            this.btnInformeCaja.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnInformeCaja.ThemeName = "TelerikMetro";
+            this.btnInformeCaja.Click += new System.EventHandler(this.btnInformeCaja_Click);
             // 
-            // BtnChoferListado
+            // lblUsuario
             // 
-            this.BtnChoferListado.AutoSize = true;
-            this.BtnChoferListado.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnChoferListado.ForeColor = System.Drawing.Color.White;
-            this.BtnChoferListado.Image = global::GestionAdministrativa.Win.Properties.Resources.chofer01;
-            this.BtnChoferListado.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnChoferListado.Location = new System.Drawing.Point(145, 55);
-            this.BtnChoferListado.Name = "BtnChoferListado";
-            this.BtnChoferListado.Size = new System.Drawing.Size(132, 132);
-            this.BtnChoferListado.TabIndex = 3;
-            this.BtnChoferListado.Text = "Choferes";
-            this.BtnChoferListado.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnChoferListado.ThemeName = "TelerikMetro";
-            this.BtnChoferListado.Click += new System.EventHandler(this.BtnChoferListado_Click);
+            this.lblUsuario.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(44, 12);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(111, 28);
+            this.lblUsuario.TabIndex = 11;
+            this.lblUsuario.Text = "Usuario: ";
+            // 
+            // btnCambioCelularMovil
+            // 
+            this.btnCambioCelularMovil.AutoSize = true;
+            this.btnCambioCelularMovil.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambioCelularMovil.Image = global::GestionAdministrativa.Win.Properties.Resources.celChange;
+            this.btnCambioCelularMovil.Location = new System.Drawing.Point(451, 55);
+            this.btnCambioCelularMovil.Name = "btnCambioCelularMovil";
+            this.btnCambioCelularMovil.Size = new System.Drawing.Size(132, 132);
+            this.btnCambioCelularMovil.TabIndex = 10;
+            this.btnCambioCelularMovil.Text = "Cambios";
+            this.btnCambioCelularMovil.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCambioCelularMovil.ThemeName = "TelerikMetro";
+            this.btnCambioCelularMovil.Click += new System.EventHandler(this.btnCambioCelularMovil_Click);
+            // 
+            // btnCajaResumida
+            // 
+            this.btnCajaResumida.AutoSize = true;
+            this.btnCajaResumida.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCajaResumida.Image = global::GestionAdministrativa.Win.Properties.Resources.infCaja;
+            this.btnCajaResumida.Location = new System.Drawing.Point(451, 209);
+            this.btnCajaResumida.Name = "btnCajaResumida";
+            this.btnCajaResumida.Size = new System.Drawing.Size(158, 132);
+            this.btnCajaResumida.TabIndex = 9;
+            this.btnCajaResumida.Text = "Caja Resumida";
+            this.btnCajaResumida.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCajaResumida.ThemeName = "TelerikMetro";
+            this.btnCajaResumida.Click += new System.EventHandler(this.btnCajaResumida_Click);
+            // 
+            // BtnCajas
+            // 
+            this.BtnCajas.AutoSize = true;
+            this.BtnCajas.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCajas.Image = global::GestionAdministrativa.Win.Properties.Resources.balance;
+            this.BtnCajas.Location = new System.Drawing.Point(145, 360);
+            this.BtnCajas.Name = "BtnCajas";
+            this.BtnCajas.Size = new System.Drawing.Size(132, 132);
+            this.BtnCajas.TabIndex = 8;
+            this.BtnCajas.Text = "Cajas";
+            this.BtnCajas.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnCajas.ThemeName = "TelerikMetro";
+            this.BtnCajas.Click += new System.EventHandler(this.BtnCajas_Click);
+            // 
+            // BtnAbrirCaja
+            // 
+            this.BtnAbrirCaja.AutoSize = true;
+            this.BtnAbrirCaja.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAbrirCaja.Image = global::GestionAdministrativa.Win.Properties.Resources.caja;
+            this.BtnAbrirCaja.Location = new System.Drawing.Point(1077, 55);
+            this.BtnAbrirCaja.Name = "BtnAbrirCaja";
+            this.BtnAbrirCaja.Size = new System.Drawing.Size(132, 132);
+            this.BtnAbrirCaja.TabIndex = 7;
+            this.BtnAbrirCaja.Text = "Abrir Caja";
+            this.BtnAbrirCaja.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnAbrirCaja.ThemeName = "TelerikMetro";
+            this.BtnAbrirCaja.Click += new System.EventHandler(this.BtnCaja_Click);
+            // 
+            // btnPagos
+            // 
+            this.btnPagos.AutoSize = true;
+            this.btnPagos.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagos.Image = global::GestionAdministrativa.Win.Properties.Resources.pago01;
+            this.btnPagos.Location = new System.Drawing.Point(145, 209);
+            this.btnPagos.Name = "btnPagos";
+            this.btnPagos.Size = new System.Drawing.Size(132, 132);
+            this.btnPagos.TabIndex = 6;
+            this.btnPagos.Text = "Pagos";
+            this.btnPagos.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPagos.ThemeName = "TelerikMetro";
+            this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
             // 
             // BtnCelulares
             // 
@@ -142,99 +204,36 @@
             this.radMenuItem2.Text = "Menu 02";
             this.radMenuItem2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            // btnPagos
+            // BtnChoferListado
             // 
-            this.btnPagos.AutoSize = true;
-            this.btnPagos.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPagos.Image = global::GestionAdministrativa.Win.Properties.Resources.pago01;
-            this.btnPagos.Location = new System.Drawing.Point(145, 209);
-            this.btnPagos.Name = "btnPagos";
-            this.btnPagos.Size = new System.Drawing.Size(132, 132);
-            this.btnPagos.TabIndex = 6;
-            this.btnPagos.Text = "Pagos";
-            this.btnPagos.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPagos.ThemeName = "TelerikMetro";
-            this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
+            this.BtnChoferListado.AutoSize = true;
+            this.BtnChoferListado.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnChoferListado.ForeColor = System.Drawing.Color.White;
+            this.BtnChoferListado.Image = global::GestionAdministrativa.Win.Properties.Resources.chofer01;
+            this.BtnChoferListado.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnChoferListado.Location = new System.Drawing.Point(145, 55);
+            this.BtnChoferListado.Name = "BtnChoferListado";
+            this.BtnChoferListado.Size = new System.Drawing.Size(132, 132);
+            this.BtnChoferListado.TabIndex = 3;
+            this.BtnChoferListado.Text = "Choferes";
+            this.BtnChoferListado.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnChoferListado.ThemeName = "TelerikMetro";
+            this.BtnChoferListado.Click += new System.EventHandler(this.BtnChoferListado_Click);
             // 
-            // BtnAbrirCaja
+            // radButton1
             // 
-            this.BtnAbrirCaja.AutoSize = true;
-            this.BtnAbrirCaja.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAbrirCaja.Image = global::GestionAdministrativa.Win.Properties.Resources.caja;
-            this.BtnAbrirCaja.Location = new System.Drawing.Point(1077, 55);
-            this.BtnAbrirCaja.Name = "BtnAbrirCaja";
-            this.BtnAbrirCaja.Size = new System.Drawing.Size(132, 132);
-            this.BtnAbrirCaja.TabIndex = 7;
-            this.BtnAbrirCaja.Text = "Abrir Caja";
-            this.BtnAbrirCaja.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnAbrirCaja.ThemeName = "TelerikMetro";
-            this.BtnAbrirCaja.Click += new System.EventHandler(this.BtnCaja_Click);
-            // 
-            // BtnCajas
-            // 
-            this.BtnCajas.AutoSize = true;
-            this.BtnCajas.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCajas.Image = global::GestionAdministrativa.Win.Properties.Resources.balance;
-            this.BtnCajas.Location = new System.Drawing.Point(145, 360);
-            this.BtnCajas.Name = "BtnCajas";
-            this.BtnCajas.Size = new System.Drawing.Size(132, 132);
-            this.BtnCajas.TabIndex = 8;
-            this.BtnCajas.Text = "Cajas";
-            this.BtnCajas.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnCajas.ThemeName = "TelerikMetro";
-            this.BtnCajas.Visible = false;
-            this.BtnCajas.Click += new System.EventHandler(this.BtnCajas_Click);
-            // 
-            // btnCajaResumida
-            // 
-            this.btnCajaResumida.AutoSize = true;
-            this.btnCajaResumida.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCajaResumida.Image = global::GestionAdministrativa.Win.Properties.Resources.infCaja;
-            this.btnCajaResumida.Location = new System.Drawing.Point(451, 209);
-            this.btnCajaResumida.Name = "btnCajaResumida";
-            this.btnCajaResumida.Size = new System.Drawing.Size(158, 132);
-            this.btnCajaResumida.TabIndex = 9;
-            this.btnCajaResumida.Text = "Caja Resumida";
-            this.btnCajaResumida.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCajaResumida.ThemeName = "TelerikMetro";
-            this.btnCajaResumida.Click += new System.EventHandler(this.btnCajaResumida_Click);
-            // 
-            // btnCambioCelularMovil
-            // 
-            this.btnCambioCelularMovil.AutoSize = true;
-            this.btnCambioCelularMovil.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambioCelularMovil.Image = global::GestionAdministrativa.Win.Properties.Resources.celChange;
-            this.btnCambioCelularMovil.Location = new System.Drawing.Point(451, 55);
-            this.btnCambioCelularMovil.Name = "btnCambioCelularMovil";
-            this.btnCambioCelularMovil.Size = new System.Drawing.Size(132, 132);
-            this.btnCambioCelularMovil.TabIndex = 10;
-            this.btnCambioCelularMovil.Text = "Cambios";
-            this.btnCambioCelularMovil.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCambioCelularMovil.ThemeName = "TelerikMetro";
-            this.btnCambioCelularMovil.Click += new System.EventHandler(this.btnCambioCelularMovil_Click);
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(44, 12);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(111, 28);
-            this.lblUsuario.TabIndex = 11;
-            this.lblUsuario.Text = "Usuario: ";
-            // 
-            // btnInformeCaja
-            // 
-            this.btnInformeCaja.AutoSize = true;
-            this.btnInformeCaja.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInformeCaja.Image = global::GestionAdministrativa.Win.Properties.Resources.infCaja;
-            this.btnInformeCaja.Location = new System.Drawing.Point(298, 209);
-            this.btnInformeCaja.Name = "btnInformeCaja";
-            this.btnInformeCaja.Size = new System.Drawing.Size(147, 132);
-            this.btnInformeCaja.TabIndex = 10;
-            this.btnInformeCaja.Text = "Informe Caja";
-            this.btnInformeCaja.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnInformeCaja.ThemeName = "TelerikMetro";
-            this.btnInformeCaja.Click += new System.EventHandler(this.btnInformeCaja_Click);
+            this.radButton1.AutoSize = true;
+            this.radButton1.BackColor = System.Drawing.Color.White;
+            this.radButton1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radButton1.Image = global::GestionAdministrativa.Win.Properties.Resources.Car01;
+            this.radButton1.Location = new System.Drawing.Point(298, 55);
+            this.radButton1.Name = "radButton1";
+            this.radButton1.Size = new System.Drawing.Size(132, 132);
+            this.radButton1.TabIndex = 0;
+            this.radButton1.Text = "Moviles";
+            this.radButton1.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radButton1.ThemeName = "TelerikMetro";
+            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
             // FrmPrincipal
             // 
@@ -261,17 +260,17 @@
             this.Text = "Gestión UpMobile";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnChoferListado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnInformeCaja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCambioCelularMovil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCajaResumida)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCajas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnAbrirCaja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPagos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCelulares)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPagos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnAbrirCaja)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCajas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCajaResumida)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCambioCelularMovil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblUsuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnInformeCaja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnChoferListado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

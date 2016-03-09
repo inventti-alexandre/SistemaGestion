@@ -116,7 +116,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         }
         public void DeshabilitarControlesPago()
         {
-            dtpDesde.Enabled = false;
+            dtpDesde.Enabled = true;
             dtpHasta.Enabled = true;
         }
 

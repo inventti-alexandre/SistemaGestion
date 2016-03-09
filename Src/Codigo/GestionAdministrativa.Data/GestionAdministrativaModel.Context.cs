@@ -148,5 +148,14 @@ namespace GestionAdministrativa.Data
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<InformeCaja_Result>("InformeCaja", sucursalIdParameter, fechaInicioParameter, fechaFinParameter, operadorIdParameter, cajaIdParameter);
         }
+    
+        public virtual ObjectResult<MovilesPorCajaId_Result> MovilesPorCajaId(Nullable<System.Guid> cajaId)
+        {
+            var cajaIdParameter = cajaId.HasValue ?
+                new ObjectParameter("CajaId", cajaId) :
+                new ObjectParameter("CajaId", typeof(System.Guid));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MovilesPorCajaId_Result>("MovilesPorCajaId", cajaIdParameter);
+        }
     }
 }

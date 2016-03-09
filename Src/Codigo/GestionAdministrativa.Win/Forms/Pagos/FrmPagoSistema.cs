@@ -206,8 +206,10 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                         _pagoCelular.Efectivo = _pagoCelular.Efectivo ?? 0 + item.Importe;
                     else if (item.TipoPago == "Vales")
                         _pagoCelular.Vales = _pagoCelular.Vales ?? 0 + item.Importe;
-                    else if (item.TipoPago == "Descuento")
+                    else if (item.TipoPago == "Taller")
                         _pagoCelular.Taller = _pagoCelular.Taller ?? 0 + item.Importe;
+                    else if (item.TipoPago == "Descuento")
+                        _pagoCelular.Descuento = _pagoCelular.Descuento ?? 0 + item.Importe;
                     else if (item.TipoPago == "A Favor")
                         _pagoCelular.Senia = _pagoCelular.Senia ?? 0 + item.Importe;
                 }

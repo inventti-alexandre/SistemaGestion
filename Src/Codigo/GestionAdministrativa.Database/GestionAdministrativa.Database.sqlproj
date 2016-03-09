@@ -127,6 +127,7 @@
     <Build Include="Tables\ChoferesMovil.sql" />
     <Build Include="Stored Procedures\InformeCaja.sql" />
     <Build Include="Tables\ChoferCelular.sql" />
+    <Build Include="Stored Procedures\MovilesPorCajaId.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Dias.sql" />

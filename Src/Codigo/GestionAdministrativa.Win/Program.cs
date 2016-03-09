@@ -94,7 +94,7 @@ namespace GestionAdministrativa.Win
         {
             using (var uow = Ioc.Container.Get<IGestionAdministrativaUow>())
             {
-                var defaultUserId = Guid.Parse("004045DB-2B27-4AD7-8A96-A7B372AAE7CF");
+                var defaultUserId = Guid.Parse("004045db-2b27-4ad7-8a96-a7b372aae7cf");
                 var defaultSucursalId = 1;
 
                 //Validate credentials through the authentication service

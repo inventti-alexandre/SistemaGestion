@@ -34,5 +34,10 @@ namespace GestionAdministrativa.Business
         {
             return Uow.Reportes.InformeCaja(inicio, fin, sucursalId, operadorId, cajaId);
         }
+
+        public List<MovilesPorCajaId_Result> MovilesPorCajaId(Guid? cajaId)
+        {
+            return Uow.Reportes.MovilesPorCajaId(cajaId);
+        }
     }
 }

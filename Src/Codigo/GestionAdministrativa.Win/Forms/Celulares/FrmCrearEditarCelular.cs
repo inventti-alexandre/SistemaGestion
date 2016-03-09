@@ -306,7 +306,7 @@ namespace GestionAdministrativa.Win.Forms.Celulares
                         pagoCelular.OperadorAltaId = Context.OperadorActual.Id;
                         pagoCelular.SucursalAltaId = Context.SucursalActual.Id;
                         Uow.PagosCelulares.Agregar(pagoCelular);
-                        Uow.Commit();
+                        //Uow.Commit();
                     }
                     Uow.Celulares.Agregar(entity);
                 }

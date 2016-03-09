@@ -126,6 +126,9 @@
     <Compile Include="Movil.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MovilesPorCajaId_Result.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Operador.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>

@@ -56,7 +56,7 @@
             // 
             this.TxtNumero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtNumero.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNumero.Location = new System.Drawing.Point(150, 49);
+            this.TxtNumero.Location = new System.Drawing.Point(150, 54);
             this.TxtNumero.Name = "TxtNumero";
             this.TxtNumero.Size = new System.Drawing.Size(292, 28);
             this.TxtNumero.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             this.TxtPatente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtPatente.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPatente.Location = new System.Drawing.Point(150, 83);
+            this.TxtPatente.Location = new System.Drawing.Point(150, 88);
             this.TxtPatente.Name = "TxtPatente";
             this.TxtPatente.Size = new System.Drawing.Size(292, 28);
             this.TxtPatente.TabIndex = 3;
@@ -84,11 +84,11 @@
             this.DtpFechaAlta.Name = "DtpFechaAlta";
             this.DtpFechaAlta.NullableValue = new System.DateTime(2015, 12, 1, 19, 30, 46, 0);
             this.DtpFechaAlta.NullDate = new System.DateTime(((long)(0)));
-            this.DtpFechaAlta.Size = new System.Drawing.Size(292, 27);
+            this.DtpFechaAlta.Size = new System.Drawing.Size(292, 31);
             this.DtpFechaAlta.TabIndex = 4;
             this.DtpFechaAlta.TabStop = false;
-            this.DtpFechaAlta.Text = "01/12/2015";
-            this.DtpFechaAlta.ThemeName = "ControlDefault";
+            this.DtpFechaAlta.Text = "1/12/2015";
+            this.DtpFechaAlta.ThemeName = "TelerikMetro";
             this.DtpFechaAlta.Value = new System.DateTime(2015, 12, 1, 19, 30, 46, 0);
             // 
             // radLabel1
@@ -103,7 +103,7 @@
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.Location = new System.Drawing.Point(24, 49);
+            this.radLabel2.Location = new System.Drawing.Point(24, 54);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(80, 25);
             this.radLabel2.TabIndex = 6;
@@ -112,7 +112,7 @@
             // radLabel3
             // 
             this.radLabel3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel3.Location = new System.Drawing.Point(25, 83);
+            this.radLabel3.Location = new System.Drawing.Point(25, 88);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(90, 25);
             this.radLabel3.TabIndex = 6;
@@ -148,7 +148,7 @@
             // radLabel4
             // 
             this.radLabel4.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel4.Location = new System.Drawing.Point(26, 117);
+            this.radLabel4.Location = new System.Drawing.Point(26, 122);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(80, 25);
             this.radLabel4.TabIndex = 7;
@@ -158,7 +158,7 @@
             // 
             this.ChkActivo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChkActivo.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ChkActivo.Location = new System.Drawing.Point(150, 120);
+            this.ChkActivo.Location = new System.Drawing.Point(150, 125);
             this.ChkActivo.Name = "ChkActivo";
             this.ChkActivo.Size = new System.Drawing.Size(15, 15);
             this.ChkActivo.TabIndex = 9;

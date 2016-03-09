@@ -108,6 +108,7 @@ namespace GestionAdministrativa.Win.Forms.Moviles
             this.Activo = _movil.Activo;
             this.Numero = _movil.Numero;
             this.Patente = _movil.Patente;
+            this.FechaAlta = _movil.FechaAlta;
         }
            
         
@@ -188,7 +189,7 @@ namespace GestionAdministrativa.Win.Forms.Moviles
                 _movil.OperadorAltaId = _actionForm == ActionFormMode.Create
                     ? Context.OperadorActual.Id
                     : _movil.OperadorAltaId;
-                _movil.FechaAlta = _actionForm == ActionFormMode.Create ? _clock.Now : _movil.FechaAlta;
+                _movil.FechaAlta = _actionForm == ActionFormMode.Create ? FechaAlta : _movil.FechaAlta;
 
                 _movil.OperadorModificacionId = Context.OperadorActual.Id;
                 _movil.SucursalModificacionId = Context.SucursalActual.Id;

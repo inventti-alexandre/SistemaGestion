@@ -56,9 +56,11 @@ namespace GestionAdministrativa.Win.Forms.Reportes
 
             var ingresos = _reporteNegocio.CajaResumidaIngresos(inicio, fin, Context.SucursalActual.Id, null, caja);
             var ingresosComposicion = _reporteNegocio.CajaResumidaIngresosComposicion(inicio, fin, Context.SucursalActual.Id, null, caja);
+            var movilesPorCaja = _reporteNegocio.MovilesPorCajaId(caja);
 
             reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Ingresos", ingresos));
             reportViewer.LocalReport.DataSources.Add(new ReportDataSource("ComposicionIngresos", ingresosComposicion));
+            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Moviles", movilesPorCaja));
 
             var sucursal = Context.SucursalActual.Nombre;
             var fecha = DateTime.Now.ToShortDateString();

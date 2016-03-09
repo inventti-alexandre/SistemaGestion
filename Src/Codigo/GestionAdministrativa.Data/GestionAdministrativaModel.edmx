@@ -3258,6 +3258,9 @@
           <Parameter Name="OperadorId" Type="uniqueidentifier" Mode="In" />
           <Parameter Name="CajaId" Type="uniqueidentifier" Mode="In" />
         </Function>
+        <Function Name="MovilesPorCajaId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CajaId" Type="uniqueidentifier" Mode="In" />
+        </Function>
         <Function Name="Reporte_CajaResumida_ComposicionIngresos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="SucursalId" Type="int" Mode="In" />
           <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
@@ -8077,6 +8080,9 @@
             <End Role="Sucursal" EntitySet="Sucursales" />
             <End Role="ChoferCelular" EntitySet="ChoferCelulars" />
           </AssociationSet>
+          <FunctionImport Name="MovilesPorCajaId" ReturnType="Collection(GestionAdministrativa.Model.MovilesPorCajaId_Result)">
+            <Parameter Name="CajaId" Mode="In" Type="Guid" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Chofer">
           <Key>
@@ -8668,6 +8674,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="MovilesPorCajaId_Result">
+          <Property Type="Int32" Name="Movil" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -9553,6 +9562,13 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="MovilesPorCajaId" FunctionName="GestionAdministrativa.Model.Store.MovilesPorCajaId" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GestionAdministrativa.Model.MovilesPorCajaId_Result">
+                <ScalarProperty Name="Movil" ColumnName="Movil" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

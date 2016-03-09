@@ -34,6 +34,7 @@
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             this.TxtTotal = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.BtnAgregar = new System.Windows.Forms.Button();
@@ -132,9 +133,12 @@
             radListDataItem2.TextWrap = true;
             radListDataItem3.Text = "Descuento";
             radListDataItem3.TextWrap = true;
+            radListDataItem4.Text = "Taller";
+            radListDataItem4.TextWrap = true;
             this.ddlTipo.Items.Add(radListDataItem1);
             this.ddlTipo.Items.Add(radListDataItem2);
             this.ddlTipo.Items.Add(radListDataItem3);
+            this.ddlTipo.Items.Add(radListDataItem4);
             this.ddlTipo.Location = new System.Drawing.Point(80, 12);
             this.ddlTipo.MaxDropDownItems = 0;
             this.ddlTipo.Name = "ddlTipo";
