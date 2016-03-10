@@ -39,6 +39,7 @@
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn4 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.GridChoferes = new Telerik.WinControls.UI.RadGridView();
             this.ucFiltroChoferes = new GestionAdministrativa.Win.Forms.Choferes.ucFiltroChoferes();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
@@ -69,31 +70,31 @@
             gridViewTextBoxColumn1.FieldName = "Dni";
             gridViewTextBoxColumn1.HeaderText = "Dni";
             gridViewTextBoxColumn1.Name = "DNI";
-            gridViewTextBoxColumn1.Width = 188;
+            gridViewTextBoxColumn1.Width = 181;
             gridViewTextBoxColumn2.FieldName = "Apellido";
             gridViewTextBoxColumn2.HeaderText = "Apellido";
             gridViewTextBoxColumn2.Name = "Apellido";
-            gridViewTextBoxColumn2.Width = 188;
+            gridViewTextBoxColumn2.Width = 181;
             gridViewTextBoxColumn3.FieldName = "Nombre";
             gridViewTextBoxColumn3.HeaderText = "Nombre";
             gridViewTextBoxColumn3.Name = "Nombre";
-            gridViewTextBoxColumn3.Width = 188;
+            gridViewTextBoxColumn3.Width = 181;
             gridViewTextBoxColumn4.FieldName = "Telefono";
             gridViewTextBoxColumn4.HeaderText = "Telefono";
             gridViewTextBoxColumn4.Name = "Telefono";
-            gridViewTextBoxColumn4.Width = 188;
+            gridViewTextBoxColumn4.Width = 181;
             gridViewTextBoxColumn5.FieldName = "Email";
             gridViewTextBoxColumn5.HeaderText = "Email";
             gridViewTextBoxColumn5.Name = "Email";
-            gridViewTextBoxColumn5.Width = 188;
+            gridViewTextBoxColumn5.Width = 181;
             gridViewTextBoxColumn6.FieldName = "MovilNumero";
             gridViewTextBoxColumn6.HeaderText = "Movil";
             gridViewTextBoxColumn6.Name = "Movil";
-            gridViewTextBoxColumn6.Width = 185;
+            gridViewTextBoxColumn6.Width = 178;
             gridViewTextBoxColumn7.FieldName = "CelularObservacion";
             gridViewTextBoxColumn7.HeaderText = "Celular";
             gridViewTextBoxColumn7.Name = "CelularObservacion";
-            gridViewTextBoxColumn7.Width = 104;
+            gridViewTextBoxColumn7.Width = 117;
             gridViewCommandColumn1.HeaderText = "";
             gridViewCommandColumn1.Image = global::GestionAdministrativa.Win.Properties.Resources.Data_Edit;
             gridViewCommandColumn1.MaxWidth = 30;
@@ -112,6 +113,12 @@
             gridViewCommandColumn3.MinWidth = 30;
             gridViewCommandColumn3.Name = "Delete";
             gridViewCommandColumn3.Width = 30;
+            gridViewCommandColumn4.HeaderText = "";
+            gridViewCommandColumn4.Image = global::GestionAdministrativa.Win.Properties.Resources.Print_16x16;
+            gridViewCommandColumn4.MaxWidth = 30;
+            gridViewCommandColumn4.MinWidth = 30;
+            gridViewCommandColumn4.Name = "Historial";
+            gridViewCommandColumn4.Width = 30;
             this.GridChoferes.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -122,7 +129,8 @@
             gridViewTextBoxColumn7,
             gridViewCommandColumn1,
             gridViewCommandColumn2,
-            gridViewCommandColumn3});
+            gridViewCommandColumn3,
+            gridViewCommandColumn4});
             this.GridChoferes.Name = "GridChoferes";
             this.GridChoferes.ReadOnly = true;
             this.GridChoferes.Size = new System.Drawing.Size(1332, 388);

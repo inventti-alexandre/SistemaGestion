@@ -50,9 +50,9 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             if (movil == Guid.Empty)
                 movil = null;
 
-            var activo = true;
+            var activo = ucFiltroChoferes.Activos;
 
-            var choferes = _choferNegocio.Listado(SortColumn, SortDirection, dni, apellido,movil, true, 1, 5000, out pageTotal);
+            var choferes = _choferNegocio.Listado(SortColumn, SortDirection, dni, apellido,movil,activo, 1, 5000, out pageTotal);
             GridChoferes.DataSource = choferes.ToList();
             return pageTotal;
         }
@@ -131,7 +131,23 @@ namespace GestionAdministrativa.Win.Forms.Choferes
                 case "Delete":
                     Delete(chofer.Id);
                     break;
+                case "Historial":
+                    Historial(chofer.Id);
+                    break;
 
+            }
+        }
+
+        private void Historial(Guid choferid)
+        {
+            using (var formCrear = FormFactory.Create<FrmHistorialPagoChofer>(choferid))
+            {
+                var result = formCrear.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    formCrear.Close();
+                    RefrescarListado();
+                }
             }
         }
 

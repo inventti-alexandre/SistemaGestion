@@ -157,5 +157,14 @@ namespace GestionAdministrativa.Data
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MovilesPorCajaId_Result>("MovilesPorCajaId", cajaIdParameter);
         }
+    
+        public virtual ObjectResult<HistorialPagosChofer_Result> HistorialPagosChofer(Nullable<System.Guid> chofer)
+        {
+            var choferParameter = chofer.HasValue ?
+                new ObjectParameter("Chofer", chofer) :
+                new ObjectParameter("Chofer", typeof(System.Guid));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HistorialPagosChofer_Result>("HistorialPagosChofer", choferParameter);
+        }
     }
 }

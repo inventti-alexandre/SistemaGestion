@@ -75,6 +75,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             gridPagos.DataSource = null;
             gridPagos.Rows.Clear();
             RefrescarPagos();
+            ddlTipo.SelectedIndex = 0;
            // Total= 0;
         }
         public void ActualizarNuevoPago(string tipo, decimal importe)
@@ -128,6 +129,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             var tipoPago = new PagosTipo();
+            txtImporte.Text = txtImporte.Text.Replace('.', ',');
             tipoPago.TipoPago = Tipo;
             tipoPago.Importe = Importe;
 
@@ -178,7 +180,8 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             }
         }
 #endregion
-      
+
+       
 
 
     }

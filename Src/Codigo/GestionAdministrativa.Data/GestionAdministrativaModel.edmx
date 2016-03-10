@@ -3251,6 +3251,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="HistorialPagosChofer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Chofer" Type="uniqueidentifier" Mode="In" />
+        </Function>
         <Function Name="InformeCaja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="SucursalId" Type="int" Mode="In" />
           <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
@@ -8081,7 +8084,10 @@
             <End Role="ChoferCelular" EntitySet="ChoferCelulars" />
           </AssociationSet>
           <FunctionImport Name="MovilesPorCajaId" ReturnType="Collection(GestionAdministrativa.Model.MovilesPorCajaId_Result)">
-            <Parameter Name="CajaId" Mode="In" Type="Guid" />
+          <Parameter Name="CajaId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="HistorialPagosChofer" ReturnType="Collection(GestionAdministrativa.Model.HistorialPagosChofer_Result)">
+            <Parameter Name="Chofer" Mode="In" Type="Guid" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Chofer">
@@ -8676,6 +8682,17 @@
         </Association>
         <ComplexType Name="MovilesPorCajaId_Result">
           <Property Type="Int32" Name="Movil" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="HistorialPagosChofer_Result">
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="Desde" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="Hasta" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Monto" Nullable="false" Precision="19" />
+          <Property Type="Decimal" Name="Efectivo" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Vales" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Taller" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Descuento" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Senia" Nullable="true" Precision="19" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -9566,6 +9583,21 @@
             <ResultMapping>
               <ComplexTypeMapping TypeName="GestionAdministrativa.Model.MovilesPorCajaId_Result">
                 <ScalarProperty Name="Movil" ColumnName="Movil" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HistorialPagosChofer" FunctionName="GestionAdministrativa.Model.Store.HistorialPagosChofer">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GestionAdministrativa.Model.HistorialPagosChofer_Result">
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="Desde" ColumnName="Desde" />
+                <ScalarProperty Name="Hasta" ColumnName="Hasta" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Efectivo" ColumnName="Efectivo" />
+                <ScalarProperty Name="Vales" ColumnName="Vales" />
+                <ScalarProperty Name="Taller" ColumnName="Taller" />
+                <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+                <ScalarProperty Name="Senia" ColumnName="Senia" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

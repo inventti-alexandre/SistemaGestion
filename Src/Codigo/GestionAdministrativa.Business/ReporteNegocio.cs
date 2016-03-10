@@ -39,5 +39,9 @@ namespace GestionAdministrativa.Business
         {
             return Uow.Reportes.MovilesPorCajaId(cajaId);
         }
+        public List<HistorialPagosChofer_Result> HistorialPagosChofer(Guid choferId)
+        {
+            return Uow.Reportes.HistorialPagosChofer(choferId);
+        }
     }
 }

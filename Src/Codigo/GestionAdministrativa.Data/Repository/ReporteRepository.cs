@@ -37,7 +37,10 @@ namespace GestionAdministrativa.Data.Repository
         {
             return GestionAdministrativaDbContext.MovilesPorCajaId(cajaId).ToList();
         }
-
+        public List<HistorialPagosChofer_Result> HistorialPagosChofer(Guid choferId)
+        {
+            return GestionAdministrativaDbContext.HistorialPagosChofer(choferId).ToList();
+        }
         //public IQueryable<ComprobantesByVentaId_Result> ComprobantesByVentaId(Guid ventaId)
         //{
         //    return AlejandriaDbContext.ComprobantesByVentaId(ventaId).AsQueryable();

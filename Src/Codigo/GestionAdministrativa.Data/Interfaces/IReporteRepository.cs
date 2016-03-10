@@ -17,6 +17,7 @@ namespace GestionAdministrativa.Data.Interfaces
         List<Reporte_CajaResumida_ComposicionIngresos_Result> CajaResumidaIngresosComposicion(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId, Guid? cajaId);
         List<InformeCaja_Result > InformeCaja(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId, Guid? cajaId);
         List<MovilesPorCajaId_Result> MovilesPorCajaId(Guid? cajaId);
+        List<HistorialPagosChofer_Result> HistorialPagosChofer(Guid choferId);
     }
 
 }

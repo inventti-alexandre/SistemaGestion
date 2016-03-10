@@ -14,7 +14,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp://w1131301%40w1131301.ferozo.com/public_html/clientes/apipe/upmobile/sil/</PublishUrl>
+    <PublishUrl>ftp://w1131301%40w1131301.ferozo.com/public_html/clientes/apipe/upmobile/maria/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,11 +24,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.devlights.com/clientes/apipe/upmobile/sil/</InstallUrl>
+    <InstallUrl>http://www.devlights.com/clientes/apipe/upmobile/maria/</InstallUrl>
     <UpdateUrl>http://www.devlights.com/clientes/apipe/upmobile/maria/</UpdateUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>25</ApplicationRevision>
+    <ApplicationRevision>31</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -223,6 +223,12 @@
     <Compile Include="Forms\Choferes\FrmCrearEditarChofer.Designer.cs">
       <DependentUpon>FrmCrearEditarChofer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Choferes\FrmHistorialPagoChofer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Choferes\FrmHistorialPagoChofer.Designer.cs">
+      <DependentUpon>FrmHistorialPagoChofer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Choferes\FrmSeleccionarChofer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -378,6 +384,9 @@
     <EmbeddedResource Include="Forms\Choferes\FrmCrearEditarChofer.resx">
       <DependentUpon>FrmCrearEditarChofer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Choferes\FrmHistorialPagoChofer.resx">
+      <DependentUpon>FrmHistorialPagoChofer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Choferes\FrmSeleccionarChofer.resx">
       <DependentUpon>FrmSeleccionarChofer.cs</DependentUpon>
     </EmbeddedResource>
@@ -473,6 +482,9 @@
     </Content>
     <None Include="RDLS\Comprobantes.rdl" />
     <Content Include="RDLS\InformeCaja.rdl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RDLS\HistorialPagosChofer.rdl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\Thumbs.db" />
@@ -612,6 +624,36 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <PublishFile Include="Microsoft.MSXML">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
       <Visible>False</Visible>
       <Group>
@@ -623,6 +665,16 @@
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Types">
       <Visible>False</Visible>
       <Group>
       </Group>

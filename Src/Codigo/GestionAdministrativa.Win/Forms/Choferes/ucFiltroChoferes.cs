@@ -76,6 +76,12 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             set { TxtTitular.Text = value; } 
         }
 
+        public bool Activos
+        {
+            get { return CheActivo.Checked; }
+            set { CheActivo.Checked = value; }
+        }
+
         #endregion
 
         #region Metodos
@@ -100,6 +106,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
             TxtNombre.Text = string.Empty;
             TxtTitular.Text = string.Empty;
             DdlMoviles.SelectedValue = null;
+            CheActivo.Checked = true;
             OnFiltered();
 
 

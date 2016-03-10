@@ -38,6 +38,7 @@
             this.DdlMoviles = new Telerik.WinControls.UI.RadDropDownList();
             this.BtnBuscar = new Telerik.WinControls.UI.RadButton();
             this.BtnLimpiar = new Telerik.WinControls.UI.RadButton();
+            this.CheActivo = new Telerik.WinControls.UI.RadCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
@@ -48,6 +49,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DdlMoviles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnLimpiar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheActivo)).BeginInit();
             this.SuspendLayout();
             // 
             // radLabel1
@@ -158,10 +160,22 @@
             this.BtnLimpiar.ThemeName = "TelerikMetro";
             this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
+            // CheActivo
+            // 
+            this.CheActivo.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheActivo.Location = new System.Drawing.Point(141, 127);
+            this.CheActivo.Name = "CheActivo";
+            this.CheActivo.Size = new System.Drawing.Size(97, 25);
+            this.CheActivo.TabIndex = 10;
+            this.CheActivo.Text = "Activos";
+            this.CheActivo.ThemeName = "TelerikMetro";
+            this.CheActivo.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            // 
             // ucFiltroChoferes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.CheActivo);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.DdlMoviles);
@@ -186,6 +200,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DdlMoviles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnLimpiar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheActivo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,5 +218,6 @@
         private Telerik.WinControls.UI.RadDropDownList DdlMoviles;
         private Telerik.WinControls.UI.RadButton BtnBuscar;
         private Telerik.WinControls.UI.RadButton BtnLimpiar;
+        private Telerik.WinControls.UI.RadCheckBox CheActivo;
     }
 }

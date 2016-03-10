@@ -75,7 +75,7 @@ namespace GestionAdministrativa.Win.Forms.Moviles
                 await
                     Task.Run(
                         () =>
-                            _movilesNegocio.Listado(SortColumn, SortDirection, numero, patente, activo, 1, 50,
+                            _movilesNegocio.Listado(SortColumn, SortDirection, numero, patente, activo, 1, 1000,
                                 out pageTotal));
 
             DgvMovil.DataSource = moviles;

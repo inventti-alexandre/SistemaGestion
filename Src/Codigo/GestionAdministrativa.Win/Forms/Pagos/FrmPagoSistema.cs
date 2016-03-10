@@ -172,15 +172,18 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         {
             Guardar();
             LimpiarControles();
+            //this.Close();
         }
 
         private void LimpiarControles()
         {
             _chofer = null;
             _celular = null;
+            _pagoCelular = null;
             ucBuscardorChoferMovil.LimpiarFiltros();
             ucPagos1.Limpiar();
             ucDetallePagos.Limpiar();
+            this.Close();
         }
 
         private void Guardar()
