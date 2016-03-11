@@ -215,6 +215,12 @@ namespace GestionAdministrativa.Win.Forms
             var frm = FormFactory.Create<FrmInformeCaja>();
             frm.Show();
         }
+
+        private void btnFueraFrecuencia_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmFueraSistema>();
+            frm.Show();
+        }
      
     }
 }

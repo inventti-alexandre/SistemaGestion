@@ -183,7 +183,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             ucBuscardorChoferMovil.LimpiarFiltros();
             ucPagos1.Limpiar();
             ucDetallePagos.Limpiar();
-            this.Close();
+            //this.Close();
         }
 
         private void Guardar()

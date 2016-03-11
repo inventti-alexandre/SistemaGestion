@@ -43,5 +43,9 @@ namespace GestionAdministrativa.Business
         {
             return Uow.Reportes.HistorialPagosChofer(choferId);
         }
+        public List<FueraDeSistema_Result> FueraDeSistema()
+        {
+            return Uow.Reportes.FueraDeSistema();
+        }
     }
 }

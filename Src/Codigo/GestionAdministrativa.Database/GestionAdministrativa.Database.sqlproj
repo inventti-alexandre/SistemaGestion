@@ -129,6 +129,7 @@
     <Build Include="Tables\ChoferCelular.sql" />
     <Build Include="Stored Procedures\MovilesPorCajaId.sql" />
     <Build Include="Stored Procedures\HistorialPagosChofer.sql" />
+    <Build Include="Stored Procedures\FueraDeSistema.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Dias.sql" />

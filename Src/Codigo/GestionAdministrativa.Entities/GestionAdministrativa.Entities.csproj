@@ -97,6 +97,9 @@
     </Compile>
     <Compile Include="Enums\CondicionVentaEnum.cs" />
     <Compile Include="Enums\EstadoCliente.cs" />
+    <Compile Include="FueraDeSistema_Result.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Funcion.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>

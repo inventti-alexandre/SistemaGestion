@@ -41,6 +41,7 @@
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
             this.BtnChoferListado = new Telerik.WinControls.UI.RadButton();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
+            this.btnFueraFrecuencia = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.btnInformeCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCambioCelularMovil)).BeginInit();
@@ -52,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnChoferListado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFueraFrecuencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,6 +120,7 @@
             this.BtnCajas.Text = "Cajas";
             this.BtnCajas.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnCajas.ThemeName = "TelerikMetro";
+            this.BtnCajas.Visible = false;
             this.BtnCajas.Click += new System.EventHandler(this.BtnCajas_Click);
             // 
             // BtnAbrirCaja
@@ -235,11 +238,26 @@
             this.radButton1.ThemeName = "TelerikMetro";
             this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
+            // btnFueraFrecuencia
+            // 
+            this.btnFueraFrecuencia.AutoSize = true;
+            this.btnFueraFrecuencia.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFueraFrecuencia.Image = global::GestionAdministrativa.Win.Properties.Resources.infCaja;
+            this.btnFueraFrecuencia.Location = new System.Drawing.Point(615, 209);
+            this.btnFueraFrecuencia.Name = "btnFueraFrecuencia";
+            this.btnFueraFrecuencia.Size = new System.Drawing.Size(132, 132);
+            this.btnFueraFrecuencia.TabIndex = 10;
+            this.btnFueraFrecuencia.Text = "Fuera Frec";
+            this.btnFueraFrecuencia.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFueraFrecuencia.ThemeName = "TelerikMetro";
+            this.btnFueraFrecuencia.Click += new System.EventHandler(this.btnFueraFrecuencia_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1340, 652);
+            this.Controls.Add(this.btnFueraFrecuencia);
             this.Controls.Add(this.btnInformeCaja);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnCambioCelularMovil);
@@ -271,6 +289,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Menu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnChoferListado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFueraFrecuencia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -292,6 +311,7 @@
         private Telerik.WinControls.UI.RadButton btnCambioCelularMovil;
         private Telerik.WinControls.UI.RadLabel lblUsuario;
         private Telerik.WinControls.UI.RadButton btnInformeCaja;
+        private Telerik.WinControls.UI.RadButton btnFueraFrecuencia;
 
 
     }

@@ -16,5 +16,6 @@ namespace GestionAdministrativa.Business.Interfaces
         List<InformeCaja_Result> InformeCaja(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId, Guid? cajaId);
         List<MovilesPorCajaId_Result> MovilesPorCajaId(Guid? cajaId);
         List<HistorialPagosChofer_Result> HistorialPagosChofer(Guid choferId);
+        List<FueraDeSistema_Result> FueraDeSistema();
     }
 }

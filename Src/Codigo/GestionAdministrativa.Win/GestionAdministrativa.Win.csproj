@@ -14,7 +14,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp://w1131301%40w1131301.ferozo.com/public_html/clientes/apipe/upmobile/maria/</PublishUrl>
+    <PublishUrl>ftp://w1131301%40w1131301.ferozo.com/public_html/clientes/apipe/upmobile/abel/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,11 +24,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.devlights.com/clientes/apipe/upmobile/maria/</InstallUrl>
-    <UpdateUrl>http://www.devlights.com/clientes/apipe/upmobile/maria/</UpdateUrl>
+    <InstallUrl>http://www.devlights.com/clientes/apipe/upmobile/abel/</InstallUrl>
+    <UpdateUrl>http://www.devlights.com/clientes/apipe/upmobile/abel/</UpdateUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>31</ApplicationRevision>
+    <ApplicationRevision>34</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -328,6 +328,12 @@
     <Compile Include="Forms\Reportes\FrmCajaResumida.Designer.cs">
       <DependentUpon>FrmCajaResumida.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Reportes\FrmFueraSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reportes\FrmFueraSistema.Designer.cs">
+      <DependentUpon>FrmFueraSistema.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Reportes\FrmInformeCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -442,6 +448,9 @@
     <EmbeddedResource Include="Forms\Reportes\FrmCajaResumida.resx">
       <DependentUpon>FrmCajaResumida.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reportes\FrmFueraSistema.resx">
+      <DependentUpon>FrmFueraSistema.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reportes\FrmInformeCaja.resx">
       <DependentUpon>FrmInformeCaja.cs</DependentUpon>
     </EmbeddedResource>
@@ -485,6 +494,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="RDLS\HistorialPagosChofer.rdl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RDLS\FueraFrecuencia.rdl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\Thumbs.db" />

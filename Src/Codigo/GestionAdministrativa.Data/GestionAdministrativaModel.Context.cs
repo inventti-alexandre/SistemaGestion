@@ -166,5 +166,10 @@ namespace GestionAdministrativa.Data
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HistorialPagosChofer_Result>("HistorialPagosChofer", choferParameter);
         }
+    
+        public virtual ObjectResult<FueraDeSistema_Result> FueraDeSistema()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<FueraDeSistema_Result>("FueraDeSistema");
+        }
     }
 }

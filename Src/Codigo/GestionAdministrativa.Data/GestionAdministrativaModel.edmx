@@ -3251,6 +3251,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="FueraDeSistema" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="HistorialPagosChofer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Chofer" Type="uniqueidentifier" Mode="In" />
         </Function>
@@ -8087,8 +8088,9 @@
           <Parameter Name="CajaId" Mode="In" Type="Guid" />
           </FunctionImport>
           <FunctionImport Name="HistorialPagosChofer" ReturnType="Collection(GestionAdministrativa.Model.HistorialPagosChofer_Result)">
-            <Parameter Name="Chofer" Mode="In" Type="Guid" />
+          <Parameter Name="Chofer" Mode="In" Type="Guid" />
           </FunctionImport>
+          <FunctionImport Name="FueraDeSistema" ReturnType="Collection(GestionAdministrativa.Model.FueraDeSistema_Result)" />
         </EntityContainer>
         <EntityType Name="Chofer">
           <Key>
@@ -8693,6 +8695,11 @@
           <Property Type="Decimal" Name="Taller" Nullable="true" Precision="19" />
           <Property Type="Decimal" Name="Descuento" Nullable="true" Precision="19" />
           <Property Type="Decimal" Name="Senia" Nullable="true" Precision="19" />
+        </ComplexType>
+        <ComplexType Name="FueraDeSistema_Result">
+          <Property Type="Int32" Name="Numero" Nullable="false" />
+          <Property Type="String" Name="Apellido" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Dias" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -9598,6 +9605,15 @@
                 <ScalarProperty Name="Taller" ColumnName="Taller" />
                 <ScalarProperty Name="Descuento" ColumnName="Descuento" />
                 <ScalarProperty Name="Senia" ColumnName="Senia" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="FueraDeSistema" FunctionName="GestionAdministrativa.Model.Store.FueraDeSistema">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GestionAdministrativa.Model.FueraDeSistema_Result">
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Dias" ColumnName="Dias" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
