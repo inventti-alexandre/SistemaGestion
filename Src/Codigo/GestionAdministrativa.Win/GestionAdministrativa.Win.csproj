@@ -14,7 +14,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp://w1131301%40w1131301.ferozo.com/public_html/clientes/apipe/upmobile/abel/</PublishUrl>
+    <PublishUrl>ftp://w1131301.ferozo.net/public_html/clientes/apipe/upmobile/santi/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -22,13 +22,14 @@
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
+    <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.devlights.com/clientes/apipe/upmobile/abel/</InstallUrl>
-    <UpdateUrl>http://www.devlights.com/clientes/apipe/upmobile/abel/</UpdateUrl>
+    <InstallUrl>http://www.devlights.com/clientes/apipe/upmobile/santi/</InstallUrl>
+    <UpdateUrl>http://www.devlights.com/clientes/apipe/upmobile/santi/</UpdateUrl>
+    <MinimumRequiredVersion>1.0.0.37</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>34</ApplicationRevision>
+    <ApplicationRevision>42</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -244,6 +245,12 @@
     <Compile Include="Forms\EditFormBase.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +322,12 @@
     </Compile>
     <Compile Include="Forms\Pagos\ucEstadoCuentaChofer.Designer.cs">
       <DependentUpon>ucEstadoCuentaChofer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pagos\ucHistorialPagosChofer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Pagos\ucHistorialPagosChofer.Designer.cs">
+      <DependentUpon>ucHistorialPagosChofer.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Pagos\ucPagos.cs">
       <SubType>UserControl</SubType>
@@ -441,6 +454,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pagos\ucEstadoCuentaChofer.resx">
       <DependentUpon>ucEstadoCuentaChofer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pagos\ucHistorialPagosChofer.resx">
+      <DependentUpon>ucHistorialPagosChofer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pagos\ucPagos.resx">
       <DependentUpon>ucPagos.cs</DependentUpon>

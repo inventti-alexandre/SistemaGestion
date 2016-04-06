@@ -132,6 +132,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 }
                 ucDetallePagos.FechaHasta = date.AddDays(cantidadDias);
                 GenerarDeudaPago(date,hasta);
+                ucHistorialPagosChofer1.HistorialPagosChofer(_chofer.Id);
                     
                 
             }
@@ -172,7 +173,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         {
             Guardar();
             LimpiarControles();
-            //this.Close();
+            this.Close();
         }
 
         private void LimpiarControles()

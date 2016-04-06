@@ -21,6 +21,7 @@ using GestionAdministrativa.Win.Forms.Pagos;
 using GestionAdministrativa.Win.Forms.Cajas;
 using GestionAdministrativa.Win.Forms.Reportes;
 using GestionAdministrativa.Win.Forms.Cambios;
+using System.Deployment.Application;
 
 namespace GestionAdministrativa.Win.Forms
 {
@@ -36,7 +37,13 @@ namespace GestionAdministrativa.Win.Forms
            // UowFactory = uowFactory;
             InitializeComponent();
         }
-
+        public Version AssemblyVersion
+        {
+            get
+            {
+                return ApplicationDeployment.CurrentDeployment.CurrentVersion;
+            }
+        }
        
 
         private void radButton1_Click(object sender, EventArgs e)
@@ -107,6 +114,8 @@ namespace GestionAdministrativa.Win.Forms
         {
             ControlCaja();
             lblUsuario.Text = "Usuario: " + Context.OperadorActual.Usuario;
+            //this.Text = "Gestión UpMobile - Versión: "+ AssemblyVersion.Major.ToString() + "." + AssemblyVersion.Minor.ToString() + "." + AssemblyVersion.Build.ToString() + "." + AssemblyVersion.Revision.ToString();
+
         }
 
         private void ControlCaja()
