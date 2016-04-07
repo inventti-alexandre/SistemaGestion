@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.dgvhistorial = new Telerik.WinControls.UI.RadGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvhistorial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvhistorial.MasterTemplate)).BeginInit();
@@ -53,55 +54,60 @@
             this.dgvhistorial.MasterTemplate.AllowColumnReorder = false;
             this.dgvhistorial.MasterTemplate.AllowDragToGroup = false;
             this.dgvhistorial.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn10.FieldName = "FechaAlta";
-            gridViewTextBoxColumn10.HeaderText = "Fecha";
-            gridViewTextBoxColumn10.Name = "FechaAlta";
-            gridViewTextBoxColumn10.Width = 115;
-            gridViewTextBoxColumn11.FieldName = "Desde";
-            gridViewTextBoxColumn11.HeaderText = "Desde";
-            gridViewTextBoxColumn11.Name = "Desde";
-            gridViewTextBoxColumn11.Width = 99;
-            gridViewTextBoxColumn12.FieldName = "Hasta";
-            gridViewTextBoxColumn12.HeaderText = "Hasta";
-            gridViewTextBoxColumn12.Name = "Hasta";
-            gridViewTextBoxColumn12.Width = 99;
-            gridViewTextBoxColumn13.FieldName = "Monto";
-            gridViewTextBoxColumn13.HeaderText = "Monto";
-            gridViewTextBoxColumn13.Name = "Monto";
-            gridViewTextBoxColumn13.Width = 99;
-            gridViewTextBoxColumn14.FieldName = "Efectivo";
-            gridViewTextBoxColumn14.HeaderText = "Efectivo";
-            gridViewTextBoxColumn14.Name = "Efectivo";
-            gridViewTextBoxColumn14.Width = 99;
-            gridViewTextBoxColumn15.FieldName = "Vales";
-            gridViewTextBoxColumn15.HeaderText = "Vales";
-            gridViewTextBoxColumn15.Name = "Vales";
-            gridViewTextBoxColumn15.Width = 99;
-            gridViewTextBoxColumn16.FieldName = "Taller";
-            gridViewTextBoxColumn16.HeaderText = "Taller";
-            gridViewTextBoxColumn16.Name = "Taller";
-            gridViewTextBoxColumn16.Width = 99;
-            gridViewTextBoxColumn17.FieldName = "Descuento";
-            gridViewTextBoxColumn17.HeaderText = "Descuento";
-            gridViewTextBoxColumn17.Name = "Descuento";
-            gridViewTextBoxColumn17.Width = 99;
-            gridViewTextBoxColumn18.FieldName = "Senia";
-            gridViewTextBoxColumn18.HeaderText = "Senia";
-            gridViewTextBoxColumn18.Name = "Senia";
-            gridViewTextBoxColumn18.Width = 141;
+            gridViewTextBoxColumn1.FieldName = "FechaAlta";
+            gridViewTextBoxColumn1.HeaderText = "Fecha";
+            gridViewTextBoxColumn1.Name = "FechaAlta";
+            gridViewTextBoxColumn1.Width = 109;
+            gridViewTextBoxColumn2.FieldName = "Desde";
+            gridViewTextBoxColumn2.HeaderText = "Desde";
+            gridViewTextBoxColumn2.Name = "Desde";
+            gridViewTextBoxColumn2.Width = 94;
+            gridViewTextBoxColumn3.FieldName = "Hasta";
+            gridViewTextBoxColumn3.HeaderText = "Hasta";
+            gridViewTextBoxColumn3.Name = "Hasta";
+            gridViewTextBoxColumn3.Width = 94;
+            gridViewTextBoxColumn4.FieldName = "Numero";
+            gridViewTextBoxColumn4.HeaderText = "Movil";
+            gridViewTextBoxColumn4.Name = "Numero";
+            gridViewTextBoxColumn4.Width = 79;
+            gridViewTextBoxColumn5.FieldName = "Monto";
+            gridViewTextBoxColumn5.HeaderText = "Monto";
+            gridViewTextBoxColumn5.Name = "Monto";
+            gridViewTextBoxColumn5.Width = 94;
+            gridViewTextBoxColumn6.FieldName = "Efectivo";
+            gridViewTextBoxColumn6.HeaderText = "Efectivo";
+            gridViewTextBoxColumn6.Name = "Efectivo";
+            gridViewTextBoxColumn6.Width = 94;
+            gridViewTextBoxColumn7.FieldName = "Vales";
+            gridViewTextBoxColumn7.HeaderText = "Vales";
+            gridViewTextBoxColumn7.Name = "Vales";
+            gridViewTextBoxColumn7.Width = 94;
+            gridViewTextBoxColumn8.FieldName = "Taller";
+            gridViewTextBoxColumn8.HeaderText = "Taller";
+            gridViewTextBoxColumn8.Name = "Taller";
+            gridViewTextBoxColumn8.Width = 94;
+            gridViewTextBoxColumn9.FieldName = "Descuento";
+            gridViewTextBoxColumn9.HeaderText = "Descuento";
+            gridViewTextBoxColumn9.Name = "Descuento";
+            gridViewTextBoxColumn9.Width = 94;
+            gridViewTextBoxColumn10.FieldName = "Senia";
+            gridViewTextBoxColumn10.HeaderText = "Senia";
+            gridViewTextBoxColumn10.Name = "Senia";
+            gridViewTextBoxColumn10.Width = 104;
             this.dgvhistorial.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn10,
-            gridViewTextBoxColumn11,
-            gridViewTextBoxColumn12,
-            gridViewTextBoxColumn13,
-            gridViewTextBoxColumn14,
-            gridViewTextBoxColumn15,
-            gridViewTextBoxColumn16,
-            gridViewTextBoxColumn17,
-            gridViewTextBoxColumn18});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10});
             this.dgvhistorial.Name = "dgvhistorial";
             this.dgvhistorial.ReadOnly = true;
-            this.dgvhistorial.Size = new System.Drawing.Size(963, 247);
+            this.dgvhistorial.Size = new System.Drawing.Size(963, 200);
             this.dgvhistorial.TabIndex = 0;
             this.dgvhistorial.Text = "radGridView1";
             this.dgvhistorial.ThemeName = "TelerikMetro";
@@ -112,7 +118,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvhistorial);
             this.Name = "ucHistorialPagosChofer";
-            this.Size = new System.Drawing.Size(963, 247);
+            this.Size = new System.Drawing.Size(963, 200);
             this.Load += new System.EventHandler(this.ucHistorialPagosChofer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvhistorial.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvhistorial)).EndInit();

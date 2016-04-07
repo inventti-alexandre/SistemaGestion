@@ -508,6 +508,8 @@
           <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
           <Property Name="SucursalModificacionId" Type="int" />
           <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="ChoferId" Type="uniqueidentifier" />
+          <Property Name="MovilId" Type="uniqueidentifier" />
         </EntityType>
         <EntityType Name="Paises">
           <Key>
@@ -2327,6 +2329,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PagosCelular_Chofer">
+          <End Role="Choferes" Type="Self.Choferes" Multiplicity="0..1" />
+          <End Role="PagosCelular" Type="Self.PagosCelular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Choferes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosCelular">
+              <PropertyRef Name="ChoferId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosCelular_Movil">
+          <End Role="Moviles" Type="Self.Moviles" Multiplicity="0..1" />
+          <End Role="PagosCelular" Type="Self.PagosCelular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Moviles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosCelular">
+              <PropertyRef Name="MovilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_PagosCelular_OperadorAlta">
           <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
           <End Role="PagosCelular" Type="Self.PagosCelular" Multiplicity="*" />
@@ -3834,6 +3860,14 @@
             <End Role="Celulares" EntitySet="Celulares" />
             <End Role="PagosCelular" EntitySet="PagosCelular" />
           </AssociationSet>
+          <AssociationSet Name="FK_PagosCelular_Chofer" Association="Self.FK_PagosCelular_Chofer">
+            <End Role="Choferes" EntitySet="Choferes" />
+            <End Role="PagosCelular" EntitySet="PagosCelular" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosCelular_Movil" Association="Self.FK_PagosCelular_Movil">
+            <End Role="Moviles" EntitySet="Moviles" />
+            <End Role="PagosCelular" EntitySet="PagosCelular" />
+          </AssociationSet>
           <AssociationSet Name="FK_PagosCelular_OperadorAlta" Association="Self.FK_PagosCelular_OperadorAlta">
             <End Role="Operadores" EntitySet="Operadores" />
             <End Role="PagosCelular" EntitySet="PagosCelular" />
@@ -4478,6 +4512,7 @@
           <Property Name="Activo" Type="Boolean" />
           <NavigationProperty Name="Choferes" Relationship="GestionAdministrativa.Model.FK_Choferes_Moviles" FromRole="Movil" ToRole="Chofer" />
           <NavigationProperty Name="ChoferesMovils" Relationship="GestionAdministrativa.Model.FK_ChoferesMovil_Movil" FromRole="Movil" ToRole="ChoferesMovil" />
+          <NavigationProperty Name="PagosCelulars" Relationship="GestionAdministrativa.Model.FK_PagosCelular_Movil" FromRole="Movil" ToRole="PagoCelular" />
         </EntityType>
         <EntityType Name="Operador">
           <Key>
@@ -4719,6 +4754,10 @@
           <NavigationProperty Name="Celulare" Relationship="GestionAdministrativa.Model.FK_PagosCelular_Celular" FromRole="PagoCelular" ToRole="Celulare" />
           <Property Name="Senia" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Descuento" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ChoferId" Type="Guid" />
+          <Property Name="MovilId" Type="Guid" />
+          <NavigationProperty Name="Chofere" Relationship="GestionAdministrativa.Model.FK_PagosCelular_Chofer" FromRole="PagoCelular" ToRole="Chofer" />
+          <NavigationProperty Name="Movile" Relationship="GestionAdministrativa.Model.FK_PagosCelular_Movil" FromRole="PagoCelular" ToRole="Movil" />
         </EntityType>
         <EntityType Name="Pais">
           <Key>
@@ -8091,6 +8130,14 @@
           <Parameter Name="Chofer" Mode="In" Type="Guid" />
           </FunctionImport>
           <FunctionImport Name="FueraDeSistema" ReturnType="Collection(GestionAdministrativa.Model.FueraDeSistema_Result)" />
+          <AssociationSet Name="FK_PagosCelular_Chofer" Association="GestionAdministrativa.Model.FK_PagosCelular_Chofer">
+            <End Role="Chofer" EntitySet="Choferes" />
+            <End Role="PagoCelular" EntitySet="PagosCelular" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosCelular_Movil" Association="GestionAdministrativa.Model.FK_PagosCelular_Movil">
+            <End Role="Movil" EntitySet="Moviles" />
+            <End Role="PagoCelular" EntitySet="PagosCelular" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Chofer">
           <Key>
@@ -8120,6 +8167,7 @@
           <NavigationProperty Name="Celulare" Relationship="GestionAdministrativa.Model.FK_Choferes_Celulares" FromRole="Chofer" ToRole="Celulare" />
           <NavigationProperty Name="ChoferesMovils" Relationship="GestionAdministrativa.Model.FK_ChoferesMovil_Chofer" FromRole="Chofer" ToRole="ChoferesMovil" />
           <NavigationProperty Name="ChoferCelulars" Relationship="GestionAdministrativa.Model.FK_ChoferesCelular_Chofer" FromRole="Chofer" ToRole="ChoferCelular" />
+          <NavigationProperty Name="PagosCelulars" Relationship="GestionAdministrativa.Model.FK_PagosCelular_Chofer" FromRole="Chofer" ToRole="PagoCelular" />
         </EntityType>
         <Association Name="FK_Choferes_OperadorAlta">
           <End Type="GestionAdministrativa.Model.Operador" Role="Operadores" Multiplicity="1" />
@@ -8695,12 +8743,37 @@
           <Property Type="Decimal" Name="Taller" Nullable="true" Precision="19" />
           <Property Type="Decimal" Name="Descuento" Nullable="true" Precision="19" />
           <Property Type="Decimal" Name="Senia" Nullable="true" Precision="19" />
+          <Property Type="Int32" Name="Numero" Nullable="false" />
         </ComplexType>
         <ComplexType Name="FueraDeSistema_Result">
           <Property Type="Int32" Name="Numero" Nullable="false" />
           <Property Type="String" Name="Apellido" Nullable="true" MaxLength="50" />
           <Property Type="Int32" Name="Dias" Nullable="true" />
         </ComplexType>
+        <Association Name="FK_PagosCelular_Chofer">
+          <End Type="GestionAdministrativa.Model.Chofer" Role="Chofer" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.PagoCelular" Role="PagoCelular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chofer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagoCelular">
+              <PropertyRef Name="ChoferId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosCelular_Movil">
+          <End Type="GestionAdministrativa.Model.Movil" Role="Movil" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.PagoCelular" Role="PagoCelular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movil">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagoCelular">
+              <PropertyRef Name="MovilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -9086,6 +9159,8 @@
           <EntitySetMapping Name="PagosCelular">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.PagoCelular">
               <MappingFragment StoreEntitySet="PagosCelular">
+                <ScalarProperty Name="MovilId" ColumnName="MovilId" />
+                <ScalarProperty Name="ChoferId" ColumnName="ChoferId" />
                 <ScalarProperty Name="Descuento" ColumnName="Descuento" />
                 <ScalarProperty Name="Senia" ColumnName="Senia" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -9605,6 +9680,7 @@
                 <ScalarProperty Name="Taller" ColumnName="Taller" />
                 <ScalarProperty Name="Descuento" ColumnName="Descuento" />
                 <ScalarProperty Name="Senia" ColumnName="Senia" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

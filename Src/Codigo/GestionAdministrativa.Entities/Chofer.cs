@@ -19,6 +19,7 @@ namespace GestionAdministrativa.Entities
             this.ChoferesMontosFavor = new HashSet<ChoferMontoFavor>();
             this.ChoferesMovils = new HashSet<ChoferesMovil>();
             this.ChoferCelulars = new HashSet<ChoferCelular>();
+            this.PagosCelulars = new HashSet<PagoCelular>();
         }
     
         public System.Guid Id { get; set; }
@@ -46,5 +47,6 @@ namespace GestionAdministrativa.Entities
         public virtual Celular Celulare { get; set; }
         public virtual ICollection<ChoferesMovil> ChoferesMovils { get; set; }
         public virtual ICollection<ChoferCelular> ChoferCelulars { get; set; }
+        public virtual ICollection<PagoCelular> PagosCelulars { get; set; }
     }
 }

@@ -218,6 +218,9 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                         _pagoCelular.Senia = _pagoCelular.Senia ?? 0 + item.Importe;
                 }
                 _pagoCelular.Monto = ucDetallePagos.Total;
+                var chofer = Uow.Choferes.Listado().Where(c => c.CelularId == _celular.Id).FirstOrDefault();
+                _pagoCelular.MovilId = chofer.MovilId;
+                _pagoCelular.ChoferId = chofer.Id;
                 Uow.PagosCelulares.Agregar(_pagoCelular);
 
                 RegistrarCajaYCajaMovimiento();
@@ -275,7 +278,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
         private void NuevoMontoAFavor()
         {
-            if (ucPagos1.Total > _pagoCelular.Monto)
+            if (ucPagos1.Total != _pagoCelular.Monto)
             {
                 if (MessageBox.Show("Desea guardar el monto a favor?", "Monto a favor", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {

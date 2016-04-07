@@ -22,5 +22,6 @@ namespace GestionAdministrativa.Entities
         public Nullable<decimal> Taller { get; set; }
         public Nullable<decimal> Descuento { get; set; }
         public Nullable<decimal> Senia { get; set; }
+        public int Numero { get; set; }
     }
 }

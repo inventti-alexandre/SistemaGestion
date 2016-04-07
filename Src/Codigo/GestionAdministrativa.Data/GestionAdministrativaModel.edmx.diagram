@@ -253,6 +253,8 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesCelular_OperadorModificacion" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesCelular_SucursalAlta" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesCelular_SucursalModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosCelular_Chofer" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosCelular_Movil" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

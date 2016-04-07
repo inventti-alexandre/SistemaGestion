@@ -92,7 +92,7 @@
             this.radPanel2.Controls.Add(this.ucEstadoCuentaChofer1);
             this.radPanel2.Location = new System.Drawing.Point(16, 160);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(501, 296);
+            this.radPanel2.Size = new System.Drawing.Size(501, 351);
             this.radPanel2.TabIndex = 3;
             this.radPanel2.ThemeName = "TelerikMetro";
             // 
@@ -188,9 +188,9 @@
             // 
             // ucHistorialPagosChofer1
             // 
-            this.ucHistorialPagosChofer1.Location = new System.Drawing.Point(3, 13);
+            this.ucHistorialPagosChofer1.Location = new System.Drawing.Point(11, 14);
             this.ucHistorialPagosChofer1.Name = "ucHistorialPagosChofer1";
-            this.ucHistorialPagosChofer1.Size = new System.Drawing.Size(1120, 257);
+            this.ucHistorialPagosChofer1.Size = new System.Drawing.Size(1120, 205);
             this.ucHistorialPagosChofer1.TabIndex = 10;
             // 
             // radPanel1
@@ -198,7 +198,7 @@
             this.radPanel1.Controls.Add(this.ucHistorialPagosChofer1);
             this.radPanel1.Location = new System.Drawing.Point(18, 576);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(1141, 273);
+            this.radPanel1.Size = new System.Drawing.Size(1141, 244);
             this.radPanel1.TabIndex = 11;
             this.radPanel1.ThemeName = "TelerikMetro";
             // 
