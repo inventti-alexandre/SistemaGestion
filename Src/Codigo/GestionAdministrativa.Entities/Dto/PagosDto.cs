@@ -7,34 +7,28 @@ using System.Threading.Tasks;
 
 namespace GestionAdministrativa.Entities.Dto
 {
-    public class PagosDto : IMapFrom<PagoCelular>
+    public class CajasDto : IMapFrom<Caja>
     {
         public System.Guid Id { get; set; }
-
-        public Nullable<System.DateTime> Desde { get; set; }
-        public Nullable<System.DateTime> Hasta { get; set; }
+        public int SucursalId { get; set; }
+        public Nullable<System.Guid> OperadorId { get; set; }
+        public System.DateTime Fecha { get; set; }
+        public Nullable<System.DateTime> FCierre { get; set; }
+        public Nullable<decimal> Inicio { get; set; }
+        public Nullable<decimal> Ingresos { get; set; }
+        public Nullable<decimal> Egresos { get; set; }
+        public Nullable<decimal> Saldo { get; set; }
+        public Nullable<decimal> Cheques { get; set; }
+        public Nullable<decimal> Bonos { get; set; }
         public Nullable<decimal> Efectivo { get; set; }
         public Nullable<decimal> Vales { get; set; }
-        public Nullable<decimal> Taller { get; set; }
-        public Nullable<decimal> Descuento { get; set; }
-        public Nullable<decimal> Senia { get; set; }
-        public Nullable<decimal> Monto { get; set; }
-        public System.Guid CelularId { get; set; }
+        public string PcAlta { get; set; }
         public Nullable<System.DateTime> FechaAlta { get; set; }
         public Nullable<System.Guid> OperadorAltaId { get; set; }
         public Nullable<int> SucursalAltaId { get; set; }
         public Nullable<System.DateTime> FechaModificacion { get; set; }
         public Nullable<System.Guid> OperadorModificacionId { get; set; }
         public Nullable<int> SucursalModificacionId { get; set; }
-        public System.Guid ChoferId { get; set; }
-        public System.Guid MovilId { get; set; }
-        public Nullable<bool> Anulada { get; set; }
-        public Nullable<System.DateTime> FechaAnulacion { get; set; }
-        public Nullable<System.Guid> OperadorAutorizaId { get; set; }
-
-
-       
-        
-        
+        public Nullable<bool> Aprobada { get; set; }
     }
 }

@@ -14,7 +14,6 @@ namespace GestionAdministrativa.Data
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Core.Objects;
     using System.Linq;
-    using GestionAdministrativa.Entities;
     
     public partial class GestionAdministrativaDbContext : DbContext
     {

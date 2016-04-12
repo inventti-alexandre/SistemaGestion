@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using Framework.Ioc;
 using Framework.Common.Utility;
 using GestionAdministrativa.Business.Interfaces;
 using GestionAdministrativa.Data.Interfaces;
 using GestionAdministrativa.Entities;
+using GestionAdministrativa.Entities.Dto;
 
 namespace GestionAdministrativa.Win.Forms.Pagos
 {
@@ -66,6 +68,36 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             this.dgvhistorial.Columns["Descuento"].FormatString = "{0:N2}";
             this.dgvhistorial.Columns["Senia"].DataType = typeof(decimal);
             this.dgvhistorial.Columns["Senia"].FormatString = "{0:N2}"; 
+        }
+
+
+        private void dgvhistorial_CommandCellClick(object sender, EventArgs e)
+        {
+            var commandCell = (Telerik.WinControls.UI.GridCommandCellElement)sender;
+
+            var selectedRow = this.dgvhistorial.SelectedRows.FirstOrDefault();
+            if (selectedRow == null)
+                return;
+
+            var pago = selectedRow.DataBoundItem as HistorialPagosChofer_Result;
+
+            if (pago == null)
+                return;
+
+            switch (commandCell.ColumnInfo.Name)
+            {
+                
+                case "Delete":
+                    Delete(pago.Id);
+                    break;
+                
+
+            }
+        }
+
+        private void Delete(Guid guid)
+        {
+            MessageBox.Show("Eliminar pago" + guid.ToString());
         }
 
     }

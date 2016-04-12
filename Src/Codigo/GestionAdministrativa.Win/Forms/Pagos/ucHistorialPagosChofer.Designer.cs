@@ -38,6 +38,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.dgvhistorial = new Telerik.WinControls.UI.RadGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvhistorial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvhistorial.MasterTemplate)).BeginInit();
@@ -57,43 +58,49 @@
             gridViewTextBoxColumn1.FieldName = "FechaAlta";
             gridViewTextBoxColumn1.HeaderText = "Fecha";
             gridViewTextBoxColumn1.Name = "FechaAlta";
-            gridViewTextBoxColumn1.Width = 109;
+            gridViewTextBoxColumn1.Width = 104;
             gridViewTextBoxColumn2.FieldName = "Desde";
             gridViewTextBoxColumn2.HeaderText = "Desde";
             gridViewTextBoxColumn2.Name = "Desde";
-            gridViewTextBoxColumn2.Width = 94;
+            gridViewTextBoxColumn2.Width = 89;
             gridViewTextBoxColumn3.FieldName = "Hasta";
             gridViewTextBoxColumn3.HeaderText = "Hasta";
             gridViewTextBoxColumn3.Name = "Hasta";
-            gridViewTextBoxColumn3.Width = 94;
+            gridViewTextBoxColumn3.Width = 89;
             gridViewTextBoxColumn4.FieldName = "Numero";
             gridViewTextBoxColumn4.HeaderText = "Movil";
             gridViewTextBoxColumn4.Name = "Numero";
-            gridViewTextBoxColumn4.Width = 79;
+            gridViewTextBoxColumn4.Width = 75;
             gridViewTextBoxColumn5.FieldName = "Monto";
             gridViewTextBoxColumn5.HeaderText = "Monto";
             gridViewTextBoxColumn5.Name = "Monto";
-            gridViewTextBoxColumn5.Width = 94;
+            gridViewTextBoxColumn5.Width = 89;
             gridViewTextBoxColumn6.FieldName = "Efectivo";
             gridViewTextBoxColumn6.HeaderText = "Efectivo";
             gridViewTextBoxColumn6.Name = "Efectivo";
-            gridViewTextBoxColumn6.Width = 94;
+            gridViewTextBoxColumn6.Width = 89;
             gridViewTextBoxColumn7.FieldName = "Vales";
             gridViewTextBoxColumn7.HeaderText = "Vales";
             gridViewTextBoxColumn7.Name = "Vales";
-            gridViewTextBoxColumn7.Width = 94;
+            gridViewTextBoxColumn7.Width = 89;
             gridViewTextBoxColumn8.FieldName = "Taller";
             gridViewTextBoxColumn8.HeaderText = "Taller";
             gridViewTextBoxColumn8.Name = "Taller";
-            gridViewTextBoxColumn8.Width = 94;
+            gridViewTextBoxColumn8.Width = 89;
             gridViewTextBoxColumn9.FieldName = "Descuento";
             gridViewTextBoxColumn9.HeaderText = "Descuento";
             gridViewTextBoxColumn9.Name = "Descuento";
-            gridViewTextBoxColumn9.Width = 94;
+            gridViewTextBoxColumn9.Width = 89;
             gridViewTextBoxColumn10.FieldName = "Senia";
             gridViewTextBoxColumn10.HeaderText = "Senia";
             gridViewTextBoxColumn10.Name = "Senia";
-            gridViewTextBoxColumn10.Width = 104;
+            gridViewTextBoxColumn10.Width = 124;
+            gridViewCommandColumn1.HeaderText = "";
+            gridViewCommandColumn1.Image = global::GestionAdministrativa.Win.Properties.Resources.Garbage_Closed;
+            gridViewCommandColumn1.MaxWidth = 25;
+            gridViewCommandColumn1.MinWidth = 25;
+            gridViewCommandColumn1.Name = "Delete";
+            gridViewCommandColumn1.Width = 25;
             this.dgvhistorial.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -104,13 +111,16 @@
             gridViewTextBoxColumn7,
             gridViewTextBoxColumn8,
             gridViewTextBoxColumn9,
-            gridViewTextBoxColumn10});
+            gridViewTextBoxColumn10,
+            gridViewCommandColumn1});
             this.dgvhistorial.Name = "dgvhistorial";
             this.dgvhistorial.ReadOnly = true;
             this.dgvhistorial.Size = new System.Drawing.Size(963, 200);
             this.dgvhistorial.TabIndex = 0;
             this.dgvhistorial.Text = "radGridView1";
             this.dgvhistorial.ThemeName = "TelerikMetro";
+            this.dgvhistorial.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.dgvhistorial_CommandCellClick);
+
             // 
             // ucHistorialPagosChofer
             // 
