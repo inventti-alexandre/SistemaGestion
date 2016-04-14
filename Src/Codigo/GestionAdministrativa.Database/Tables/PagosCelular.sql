@@ -19,11 +19,15 @@
    
     [ChoferId] UNIQUEIDENTIFIER NULL, 
     [MovilId] UNIQUEIDENTIFIER NULL, 
+    [Anulada] BIT NULL DEFAULT 0, 
+    [FechaAnulacion] DATETIME NULL, 
+    [OperadorAutoriza] UNIQUEIDENTIFIER NULL, 
     CONSTRAINT [FK_PagosCelular_Celular] FOREIGN KEY (CelularId) REFERENCES Celulares(Id), 
     CONSTRAINT [FK_PagosCelular_OperadorAlta] FOREIGN KEY (OperadorAltaId) REFERENCES Operadores(Id), 
     CONSTRAINT [FK_PagosCelular_SucursalAlta] FOREIGN KEY (SucursalAltaId) REFERENCES Sucursales(Id), 
     CONSTRAINT [FK_PagosCelular_OperadorModificacion] FOREIGN KEY (OperadorModificacionId) REFERENCES Operadores(Id), 
     CONSTRAINT [FK_PagosCelular_SucursalModificacion] FOREIGN KEY (SucursalModificacionId) REFERENCES Sucursales(Id), 
     CONSTRAINT [FK_PagosCelular_Chofer] FOREIGN KEY (ChoferId) REFERENCES Choferes(Id), 
-    CONSTRAINT [FK_PagosCelular_Movil] FOREIGN KEY (MovilId) REFERENCES Moviles(Id)
+    CONSTRAINT [FK_PagosCelular_Movil] FOREIGN KEY (MovilId) REFERENCES Moviles(Id), 
+    CONSTRAINT [FK_PagosCelular_OperadorAutoriza] FOREIGN KEY (OperadorAutoriza) REFERENCES Operadores(Id)
 )

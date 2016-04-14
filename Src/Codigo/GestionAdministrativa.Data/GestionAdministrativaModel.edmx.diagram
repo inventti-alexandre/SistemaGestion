@@ -255,6 +255,7 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesCelular_SucursalModificacion" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosCelular_Chofer" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosCelular_Movil" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosCelular_OperadorAutoriza" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

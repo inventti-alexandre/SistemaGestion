@@ -510,6 +510,9 @@
           <Property Name="FechaModificacion" Type="datetime" />
           <Property Name="ChoferId" Type="uniqueidentifier" />
           <Property Name="MovilId" Type="uniqueidentifier" />
+          <Property Name="Anulada" Type="bit" />
+          <Property Name="FechaAnulacion" Type="datetime" />
+          <Property Name="OperadorAutoriza" Type="uniqueidentifier" />
         </EntityType>
         <EntityType Name="Paises">
           <Key>
@@ -2365,6 +2368,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PagosCelular_OperadorAutoriza">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="PagosCelular" Type="Self.PagosCelular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosCelular">
+              <PropertyRef Name="OperadorAutoriza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_PagosCelular_OperadorModificacion">
           <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
           <End Role="PagosCelular" Type="Self.PagosCelular" Multiplicity="*" />
@@ -3872,6 +3887,10 @@
             <End Role="Operadores" EntitySet="Operadores" />
             <End Role="PagosCelular" EntitySet="PagosCelular" />
           </AssociationSet>
+          <AssociationSet Name="FK_PagosCelular_OperadorAutoriza" Association="Self.FK_PagosCelular_OperadorAutoriza">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="PagosCelular" EntitySet="PagosCelular" />
+          </AssociationSet>
           <AssociationSet Name="FK_PagosCelular_OperadorModificacion" Association="Self.FK_PagosCelular_OperadorModificacion">
             <End Role="Operadores" EntitySet="Operadores" />
             <End Role="PagosCelular" EntitySet="PagosCelular" />
@@ -4615,6 +4634,7 @@
           <NavigationProperty Name="ChoferesMovils1" Relationship="GestionAdministrativa.Model.FK_ChoferesMovil_OperadorModificacion" FromRole="Operador" ToRole="ChoferesMovil" />
           <NavigationProperty Name="ChoferCelulars" Relationship="GestionAdministrativa.Model.FK_ChoferesCelular_OperadorAlta" FromRole="Operador" ToRole="ChoferCelular" />
           <NavigationProperty Name="ChoferCelulars1" Relationship="GestionAdministrativa.Model.FK_ChoferesCelular_OperadorModificacion" FromRole="Operador" ToRole="ChoferCelular" />
+          <NavigationProperty Name="PagosCelulars1" Relationship="GestionAdministrativa.Model.FK_PagosCelular_OperadorAutoriza" FromRole="Operador" ToRole="PagoCelular" />
           </EntityType>
         <EntityType Name="OperadorFuncion">
           <Key>
@@ -4758,6 +4778,10 @@
           <Property Name="MovilId" Type="Guid" />
           <NavigationProperty Name="Chofere" Relationship="GestionAdministrativa.Model.FK_PagosCelular_Chofer" FromRole="PagoCelular" ToRole="Chofer" />
           <NavigationProperty Name="Movile" Relationship="GestionAdministrativa.Model.FK_PagosCelular_Movil" FromRole="PagoCelular" ToRole="Movil" />
+          <Property Name="Anulada" Type="Boolean" />
+          <Property Name="FechaAnulacion" Type="DateTime" Precision="3" />
+          <Property Name="OperadorAutoriza" Type="Guid" />
+          <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_PagosCelular_OperadorAutoriza" FromRole="PagoCelular" ToRole="Operador" />
         </EntityType>
         <EntityType Name="Pais">
           <Key>
@@ -8138,6 +8162,10 @@
             <End Role="Movil" EntitySet="Moviles" />
             <End Role="PagoCelular" EntitySet="PagosCelular" />
           </AssociationSet>
+          <AssociationSet Name="FK_PagosCelular_OperadorAutoriza" Association="GestionAdministrativa.Model.FK_PagosCelular_OperadorAutoriza">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="PagoCelular" EntitySet="PagosCelular" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Chofer">
           <Key>
@@ -8775,6 +8803,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PagosCelular_OperadorAutoriza">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.PagoCelular" Role="PagoCelular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagoCelular">
+              <PropertyRef Name="OperadorAutoriza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -9160,6 +9200,9 @@
           <EntitySetMapping Name="PagosCelular">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.PagoCelular">
               <MappingFragment StoreEntitySet="PagosCelular">
+                <ScalarProperty Name="OperadorAutoriza" ColumnName="OperadorAutoriza" />
+                <ScalarProperty Name="FechaAnulacion" ColumnName="FechaAnulacion" />
+                <ScalarProperty Name="Anulada" ColumnName="Anulada" />
                 <ScalarProperty Name="MovilId" ColumnName="MovilId" />
                 <ScalarProperty Name="ChoferId" ColumnName="ChoferId" />
                 <ScalarProperty Name="Descuento" ColumnName="Descuento" />

@@ -21,6 +21,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
     {
         private readonly IClock _clock;
         private IReporteNegocio _reporteNegocio;
+        
        
         public ucHistorialPagosChofer()
         {
@@ -97,7 +98,13 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
         private void Delete(Guid guid)
         {
-            MessageBox.Show("Eliminar pago" + guid.ToString());
+            //MessageBox.Show("Eliminar pago" + guid.ToString());
+            var _pago = Uow.PagosCelulares.Obtener(p => p.Id == guid);
+            _pago.Anulada = true;
+            _pago.FechaAnulacion = _clock.Now;
+            //_pago.OperadorAutoriza= Operador autorizacion
+            Uow.PagosCelulares.Modificar(_pago);
+            Uow.Commit();
         }
 
     }

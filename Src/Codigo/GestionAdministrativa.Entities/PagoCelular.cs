@@ -32,6 +32,9 @@ namespace GestionAdministrativa.Entities
         public Nullable<decimal> Descuento { get; set; }
         public Nullable<System.Guid> ChoferId { get; set; }
         public Nullable<System.Guid> MovilId { get; set; }
+        public Nullable<bool> Anulada { get; set; }
+        public Nullable<System.DateTime> FechaAnulacion { get; set; }
+        public Nullable<System.Guid> OperadorAutoriza { get; set; }
     
         public virtual Operador Operadores { get; set; }
         public virtual Operador Operadores1 { get; set; }
@@ -40,5 +43,6 @@ namespace GestionAdministrativa.Entities
         public virtual Celular Celulare { get; set; }
         public virtual Chofer Chofere { get; set; }
         public virtual Movil Movile { get; set; }
+        public virtual Operador Operadore1 { get; set; }
     }
 }

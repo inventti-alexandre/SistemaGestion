@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using GestionAdministrativa.Entities;
+
 namespace GestionAdministrativa.Data
 {
     using System;
