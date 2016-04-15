@@ -96,6 +96,8 @@ namespace GestionAdministrativa.Entities
             this.ChoferCelulars = new HashSet<ChoferCelular>();
             this.ChoferCelulars1 = new HashSet<ChoferCelular>();
             this.PagosCelulars1 = new HashSet<PagoCelular>();
+            this.Comentarios = new HashSet<Comentario>();
+            this.ComentariosChofers = new HashSet<ComentariosChofer>();
         }
     
         public System.Guid Id { get; set; }
@@ -197,5 +199,7 @@ namespace GestionAdministrativa.Entities
         public virtual ICollection<ChoferCelular> ChoferCelulars { get; set; }
         public virtual ICollection<ChoferCelular> ChoferCelulars1 { get; set; }
         public virtual ICollection<PagoCelular> PagosCelulars1 { get; set; }
+        public virtual ICollection<Comentario> Comentarios { get; set; }
+        public virtual ICollection<ComentariosChofer> ComentariosChofers { get; set; }
     }
 }

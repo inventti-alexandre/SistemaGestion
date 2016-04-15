@@ -256,6 +256,14 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosCelular_Chofer" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosCelular_Movil" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosCelular_OperadorAutoriza" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Comentario" Width="1.5" PointX="44.25" PointY="61" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.ComentariosChofer" Width="1.5" PointX="46.5" PointY="67.75" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ComentariosChofer_Chofer" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Comentarios_Operador" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Comentarios_Sucursal" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ComentariosChofer_Comentario" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ComentariosChofer_Operador" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_ComentariosChofer_Sucursal" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

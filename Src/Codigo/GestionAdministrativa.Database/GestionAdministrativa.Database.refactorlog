@@ -301,4 +301,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ChoferId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="474e8665-d7b8-4b1a-b0df-4e8d8a8390bc" ChangeDateTime="04/14/2016 14:22:35">
+    <Property Name="ElementName" Value="[dbo].[Comentarios].[OperadorAlta]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Comentarios]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OperadorAltaId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ef12e8be-fc31-4202-b028-fc8d617d0d45" ChangeDateTime="04/14/2016 14:25:15">
+    <Property Name="ElementName" Value="[dbo].[ComentariosChofer].[Chofer]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ComentariosChofer]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ChoferId" />
+  </Operation>
 </Operations>

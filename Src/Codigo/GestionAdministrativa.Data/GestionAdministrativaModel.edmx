@@ -262,6 +262,28 @@
           <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
           <Property Name="SucursalModificacionId" Type="int" />
         </EntityType>
+        <EntityType Name="Comentarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="comentario" Type="nvarchar(max)" />
+          <Property Name="FechaAlta" Type="datetime" />
+          <Property Name="OperadorAltaId" Type="uniqueidentifier" />
+          <Property Name="SucursalAltaId" Type="int" />
+        </EntityType>
+        <EntityType Name="ComentariosChofer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ChoferId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ComentarioId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="FechaAlta" Type="datetime" />
+          <Property Name="OperadorAltaId" Type="uniqueidentifier" />
+          <Property Name="SucursalAltaId" Type="int" />
+        </EntityType>
         <EntityType Name="Conceptos">
           <Key>
             <PropertyRef Name="Id" />
@@ -1645,6 +1667,78 @@
             </Principal>
             <Dependent Role="ChoferesMovil">
               <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comentarios_Operador">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="Comentarios" Type="Self.Comentarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comentarios">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comentarios_Sucursal">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="Comentarios" Type="Self.Comentarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comentarios">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ComentariosChofer_Chofer">
+          <End Role="Choferes" Type="Self.Choferes" Multiplicity="1" />
+          <End Role="ComentariosChofer" Type="Self.ComentariosChofer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Choferes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ComentariosChofer">
+              <PropertyRef Name="ChoferId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ComentariosChofer_Comentario">
+          <End Role="Comentarios" Type="Self.Comentarios" Multiplicity="1" />
+          <End Role="ComentariosChofer" Type="Self.ComentariosChofer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comentarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ComentariosChofer">
+              <PropertyRef Name="ComentarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ComentariosChofer_Operador">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="ComentariosChofer" Type="Self.ComentariosChofer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ComentariosChofer">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ComentariosChofer_Sucursal">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="ComentariosChofer" Type="Self.ComentariosChofer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ComentariosChofer">
+              <PropertyRef Name="SucursalAltaId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3334,6 +3428,8 @@
           <EntitySet Name="Choferes" EntityType="Self.Choferes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChoferesMontosFavor" EntityType="Self.ChoferesMontosFavor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChoferesMovil" EntityType="Self.ChoferesMovil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comentarios" EntityType="Self.Comentarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ComentariosChofer" EntityType="Self.ComentariosChofer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Conceptos" EntityType="Self.Conceptos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CondicionesCompra" EntityType="Self.CondicionesCompra" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Dias" EntityType="Self.Dias" Schema="dbo" store:Type="Tables" />
@@ -3646,6 +3742,30 @@
           <AssociationSet Name="FK_ChoferesMovil_SucursalModificacion" Association="Self.FK_ChoferesMovil_SucursalModificacion">
             <End Role="Sucursales" EntitySet="Sucursales" />
             <End Role="ChoferesMovil" EntitySet="ChoferesMovil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comentarios_Operador" Association="Self.FK_Comentarios_Operador">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="Comentarios" EntitySet="Comentarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comentarios_Sucursal" Association="Self.FK_Comentarios_Sucursal">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="Comentarios" EntitySet="Comentarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComentariosChofer_Chofer" Association="Self.FK_ComentariosChofer_Chofer">
+            <End Role="Choferes" EntitySet="Choferes" />
+            <End Role="ComentariosChofer" EntitySet="ComentariosChofer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComentariosChofer_Comentario" Association="Self.FK_ComentariosChofer_Comentario">
+            <End Role="Comentarios" EntitySet="Comentarios" />
+            <End Role="ComentariosChofer" EntitySet="ComentariosChofer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComentariosChofer_Operador" Association="Self.FK_ComentariosChofer_Operador">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="ComentariosChofer" EntitySet="ComentariosChofer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComentariosChofer_Sucursal" Association="Self.FK_ComentariosChofer_Sucursal">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="ComentariosChofer" EntitySet="ComentariosChofer" />
           </AssociationSet>
           <AssociationSet Name="FK_Conceptos_OperadorAlta" Association="Self.FK_Conceptos_OperadorAlta">
             <End Role="Operadores" EntitySet="Operadores" />
@@ -4635,6 +4755,8 @@
           <NavigationProperty Name="ChoferCelulars" Relationship="GestionAdministrativa.Model.FK_ChoferesCelular_OperadorAlta" FromRole="Operador" ToRole="ChoferCelular" />
           <NavigationProperty Name="ChoferCelulars1" Relationship="GestionAdministrativa.Model.FK_ChoferesCelular_OperadorModificacion" FromRole="Operador" ToRole="ChoferCelular" />
           <NavigationProperty Name="PagosCelulars1" Relationship="GestionAdministrativa.Model.FK_PagosCelular_OperadorAutoriza" FromRole="Operador" ToRole="PagoCelular" />
+          <NavigationProperty Name="Comentarios" Relationship="GestionAdministrativa.Model.FK_Comentarios_Operador" FromRole="Operador" ToRole="Comentario" />
+          <NavigationProperty Name="ComentariosChofers" Relationship="GestionAdministrativa.Model.FK_ComentariosChofer_Operador" FromRole="Operador" ToRole="ComentariosChofer" />
           </EntityType>
         <EntityType Name="OperadorFuncion">
           <Key>
@@ -5139,6 +5261,8 @@
           <NavigationProperty Name="ChoferesMovils1" Relationship="GestionAdministrativa.Model.FK_ChoferesMovil_SucursalModificacion" FromRole="Sucursal" ToRole="ChoferesMovil" />
           <NavigationProperty Name="ChoferCelulars" Relationship="GestionAdministrativa.Model.FK_ChoferesCelular_SucursalAlta" FromRole="Sucursal" ToRole="ChoferCelular" />
           <NavigationProperty Name="ChoferCelulars1" Relationship="GestionAdministrativa.Model.FK_ChoferesCelular_SucursalModificacion" FromRole="Sucursal" ToRole="ChoferCelular" />
+          <NavigationProperty Name="Comentarios" Relationship="GestionAdministrativa.Model.FK_Comentarios_Sucursal" FromRole="Sucursal" ToRole="Comentario" />
+          <NavigationProperty Name="ComentariosChofers" Relationship="GestionAdministrativa.Model.FK_ComentariosChofer_Sucursal" FromRole="Sucursal" ToRole="ComentariosChofer" />
           </EntityType>
         <EntityType Name="TipoCelular">
           <Key>
@@ -8166,6 +8290,32 @@
             <End Role="Operador" EntitySet="Operadores" />
             <End Role="PagoCelular" EntitySet="PagosCelular" />
           </AssociationSet>
+          <EntitySet Name="Comentarios" EntityType="GestionAdministrativa.Model.Comentario" />
+          <EntitySet Name="ComentariosChofers" EntityType="GestionAdministrativa.Model.ComentariosChofer" />
+          <AssociationSet Name="FK_ComentariosChofer_Chofer" Association="GestionAdministrativa.Model.FK_ComentariosChofer_Chofer">
+            <End Role="Chofer" EntitySet="Choferes" />
+            <End Role="ComentariosChofer" EntitySet="ComentariosChofers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comentarios_Operador" Association="GestionAdministrativa.Model.FK_Comentarios_Operador">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="Comentario" EntitySet="Comentarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comentarios_Sucursal" Association="GestionAdministrativa.Model.FK_Comentarios_Sucursal">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="Comentario" EntitySet="Comentarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComentariosChofer_Comentario" Association="GestionAdministrativa.Model.FK_ComentariosChofer_Comentario">
+            <End Role="Comentario" EntitySet="Comentarios" />
+            <End Role="ComentariosChofer" EntitySet="ComentariosChofers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComentariosChofer_Operador" Association="GestionAdministrativa.Model.FK_ComentariosChofer_Operador">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="ComentariosChofer" EntitySet="ComentariosChofers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComentariosChofer_Sucursal" Association="GestionAdministrativa.Model.FK_ComentariosChofer_Sucursal">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="ComentariosChofer" EntitySet="ComentariosChofers" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Chofer">
           <Key>
@@ -8196,6 +8346,7 @@
           <NavigationProperty Name="ChoferesMovils" Relationship="GestionAdministrativa.Model.FK_ChoferesMovil_Chofer" FromRole="Chofer" ToRole="ChoferesMovil" />
           <NavigationProperty Name="ChoferCelulars" Relationship="GestionAdministrativa.Model.FK_ChoferesCelular_Chofer" FromRole="Chofer" ToRole="ChoferCelular" />
           <NavigationProperty Name="PagosCelulars" Relationship="GestionAdministrativa.Model.FK_PagosCelular_Chofer" FromRole="Chofer" ToRole="PagoCelular" />
+          <NavigationProperty Name="ComentariosChofers" Relationship="GestionAdministrativa.Model.FK_ComentariosChofer_Chofer" FromRole="Chofer" ToRole="ComentariosChofer" />
         </EntityType>
         <Association Name="FK_Choferes_OperadorAlta">
           <End Type="GestionAdministrativa.Model.Operador" Role="Operadores" Multiplicity="1" />
@@ -8812,6 +8963,107 @@
             </Principal>
             <Dependent Role="PagoCelular">
               <PropertyRef Name="OperadorAutoriza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Comentario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="comentario1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+          <Property Name="OperadorAltaId" Type="Guid" />
+          <Property Name="SucursalAltaId" Type="Int32" />
+          <NavigationProperty Name="Operadore" Relationship="GestionAdministrativa.Model.FK_Comentarios_Operador" FromRole="Comentario" ToRole="Operador" />
+          <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_Comentarios_Sucursal" FromRole="Comentario" ToRole="Sucursal" />
+          <NavigationProperty Name="ComentariosChofers" Relationship="GestionAdministrativa.Model.FK_ComentariosChofer_Comentario" FromRole="Comentario" ToRole="ComentariosChofer" />
+        </EntityType>
+        <EntityType Name="ComentariosChofer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="ChoferId" Type="Guid" Nullable="false" />
+          <Property Name="ComentarioId" Type="Guid" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+          <Property Name="OperadorAltaId" Type="Guid" />
+          <Property Name="SucursalAltaId" Type="Int32" />
+          <NavigationProperty Name="Chofere" Relationship="GestionAdministrativa.Model.FK_ComentariosChofer_Chofer" FromRole="ComentariosChofer" ToRole="Chofer" />
+          <NavigationProperty Name="Comentario" Relationship="GestionAdministrativa.Model.FK_ComentariosChofer_Comentario" FromRole="ComentariosChofer" ToRole="Comentario" />
+          <NavigationProperty Name="Operadore" Relationship="GestionAdministrativa.Model.FK_ComentariosChofer_Operador" FromRole="ComentariosChofer" ToRole="Operador" />
+          <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_ComentariosChofer_Sucursal" FromRole="ComentariosChofer" ToRole="Sucursal" />
+        </EntityType>
+        <Association Name="FK_ComentariosChofer_Chofer">
+          <End Type="GestionAdministrativa.Model.Chofer" Role="Chofer" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.ComentariosChofer" Role="ComentariosChofer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chofer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ComentariosChofer">
+              <PropertyRef Name="ChoferId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comentarios_Operador">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.Comentario" Role="Comentario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comentario">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comentarios_Sucursal">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.Comentario" Role="Comentario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comentario">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ComentariosChofer_Comentario">
+          <End Type="GestionAdministrativa.Model.Comentario" Role="Comentario" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.ComentariosChofer" Role="ComentariosChofer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comentario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ComentariosChofer">
+              <PropertyRef Name="ComentarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ComentariosChofer_Operador">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.ComentariosChofer" Role="ComentariosChofer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ComentariosChofer">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ComentariosChofer_Sucursal">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.ComentariosChofer" Role="ComentariosChofer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ComentariosChofer">
+              <PropertyRef Name="SucursalAltaId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -9738,6 +9990,30 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="Comentarios">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Comentario">
+              <MappingFragment StoreEntitySet="Comentarios">
+                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
+                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="comentario1" ColumnName="comentario" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ComentariosChofers">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.ComentariosChofer">
+              <MappingFragment StoreEntitySet="ComentariosChofer">
+                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
+                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="ComentarioId" ColumnName="ComentarioId" />
+                <ScalarProperty Name="ChoferId" ColumnName="ChoferId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

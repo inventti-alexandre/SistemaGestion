@@ -206,6 +206,12 @@
     <Compile Include="Forms\Celulares\ucFiltroCelulares.Designer.cs">
       <DependentUpon>ucFiltroCelulares.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Choferes\Comentarios\ucComentarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Choferes\Comentarios\ucComentarios.Designer.cs">
+      <DependentUpon>ucComentarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Choferes\FrmChoferesListado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -393,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Celulares\ucFiltroCelulares.resx">
       <DependentUpon>ucFiltroCelulares.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Choferes\Comentarios\ucComentarios.resx">
+      <DependentUpon>ucComentarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Choferes\FrmChoferesListado.resx">
       <DependentUpon>FrmChoferesListado.cs</DependentUpon>

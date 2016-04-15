@@ -38,6 +38,8 @@ namespace GestionAdministrativa.Data
         public IRepository<ChoferCelular> ChoferCelulares { get { return GetStandardRepo<ChoferCelular>(); } }
         public IRepository<OperadorSucursal> OperadorSucursales { get { return GetStandardRepo<OperadorSucursal>(); } }
         public IRepository<CajaBalance> CajaBalances { get { return GetStandardRepo<CajaBalance>(); } }
+        public IRepository<Comentario> Comentarios { get { return GetStandardRepo<Comentario>(); } }
+        public IRepository<ComentariosChofer> ComentariosChoferes { get { return GetStandardRepo<ComentariosChofer>(); } }
         public string ConnectionString
         {
             get

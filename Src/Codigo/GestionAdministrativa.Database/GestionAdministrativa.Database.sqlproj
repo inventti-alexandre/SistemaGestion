@@ -130,6 +130,8 @@
     <Build Include="Stored Procedures\MovilesPorCajaId.sql" />
     <Build Include="Stored Procedures\HistorialPagosChofer.sql" />
     <Build Include="Stored Procedures\FueraDeSistema.sql" />
+    <Build Include="Tables\Comentarios.sql" />
+    <Build Include="Tables\ComentariosChofer.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Dias.sql" />

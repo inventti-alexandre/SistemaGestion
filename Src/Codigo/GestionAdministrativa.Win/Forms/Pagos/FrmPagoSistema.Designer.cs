@@ -41,6 +41,8 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.ucHistorialPagosChofer1 = new GestionAdministrativa.Win.Forms.Pagos.ucHistorialPagosChofer();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.radPanel6 = new Telerik.WinControls.UI.RadPanel();
+            this.ucComentarios = new GestionAdministrativa.Win.Forms.Choferes.Comentarios.ucComentarios();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
             this.radPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
@@ -52,6 +54,8 @@
             this.radPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel6)).BeginInit();
+            this.radPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -190,7 +194,7 @@
             // 
             this.ucHistorialPagosChofer1.Location = new System.Drawing.Point(11, 14);
             this.ucHistorialPagosChofer1.Name = "ucHistorialPagosChofer1";
-            this.ucHistorialPagosChofer1.Size = new System.Drawing.Size(1120, 205);
+            this.ucHistorialPagosChofer1.Size = new System.Drawing.Size(1120, 302);
             this.ucHistorialPagosChofer1.TabIndex = 10;
             // 
             // radPanel1
@@ -198,15 +202,33 @@
             this.radPanel1.Controls.Add(this.ucHistorialPagosChofer1);
             this.radPanel1.Location = new System.Drawing.Point(18, 576);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(1141, 244);
+            this.radPanel1.Size = new System.Drawing.Size(1141, 332);
             this.radPanel1.TabIndex = 11;
             this.radPanel1.ThemeName = "TelerikMetro";
+            // 
+            // radPanel6
+            // 
+            this.radPanel6.Controls.Add(this.ucComentarios);
+            this.radPanel6.Location = new System.Drawing.Point(1166, 12);
+            this.radPanel6.Name = "radPanel6";
+            this.radPanel6.Size = new System.Drawing.Size(736, 896);
+            this.radPanel6.TabIndex = 12;
+            this.radPanel6.ThemeName = "TelerikMetro";
+            // 
+            // ucComentarios
+            // 
+            this.ucComentarios.Comentario = "";
+            this.ucComentarios.Location = new System.Drawing.Point(14, 16);
+            this.ucComentarios.Name = "ucComentarios";
+            this.ucComentarios.Size = new System.Drawing.Size(697, 675);
+            this.ucComentarios.TabIndex = 0;
             // 
             // FrmPagoSistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1185, 920);
+            this.ClientSize = new System.Drawing.Size(1909, 920);
+            this.Controls.Add(this.radPanel6);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.radPanel5);
@@ -219,6 +241,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Registrar pago de sistema";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmPagoSistema_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).EndInit();
             this.radPanel2.ResumeLayout(false);
@@ -232,6 +255,8 @@
             this.radPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel6)).EndInit();
+            this.radPanel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -251,5 +276,7 @@
         private System.Windows.Forms.Button btnGuardar;
         private ucHistorialPagosChofer ucHistorialPagosChofer1;
         private Telerik.WinControls.UI.RadPanel radPanel1;
+        private Telerik.WinControls.UI.RadPanel radPanel6;
+        private Choferes.Comentarios.ucComentarios ucComentarios;
     }
 }

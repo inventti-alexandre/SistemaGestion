@@ -134,7 +134,10 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 GenerarDeudaPago(date,hasta);
                 ucHistorialPagosChofer1.HistorialPagosChofer(_chofer.Id);
                     
-                
+                //COmentarios
+                ucComentarios.ActualizarComentarios(_chofer.Id);
+
+                ucComentarios._chofer = _chofer.Id;
             }
             else
             {
@@ -189,45 +192,53 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
         private void Guardar()
         {
-            if (_celular != null)
+            if (MessageBox.Show("Desea guardar el pago?", "Guardar pago", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
-                _celular.FechaUltimoPago = _clock.Now;
-                _celular.FechaVencimientoPago = _pagoCelular.Hasta;
-                DateTime proximo = _pagoCelular.Hasta ?? _clock.Now;
-                _celular.FechaProximoPago = proximo.AddDays(-2);
-                _celular.FechaModificacion = _clock.Now;
-                _celular.SucursalModificacionId = Context.SucursalActual.Id;
-                _celular.OperadorModificacionId = Context.OperadorActual.Id;
+                if (_celular != null)
+                    {
+                        _celular.FechaUltimoPago = _clock.Now;
+                        _celular.FechaVencimientoPago = _pagoCelular.Hasta;
+                        DateTime proximo = _pagoCelular.Hasta ?? _clock.Now;
+                        _celular.FechaProximoPago = proximo.AddDays(-2);
+                        _celular.FechaModificacion = _clock.Now;
+                        _celular.SucursalModificacionId = Context.SucursalActual.Id;
+                        _celular.OperadorModificacionId = Context.OperadorActual.Id;
 
-                Uow.Celulares.Modificar(_celular);
+                        Uow.Celulares.Modificar(_celular);
 
-                NuevoMontoAFavor();
-                UsarMontoAFavor();
+                        NuevoMontoAFavor();
+                        UsarMontoAFavor();
 
-                foreach (var item in ucPagos1.Pagos)
-                {
-                    if (item.TipoPago == "Efectivo")
-                        _pagoCelular.Efectivo = _pagoCelular.Efectivo ?? 0 + item.Importe;
-                    else if (item.TipoPago == "Vales")
-                        _pagoCelular.Vales = _pagoCelular.Vales ?? 0 + item.Importe;
-                    else if (item.TipoPago == "Taller")
-                        _pagoCelular.Taller = _pagoCelular.Taller ?? 0 + item.Importe;
-                    else if (item.TipoPago == "Descuento")
-                        _pagoCelular.Descuento = _pagoCelular.Descuento ?? 0 + item.Importe;
-                    else if (item.TipoPago == "A Favor")
-                        _pagoCelular.Senia = _pagoCelular.Senia ?? 0 + item.Importe;
-                }
-                _pagoCelular.Monto = ucDetallePagos.Total;
-                var chofer = Uow.Choferes.Listado().Where(c => c.CelularId == _celular.Id).FirstOrDefault();
-                _pagoCelular.MovilId = chofer.MovilId;
-                _pagoCelular.ChoferId = chofer.Id;
-                Uow.PagosCelulares.Agregar(_pagoCelular);
+                        foreach (var item in ucPagos1.Pagos)
+                        {
+                            if (item.TipoPago == "Efectivo")
+                                _pagoCelular.Efectivo = _pagoCelular.Efectivo ?? 0 + item.Importe;
+                            else if (item.TipoPago == "Vales")
+                                _pagoCelular.Vales = _pagoCelular.Vales ?? 0 + item.Importe;
+                            else if (item.TipoPago == "Taller")
+                                _pagoCelular.Taller = _pagoCelular.Taller ?? 0 + item.Importe;
+                            else if (item.TipoPago == "Descuento")
+                                _pagoCelular.Descuento = _pagoCelular.Descuento ?? 0 + item.Importe;
+                            else if (item.TipoPago == "A Favor")
+                                _pagoCelular.Senia = _pagoCelular.Senia ?? 0 + item.Importe;
+                        }
+                        _pagoCelular.Monto = ucDetallePagos.Total;
+                        var chofer = Uow.Choferes.Listado().Where(c => c.CelularId == _celular.Id).FirstOrDefault();
+                        _pagoCelular.MovilId = chofer.MovilId;
+                        _pagoCelular.ChoferId = chofer.Id;
+                        Uow.PagosCelulares.Agregar(_pagoCelular);
 
-                RegistrarCajaYCajaMovimiento();
-                Uow.Commit();
+                        RegistrarCajaYCajaMovimiento();
 
-                MessageBox.Show("Pago guardado correctamente");
+                        DateTime proximoPago = _celular.FechaProximoPago ?? _clock.Now;
+                        DateTime DesdeComent = _pagoCelular.Desde ?? _clock.Now;
+                        DateTime HastaComent = _pagoCelular.Hasta ?? _clock.Now;
+                        ucComentarios.GenerarComentario(chofer.Id, "Pago del " + DesdeComent.ToString("dd/MM/yyyy") + " al " + HastaComent.ToString("dd/MM/yyyy") + ". Monto: $" + _pagoCelular.Monto);
+                        Uow.Commit();
+                        MessageBox.Show("Pago guardado correctamente. Proximo pago: " +  proximoPago.Date.ToString("dd/MM/yyyy"));
+                    }
             }
+            
             
         }
 
