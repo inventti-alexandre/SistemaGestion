@@ -74,6 +74,13 @@ namespace GestionAdministrativa.Win.Forms.Choferes.Comentarios
             Uow.Commit();
         }
 
+        public void Limpiar()
+        {
+            var comentarios = new List<Comentario>();
+           // if (comentarios != null)
+                gridComentarios.DataSource = comentarios.ToList();
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             GenerarComentario(_chofer, Comentario);

@@ -46,7 +46,9 @@
             // 
             // dgvhistorial
             // 
+            this.dgvhistorial.AutoSizeRows = true;
             this.dgvhistorial.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvhistorial.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvhistorial.Location = new System.Drawing.Point(0, 0);
             // 
             // dgvhistorial
@@ -120,7 +122,6 @@
             this.dgvhistorial.Text = "radGridView1";
             this.dgvhistorial.ThemeName = "TelerikMetro";
             this.dgvhistorial.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.dgvhistorial_CommandCellClick);
-
             // 
             // ucHistorialPagosChofer
             // 

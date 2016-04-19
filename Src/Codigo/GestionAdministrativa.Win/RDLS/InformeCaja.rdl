@@ -363,7 +363,7 @@
             <Top>14.78492mm</Top>
             <Left>1.5mm</Left>
             <Height>15.78958mm</Height>
-            <Width>183.17632mm</Width>
+            <Width>180.33714mm</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
@@ -395,7 +395,7 @@
             <Top>37.2745mm</Top>
             <Left>1.5mm</Left>
             <Height>6.17361mm</Height>
-            <Width>183.17632mm</Width>
+            <Width>180.33714mm</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
@@ -423,10 +423,10 @@
                   <Width>22.13069mm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>20.2964mm</Width>
+                  <Width>16.013mm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>14.99874mm</Width>
+                  <Width>19.28214mm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>16.11mm</Width>
@@ -438,10 +438,10 @@
                   <Width>15.405mm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>14.46334mm</Width>
+                  <Width>17.74917mm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>17.81298mm</Width>
+                  <Width>14.52715mm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -459,6 +459,7 @@
                                 <TextRun>
                                   <Value>Fecha</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -491,6 +492,7 @@
                                 <TextRun>
                                   <Value>Movil</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -523,6 +525,7 @@
                                 <TextRun>
                                   <Value>Chofer</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -555,6 +558,7 @@
                                 <TextRun>
                                   <Value>Desde</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -587,6 +591,7 @@
                                 <TextRun>
                                   <Value>Hasta</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -619,6 +624,7 @@
                                 <TextRun>
                                   <Value>Efectivo</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -653,6 +659,7 @@
                                 <TextRun>
                                   <Value>Vales</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -687,6 +694,7 @@
                                 <TextRun>
                                   <Value>Taller</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -721,6 +729,7 @@
                                 <TextRun>
                                   <Value>Descuento</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -755,6 +764,7 @@
                                 <TextRun>
                                   <Value>Importe</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -794,7 +804,7 @@
                                 <TextRun>
                                   <Value>=Fields!Fecha.Value</Value>
                                   <Style>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -828,7 +838,7 @@
                                 <TextRun>
                                   <Value>=Fields!Movil.Value</Value>
                                   <Style>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -860,7 +870,7 @@
                                 <TextRun>
                                   <Value>=Fields!Chofer.Value</Value>
                                   <Style>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -892,7 +902,7 @@
                                 <TextRun>
                                   <Value>=Fields!Desde.Value</Value>
                                   <Style>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <Format>dd/MM/yyyy</Format>
                                   </Style>
                                 </TextRun>
@@ -925,7 +935,7 @@
                                 <TextRun>
                                   <Value>=Fields!Hasta.Value</Value>
                                   <Style>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <Format>dd/MM/yyyy</Format>
                                   </Style>
                                 </TextRun>
@@ -958,7 +968,7 @@
                                 <TextRun>
                                   <Value>=Fields!Efectivo.Value</Value>
                                   <Style>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <Format>'$'0.00;('$'0.00)</Format>
                                     <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                                   </Style>
@@ -994,7 +1004,7 @@
                                 <TextRun>
                                   <Value>=Fields!Vales.Value</Value>
                                   <Style>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <Format>'$'0.00;('$'0.00)</Format>
                                     <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                                   </Style>
@@ -1030,7 +1040,7 @@
                                 <TextRun>
                                   <Value>=Fields!Taller.Value</Value>
                                   <Style>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1064,7 +1074,7 @@
                                 <TextRun>
                                   <Value>=Fields!Descuento.Value</Value>
                                   <Style>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1085,7 +1095,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1099,7 +1108,7 @@
                                 <TextRun>
                                   <Value>=Fields!ImpFac.Value</Value>
                                   <Style>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <Format>'$'0.00;('$'0.00)</Format>
                                     <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                                   </Style>
@@ -1154,14 +1163,15 @@
             </TablixRowHierarchy>
             <DataSetName>Ingresos</DataSetName>
             <Top>49.657mm</Top>
-            <Left>4.33917mm</Left>
+            <Left>1.5mm</Left>
             <Height>9.65666mm</Height>
-            <Width>180.33715mm</Width>
+            <Width>180.33714mm</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <FontSize>9pt</FontSize>
             </Style>
           </Tablix>
           <Textbox Name="Textbox5">
@@ -1252,10 +1262,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox5</rd:DefaultName>
-            <Top>73.66mm</Top>
-            <Left>1.5mm</Left>
+            <Top>64.98166mm</Top>
+            <Left>0mm</Left>
             <Height>6mm</Height>
-            <Width>183.17632mm</Width>
+            <Width>180.33714mm</Width>
             <ZIndex>8</ZIndex>
             <Style>
               <Border>
@@ -1268,14 +1278,14 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>166.86666mm</Height>
+        <Height>73.30999mm</Height>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Body>
-      <Width>209.67631mm</Width>
+      <Width>183.21796mm</Width>
       <Page>
         <PageFooter>
           <Height>11.43mm</Height>
@@ -1334,10 +1344,10 @@
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
-        <LeftMargin>2cm</LeftMargin>
-        <RightMargin>2cm</RightMargin>
-        <TopMargin>2cm</TopMargin>
-        <BottomMargin>2cm</BottomMargin>
+        <LeftMargin>1cm</LeftMargin>
+        <RightMargin>1cm</RightMargin>
+        <TopMargin>1cm</TopMargin>
+        <BottomMargin>1cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
@@ -1403,6 +1413,6 @@
       <Prompt>Caja Id</Prompt>
     </ReportParameter>
   </ReportParameters>
-  <rd:ReportUnitType>Mm</rd:ReportUnitType>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>98ada042-d1c9-4bde-870b-6aa8a49699a5</rd:ReportID>
 </Report>

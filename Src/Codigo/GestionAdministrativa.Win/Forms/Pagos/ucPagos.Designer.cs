@@ -56,9 +56,9 @@
             // TxtTotal
             // 
             this.TxtTotal.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotal.Location = new System.Drawing.Point(433, 298);
+            this.TxtTotal.Location = new System.Drawing.Point(463, 298);
             this.TxtTotal.Name = "TxtTotal";
-            this.TxtTotal.Size = new System.Drawing.Size(149, 30);
+            this.TxtTotal.Size = new System.Drawing.Size(119, 30);
             this.TxtTotal.TabIndex = 3;
             this.TxtTotal.TabStop = false;
             this.TxtTotal.ThemeName = "TelerikMetro";
@@ -66,7 +66,7 @@
             // radLabel1
             // 
             this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(318, 298);
+            this.radLabel1.Location = new System.Drawing.Point(349, 298);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(108, 28);
             this.radLabel1.TabIndex = 2;

@@ -49,7 +49,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(200, 86);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(138, 40);
-            this.btnBuscar.TabIndex = 4;
+            this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -60,7 +60,7 @@
             this.TxtChofer.Location = new System.Drawing.Point(165, 52);
             this.TxtChofer.Name = "TxtChofer";
             this.TxtChofer.Size = new System.Drawing.Size(173, 28);
-            this.TxtChofer.TabIndex = 3;
+            this.TxtChofer.TabIndex = 2;
             this.TxtChofer.TabStop = false;
             this.TxtChofer.ThemeName = "TelerikMetro";
             this.TxtChofer.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtChofer_KeyUp);
@@ -106,7 +106,7 @@
             this.DdlMoviles.Name = "DdlMoviles";
             this.DdlMoviles.ShowImageInEditorArea = true;
             this.DdlMoviles.Size = new System.Drawing.Size(173, 29);
-            this.DdlMoviles.TabIndex = 8;
+            this.DdlMoviles.TabIndex = 1;
             this.DdlMoviles.ThemeName = "TelerikMetro";
             this.DdlMoviles.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DdlMoviles_KeyUp);
             // 

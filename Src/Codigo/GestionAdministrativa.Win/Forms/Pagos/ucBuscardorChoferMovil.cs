@@ -81,7 +81,9 @@ namespace GestionAdministrativa.Win.Forms.Pagos
              System.Linq.Expressions.Expression<Func<Chofer, bool>> where =
                 x =>
                 (DniChofer == null || x.Dni == DniChofer) ||
-                (MovilId == null || x.Movil.Id == MovilId);
+                (MovilId == null || x.Movil.Id == MovilId)
+                && (x.Activo==true)
+                ;
 
             Cursor.Current = Cursors.WaitCursor;
 
@@ -107,7 +109,18 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             DdlMoviles.SelectedValue = null;
             _limpiandoFiltros = false;
 
+            TxtChofer.Enabled = true;
+            DdlMoviles.Enabled = true;
+            btnBuscar.Enabled = true;
+
             OnBuscarFinished(null);
+        }
+
+        public void InhabilitarBusqueda()
+        {
+            TxtChofer.Enabled = false;
+            DdlMoviles.Enabled = false;
+            btnBuscar.Enabled = false;
         }
 
        #endregion

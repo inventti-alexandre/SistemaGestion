@@ -53,34 +53,34 @@
             gridViewTextBoxColumn1.FormatString = "";
             gridViewTextBoxColumn1.HeaderText = "Fecha";
             gridViewTextBoxColumn1.Name = "Fecha";
-            gridViewTextBoxColumn1.Width = 227;
+            gridViewTextBoxColumn1.Width = 268;
             gridViewTextBoxColumn2.FieldName = "Comentario.comentario1";
             gridViewTextBoxColumn2.FormatString = "";
             gridViewTextBoxColumn2.HeaderText = "Comentario";
             gridViewTextBoxColumn2.Multiline = true;
             gridViewTextBoxColumn2.Name = "comentario1";
-            gridViewTextBoxColumn2.Width = 405;
+            gridViewTextBoxColumn2.Width = 704;
             gridViewTextBoxColumn2.WrapText = true;
             this.gridComentarios.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2});
             this.gridComentarios.Name = "gridComentarios";
             this.gridComentarios.ReadOnly = true;
-            this.gridComentarios.Size = new System.Drawing.Size(653, 411);
+            this.gridComentarios.Size = new System.Drawing.Size(993, 191);
             this.gridComentarios.TabIndex = 0;
             this.gridComentarios.Text = "radGridView1";
             this.gridComentarios.ThemeName = "TelerikMetro";
             // 
             // txtComentario
             // 
-            this.txtComentario.Location = new System.Drawing.Point(15, 451);
+            this.txtComentario.Location = new System.Drawing.Point(15, 225);
             this.txtComentario.Multiline = true;
             this.txtComentario.Name = "txtComentario";
             // 
             // 
             // 
             this.txtComentario.RootElement.StretchVertically = true;
-            this.txtComentario.Size = new System.Drawing.Size(653, 95);
+            this.txtComentario.Size = new System.Drawing.Size(740, 85);
             this.txtComentario.TabIndex = 1;
             this.txtComentario.TabStop = false;
             this.txtComentario.ThemeName = "TelerikMetro";
@@ -92,7 +92,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGuardar.Location = new System.Drawing.Point(446, 567);
+            this.btnGuardar.Location = new System.Drawing.Point(786, 264);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(222, 46);
             this.btnGuardar.TabIndex = 2;
@@ -108,7 +108,7 @@
             this.Controls.Add(this.txtComentario);
             this.Controls.Add(this.gridComentarios);
             this.Name = "ucComentarios";
-            this.Size = new System.Drawing.Size(694, 675);
+            this.Size = new System.Drawing.Size(1024, 321);
             ((System.ComponentModel.ISupportInitialize)(this.gridComentarios.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridComentarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComentario)).EndInit();

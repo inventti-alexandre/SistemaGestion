@@ -107,5 +107,12 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             Uow.Commit();
         }
 
+        public void Limpiar()
+        {
+            var historial = new List<HistorialPagosChofer_Result>();
+            // if (comentarios != null)
+            dgvhistorial.DataSource = historial.ToList();
+        }
+
     }
 }

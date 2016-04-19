@@ -48,7 +48,12 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         {
             if (choferes == null)
             {
+                //LimpiarControles();
                 ucEstadoCuentaChofer1.Limpiar();
+                ucComentarios.Limpiar();
+                ucHistorialPagosChofer1.Limpiar();
+                ucPagos1.Limpiar();
+                ucDetallePagos.Limpiar();
                 return;
             }
             if (choferes.Any())
@@ -134,28 +139,33 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 GenerarDeudaPago(date,hasta);
                 ucHistorialPagosChofer1.HistorialPagosChofer(_chofer.Id);
                     
+                ///////
+
+                _montosAFavor = Uow.ChoferesMontosFavor.Listado().Where(m => m.ChoferId == _chofer.Id && m.Importe != m.ImpOcupado).ToList();
+                if (_montosAFavor != null)
+                {
+                    var total = _montosAFavor.Sum(m => m.Importe ?? 0 - m.ImpOcupado ?? 0);
+                    if (total != 0)
+                    {
+                        var pago = new PagosTipo();
+                        pago.TipoPago = "A Favor";
+                        pago.Importe = total;
+                        ucPagos1.AgregarPago(pago);
+                        ucPagos1.RefrescarPagos();
+                    }
+                }
                 //COmentarios
                 ucComentarios.ActualizarComentarios(_chofer.Id);
 
                 ucComentarios._chofer = _chofer.Id;
+
+                ucBuscardorChoferMovil.InhabilitarBusqueda();
             }
             else
             {
                 MessageBox.Show("Este chofer no tiene celular asociado");
             }
-             _montosAFavor = Uow.ChoferesMontosFavor.Listado().Where(m => m.ChoferId == _chofer.Id && m.Importe != m.ImpOcupado).ToList();
-            if (_montosAFavor != null)
-            {
-                var total = _montosAFavor.Sum(m => m.Importe ?? 0 - m.ImpOcupado ?? 0);
-                if (total != 0)
-                {
-                    var pago = new PagosTipo();
-                    pago.TipoPago = "A Favor";
-                    pago.Importe = total;
-                    ucPagos1.AgregarPago(pago);
-                    ucPagos1.RefrescarPagos();
-                }
-            }
+            
         }
 
         private void GenerarDeudaPago(DateTime? desde, DateTime? hasta)
@@ -175,8 +185,8 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
-            LimpiarControles();
-            this.Close();
+           // LimpiarControles();
+            //this.Close();
         }
 
         private void LimpiarControles()
@@ -184,10 +194,12 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             _chofer = null;
             _celular = null;
             _pagoCelular = null;
+            ucEstadoCuentaChofer1.Limpiar();
             ucBuscardorChoferMovil.LimpiarFiltros();
             ucPagos1.Limpiar();
             ucDetallePagos.Limpiar();
-            //this.Close();
+            ucHistorialPagosChofer1.Limpiar();
+            ucComentarios.Limpiar();
         }
 
         private void Guardar()
@@ -236,6 +248,8 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                         ucComentarios.GenerarComentario(chofer.Id, "Pago del " + DesdeComent.ToString("dd/MM/yyyy") + " al " + HastaComent.ToString("dd/MM/yyyy") + ". Monto: $" + _pagoCelular.Monto);
                         Uow.Commit();
                         MessageBox.Show("Pago guardado correctamente. Proximo pago: " +  proximoPago.Date.ToString("dd/MM/yyyy"));
+                        
+                        this.Close();
                     }
             }
             
@@ -312,8 +326,6 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         }
 
         #endregion
-
-       
-        
+  
     }
 }

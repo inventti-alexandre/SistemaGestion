@@ -66,4 +66,4 @@ AS
 	
 	SELECT * 
 	FROM @Temp
-	ORDER BY Tipo, Movil, Fecha
+	ORDER BY Fecha, Tipo, Movil

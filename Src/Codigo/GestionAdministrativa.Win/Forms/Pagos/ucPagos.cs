@@ -64,7 +64,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 decimal total;
                 return decimal.TryParse(TxtTotal.Text, out total) ? total : 0 ;
             }
-            set { TxtTotal.Text = value.ToString();}
+            set { TxtTotal.Text = value.Value.ToString("N2");}
         }
         #endregion
 
