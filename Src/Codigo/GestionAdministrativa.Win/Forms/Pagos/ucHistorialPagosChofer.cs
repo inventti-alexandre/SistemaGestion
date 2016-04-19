@@ -99,6 +99,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private void Delete(Guid guid)
         {
             //MessageBox.Show("Eliminar pago" + guid.ToString());
+            
             var _pago = Uow.PagosCelulares.Obtener(p => p.Id == guid);
             _pago.Anulada = true;
             _pago.FechaAnulacion = _clock.Now;
