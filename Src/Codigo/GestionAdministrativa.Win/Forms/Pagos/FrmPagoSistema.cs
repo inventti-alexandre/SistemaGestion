@@ -36,9 +36,18 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         {
             ucBuscardorChoferMovil.BuscarFinished += ucBuscardorChoferMovilOnBuscarFinished;
             ucDetallePagos.FechasSelected += ucDetallePagosOnFechasSelected;
+            ucDetallePagos.TotalChanged += ucDetallePagosOnTotalChanged;
         }
 
+       
         #region Metodos
+
+        private void ucDetallePagosOnTotalChanged(object sender, decimal e)
+        {
+            CambiarTotal(e);
+        }
+
+
         private void ucDetallePagosOnFechasSelected(object sender, PagoCelular pago)
         {
             DateTime hasta = (pago.Hasta ?? _clock.Now);//.AddDays(1);
@@ -180,6 +189,20 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 _pagoCelular = pago;
             }
            
+        }
+
+        private void CambiarTotal(decimal total)
+        {
+            if (_celular != null)
+            {
+                //var pago = _iPagoCelularNegocio.AutoPago(_celular, desde ?? _clock.Now, hasta ?? _clock.Now, Context.OperadorActual.Id);
+                ucPagos1.ActualizarNuevoPago("Efectivo", total);
+                _pagoCelular.Monto = total;
+                //ucDetallePagos.ActualizarNuevoPago(pago);
+                //ucDetallePagos.ActualizarMonto(_celular);
+                //_pagoCelular = pago;
+            }
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

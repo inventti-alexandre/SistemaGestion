@@ -64,7 +64,6 @@
             // 
             // TxtTotal
             // 
-            this.TxtTotal.Enabled = false;
             this.TxtTotal.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtTotal.Location = new System.Drawing.Point(80, 61);
             this.TxtTotal.Name = "TxtTotal";
@@ -73,6 +72,7 @@
             this.TxtTotal.TabStop = false;
             this.TxtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtTotal.ThemeName = "TelerikMetro";
+            this.TxtTotal.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtTotal_KeyUp);
             // 
             // radLabel6
             // 

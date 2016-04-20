@@ -14,7 +14,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp://w1131301.ferozo.net/clientes/apipe/upmobile/maria/</PublishUrl>
+    <PublishUrl>ftp://w1131301.ferozo.net/clientes/apipe/upmobile/gabriel/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,12 +24,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.devlights.com/clientes/apipe/upmobile/maria/</InstallUrl>
-    <UpdateUrl>http://www.devlights.com/clientes/apipe/upmobile/maria/</UpdateUrl>
+    <InstallUrl>http://www.devlights.com/clientes/apipe/upmobile/gabriel/</InstallUrl>
+    <UpdateUrl>http://www.devlights.com/clientes/apipe/upmobile/gabriel/</UpdateUrl>
     <MinimumRequiredVersion>1.0.0.37</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>47</ApplicationRevision>
+    <ApplicationRevision>48</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

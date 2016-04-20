@@ -24,11 +24,18 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         }
 
         public event EventHandler<PagoCelular> FechasSelected;
+        public event EventHandler<decimal> TotalChanged;
 
         public void OnFechasSelected(PagoCelular pago)
         {
             if (FechasSelected != null)
                 FechasSelected(this, pago);
+        }
+
+        public void OnTotalChanged(decimal total)
+        {
+            if (TotalChanged != null)
+                TotalChanged(this, Total);
         }
 
         #region Properties
@@ -153,6 +160,11 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
                 OnFechasSelected(_pagoCelular);
             }
+        }
+
+        private void TxtTotal_KeyUp(object sender, KeyEventArgs e)
+        {
+            OnTotalChanged(Total);
         }
 
        
