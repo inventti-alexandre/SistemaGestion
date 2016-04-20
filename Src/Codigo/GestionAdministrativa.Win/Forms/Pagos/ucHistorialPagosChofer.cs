@@ -19,15 +19,18 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 {
     public partial class ucHistorialPagosChofer : UserControlBase
     {
-        private readonly IClock _clock;
-        private IReporteNegocio _reporteNegocio;
-        
+        private readonly IClock  _clock;
        
+        private IReporteNegocio _reporteNegocio;
+
+
         public ucHistorialPagosChofer()
         {
             if (Ioc.Container != null)
             {
                 _reporteNegocio = Ioc.Container.Get<IReporteNegocio>();
+                Uow = Ioc.Container.Get<IGestionAdministrativaUow>();
+                _clock = new Clock();
             }
             InitializeComponent();
         }
