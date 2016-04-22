@@ -40,16 +40,17 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.dgvhistorial = new Telerik.WinControls.UI.RadGridView();
+            this.BtnEliminarPago = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvhistorial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvhistorial.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnEliminarPago)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvhistorial
             // 
             this.dgvhistorial.AutoSizeRows = true;
-            this.dgvhistorial.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvhistorial.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvhistorial.Location = new System.Drawing.Point(0, 0);
+            this.dgvhistorial.Location = new System.Drawing.Point(3, 50);
             // 
             // dgvhistorial
             // 
@@ -96,7 +97,7 @@
             gridViewTextBoxColumn10.FieldName = "Senia";
             gridViewTextBoxColumn10.HeaderText = "Senia";
             gridViewTextBoxColumn10.Name = "Senia";
-            gridViewTextBoxColumn10.Width = 129;
+            gridViewTextBoxColumn10.Width = 126;
             gridViewCommandColumn1.HeaderText = "";
             gridViewCommandColumn1.Image = global::GestionAdministrativa.Win.Properties.Resources.Garbage_Closed;
             gridViewCommandColumn1.IsVisible = false;
@@ -118,22 +119,36 @@
             gridViewCommandColumn1});
             this.dgvhistorial.Name = "dgvhistorial";
             this.dgvhistorial.ReadOnly = true;
-            this.dgvhistorial.Size = new System.Drawing.Size(963, 200);
+            this.dgvhistorial.Size = new System.Drawing.Size(960, 167);
             this.dgvhistorial.TabIndex = 0;
             this.dgvhistorial.Text = "radGridView1";
             this.dgvhistorial.ThemeName = "TelerikMetro";
             this.dgvhistorial.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.dgvhistorial_CommandCellClick);
             // 
+            // BtnEliminarPago
+            // 
+            this.BtnEliminarPago.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnEliminarPago.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEliminarPago.Location = new System.Drawing.Point(738, 3);
+            this.BtnEliminarPago.Name = "BtnEliminarPago";
+            this.BtnEliminarPago.Size = new System.Drawing.Size(222, 41);
+            this.BtnEliminarPago.TabIndex = 8;
+            this.BtnEliminarPago.Text = "Eliminar último pago";
+            this.BtnEliminarPago.ThemeName = "TelerikMetro";
+            this.BtnEliminarPago.Click += new System.EventHandler(this.BtnEliminarPago_Click);
+            // 
             // ucHistorialPagosChofer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.BtnEliminarPago);
             this.Controls.Add(this.dgvhistorial);
             this.Name = "ucHistorialPagosChofer";
-            this.Size = new System.Drawing.Size(963, 200);
+            this.Size = new System.Drawing.Size(963, 219);
             this.Load += new System.EventHandler(this.ucHistorialPagosChofer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvhistorial.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvhistorial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnEliminarPago)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -141,6 +156,7 @@
         #endregion
 
         private Telerik.WinControls.UI.RadGridView dgvhistorial;
+        private Telerik.WinControls.UI.RadButton BtnEliminarPago;
 
     }
 }
