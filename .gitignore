@@ -196,3 +196,4 @@ FakesAssemblies/
 *.opt
 /Src/Codigo/_ReSharper.GestionAdministrativa
 Src/Codigo/GestionAdministrativa.Win/App.config
+Src/Codigo/GestionAdministrativa.Win/App.config

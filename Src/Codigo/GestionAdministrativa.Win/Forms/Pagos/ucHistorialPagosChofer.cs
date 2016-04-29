@@ -126,8 +126,6 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             if (pago == null)
                 return;
 
-            MessageBox.Show(pago.Id.ToString());
-
             var _pago = Uow.PagosCelulares.Obtener(p => p.Id ==pago.Id);
             //ANULO EL PAGO
             _pago.Anulada = true;
@@ -168,15 +166,23 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             Uow.Commit();
 
             
-            var _pagonuevo = Uow.PagosCelulares.Listado(p => p.CelularId == _pago.CelularId && p.Anulada != true).OrderByDescending(g=>g.FechaAlta).FirstOrDefault();
+            var _pagonuevo = Uow.PagosCelulares.Listado().Where(p => p.CelularId == _pago.CelularId && p.Anulada != true).OrderByDescending(g=>g.FechaAlta).FirstOrDefault();
             var celular = Uow.Celulares.Obtener(c => c.Id == _pago.CelularId);
 
-            MessageBox.Show("id nuevo: " + _pagonuevo.Id.ToString());
-            
-            //modifico fecha de proximo pago en el celular
+            if (_pagonuevo != null)
+            {
+                //modifico fecha de proximo pago en el celular
 
-            celular.FechaVencimientoPago = _pagonuevo.Hasta;
-            celular.FechaProximoPago = (_pagonuevo.Hasta ?? DateTime.Now).AddDays(-2);
+                celular.FechaVencimientoPago = _pagonuevo.Hasta;
+                celular.FechaProximoPago = (_pagonuevo.Hasta ?? DateTime.Now).AddDays(-2);
+            }
+            else
+            {
+                celular.FechaVencimientoPago = null;
+                celular.FechaProximoPago = null;
+                celular.FechaUltimoPago = null;
+            }
+            
 
             Uow.Celulares.Modificar(celular);
             Uow.Commit();
