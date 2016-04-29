@@ -37,6 +37,13 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             ucBuscardorChoferMovil.BuscarFinished += ucBuscardorChoferMovilOnBuscarFinished;
             ucDetallePagos.FechasSelected += ucDetallePagosOnFechasSelected;
             ucDetallePagos.TotalChanged += ucDetallePagosOnTotalChanged;
+            ucHistorialPagosChofer1.ComentarioAdd += ucHistorialPagosChoferOnComentarioAdded;
+        }
+
+        private void ucHistorialPagosChoferOnComentarioAdded(object sender, string e)
+        {
+            
+            ucComentarios.GenerarComentario(_chofer.Id, e);
         }
 
        
@@ -301,10 +308,12 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private void RegistrarCajaYCajaMovimiento()
         {
             var caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id && c.FCierre == null).OrderByDescending(c=>c.FechaAlta ).FirstOrDefault();
-            caja.Ingresos = (caja.Ingresos ?? 0) + ucPagos1.Total;
+            caja.Ingresos = (caja.Ingresos ?? 0) + ucPagos1.Total + (_pagoCelular.Efectivo ?? 0);
             caja.Saldo = (caja.Saldo ?? 0) + ucPagos1.Total;
-            caja.Efectivo += _pagoCelular.Efectivo;
-            caja.Vales += _pagoCelular.Vales;
+            if (_pagoCelular.Efectivo != null)
+                caja.Efectivo += _pagoCelular.Efectivo;
+            if (_pagoCelular.Vales !=null)
+                caja.Vales += _pagoCelular.Vales;
             caja.FechaModificacion = _clock.Now;
             caja.OperadorModificacionId = Context.OperadorActual.Id;
             caja.SucursalModificacionId = Context.SucursalActual.Id;

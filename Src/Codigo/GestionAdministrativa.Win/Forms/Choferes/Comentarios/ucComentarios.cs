@@ -53,7 +53,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes.Comentarios
         {
             var coment = new Comentario();
             coment.Id = Guid.NewGuid();
-            coment.comentario1 = comentario;
+            coment.comentario1 = comentario + " - " + Context.OperadorActual.Usuario;
             coment.FechaAlta = DateTime.Now;
             coment.OperadorAltaId = Context.OperadorActual.Id;
             coment.SucursalAltaId = Context.SucursalActual.Id;

@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using Framework.Common.Extentensions;
 using Framework.Ioc;
 using Framework.Common.Utility;
 using GestionAdministrativa.Business.Interfaces;
 using GestionAdministrativa.Data.Interfaces;
 using GestionAdministrativa.Entities;
 using GestionAdministrativa.Entities.Dto;
+using GestionAdministrativa.Win.Forms.Choferes.Comentarios;
 
 namespace GestionAdministrativa.Win.Forms.Pagos
 {
@@ -37,18 +39,30 @@ namespace GestionAdministrativa.Win.Forms.Pagos
        
         #region Eventos
         public event EventHandler<List<Chofer>> BuscarFinished;
+        public event EventHandler<string> ComentarioAdd; 
         #endregion
         public void HistorialPagosChofer(Guid choferId)
         {
             var historial = _reporteNegocio.HistorialPagosChofer(choferId);
-            dgvhistorial.DataSource = historial;           
-         }
+            dgvhistorial.DataSource = historial;
+            HabilitarBotones(historial.Count);
+        }
+
+        
 
         private void OnBuscarFinished(List<Chofer> choferes)
         {
             if (BuscarFinished != null)
             {
                 BuscarFinished(this, choferes);
+            }
+        }
+
+        private void OnComentarioAdd(string comentario)
+        {
+            if (ComentarioAdd != null)
+            {
+                ComentarioAdd(this, comentario);
             }
         }
 
@@ -72,6 +86,8 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             this.dgvhistorial.Columns["Descuento"].FormatString = "{0:N2}";
             this.dgvhistorial.Columns["Senia"].DataType = typeof(decimal);
             this.dgvhistorial.Columns["Senia"].FormatString = "{0:N2}"; 
+            HabilitarBotones(0);
+            
         }
 
 
@@ -116,6 +132,13 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             var historial = new List<HistorialPagosChofer_Result>();
             // if (comentarios != null)
             dgvhistorial.DataSource = historial.ToList();
+            HabilitarBotones(historial.Count);
+        }
+        private void HabilitarBotones(int p)
+        {
+
+            BtnEliminarPago.Enabled = p != 0;
+            
         }
 
         private void BtnEliminarPago_Click(object sender, EventArgs e)
@@ -186,6 +209,13 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
             Uow.Celulares.Modificar(celular);
             Uow.Commit();
+
+            MessageBox.Show("Pago eliminado correctamente");
+            HistorialPagosChofer(_pago.ChoferId ?? Guid.Empty);
+
+            //guardar comentario
+            //ucComentarios.GenerarComentario(chofer.Id, "Pago del " + DesdeComent.ToString("dd/MM/yyyy") + " al " + HastaComent.ToString("dd/MM/yyyy") + ". Monto: $" + _pagoCelular.Monto);
+            OnComentarioAdd("Pago anulado del " + _pago.Desde.ToString().Remove(10) + " hasta el " + _pago.Hasta.ToString().Remove(10));
         }
 
     }

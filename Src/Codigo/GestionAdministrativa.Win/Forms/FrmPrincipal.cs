@@ -173,7 +173,7 @@ namespace GestionAdministrativa.Win.Forms
                 caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id && c.FCierre == null).FirstOrDefault();
 
          
-
+            
             caja.FCierre = _clock.Now;
             caja.FechaModificacion = _clock.Now;
             caja.OperadorModificacionId = Context.OperadorActual.Id;
