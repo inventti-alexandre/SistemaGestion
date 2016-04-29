@@ -266,9 +266,13 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                         _celular.OperadorModificacionId = Context.OperadorActual.Id;
 
                         Uow.Celulares.Modificar(_celular);
+                    
+                    
+                    UsarMontoAFavor();
+
 
                         NuevoMontoAFavor();
-                        UsarMontoAFavor();
+                       
 
                         foreach (var item in ucPagos1.Pagos)
                         {
