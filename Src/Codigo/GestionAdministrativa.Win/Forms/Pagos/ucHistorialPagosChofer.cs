@@ -160,8 +160,15 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             var caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id && c.FCierre == null).OrderByDescending(c => c.FechaAlta).FirstOrDefault();
             caja.Ingresos = (caja.Ingresos ?? 0) - pago.Monto;
             caja.Saldo = (caja.Saldo ?? 0) - pago.Monto;
-            caja.Efectivo -= pago.Efectivo;
-            caja.Vales -= pago.Vales;
+            if (pago.Efectivo !=null)
+            {
+                caja.Efectivo -= pago.Efectivo; 
+            }
+            if (pago.Vales != null)
+            {
+                caja.Vales -= pago.Vales;
+            }
+            
             caja.FechaModificacion = _clock.Now;
             caja.OperadorModificacionId = Context.OperadorActual.Id;
             caja.SucursalModificacionId = Context.SucursalActual.Id;

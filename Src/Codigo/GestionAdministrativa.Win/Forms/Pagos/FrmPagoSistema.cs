@@ -312,7 +312,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private void RegistrarCajaYCajaMovimiento()
         {
             var caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id && c.FCierre == null).OrderByDescending(c=>c.FechaAlta ).FirstOrDefault();
-            caja.Ingresos = (caja.Ingresos ?? 0) + ucPagos1.Total + (_pagoCelular.Efectivo ?? 0);
+            caja.Ingresos = (caja.Ingresos ?? 0) + (_pagoCelular.Vales ??0) + (_pagoCelular.Efectivo ?? 0);
             caja.Saldo = (caja.Saldo ?? 0) + ucPagos1.Total;
             if (_pagoCelular.Efectivo != null)
                 caja.Efectivo += _pagoCelular.Efectivo;
