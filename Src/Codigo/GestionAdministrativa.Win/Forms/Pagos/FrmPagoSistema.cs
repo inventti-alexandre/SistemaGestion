@@ -45,6 +45,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private void ucDetallePagosOnTotalChanged(object sender, decimal e)
         {
             CambiarTotal(e);
+            MontosAFavor();
         }
 
 
@@ -52,6 +53,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         {
             DateTime hasta = (pago.Hasta ?? _clock.Now);//.AddDays(1);
             GenerarDeudaPago(pago.Desde, hasta);
+            MontosAFavor();
         }
         private void ucBuscardorChoferMovilOnBuscarFinished(object sender, List<Chofer> choferes)
         {
@@ -149,20 +151,20 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 ucHistorialPagosChofer1.HistorialPagosChofer(_chofer.Id);
                     
                 ///////
-
-                _montosAFavor = Uow.ChoferesMontosFavor.Listado().Where(m => m.ChoferId == _chofer.Id && m.Importe != m.ImpOcupado).ToList();
-                if (_montosAFavor != null)
-                {
-                    var total = _montosAFavor.Sum(m => m.Importe ?? 0 - m.ImpOcupado ?? 0);
-                    if (total != 0)
-                    {
-                        var pago = new PagosTipo();
-                        pago.TipoPago = "A Favor";
-                        pago.Importe = total;
-                        ucPagos1.AgregarPago(pago);
-                        ucPagos1.RefrescarPagos();
-                    }
-                }
+                MontosAFavor();
+                //_montosAFavor = Uow.ChoferesMontosFavor.Listado().Where(m => m.ChoferId == _chofer.Id && m.Importe != m.ImpOcupado).ToList();
+                //if (_montosAFavor != null)
+                //{
+                //    var total = _montosAFavor.Sum(m => m.Importe ?? 0 - m.ImpOcupado ?? 0);
+                //    if (total != 0)
+                //    {
+                //        var pago = new PagosTipo();
+                //        pago.TipoPago = "A Favor";
+                //        pago.Importe = total;
+                //        ucPagos1.AgregarPago(pago);
+                //        ucPagos1.RefrescarPagos();
+                //    }
+                //}
                 //COmentarios
                 ucComentarios.ActualizarComentarios(_chofer.Id);
 
@@ -175,6 +177,23 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 MessageBox.Show("Este chofer no tiene celular asociado");
             }
             
+        }
+
+        private void MontosAFavor()
+        {
+            _montosAFavor = Uow.ChoferesMontosFavor.Listado().Where(m => m.ChoferId == _chofer.Id && m.Importe != m.ImpOcupado).ToList();
+            if (_montosAFavor != null)
+            {
+                var total = _montosAFavor.Sum(m => m.Importe ?? 0 - m.ImpOcupado ?? 0);
+                if (total != 0)
+                {
+                    var pago = new PagosTipo();
+                    pago.TipoPago = "A Favor";
+                    pago.Importe = total;
+                    ucPagos1.AgregarPago(pago);
+                    ucPagos1.RefrescarPagos();
+                }
+            }
         }
 
         private void GenerarDeudaPago(DateTime? desde, DateTime? hasta)
