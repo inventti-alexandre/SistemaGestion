@@ -181,11 +181,11 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             cajaMovimiento.TipoMovimientoCajaId = 1; //Pago de sistema
             cajaMovimiento.TipoComprobante = 3; //Anulacion Pago de sistema
             cajaMovimiento.ComprobanteId = pago.Id; //id del pago Celular
-            cajaMovimiento.Senia = pago.Senia;
-            cajaMovimiento.Importe = pago.Monto;
-            cajaMovimiento.ImpFac = (pago.Efectivo ?? 0) + (pago.Vales ?? 0);// ucPagos1.Total; //_pagoCelular.Monto;
-            cajaMovimiento.Efectivo = pago.Efectivo;
-            cajaMovimiento.Vales = pago.Vales;
+            cajaMovimiento.Senia = -pago.Senia;
+            cajaMovimiento.Importe = -pago.Monto;
+            cajaMovimiento.ImpFac = -((pago.Efectivo ?? 0) + (pago.Vales ?? 0));// ucPagos1.Total; //_pagoCelular.Monto;
+            cajaMovimiento.Efectivo = - pago.Efectivo;
+            cajaMovimiento.Vales = - pago.Vales;
             cajaMovimiento.FechaAlta = _clock.Now;
             cajaMovimiento.OperadorAltaId = Context.OperadorActual.Id;
             cajaMovimiento.SucursalAltaId = Context.SucursalActual.Id;

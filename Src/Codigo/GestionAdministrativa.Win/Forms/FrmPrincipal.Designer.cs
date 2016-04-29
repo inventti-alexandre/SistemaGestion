@@ -120,7 +120,6 @@
             this.BtnCajas.Text = "Cajas";
             this.BtnCajas.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnCajas.ThemeName = "TelerikMetro";
-            this.BtnCajas.Visible = false;
             this.BtnCajas.Click += new System.EventHandler(this.BtnCajas_Click);
             // 
             // BtnAbrirCaja
