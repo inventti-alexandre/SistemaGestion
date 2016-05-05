@@ -137,12 +137,13 @@ namespace GestionAdministrativa.Win.Forms.Cajas
             set { TxtValesReal.Text = value.HasValue ? value.Value.ToString("n2") : string.Empty; }
         }
 
+
         public decimal? EfectivoReal
         {
             get
             {
                 decimal efectivo;
-                return decimal.TryParse(TxtEfectivoReal.Text, out efectivo) ? efectivo : 0; ;
+                return decimal.TryParse(TxtEfectivoReal.Text, out efectivo) ? efectivo : 0;
             }
             set { TxtEfectivoReal.Text = value.HasValue ? value.Value.ToString("n2") : string.Empty; }
         }
@@ -174,8 +175,6 @@ namespace GestionAdministrativa.Win.Forms.Cajas
                 _caja = Uow.Cajas.Obtener(c => c.Id == cajaid);
             }
 
-           
-
             this.FechaAlta = _caja.FechaAlta;
             this.FechaCierre = _caja.FCierre;
             Inicio = _caja.Inicio;
@@ -189,12 +188,12 @@ namespace GestionAdministrativa.Win.Forms.Cajas
 
         private void CrearEditar()
         {
-            //var esValido = this.ValidarForm();
+            var esValido = this.ValidarForm();
 
-            //if (!esValido)
-            //    this.DialogResult = DialogResult.None;
-            //else
-            //{
+            if (!esValido)
+                this.DialogResult = DialogResult.None;
+            else
+            {
                 var entity = ObtenerEntityDesdeForm();
                 if (_formMode == ActionFormMode.Edit)
                 {
@@ -243,14 +242,20 @@ namespace GestionAdministrativa.Win.Forms.Cajas
 
                 this.Close();
 
-            //}
+            }
         }
 
         private Caja ObtenerEntityDesdeForm()
         {
             _caja.EfectivoReal = EfectivoReal;
             _caja.ValesReal = ValesReal;
-            return null;
+            //return null;
+
+            if (_caja != null)
+                _caja.Id = _caja.Id;
+            else
+                _caja.Id  = Guid.Empty;
+            return _caja;
             
         }
 
@@ -259,12 +264,11 @@ namespace GestionAdministrativa.Win.Forms.Cajas
             return ObtenerEntityDesdeForm();
         }
 
-        //protected override void ValidarControles()
-        //{
-        //    //this.ValidarControl(TxtDni, "Dni");
-        //    //this.ValidarControl(TxtApellido, "Apellido");
-        //    //this.ValidarControl(TxtInicio, "Nombre");
-        //}
+        protected override void ValidarControles()
+        {
+            this.ValidarControl(TxtEfectivoReal, "EfectivoReal");
+            this.ValidarControl(TxtValesReal, "ValesReal");
+        }
 
         #endregion
 

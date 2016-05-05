@@ -227,7 +227,7 @@
             this.DtpFechaAlta.Size = new System.Drawing.Size(276, 31);
             this.DtpFechaAlta.TabIndex = 13;
             this.DtpFechaAlta.TabStop = false;
-            this.DtpFechaAlta.Text = "lunes, 4 de enero de 2016";
+            this.DtpFechaAlta.Text = "lunes, 04 de enero de 2016";
             this.DtpFechaAlta.ThemeName = "TelerikMetro";
             this.DtpFechaAlta.Value = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
             // 
@@ -245,7 +245,7 @@
             this.DtpFechaCierre.Size = new System.Drawing.Size(276, 31);
             this.DtpFechaCierre.TabIndex = 4;
             this.DtpFechaCierre.TabStop = false;
-            this.DtpFechaCierre.Text = "lunes, 4 de enero de 2016";
+            this.DtpFechaCierre.Text = "lunes, 04 de enero de 2016";
             this.DtpFechaCierre.ThemeName = "TelerikMetro";
             this.DtpFechaCierre.Value = new System.DateTime(2016, 1, 4, 15, 14, 25, 541);
             // 
@@ -258,6 +258,7 @@
             this.TxtEfectivoReal.Size = new System.Drawing.Size(276, 28);
             this.TxtEfectivoReal.TabIndex = 12;
             this.TxtEfectivoReal.TabStop = false;
+            this.TxtEfectivoReal.Text = "4";
             this.TxtEfectivoReal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtEfectivoReal.ThemeName = "TelerikMetro";
             // 
