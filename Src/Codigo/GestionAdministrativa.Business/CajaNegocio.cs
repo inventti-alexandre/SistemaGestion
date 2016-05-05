@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity.SqlServer;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
@@ -34,11 +35,12 @@ namespace GestionAdministrativa.Business
 
             System.Linq.Expressions.Expression<Func<Caja, bool>> where =
                                             x =>
-                                                (operador == null || x.OperadorAltaId == operador) 
+                                                //(operador == null )//|| x.OperadorAltaId == operador) 
                                                 //&& (x.FCierre != null || x.FCierre == fechaCierre)
                                                 //&& (movilId == null || x.MovilId == movilId)
-                                                && (x.FCierre !=null)
+                                                 (x.FCierre !=null)
                                                  && (x.Aprobada == aprobado)
+                                                 && ((x.Efectivo >0) || (x.Vales>0))
                                                 ;
 
             var resultados = Uow.Cajas.Listado(criteros, where);

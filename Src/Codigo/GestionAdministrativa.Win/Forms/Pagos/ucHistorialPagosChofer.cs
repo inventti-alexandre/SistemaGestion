@@ -87,7 +87,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             this.dgvhistorial.Columns["Senia"].DataType = typeof(decimal);
             this.dgvhistorial.Columns["Senia"].FormatString = "{0:N2}"; 
             HabilitarBotones(0);
-            
+
         }
 
 
