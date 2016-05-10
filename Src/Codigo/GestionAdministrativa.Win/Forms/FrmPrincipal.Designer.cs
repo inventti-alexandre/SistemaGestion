@@ -42,6 +42,7 @@
             this.BtnChoferListado = new Telerik.WinControls.UI.RadButton();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.btnFueraFrecuencia = new Telerik.WinControls.UI.RadButton();
+            this.BtnEgresos = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.btnInformeCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCambioCelularMovil)).BeginInit();
@@ -54,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnChoferListado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFueraFrecuencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnEgresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,7 +122,6 @@
             this.BtnCajas.Text = "Cajas";
             this.BtnCajas.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnCajas.ThemeName = "TelerikMetro";
-            this.BtnCajas.Visible = false;
             this.BtnCajas.Click += new System.EventHandler(this.BtnCajas_Click);
             // 
             // BtnAbrirCaja
@@ -252,11 +253,26 @@
             this.btnFueraFrecuencia.ThemeName = "TelerikMetro";
             this.btnFueraFrecuencia.Click += new System.EventHandler(this.btnFueraFrecuencia_Click);
             // 
+            // BtnEgresos
+            // 
+            this.BtnEgresos.AutoSize = true;
+            this.BtnEgresos.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEgresos.Image = global::GestionAdministrativa.Win.Properties.Resources.pago01;
+            this.BtnEgresos.Location = new System.Drawing.Point(298, 360);
+            this.BtnEgresos.Name = "BtnEgresos";
+            this.BtnEgresos.Size = new System.Drawing.Size(132, 132);
+            this.BtnEgresos.TabIndex = 7;
+            this.BtnEgresos.Text = "Egresos";
+            this.BtnEgresos.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnEgresos.ThemeName = "TelerikMetro";
+            this.BtnEgresos.Click += new System.EventHandler(this.TxtGastos_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1340, 652);
+            this.Controls.Add(this.BtnEgresos);
             this.Controls.Add(this.btnFueraFrecuencia);
             this.Controls.Add(this.btnInformeCaja);
             this.Controls.Add(this.lblUsuario);
@@ -290,6 +306,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnChoferListado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFueraFrecuencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnEgresos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -312,6 +329,7 @@
         private Telerik.WinControls.UI.RadLabel lblUsuario;
         private Telerik.WinControls.UI.RadButton btnInformeCaja;
         private Telerik.WinControls.UI.RadButton btnFueraFrecuencia;
+        private Telerik.WinControls.UI.RadButton BtnEgresos;
 
 
     }
