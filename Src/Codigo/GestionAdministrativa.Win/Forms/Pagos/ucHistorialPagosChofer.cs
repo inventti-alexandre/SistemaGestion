@@ -182,6 +182,10 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             cajaMovimiento.TipoComprobante = 3; //Anulacion Pago de sistema
             cajaMovimiento.ComprobanteId = pago.Id; //id del pago Celular
             cajaMovimiento.Senia = pago.Senia;
+            if (pago.Senia > 0)
+            {
+                //pago.
+            }
             cajaMovimiento.Importe = pago.Monto;
             cajaMovimiento.ImpFac = (pago.Efectivo ?? 0) + (pago.Vales ?? 0);// ucPagos1.Total; //_pagoCelular.Monto;
             cajaMovimiento.Efectivo = pago.Efectivo;

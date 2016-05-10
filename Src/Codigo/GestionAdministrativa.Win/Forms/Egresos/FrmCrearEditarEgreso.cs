@@ -130,14 +130,16 @@ namespace GestionAdministrativa.Win.Forms.Egresos
             var proveedores =
                 Uow.Proveedores.Listado().Where(p => p.Activo == true).OrderBy(p => p.Denominacion).ToList();
 
-            proveedores.Insert(0, new Proveedor() { Denominacion = "", Id = Guid.Empty })
-            ;
+          //  proveedores.Insert(0, new Proveedor() { Denominacion = "", Id = Guid.Empty });
+            
 
             
 
             DdlProveedores.DisplayMember = "Denominacion";
             DdlProveedores.ValueMember = "Id";
             DdlProveedores.DataSource = proveedores;
+
+            CajaAnterior = false;
         }
         private void CargarEntidad(Guid ordenPagoId)
         {
@@ -172,7 +174,7 @@ namespace GestionAdministrativa.Win.Forms.Egresos
 
         private void CrearEditar()
         {
-            var esValido = this.ValidarForm();
+            var esValido = this.ValidarForm() && ValidarMontos();
 
             if (!esValido)
                 this.DialogResult = DialogResult.None;
@@ -200,6 +202,7 @@ namespace GestionAdministrativa.Win.Forms.Egresos
                         ordenPago.TipoComprobanteId = 4;
                         cajaActual.Egresos += Importe;
                         cajaActual.Efectivo -= Importe;
+                        cajaActual.Saldo -= Importe;
                     }
                     ordenPago.FechaImputacion = _clock.Now;
                     ordenPago.SubTotal = Importe;
@@ -228,9 +231,7 @@ namespace GestionAdministrativa.Win.Forms.Egresos
                     ordenPagoDetalle.CajaId = cajaActual.Id;
                     Uow.OrdenesPagosDetalles.Agregar(ordenPagoDetalle);
 
-                    var cajaBalance = Uow.CajaBalances.Obtener(c => c.SucursalAltaId == Context.SucursalActual.Id);
-                    cajaBalance.Egresos += Importe;
-                    Uow.CajaBalances.Modificar(cajaBalance);
+                    
 
                     //CAJA MOVIMIENTO
                     var cajaMovimiento = new CajaMovimiento();
@@ -241,6 +242,11 @@ namespace GestionAdministrativa.Win.Forms.Egresos
                     {
                         cajaMovimiento.TipoMovimientoCajaId = 3;
                         cajaMovimiento.TipoComprobante = 5;
+
+                        //Descuento en caja balance
+                        var cajaBalance = Uow.CajaBalances.Obtener(c => c.SucursalAltaId == Context.SucursalActual.Id);
+                        cajaBalance.Ingresos -= Importe;
+                        Uow.CajaBalances.Modificar(cajaBalance);
                     }
                     else
                     {
@@ -248,6 +254,7 @@ namespace GestionAdministrativa.Win.Forms.Egresos
                         cajaMovimiento.TipoComprobante = 4;
                     }
                     cajaMovimiento.Importe = Importe;
+                    cajaMovimiento.ImpFac = Importe;
                     cajaMovimiento.Efectivo = Importe;
                     cajaMovimiento.PcAlta = System.Environment.MachineName;
                     cajaMovimiento.FechaAlta = _clock.Now;
@@ -311,6 +318,40 @@ namespace GestionAdministrativa.Win.Forms.Egresos
         protected override void ValidarControles()
         {
             this.ValidarControl(TxtImporte, "Importe");
+            
+        }
+
+        private bool ValidarMontos()
+        {
+            if (CajaAnterior == true)
+            {
+                var cajabalance = Uow.CajaBalances.Obtener(c => c.SucursalAltaId == Context.SucursalActual.Id);
+                if (cajabalance.Ingresos < Importe)
+                {
+                    EpvEgreso.SetError(TxtImporte, "El importe supera al dinero disponible en balance");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+                    
+            }
+            else
+            {
+                var cajaActual =
+                        Uow.Cajas.Obtener(c => c.OperadorAltaId == Context.OperadorActual.Id && c.FCierre == null);
+                if (cajaActual.Saldo < Importe)
+                {
+                    EpvEgreso.SetError(TxtImporte, "El importe supera al efectivo disponible en caja");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            
         }
 
         #endregion

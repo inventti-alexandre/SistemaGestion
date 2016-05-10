@@ -15,7 +15,7 @@ namespace GestionAdministrativa.Entities
     public class OrdenPagoMetadata
     {
 
-        [Required(ErrorMessage = "Debe ingresar el importe")]
+        [RegularExpression("^[1-9][0-9]*$", ErrorMessage = "Debe ser mayor a 0")]
         public decimal Importe { get; set; }
 
        

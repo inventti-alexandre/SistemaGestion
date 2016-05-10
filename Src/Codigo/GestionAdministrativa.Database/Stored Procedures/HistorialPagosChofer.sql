@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[HistorialPagosChofer]
 	@Chofer uniqueidentifier = null
 AS
-	SELECT PC.Id, PC.FechaAlta, PC.Desde, PC.Hasta, M.Numero, PC.Monto, PC.Efectivo, PC.Vales, PC.Taller, PC.Descuento, PC.Senia 
+	SELECT PC.Id, PC.FechaAlta, PC.Desde, PC.Hasta, M.Numero, PC.Monto, PC.Efectivo, PC.Vales, PC.Taller, PC.Descuento, PC.Senia,CH.Id as Chofer 
 FROM PagosCelular PC
 INNER JOIN Choferes CH ON CH.Id=PC.ChoferId
 INNER JOIN Moviles M ON M.Id = PC.MovilId
