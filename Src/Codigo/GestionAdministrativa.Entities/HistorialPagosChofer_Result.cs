@@ -24,5 +24,6 @@ namespace GestionAdministrativa.Entities
         public Nullable<decimal> Senia { get; set; }
         public int Numero { get; set; }
         public System.Guid Id { get; set; }
+        public System.Guid Chofer { get; set; }
     }
 }

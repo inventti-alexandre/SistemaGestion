@@ -8938,6 +8938,7 @@
           <Property Type="Decimal" Name="Senia" Nullable="true" Precision="19" />
           <Property Type="Int32" Name="Numero" Nullable="false" />
           <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="Chofer" Nullable="false" />
         </ComplexType>
         <ComplexType Name="FueraDeSistema_Result">
           <Property Type="Int32" Name="Numero" Nullable="false" />
@@ -9997,6 +9998,7 @@
                 <ScalarProperty Name="Senia" ColumnName="Senia" />
                 <ScalarProperty Name="Numero" ColumnName="Numero" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Chofer" ColumnName="Chofer" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

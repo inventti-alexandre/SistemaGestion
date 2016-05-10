@@ -184,7 +184,20 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             cajaMovimiento.Senia = pago.Senia;
             if (pago.Senia > 0)
             {
-                //pago.
+                var choferMontoFavor =new ChoferMontoFavor();
+                choferMontoFavor.Id = Guid.NewGuid();
+                choferMontoFavor.ChoferId = pago.Chofer;
+                choferMontoFavor.FechaAlta = DateTime.Now ;
+                choferMontoFavor.FechaComprobante=DateTime.Now;
+                choferMontoFavor.TipoComprobanteId = 1;
+                choferMontoFavor.Concepto = "Monto a favor";
+                choferMontoFavor.ImpOcupado = 0;
+                choferMontoFavor.SucursalAltaId = Context.SucursalActual.Id;
+                choferMontoFavor.OperadorAltaId = Context.OperadorActual.Id;
+                choferMontoFavor.Importe = pago.Senia;
+                
+                Uow.ChoferesMontosFavor.Agregar(choferMontoFavor);
+                
             }
             cajaMovimiento.Importe = pago.Monto;
             cajaMovimiento.ImpFac = (pago.Efectivo ?? 0) + (pago.Vales ?? 0);// ucPagos1.Total; //_pagoCelular.Monto;
