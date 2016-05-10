@@ -56,7 +56,46 @@ AS
 			ON M.Id = CH.MovilId
 		LEFT JOIN Operadores O
 			ON CM.OperadorAltaId = O.Id
-	WHERE CM.TipoMovimientoCajaId = 1 --Pago de Sistema
+	WHERE CM.TipoMovimientoCajaId = 1 and CM.TipoComprobante =2--Pago de Sistema
+		AND CM.FechaAlta >= @FechaInicio
+		AND CM.FechaAlta < @FechaFin
+		AND CM.SucursalAltaId = @SucursalId
+		AND (@OperadorId IS NULL OR CM.OperadorAltaId = @OperadorId)
+		AND (@CajaId IS NULL OR CM.CajaId = @CajaId)
+		AND  PC.Monto IS NOT NULL
+
+		-----------------------------------------------------------
+	------------ Anulacion Pagos Sistema  ------------------
+	-----------------------------------------------------------
+			
+	INSERT INTO @Temp
+	SELECT 'Ingresos',
+			'Pagos Sistema',
+			M.Numero,
+			CM.FechaAlta,
+			PC.Desde,
+			PC.Hasta,
+			'Pagos Sistema',
+			CH.Apellido,
+			O.Usuario,
+			ISNULL((CM.ImpFac * -1), 0),
+			ISNULL((CM.Importe * -1), 0),
+			ISNULL((CM.Efectivo * -1), 0),
+			ISNULL((CM.Vales * -1), 0),
+			ISNULL((PC.Taller * -1), 0),
+			ISNULL((PC.Descuento * -1), 0)
+	FROM CajasMovimientos CM
+		LEFT JOIN PagosCelular PC
+			ON CM.ComprobanteId = PC.Id
+		LEFT JOIN Celulares C
+			ON PC.CelularId = C.Id
+		LEFT JOIN Choferes CH
+			ON CH.CelularId = C.Id
+		LEFT JOIN Moviles M
+			ON M.Id = CH.MovilId
+		LEFT JOIN Operadores O
+			ON CM.OperadorAltaId = O.Id
+	WHERE CM.TipoMovimientoCajaId = 1 and CM.TipoComprobante =3--Pago de Sistema
 		AND CM.FechaAlta >= @FechaInicio
 		AND CM.FechaAlta < @FechaFin
 		AND CM.SucursalAltaId = @SucursalId
