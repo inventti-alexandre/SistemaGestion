@@ -28,6 +28,9 @@ namespace GestionAdministrativa.Data.Interfaces
         IRepository<Comentario> Comentarios { get; }
         IRepository<ComentariosChofer> ComentariosChoferes { get; }
         GestionAdministrativaDbContext DbContext { get; }
+        IRepository<OrdenPago> OrdenesPagos { get; }
+        IRepository<OrdenPagoDetalle> OrdenesPagosDetalles { get; }
+        IRepository<Proveedor> Proveedores { get; }
         bool IsDisposed { get; }
 
         void Commit();

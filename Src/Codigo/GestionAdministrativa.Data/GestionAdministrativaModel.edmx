@@ -502,7 +502,7 @@
           <Property Name="SucursalAltaId" Type="int" />
           <Property Name="FechaAlta" Type="datetime" Nullable="false" />
           <Property Name="OperadorAltaId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="FechaModificacion" Type="datetime" Nullable="false" />
+          <Property Name="FechaModificacion" Type="datetime" />
           <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
           <Property Name="SucursalModificacionId" Type="int" />
           <Property Name="Transferencia" Type="money" />
@@ -4856,7 +4856,7 @@
           <Property Name="SucursalAltaId" Type="Int32" />
           <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="OperadorAltaId" Type="Guid" Nullable="false" />
-          <Property Name="FechaModificacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
           <Property Name="OperadorModificacionId" Type="Guid" />
           <Property Name="SucursalModificacionId" Type="Int32" />
           <Property Name="Transferencia" Type="Decimal" Precision="19" Scale="4" />

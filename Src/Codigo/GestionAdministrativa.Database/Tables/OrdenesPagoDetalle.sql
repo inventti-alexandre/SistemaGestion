@@ -13,7 +13,7 @@
 	[SucursalAltaId] [int] NULL,
 	[FechaAlta] [datetime] NOT NULL,
 	[OperadorAltaId] [uniqueidentifier] NOT NULL,
-	[FechaModificacion] [datetime] NOT NULL,
+	[FechaModificacion] [datetime] NULL,
 	[OperadorModificacionId] [uniqueidentifier] NULL,
 	[SucursalModificacionId] [int] NULL,
 	[Transferencia] [money] NULL,

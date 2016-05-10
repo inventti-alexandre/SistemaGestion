@@ -40,7 +40,7 @@ namespace GestionAdministrativa.Business
                                                 //&& (movilId == null || x.MovilId == movilId)
                                                  (x.FCierre !=null)
                                                  && (x.Aprobada == aprobado)
-                                                 && ((x.Efectivo >0) || (x.Vales>0))
+                                                 && ((x.Efectivo >0) || (x.Vales>0) ||(x.Egresos>0))
                                                 ;
 
             var resultados = Uow.Cajas.Listado(criteros, where);

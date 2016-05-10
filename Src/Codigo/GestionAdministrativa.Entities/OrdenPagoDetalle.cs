@@ -28,7 +28,7 @@ namespace GestionAdministrativa.Entities
         public Nullable<int> SucursalAltaId { get; set; }
         public System.DateTime FechaAlta { get; set; }
         public System.Guid OperadorAltaId { get; set; }
-        public System.DateTime FechaModificacion { get; set; }
+        public Nullable<System.DateTime> FechaModificacion { get; set; }
         public Nullable<System.Guid> OperadorModificacionId { get; set; }
         public Nullable<int> SucursalModificacionId { get; set; }
         public Nullable<decimal> Transferencia { get; set; }

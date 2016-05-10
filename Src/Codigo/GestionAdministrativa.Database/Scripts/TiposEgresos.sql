@@ -9,14 +9,6 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-:r .\Usuarios.sql
-:r .\UsuariosSucursal.sql
-:r .\Dias.sql
-:r .\EmpresasCelulares.sql
-:r .\ModeloCelulares.sql
-:r .\TiposCelulares.sql
-:r .\TipoComprobante.sql
-:r .\TipoMovimientoCaja.sql
-:r .\TiposEgresos.sql
-:r .\Proveedores.sql
-
+INSERT INTO [dbo].[TiposGastos] ([Nombre],[Abreviatura])
+SELECT 'EGRESO GENERAL','Egreso'
+WHERE NOT EXISTS (SELECT 1 FROM [dbo].[TiposGastos] WHERE Abreviatura ='Egreso' )

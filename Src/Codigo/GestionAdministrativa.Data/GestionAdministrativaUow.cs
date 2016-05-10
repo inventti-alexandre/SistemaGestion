@@ -40,6 +40,9 @@ namespace GestionAdministrativa.Data
         public IRepository<CajaBalance> CajaBalances { get { return GetStandardRepo<CajaBalance>(); } }
         public IRepository<Comentario> Comentarios { get { return GetStandardRepo<Comentario>(); } }
         public IRepository<ComentariosChofer> ComentariosChoferes { get { return GetStandardRepo<ComentariosChofer>(); } }
+        public IRepository<OrdenPago> OrdenesPagos { get { return GetStandardRepo<OrdenPago>(); } }
+        public IRepository<OrdenPagoDetalle> OrdenesPagosDetalles { get { return GetStandardRepo<OrdenPagoDetalle>(); } }
+        public IRepository<Proveedor> Proveedores { get { return GetStandardRepo<Proveedor>(); } }
         public string ConnectionString
         {
             get

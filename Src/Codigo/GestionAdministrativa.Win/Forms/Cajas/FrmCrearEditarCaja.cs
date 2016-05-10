@@ -215,7 +215,7 @@ namespace GestionAdministrativa.Win.Forms.Cajas
                             cajaBalance = new CajaBalance();
                             cajaBalance.Id = Guid.NewGuid();
                             cajaBalance.Ingresos = EfectivoReal;
-                            cajaBalance.Egresos = Egreso;
+                            //cajaBalance.Egresos = Egreso;
                             cajaBalance.SucursalAltaId = Context.SucursalActual.Id;
                             cajaBalance.OperadorAltaId = Context.OperadorActual.Id;
                             cajaBalance.FechaAlta = _clock.Now;
@@ -225,7 +225,7 @@ namespace GestionAdministrativa.Win.Forms.Cajas
                         else
                         {
                             cajaBalance.Ingresos += EfectivoReal;
-                            cajaBalance.Egresos += Egreso;
+                            //cajaBalance.Egresos += Egreso;
                             cajaBalance.SucursalModificacionId = Context.SucursalActual.Id;
                             cajaBalance.OperadorModificacionId = Context.OperadorActual.Id;
                             cajaBalance.FechaModificacion = _clock.Now;

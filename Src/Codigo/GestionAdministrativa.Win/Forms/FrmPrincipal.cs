@@ -22,6 +22,7 @@ using GestionAdministrativa.Win.Forms.Cajas;
 using GestionAdministrativa.Win.Forms.Reportes;
 using GestionAdministrativa.Win.Forms.Cambios;
 using System.Deployment.Application;
+using GestionAdministrativa.Win.Forms.Egresos;
 
 namespace GestionAdministrativa.Win.Forms
 {
@@ -103,6 +104,7 @@ namespace GestionAdministrativa.Win.Forms
                 {
                     CerrarCaja(_caja);
                     btnPagos.Enabled = false;
+                    BtnEgresos.Enabled = false;
                     BtnAbrirCaja.Text = "Abrir Caja";
                 
                 }
@@ -127,7 +129,8 @@ namespace GestionAdministrativa.Win.Forms
                 MessageBox.Show("Debe abrir una caja.");
               
                 btnPagos.Enabled = false;
-               
+                BtnEgresos.Enabled = false;
+
             }
             //else if (_caja.FechaAlta.Value.Date < _clock.Now.Date)
             //{
@@ -150,6 +153,7 @@ namespace GestionAdministrativa.Win.Forms
                 DeshabilitarControlesPago();
                 CerrarCaja(_caja);
                 btnPagos.Enabled = false;
+                BtnEgresos.Enabled = false;
             }
           
             else
@@ -161,6 +165,7 @@ namespace GestionAdministrativa.Win.Forms
         private void HabilitarControlesCajaAbierta()
         {
             btnPagos.Enabled = true;
+            BtnEgresos.Enabled = true;
 
             BtnAbrirCaja.Text = "Cerrar Caja";
             
@@ -195,6 +200,7 @@ namespace GestionAdministrativa.Win.Forms
             {
                 CerrarCaja(_caja);
                 btnPagos.Enabled = false;
+                BtnEgresos.Enabled = false;
                 BtnAbrirCaja.Text = "Abrir Caja";
 
             }
@@ -229,6 +235,12 @@ namespace GestionAdministrativa.Win.Forms
         {
             var frm = FormFactory.Create<FrmFueraSistema>();
             frm.Show();
+        }
+
+        private void TxtGastos_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmCrearEditarEgreso>(Guid.Empty, ActionFormMode.Create);
+            frm.ShowDialog();
         }
      
     }

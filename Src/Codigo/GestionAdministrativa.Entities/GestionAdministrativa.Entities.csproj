@@ -129,6 +129,7 @@
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Metadata\CajaMetadata.cs" />
+    <Compile Include="Metadata\OrdenPagoMetadata.cs" />
     <Compile Include="Metadata\ClienteMetadata.cs" />
     <Compile Include="Metadata\ChoferMetadata.cs" />
     <Compile Include="Metadata\CelularMetadata.cs" />
