@@ -63,6 +63,47 @@ AS
 		AND (@OperadorId IS NULL OR CM.OperadorAltaId = @OperadorId)
 		AND (@CajaId IS NULL OR CM.CajaId = @CajaId)
 		AND  PC.Monto IS NOT NULL
+
+		-----------------------------------------------------------
+	------------  Pagos Proveedores con caja actual  ------------------
+	-----------------------------------------------------------
+			
+	INSERT INTO @Temp
+	SELECT 'Gastos',
+			'Gastos',
+			p.Denominacion,
+			CM.FechaAlta,
+			'',
+			'',
+			OP.Concepto,
+			'',
+			O.Usuario,
+			ISNULL(CM.ImpFac, 0),
+			ISNULL(CM.Importe, 0),
+			ISNULL(CM.Efectivo, 0),
+			ISNULL(CM.Vales, 0),
+			0,
+			0
+	FROM CajasMovimientos CM
+		LEFT JOIN OrdenesPago OP
+			ON CM.ComprobanteId = OP.Id
+		LEFT JOIN Proveedores P
+			ON OP.ProveedorId = P.Id
+		--LEFT JOIN Choferes CH
+		--	ON CH.CelularId = C.Id
+	--	LEFT JOIN Moviles M
+		--	ON M.Id = CH.MovilId
+		LEFT JOIN Operadores O
+			ON CM.OperadorAltaId = O.Id
+	WHERE CM.TipoMovimientoCajaId = 2 --Pago a Proveedores con caja actual
+		AND CM.FechaAlta >= @FechaInicio
+		AND CM.FechaAlta < @FechaFin
+		AND CM.SucursalAltaId = @SucursalId
+		AND (@OperadorId IS NULL OR CM.OperadorAltaId = @OperadorId)
+		AND (@CajaId IS NULL OR CM.CajaId = @CajaId)
+		--AND  PC.Monto IS NOT NULL
+
+
 	
 	SELECT * 
 	FROM @Temp
