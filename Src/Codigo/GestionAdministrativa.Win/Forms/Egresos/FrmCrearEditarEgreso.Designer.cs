@@ -64,10 +64,10 @@
             // 
             this.BtnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnSave.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSave.Location = new System.Drawing.Point(349, 318);
+            this.BtnSave.Location = new System.Drawing.Point(310, 297);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(130, 36);
-            this.BtnSave.TabIndex = 10;
+            this.BtnSave.TabIndex = 5;
             this.BtnSave.Text = "Guardar";
             this.BtnSave.ThemeName = "TelerikMetro";
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -76,18 +76,18 @@
             // 
             this.DdlProveedores.DropDownAnimationEnabled = true;
             this.DdlProveedores.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DdlProveedores.Location = new System.Drawing.Point(188, 69);
+            this.DdlProveedores.Location = new System.Drawing.Point(149, 48);
             this.DdlProveedores.MaxDropDownItems = 0;
             this.DdlProveedores.Name = "DdlProveedores";
             this.DdlProveedores.ShowImageInEditorArea = true;
             this.DdlProveedores.Size = new System.Drawing.Size(291, 29);
-            this.DdlProveedores.TabIndex = 9;
+            this.DdlProveedores.TabIndex = 0;
             this.DdlProveedores.ThemeName = "TelerikMetro";
             // 
             // radLabel6
             // 
             this.radLabel6.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel6.Location = new System.Drawing.Point(72, 69);
+            this.radLabel6.Location = new System.Drawing.Point(33, 48);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(110, 25);
             this.radLabel6.TabIndex = 8;
@@ -96,27 +96,27 @@
             // CkCajaAnterior
             // 
             this.CkCajaAnterior.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CkCajaAnterior.Location = new System.Drawing.Point(324, 287);
+            this.CkCajaAnterior.Location = new System.Drawing.Point(285, 266);
             this.CkCajaAnterior.Name = "CkCajaAnterior";
             this.CkCajaAnterior.Size = new System.Drawing.Size(155, 25);
-            this.CkCajaAnterior.TabIndex = 6;
+            this.CkCajaAnterior.TabIndex = 4;
             this.CkCajaAnterior.Text = "Caja Anterior";
             this.CkCajaAnterior.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
             // 
             // TxtImporte
             // 
             this.TxtImporte.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtImporte.Location = new System.Drawing.Point(188, 253);
+            this.TxtImporte.Location = new System.Drawing.Point(149, 232);
             this.TxtImporte.Name = "TxtImporte";
             this.TxtImporte.Size = new System.Drawing.Size(291, 28);
-            this.TxtImporte.TabIndex = 5;
+            this.TxtImporte.TabIndex = 3;
             this.TxtImporte.TabStop = false;
             this.TxtImporte.ThemeName = "TelerikMetro";
             // 
             // TxtConcepto
             // 
             this.TxtConcepto.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtConcepto.Location = new System.Drawing.Point(188, 138);
+            this.TxtConcepto.Location = new System.Drawing.Point(149, 117);
             this.TxtConcepto.Multiline = true;
             this.TxtConcepto.Name = "TxtConcepto";
             // 
@@ -124,14 +124,14 @@
             // 
             this.TxtConcepto.RootElement.StretchVertically = true;
             this.TxtConcepto.Size = new System.Drawing.Size(291, 97);
-            this.TxtConcepto.TabIndex = 4;
+            this.TxtConcepto.TabIndex = 2;
             this.TxtConcepto.TabStop = false;
             this.TxtConcepto.ThemeName = "TelerikMetro";
             // 
             // radLabel5
             // 
             this.radLabel5.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel5.Location = new System.Drawing.Point(92, 253);
+            this.radLabel5.Location = new System.Drawing.Point(53, 232);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(90, 25);
             this.radLabel5.TabIndex = 2;
@@ -140,7 +140,7 @@
             // radLabel4
             // 
             this.radLabel4.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel4.Location = new System.Drawing.Point(82, 138);
+            this.radLabel4.Location = new System.Drawing.Point(43, 117);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(100, 25);
             this.radLabel4.TabIndex = 2;
@@ -150,17 +150,17 @@
             // 
             this.TxtFactura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtFactura.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFactura.Location = new System.Drawing.Point(188, 104);
+            this.TxtFactura.Location = new System.Drawing.Point(149, 83);
             this.TxtFactura.Name = "TxtFactura";
             this.TxtFactura.Size = new System.Drawing.Size(291, 28);
-            this.TxtFactura.TabIndex = 3;
+            this.TxtFactura.TabIndex = 1;
             this.TxtFactura.TabStop = false;
             this.TxtFactura.ThemeName = "TelerikMetro";
             // 
             // radLabel3
             // 
             this.radLabel3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel3.Location = new System.Drawing.Point(51, 107);
+            this.radLabel3.Location = new System.Drawing.Point(12, 86);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(131, 25);
             this.radLabel3.TabIndex = 2;
@@ -169,7 +169,7 @@
             // radLabel1
             // 
             this.radLabel1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(112, 38);
+            this.radLabel1.Location = new System.Drawing.Point(73, 17);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(70, 25);
             this.radLabel1.TabIndex = 0;
@@ -185,18 +185,19 @@
             this.BtnAgregarProveedor.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregarProveedor.Image = global::GestionAdministrativa.Win.Properties.Resources.Add_New_blue;
             this.BtnAgregarProveedor.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnAgregarProveedor.Location = new System.Drawing.Point(496, 69);
+            this.BtnAgregarProveedor.Location = new System.Drawing.Point(457, 48);
             this.BtnAgregarProveedor.Name = "BtnAgregarProveedor";
             this.BtnAgregarProveedor.Size = new System.Drawing.Size(29, 29);
             this.BtnAgregarProveedor.TabIndex = 12;
             this.BtnAgregarProveedor.ThemeName = "TelerikMetro";
+            this.BtnAgregarProveedor.Visible = false;
             this.BtnAgregarProveedor.Click += new System.EventHandler(this.BtnAgregarProveedor_Click);
             // 
             // dtpFecha
             // 
             this.dtpFecha.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(188, 34);
+            this.dtpFecha.Location = new System.Drawing.Point(149, 13);
             this.dtpFecha.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFecha.MinDate = new System.DateTime(((long)(0)));
             this.dtpFecha.Name = "dtpFecha";
@@ -213,7 +214,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 581);
+            this.ClientSize = new System.Drawing.Size(668, 438);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.BtnAgregarProveedor);
             this.Controls.Add(this.BtnSave);
