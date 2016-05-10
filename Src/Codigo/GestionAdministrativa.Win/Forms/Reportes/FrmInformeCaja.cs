@@ -53,11 +53,14 @@ namespace GestionAdministrativa.Win.Forms.Reportes
             if (ckCajas.Checked)
                 caja = null;
 
-            var ingresos = _reporteNegocio.InformeCaja(inicio, fin, Context.SucursalActual.Id, null, caja);
-           // var ingresosComposicion = _reporteNegocio.CajaResumidaIngresosComposicion(inicio, fin, Context.SucursalActual.Id, null, caja);
+            var datos = _reporteNegocio.InformeCaja(inicio, fin, Context.SucursalActual.Id, null, caja);
+            var ingresos = datos.Where(x => x.Tipo == "Ingresos").ToList();
+            var egresos = datos.Where(x => x.Tipo == "Egresos").ToList();
+            var egresosAnterior = datos.Where(x => x.Tipo == "EgresosAnterior").ToList();
 
             reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Ingresos", ingresos));
-           // reportViewer.LocalReport.DataSources.Add(new ReportDataSource("ComposicionIngresos", ingresosComposicion));
+            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Egresos", egresos));
+            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("EgresosAnterior", egresosAnterior));
 
             var sucursal = Context.SucursalActual.Nombre;
             var fecha = DateTime.Now.ToShortDateString();
@@ -73,7 +76,7 @@ namespace GestionAdministrativa.Win.Forms.Reportes
                                     new ReportParameter("Desde", dtDesde.Value.ToShortDateString()),
                                     new ReportParameter("Hasta", dtHasta.Value.ToShortDateString()),
                                     //new ReportParameter("Operador", operador)
-                                    new ReportParameter("Operador", "")
+                                    new ReportParameter("Operador", Context.OperadorActual.Usuario)
                                 };
             reportViewer.LocalReport.SetParameters(parametros);
             this.reportViewer.RefreshReport();

@@ -29,6 +29,11 @@ namespace GestionAdministrativa.Data.Repository
             return GestionAdministrativaDbContext.Reporte_CajaResumida_ComposicionIngresos(sucursalId, inicio, fin, operadorId, cajaId).ToList();
         }
 
+        public List<Reporte_CajaResumida_Egresos_Result> CajaResumidaEgresos(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId, Guid? cajaId)
+        {
+            return GestionAdministrativaDbContext.Reporte_CajaResumida_Egresos(sucursalId, inicio, fin, operadorId, cajaId).ToList();
+        }
+
         public List<InformeCaja_Result> InformeCaja(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId, Guid? cajaId)
         {
             return GestionAdministrativaDbContext.InformeCaja(sucursalId, inicio, fin, operadorId, cajaId).ToList();

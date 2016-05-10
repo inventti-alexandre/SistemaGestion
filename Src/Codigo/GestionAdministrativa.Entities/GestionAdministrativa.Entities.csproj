@@ -193,6 +193,9 @@
     <Compile Include="Reporte_CajaResumida_ComposicionIngresos_Result.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Reporte_CajaResumida_Egresos_Result.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Reporte_CajaResumida_Ingresos_Result.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>

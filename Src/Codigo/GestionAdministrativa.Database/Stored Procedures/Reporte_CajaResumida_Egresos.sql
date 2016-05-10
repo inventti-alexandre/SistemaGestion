@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[Reporte_CajaResumida_Ingresos]
+﻿CREATE PROCEDURE [dbo].[Reporte_CajaResumida_Egresos]
 	@SucursalId int,
 	@FechaInicio datetime,
 	@FechaFin datetime,
@@ -12,7 +12,7 @@ AS
 		Nombre varchar(50)
 	)
 
-	INSERT INTO @Conceptos VALUES(1, 'Pago del sistema')
+	INSERT INTO @Conceptos VALUES(1, 'Egresos')
 
 	DECLARE @Temp TABLE 
 	(
@@ -29,7 +29,7 @@ AS
 	FROM CajasMovimientos CM
 		LEFT JOIN @Conceptos C
 			ON CM.TipoMovimientoCajaId = C.Id
-	WHERE	(CM.TipoMovimientoCajaId = 1)
+	WHERE	(CM.TipoMovimientoCajaId = 2)
 			AND CM.FechaAlta >= @FechaInicio
 			AND CM.FechaAlta < @FechaFin
 			AND CM.SucursalAltaId = @SucursalId

@@ -44,21 +44,19 @@ namespace GestionAdministrativa.Win.Forms.Reportes
             var inicio = SetTimeToZero(dtDesde.Value);
             var fin = SetTimeToZero(dtHasta.Value.AddDays(1));
 
-            //Guid? operadorId = ucFiltroOperadores.OperadorId;
-
-            //var operador = operadorId == null
-            //                   ? "TODOS"
-            //                   : ucFiltroOperadores.Operador.Usuario;
+           
 
             Guid? caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id).OrderByDescending(c=>c.FechaAlta).FirstOrDefault().Id;
             if (ckCajas.Checked)
                 caja = null;
 
             var ingresos = _reporteNegocio.CajaResumidaIngresos(inicio, fin, Context.SucursalActual.Id, null, caja);
+            var egresos = _reporteNegocio.CajaResumidaEgresos(inicio, fin, Context.SucursalActual.Id, null, caja);
             var ingresosComposicion = _reporteNegocio.CajaResumidaIngresosComposicion(inicio, fin, Context.SucursalActual.Id, null, caja);
             var movilesPorCaja = _reporteNegocio.MovilesPorCajaId(caja);
 
             reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Ingresos", ingresos));
+            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Egresos", egresos));
             reportViewer.LocalReport.DataSources.Add(new ReportDataSource("ComposicionIngresos", ingresosComposicion));
             reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Moviles", movilesPorCaja));
 
@@ -76,7 +74,7 @@ namespace GestionAdministrativa.Win.Forms.Reportes
                                     new ReportParameter("Desde", dtDesde.Value.ToShortDateString()),
                                     new ReportParameter("Hasta", dtHasta.Value.ToShortDateString()),
                                     //new ReportParameter("Operador", operador)
-                                    new ReportParameter("Operador", "")
+                                    new ReportParameter("Operador", Context.OperadorActual.Usuario)
                                 };
             reportViewer.LocalReport.SetParameters(parametros);
             this.reportViewer.RefreshReport();

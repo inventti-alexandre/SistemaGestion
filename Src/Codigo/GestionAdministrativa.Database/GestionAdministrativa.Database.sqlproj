@@ -134,6 +134,7 @@
     <Build Include="Tables\ComentariosChofer.sql" />
     <None Include="Scripts\TiposEgresos.sql" />
     <None Include="Scripts\Proveedores.sql" />
+    <Build Include="Stored Procedures\Reporte_CajaResumida_Egresos.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Dias.sql" />
