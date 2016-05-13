@@ -28,6 +28,17 @@ namespace GestionAdministrativa.Win.Forms.Proveedores
             _iFormFactory = formFactory;
 
             InitializeComponent();
+            InicializarForm(mode);
+        }
+
+        private void InicializarForm(ActionFormMode mode)
+        {
+            switch (mode)
+            {
+                    case ActionFormMode.Create:
+                    this.Text = "Crear Proveedor";
+                    break;
+            }
         }
     }
 }
