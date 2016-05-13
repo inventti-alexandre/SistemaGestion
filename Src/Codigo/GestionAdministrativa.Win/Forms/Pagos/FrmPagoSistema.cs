@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -234,10 +235,41 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
+            EnviarMail();
            // LimpiarControles();
             //this.Close();
         }
+        private void EnviarMail()
+        {
+            try
+            {
+                string Asunto = "Pago sistema movil: " + _chofer.Movil.Numero;
+                string Mensaje = "Se registro el pago del movil " + _chofer.Movil.Numero+".";
+                string Destinatarios = "santiacevedo@gmail.com,sistemas@remisesapipe.com.ar,operadores@remisesapipe.com.ar,nora@remisesapipe.com.ar,florencia@remisesapipe.com.ar";
+                // Command line argument must the the SMTP host.
+                SmtpClient client = new SmtpClient();
 
+                client.Port = 26;
+                client.Host = "mara.avnam.net";
+                client.EnableSsl = true;
+                client.Timeout = 10000;
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.UseDefaultCredentials = false;
+                client.Credentials = new System.Net.NetworkCredential("sistemas@remisesapipe.com.ar", "quilombito");
+
+                MailMessage mm = new MailMessage("sistemas@remisesapipe.com.ar", Destinatarios, Asunto , Mensaje);
+                mm.BodyEncoding = UTF8Encoding.UTF8;
+                mm.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+
+                client.Send(mm);
+            }
+            catch (Exception)
+            {
+                    
+                throw;
+            }
+            
+        }
         private void LimpiarControles()
         {
             _chofer = null;
