@@ -245,7 +245,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             {
                 string Asunto = "Pago sistema movil: " + _chofer.Movil.Numero;
                 string Mensaje = "Se registro el pago del movil " + _chofer.Movil.Numero+".";
-                string Destinatarios = "santiacevedo@gmail.com,sistemas@remisesapipe.com.ar,operadores@remisesapipe.com.ar,nora@remisesapipe.com.ar,florencia@remisesapipe.com.ar";
+                string Destinatarios = "sistemas@remisesapipe.com.ar,operadores@remisesapipe.com.ar,nora@remisesapipe.com.ar,florencia@remisesapipe.com.ar";
                 // Command line argument must the the SMTP host.
                 SmtpClient client = new SmtpClient();
 
