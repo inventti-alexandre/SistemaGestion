@@ -347,6 +347,12 @@
     <Compile Include="Forms\PagosCelulares\ucPagos.Designer.cs">
       <DependentUpon>ucPagos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PagosMoviles\FrmPagoMoviles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PagosMoviles\FrmPagoMoviles.Designer.cs">
+      <DependentUpon>FrmPagoMoviles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Proveedores\FrmCrearEditarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -484,6 +490,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PagosCelulares\ucPagos.resx">
       <DependentUpon>ucPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PagosMoviles\FrmPagoMoviles.resx">
+      <DependentUpon>FrmPagoMoviles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Proveedores\FrmCrearEditarProveedor.resx">
       <DependentUpon>FrmCrearEditarProveedor.cs</DependentUpon>
@@ -830,9 +839,7 @@
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\PagosMoviles\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
