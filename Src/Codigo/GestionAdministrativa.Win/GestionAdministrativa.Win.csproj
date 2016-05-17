@@ -299,52 +299,52 @@
     <Compile Include="Forms\Moviles\ucFiltroMoviles.Designer.cs">
       <DependentUpon>ucFiltroMoviles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pagos\FrmPagoSistema.cs">
+    <Compile Include="Forms\PagosCelulares\FrmPagoSistema.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Pagos\FrmPagoSistema.Designer.cs">
+    <Compile Include="Forms\PagosCelulares\FrmPagoSistema.Designer.cs">
       <DependentUpon>FrmPagoSistema.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pagos\FrmTipoPago.cs">
+    <Compile Include="Forms\PagosCelulares\FrmTipoPago.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Pagos\FrmTipoPago.Designer.cs">
+    <Compile Include="Forms\PagosCelulares\FrmTipoPago.Designer.cs">
       <DependentUpon>FrmTipoPago.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pagos\ucBuscardorChoferMovil.cs">
+    <Compile Include="Forms\PagosCelulares\ucBuscardorChoferMovil.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Pagos\ucBuscardorChoferMovil.Designer.cs">
+    <Compile Include="Forms\PagosCelulares\ucBuscardorChoferMovil.Designer.cs">
       <DependentUpon>ucBuscardorChoferMovil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pagos\ucDetalleDeuda.cs">
+    <Compile Include="Forms\PagosCelulares\ucDetalleDeuda.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Pagos\ucDetalleDeuda.Designer.cs">
+    <Compile Include="Forms\PagosCelulares\ucDetalleDeuda.Designer.cs">
       <DependentUpon>ucDetalleDeuda.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pagos\ucDetallePagos.cs">
+    <Compile Include="Forms\PagosCelulares\ucDetallePagos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Pagos\ucDetallePagos.Designer.cs">
+    <Compile Include="Forms\PagosCelulares\ucDetallePagos.Designer.cs">
       <DependentUpon>ucDetallePagos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pagos\ucEstadoCuentaChofer.cs">
+    <Compile Include="Forms\PagosCelulares\ucEstadoCuentaChofer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Pagos\ucEstadoCuentaChofer.Designer.cs">
+    <Compile Include="Forms\PagosCelulares\ucEstadoCuentaChofer.Designer.cs">
       <DependentUpon>ucEstadoCuentaChofer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pagos\ucHistorialPagosChofer.cs">
+    <Compile Include="Forms\PagosCelulares\ucHistorialPagosChofer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Pagos\ucHistorialPagosChofer.Designer.cs">
+    <Compile Include="Forms\PagosCelulares\ucHistorialPagosChofer.Designer.cs">
       <DependentUpon>ucHistorialPagosChofer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pagos\ucPagos.cs">
+    <Compile Include="Forms\PagosCelulares\ucPagos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Pagos\ucPagos.Designer.cs">
+    <Compile Include="Forms\PagosCelulares\ucPagos.Designer.cs">
       <DependentUpon>ucPagos.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Proveedores\FrmCrearEditarProveedor.cs">
@@ -461,28 +461,28 @@
     <EmbeddedResource Include="Forms\Moviles\ucFiltroMoviles.resx">
       <DependentUpon>ucFiltroMoviles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Pagos\FrmPagoSistema.resx">
+    <EmbeddedResource Include="Forms\PagosCelulares\FrmPagoSistema.resx">
       <DependentUpon>FrmPagoSistema.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Pagos\FrmTipoPago.resx">
+    <EmbeddedResource Include="Forms\PagosCelulares\FrmTipoPago.resx">
       <DependentUpon>FrmTipoPago.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Pagos\ucBuscardorChoferMovil.resx">
+    <EmbeddedResource Include="Forms\PagosCelulares\ucBuscardorChoferMovil.resx">
       <DependentUpon>ucBuscardorChoferMovil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Pagos\ucDetalleDeuda.resx">
+    <EmbeddedResource Include="Forms\PagosCelulares\ucDetalleDeuda.resx">
       <DependentUpon>ucDetalleDeuda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Pagos\ucDetallePagos.resx">
+    <EmbeddedResource Include="Forms\PagosCelulares\ucDetallePagos.resx">
       <DependentUpon>ucDetallePagos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Pagos\ucEstadoCuentaChofer.resx">
+    <EmbeddedResource Include="Forms\PagosCelulares\ucEstadoCuentaChofer.resx">
       <DependentUpon>ucEstadoCuentaChofer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Pagos\ucHistorialPagosChofer.resx">
+    <EmbeddedResource Include="Forms\PagosCelulares\ucHistorialPagosChofer.resx">
       <DependentUpon>ucHistorialPagosChofer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Pagos\ucPagos.resx">
+    <EmbeddedResource Include="Forms\PagosCelulares\ucPagos.resx">
       <DependentUpon>ucPagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Proveedores\FrmCrearEditarProveedor.resx">
@@ -830,7 +830,9 @@
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Forms\PagosMoviles\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
