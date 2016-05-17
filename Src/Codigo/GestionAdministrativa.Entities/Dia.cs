@@ -18,6 +18,7 @@ namespace GestionAdministrativa.Entities
         {
             this.Celulares = new HashSet<Celular>();
             this.Celulares1 = new HashSet<Celular>();
+            this.Moviles = new HashSet<Movil>();
         }
     
         public int Id { get; set; }
@@ -25,5 +26,6 @@ namespace GestionAdministrativa.Entities
     
         public virtual ICollection<Celular> Celulares { get; set; }
         public virtual ICollection<Celular> Celulares1 { get; set; }
+        public virtual ICollection<Movil> Moviles { get; set; }
     }
 }

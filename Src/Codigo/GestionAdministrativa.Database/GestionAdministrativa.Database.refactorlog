@@ -315,4 +315,39 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ChoferId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="3e35e136-334b-4802-9010-6170ab544a22" ChangeDateTime="05/17/2016 19:44:30">
+    <Property Name="ElementName" Value="[dbo].[Titulares].[OperadorAltaID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Titulares]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OperadorAltaId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f3b47e18-50bb-4cd1-a588-890b0e6c13e5" ChangeDateTime="05/17/2016 20:01:44">
+    <Property Name="ElementName" Value="[dbo].[Talleres].[OperadorAltaId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Talleres]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OperadorModificacionId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d16052fd-14bd-4e56-955f-7fe4f1f59598" ChangeDateTime="05/17/2016 20:02:37">
+    <Property Name="ElementName" Value="[dbo].[Talleres].[SucursalAltaId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Talleres]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SucursalModificacionId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="334061c5-b531-409f-8200-cf3c80091240" ChangeDateTime="05/17/2016 20:02:42">
+    <Property Name="ElementName" Value="[dbo].[Talleres].[FechaAlta]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Talleres]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FechaModificacion" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6ee622d9-d0e2-443a-ae6b-b0cf703ad987" ChangeDateTime="05/17/2016 20:22:16">
+    <Property Name="ElementName" Value="[dbo].[PagosMoviles].[CelularId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[PagosMoviles]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MovilId" />
+  </Operation>
 </Operations>

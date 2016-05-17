@@ -162,6 +162,9 @@
     <Compile Include="PagoCelular.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PagosMovile.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Pais.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
@@ -172,6 +175,12 @@
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PersonalNovedad.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Promocione.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PromocionesMovile.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -205,6 +214,15 @@
     <Compile Include="Sucursal.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Tallere.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TalleresMovile.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tarifa.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="TipoCelular.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
@@ -221,6 +239,9 @@
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TipoRecibo.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Titulare.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>

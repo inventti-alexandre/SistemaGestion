@@ -390,6 +390,12 @@
           <Property Name="Numero" Type="int" Nullable="false" />
           <Property Name="Patente" Type="varchar" MaxLength="6" />
           <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="FechaBaja" Type="datetime" />
+          <Property Name="Habilitado" Type="bit" />
+          <Property Name="FechaUltimoPago" Type="datetime" />
+          <Property Name="FechaProximoPago" Type="datetime" />
+          <Property Name="Observaciones" Type="varchar" MaxLength="100" />
+          <Property Name="DiaPago" Type="int" />
           <Property Name="OperadorAltaId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="SucursalAltaId" Type="int" Nullable="false" />
           <Property Name="FechaModificacion" Type="datetime" />
@@ -536,6 +542,30 @@
           <Property Name="FechaAnulacion" Type="datetime" />
           <Property Name="OperadorAutoriza" Type="uniqueidentifier" />
         </EntityType>
+        <EntityType Name="PagosMoviles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Desde" Type="datetime" />
+          <Property Name="Hasta" Type="datetime" />
+          <Property Name="Efectivo" Type="money" />
+          <Property Name="Vales" Type="money" />
+          <Property Name="Taller" Type="money" />
+          <Property Name="Descuento" Type="money" />
+          <Property Name="Senia" Type="money" />
+          <Property Name="Monto" Type="money" Nullable="false" />
+          <Property Name="MovilId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="OperadorAltaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="int" Nullable="false" />
+          <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
+          <Property Name="SucursalModificacionId" Type="int" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="Anulada" Type="bit" />
+          <Property Name="FechaAnulacion" Type="datetime" />
+          <Property Name="OperadorAutoriza" Type="uniqueidentifier" />
+        </EntityType>
         <EntityType Name="Paises">
           <Key>
             <PropertyRef Name="Id" />
@@ -610,6 +640,37 @@
           <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
           <Property Name="SucursalAltaId" Type="int" />
           <Property Name="SucursalModificacionId" Type="int" />
+        </EntityType>
+        <EntityType Name="Promociones">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="Monto" Type="money" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="OperadorAltaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
+          <Property Name="SucursalModificacionId" Type="int" />
+          <Property Name="FechaModificacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PromocionesMoviles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PromocionId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MovilId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FechaDesde" Type="datetime" Nullable="false" />
+          <Property Name="FechaHasta" Type="datetime" />
+          <Property Name="OperadorAltaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
+          <Property Name="SucursalModificacionId" Type="int" />
+          <Property Name="FechaModificacion" Type="datetime" />
         </EntityType>
         <EntityType Name="Proveedores">
           <Key>
@@ -747,6 +808,54 @@
           <Property Name="MaximoNroLineasPorVenta" Type="int" Nullable="false" />
           <Property Name="SucursalNumero" Type="int" />
         </EntityType>
+        <EntityType Name="Talleres">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="Porcentaje" Type="decimal" Precision="3" Scale="2" />
+          <Property Name="OperadorAltaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
+          <Property Name="SucursalModificacionId" Type="int" />
+          <Property Name="FechaModificacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TalleresMoviles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TallerId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MovilId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FechaDesde" Type="datetime" Nullable="false" />
+          <Property Name="FechaEstimativaHasta" Type="datetime" />
+          <Property Name="FechaHasta" Type="datetime" />
+          <Property Name="OperadorAltaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
+          <Property Name="SucursalModificacionId" Type="int" />
+          <Property Name="FechaModificacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Tarifas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="FechaDesde" Type="datetime" Nullable="false" />
+          <Property Name="FechaHasta" Type="datetime" />
+          <Property Name="Monto" Type="money" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="OperadorAltaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
+          <Property Name="SucursalModificacionId" Type="int" />
+          <Property Name="FechaModificacion" Type="datetime" />
+        </EntityType>
         <EntityType Name="TiposCelulares">
           <Key>
             <PropertyRef Name="Id" />
@@ -829,6 +938,24 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Titulares">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="DNI" Type="int" />
+          <Property Name="Telefono" Type="int" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="Domicilio" Type="varchar" MaxLength="50" />
+          <Property Name="OperadorAltaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
+          <Property Name="SucursalModificacionId" Type="int" />
+          <Property Name="FechaModificacion" Type="datetime" />
         </EntityType>
         <Association Name="FK_Bancos_Localidad">
           <End Role="Localidades" Type="Self.Localidades" Multiplicity="0..1" />
@@ -1982,6 +2109,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Moviles_DiaPago">
+          <End Role="Dias" Type="Self.Dias" Multiplicity="0..1" />
+          <End Role="Moviles" Type="Self.Moviles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dias">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Moviles">
+              <PropertyRef Name="DiaPago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Moviles_OperadorAlta">
           <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
           <End Role="Moviles" Type="Self.Moviles" Multiplicity="*" />
@@ -2510,6 +2649,78 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PagosMoviles_Movil">
+          <End Role="Moviles" Type="Self.Moviles" Multiplicity="1" />
+          <End Role="PagosMoviles" Type="Self.PagosMoviles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Moviles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosMoviles">
+              <PropertyRef Name="MovilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosMoviles_OperadorAlta">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
+          <End Role="PagosMoviles" Type="Self.PagosMoviles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosMoviles">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosMoviles_OperadorAutoriza">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="PagosMoviles" Type="Self.PagosMoviles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosMoviles">
+              <PropertyRef Name="OperadorAutoriza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosMoviles_OperadorModificacion">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="PagosMoviles" Type="Self.PagosMoviles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosMoviles">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosMoviles_SucursalAlta">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
+          <End Role="PagosMoviles" Type="Self.PagosMoviles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosMoviles">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosMoviles_SucursalModificacion">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="PagosMoviles" Type="Self.PagosMoviles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosMoviles">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Personal_CategoriasOperadores">
           <End Role="CategoriasOperadores" Type="Self.CategoriasOperadores" Multiplicity="0..1" />
           <End Role="Personal" Type="Self.Personal" Multiplicity="*" />
@@ -2734,6 +2945,102 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="PersonalNovedades">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Promociones_OperadorAlta">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
+          <End Role="Promociones" Type="Self.Promociones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Promociones">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Promociones_OperadorModificacion">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="Promociones" Type="Self.Promociones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Promociones">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Promociones_SucursalAlta">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
+          <End Role="Promociones" Type="Self.Promociones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Promociones">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Promociones_SucursalModificacion">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="Promociones" Type="Self.Promociones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Promociones">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PromocionesMoviles_OperadorAlta">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
+          <End Role="PromocionesMoviles" Type="Self.PromocionesMoviles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PromocionesMoviles">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PromocionesMoviles_OperadorModificacion">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="PromocionesMoviles" Type="Self.PromocionesMoviles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PromocionesMoviles">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PromocionesMoviles_SucursalAlta">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
+          <End Role="PromocionesMoviles" Type="Self.PromocionesMoviles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PromocionesMoviles">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PromocionesMoviles_SucursalModificacion">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="PromocionesMoviles" Type="Self.PromocionesMoviles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PromocionesMoviles">
               <PropertyRef Name="SucursalModificacionId" />
             </Dependent>
           </ReferentialConstraint>
@@ -3194,6 +3501,150 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Talleres_OperadorAlta">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
+          <End Role="Talleres" Type="Self.Talleres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Talleres">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Talleres_OperadorModificacion">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="Talleres" Type="Self.Talleres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Talleres">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Talleres_SucursalAlta">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
+          <End Role="Talleres" Type="Self.Talleres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Talleres">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Talleres_SucursalModificacion">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="Talleres" Type="Self.Talleres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Talleres">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TalleresMoviles_OperadorAlta">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
+          <End Role="TalleresMoviles" Type="Self.TalleresMoviles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TalleresMoviles">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TalleresMoviles_OperadorModificacion">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="TalleresMoviles" Type="Self.TalleresMoviles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TalleresMoviles">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TalleresMoviles_SucursalAlta">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
+          <End Role="TalleresMoviles" Type="Self.TalleresMoviles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TalleresMoviles">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TalleresMoviles_SucursalModificacion">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="TalleresMoviles" Type="Self.TalleresMoviles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TalleresMoviles">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tarifas_OperadorAlta">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
+          <End Role="Tarifas" Type="Self.Tarifas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tarifas">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tarifas_OperadorModificacion">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="Tarifas" Type="Self.Tarifas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tarifas">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tarifas_SucursalAlta">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
+          <End Role="Tarifas" Type="Self.Tarifas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tarifas">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tarifas_SucursalModificacion">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="Tarifas" Type="Self.Tarifas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tarifas">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TiposCelulares_OperadorAlta">
           <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
           <End Role="TiposCelulares" Type="Self.TiposCelulares" Multiplicity="*" />
@@ -3386,6 +3837,54 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Titulares_OperadorAlta">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
+          <End Role="Titulares" Type="Self.Titulares" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Titulares">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Titulares_OperadorModificacion">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="Titulares" Type="Self.Titulares" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Titulares">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Titulares_SucursalAlta">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
+          <End Role="Titulares" Type="Self.Titulares" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Titulares">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Titulares_SucursalModificacion">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="Titulares" Type="Self.Titulares" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Titulares">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="FueraDeSistema" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="HistorialPagosChofer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Chofer" Type="uniqueidentifier" Mode="In" />
@@ -3453,10 +3952,13 @@
           <EntitySet Name="OrdenesPago" EntityType="Self.OrdenesPago" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrdenesPagoDetalle" EntityType="Self.OrdenesPagoDetalle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PagosCelular" EntityType="Self.PagosCelular" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PagosMoviles" EntityType="Self.PagosMoviles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Paises" EntityType="Self.Paises" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Personal" EntityType="Self.Personal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PersonalConcepto" EntityType="Self.PersonalConcepto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PersonalNovedades" EntityType="Self.PersonalNovedades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Promociones" EntityType="Self.Promociones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PromocionesMoviles" EntityType="Self.PromocionesMoviles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proveedores" EntityType="Self.Proveedores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProveedoresBanco" EntityType="Self.ProveedoresBanco" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Provincias" EntityType="Self.Provincias" Schema="dbo" store:Type="Tables" />
@@ -3464,12 +3966,16 @@
           <EntitySet Name="RecibosDetalle" EntityType="Self.RecibosDetalle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sucursales" EntityType="Self.Sucursales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Talleres" EntityType="Self.Talleres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TalleresMoviles" EntityType="Self.TalleresMoviles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tarifas" EntityType="Self.Tarifas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TiposCelulares" EntityType="Self.TiposCelulares" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TiposComprobantes" EntityType="Self.TiposComprobantes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TiposDocumentosIdentidad" EntityType="Self.TiposDocumentosIdentidad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TiposGastos" EntityType="Self.TiposGastos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TiposMovimientosCajas" EntityType="Self.TiposMovimientosCajas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TiposRecibos" EntityType="Self.TiposRecibos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Titulares" EntityType="Self.Titulares" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Bancos_Localidad" Association="Self.FK_Bancos_Localidad">
             <End Role="Localidades" EntitySet="Localidades" />
             <End Role="Bancos" EntitySet="Bancos" />
@@ -3854,6 +4360,10 @@
             <End Role="Sucursales" EntitySet="Sucursales" />
             <End Role="Localidades" EntitySet="Localidades" />
           </AssociationSet>
+          <AssociationSet Name="FK_Moviles_DiaPago" Association="Self.FK_Moviles_DiaPago">
+            <End Role="Dias" EntitySet="Dias" />
+            <End Role="Moviles" EntitySet="Moviles" />
+          </AssociationSet>
           <AssociationSet Name="FK_Moviles_OperadorAlta" Association="Self.FK_Moviles_OperadorAlta">
             <End Role="Operadores" EntitySet="Operadores" />
             <End Role="Moviles" EntitySet="Moviles" />
@@ -4030,6 +4540,30 @@
             <End Role="Sucursales" EntitySet="Sucursales" />
             <End Role="PagosCelular" EntitySet="PagosCelular" />
           </AssociationSet>
+          <AssociationSet Name="FK_PagosMoviles_Movil" Association="Self.FK_PagosMoviles_Movil">
+            <End Role="Moviles" EntitySet="Moviles" />
+            <End Role="PagosMoviles" EntitySet="PagosMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosMoviles_OperadorAlta" Association="Self.FK_PagosMoviles_OperadorAlta">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="PagosMoviles" EntitySet="PagosMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosMoviles_OperadorAutoriza" Association="Self.FK_PagosMoviles_OperadorAutoriza">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="PagosMoviles" EntitySet="PagosMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosMoviles_OperadorModificacion" Association="Self.FK_PagosMoviles_OperadorModificacion">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="PagosMoviles" EntitySet="PagosMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosMoviles_SucursalAlta" Association="Self.FK_PagosMoviles_SucursalAlta">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="PagosMoviles" EntitySet="PagosMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosMoviles_SucursalModificacion" Association="Self.FK_PagosMoviles_SucursalModificacion">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="PagosMoviles" EntitySet="PagosMoviles" />
+          </AssociationSet>
           <AssociationSet Name="FK_Personal_CategoriasOperadores" Association="Self.FK_Personal_CategoriasOperadores">
             <End Role="CategoriasOperadores" EntitySet="CategoriasOperadores" />
             <End Role="Personal" EntitySet="Personal" />
@@ -4105,6 +4639,38 @@
           <AssociationSet Name="FK_PersonalNovedades_SucursalModificacion" Association="Self.FK_PersonalNovedades_SucursalModificacion">
             <End Role="Sucursales" EntitySet="Sucursales" />
             <End Role="PersonalNovedades" EntitySet="PersonalNovedades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Promociones_OperadorAlta" Association="Self.FK_Promociones_OperadorAlta">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="Promociones" EntitySet="Promociones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Promociones_OperadorModificacion" Association="Self.FK_Promociones_OperadorModificacion">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="Promociones" EntitySet="Promociones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Promociones_SucursalAlta" Association="Self.FK_Promociones_SucursalAlta">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="Promociones" EntitySet="Promociones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Promociones_SucursalModificacion" Association="Self.FK_Promociones_SucursalModificacion">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="Promociones" EntitySet="Promociones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PromocionesMoviles_OperadorAlta" Association="Self.FK_PromocionesMoviles_OperadorAlta">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="PromocionesMoviles" EntitySet="PromocionesMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PromocionesMoviles_OperadorModificacion" Association="Self.FK_PromocionesMoviles_OperadorModificacion">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="PromocionesMoviles" EntitySet="PromocionesMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PromocionesMoviles_SucursalAlta" Association="Self.FK_PromocionesMoviles_SucursalAlta">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="PromocionesMoviles" EntitySet="PromocionesMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PromocionesMoviles_SucursalModificacion" Association="Self.FK_PromocionesMoviles_SucursalModificacion">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="PromocionesMoviles" EntitySet="PromocionesMoviles" />
           </AssociationSet>
           <AssociationSet Name="FK_Proveedores_CondicionCompra" Association="Self.FK_Proveedores_CondicionCompra">
             <End Role="CondicionesCompra" EntitySet="CondicionesCompra" />
@@ -4258,6 +4824,54 @@
             <End Role="Sucursales" EntitySet="Sucursales" />
             <End Role="Sucursales1" EntitySet="Sucursales" />
           </AssociationSet>
+          <AssociationSet Name="FK_Talleres_OperadorAlta" Association="Self.FK_Talleres_OperadorAlta">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="Talleres" EntitySet="Talleres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Talleres_OperadorModificacion" Association="Self.FK_Talleres_OperadorModificacion">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="Talleres" EntitySet="Talleres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Talleres_SucursalAlta" Association="Self.FK_Talleres_SucursalAlta">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="Talleres" EntitySet="Talleres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Talleres_SucursalModificacion" Association="Self.FK_Talleres_SucursalModificacion">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="Talleres" EntitySet="Talleres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TalleresMoviles_OperadorAlta" Association="Self.FK_TalleresMoviles_OperadorAlta">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="TalleresMoviles" EntitySet="TalleresMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TalleresMoviles_OperadorModificacion" Association="Self.FK_TalleresMoviles_OperadorModificacion">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="TalleresMoviles" EntitySet="TalleresMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TalleresMoviles_SucursalAlta" Association="Self.FK_TalleresMoviles_SucursalAlta">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="TalleresMoviles" EntitySet="TalleresMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TalleresMoviles_SucursalModificacion" Association="Self.FK_TalleresMoviles_SucursalModificacion">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="TalleresMoviles" EntitySet="TalleresMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tarifas_OperadorAlta" Association="Self.FK_Tarifas_OperadorAlta">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="Tarifas" EntitySet="Tarifas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tarifas_OperadorModificacion" Association="Self.FK_Tarifas_OperadorModificacion">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="Tarifas" EntitySet="Tarifas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tarifas_SucursalAlta" Association="Self.FK_Tarifas_SucursalAlta">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="Tarifas" EntitySet="Tarifas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tarifas_SucursalModificacion" Association="Self.FK_Tarifas_SucursalModificacion">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="Tarifas" EntitySet="Tarifas" />
+          </AssociationSet>
           <AssociationSet Name="FK_TiposCelulares_OperadorAlta" Association="Self.FK_TiposCelulares_OperadorAlta">
             <End Role="Operadores" EntitySet="Operadores" />
             <End Role="TiposCelulares" EntitySet="TiposCelulares" />
@@ -4321,6 +4935,22 @@
           <AssociationSet Name="FK_TiposMovimientosCajas_SucursalModificacion" Association="Self.FK_TiposMovimientosCajas_SucursalModificacion">
             <End Role="Sucursales" EntitySet="Sucursales" />
             <End Role="TiposMovimientosCajas" EntitySet="TiposMovimientosCajas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Titulares_OperadorAlta" Association="Self.FK_Titulares_OperadorAlta">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="Titulares" EntitySet="Titulares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Titulares_OperadorModificacion" Association="Self.FK_Titulares_OperadorModificacion">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="Titulares" EntitySet="Titulares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Titulares_SucursalAlta" Association="Self.FK_Titulares_SucursalAlta">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="Titulares" EntitySet="Titulares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Titulares_SucursalModificacion" Association="Self.FK_Titulares_SucursalModificacion">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="Titulares" EntitySet="Titulares" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -4574,6 +5204,7 @@
           <Property Name="Descripcion" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Celulares" Relationship="GestionAdministrativa.Model.FK_Celulares_DiaCarga" FromRole="Dia" ToRole="Celulare" />
           <NavigationProperty Name="Celulares1" Relationship="GestionAdministrativa.Model.FK_Celulares_DiaPago" FromRole="Dia" ToRole="Celulare" />
+          <NavigationProperty Name="Moviles" Relationship="GestionAdministrativa.Model.FK_Moviles_DiaPago" FromRole="Dia" ToRole="Movil" />
         </EntityType>
         <EntityType Name="Funcion">
           <Key>
@@ -4659,6 +5290,14 @@
           <NavigationProperty Name="Choferes" Relationship="GestionAdministrativa.Model.FK_Choferes_Moviles" FromRole="Movil" ToRole="Chofer" />
           <NavigationProperty Name="ChoferesMovils" Relationship="GestionAdministrativa.Model.FK_ChoferesMovil_Movil" FromRole="Movil" ToRole="ChoferesMovil" />
           <NavigationProperty Name="PagosCelulars" Relationship="GestionAdministrativa.Model.FK_PagosCelular_Movil" FromRole="Movil" ToRole="PagoCelular" />
+          <Property Name="FechaBaja" Type="DateTime" Precision="3" />
+          <Property Name="Habilitado" Type="Boolean" />
+          <Property Name="FechaUltimoPago" Type="DateTime" Precision="3" />
+          <Property Name="FechaProximoPago" Type="DateTime" Precision="3" />
+          <Property Name="Observaciones" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DiaPago" Type="Int32" />
+          <NavigationProperty Name="Dia" Relationship="GestionAdministrativa.Model.FK_Moviles_DiaPago" FromRole="Movil" ToRole="Dia" />
+          <NavigationProperty Name="PagosMoviles" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_Movil" FromRole="Movil" ToRole="PagosMovile" />
         </EntityType>
         <EntityType Name="Operador">
           <Key>
@@ -4764,6 +5403,21 @@
           <NavigationProperty Name="PagosCelulars1" Relationship="GestionAdministrativa.Model.FK_PagosCelular_OperadorAutoriza" FromRole="Operador" ToRole="PagoCelular" />
           <NavigationProperty Name="Comentarios" Relationship="GestionAdministrativa.Model.FK_Comentarios_Operador" FromRole="Operador" ToRole="Comentario" />
           <NavigationProperty Name="ComentariosChofers" Relationship="GestionAdministrativa.Model.FK_ComentariosChofer_Operador" FromRole="Operador" ToRole="ComentariosChofer" />
+          <NavigationProperty Name="PagosMoviles" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_OperadorAlta" FromRole="Operador" ToRole="PagosMovile" />
+          <NavigationProperty Name="PagosMoviles1" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_OperadorAutoriza" FromRole="Operador" ToRole="PagosMovile" />
+          <NavigationProperty Name="PagosMoviles2" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_OperadorModificacion" FromRole="Operador" ToRole="PagosMovile" />
+          <NavigationProperty Name="Promociones" Relationship="GestionAdministrativa.Model.FK_Promociones_OperadorAlta" FromRole="Operador" ToRole="Promocione" />
+          <NavigationProperty Name="Promociones1" Relationship="GestionAdministrativa.Model.FK_Promociones_OperadorModificacion" FromRole="Operador" ToRole="Promocione" />
+          <NavigationProperty Name="PromocionesMoviles" Relationship="GestionAdministrativa.Model.FK_PromocionesMoviles_OperadorAlta" FromRole="Operador" ToRole="PromocionesMovile" />
+          <NavigationProperty Name="PromocionesMoviles1" Relationship="GestionAdministrativa.Model.FK_PromocionesMoviles_OperadorModificacion" FromRole="Operador" ToRole="PromocionesMovile" />
+          <NavigationProperty Name="Talleres" Relationship="GestionAdministrativa.Model.FK_Talleres_OperadorAlta" FromRole="Operador" ToRole="Tallere" />
+          <NavigationProperty Name="Talleres1" Relationship="GestionAdministrativa.Model.FK_Talleres_OperadorModificacion" FromRole="Operador" ToRole="Tallere" />
+          <NavigationProperty Name="TalleresMoviles" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_OperadorAlta" FromRole="Operador" ToRole="TalleresMovile" />
+          <NavigationProperty Name="TalleresMoviles1" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_OperadorModificacion" FromRole="Operador" ToRole="TalleresMovile" />
+          <NavigationProperty Name="Tarifas" Relationship="GestionAdministrativa.Model.FK_Tarifas_OperadorAlta" FromRole="Operador" ToRole="Tarifa" />
+          <NavigationProperty Name="Tarifas1" Relationship="GestionAdministrativa.Model.FK_Tarifas_OperadorModificacion" FromRole="Operador" ToRole="Tarifa" />
+          <NavigationProperty Name="Titulares" Relationship="GestionAdministrativa.Model.FK_Titulares_OperadorAlta" FromRole="Operador" ToRole="Titulare" />
+          <NavigationProperty Name="Titulares1" Relationship="GestionAdministrativa.Model.FK_Titulares_OperadorModificacion" FromRole="Operador" ToRole="Titulare" />
           </EntityType>
         <EntityType Name="OperadorFuncion">
           <Key>
@@ -5270,6 +5924,20 @@
           <NavigationProperty Name="ChoferCelulars1" Relationship="GestionAdministrativa.Model.FK_ChoferesCelular_SucursalModificacion" FromRole="Sucursal" ToRole="ChoferCelular" />
           <NavigationProperty Name="Comentarios" Relationship="GestionAdministrativa.Model.FK_Comentarios_Sucursal" FromRole="Sucursal" ToRole="Comentario" />
           <NavigationProperty Name="ComentariosChofers" Relationship="GestionAdministrativa.Model.FK_ComentariosChofer_Sucursal" FromRole="Sucursal" ToRole="ComentariosChofer" />
+          <NavigationProperty Name="PagosMoviles" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_SucursalAlta" FromRole="Sucursal" ToRole="PagosMovile" />
+          <NavigationProperty Name="PagosMoviles1" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_SucursalModificacion" FromRole="Sucursal" ToRole="PagosMovile" />
+          <NavigationProperty Name="Promociones" Relationship="GestionAdministrativa.Model.FK_Promociones_SucursalAlta" FromRole="Sucursal" ToRole="Promocione" />
+          <NavigationProperty Name="Promociones1" Relationship="GestionAdministrativa.Model.FK_Promociones_SucursalModificacion" FromRole="Sucursal" ToRole="Promocione" />
+          <NavigationProperty Name="PromocionesMoviles" Relationship="GestionAdministrativa.Model.FK_PromocionesMoviles_SucursalAlta" FromRole="Sucursal" ToRole="PromocionesMovile" />
+          <NavigationProperty Name="PromocionesMoviles1" Relationship="GestionAdministrativa.Model.FK_PromocionesMoviles_SucursalModificacion" FromRole="Sucursal" ToRole="PromocionesMovile" />
+          <NavigationProperty Name="Talleres" Relationship="GestionAdministrativa.Model.FK_Talleres_SucursalAlta" FromRole="Sucursal" ToRole="Tallere" />
+          <NavigationProperty Name="Talleres1" Relationship="GestionAdministrativa.Model.FK_Talleres_SucursalModificacion" FromRole="Sucursal" ToRole="Tallere" />
+          <NavigationProperty Name="TalleresMoviles" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_SucursalAlta" FromRole="Sucursal" ToRole="TalleresMovile" />
+          <NavigationProperty Name="TalleresMoviles1" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_SucursalModificacion" FromRole="Sucursal" ToRole="TalleresMovile" />
+          <NavigationProperty Name="Tarifas" Relationship="GestionAdministrativa.Model.FK_Tarifas_SucursalAlta" FromRole="Sucursal" ToRole="Tarifa" />
+          <NavigationProperty Name="Tarifas1" Relationship="GestionAdministrativa.Model.FK_Tarifas_SucursalModificacion" FromRole="Sucursal" ToRole="Tarifa" />
+          <NavigationProperty Name="Titulares" Relationship="GestionAdministrativa.Model.FK_Titulares_SucursalAlta" FromRole="Sucursal" ToRole="Titulare" />
+          <NavigationProperty Name="Titulares1" Relationship="GestionAdministrativa.Model.FK_Titulares_SucursalModificacion" FromRole="Sucursal" ToRole="Titulare" />
           </EntityType>
         <EntityType Name="TipoCelular">
           <Key>
@@ -8330,6 +8998,137 @@
             <Parameter Name="OperadorId" Mode="In" Type="Guid" />
             <Parameter Name="CajaId" Mode="In" Type="Guid" />
           </FunctionImport>
+          <EntitySet Name="PagosMoviles" EntityType="GestionAdministrativa.Model.PagosMovile" />
+          <EntitySet Name="Promociones" EntityType="GestionAdministrativa.Model.Promocione" />
+          <EntitySet Name="PromocionesMoviles" EntityType="GestionAdministrativa.Model.PromocionesMovile" />
+          <EntitySet Name="Talleres" EntityType="GestionAdministrativa.Model.Tallere" />
+          <EntitySet Name="TalleresMoviles" EntityType="GestionAdministrativa.Model.TalleresMovile" />
+          <EntitySet Name="Tarifas" EntityType="GestionAdministrativa.Model.Tarifa" />
+          <EntitySet Name="Titulares" EntityType="GestionAdministrativa.Model.Titulare" />
+          <AssociationSet Name="FK_Moviles_DiaPago" Association="GestionAdministrativa.Model.FK_Moviles_DiaPago">
+            <End Role="Dia" EntitySet="Dias" />
+            <End Role="Movil" EntitySet="Moviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosMoviles_Movil" Association="GestionAdministrativa.Model.FK_PagosMoviles_Movil">
+            <End Role="Movil" EntitySet="Moviles" />
+            <End Role="PagosMovile" EntitySet="PagosMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosMoviles_OperadorAlta" Association="GestionAdministrativa.Model.FK_PagosMoviles_OperadorAlta">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="PagosMovile" EntitySet="PagosMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosMoviles_OperadorAutoriza" Association="GestionAdministrativa.Model.FK_PagosMoviles_OperadorAutoriza">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="PagosMovile" EntitySet="PagosMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosMoviles_OperadorModificacion" Association="GestionAdministrativa.Model.FK_PagosMoviles_OperadorModificacion">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="PagosMovile" EntitySet="PagosMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Promociones_OperadorAlta" Association="GestionAdministrativa.Model.FK_Promociones_OperadorAlta">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="Promocione" EntitySet="Promociones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Promociones_OperadorModificacion" Association="GestionAdministrativa.Model.FK_Promociones_OperadorModificacion">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="Promocione" EntitySet="Promociones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PromocionesMoviles_OperadorAlta" Association="GestionAdministrativa.Model.FK_PromocionesMoviles_OperadorAlta">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="PromocionesMovile" EntitySet="PromocionesMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PromocionesMoviles_OperadorModificacion" Association="GestionAdministrativa.Model.FK_PromocionesMoviles_OperadorModificacion">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="PromocionesMovile" EntitySet="PromocionesMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Talleres_OperadorAlta" Association="GestionAdministrativa.Model.FK_Talleres_OperadorAlta">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="Tallere" EntitySet="Talleres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Talleres_OperadorModificacion" Association="GestionAdministrativa.Model.FK_Talleres_OperadorModificacion">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="Tallere" EntitySet="Talleres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TalleresMoviles_OperadorAlta" Association="GestionAdministrativa.Model.FK_TalleresMoviles_OperadorAlta">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="TalleresMovile" EntitySet="TalleresMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TalleresMoviles_OperadorModificacion" Association="GestionAdministrativa.Model.FK_TalleresMoviles_OperadorModificacion">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="TalleresMovile" EntitySet="TalleresMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tarifas_OperadorAlta" Association="GestionAdministrativa.Model.FK_Tarifas_OperadorAlta">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="Tarifa" EntitySet="Tarifas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tarifas_OperadorModificacion" Association="GestionAdministrativa.Model.FK_Tarifas_OperadorModificacion">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="Tarifa" EntitySet="Tarifas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Titulares_OperadorAlta" Association="GestionAdministrativa.Model.FK_Titulares_OperadorAlta">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="Titulare" EntitySet="Titulares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Titulares_OperadorModificacion" Association="GestionAdministrativa.Model.FK_Titulares_OperadorModificacion">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="Titulare" EntitySet="Titulares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosMoviles_SucursalAlta" Association="GestionAdministrativa.Model.FK_PagosMoviles_SucursalAlta">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="PagosMovile" EntitySet="PagosMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosMoviles_SucursalModificacion" Association="GestionAdministrativa.Model.FK_PagosMoviles_SucursalModificacion">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="PagosMovile" EntitySet="PagosMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Promociones_SucursalAlta" Association="GestionAdministrativa.Model.FK_Promociones_SucursalAlta">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="Promocione" EntitySet="Promociones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Promociones_SucursalModificacion" Association="GestionAdministrativa.Model.FK_Promociones_SucursalModificacion">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="Promocione" EntitySet="Promociones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PromocionesMoviles_SucursalAlta" Association="GestionAdministrativa.Model.FK_PromocionesMoviles_SucursalAlta">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="PromocionesMovile" EntitySet="PromocionesMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PromocionesMoviles_SucursalModificacion" Association="GestionAdministrativa.Model.FK_PromocionesMoviles_SucursalModificacion">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="PromocionesMovile" EntitySet="PromocionesMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Talleres_SucursalAlta" Association="GestionAdministrativa.Model.FK_Talleres_SucursalAlta">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="Tallere" EntitySet="Talleres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Talleres_SucursalModificacion" Association="GestionAdministrativa.Model.FK_Talleres_SucursalModificacion">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="Tallere" EntitySet="Talleres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TalleresMoviles_SucursalAlta" Association="GestionAdministrativa.Model.FK_TalleresMoviles_SucursalAlta">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="TalleresMovile" EntitySet="TalleresMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TalleresMoviles_SucursalModificacion" Association="GestionAdministrativa.Model.FK_TalleresMoviles_SucursalModificacion">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="TalleresMovile" EntitySet="TalleresMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tarifas_SucursalAlta" Association="GestionAdministrativa.Model.FK_Tarifas_SucursalAlta">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="Tarifa" EntitySet="Tarifas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tarifas_SucursalModificacion" Association="GestionAdministrativa.Model.FK_Tarifas_SucursalModificacion">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="Tarifa" EntitySet="Tarifas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Titulares_SucursalAlta" Association="GestionAdministrativa.Model.FK_Titulares_SucursalAlta">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="Titulare" EntitySet="Titulares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Titulares_SucursalModificacion" Association="GestionAdministrativa.Model.FK_Titulares_SucursalModificacion">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="Titulare" EntitySet="Titulares" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Chofer">
           <Key>
@@ -9087,6 +9886,529 @@
           <Property Type="Int32" Name="Cantidad" Nullable="false" />
           <Property Type="Decimal" Name="Total" Nullable="false" Precision="19" />
         </ComplexType>
+        <EntityType Name="PagosMovile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Desde" Type="DateTime" Precision="3" />
+          <Property Name="Hasta" Type="DateTime" Precision="3" />
+          <Property Name="Efectivo" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Vales" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Taller" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Descuento" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Senia" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Monto" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="MovilId" Type="Guid" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OperadorAltaId" Type="Guid" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="Int32" Nullable="false" />
+          <Property Name="OperadorModificacionId" Type="Guid" />
+          <Property Name="SucursalModificacionId" Type="Int32" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="Anulada" Type="Boolean" />
+          <Property Name="FechaAnulacion" Type="DateTime" Precision="3" />
+          <Property Name="OperadorAutoriza" Type="Guid" />
+          <NavigationProperty Name="Movile" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_Movil" FromRole="PagosMovile" ToRole="Movil" />
+          <NavigationProperty Name="Operadore" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_OperadorAlta" FromRole="PagosMovile" ToRole="Operador" />
+          <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_OperadorAutoriza" FromRole="PagosMovile" ToRole="Operador" />
+          <NavigationProperty Name="Operadore2" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_OperadorModificacion" FromRole="PagosMovile" ToRole="Operador" />
+          <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_SucursalAlta" FromRole="PagosMovile" ToRole="Sucursal" />
+          <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_SucursalModificacion" FromRole="PagosMovile" ToRole="Sucursal" />
+        </EntityType>
+        <EntityType Name="Promocione">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Monto" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="OperadorAltaId" Type="Guid" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OperadorModificacionId" Type="Guid" />
+          <Property Name="SucursalModificacionId" Type="Int32" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Operadore" Relationship="GestionAdministrativa.Model.FK_Promociones_OperadorAlta" FromRole="Promocione" ToRole="Operador" />
+          <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_Promociones_OperadorModificacion" FromRole="Promocione" ToRole="Operador" />
+          <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_Promociones_SucursalAlta" FromRole="Promocione" ToRole="Sucursal" />
+          <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_Promociones_SucursalModificacion" FromRole="Promocione" ToRole="Sucursal" />
+        </EntityType>
+        <EntityType Name="PromocionesMovile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="PromocionId" Type="Guid" Nullable="false" />
+          <Property Name="MovilId" Type="Guid" Nullable="false" />
+          <Property Name="FechaDesde" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaHasta" Type="DateTime" Precision="3" />
+          <Property Name="OperadorAltaId" Type="Guid" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OperadorModificacionId" Type="Guid" />
+          <Property Name="SucursalModificacionId" Type="Int32" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Operadore" Relationship="GestionAdministrativa.Model.FK_PromocionesMoviles_OperadorAlta" FromRole="PromocionesMovile" ToRole="Operador" />
+          <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_PromocionesMoviles_OperadorModificacion" FromRole="PromocionesMovile" ToRole="Operador" />
+          <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_PromocionesMoviles_SucursalAlta" FromRole="PromocionesMovile" ToRole="Sucursal" />
+          <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_PromocionesMoviles_SucursalModificacion" FromRole="PromocionesMovile" ToRole="Sucursal" />
+        </EntityType>
+        <EntityType Name="Tallere">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Porcentaje" Type="Decimal" Precision="3" Scale="2" />
+          <Property Name="OperadorAltaId" Type="Guid" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OperadorModificacionId" Type="Guid" />
+          <Property Name="SucursalModificacionId" Type="Int32" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Operadore" Relationship="GestionAdministrativa.Model.FK_Talleres_OperadorAlta" FromRole="Tallere" ToRole="Operador" />
+          <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_Talleres_OperadorModificacion" FromRole="Tallere" ToRole="Operador" />
+          <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_Talleres_SucursalAlta" FromRole="Tallere" ToRole="Sucursal" />
+          <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_Talleres_SucursalModificacion" FromRole="Tallere" ToRole="Sucursal" />
+        </EntityType>
+        <EntityType Name="TalleresMovile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="TallerId" Type="Guid" Nullable="false" />
+          <Property Name="MovilId" Type="Guid" Nullable="false" />
+          <Property Name="FechaDesde" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaEstimativaHasta" Type="DateTime" Precision="3" />
+          <Property Name="FechaHasta" Type="DateTime" Precision="3" />
+          <Property Name="OperadorAltaId" Type="Guid" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OperadorModificacionId" Type="Guid" />
+          <Property Name="SucursalModificacionId" Type="Int32" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Operadore" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_OperadorAlta" FromRole="TalleresMovile" ToRole="Operador" />
+          <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_OperadorModificacion" FromRole="TalleresMovile" ToRole="Operador" />
+          <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_SucursalAlta" FromRole="TalleresMovile" ToRole="Sucursal" />
+          <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_SucursalModificacion" FromRole="TalleresMovile" ToRole="Sucursal" />
+        </EntityType>
+        <EntityType Name="Tarifa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaDesde" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaHasta" Type="DateTime" Precision="3" />
+          <Property Name="Monto" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="OperadorAltaId" Type="Guid" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OperadorModificacionId" Type="Guid" />
+          <Property Name="SucursalModificacionId" Type="Int32" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Operadore" Relationship="GestionAdministrativa.Model.FK_Tarifas_OperadorAlta" FromRole="Tarifa" ToRole="Operador" />
+          <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_Tarifas_OperadorModificacion" FromRole="Tarifa" ToRole="Operador" />
+          <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_Tarifas_SucursalAlta" FromRole="Tarifa" ToRole="Sucursal" />
+          <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_Tarifas_SucursalModificacion" FromRole="Tarifa" ToRole="Sucursal" />
+        </EntityType>
+        <EntityType Name="Titulare">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DNI" Type="Int32" />
+          <Property Name="Telefono" Type="Int32" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Domicilio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OperadorAltaId" Type="Guid" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OperadorModificacionId" Type="Guid" />
+          <Property Name="SucursalModificacionId" Type="Int32" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Operadore" Relationship="GestionAdministrativa.Model.FK_Titulares_OperadorAlta" FromRole="Titulare" ToRole="Operador" />
+          <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_Titulares_OperadorModificacion" FromRole="Titulare" ToRole="Operador" />
+          <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_Titulares_SucursalAlta" FromRole="Titulare" ToRole="Sucursal" />
+          <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_Titulares_SucursalModificacion" FromRole="Titulare" ToRole="Sucursal" />
+        </EntityType>
+        <Association Name="FK_Moviles_DiaPago">
+          <End Type="GestionAdministrativa.Model.Dia" Role="Dia" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.Movil" Role="Movil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movil">
+              <PropertyRef Name="DiaPago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosMoviles_Movil">
+          <End Type="GestionAdministrativa.Model.Movil" Role="Movil" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.PagosMovile" Role="PagosMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movil">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosMovile">
+              <PropertyRef Name="MovilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosMoviles_OperadorAlta">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.PagosMovile" Role="PagosMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosMovile">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosMoviles_OperadorAutoriza">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.PagosMovile" Role="PagosMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosMovile">
+              <PropertyRef Name="OperadorAutoriza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosMoviles_OperadorModificacion">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.PagosMovile" Role="PagosMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosMovile">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Promociones_OperadorAlta">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.Promocione" Role="Promocione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Promocione">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Promociones_OperadorModificacion">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.Promocione" Role="Promocione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Promocione">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PromocionesMoviles_OperadorAlta">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.PromocionesMovile" Role="PromocionesMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PromocionesMovile">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PromocionesMoviles_OperadorModificacion">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.PromocionesMovile" Role="PromocionesMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PromocionesMovile">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Talleres_OperadorAlta">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.Tallere" Role="Tallere" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tallere">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Talleres_OperadorModificacion">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.Tallere" Role="Tallere" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tallere">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TalleresMoviles_OperadorAlta">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.TalleresMovile" Role="TalleresMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TalleresMovile">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TalleresMoviles_OperadorModificacion">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.TalleresMovile" Role="TalleresMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TalleresMovile">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tarifas_OperadorAlta">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.Tarifa" Role="Tarifa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tarifa">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tarifas_OperadorModificacion">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.Tarifa" Role="Tarifa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tarifa">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Titulares_OperadorAlta">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.Titulare" Role="Titulare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Titulare">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Titulares_OperadorModificacion">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.Titulare" Role="Titulare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Titulare">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosMoviles_SucursalAlta">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.PagosMovile" Role="PagosMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosMovile">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosMoviles_SucursalModificacion">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.PagosMovile" Role="PagosMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosMovile">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Promociones_SucursalAlta">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.Promocione" Role="Promocione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Promocione">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Promociones_SucursalModificacion">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.Promocione" Role="Promocione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Promocione">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PromocionesMoviles_SucursalAlta">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.PromocionesMovile" Role="PromocionesMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PromocionesMovile">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PromocionesMoviles_SucursalModificacion">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.PromocionesMovile" Role="PromocionesMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PromocionesMovile">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Talleres_SucursalAlta">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.Tallere" Role="Tallere" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tallere">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Talleres_SucursalModificacion">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.Tallere" Role="Tallere" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tallere">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TalleresMoviles_SucursalAlta">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.TalleresMovile" Role="TalleresMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TalleresMovile">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TalleresMoviles_SucursalModificacion">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.TalleresMovile" Role="TalleresMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TalleresMovile">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tarifas_SucursalAlta">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.Tarifa" Role="Tarifa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tarifa">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tarifas_SucursalModificacion">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.Tarifa" Role="Tarifa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tarifa">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Titulares_SucursalAlta">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.Titulare" Role="Titulare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Titulare">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Titulares_SucursalModificacion">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.Titulare" Role="Titulare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Titulare">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -9346,6 +10668,12 @@
           <EntitySetMapping Name="Moviles">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.Movil">
               <MappingFragment StoreEntitySet="Moviles">
+                <ScalarProperty Name="DiaPago" ColumnName="DiaPago" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="FechaProximoPago" ColumnName="FechaProximoPago" />
+                <ScalarProperty Name="FechaUltimoPago" ColumnName="FechaUltimoPago" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
                 <ScalarProperty Name="Activo" ColumnName="Activo" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Numero" ColumnName="Numero" />
@@ -10044,6 +11372,134 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="PagosMoviles">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.PagosMovile">
+              <MappingFragment StoreEntitySet="PagosMoviles">
+                <ScalarProperty Name="OperadorAutoriza" ColumnName="OperadorAutoriza" />
+                <ScalarProperty Name="FechaAnulacion" ColumnName="FechaAnulacion" />
+                <ScalarProperty Name="Anulada" ColumnName="Anulada" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
+                <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
+                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
+                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="MovilId" ColumnName="MovilId" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Senia" ColumnName="Senia" />
+                <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+                <ScalarProperty Name="Taller" ColumnName="Taller" />
+                <ScalarProperty Name="Vales" ColumnName="Vales" />
+                <ScalarProperty Name="Efectivo" ColumnName="Efectivo" />
+                <ScalarProperty Name="Hasta" ColumnName="Hasta" />
+                <ScalarProperty Name="Desde" ColumnName="Desde" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Promociones">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Promocione">
+              <MappingFragment StoreEntitySet="Promociones">
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
+                <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
+                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PromocionesMoviles">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.PromocionesMovile">
+              <MappingFragment StoreEntitySet="PromocionesMoviles">
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
+                <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
+                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
+                <ScalarProperty Name="FechaHasta" ColumnName="FechaHasta" />
+                <ScalarProperty Name="FechaDesde" ColumnName="FechaDesde" />
+                <ScalarProperty Name="MovilId" ColumnName="MovilId" />
+                <ScalarProperty Name="PromocionId" ColumnName="PromocionId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Talleres">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Tallere">
+              <MappingFragment StoreEntitySet="Talleres">
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
+                <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
+                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
+                <ScalarProperty Name="Porcentaje" ColumnName="Porcentaje" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TalleresMoviles">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.TalleresMovile">
+              <MappingFragment StoreEntitySet="TalleresMoviles">
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
+                <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
+                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
+                <ScalarProperty Name="FechaHasta" ColumnName="FechaHasta" />
+                <ScalarProperty Name="FechaEstimativaHasta" ColumnName="FechaEstimativaHasta" />
+                <ScalarProperty Name="FechaDesde" ColumnName="FechaDesde" />
+                <ScalarProperty Name="MovilId" ColumnName="MovilId" />
+                <ScalarProperty Name="TallerId" ColumnName="TallerId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tarifas">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Tarifa">
+              <MappingFragment StoreEntitySet="Tarifas">
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
+                <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
+                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="FechaHasta" ColumnName="FechaHasta" />
+                <ScalarProperty Name="FechaDesde" ColumnName="FechaDesde" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Titulares">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.Titulare">
+              <MappingFragment StoreEntitySet="Titulares">
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
+                <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
+                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
+                <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="DNI" ColumnName="DNI" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

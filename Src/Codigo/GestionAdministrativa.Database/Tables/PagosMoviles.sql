@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[PagosMoviles]
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+    [Desde] DATETIME NULL, 
+    [Hasta] DATETIME NULL, 
+    [Efectivo] MONEY NULL, 
+    [Vales] MONEY NULL, 
+    [Taller] MONEY NULL, 
+	[Descuento] [money] NULL,
+	[Senia] MONEY NULL,
+    [Monto] MONEY NOT NULL, 
+    [MovilId] UNIQUEIDENTIFIER NOT NULL, 
+    [FechaAlta] DATETIME NOT NULL, 
+    [OperadorAltaId] UNIQUEIDENTIFIER NOT NULL, 
+    [SucursalAltaId] INT NOT NULL, 
+    [OperadorModificacionId] UNIQUEIDENTIFIER NULL, 
+    [SucursalModificacionId] INT NULL, 
+    [FechaModificacion] DATETIME NULL, 
+    [Anulada] BIT NULL DEFAULT 0, 
+    [FechaAnulacion] DATETIME NULL, 
+    [OperadorAutoriza] UNIQUEIDENTIFIER NULL, 
+    CONSTRAINT [FK_PagosMoviles_Movil] FOREIGN KEY (MovilId) REFERENCES Moviles(Id), 
+    CONSTRAINT [FK_PagosMoviles_OperadorAlta] FOREIGN KEY (OperadorAltaId) REFERENCES Operadores(Id), 
+    CONSTRAINT [FK_PagosMoviles_SucursalAlta] FOREIGN KEY (SucursalAltaId) REFERENCES Sucursales(Id), 
+    CONSTRAINT [FK_PagosMoviles_OperadorModificacion] FOREIGN KEY (OperadorModificacionId) REFERENCES Operadores(Id), 
+    CONSTRAINT [FK_PagosMoviles_SucursalModificacion] FOREIGN KEY (SucursalModificacionId) REFERENCES Sucursales(Id), 
+    CONSTRAINT [FK_PagosMoviles_OperadorAutoriza] FOREIGN KEY (OperadorAutoriza) REFERENCES Operadores(Id)
+)

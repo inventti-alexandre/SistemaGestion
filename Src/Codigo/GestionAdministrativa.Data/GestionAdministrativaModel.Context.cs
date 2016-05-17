@@ -76,6 +76,13 @@ namespace GestionAdministrativa.Data
         public virtual DbSet<ChoferCelular> ChoferCelulars { get; set; }
         public virtual DbSet<Comentario> Comentarios { get; set; }
         public virtual DbSet<ComentariosChofer> ComentariosChofers { get; set; }
+        public virtual DbSet<PagosMovile> PagosMoviles { get; set; }
+        public virtual DbSet<Promocione> Promociones { get; set; }
+        public virtual DbSet<PromocionesMovile> PromocionesMoviles { get; set; }
+        public virtual DbSet<Tallere> Talleres { get; set; }
+        public virtual DbSet<TalleresMovile> TalleresMoviles { get; set; }
+        public virtual DbSet<Tarifa> Tarifas { get; set; }
+        public virtual DbSet<Titulare> Titulares { get; set; }
     
         public virtual ObjectResult<Reporte_CajaResumida_Ingresos_Result> Reporte_CajaResumida_Ingresos(Nullable<int> sucursalId, Nullable<System.DateTime> fechaInicio, Nullable<System.DateTime> fechaFin, Nullable<System.Guid> operadorId, Nullable<System.Guid> cajaId)
         {

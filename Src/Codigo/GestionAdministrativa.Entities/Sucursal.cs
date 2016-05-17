@@ -95,6 +95,20 @@ namespace GestionAdministrativa.Entities
             this.ChoferCelulars1 = new HashSet<ChoferCelular>();
             this.Comentarios = new HashSet<Comentario>();
             this.ComentariosChofers = new HashSet<ComentariosChofer>();
+            this.PagosMoviles = new HashSet<PagosMovile>();
+            this.PagosMoviles1 = new HashSet<PagosMovile>();
+            this.Promociones = new HashSet<Promocione>();
+            this.Promociones1 = new HashSet<Promocione>();
+            this.PromocionesMoviles = new HashSet<PromocionesMovile>();
+            this.PromocionesMoviles1 = new HashSet<PromocionesMovile>();
+            this.Talleres = new HashSet<Tallere>();
+            this.Talleres1 = new HashSet<Tallere>();
+            this.TalleresMoviles = new HashSet<TalleresMovile>();
+            this.TalleresMoviles1 = new HashSet<TalleresMovile>();
+            this.Tarifas = new HashSet<Tarifa>();
+            this.Tarifas1 = new HashSet<Tarifa>();
+            this.Titulares = new HashSet<Titulare>();
+            this.Titulares1 = new HashSet<Titulare>();
         }
     
         public int Id { get; set; }
@@ -203,5 +217,19 @@ namespace GestionAdministrativa.Entities
         public virtual ICollection<ChoferCelular> ChoferCelulars1 { get; set; }
         public virtual ICollection<Comentario> Comentarios { get; set; }
         public virtual ICollection<ComentariosChofer> ComentariosChofers { get; set; }
+        public virtual ICollection<PagosMovile> PagosMoviles { get; set; }
+        public virtual ICollection<PagosMovile> PagosMoviles1 { get; set; }
+        public virtual ICollection<Promocione> Promociones { get; set; }
+        public virtual ICollection<Promocione> Promociones1 { get; set; }
+        public virtual ICollection<PromocionesMovile> PromocionesMoviles { get; set; }
+        public virtual ICollection<PromocionesMovile> PromocionesMoviles1 { get; set; }
+        public virtual ICollection<Tallere> Talleres { get; set; }
+        public virtual ICollection<Tallere> Talleres1 { get; set; }
+        public virtual ICollection<TalleresMovile> TalleresMoviles { get; set; }
+        public virtual ICollection<TalleresMovile> TalleresMoviles1 { get; set; }
+        public virtual ICollection<Tarifa> Tarifas { get; set; }
+        public virtual ICollection<Tarifa> Tarifas1 { get; set; }
+        public virtual ICollection<Titulare> Titulares { get; set; }
+        public virtual ICollection<Titulare> Titulares1 { get; set; }
     }
 }

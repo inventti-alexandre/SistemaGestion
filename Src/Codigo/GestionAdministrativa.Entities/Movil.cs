@@ -19,6 +19,7 @@ namespace GestionAdministrativa.Entities
             this.Choferes = new HashSet<Chofer>();
             this.ChoferesMovils = new HashSet<ChoferesMovil>();
             this.PagosCelulars = new HashSet<PagoCelular>();
+            this.PagosMoviles = new HashSet<PagosMovile>();
         }
     
         public System.Guid Id { get; set; }
@@ -31,6 +32,12 @@ namespace GestionAdministrativa.Entities
         public Nullable<System.Guid> OperadorModificacionId { get; set; }
         public Nullable<int> SucursalModificacionId { get; set; }
         public Nullable<bool> Activo { get; set; }
+        public Nullable<System.DateTime> FechaBaja { get; set; }
+        public Nullable<bool> Habilitado { get; set; }
+        public Nullable<System.DateTime> FechaUltimoPago { get; set; }
+        public Nullable<System.DateTime> FechaProximoPago { get; set; }
+        public string Observaciones { get; set; }
+        public Nullable<int> DiaPago { get; set; }
     
         public virtual Operador Operadores { get; set; }
         public virtual Operador Operadores1 { get; set; }
@@ -39,5 +46,7 @@ namespace GestionAdministrativa.Entities
         public virtual ICollection<Chofer> Choferes { get; set; }
         public virtual ICollection<ChoferesMovil> ChoferesMovils { get; set; }
         public virtual ICollection<PagoCelular> PagosCelulars { get; set; }
+        public virtual Dia Dia { get; set; }
+        public virtual ICollection<PagosMovile> PagosMoviles { get; set; }
     }
 }

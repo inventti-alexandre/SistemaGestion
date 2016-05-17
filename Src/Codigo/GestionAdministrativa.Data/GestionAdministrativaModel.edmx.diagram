@@ -78,20 +78,16 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_CentrosCostos_SucursalAlta" ManuallyRouted="false" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_CentrosCostos_SucursalModificacion" ManuallyRouted="false" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPago_CentrosCostos" ManuallyRouted="true" >
-          <ConnectorPoint PointX="21.75" PointY="74.7279536601563" />
-          <ConnectorPoint PointX="21.708333333333332" PointY="74.7279536601563" />
-          <ConnectorPoint PointX="20.541666666666668" PointY="74.7279536601563" />
-          <ConnectorPoint PointX="20.5" PointY="74.7279536601563" />
+          <ConnectorPoint PointX="21.75" PointY="74.883287104329526" />
+          <ConnectorPoint PointX="21.083333333333332" PointY="74.883287104329526" />
+          <ConnectorPoint PointX="20.541666666666668" PointY="74.883287104329526" />
+          <ConnectorPoint PointX="20.5" PointY="74.883287104329526" />
           <ConnectorPoint PointX="20.5" PointY="70.75" />
-          <ConnectorPoint PointX="20.458333333333332" PointY="70.75" />
-          <ConnectorPoint PointX="20.291666666666668" PointY="70.75" />
-          <ConnectorPoint PointX="18.770833333333332" PointY="70.75" />
-          <ConnectorPoint PointX="18.354166666666668" PointY="70.75" />
-          <ConnectorPoint PointX="17.958333333333332" PointY="70.75" />
-          <ConnectorPoint PointX="17.791666666666668" PointY="70.75" />
+          <ConnectorPoint PointX="18.583333333333332" PointY="70.75" />
+          <ConnectorPoint PointX="18.416666666666668" PointY="70.75" />
           <ConnectorPoint PointX="17.5" PointY="70.75" />
-          <ConnectorPoint PointX="17.5" PointY="72.1304600721608" />
-          <ConnectorPoint PointX="16.5" PointY="72.1304600721608" />
+          <ConnectorPoint PointX="17.5" PointY="72.008932291666667" />
+          <ConnectorPoint PointX="16.5" PointY="72.008932291666667" />
           <ConnectorPoint PointX="16.5" PointY="71.758932291666653" />
         </AssociationConnector>
         <AssociationConnector Association="GestionAdministrativa.Model.FK_ChoferesMontosFavor_OperadorAlta" ManuallyRouted="false" />
@@ -280,6 +276,44 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_ComentariosChofer_Comentario" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_ComentariosChofer_Operador" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_ComentariosChofer_Sucursal" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.PagosMovile" Width="1.5" PointX="46.5" PointY="61" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Promocione" Width="1.5" PointX="35.25" PointY="76" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.PromocionesMovile" Width="1.5" PointX="44.25" PointY="74.875" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Tallere" Width="1.5" PointX="32.25" PointY="53.125" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.TalleresMovile" Width="1.5" PointX="41.25" PointY="76.875" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Tarifa" Width="1.5" PointX="32.25" PointY="80.875" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.Titulare" Width="1.5" PointX="44.25" PointY="79.75" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Moviles_DiaPago" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosMoviles_Movil" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosMoviles_OperadorAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosMoviles_OperadorAutoriza" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosMoviles_OperadorModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Promociones_OperadorAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Promociones_OperadorModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PromocionesMoviles_OperadorAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PromocionesMoviles_OperadorModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Talleres_OperadorAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Talleres_OperadorModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TalleresMoviles_OperadorAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TalleresMoviles_OperadorModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Tarifas_OperadorAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Tarifas_OperadorModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Titulares_OperadorAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Titulares_OperadorModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosMoviles_SucursalAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosMoviles_SucursalModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Promociones_SucursalAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Promociones_SucursalModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PromocionesMoviles_SucursalAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PromocionesMoviles_SucursalModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Talleres_SucursalAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Talleres_SucursalModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TalleresMoviles_SucursalAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TalleresMoviles_SucursalModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Tarifas_SucursalAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Tarifas_SucursalModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Titulares_SucursalAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Titulares_SucursalModificacion" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

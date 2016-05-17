@@ -135,6 +135,13 @@
     <None Include="Scripts\TiposEgresos.sql" />
     <None Include="Scripts\Proveedores.sql" />
     <Build Include="Stored Procedures\Reporte_CajaResumida_Egresos.sql" />
+    <Build Include="Tables\Tarifas.sql" />
+    <Build Include="Tables\Promociones.sql" />
+    <Build Include="Tables\PromocionesMoviles.sql" />
+    <Build Include="Tables\Titulares.sql" />
+    <Build Include="Tables\Talleres.sql" />
+    <Build Include="Tables\TalleresMoviles.sql" />
+    <Build Include="Tables\PagosMoviles.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Dias.sql" />
