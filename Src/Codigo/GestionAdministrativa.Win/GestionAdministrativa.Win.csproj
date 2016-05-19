@@ -353,6 +353,18 @@
     <Compile Include="Forms\PagosMoviles\FrmPagoMoviles.Designer.cs">
       <DependentUpon>FrmPagoMoviles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PagosMoviles\FrmSelectorMovil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PagosMoviles\FrmSelectorMovil.Designer.cs">
+      <DependentUpon>FrmSelectorMovil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PagosMoviles\UcListadoPago.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\PagosMoviles\UcListadoPago.Designer.cs">
+      <DependentUpon>UcListadoPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Proveedores\FrmCrearEditarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -493,6 +505,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PagosMoviles\FrmPagoMoviles.resx">
       <DependentUpon>FrmPagoMoviles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PagosMoviles\FrmSelectorMovil.resx">
+      <DependentUpon>FrmSelectorMovil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PagosMoviles\UcListadoPago.resx">
+      <DependentUpon>UcListadoPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Proveedores\FrmCrearEditarProveedor.resx">
       <DependentUpon>FrmCrearEditarProveedor.cs</DependentUpon>

@@ -109,6 +109,7 @@
             this.DdlMoviles.TabIndex = 1;
             this.DdlMoviles.ThemeName = "TelerikMetro";
             this.DdlMoviles.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DdlMoviles_KeyUp);
+
             // 
             // ucBuscardorChoferMovil
             // 

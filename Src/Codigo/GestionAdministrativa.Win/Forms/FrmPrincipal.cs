@@ -23,6 +23,7 @@ using GestionAdministrativa.Win.Forms.Reportes;
 using GestionAdministrativa.Win.Forms.Cambios;
 using System.Deployment.Application;
 using GestionAdministrativa.Win.Forms.Egresos;
+using GestionAdministrativa.Win.Forms.PagosMoviles;
 
 namespace GestionAdministrativa.Win.Forms
 {
@@ -242,6 +243,15 @@ namespace GestionAdministrativa.Win.Forms
             var frm = FormFactory.Create<FrmCrearEditarEgreso>(Guid.Empty, ActionFormMode.Create);
             frm.ShowDialog();
         }
+
+        private void TxtPagoBase_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmPagoMoviles>(Guid.Empty, ActionFormMode.Create);
+            frm.ShowDialog();
+        }
+
+       
+        
      
     }
 }

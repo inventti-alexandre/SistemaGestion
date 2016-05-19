@@ -167,5 +167,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             }
         }
 
+    
+
     }
 }
