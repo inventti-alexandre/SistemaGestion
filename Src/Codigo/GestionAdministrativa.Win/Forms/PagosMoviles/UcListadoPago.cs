@@ -23,6 +23,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             if (Ioc.Container != null)
             {
                 Uow = Ioc.Container.Get<IGestionAdministrativaUow>();
+                FormFactory = Ioc.Container.Get<IFormFactory>();
             }
 
 
