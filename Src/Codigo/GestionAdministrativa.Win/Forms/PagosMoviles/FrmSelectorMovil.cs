@@ -78,7 +78,30 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                 return int.TryParse(TxtDias.Text, out dias) ? dias : dias;
             }
             set { TxtDias.Text = value.ToString(); } }
-        public decimal SubtotalTotal
+
+        public decimal Diario
+        {
+            get
+            {
+                decimal diario;
+                return decimal.TryParse(TxtDiario.Text, out diario) ? diario : diario;
+            }
+
+            set { TxtDiario.Text = value.ToString(); }
+        }
+
+        public decimal Semanal
+        {
+            get
+            {
+                decimal semanal;
+                return decimal.TryParse(TxtSemanal.Text, out semanal) ? semanal : semanal;
+            }
+
+            set { TxtSemanal.Text = value.ToString(); }
+        }
+
+        public decimal SubTotal
         {
             get
             {
@@ -172,7 +195,9 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                         var promociones = Uow.PromocionesMoviles.Listado().Where(pm => pm.MovilId == _movilId && pm.FechaHasta >= _clock.Now).OrderByDescending(pm => pm.FechaAlta).FirstOrDefault();
                         if (promociones == null)
                         {
-                            MessageBox.Show("No tiene promociones");
+                            var tarifa = Uow.Tarifas.Listado().Where(t => t.Activo == true).OrderByDescending(t => t.FechaAlta).FirstOrDefault();
+                            Diario = tarifa.Monto;
+                            Semanal = tarifa.Semana;
                         }
                     }
                     else 

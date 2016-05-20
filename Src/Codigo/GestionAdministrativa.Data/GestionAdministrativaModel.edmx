@@ -848,6 +848,7 @@
           <Property Name="FechaDesde" Type="datetime" Nullable="false" />
           <Property Name="FechaHasta" Type="datetime" />
           <Property Name="Monto" Type="money" Nullable="false" />
+          <Property Name="Semana" Type="money" Nullable="false" />
           <Property Name="Activo" Type="bit" Nullable="false" />
           <Property Name="OperadorAltaId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="SucursalAltaId" Type="int" Nullable="false" />
@@ -10014,6 +10015,7 @@
           <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_Tarifas_OperadorModificacion" FromRole="Tarifa" ToRole="Operador" />
           <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_Tarifas_SucursalAlta" FromRole="Tarifa" ToRole="Sucursal" />
           <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_Tarifas_SucursalModificacion" FromRole="Tarifa" ToRole="Sucursal" />
+          <Property Name="Semana" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
         </EntityType>
         <EntityType Name="Titulare">
           <Key>
@@ -11466,6 +11468,7 @@
           <EntitySetMapping Name="Tarifas">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.Tarifa">
               <MappingFragment StoreEntitySet="Tarifas">
+                <ScalarProperty Name="Semana" ColumnName="Semana" />
                 <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
                 <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
                 <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
