@@ -55,6 +55,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                         OnPagoBaseChanged(PagosBases);
                         //RefrescarTitulos();
 
+
                     }
                     else
                     {
