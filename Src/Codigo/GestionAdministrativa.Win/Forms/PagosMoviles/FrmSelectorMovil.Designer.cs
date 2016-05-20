@@ -277,6 +277,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Seleccionar Móvil";
+            this.Load += new System.EventHandler(this.FrmSelectorMovil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSubtotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();

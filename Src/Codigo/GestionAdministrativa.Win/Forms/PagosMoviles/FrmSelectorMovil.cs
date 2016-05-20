@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using Framework.Common.Utility;
-using GestionAdministrativa.Business.Data;
+using Framework.Ioc;
 using GestionAdministrativa.Data.Interfaces;
 using GestionAdministrativa.Entities;
-using GestionAdministrativa.Win.Enums;
-using Telerik.WinControls;
+using GestionAdministrativa.Win.Forms.Util;
 using Telerik.WinControls.UI;
+using GestionAdministrativa.Win.Enums;
+using Framework.Common.Utility;
+using GestionAdministrativa.Business.Data;
 
 namespace GestionAdministrativa.Win.Forms.PagosMoviles
 {
@@ -121,7 +124,17 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
 
         #endregion
 
+       
         #region Methods
+        private void FrmSelectorMovil_Load(object sender, EventArgs e)
+        {
+            CargarMovil();
+        }
+
+        private void CargarMovil()
+        {
+            var moviles = Uow.Moviles.Listado();
+        }
 
         #endregion
     }
