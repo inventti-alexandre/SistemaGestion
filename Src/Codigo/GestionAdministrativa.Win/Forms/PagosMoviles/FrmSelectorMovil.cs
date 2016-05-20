@@ -192,9 +192,18 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             Dias = cantidadDias.Days + 1;
         }
 
+        private void OnPagoBaseAgregado(PagosBase pago)
+        {
+            if (PagoBaseAgregado != null)
+            {
+                PagoBaseAgregado(this, pago);
+            }
+        }
+
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
             PagosBase pagoBase = ObtenerPago();
+            OnPagoBaseAgregado(pagoBase);
         }
 
         private PagosBase ObtenerPago()
