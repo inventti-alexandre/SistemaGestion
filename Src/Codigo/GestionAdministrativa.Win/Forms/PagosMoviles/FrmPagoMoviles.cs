@@ -91,6 +91,14 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
         private void FrmCrearEditarMovil_Load(object sender, EventArgs e)
         {
             CargarMovil(_movilId);
+
+            ucListadoPago1.PagoBaseChanged += ucListadoPago1_PagoBaseChanged;
+        }
+
+        void ucListadoPago1_PagoBaseChanged(object sender, IList<Business.Data.PagosBase> e)
+        {
+            if (ucListadoPago1.PagosBases.Count > 0)
+                MessageBox.Show("Nuevo Pago");
         }
 
         private void CargarMovil(Guid _movilId)

@@ -247,7 +247,7 @@ namespace GestionAdministrativa.Win.Forms
         private void TxtPagoBase_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmPagoMoviles>(Guid.Empty, ActionFormMode.Create);
-            frm.ShowDialog();
+            frm.Show();
         }
 
        

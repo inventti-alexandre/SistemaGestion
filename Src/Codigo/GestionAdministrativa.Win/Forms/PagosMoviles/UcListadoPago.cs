@@ -81,7 +81,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
 
         private void RefrescarPagosBase()
         {
-            DgvListadoPagoBase.DataSource = PagosBases;
+            DgvListadoPagoBase.DataSource = PagosBases.ToList();
         }
 
         private void OnPagoBaseChanged(IList<PagosBase> pagosBases)

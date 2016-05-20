@@ -64,9 +64,9 @@
             gridViewTextBoxColumn3.HeaderText = "Movil";
             gridViewTextBoxColumn3.Name = "Numero";
             gridViewTextBoxColumn3.Width = 124;
-            gridViewTextBoxColumn4.FieldName = "Monto";
+            gridViewTextBoxColumn4.FieldName = "Total";
             gridViewTextBoxColumn4.HeaderText = "Monto";
-            gridViewTextBoxColumn4.Name = "Monto";
+            gridViewTextBoxColumn4.Name = "Total";
             gridViewTextBoxColumn4.Width = 147;
             gridViewTextBoxColumn5.FieldName = "Taller";
             gridViewTextBoxColumn5.HeaderText = "Taller";
