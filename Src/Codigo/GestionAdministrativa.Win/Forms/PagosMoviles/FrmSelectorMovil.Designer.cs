@@ -102,6 +102,7 @@
             this.TxtSubtotal.TabIndex = 26;
             this.TxtSubtotal.TabStop = false;
             this.TxtSubtotal.ThemeName = "TelerikMetro";
+            this.TxtSubtotal.TextChanged += new System.EventHandler(this.TxtSubtotal_TextChanged);
             // 
             // radLabel7
             // 

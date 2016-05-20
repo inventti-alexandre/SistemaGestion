@@ -156,11 +156,11 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
 
         private void DtpHasta_ValueChanged(object sender, EventArgs e)
         {
-            ActualizarDias();
+            ActualizarDiasMonto();
         }
         private void DtpDesde_ValueChanged(object sender, EventArgs e)
         {
-            ActualizarDias();
+            ActualizarDiasMonto();
         }
 
         private void CargarMovil()
@@ -189,9 +189,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                     if (pagoBase == null)
                     {
                         _movilId = movil.Id;
-                        MessageBox.Show("Primer pago de movil");
-                        Desde = _clock.Now;
-                        Hasta = _clock.Now.AddDays(6);
+                       
                         var promociones = Uow.PromocionesMoviles.Listado().Where(pm => pm.MovilId == _movilId && pm.FechaHasta !=null).OrderByDescending(pm => pm.FechaAlta).FirstOrDefault();
                         if (promociones == null)
                         {
@@ -199,6 +197,9 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                             Diario = tarifa.Monto;
                             Semanal = tarifa.Semana;
                         }
+
+                        Desde = _clock.Now;
+                        Hasta = _clock.Now.AddDays(6);
                     }
                     else 
                     {
@@ -211,10 +212,25 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
         }
 
       
-        private void ActualizarDias()
+        private void ActualizarDiasMonto()
         {
-            TimeSpan cantidadDias = Hasta - Desde;
+            TimeSpan cantidadDias = SetTimeToZero(Hasta) - SetTimeToZero(Desde); 
             Dias = cantidadDias.Days + 1;
+            SubTotal = Dias * Diario;
+            if (Desde <= _clock.Now.AddDays(2))
+            {
+                if (Dias >= 7)
+                {
+                    var semanas = Dias / 7;
+                    var resto = Dias % 7;
+                    SubTotal = semanas * Semanal + resto * Diario;
+                }
+            }
+                 
+            
+           
+                
+
         }
 
         private void OnPagoBaseAgregado(PagosBase pago)
@@ -234,20 +250,33 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
         private PagosBase ObtenerPago()
         {
             PagosBase pago = new PagosBase();
-            pago.AFavor = 5;
-            pago.Desde = _clock.Now;
-            pago.Dias = 7;
-            pago.Hasta = _clock.Now.AddDays(6);
+            pago.AFavor = AFavor;
+            pago.Desde = Desde;
+            pago.Dias = Dias;
+            pago.Hasta = Hasta;
             pago.MovilId = _movilId;
-            pago.SubTotal = 553;
-            pago.Taller = 97;
-            pago.Total = 451;
+            pago.SubTotal = SubTotal;
+            pago.Taller = Taller;
+            pago.Total = Total;
             var movil = Uow.Moviles.Obtener(m=>m.Id == _movilId);
             pago.Movil = movil;
 
             return pago;
         }
 
+        private void TxtSubtotal_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarTotal();
+        }
+
+        private void ActualizarTotal()
+        {
+            Total = SubTotal - AFavor - Taller;
+        }
+        private DateTime SetTimeToZero(DateTime fecha)
+        {
+            return new DateTime(fecha.Year, fecha.Month, fecha.Day, 0, 0, 0);
+        }
        
     }
 }
