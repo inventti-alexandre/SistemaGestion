@@ -60,9 +60,9 @@
             gridViewTextBoxColumn2.HeaderText = "Hasta";
             gridViewTextBoxColumn2.Name = "Hasta";
             gridViewTextBoxColumn2.Width = 147;
-            gridViewTextBoxColumn3.FieldName = "Numero";
+            gridViewTextBoxColumn3.FieldName = "Movil.Numero";
             gridViewTextBoxColumn3.HeaderText = "Movil";
-            gridViewTextBoxColumn3.Name = "Numero";
+            gridViewTextBoxColumn3.Name = "Movil.Numero";
             gridViewTextBoxColumn3.Width = 124;
             gridViewTextBoxColumn4.FieldName = "Total";
             gridViewTextBoxColumn4.HeaderText = "Monto";
