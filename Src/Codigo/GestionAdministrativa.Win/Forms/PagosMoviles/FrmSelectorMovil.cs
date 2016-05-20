@@ -37,7 +37,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             InitializeComponent();
             InicializarForm(_actionFormMode);
         }
-
+        private bool _limpiandoFiltros;
         private void InicializarForm(ActionFormMode mode)
         {
             if (mode == ActionFormMode.Create)
@@ -133,9 +133,68 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
 
         private void CargarMovil()
         {
-            var moviles = Uow.Moviles.Listado();
+            _limpiandoFiltros = true;
+            var moviles = Uow.Moviles.Listado().Where(m=>m.Activo ==true).OrderBy(m=>m.Numero).ToList();
+
+            DdlMoviles.DisplayMember = "Numero";
+            DdlMoviles.ValueMember = "Id";
+            
+            DdlMoviles.DataSource=moviles;
+            DdlMoviles.SelectedValue = null;
+            _limpiandoFiltros = false;
         }
 
         #endregion
+
+        private void DdlMoviles_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (!_limpiandoFiltros)
+            {
+                if (Movil != null)
+                {
+                    var movil = Uow.Moviles.Obtener(m => m.Id == Movil);
+                    var pagoBase = Uow.PagosMoviles.Listado().Where(pm => pm.MovilId == movil.Id).OrderByDescending(pm => pm.FechaAlta).FirstOrDefault();
+                    if (pagoBase == null)
+                    {
+                        MessageBox.Show("Primer pago de movil");
+                        Desde = _clock.Now;
+                        Hasta = _clock.Now.AddDays(6);
+                        _movilId = movil.Id;
+                    }
+                    else 
+                    {
+                        DtpDesde.Enabled = false;
+                    }
+
+                }
+            }
+            
+        }
+
+        private void DtpHasta_ValueChanged(object sender, EventArgs e)
+        {
+            TimeSpan cantidadDias = Hasta - Desde;
+            Dias = cantidadDias.Days;
+        }
+
+        private void BtnAceptar_Click(object sender, EventArgs e)
+        {
+            PagosBase pagoBase = ObtenerPago();
+        }
+
+        private PagosBase ObtenerPago()
+        {
+            PagosBase pago = new PagosBase();
+            pago.AFavor = 5;
+            pago.Desde = _clock.Now;
+            pago.Dias = 7;
+            pago.Hasta = _clock.Now.AddDays(6);
+            pago.MovilId = _movilId;
+            pago.SubTotal = 553;
+            pago.Taller = 97;
+            pago.Total = 451;
+
+            return pago;
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace GestionAdministrativa.Data.Interfaces
         IRepository<Operador> Operadores { get; }
         IRepository<Movil> Moviles { get; }
         IRepository<PagoCelular> PagosCelulares { get; }
+        IRepository<PagosMovile> PagosMoviles { get; }
         IRepository<Sucursal> Sucursales { get; }
         IRepository<Celular> Celulares { get; }
         IRepository<Dia> Dias { get; }

@@ -26,6 +26,7 @@ namespace GestionAdministrativa.Data
         public IRepository<Movil> Moviles { get { return GetStandardRepo<Movil>(); } }
         public IRepository<PagoCelular> PagosCelulares { get { return GetStandardRepo<PagoCelular>(); } }
         public IRepository<Celular> Celulares { get { return GetStandardRepo<Celular>(); } }
+        public IRepository<PagosMovile> PagosMoviles { get { return GetStandardRepo<PagosMovile>(); } }
         //public IReporteRepository Reportes { get; private set; }
         public IRepository<Sucursal> Sucursales { get { return GetStandardRepo<Sucursal>(); } }
         public IRepository<Dia> Dias { get { return GetStandardRepo<Dia>(); } }

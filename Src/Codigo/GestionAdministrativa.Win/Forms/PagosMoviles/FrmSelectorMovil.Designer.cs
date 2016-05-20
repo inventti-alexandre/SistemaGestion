@@ -74,6 +74,7 @@
             this.BtnAceptar.TabIndex = 28;
             this.BtnAceptar.Text = "Aceptar";
             this.BtnAceptar.UseVisualStyleBackColor = true;
+            this.BtnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // radLabel8
             // 
@@ -178,6 +179,7 @@
             this.DtpHasta.Text = "1/12/2015";
             this.DtpHasta.ThemeName = "TelerikMetro";
             this.DtpHasta.Value = new System.DateTime(2015, 12, 1, 19, 30, 46, 0);
+            this.DtpHasta.ValueChanged += new System.EventHandler(this.DtpHasta_ValueChanged);
             // 
             // DtpDesde
             // 
@@ -207,6 +209,7 @@
             this.DdlMoviles.Size = new System.Drawing.Size(268, 29);
             this.DdlMoviles.TabIndex = 18;
             this.DdlMoviles.ThemeName = "TelerikMetro";
+            this.DdlMoviles.SelectedValueChanged += new System.EventHandler(this.DdlMoviles_SelectedValueChanged);
             // 
             // radLabel1
             // 
@@ -252,7 +255,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 394);
+            this.ClientSize = new System.Drawing.Size(638, 520);
             this.Controls.Add(this.TxtAFavor);
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.BtnAceptar);
