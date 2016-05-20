@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.DgvListadoPagoBase = new Telerik.WinControls.UI.RadGridView();
             this.BtnAceptar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListadoPagoBase)).BeginInit();
@@ -52,39 +52,39 @@
             this.DgvListadoPagoBase.MasterTemplate.AllowColumnReorder = false;
             this.DgvListadoPagoBase.MasterTemplate.AllowDragToGroup = false;
             this.DgvListadoPagoBase.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.FieldName = "Desde";
-            gridViewTextBoxColumn1.HeaderText = "Desde";
-            gridViewTextBoxColumn1.Name = "Desde";
-            gridViewTextBoxColumn1.Width = 147;
-            gridViewTextBoxColumn2.FieldName = "Hasta";
-            gridViewTextBoxColumn2.HeaderText = "Hasta";
-            gridViewTextBoxColumn2.Name = "Hasta";
-            gridViewTextBoxColumn2.Width = 147;
-            gridViewTextBoxColumn3.FieldName = "Movil.Numero";
-            gridViewTextBoxColumn3.HeaderText = "Movil";
-            gridViewTextBoxColumn3.Name = "Movil.Numero";
-            gridViewTextBoxColumn3.Width = 124;
-            gridViewTextBoxColumn4.FieldName = "Total";
-            gridViewTextBoxColumn4.HeaderText = "Monto";
-            gridViewTextBoxColumn4.Name = "Total";
-            gridViewTextBoxColumn4.Width = 147;
-            gridViewTextBoxColumn5.FieldName = "Taller";
-            gridViewTextBoxColumn5.HeaderText = "Taller";
-            gridViewTextBoxColumn5.Name = "Taller";
-            gridViewTextBoxColumn5.Width = 148;
-            gridViewCommandColumn1.HeaderText = "";
-            gridViewCommandColumn1.Image = global::GestionAdministrativa.Win.Properties.Resources.Garbage_Closed;
-            gridViewCommandColumn1.MaxWidth = 25;
-            gridViewCommandColumn1.MinWidth = 25;
-            gridViewCommandColumn1.Name = "Delete";
-            gridViewCommandColumn1.Width = 25;
+            gridViewTextBoxColumn6.FieldName = "Desde";
+            gridViewTextBoxColumn6.HeaderText = "Desde";
+            gridViewTextBoxColumn6.Name = "Desde";
+            gridViewTextBoxColumn6.Width = 147;
+            gridViewTextBoxColumn7.FieldName = "Hasta";
+            gridViewTextBoxColumn7.HeaderText = "Hasta";
+            gridViewTextBoxColumn7.Name = "Hasta";
+            gridViewTextBoxColumn7.Width = 147;
+            gridViewTextBoxColumn8.FieldName = "Movil.Numero";
+            gridViewTextBoxColumn8.HeaderText = "Movil";
+            gridViewTextBoxColumn8.Name = "Movil.Numero";
+            gridViewTextBoxColumn8.Width = 124;
+            gridViewTextBoxColumn9.FieldName = "Total";
+            gridViewTextBoxColumn9.HeaderText = "Monto";
+            gridViewTextBoxColumn9.Name = "Total";
+            gridViewTextBoxColumn9.Width = 147;
+            gridViewTextBoxColumn10.FieldName = "Taller";
+            gridViewTextBoxColumn10.HeaderText = "Taller";
+            gridViewTextBoxColumn10.Name = "Taller";
+            gridViewTextBoxColumn10.Width = 148;
+            gridViewCommandColumn2.HeaderText = "";
+            gridViewCommandColumn2.Image = global::GestionAdministrativa.Win.Properties.Resources.Garbage_Closed;
+            gridViewCommandColumn2.MaxWidth = 25;
+            gridViewCommandColumn2.MinWidth = 25;
+            gridViewCommandColumn2.Name = "Delete";
+            gridViewCommandColumn2.Width = 25;
             this.DgvListadoPagoBase.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewCommandColumn1});
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10,
+            gridViewCommandColumn2});
             this.DgvListadoPagoBase.Name = "DgvListadoPagoBase";
             this.DgvListadoPagoBase.ReadOnly = true;
             this.DgvListadoPagoBase.Size = new System.Drawing.Size(755, 167);
@@ -113,6 +113,7 @@
             this.Controls.Add(this.BtnAceptar);
             this.Name = "UcListadoPago";
             this.Size = new System.Drawing.Size(768, 237);
+            this.Load += new System.EventHandler(this.UcListadoPago_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvListadoPagoBase.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListadoPagoBase)).EndInit();
             this.ResumeLayout(false);

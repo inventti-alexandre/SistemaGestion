@@ -41,7 +41,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
         {
             get { return _pagosBases; }
             //esto hay que comentar para que no fallen los cambios del designer
-            set { _pagosBases = value; }
+            //set { _pagosBases = value; }
         }
 
 
@@ -110,6 +110,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             {
                 case "Delete":
                     DeletePagoBase(pagoBase);
+                    
                     break;
             }
         }
@@ -117,12 +118,25 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
         private void DeletePagoBase(PagosBase pagoBase)
         {
             PagosBases.Remove(pagoBase);
-            RefrescarPagosBase();
+            
             OnPagoBaseChanged(PagosBases);
+            RefrescarPagosBase();
         }
 
-      
+        private void UcListadoPago_Load(object sender, EventArgs e)
+        {
+            CellFormat();
+        }
 
-       
+        private void CellFormat()
+        {
+            this.DgvListadoPagoBase.Columns["Total"].FormatString = "{0:N2}";
+
+            this.DgvListadoPagoBase.Columns["Desde"].DataType = typeof (DateTime);
+            this.DgvListadoPagoBase.Columns["Desde"].FormatString = "{0: dd/M/yyyy}";
+
+            this.DgvListadoPagoBase.Columns["Hasta"].DataType = typeof (DateTime);
+            this.DgvListadoPagoBase.Columns["Hasta"].FormatString = "{0: dd/M/yyyy}";
+        }
     }
 }
