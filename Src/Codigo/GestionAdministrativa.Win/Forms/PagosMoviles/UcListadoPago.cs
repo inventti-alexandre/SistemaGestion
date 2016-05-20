@@ -12,6 +12,7 @@ using GestionAdministrativa.Data.Interfaces;
 using GestionAdministrativa.Entities;
 using GestionAdministrativa.Win.Enums;
 using GestionAdministrativa.Business.Data;
+using Telerik.WinControls.UI;
 
 namespace GestionAdministrativa.Win.Forms.PagosMoviles
 {
@@ -30,6 +31,11 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             InitializeComponent();
         }
 
+        #region Events
+        public event EventHandler<IList<PagosBase>> PagoBaseChanged;
+        #endregion
+
+
         #region Properties
         public IList<PagosBase> PagosBases
         {
@@ -37,11 +43,15 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             //esto hay que comentar para que no fallen los cambios del designer
             set { _pagosBases = value; }
         }
+
+
         #endregion
-        #region Eventos
-        //public event EventHandler<List<PagosBase>> BuscarFinished;
-        public event EventHandler<IList<PagosBase>> PagoBaseChanged;
-        #endregion
+
+        #region Methods
+        public decimal CalcularSubTotal()
+        {
+            return PagosBases.Sum(p => p.SubTotal);
+        }
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
@@ -53,7 +63,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                     {
                         PagosBases.Add(pagoBase);
                         OnPagoBaseChanged(PagosBases);
-                        //RefrescarTitulos();
+                        RefrescarPagosBase();
 
 
                     }
@@ -69,6 +79,11 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             }
         }
 
+        private void RefrescarPagosBase()
+        {
+            DgvListadoPagoBase.DataSource = PagosBases;
+        }
+
         private void OnPagoBaseChanged(IList<PagosBase> pagosBases)
         {
             if (PagoBaseChanged != null)
@@ -76,6 +91,37 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                 PagoBaseChanged(this, pagosBases);
             }
         }
+        #endregion
+
+        private void DgvListadoPagoBase_CommandCellClick(object sender, EventArgs e)
+        {
+            var commandCell = (GridCommandCellElement) sender;
+            var selectedRow = DgvListadoPagoBase.SelectedRows.FirstOrDefault();
+
+            if (selectedRow == null)
+                return;
+
+            var pagoBase = selectedRow.DataBoundItem as PagosBase;
+
+            if (pagoBase == null)
+                return;
+
+            switch (commandCell.ColumnInfo.Name)
+            {
+                case "Delete":
+                    DeletePagoBase(pagoBase);
+                    break;
+            }
+        }
+
+        private void DeletePagoBase(PagosBase pagoBase)
+        {
+            PagosBases.Remove(pagoBase);
+            RefrescarPagosBase();
+            OnPagoBaseChanged(PagosBases);
+        }
+
+      
 
        
     }
