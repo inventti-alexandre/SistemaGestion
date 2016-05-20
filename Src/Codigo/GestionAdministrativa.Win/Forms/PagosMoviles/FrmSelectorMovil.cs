@@ -131,6 +131,15 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             CargarMovil();
         }
 
+        private void DtpHasta_ValueChanged(object sender, EventArgs e)
+        {
+            ActualizarDias();
+        }
+        private void DtpDesde_ValueChanged(object sender, EventArgs e)
+        {
+            ActualizarDias();
+        }
+
         private void CargarMovil()
         {
             _limpiandoFiltros = true;
@@ -156,10 +165,15 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                     var pagoBase = Uow.PagosMoviles.Listado().Where(pm => pm.MovilId == movil.Id).OrderByDescending(pm => pm.FechaAlta).FirstOrDefault();
                     if (pagoBase == null)
                     {
+                        _movilId = movil.Id;
                         MessageBox.Show("Primer pago de movil");
                         Desde = _clock.Now;
                         Hasta = _clock.Now.AddDays(6);
-                        _movilId = movil.Id;
+                        var promociones = Uow.PromocionesMoviles.Listado().Where(pm => pm.MovilId == _movilId && pm.FechaHasta >= _clock.Now).OrderByDescending(pm => pm.FechaAlta).FirstOrDefault();
+                        if (promociones == null)
+                        {
+                            MessageBox.Show("No tiene promociones");
+                        }
                     }
                     else 
                     {
@@ -171,10 +185,11 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             
         }
 
-        private void DtpHasta_ValueChanged(object sender, EventArgs e)
+      
+        private void ActualizarDias()
         {
             TimeSpan cantidadDias = Hasta - Desde;
-            Dias = cantidadDias.Days;
+            Dias = cantidadDias.Days + 1;
         }
 
         private void BtnAceptar_Click(object sender, EventArgs e)
@@ -196,5 +211,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
 
             return pago;
         }
+
+       
     }
 }

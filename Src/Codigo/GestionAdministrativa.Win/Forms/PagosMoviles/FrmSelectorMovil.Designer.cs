@@ -66,7 +66,6 @@
             // 
             // BtnAceptar
             // 
-            this.BtnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnAceptar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAceptar.Location = new System.Drawing.Point(314, 340);
             this.BtnAceptar.Name = "BtnAceptar";
@@ -197,6 +196,7 @@
             this.DtpDesde.Text = "1/12/2015";
             this.DtpDesde.ThemeName = "TelerikMetro";
             this.DtpDesde.Value = new System.DateTime(2015, 12, 1, 19, 30, 46, 0);
+            this.DtpDesde.ValueChanged += new System.EventHandler(this.DtpDesde_ValueChanged);
             // 
             // DdlMoviles
             // 

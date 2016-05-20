@@ -24,6 +24,9 @@ namespace GestionAdministrativa.Data
         public IRepository<Chofer> Choferes { get { return GetStandardRepo<Chofer>(); } }
         public IRepository<Operador> Operadores { get { return GetStandardRepo<Operador>(); } }
         public IRepository<Movil> Moviles { get { return GetStandardRepo<Movil>(); } }
+        public IRepository<Promocione> Promociones { get { return GetStandardRepo<Promocione>(); } }
+        public IRepository<PromocionesMovile> PromocionesMoviles { get { return GetStandardRepo<PromocionesMovile>(); } }
+        public IRepository<Tarifa> Tarifas { get { return GetStandardRepo<Tarifa>(); } }
         public IRepository<PagoCelular> PagosCelulares { get { return GetStandardRepo<PagoCelular>(); } }
         public IRepository<Celular> Celulares { get { return GetStandardRepo<Celular>(); } }
         public IRepository<PagosMovile> PagosMoviles { get { return GetStandardRepo<PagosMovile>(); } }
