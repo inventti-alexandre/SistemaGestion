@@ -47,7 +47,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
         {
             using (var formAgregarMovilPago = FormFactory.Create<FrmSelectorMovil>(Guid.Empty, ActionFormMode.Create))
             {
-                formAgregarMovilPago.MovilAgregado += (o, pagoBase) =>
+                formAgregarMovilPago.PagoBaseAgregado += (o, pagoBase) =>
                 {
                     if (!this.PagosBases.Any(t => t.MovilId == pagoBase.MovilId))
                     {

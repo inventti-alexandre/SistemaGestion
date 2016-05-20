@@ -12,6 +12,8 @@ namespace GestionAdministrativa.Business.Data
         public DateTime Desde { get; set; }
         public DateTime Hasta { get; set; }
         public int Dias { get; set; }
+        public decimal Taller { get; set; }
+        public decimal AFavor { get; set; }
         public decimal SubTotal { get; set; }
         public Decimal Total { get; set; }
 

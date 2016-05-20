@@ -42,7 +42,9 @@
             this.DtpDesde = new Telerik.WinControls.UI.RadDateTimePicker();
             this.DdlMoviles = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.TxtDescuento = new Telerik.WinControls.UI.RadTextBox();
+            this.TxtTaller = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
+            this.TxtAFavor = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSubtotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
@@ -56,7 +58,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.DtpDesde)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DdlMoviles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtDescuento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtTaller)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtAFavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +68,7 @@
             // 
             this.BtnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnAceptar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAceptar.Location = new System.Drawing.Point(309, 299);
+            this.BtnAceptar.Location = new System.Drawing.Point(314, 340);
             this.BtnAceptar.Name = "BtnAceptar";
             this.BtnAceptar.Size = new System.Drawing.Size(109, 41);
             this.BtnAceptar.TabIndex = 28;
@@ -103,7 +107,7 @@
             // radLabel6
             // 
             this.radLabel6.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel6.Location = new System.Drawing.Point(79, 268);
+            this.radLabel6.Location = new System.Drawing.Point(74, 296);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(70, 25);
             this.radLabel6.TabIndex = 21;
@@ -123,17 +127,17 @@
             // radLabel5
             // 
             this.radLabel5.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel5.Location = new System.Drawing.Point(39, 234);
+            this.radLabel5.Location = new System.Drawing.Point(64, 265);
             this.radLabel5.Name = "radLabel5";
-            this.radLabel5.Size = new System.Drawing.Size(110, 25);
+            this.radLabel5.Size = new System.Drawing.Size(80, 25);
             this.radLabel5.TabIndex = 19;
-            this.radLabel5.Text = "Descuento:";
+            this.radLabel5.Text = "Taller:";
             // 
             // TxtTotal
             // 
             this.TxtTotal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtTotal.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotal.Location = new System.Drawing.Point(150, 265);
+            this.TxtTotal.Location = new System.Drawing.Point(150, 299);
             this.TxtTotal.Name = "TxtTotal";
             this.TxtTotal.Size = new System.Drawing.Size(268, 28);
             this.TxtTotal.TabIndex = 20;
@@ -171,7 +175,7 @@
             this.DtpHasta.Size = new System.Drawing.Size(268, 31);
             this.DtpHasta.TabIndex = 24;
             this.DtpHasta.TabStop = false;
-            this.DtpHasta.Text = "01/12/2015";
+            this.DtpHasta.Text = "1/12/2015";
             this.DtpHasta.ThemeName = "TelerikMetro";
             this.DtpHasta.Value = new System.DateTime(2015, 12, 1, 19, 30, 46, 0);
             // 
@@ -188,7 +192,7 @@
             this.DtpDesde.Size = new System.Drawing.Size(268, 31);
             this.DtpDesde.TabIndex = 22;
             this.DtpDesde.TabStop = false;
-            this.DtpDesde.Text = "01/12/2015";
+            this.DtpDesde.Text = "1/12/2015";
             this.DtpDesde.ThemeName = "TelerikMetro";
             this.DtpDesde.Value = new System.DateTime(2015, 12, 1, 19, 30, 46, 0);
             // 
@@ -213,22 +217,44 @@
             this.radLabel1.TabIndex = 15;
             this.radLabel1.Text = "Movil:";
             // 
-            // TxtDescuento
+            // TxtTaller
             // 
-            this.TxtDescuento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtDescuento.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDescuento.Location = new System.Drawing.Point(150, 231);
-            this.TxtDescuento.Name = "TxtDescuento";
-            this.TxtDescuento.Size = new System.Drawing.Size(268, 28);
-            this.TxtDescuento.TabIndex = 14;
-            this.TxtDescuento.TabStop = false;
-            this.TxtDescuento.ThemeName = "TelerikMetro";
+            this.TxtTaller.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TxtTaller.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTaller.Location = new System.Drawing.Point(150, 265);
+            this.TxtTaller.Name = "TxtTaller";
+            this.TxtTaller.Size = new System.Drawing.Size(268, 28);
+            this.TxtTaller.TabIndex = 14;
+            this.TxtTaller.TabStop = false;
+            this.TxtTaller.ThemeName = "TelerikMetro";
+            // 
+            // radLabel2
+            // 
+            this.radLabel2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel2.Location = new System.Drawing.Point(54, 234);
+            this.radLabel2.Name = "radLabel2";
+            this.radLabel2.Size = new System.Drawing.Size(90, 25);
+            this.radLabel2.TabIndex = 30;
+            this.radLabel2.Text = "A Favor:";
+            // 
+            // TxtAFavor
+            // 
+            this.TxtAFavor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TxtAFavor.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtAFavor.Location = new System.Drawing.Point(150, 231);
+            this.TxtAFavor.Name = "TxtAFavor";
+            this.TxtAFavor.Size = new System.Drawing.Size(268, 28);
+            this.TxtAFavor.TabIndex = 29;
+            this.TxtAFavor.TabStop = false;
+            this.TxtAFavor.ThemeName = "TelerikMetro";
             // 
             // FrmSelectorMovil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 394);
+            this.Controls.Add(this.TxtAFavor);
+            this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.BtnAceptar);
             this.Controls.Add(this.radLabel8);
             this.Controls.Add(this.TxtSubtotal);
@@ -243,7 +269,7 @@
             this.Controls.Add(this.DtpDesde);
             this.Controls.Add(this.DdlMoviles);
             this.Controls.Add(this.radLabel1);
-            this.Controls.Add(this.TxtDescuento);
+            this.Controls.Add(this.TxtTaller);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmSelectorMovil";
             // 
@@ -264,7 +290,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.DtpDesde)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DdlMoviles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtDescuento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtTaller)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtAFavor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -287,6 +315,8 @@
         private Telerik.WinControls.UI.RadDateTimePicker DtpDesde;
         private Telerik.WinControls.UI.RadDropDownList DdlMoviles;
         private Telerik.WinControls.UI.RadLabel radLabel1;
-        private Telerik.WinControls.UI.RadTextBox TxtDescuento;
+        private Telerik.WinControls.UI.RadTextBox TxtTaller;
+        private Telerik.WinControls.UI.RadLabel radLabel2;
+        private Telerik.WinControls.UI.RadTextBox TxtAFavor;
     }
 }

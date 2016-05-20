@@ -15,7 +15,7 @@ using Telerik.WinControls.UI;
 
 namespace GestionAdministrativa.Win.Forms.PagosMoviles
 {
-    public partial class FrmSelectorMovil : FormBase
+    public partial class FrmSelectorMovil : EditFormBase
     {
         #region InitializeComponents
 
@@ -44,7 +44,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
 
         #region Events
 
-        public EventHandler<PagosBase> MovilAgregado;
+        public EventHandler<PagosBase> PagoBaseAgregado;
 
         #endregion
 
@@ -86,15 +86,26 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             set { TxtSubtotal.Text = value.ToString(); }
         }
 
-        public decimal Descuento
+        public decimal Taller
         {
             get
             {
-                decimal descuento;
-                return decimal.TryParse(TxtDescuento.Text, out descuento) ? descuento : descuento;
+                decimal taller;
+                return decimal.TryParse(TxtTaller.Text, out taller) ? taller : taller;
             }
 
-            set { TxtDescuento.Text = value.ToString(); }
+            set { TxtTaller.Text = value.ToString(); }
+        }
+
+        public decimal AFavor
+        {
+            get
+            {
+                decimal afavor;
+                return decimal.TryParse(TxtAFavor.Text, out afavor) ? afavor : afavor;
+            }
+
+            set { TxtAFavor.Text = value.ToString(); }
         }
 
         public decimal Total 
