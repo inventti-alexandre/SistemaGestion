@@ -124,14 +124,18 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
         private void BtnAceptar_Click(object sender, EventArgs e)
             {
                 if (_actionForm==ActionFormMode.Create)
-                    CrearMovil();
+                    SavePagoBase();
                 else
                     EditarMovil(_movilId);
             }
 
+        private void SavePagoBase()
+        {
             
+        }
 
-            private void OnEntityAgregada(Movil movil)
+
+        private void OnEntityAgregada(Movil movil)
             {
                 if (EntityAgregada != null)
                     EntityAgregada(this, movil);
@@ -139,6 +143,8 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
 
             private void CrearMovil()
             {
+
+                
                 var esValido = this.ValidarForm();
 
                 if (!esValido)
