@@ -192,7 +192,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                         MessageBox.Show("Primer pago de movil");
                         Desde = _clock.Now;
                         Hasta = _clock.Now.AddDays(6);
-                        var promociones = Uow.PromocionesMoviles.Listado().Where(pm => pm.MovilId == _movilId && pm.FechaHasta >= _clock.Now).OrderByDescending(pm => pm.FechaAlta).FirstOrDefault();
+                        var promociones = Uow.PromocionesMoviles.Listado().Where(pm => pm.MovilId == _movilId && pm.FechaHasta !=null).OrderByDescending(pm => pm.FechaAlta).FirstOrDefault();
                         if (promociones == null)
                         {
                             var tarifa = Uow.Tarifas.Listado().Where(t => t.Activo == true).OrderByDescending(t => t.FechaAlta).FirstOrDefault();
@@ -242,6 +242,8 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             pago.SubTotal = 553;
             pago.Taller = 97;
             pago.Total = 451;
+            var movil = Uow.Moviles.Obtener(m=>m.Id == _movilId);
+            pago.Movil = movil;
 
             return pago;
         }
