@@ -131,7 +131,32 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
 
         private void SavePagoBase()
         {
-            
+            if (ucListadoPago1.PagosBases.Count == 0)
+            {
+                MessageBox.Show("Debe ingresar al menos un pago para poder guardar");
+                return;
+            }
+
+            for (int i = 0; i < ucListadoPago1.PagosBases.Count; i++)
+            {
+                MessageBox.Show(ucListadoPago1.PagosBases[i].Movil.Numero.ToString());
+
+                var pagoMovil = new PagosMovile();
+                pagoMovil.Id= Guid.NewGuid();
+                pagoMovil.Desde = ucListadoPago1.PagosBases[i].Desde;
+                pagoMovil.Hasta = ucListadoPago1.PagosBases[i].Hasta;
+                pagoMovil.Efectivo = ucListadoPago1.PagosBases[i].SubTotal;
+                pagoMovil.Monto = ucListadoPago1.PagosBases[i].Total;
+                pagoMovil.MovilId = ucListadoPago1.PagosBases[i].Movil.Id;
+                pagoMovil.FechaAlta = _clock.Now;
+                pagoMovil.OperadorAltaId = Context.OperadorActual.Id;
+                pagoMovil.SucursalAltaId = Context.SucursalActual.Id;
+                pagoMovil.Anulada = false;
+
+                Uow.PagosMoviles.Agregar(pagoMovil);
+            }
+            Uow.Commit();
+            MessageBox.Show("Pago de base guardado correctamente");
         }
 
 
