@@ -87,7 +87,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                 return decimal.TryParse(TxtDiario.Text, out diario) ? diario : diario;
             }
 
-            set { TxtDiario.Text = value.ToString(); }
+            set { TxtDiario.Text = value.ToString("n2"); }
         }
 
         public decimal Semanal
@@ -98,7 +98,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                 return decimal.TryParse(TxtSemanal.Text, out semanal) ? semanal : semanal;
             }
 
-            set { TxtSemanal.Text = value.ToString(); }
+            set { TxtSemanal.Text = value.ToString("n2"); }
         }
 
         public decimal SubTotal
@@ -109,7 +109,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                 return decimal.TryParse(TxtSubtotal.Text, out Subtotal) ? Subtotal : Subtotal;
             }
 
-            set { TxtSubtotal.Text = value.ToString(); }
+            set { TxtSubtotal.Text = value.ToString("n2"); }
         }
 
         public decimal Taller
@@ -120,7 +120,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                 return decimal.TryParse(TxtTaller.Text, out taller) ? taller : taller;
             }
 
-            set { TxtTaller.Text = value.ToString(); }
+            set { TxtTaller.Text = value.ToString("n2"); }
         }
 
         public decimal AFavor
@@ -131,7 +131,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                 return decimal.TryParse(TxtAFavor.Text, out afavor) ? afavor : afavor;
             }
 
-            set { TxtAFavor.Text = value.ToString(); }
+            set { TxtAFavor.Text = value.ToString("n2"); }
         }
 
         public decimal Total 
@@ -142,7 +142,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                 return decimal.TryParse(TxtTotal.Text, out total) ? total : total;
             }
 
-            set { TxtTotal.Text = value.ToString(); } 
+            set { TxtTotal.Text = value.ToString("n2"); } 
         }
 
         #endregion
@@ -185,25 +185,36 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                 if (Movil != null)
                 {
                     var movil = Uow.Moviles.Obtener(m => m.Id == Movil);
+                   
+                    //Ver tarifa a cobrar
+                    _movilId = movil.Id;
+
+                    var promociones = Uow.PromocionesMoviles.Listado().Where(pm => pm.MovilId == _movilId && pm.FechaHasta != null).OrderByDescending(pm => pm.FechaAlta).FirstOrDefault();
+                    if (promociones == null)
+                    {
+                        var tarifa = Uow.Tarifas.Listado().Where(t => t.Activo == true).OrderByDescending(t => t.FechaAlta).FirstOrDefault();
+                        Diario = tarifa.Monto;
+                        Semanal = tarifa.Semana;
+                    }
+                    else
+                    {
+                        var tarifa = Uow.Promociones.Obtener(p => p.Id == promociones.PromocionId);
+                        Diario = tarifa.Monto;
+                        Semanal = tarifa.Semana;
+                    }
+
+                  
                     var pagoBase = Uow.PagosMoviles.Listado().Where(pm => pm.MovilId == movil.Id).OrderByDescending(pm => pm.FechaAlta).FirstOrDefault();
                     if (pagoBase == null)
                     {
-                        _movilId = movil.Id;
-                       
-                        var promociones = Uow.PromocionesMoviles.Listado().Where(pm => pm.MovilId == _movilId && pm.FechaHasta !=null).OrderByDescending(pm => pm.FechaAlta).FirstOrDefault();
-                        if (promociones == null)
-                        {
-                            var tarifa = Uow.Tarifas.Listado().Where(t => t.Activo == true).OrderByDescending(t => t.FechaAlta).FirstOrDefault();
-                            Diario = tarifa.Monto;
-                            Semanal = tarifa.Semana;
-                        }
-
                         Desde = _clock.Now;
-                        Hasta = _clock.Now.AddDays(6);
+                        Hasta = Desde.AddDays(6);
                     }
                     else 
                     {
                         DtpDesde.Enabled = false;
+                        DtpDesde.Value = pagoBase.Hasta.Value.AddDays(1);
+                        Hasta = Desde.AddDays(6);
                     }
 
                 }
@@ -223,7 +234,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                 {
                     var semanas = Dias / 7;
                     var resto = Dias % 7;
-                    SubTotal = semanas * Semanal + resto * Diario;
+                    SubTotal = (semanas * Semanal + resto * Diario);
                 }
             }
                  

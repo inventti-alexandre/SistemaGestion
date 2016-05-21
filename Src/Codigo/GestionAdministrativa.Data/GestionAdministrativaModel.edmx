@@ -648,6 +648,7 @@
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="50" />
           <Property Name="Monto" Type="money" Nullable="false" />
+          <Property Name="Semana" Type="money" Nullable="false" />
           <Property Name="Activo" Type="bit" Nullable="false" />
           <Property Name="OperadorAltaId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="SucursalAltaId" Type="int" Nullable="false" />
@@ -9935,6 +9936,7 @@
           <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_Promociones_OperadorModificacion" FromRole="Promocione" ToRole="Operador" />
           <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_Promociones_SucursalAlta" FromRole="Promocione" ToRole="Sucursal" />
           <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_Promociones_SucursalModificacion" FromRole="Promocione" ToRole="Sucursal" />
+          <Property Name="Semana" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
         </EntityType>
         <EntityType Name="PromocionesMovile">
           <Key>
@@ -11402,6 +11404,7 @@
           <EntitySetMapping Name="Promociones">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.Promocione">
               <MappingFragment StoreEntitySet="Promociones">
+                <ScalarProperty Name="Semana" ColumnName="Semana" />
                 <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
                 <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
                 <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
