@@ -32,7 +32,6 @@ namespace GestionAdministrativa.Win.Forms.Cajas
 
         private void FrmChoferesListado_Load(object sender, EventArgs e)
         {
-            //ucFiltroChoferes.Filtered += ucFiltroChoferesOnFiltered;
             RefrescarListado();
         }
 
@@ -46,15 +45,12 @@ namespace GestionAdministrativa.Win.Forms.Cajas
         public override async Task<int> RefrescarListado()
         {
             int pageTotal = 0;
-            Guid? operador = Context.OperadorActual.Id;// Guid.Parse("4fb4caf7-9fd7-4a39-bf85-b60f14c2e7ab");
-            //var apellido = ucFiltroChoferes.Denominacion != "" ? ucFiltroChoferes.Denominacion : "";
-            var aprobado = false;//  ucFiltroChoferes.MovilId;
-            //if (movil == Guid.Empty)
-            //    movil = null;
+            Guid? operador = Context.OperadorActual.Id;// 
+            var aprobado = false;
 
             var activo = true;
 
-            var cajas = _cajaNegocio.Listado(SortColumn, SortDirection, operador, aprobado, 1, 5000, out pageTotal);
+            var cajas = _cajaNegocio.Listado(SortColumn, SortDirection, null, aprobado, 1, 5000, out pageTotal);
             GridCajas.DataSource = cajas.ToList();
             return pageTotal;
         }

@@ -160,20 +160,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                     
                 ///////
                 MontosAFavor();
-                //_montosAFavor = Uow.ChoferesMontosFavor.Listado().Where(m => m.ChoferId == _chofer.Id && m.Importe != m.ImpOcupado).ToList();
-                //if (_montosAFavor != null)
-                //{
-                //    var total = _montosAFavor.Sum(m => m.Importe ?? 0 - m.ImpOcupado ?? 0);
-                //    if (total != 0)
-                //    {
-                //        var pago = new PagosTipo();
-                //        pago.TipoPago = "A Favor";
-                //        pago.Importe = total;
-                //        ucPagos1.AgregarPago(pago);
-                //        ucPagos1.RefrescarPagos();
-                //    }
-                //}
-                //COmentarios
+
                 ucComentarios.ActualizarComentarios(_chofer.Id);
 
                 ucComentarios._chofer = _chofer.Id;
@@ -209,7 +196,6 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             if (_celular!= null)
             {
                 var pago = _iPagoCelularNegocio.AutoPago(_celular, desde ?? _clock.Now,hasta ?? _clock.Now, Context.OperadorActual.Id);
-                //ucDetalleDeuda1.ActualizarNuevoPago(pago);
                 ucPagos1.ActualizarNuevoPago("Efectivo", pago.Monto);
                 ucDetallePagos.ActualizarNuevoPago(pago);
                 ucDetallePagos.ActualizarMonto(_celular);
@@ -222,12 +208,8 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         {
             if (_celular != null)
             {
-                //var pago = _iPagoCelularNegocio.AutoPago(_celular, desde ?? _clock.Now, hasta ?? _clock.Now, Context.OperadorActual.Id);
                 ucPagos1.ActualizarNuevoPago("Efectivo", total);
                 _pagoCelular.Monto = total;
-                //ucDetallePagos.ActualizarNuevoPago(pago);
-                //ucDetallePagos.ActualizarMonto(_celular);
-                //_pagoCelular = pago;
             }
 
         }
@@ -236,8 +218,6 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         {
             Guardar();
             EnviarMail();
-           // LimpiarControles();
-            //this.Close();
         }
         private void EnviarMail()
         {
@@ -344,7 +324,9 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private void RegistrarCajaYCajaMovimiento()
         {
             var caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id && c.FCierre == null).OrderByDescending(c=>c.FechaAlta ).FirstOrDefault();
-            caja.Ingresos = (caja.Ingresos ?? 0) + (_pagoCelular.Vales ??0) + (_pagoCelular.Efectivo ?? 0);
+            caja.Ingresos = (caja.Ingresos ?? 0) + (_pagoCelular.Vales ?? 0) + (_pagoCelular.Efectivo ?? 0);
+            
+            
             caja.Saldo = (caja.Saldo ?? 0) + ucPagos1.Total;
             if (_pagoCelular.Efectivo != null)
                 caja.Efectivo += _pagoCelular.Efectivo;
