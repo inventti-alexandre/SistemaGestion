@@ -100,6 +100,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
         {
             //if (ucListadoPago1.PagosBases.Count > 0)
                 TxtTotal.Text = ucListadoPago1.CalcularSubTotal().ToString();
+                ucPagos.ActualizarNuevoPago("Efectivo", ucListadoPago1.CalcularSubTotal());
         }
 
         private void CargarMovil(Guid _movilId)
