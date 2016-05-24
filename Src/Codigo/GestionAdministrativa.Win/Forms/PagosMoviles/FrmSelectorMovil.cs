@@ -189,6 +189,22 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                     //Ver tarifa a cobrar
                     _movilId = movil.Id;
 
+                    var pagoBase = Uow.PagosMoviles.Listado().Where(pm => pm.MovilId == movil.Id).OrderByDescending(pm => pm.FechaAlta).FirstOrDefault();
+                    if (pagoBase == null)
+                    {
+                        Desde = _clock.Now;
+                        Hasta = Desde.AddDays(6);
+                    }
+                    else
+                    {
+                        DtpDesde.Enabled = false;
+                        DtpDesde.Value = pagoBase.Hasta.Value.AddDays(1);
+                        Hasta = Desde.AddDays(6);
+                    }
+                    //if (Desde.Month != Hasta.Month)
+                    //{
+                    //    MessageBox.Show("Generar dos pagos");
+                    //}
                     var promociones = Uow.PromocionesMoviles.Listado().Where(pm => pm.MovilId == _movilId && pm.FechaHasta != null).OrderByDescending(pm => pm.FechaAlta).FirstOrDefault();
                     if (promociones == null)
                     {
@@ -203,19 +219,9 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                         Semanal = tarifa.Semana;
                     }
 
-                  
-                    var pagoBase = Uow.PagosMoviles.Listado().Where(pm => pm.MovilId == movil.Id).OrderByDescending(pm => pm.FechaAlta).FirstOrDefault();
-                    if (pagoBase == null)
-                    {
-                        Desde = _clock.Now;
-                        Hasta = Desde.AddDays(6);
-                    }
-                    else 
-                    {
-                        DtpDesde.Enabled = false;
-                        DtpDesde.Value = pagoBase.Hasta.Value.AddDays(1);
-                        Hasta = Desde.AddDays(6);
-                    }
+                 // var montoAFavor 
+                   
+                   
 
                 }
             }

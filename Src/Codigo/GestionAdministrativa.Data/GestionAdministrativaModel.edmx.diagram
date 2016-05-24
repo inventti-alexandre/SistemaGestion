@@ -78,15 +78,11 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_CentrosCostos_SucursalAlta" ManuallyRouted="false" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_CentrosCostos_SucursalModificacion" ManuallyRouted="false" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPago_CentrosCostos" ManuallyRouted="true" >
-          <ConnectorPoint PointX="21.75" PointY="73.672801106770834" />
-          <ConnectorPoint PointX="21.208333333333332" PointY="73.672801106770834" />
-          <ConnectorPoint PointX="20.916666666666668" PointY="73.672801106770834" />
-          <ConnectorPoint PointX="20.833333333333332" PointY="73.672801106770834" />
-          <ConnectorPoint PointX="20.541666666666668" PointY="73.672801106770834" />
-          <ConnectorPoint PointX="20.5" PointY="73.672801106770834" />
+          <ConnectorPoint PointX="21.75" PointY="73.318595441406273" />
+          <ConnectorPoint PointX="21.208333333333332" PointY="73.318595441406273" />
+          <ConnectorPoint PointX="20.666666666666668" PointY="73.318595441406273" />
+          <ConnectorPoint PointX="20.5" PointY="73.318595441406273" />
           <ConnectorPoint PointX="20.5" PointY="70.75" />
-          <ConnectorPoint PointX="19.583333333333332" PointY="70.75" />
-          <ConnectorPoint PointX="19.416666666666668" PointY="70.75" />
           <ConnectorPoint PointX="18.583333333333332" PointY="70.75" />
           <ConnectorPoint PointX="18.416666666666668" PointY="70.75" />
           <ConnectorPoint PointX="18.333333333333332" PointY="70.75" />
@@ -326,6 +322,14 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosBases_SucursalAltaId" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosBases_SucursalModificacionId" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosMoviles_PagoBaseId" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.MovilesMontoFavor" Width="1.5" PointX="46.5" PointY="71.625" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_Movil" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_OperadorAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_OperadorAutoriza" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_OperadorModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_SucursalAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_SucursalModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_TipoComprobante" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

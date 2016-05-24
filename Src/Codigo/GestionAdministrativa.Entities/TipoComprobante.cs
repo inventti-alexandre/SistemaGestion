@@ -20,6 +20,7 @@ namespace GestionAdministrativa.Entities
             this.CelularesMovimiento = new HashSet<CelularMovimiento>();
             this.ChoferesMontosFavor = new HashSet<ChoferMontoFavor>();
             this.OrdenesPago = new HashSet<OrdenPago>();
+            this.MovilesMontoFavors = new HashSet<MovilesMontoFavor>();
         }
     
         public int Id { get; set; }
@@ -44,5 +45,6 @@ namespace GestionAdministrativa.Entities
         public virtual ICollection<OrdenPago> OrdenesPago { get; set; }
         public virtual Sucursal Sucursales { get; set; }
         public virtual Sucursal Sucursales1 { get; set; }
+        public virtual ICollection<MovilesMontoFavor> MovilesMontoFavors { get; set; }
     }
 }

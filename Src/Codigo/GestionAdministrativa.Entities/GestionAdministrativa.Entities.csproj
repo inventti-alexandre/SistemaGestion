@@ -141,6 +141,9 @@
     <Compile Include="Movil.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MovilesMontoFavor.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MovilesPorCajaId_Result.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>

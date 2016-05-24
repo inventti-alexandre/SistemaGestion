@@ -403,6 +403,27 @@
           <Property Name="SucursalModificacionId" Type="int" />
           <Property Name="Activo" Type="bit" />
         </EntityType>
+        <EntityType Name="MovilesMontoFavor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MovilId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FechaComprobante" Type="smalldatetime" Nullable="false" />
+          <Property Name="TipoComprobanteId" Type="int" Nullable="false" />
+          <Property Name="Concepto" Type="nvarchar" MaxLength="50" />
+          <Property Name="Importe" Type="money" />
+          <Property Name="ImpOcupado" Type="money" />
+          <Property Name="FechaAnulacion" Type="datetime" />
+          <Property Name="OperadorAutorizaId" Type="uniqueidentifier" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="90" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="int" Nullable="false" />
+          <Property Name="OperadorAltaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="SucursalModificacionId" Type="int" />
+          <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
+        </EntityType>
         <EntityType Name="Operadores">
           <Key>
             <PropertyRef Name="Id" />
@@ -2182,6 +2203,90 @@
             </Principal>
             <Dependent Role="Moviles">
               <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MovilesMontoFavor_Movil">
+          <End Role="Moviles" Type="Self.Moviles" Multiplicity="1" />
+          <End Role="MovilesMontoFavor" Type="Self.MovilesMontoFavor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Moviles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MovilesMontoFavor">
+              <PropertyRef Name="MovilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MovilesMontoFavor_OperadorAlta">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
+          <End Role="MovilesMontoFavor" Type="Self.MovilesMontoFavor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MovilesMontoFavor">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MovilesMontoFavor_OperadorAutoriza">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="MovilesMontoFavor" Type="Self.MovilesMontoFavor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MovilesMontoFavor">
+              <PropertyRef Name="OperadorAutorizaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MovilesMontoFavor_OperadorModificacion">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="MovilesMontoFavor" Type="Self.MovilesMontoFavor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MovilesMontoFavor">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MovilesMontoFavor_SucursalAlta">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
+          <End Role="MovilesMontoFavor" Type="Self.MovilesMontoFavor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MovilesMontoFavor">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MovilesMontoFavor_SucursalModificacion">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="MovilesMontoFavor" Type="Self.MovilesMontoFavor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MovilesMontoFavor">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MovilesMontoFavor_TipoComprobante">
+          <End Role="TiposComprobantes" Type="Self.TiposComprobantes" Multiplicity="1" />
+          <End Role="MovilesMontoFavor" Type="Self.MovilesMontoFavor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposComprobantes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MovilesMontoFavor">
+              <PropertyRef Name="TipoComprobanteId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4021,6 +4126,7 @@
           <EntitySet Name="Localidades" EntityType="Self.Localidades" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ModelosCelulares" EntityType="Self.ModelosCelulares" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Moviles" EntityType="Self.Moviles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MovilesMontoFavor" EntityType="Self.MovilesMontoFavor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Operadores" EntityType="Self.Operadores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OperadoresFunciones" EntityType="Self.OperadoresFunciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OperadoresRoles" EntityType="Self.OperadoresRoles" Schema="dbo" store:Type="Tables" />
@@ -4456,6 +4562,34 @@
           <AssociationSet Name="FK_Moviles_SucursalModificacion" Association="Self.FK_Moviles_SucursalModificacion">
             <End Role="Sucursales" EntitySet="Sucursales" />
             <End Role="Moviles" EntitySet="Moviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MovilesMontoFavor_Movil" Association="Self.FK_MovilesMontoFavor_Movil">
+            <End Role="Moviles" EntitySet="Moviles" />
+            <End Role="MovilesMontoFavor" EntitySet="MovilesMontoFavor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MovilesMontoFavor_OperadorAlta" Association="Self.FK_MovilesMontoFavor_OperadorAlta">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="MovilesMontoFavor" EntitySet="MovilesMontoFavor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MovilesMontoFavor_OperadorAutoriza" Association="Self.FK_MovilesMontoFavor_OperadorAutoriza">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="MovilesMontoFavor" EntitySet="MovilesMontoFavor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MovilesMontoFavor_OperadorModificacion" Association="Self.FK_MovilesMontoFavor_OperadorModificacion">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="MovilesMontoFavor" EntitySet="MovilesMontoFavor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MovilesMontoFavor_SucursalAlta" Association="Self.FK_MovilesMontoFavor_SucursalAlta">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="MovilesMontoFavor" EntitySet="MovilesMontoFavor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MovilesMontoFavor_SucursalModificacion" Association="Self.FK_MovilesMontoFavor_SucursalModificacion">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="MovilesMontoFavor" EntitySet="MovilesMontoFavor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MovilesMontoFavor_TipoComprobante" Association="Self.FK_MovilesMontoFavor_TipoComprobante">
+            <End Role="TiposComprobantes" EntitySet="TiposComprobantes" />
+            <End Role="MovilesMontoFavor" EntitySet="MovilesMontoFavor" />
           </AssociationSet>
           <AssociationSet Name="FK_Operadores_OperadorAlta" Association="Self.FK_Operadores_OperadorAlta">
             <End Role="Operadores" EntitySet="Operadores" />
@@ -5395,6 +5529,7 @@
           <Property Name="DiaPago" Type="Int32" />
           <NavigationProperty Name="Dia" Relationship="GestionAdministrativa.Model.FK_Moviles_DiaPago" FromRole="Movil" ToRole="Dia" />
           <NavigationProperty Name="PagosMoviles" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_Movil" FromRole="Movil" ToRole="PagosMovile" />
+          <NavigationProperty Name="MovilesMontoFavors" Relationship="GestionAdministrativa.Model.FK_MovilesMontoFavor_Movil" FromRole="Movil" ToRole="MovilesMontoFavor" />
         </EntityType>
         <EntityType Name="Operador">
           <Key>
@@ -5517,6 +5652,9 @@
           <NavigationProperty Name="Titulares1" Relationship="GestionAdministrativa.Model.FK_Titulares_OperadorModificacion" FromRole="Operador" ToRole="Titulare" />
           <NavigationProperty Name="PagosBases" Relationship="GestionAdministrativa.Model.FK_PagosBases_OperadorAlta" FromRole="Operador" ToRole="PagosBas" />
           <NavigationProperty Name="PagosBases1" Relationship="GestionAdministrativa.Model.FK_PagosBases_OperadorModificacionId" FromRole="Operador" ToRole="PagosBas" />
+          <NavigationProperty Name="MovilesMontoFavors" Relationship="GestionAdministrativa.Model.FK_MovilesMontoFavor_OperadorAlta" FromRole="Operador" ToRole="MovilesMontoFavor" />
+          <NavigationProperty Name="MovilesMontoFavors1" Relationship="GestionAdministrativa.Model.FK_MovilesMontoFavor_OperadorAutoriza" FromRole="Operador" ToRole="MovilesMontoFavor" />
+          <NavigationProperty Name="MovilesMontoFavors2" Relationship="GestionAdministrativa.Model.FK_MovilesMontoFavor_OperadorModificacion" FromRole="Operador" ToRole="MovilesMontoFavor" />
           </EntityType>
         <EntityType Name="OperadorFuncion">
           <Key>
@@ -6039,6 +6177,8 @@
           <NavigationProperty Name="Titulares1" Relationship="GestionAdministrativa.Model.FK_Titulares_SucursalModificacion" FromRole="Sucursal" ToRole="Titulare" />
           <NavigationProperty Name="PagosBases" Relationship="GestionAdministrativa.Model.FK_PagosBases_SucursalAltaId" FromRole="Sucursal" ToRole="PagosBas" />
           <NavigationProperty Name="PagosBases1" Relationship="GestionAdministrativa.Model.FK_PagosBases_SucursalModificacionId" FromRole="Sucursal" ToRole="PagosBas" />
+          <NavigationProperty Name="MovilesMontoFavors" Relationship="GestionAdministrativa.Model.FK_MovilesMontoFavor_SucursalAlta" FromRole="Sucursal" ToRole="MovilesMontoFavor" />
+          <NavigationProperty Name="MovilesMontoFavors1" Relationship="GestionAdministrativa.Model.FK_MovilesMontoFavor_SucursalModificacion" FromRole="Sucursal" ToRole="MovilesMontoFavor" />
           </EntityType>
         <EntityType Name="TipoCelular">
           <Key>
@@ -6085,6 +6225,7 @@
           <NavigationProperty Name="OrdenesPago" Relationship="Self.FK_OrdenesPago_Comprobante" FromRole="TiposComprobantes" ToRole="OrdenesPago" />
           <NavigationProperty Name="Sucursales" Relationship="Self.FK_TiposComprobantes_SucursalAlta" FromRole="TiposComprobantes" ToRole="Sucursales" />
           <NavigationProperty Name="Sucursales1" Relationship="Self.FK_TiposComprobantes_SucursalModificacion" FromRole="TiposComprobantes" ToRole="Sucursales" />
+          <NavigationProperty Name="MovilesMontoFavors" Relationship="GestionAdministrativa.Model.FK_MovilesMontoFavor_TipoComprobante" FromRole="TipoComprobante" ToRole="MovilesMontoFavor" />
         </EntityType>
         <EntityType Name="TipoDocumentosIdentidad">
           <Key>
@@ -9251,6 +9392,35 @@
             <End Role="PagosBas" EntitySet="PagosBases" />
             <End Role="PagosMovile" EntitySet="PagosMoviles" />
           </AssociationSet>
+          <EntitySet Name="MovilesMontoFavors" EntityType="GestionAdministrativa.Model.MovilesMontoFavor" />
+          <AssociationSet Name="FK_MovilesMontoFavor_Movil" Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_Movil">
+            <End Role="Movil" EntitySet="Moviles" />
+            <End Role="MovilesMontoFavor" EntitySet="MovilesMontoFavors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MovilesMontoFavor_OperadorAlta" Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_OperadorAlta">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="MovilesMontoFavor" EntitySet="MovilesMontoFavors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MovilesMontoFavor_OperadorAutoriza" Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_OperadorAutoriza">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="MovilesMontoFavor" EntitySet="MovilesMontoFavors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MovilesMontoFavor_OperadorModificacion" Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_OperadorModificacion">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="MovilesMontoFavor" EntitySet="MovilesMontoFavors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MovilesMontoFavor_SucursalAlta" Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_SucursalAlta">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="MovilesMontoFavor" EntitySet="MovilesMontoFavors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MovilesMontoFavor_SucursalModificacion" Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_SucursalModificacion">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="MovilesMontoFavor" EntitySet="MovilesMontoFavors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MovilesMontoFavor_TipoComprobante" Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_TipoComprobante">
+            <End Role="TipoComprobante" EntitySet="TiposComprobantes" />
+            <End Role="MovilesMontoFavor" EntitySet="MovilesMontoFavors" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Chofer">
           <Key>
@@ -10613,6 +10783,118 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="MovilesMontoFavor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="MovilId" Type="Guid" Nullable="false" />
+          <Property Name="FechaComprobante" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TipoComprobanteId" Type="Int32" Nullable="false" />
+          <Property Name="Concepto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Importe" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ImpOcupado" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FechaAnulacion" Type="DateTime" Precision="3" />
+          <Property Name="OperadorAutorizaId" Type="Guid" />
+          <Property Name="Observaciones" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SucursalAltaId" Type="Int32" Nullable="false" />
+          <Property Name="OperadorAltaId" Type="Guid" Nullable="false" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="SucursalModificacionId" Type="Int32" />
+          <Property Name="OperadorModificacionId" Type="Guid" />
+          <NavigationProperty Name="Movile" Relationship="GestionAdministrativa.Model.FK_MovilesMontoFavor_Movil" FromRole="MovilesMontoFavor" ToRole="Movil" />
+          <NavigationProperty Name="Operadore" Relationship="GestionAdministrativa.Model.FK_MovilesMontoFavor_OperadorAlta" FromRole="MovilesMontoFavor" ToRole="Operador" />
+          <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_MovilesMontoFavor_OperadorAutoriza" FromRole="MovilesMontoFavor" ToRole="Operador" />
+          <NavigationProperty Name="Operadore2" Relationship="GestionAdministrativa.Model.FK_MovilesMontoFavor_OperadorModificacion" FromRole="MovilesMontoFavor" ToRole="Operador" />
+          <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_MovilesMontoFavor_SucursalAlta" FromRole="MovilesMontoFavor" ToRole="Sucursal" />
+          <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_MovilesMontoFavor_SucursalModificacion" FromRole="MovilesMontoFavor" ToRole="Sucursal" />
+          <NavigationProperty Name="TiposComprobante" Relationship="GestionAdministrativa.Model.FK_MovilesMontoFavor_TipoComprobante" FromRole="MovilesMontoFavor" ToRole="TipoComprobante" />
+        </EntityType>
+        <Association Name="FK_MovilesMontoFavor_Movil">
+          <End Type="GestionAdministrativa.Model.Movil" Role="Movil" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.MovilesMontoFavor" Role="MovilesMontoFavor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movil">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MovilesMontoFavor">
+              <PropertyRef Name="MovilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MovilesMontoFavor_OperadorAlta">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.MovilesMontoFavor" Role="MovilesMontoFavor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MovilesMontoFavor">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MovilesMontoFavor_OperadorAutoriza">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.MovilesMontoFavor" Role="MovilesMontoFavor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MovilesMontoFavor">
+              <PropertyRef Name="OperadorAutorizaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MovilesMontoFavor_OperadorModificacion">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.MovilesMontoFavor" Role="MovilesMontoFavor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MovilesMontoFavor">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MovilesMontoFavor_SucursalAlta">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.MovilesMontoFavor" Role="MovilesMontoFavor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MovilesMontoFavor">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MovilesMontoFavor_SucursalModificacion">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.MovilesMontoFavor" Role="MovilesMontoFavor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MovilesMontoFavor">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MovilesMontoFavor_TipoComprobante">
+          <End Type="GestionAdministrativa.Model.TipoComprobante" Role="TipoComprobante" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.MovilesMontoFavor" Role="MovilesMontoFavor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoComprobante">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MovilesMontoFavor">
+              <PropertyRef Name="TipoComprobanteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -11717,6 +11999,28 @@
                 <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
                 <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
                 <ScalarProperty Name="PagoMovil" ColumnName="PagoMovil" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MovilesMontoFavors">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.MovilesMontoFavor">
+              <MappingFragment StoreEntitySet="MovilesMontoFavor">
+                <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
+                <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
+                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="OperadorAutorizaId" ColumnName="OperadorAutorizaId" />
+                <ScalarProperty Name="FechaAnulacion" ColumnName="FechaAnulacion" />
+                <ScalarProperty Name="ImpOcupado" ColumnName="ImpOcupado" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+                <ScalarProperty Name="TipoComprobanteId" ColumnName="TipoComprobanteId" />
+                <ScalarProperty Name="FechaComprobante" ColumnName="FechaComprobante" />
+                <ScalarProperty Name="MovilId" ColumnName="MovilId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

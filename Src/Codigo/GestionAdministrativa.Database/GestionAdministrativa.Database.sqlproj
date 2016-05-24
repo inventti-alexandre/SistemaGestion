@@ -143,6 +143,7 @@
     <Build Include="Tables\TalleresMoviles.sql" />
     <Build Include="Tables\PagosMoviles.sql" />
     <Build Include="Tables\PagosBases.sql" />
+    <Build Include="Tables\MovilesMontoFavor.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Dias.sql" />
