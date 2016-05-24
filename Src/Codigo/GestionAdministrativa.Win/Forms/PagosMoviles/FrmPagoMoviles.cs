@@ -115,7 +115,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
 
             for (int i = 0; i < ucListadoPago1.PagosBases.Count; i++)
             {
-                MessageBox.Show(ucListadoPago1.PagosBases[i].Movil.Numero.ToString());
+                //MessageBox.Show(ucListadoPago1.PagosBases[i].Movil.Numero.ToString());
 
                 var pagoMovil = new PagosMovile();
                 pagoMovil.Id= Guid.NewGuid();

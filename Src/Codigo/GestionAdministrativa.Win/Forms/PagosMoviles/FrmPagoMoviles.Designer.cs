@@ -44,7 +44,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.EpvMovil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
             this.radPanel3.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +51,7 @@
             // TxtTotal
             // 
             this.TxtTotal.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotal.Location = new System.Drawing.Point(287, 491);
+            this.TxtTotal.Location = new System.Drawing.Point(293, 587);
             this.TxtTotal.Name = "TxtTotal";
             this.TxtTotal.Size = new System.Drawing.Size(103, 28);
             this.TxtTotal.TabIndex = 3;
@@ -62,7 +61,7 @@
             // radLabel3
             // 
             this.radLabel3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel3.Location = new System.Drawing.Point(211, 494);
+            this.radLabel3.Location = new System.Drawing.Point(217, 590);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(70, 25);
             this.radLabel3.TabIndex = 6;
@@ -133,8 +132,6 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.radLabel3);
-            this.panel1.Controls.Add(this.TxtTotal);
             this.panel1.Location = new System.Drawing.Point(5, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(786, 549);
@@ -155,6 +152,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.BtnCancelar;
             this.ClientSize = new System.Drawing.Size(1439, 627);
+            this.Controls.Add(this.radLabel3);
+            this.Controls.Add(this.TxtTotal);
             this.Controls.Add(this.radPanel3);
             this.Controls.Add(this.ucListadoPago1);
             this.Controls.Add(this.panel1);
@@ -173,11 +172,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.EpvMovil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).EndInit();
             this.radPanel3.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
