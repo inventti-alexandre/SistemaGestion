@@ -50,16 +50,6 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             
         #region Properties
 
-            //public int Numero
-            //{
-            //    get
-            //    {
-            //        int numero;
-            //        return int.TryParse(TxtNumero.Text, out numero) ? numero : numero;
-            //    }
-            //    set { TxtNumero.Text = value.ToString(); } 
-            //}
-
             public string Patente
             {
                 get
@@ -68,22 +58,10 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                 }
                 set { TxtTotal.Text = value; }
             }
-
-            //public bool? Activo 
-            //{
-            //    get { return ChkActivo.IsChecked; }
-            //    set { ChkActivo.Checked = value ?? false; }
-            //}
             public Movil Movil
             {
                 get { return _movil; }
             }
-
-        //public DateTime FechaAlta {
-        //    get { return DtpFechaAlta.Value; }
-        //    set { DtpFechaAlta.Value = value; }
-        //}
-        
 
         #endregion
 
@@ -98,7 +76,6 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
 
         void ucListadoPago1_PagoBaseChanged(object sender, IList<Business.Data.PagosBase> e)
         {
-            //if (ucListadoPago1.PagosBases.Count > 0)
                 TxtTotal.Text = ucListadoPago1.CalcularSubTotal().ToString();
                 ucPagos.ActualizarNuevoPago("Efectivo", ucListadoPago1.CalcularSubTotal());
         }
@@ -115,10 +92,8 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                 _movil = Uow.Moviles.Obtener(m => m.Id == _movilId);
             }
 
-            //this.Activo = _movil.Activo;
-            //this.Numero = _movil.Numero;
+           
             this.Patente = _movil.Patente;
-            //this.FechaAlta = _movil.FechaAlta;
         }
            
         
@@ -201,9 +176,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                     
                     if (movil != null)
                     {
-                     //   movil.Numero = Numero;
-                        //movil.FechaAlta = FechaAlta;
-                        //movil.Activo = Activo;
+                     
                         movil.Patente = Patente;
                         movil.OperadorModificacionId = Context.OperadorActual.Id;
                         movil.SucursalModificacionId = Context.SucursalActual.Id;
@@ -220,17 +193,13 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             {
                 _movil = new Movil();
                 _movil.Id = Guid.NewGuid();
-                //_movil.FechaAlta = FechaAlta;
                 _movil.Patente = Patente;
-                //_movil.Numero = Numero;
-                //_movil.Activo = Activo;
                 _movil.SucursalAltaId = _actionForm == ActionFormMode.Create
                    ? Context.SucursalActual.Id
                    : _movil.SucursalAltaId;
                 _movil.OperadorAltaId = _actionForm == ActionFormMode.Create
                     ? Context.OperadorActual.Id
                     : _movil.OperadorAltaId;
-               // _movil.FechaAlta = _actionForm == ActionFormMode.Create ? FechaAlta : _movil.FechaAlta;
 
                 _movil.OperadorModificacionId = Context.OperadorActual.Id;
                 _movil.SucursalModificacionId = Context.SucursalActual.Id;
@@ -247,23 +216,10 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             protected override void ValidarControles()
             {
                 this.ValidarControl(TxtTotal,"Patente");
-               // this.ValidarControl(TxtNumero,"Numero");
             }
 
         #endregion
 
-            private void button1_Click(object sender, EventArgs e)
-            {
 
-            }
-
-            
-
-       
-
-       
-       
-
-        
     }
 }

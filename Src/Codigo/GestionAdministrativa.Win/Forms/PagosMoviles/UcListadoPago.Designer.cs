@@ -87,7 +87,7 @@
             gridViewCommandColumn1});
             this.DgvListadoPagoBase.Name = "DgvListadoPagoBase";
             this.DgvListadoPagoBase.ReadOnly = true;
-            this.DgvListadoPagoBase.Size = new System.Drawing.Size(755, 228);
+            this.DgvListadoPagoBase.Size = new System.Drawing.Size(755, 337);
             this.DgvListadoPagoBase.TabIndex = 14;
             this.DgvListadoPagoBase.Text = "radGridView1";
             this.DgvListadoPagoBase.ThemeName = "TelerikMetro";
@@ -112,7 +112,7 @@
             this.Controls.Add(this.DgvListadoPagoBase);
             this.Controls.Add(this.BtnAceptar);
             this.Name = "UcListadoPago";
-            this.Size = new System.Drawing.Size(768, 304);
+            this.Size = new System.Drawing.Size(768, 418);
             this.Load += new System.EventHandler(this.UcListadoPago_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvListadoPagoBase.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListadoPagoBase)).EndInit();
