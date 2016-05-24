@@ -189,6 +189,21 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                     //Ver tarifa a cobrar
                     _movilId = movil.Id;
 
+                   
+                    var promociones = Uow.PromocionesMoviles.Listado().Where(pm => pm.MovilId == _movilId && pm.FechaHasta != null).OrderByDescending(pm => pm.FechaAlta).FirstOrDefault();
+                    if (promociones == null)
+                    {
+                        var tarifa = Uow.Tarifas.Listado().Where(t => t.Activo == true).OrderByDescending(t => t.FechaAlta).FirstOrDefault();
+                        Diario = tarifa.Monto;
+                        Semanal = tarifa.Semana;
+                    }
+                    else
+                    {
+                        var tarifa = Uow.Promociones.Obtener(p => p.Id == promociones.PromocionId);
+                        Diario = tarifa.Monto;
+                        Semanal = tarifa.Semana;
+                    }
+
                     var pagoBase = Uow.PagosMoviles.Listado().Where(pm => pm.MovilId == movil.Id).OrderByDescending(pm => pm.FechaAlta).FirstOrDefault();
                     if (pagoBase == null)
                     {
@@ -205,22 +220,6 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                     //{
                     //    MessageBox.Show("Generar dos pagos");
                     //}
-                    var promociones = Uow.PromocionesMoviles.Listado().Where(pm => pm.MovilId == _movilId && pm.FechaHasta != null).OrderByDescending(pm => pm.FechaAlta).FirstOrDefault();
-                    if (promociones == null)
-                    {
-                        var tarifa = Uow.Tarifas.Listado().Where(t => t.Activo == true).OrderByDescending(t => t.FechaAlta).FirstOrDefault();
-                        Diario = tarifa.Monto;
-                        Semanal = tarifa.Semana;
-                    }
-                    else
-                    {
-                        var tarifa = Uow.Promociones.Obtener(p => p.Id == promociones.PromocionId);
-                        Diario = tarifa.Monto;
-                        Semanal = tarifa.Semana;
-                    }
-
-                 // var montoAFavor 
-                   
                    
 
                 }
