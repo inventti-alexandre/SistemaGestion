@@ -12,35 +12,26 @@ namespace GestionAdministrativa.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class PagosMovile
+    public partial class PagosBas
     {
+        public PagosBas()
+        {
+            this.PagosMoviles = new HashSet<PagosMovile>();
+        }
+    
         public System.Guid Id { get; set; }
-        public Nullable<System.DateTime> Desde { get; set; }
-        public Nullable<System.DateTime> Hasta { get; set; }
-        public Nullable<decimal> Efectivo { get; set; }
-        public Nullable<decimal> Vales { get; set; }
-        public Nullable<decimal> Taller { get; set; }
-        public Nullable<decimal> Descuento { get; set; }
-        public Nullable<decimal> Senia { get; set; }
-        public decimal Monto { get; set; }
-        public System.Guid MovilId { get; set; }
+        public Nullable<System.Guid> PagoMovil { get; set; }
         public System.DateTime FechaAlta { get; set; }
         public System.Guid OperadorAltaId { get; set; }
         public int SucursalAltaId { get; set; }
+        public Nullable<System.DateTime> FechaModificacion { get; set; }
         public Nullable<System.Guid> OperadorModificacionId { get; set; }
         public Nullable<int> SucursalModificacionId { get; set; }
-        public Nullable<System.DateTime> FechaModificacion { get; set; }
-        public Nullable<bool> Anulada { get; set; }
-        public Nullable<System.DateTime> FechaAnulacion { get; set; }
-        public Nullable<System.Guid> OperadorAutoriza { get; set; }
-        public System.Guid PagoBaseId { get; set; }
     
-        public virtual Movil Movile { get; set; }
         public virtual Operador Operadore { get; set; }
         public virtual Operador Operadore1 { get; set; }
-        public virtual Operador Operadore2 { get; set; }
         public virtual Sucursal Sucursale { get; set; }
         public virtual Sucursal Sucursale1 { get; set; }
-        public virtual PagosBas PagosBas { get; set; }
+        public virtual ICollection<PagosMovile> PagosMoviles { get; set; }
     }
 }

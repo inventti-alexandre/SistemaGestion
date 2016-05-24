@@ -1,6 +1,7 @@
 ﻿CREATE TABLE [dbo].[PagosMoviles]
 (
 	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+	[PagoBaseId] UNIQUEIDENTIFIER NOT NULL, 
     [Desde] DATETIME NULL, 
     [Hasta] DATETIME NULL, 
     [Efectivo] MONEY NULL, 
@@ -24,5 +25,6 @@
     CONSTRAINT [FK_PagosMoviles_SucursalAlta] FOREIGN KEY (SucursalAltaId) REFERENCES Sucursales(Id), 
     CONSTRAINT [FK_PagosMoviles_OperadorModificacion] FOREIGN KEY (OperadorModificacionId) REFERENCES Operadores(Id), 
     CONSTRAINT [FK_PagosMoviles_SucursalModificacion] FOREIGN KEY (SucursalModificacionId) REFERENCES Sucursales(Id), 
-    CONSTRAINT [FK_PagosMoviles_OperadorAutoriza] FOREIGN KEY (OperadorAutoriza) REFERENCES Operadores(Id)
+    CONSTRAINT [FK_PagosMoviles_OperadorAutoriza] FOREIGN KEY (OperadorAutoriza) REFERENCES Operadores(Id), 
+    CONSTRAINT [FK_PagosMoviles_PagoBaseId] FOREIGN KEY (PagoBaseId) REFERENCES PagosBases(Id)
 )

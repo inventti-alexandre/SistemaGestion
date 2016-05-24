@@ -162,6 +162,9 @@
     <Compile Include="PagoCelular.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PagosBas.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="PagosMovile.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>

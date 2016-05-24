@@ -78,13 +78,19 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_CentrosCostos_SucursalAlta" ManuallyRouted="false" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_CentrosCostos_SucursalModificacion" ManuallyRouted="false" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPago_CentrosCostos" ManuallyRouted="true" >
-          <ConnectorPoint PointX="21.75" PointY="74.883287104329526" />
-          <ConnectorPoint PointX="21.083333333333332" PointY="74.883287104329526" />
-          <ConnectorPoint PointX="20.541666666666668" PointY="74.883287104329526" />
-          <ConnectorPoint PointX="20.5" PointY="74.883287104329526" />
+          <ConnectorPoint PointX="21.75" PointY="73.672801106770834" />
+          <ConnectorPoint PointX="21.208333333333332" PointY="73.672801106770834" />
+          <ConnectorPoint PointX="20.916666666666668" PointY="73.672801106770834" />
+          <ConnectorPoint PointX="20.833333333333332" PointY="73.672801106770834" />
+          <ConnectorPoint PointX="20.541666666666668" PointY="73.672801106770834" />
+          <ConnectorPoint PointX="20.5" PointY="73.672801106770834" />
           <ConnectorPoint PointX="20.5" PointY="70.75" />
+          <ConnectorPoint PointX="19.583333333333332" PointY="70.75" />
+          <ConnectorPoint PointX="19.416666666666668" PointY="70.75" />
           <ConnectorPoint PointX="18.583333333333332" PointY="70.75" />
           <ConnectorPoint PointX="18.416666666666668" PointY="70.75" />
+          <ConnectorPoint PointX="18.333333333333332" PointY="70.75" />
+          <ConnectorPoint PointX="18.166666666666668" PointY="70.75" />
           <ConnectorPoint PointX="17.5" PointY="70.75" />
           <ConnectorPoint PointX="17.5" PointY="72.008932291666667" />
           <ConnectorPoint PointX="16.5" PointY="72.008932291666667" />
@@ -314,6 +320,12 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_Tarifas_SucursalModificacion" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_Titulares_SucursalAlta" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_Titulares_SucursalModificacion" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.PagosBas" Width="1.5" PointX="35.25" PointY="81.25" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosBases_OperadorAlta" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosBases_OperadorModificacionId" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosBases_SucursalAltaId" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosBases_SucursalModificacionId" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_PagosMoviles_PagoBaseId" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

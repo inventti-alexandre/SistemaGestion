@@ -19,3 +19,7 @@ WHERE NOT EXISTS (SELECT 1 FROM [DBO].TiposComprobantes WHERE Abreviatura = 'Egr
 INSERT INTO [dbo].[TiposComprobantes] ([Id] ,[Nombre] ,[Abreviatura])
 SELECT 5,'Egreso Caja Anterior','EgresoCAnt'
 WHERE NOT EXISTS (SELECT 1 FROM [DBO].TiposComprobantes WHERE Abreviatura = 'EgresoCAnt') 
+
+INSERT INTO [dbo].[TiposComprobantes] ([Id] ,[Nombre] ,[Abreviatura])
+SELECT 6,'Pago Base','PagoBase'
+WHERE NOT EXISTS (SELECT 1 FROM [DBO].TiposComprobantes WHERE Abreviatura = 'PagoBase') 

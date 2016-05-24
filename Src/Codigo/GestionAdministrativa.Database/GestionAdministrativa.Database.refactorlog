@@ -350,4 +350,39 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="MovilId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="6621a28b-90a7-41b8-8c6e-d4e0aa3d7f76" ChangeDateTime="05/24/2016 15:55:28">
+    <Property Name="ElementName" Value="[dbo].[PagosBases].[OperadorAlta]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[PagosBases]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OperadorAltaId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="38b532ba-5126-4c6e-8590-82534a1e41de" ChangeDateTime="05/24/2016 15:55:30">
+    <Property Name="ElementName" Value="[dbo].[PagosBases].[SucursalAlta]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[PagosBases]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SucursalAltaId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="fe9b67c0-4088-4529-b33b-0ee5a959aef9" ChangeDateTime="05/24/2016 15:55:34">
+    <Property Name="ElementName" Value="[dbo].[PagosBases].[OperadorModificacion]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[PagosBases]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OperadorModificacionId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5658ce93-a2cf-4371-a7ff-fc1f5a082e2e" ChangeDateTime="05/24/2016 15:55:39">
+    <Property Name="ElementName" Value="[dbo].[PagosBases].[SucursalModificacion]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[PagosBases]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SucursalModificacionId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e4ad76aa-e71a-4217-95bc-06c026d6aedf" ChangeDateTime="05/24/2016 15:57:43">
+    <Property Name="ElementName" Value="[dbo].[PagosMoviles].[PagoBase]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[PagosMoviles]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PagoBaseId" />
+  </Operation>
 </Operations>

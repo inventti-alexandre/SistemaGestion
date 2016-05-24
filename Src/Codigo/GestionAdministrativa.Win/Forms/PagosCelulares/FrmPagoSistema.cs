@@ -280,7 +280,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                         Uow.Celulares.Modificar(_celular);
                     
                     
-                    UsarMontoAFavor();
+                        UsarMontoAFavor();
 
 
                         NuevoMontoAFavor();
@@ -299,6 +299,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                             else if (item.TipoPago == "A Favor")
                                 _pagoCelular.Senia = _pagoCelular.Senia ?? 0 + item.Importe;
                         }
+
                         _pagoCelular.Monto = ucDetallePagos.Total;
                         var chofer = Uow.Choferes.Listado().Where(c => c.CelularId == _celular.Id).FirstOrDefault();
                         _pagoCelular.MovilId = chofer.MovilId;
@@ -395,6 +396,8 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         }
 
         #endregion
+
+     
   
     }
 }

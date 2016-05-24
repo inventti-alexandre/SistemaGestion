@@ -97,6 +97,7 @@
             this.radPanel3.TabIndex = 2;
             this.radPanel3.Text = "A PAGAR";
             this.radPanel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+
             // 
             // ucPagos1
             // 

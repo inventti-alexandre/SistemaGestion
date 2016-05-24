@@ -8,8 +8,7 @@ namespace GestionAdministrativa.Business.Data
 {
     public class PagosTipo
     {
-        public String TipoPago { get; set; }
-
+       public String TipoPago { get; set; }
        public decimal? Importe { get; set; }
     }
 }

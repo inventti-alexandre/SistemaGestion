@@ -113,6 +113,8 @@ namespace GestionAdministrativa.Entities
             this.Tarifas1 = new HashSet<Tarifa>();
             this.Titulares = new HashSet<Titulare>();
             this.Titulares1 = new HashSet<Titulare>();
+            this.PagosBases = new HashSet<PagosBas>();
+            this.PagosBases1 = new HashSet<PagosBas>();
         }
     
         public System.Guid Id { get; set; }
@@ -231,5 +233,7 @@ namespace GestionAdministrativa.Entities
         public virtual ICollection<Tarifa> Tarifas1 { get; set; }
         public virtual ICollection<Titulare> Titulares { get; set; }
         public virtual ICollection<Titulare> Titulares1 { get; set; }
+        public virtual ICollection<PagosBas> PagosBases { get; set; }
+        public virtual ICollection<PagosBas> PagosBases1 { get; set; }
     }
 }

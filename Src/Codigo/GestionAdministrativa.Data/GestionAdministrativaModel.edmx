@@ -516,6 +516,19 @@
           <Property Name="CajaId" Type="uniqueidentifier" />
           <Property Name="OperadorAutorizaId" Type="uniqueidentifier" />
         </EntityType>
+        <EntityType Name="PagosBases">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PagoMovil" Type="uniqueidentifier" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="OperadorAltaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="int" Nullable="false" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
+          <Property Name="SucursalModificacionId" Type="int" />
+        </EntityType>
         <EntityType Name="PagosCelular">
           <Key>
             <PropertyRef Name="Id" />
@@ -547,6 +560,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PagoBaseId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Desde" Type="datetime" />
           <Property Name="Hasta" Type="datetime" />
           <Property Name="Efectivo" Type="money" />
@@ -2555,6 +2569,54 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PagosBases_OperadorAlta">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
+          <End Role="PagosBases" Type="Self.PagosBases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosBases">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosBases_OperadorModificacionId">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="PagosBases" Type="Self.PagosBases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosBases">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosBases_SucursalAltaId">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
+          <End Role="PagosBases" Type="Self.PagosBases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosBases">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosBases_SucursalModificacionId">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="PagosBases" Type="Self.PagosBases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosBases">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_PagosCelular_Celular">
           <End Role="Celulares" Type="Self.Celulares" Multiplicity="1" />
           <End Role="PagosCelular" Type="Self.PagosCelular" Multiplicity="*" />
@@ -2696,6 +2758,18 @@
             </Principal>
             <Dependent Role="PagosMoviles">
               <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosMoviles_PagoBaseId">
+          <End Role="PagosBases" Type="Self.PagosBases" Multiplicity="1" />
+          <End Role="PagosMoviles" Type="Self.PagosMoviles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PagosBases">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosMoviles">
+              <PropertyRef Name="PagoBaseId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3953,6 +4027,7 @@
           <EntitySet Name="OperadoresSucursales" EntityType="Self.OperadoresSucursales" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrdenesPago" EntityType="Self.OrdenesPago" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrdenesPagoDetalle" EntityType="Self.OrdenesPagoDetalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PagosBases" EntityType="Self.PagosBases" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PagosCelular" EntityType="Self.PagosCelular" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PagosMoviles" EntityType="Self.PagosMoviles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Paises" EntityType="Self.Paises" Schema="dbo" store:Type="Tables" />
@@ -4510,6 +4585,22 @@
             <End Role="Sucursales" EntitySet="Sucursales" />
             <End Role="OrdenesPagoDetalle" EntitySet="OrdenesPagoDetalle" />
           </AssociationSet>
+          <AssociationSet Name="FK_PagosBases_OperadorAlta" Association="Self.FK_PagosBases_OperadorAlta">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="PagosBases" EntitySet="PagosBases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosBases_OperadorModificacionId" Association="Self.FK_PagosBases_OperadorModificacionId">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="PagosBases" EntitySet="PagosBases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosBases_SucursalAltaId" Association="Self.FK_PagosBases_SucursalAltaId">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="PagosBases" EntitySet="PagosBases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosBases_SucursalModificacionId" Association="Self.FK_PagosBases_SucursalModificacionId">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="PagosBases" EntitySet="PagosBases" />
+          </AssociationSet>
           <AssociationSet Name="FK_PagosCelular_Celular" Association="Self.FK_PagosCelular_Celular">
             <End Role="Celulares" EntitySet="Celulares" />
             <End Role="PagosCelular" EntitySet="PagosCelular" />
@@ -4556,6 +4647,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_PagosMoviles_OperadorModificacion" Association="Self.FK_PagosMoviles_OperadorModificacion">
             <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="PagosMoviles" EntitySet="PagosMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosMoviles_PagoBaseId" Association="Self.FK_PagosMoviles_PagoBaseId">
+            <End Role="PagosBases" EntitySet="PagosBases" />
             <End Role="PagosMoviles" EntitySet="PagosMoviles" />
           </AssociationSet>
           <AssociationSet Name="FK_PagosMoviles_SucursalAlta" Association="Self.FK_PagosMoviles_SucursalAlta">
@@ -5420,6 +5515,8 @@
           <NavigationProperty Name="Tarifas1" Relationship="GestionAdministrativa.Model.FK_Tarifas_OperadorModificacion" FromRole="Operador" ToRole="Tarifa" />
           <NavigationProperty Name="Titulares" Relationship="GestionAdministrativa.Model.FK_Titulares_OperadorAlta" FromRole="Operador" ToRole="Titulare" />
           <NavigationProperty Name="Titulares1" Relationship="GestionAdministrativa.Model.FK_Titulares_OperadorModificacion" FromRole="Operador" ToRole="Titulare" />
+          <NavigationProperty Name="PagosBases" Relationship="GestionAdministrativa.Model.FK_PagosBases_OperadorAlta" FromRole="Operador" ToRole="PagosBas" />
+          <NavigationProperty Name="PagosBases1" Relationship="GestionAdministrativa.Model.FK_PagosBases_OperadorModificacionId" FromRole="Operador" ToRole="PagosBas" />
           </EntityType>
         <EntityType Name="OperadorFuncion">
           <Key>
@@ -5940,6 +6037,8 @@
           <NavigationProperty Name="Tarifas1" Relationship="GestionAdministrativa.Model.FK_Tarifas_SucursalModificacion" FromRole="Sucursal" ToRole="Tarifa" />
           <NavigationProperty Name="Titulares" Relationship="GestionAdministrativa.Model.FK_Titulares_SucursalAlta" FromRole="Sucursal" ToRole="Titulare" />
           <NavigationProperty Name="Titulares1" Relationship="GestionAdministrativa.Model.FK_Titulares_SucursalModificacion" FromRole="Sucursal" ToRole="Titulare" />
+          <NavigationProperty Name="PagosBases" Relationship="GestionAdministrativa.Model.FK_PagosBases_SucursalAltaId" FromRole="Sucursal" ToRole="PagosBas" />
+          <NavigationProperty Name="PagosBases1" Relationship="GestionAdministrativa.Model.FK_PagosBases_SucursalModificacionId" FromRole="Sucursal" ToRole="PagosBas" />
           </EntityType>
         <EntityType Name="TipoCelular">
           <Key>
@@ -9131,6 +9230,27 @@
             <End Role="Sucursal" EntitySet="Sucursales" />
             <End Role="Titulare" EntitySet="Titulares" />
           </AssociationSet>
+          <EntitySet Name="PagosBases" EntityType="GestionAdministrativa.Model.PagosBas" />
+          <AssociationSet Name="FK_PagosBases_OperadorAlta" Association="GestionAdministrativa.Model.FK_PagosBases_OperadorAlta">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="PagosBas" EntitySet="PagosBases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosBases_OperadorModificacionId" Association="GestionAdministrativa.Model.FK_PagosBases_OperadorModificacionId">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="PagosBas" EntitySet="PagosBases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosBases_SucursalAltaId" Association="GestionAdministrativa.Model.FK_PagosBases_SucursalAltaId">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="PagosBas" EntitySet="PagosBases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosBases_SucursalModificacionId" Association="GestionAdministrativa.Model.FK_PagosBases_SucursalModificacionId">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="PagosBas" EntitySet="PagosBases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PagosMoviles_PagoBaseId" Association="GestionAdministrativa.Model.FK_PagosMoviles_PagoBaseId">
+            <End Role="PagosBas" EntitySet="PagosBases" />
+            <End Role="PagosMovile" EntitySet="PagosMoviles" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Chofer">
           <Key>
@@ -9917,6 +10037,8 @@
           <NavigationProperty Name="Operadore2" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_OperadorModificacion" FromRole="PagosMovile" ToRole="Operador" />
           <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_SucursalAlta" FromRole="PagosMovile" ToRole="Sucursal" />
           <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_SucursalModificacion" FromRole="PagosMovile" ToRole="Sucursal" />
+          <Property Name="PagoBaseId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="PagosBas" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_PagoBaseId" FromRole="PagosMovile" ToRole="PagosBas" />
         </EntityType>
         <EntityType Name="Promocione">
           <Key>
@@ -10410,6 +10532,84 @@
             </Principal>
             <Dependent Role="Titulare">
               <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PagosBas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="PagoMovil" Type="Guid" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OperadorAltaId" Type="Guid" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="Int32" Nullable="false" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="OperadorModificacionId" Type="Guid" />
+          <Property Name="SucursalModificacionId" Type="Int32" />
+          <NavigationProperty Name="Operadore" Relationship="GestionAdministrativa.Model.FK_PagosBases_OperadorAlta" FromRole="PagosBas" ToRole="Operador" />
+          <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_PagosBases_OperadorModificacionId" FromRole="PagosBas" ToRole="Operador" />
+          <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_PagosBases_SucursalAltaId" FromRole="PagosBas" ToRole="Sucursal" />
+          <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_PagosBases_SucursalModificacionId" FromRole="PagosBas" ToRole="Sucursal" />
+          <NavigationProperty Name="PagosMoviles" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_PagoBaseId" FromRole="PagosBas" ToRole="PagosMovile" />
+        </EntityType>
+        <Association Name="FK_PagosBases_OperadorAlta">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.PagosBas" Role="PagosBas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosBas">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosBases_OperadorModificacionId">
+          <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.PagosBas" Role="PagosBas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosBas">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosBases_SucursalAltaId">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.PagosBas" Role="PagosBas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosBas">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosBases_SucursalModificacionId">
+          <End Type="GestionAdministrativa.Model.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="GestionAdministrativa.Model.PagosBas" Role="PagosBas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosBas">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PagosMoviles_PagoBaseId">
+          <End Type="GestionAdministrativa.Model.PagosBas" Role="PagosBas" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.PagosMovile" Role="PagosMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PagosBas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagosMovile">
+              <PropertyRef Name="PagoBaseId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -11379,6 +11579,7 @@
           <EntitySetMapping Name="PagosMoviles">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.PagosMovile">
               <MappingFragment StoreEntitySet="PagosMoviles">
+                <ScalarProperty Name="PagoBaseId" ColumnName="PagoBaseId" />
                 <ScalarProperty Name="OperadorAutoriza" ColumnName="OperadorAutoriza" />
                 <ScalarProperty Name="FechaAnulacion" ColumnName="FechaAnulacion" />
                 <ScalarProperty Name="Anulada" ColumnName="Anulada" />
@@ -11502,6 +11703,20 @@
                 <ScalarProperty Name="DNI" ColumnName="DNI" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PagosBases">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.PagosBas">
+              <MappingFragment StoreEntitySet="PagosBases">
+                <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
+                <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
+                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="PagoMovil" ColumnName="PagoMovil" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
