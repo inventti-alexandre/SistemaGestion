@@ -113,6 +113,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                 MessageBox.Show("Debe ingresar al menos un pago para poder guardar");
                 return;
             }
+
             decimal? Efectivo = 0;
             decimal? Vales = 0;
             decimal? Taller = 0;
@@ -122,30 +123,45 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             foreach (var item in ucPagos.Pagos)
             {
                 if (item.TipoPago == "Efectivo")
-                   Efectivo = Efectivo ?? 0 + item.Importe;
+                   Efectivo += item.Importe;
                 else if (item.TipoPago == "Vales")
-                    _pagoCelular.Vales = _pagoCelular.Vales ?? 0 + item.Importe;
+                   Vales += item.Importe;
                 else if (item.TipoPago == "Taller")
-                    _pagoCelular.Taller = _pagoCelular.Taller ?? 0 + item.Importe;
+                    Taller +=  item.Importe;
                 else if (item.TipoPago == "Descuento")
-                    _pagoCelular.Descuento = _pagoCelular.Descuento ?? 0 + item.Importe;
+                    Descuento += item.Importe;
                 else if (item.TipoPago == "A Favor")
-                    _pagoCelular.Senia = _pagoCelular.Senia ?? 0 + item.Importe;
+                    Senia  +=  item.Importe;
             }
-            //var caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id && c.FCierre == null).OrderByDescending(c => c.FechaAlta).FirstOrDefault();
-            //caja.Ingresos = (caja.Ingresos ?? 0) + (ucPagos.TotalPagos() ?? 0) + (_pagoCelular.Efectivo ?? 0);
+            
+            //actualizo la caja
+            var caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id && c.FCierre == null).OrderByDescending(c => c.FechaAlta).FirstOrDefault();
+            if (caja == null)
+                return;
+            caja.Ingresos = (caja.Ingresos ?? 0) + (ucPagos.TotalPagos() ?? 0) ;
 
 
-            //caja.Saldo = (caja.Saldo ?? 0) + ucPagos1.Total;
-            //if (_pagoCelular.Efectivo != null)
-            //    caja.Efectivo += _pagoCelular.Efectivo;
-            //if (_pagoCelular.Vales != null)
-            //    caja.Vales += _pagoCelular.Vales;
-            //caja.FechaModificacion = _clock.Now;
-            //caja.OperadorModificacionId = Context.OperadorActual.Id;
-            //caja.SucursalModificacionId = Context.SucursalActual.Id;
+            caja.Saldo = (caja.Saldo ?? 0) + (ucPagos.TotalPagos() ?? 0);
+            caja.Efectivo += Efectivo;
+            caja.Vales += Vales;
+            
+            caja.OperadorModificacionId = Context.OperadorActual.Id;
+            caja.SucursalModificacionId = Context.SucursalActual.Id;
 
-            //Uow.Cajas.Modificar(caja);
+            Uow.Cajas.Modificar(caja);
+
+            //pagos bases
+            var pagosBases = new PagosBas();
+            pagosBases.Id=Guid.NewGuid();
+            pagosBases.PagoMovil = null; //aca tienen que venir el movil que hace el pago
+            pagosBases.FechaAlta = _clock.Now;
+            pagosBases.OperadorAltaId = Context.OperadorActual.Id;
+            pagosBases.SucursalAltaId = Context.SucursalActual.Id;
+
+            Uow.PagosBases.Agregar(pagosBases);
+            
+            
+
 
             for (int i = 0; i < ucListadoPago1.PagosBases.Count; i++)
             {
@@ -154,6 +170,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                 //PAGO MOVIL
                 var pagoMovil = new PagosMovile();
                 pagoMovil.Id= Guid.NewGuid();
+                pagoMovil.PagoBaseId = pagosBases.Id;
                 pagoMovil.Desde = ucListadoPago1.PagosBases[i].Desde;
                 pagoMovil.Hasta = ucListadoPago1.PagosBases[i].Hasta;
                 pagoMovil.Efectivo = ucListadoPago1.PagosBases[i].SubTotal;

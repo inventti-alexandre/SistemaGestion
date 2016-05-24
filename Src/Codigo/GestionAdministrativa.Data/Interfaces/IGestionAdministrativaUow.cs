@@ -17,6 +17,7 @@ namespace GestionAdministrativa.Data.Interfaces
         IRepository<Tarifa> Tarifas { get; }
         IRepository<PagoCelular> PagosCelulares { get; }
         IRepository<PagosMovile> PagosMoviles { get; }
+        IRepository<PagosBas> PagosBases { get; }
         IRepository<Sucursal> Sucursales { get; }
         IRepository<Celular> Celulares { get; }
         IRepository<Dia> Dias { get; }
