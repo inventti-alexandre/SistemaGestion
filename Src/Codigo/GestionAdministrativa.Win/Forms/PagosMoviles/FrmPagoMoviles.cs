@@ -150,6 +150,9 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
 
             Uow.Cajas.Modificar(caja);
 
+           
+
+
             //pagos bases
             var pagosBases = new PagosBas();
             pagosBases.Id=Guid.NewGuid();
@@ -159,8 +162,23 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             pagosBases.SucursalAltaId = Context.SucursalActual.Id;
 
             Uow.PagosBases.Agregar(pagosBases);
-            
-            
+
+            //Creo la caja movimiento
+            var cajaMovimiento = new CajaMovimiento();
+            cajaMovimiento.Id = Guid.NewGuid();
+            cajaMovimiento.CajaId = caja.Id;
+            cajaMovimiento.TipoMovimientoCajaId = 4;
+            cajaMovimiento.TipoComprobante = 6;
+            cajaMovimiento.ComprobanteId = pagosBases.Id;
+            cajaMovimiento.Importe = ucPagos.Importe;
+            cajaMovimiento.Efectivo = Efectivo;
+            cajaMovimiento.Vales = Vales;
+            //cajaMovimiento.Taller
+            //cajaMovimiento.PcAlta=Syst
+            cajaMovimiento.FechaAlta = _clock.Now;
+            cajaMovimiento.OperadorAltaId = Context.OperadorActual.Id;
+            cajaMovimiento.SucursalAltaId = Context.SucursalActual.Id;
+            Uow.CajaMovimientos.Agregar(cajaMovimiento);
 
 
             for (int i = 0; i < ucListadoPago1.PagosBases.Count; i++)
@@ -183,10 +201,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
 
                 Uow.PagosMoviles.Agregar(pagoMovil);
 
-                //MOVIMIENTO
-
-                var cajaMovimiento = new CajaMovimiento();
-                cajaMovimiento.Id = Guid.NewGuid();
+               
 
             }
             Uow.Commit();
