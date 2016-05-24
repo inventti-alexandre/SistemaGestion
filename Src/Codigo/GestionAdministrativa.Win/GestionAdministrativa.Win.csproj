@@ -347,6 +347,12 @@
     <Compile Include="Forms\PagosCelulares\ucPagos.Designer.cs">
       <DependentUpon>ucPagos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PagosMoviles\FrmMovilesPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PagosMoviles\FrmMovilesPago.Designer.cs">
+      <DependentUpon>FrmMovilesPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PagosMoviles\FrmPagoMoviles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -502,6 +508,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PagosCelulares\ucPagos.resx">
       <DependentUpon>ucPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PagosMoviles\FrmMovilesPago.resx">
+      <DependentUpon>FrmMovilesPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PagosMoviles\FrmPagoMoviles.resx">
       <DependentUpon>FrmPagoMoviles.cs</DependentUpon>

@@ -44,6 +44,7 @@
             this.btnFueraFrecuencia = new Telerik.WinControls.UI.RadButton();
             this.BtnEgresos = new Telerik.WinControls.UI.RadButton();
             this.TxtPagoBase = new Telerik.WinControls.UI.RadButton();
+            this.btnPago2 = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.btnInformeCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCambioCelularMovil)).BeginInit();
@@ -58,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnFueraFrecuencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnEgresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtPagoBase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPago2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -283,11 +285,26 @@
             this.TxtPagoBase.ThemeName = "TelerikMetro";
             this.TxtPagoBase.Click += new System.EventHandler(this.TxtPagoBase_Click);
             // 
+            // btnPago2
+            // 
+            this.btnPago2.AutoSize = true;
+            this.btnPago2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPago2.Image = global::GestionAdministrativa.Win.Properties.Resources.pago01;
+            this.btnPago2.Location = new System.Drawing.Point(615, 360);
+            this.btnPago2.Name = "btnPago2";
+            this.btnPago2.Size = new System.Drawing.Size(147, 132);
+            this.btnPago2.TabIndex = 12;
+            this.btnPago2.Text = "Pago de base";
+            this.btnPago2.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPago2.ThemeName = "TelerikMetro";
+            this.btnPago2.Click += new System.EventHandler(this.btnPago2_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1340, 652);
+            this.Controls.Add(this.btnPago2);
             this.Controls.Add(this.TxtPagoBase);
             this.Controls.Add(this.BtnEgresos);
             this.Controls.Add(this.btnFueraFrecuencia);
@@ -325,6 +342,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnFueraFrecuencia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnEgresos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtPagoBase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPago2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -349,6 +367,7 @@
         private Telerik.WinControls.UI.RadButton btnFueraFrecuencia;
         private Telerik.WinControls.UI.RadButton BtnEgresos;
         private Telerik.WinControls.UI.RadButton TxtPagoBase;
+        private Telerik.WinControls.UI.RadButton btnPago2;
 
 
     }

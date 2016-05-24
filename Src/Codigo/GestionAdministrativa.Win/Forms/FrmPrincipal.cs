@@ -250,6 +250,12 @@ namespace GestionAdministrativa.Win.Forms
             frm.Show();
         }
 
+        private void btnPago2_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmMovilesPago>(Guid.Empty, ActionFormMode.Create);
+            frm.Show();
+        }
+
        
         
      
