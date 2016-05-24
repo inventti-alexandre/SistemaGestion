@@ -283,6 +283,7 @@
             this.TxtPagoBase.Text = "Pago de base";
             this.TxtPagoBase.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.TxtPagoBase.ThemeName = "TelerikMetro";
+            this.TxtPagoBase.Visible = false;
             this.TxtPagoBase.Click += new System.EventHandler(this.TxtPagoBase_Click);
             // 
             // btnPago2

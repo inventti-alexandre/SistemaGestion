@@ -95,14 +95,6 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
         }
 
 
-        private void BtnAceptar_Click(object sender, EventArgs e)
-        {
-            if (_actionForm == ActionFormMode.Create)
-                SavePagoBase();
-            else
-                EditarMovil(_movilId);
-        }
-
         private void SavePagoBase()
         {
             if (ucListadoPago1.PagosBases.Count == 0)
@@ -203,6 +195,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             }
             Uow.Commit();
             MessageBox.Show("Pago de base guardado correctamente");
+            this.Close();
         }
 
 
