@@ -158,8 +158,8 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
             //MODIFICAR CAJA Y CAJA MOVIMIENTO
             var caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id && c.FCierre == null).OrderByDescending(c => c.FechaAlta).FirstOrDefault();
-            caja.Ingresos = (caja.Ingresos ?? 0) - pago.Monto;
-            caja.Saldo = (caja.Saldo ?? 0) - pago.Monto;
+            caja.Ingresos = (caja.Ingresos ?? 0) - (pago.Efectivo ?? 0) - (pago.Vales ?? 0);
+            caja.Saldo = (caja.Saldo ?? 0) - (pago.Efectivo ?? 0) - (pago.Vales ?? 0);
             if (pago.Efectivo !=null)
             {
                 caja.Efectivo -= pago.Efectivo; 
@@ -200,7 +200,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                 
             }
             cajaMovimiento.Importe = pago.Monto;
-            cajaMovimiento.ImpFac = (pago.Efectivo ?? 0) + (pago.Vales ?? 0);// ucPagos1.Total; //_pagoCelular.Monto;
+            cajaMovimiento.ImpFac = (pago.Efectivo ?? 0) + (pago.Vales ?? 0);
             cajaMovimiento.Efectivo = pago.Efectivo;
             cajaMovimiento.Vales = pago.Vales;
             cajaMovimiento.FechaAlta = _clock.Now;

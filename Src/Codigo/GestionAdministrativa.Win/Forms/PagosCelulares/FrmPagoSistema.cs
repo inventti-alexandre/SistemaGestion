@@ -327,8 +327,8 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             var caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id && c.FCierre == null).OrderByDescending(c=>c.FechaAlta ).FirstOrDefault();
             caja.Ingresos = (caja.Ingresos ?? 0) + (_pagoCelular.Vales ?? 0) + (_pagoCelular.Efectivo ?? 0);
 
-            MessageBox.Show(caja.Ingresos.ToString());
-            caja.Saldo = (caja.Saldo ?? 0) + ucPagos1.Total;
+            //MessageBox.Show(caja.Ingresos.ToString());
+            caja.Saldo = (caja.Saldo ?? 0) + (_pagoCelular.Vales ?? 0) + (_pagoCelular.Efectivo ?? 0);
             if (_pagoCelular.Efectivo != null)
                 caja.Efectivo += _pagoCelular.Efectivo;
             if (_pagoCelular.Vales !=null)
