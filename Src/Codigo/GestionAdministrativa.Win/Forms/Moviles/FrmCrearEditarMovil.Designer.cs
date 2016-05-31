@@ -40,6 +40,8 @@
             this.EpvMovil = new System.Windows.Forms.ErrorProvider(this.components);
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.ChkActivo = new Telerik.WinControls.UI.RadCheckBox();
+            this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
+            this.ddlTitulares = new Telerik.WinControls.UI.RadDropDownList();
             ((System.ComponentModel.ISupportInitialize)(this.TxtNumero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtPatente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DtpFechaAlta)).BeginInit();
@@ -49,6 +51,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.EpvMovil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChkActivo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlTitulares)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,7 +126,7 @@
             // 
             this.BtnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnCancelar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(476, 186);
+            this.BtnCancelar.Location = new System.Drawing.Point(479, 462);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(114, 41);
             this.BtnCancelar.TabIndex = 7;
@@ -133,7 +137,7 @@
             // 
             this.BtnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnAceptar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAceptar.Location = new System.Drawing.Point(361, 186);
+            this.BtnAceptar.Location = new System.Drawing.Point(364, 462);
             this.BtnAceptar.Name = "BtnAceptar";
             this.BtnAceptar.Size = new System.Drawing.Size(109, 41);
             this.BtnAceptar.TabIndex = 8;
@@ -164,13 +168,35 @@
             this.ChkActivo.TabIndex = 9;
             this.ChkActivo.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
             // 
+            // radLabel5
+            // 
+            this.radLabel5.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel5.Location = new System.Drawing.Point(25, 172);
+            this.radLabel5.Name = "radLabel5";
+            this.radLabel5.Size = new System.Drawing.Size(90, 25);
+            this.radLabel5.TabIndex = 10;
+            this.radLabel5.Text = "Titular:";
+            // 
+            // ddlTitulares
+            // 
+            this.ddlTitulares.DropDownAnimationEnabled = true;
+            this.ddlTitulares.Location = new System.Drawing.Point(150, 172);
+            this.ddlTitulares.MaxDropDownItems = 0;
+            this.ddlTitulares.Name = "ddlTitulares";
+            this.ddlTitulares.ShowImageInEditorArea = true;
+            this.ddlTitulares.Size = new System.Drawing.Size(292, 29);
+            this.ddlTitulares.TabIndex = 11;
+            this.ddlTitulares.ThemeName = "TelerikMetro";
+            // 
             // FrmCrearEditarMovil
             // 
             this.AcceptButton = this.BtnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnCancelar;
-            this.ClientSize = new System.Drawing.Size(602, 239);
+            this.ClientSize = new System.Drawing.Size(602, 515);
+            this.Controls.Add(this.ddlTitulares);
+            this.Controls.Add(this.radLabel5);
             this.Controls.Add(this.ChkActivo);
             this.Controls.Add(this.radLabel4);
             this.Controls.Add(this.BtnAceptar);
@@ -199,6 +225,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.EpvMovil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChkActivo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlTitulares)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -218,5 +246,7 @@
         private System.Windows.Forms.ErrorProvider EpvMovil;
         private Telerik.WinControls.UI.RadCheckBox ChkActivo;
         private Telerik.WinControls.UI.RadLabel radLabel4;
+        private Telerik.WinControls.UI.RadDropDownList ddlTitulares;
+        private Telerik.WinControls.UI.RadLabel radLabel5;
     }
 }

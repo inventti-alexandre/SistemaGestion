@@ -395,6 +395,12 @@
     <Compile Include="Forms\Reportes\FrmInformeCaja.Designer.cs">
       <DependentUpon>FrmInformeCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Titulares\FrmCrearEditarTitular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Titulares\FrmCrearEditarTitular.Designer.cs">
+      <DependentUpon>FrmCrearEditarTitular.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserControlBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -532,6 +538,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reportes\FrmInformeCaja.resx">
       <DependentUpon>FrmInformeCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Titulares\FrmCrearEditarTitular.resx">
+      <DependentUpon>FrmCrearEditarTitular.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControlBase.resx">
       <DependentUpon>UserControlBase.cs</DependentUpon>
