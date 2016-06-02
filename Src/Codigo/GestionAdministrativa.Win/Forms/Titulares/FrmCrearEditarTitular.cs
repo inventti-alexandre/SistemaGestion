@@ -18,10 +18,10 @@ namespace GestionAdministrativa.Win.Forms.Titulares
         public FrmCrearEditarTitular(IGestionAdministrativaUow uow, IClock clock, Guid id, ActionFormMode mode, IFormFactory formFactory)
         {
             Uow = uow;
-            _formMode = mode;
-            _choferid = id;
-            _clock = clock;
-            _iFormFactory = formFactory;
+            //_formMode = mode;
+            //_choferid = id;
+            //_clock = clock;
+            //_iFormFactory = formFactory;
             InitializeComponent();
         }
     }

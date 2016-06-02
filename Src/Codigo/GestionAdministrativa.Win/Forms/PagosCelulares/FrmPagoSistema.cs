@@ -42,8 +42,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         }
 
         private void ucHistorialPagosChoferOnComentarioAdded(object sender, string e)
-        {
-            
+        {  
             ucComentarios.GenerarComentario(_chofer.Id, e);
         }
 

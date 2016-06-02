@@ -330,6 +330,8 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_SucursalAlta" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_SucursalModificacion" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_TipoComprobante" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TalleresMoviles_Movil" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TalleresMoviles_Taller" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

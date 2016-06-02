@@ -3730,6 +3730,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TalleresMoviles_Movil">
+          <End Role="Moviles" Type="Self.Moviles" Multiplicity="1" />
+          <End Role="TalleresMoviles" Type="Self.TalleresMoviles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Moviles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TalleresMoviles">
+              <PropertyRef Name="MovilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TalleresMoviles_OperadorAlta">
           <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
           <End Role="TalleresMoviles" Type="Self.TalleresMoviles" Multiplicity="*" />
@@ -3775,6 +3787,18 @@
             </Principal>
             <Dependent Role="TalleresMoviles">
               <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TalleresMoviles_Taller">
+          <End Role="Talleres" Type="Self.Talleres" Multiplicity="1" />
+          <End Role="TalleresMoviles" Type="Self.TalleresMoviles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Talleres">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TalleresMoviles">
+              <PropertyRef Name="TallerId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -5071,6 +5095,10 @@
             <End Role="Sucursales" EntitySet="Sucursales" />
             <End Role="Talleres" EntitySet="Talleres" />
           </AssociationSet>
+          <AssociationSet Name="FK_TalleresMoviles_Movil" Association="Self.FK_TalleresMoviles_Movil">
+            <End Role="Moviles" EntitySet="Moviles" />
+            <End Role="TalleresMoviles" EntitySet="TalleresMoviles" />
+          </AssociationSet>
           <AssociationSet Name="FK_TalleresMoviles_OperadorAlta" Association="Self.FK_TalleresMoviles_OperadorAlta">
             <End Role="Operadores" EntitySet="Operadores" />
             <End Role="TalleresMoviles" EntitySet="TalleresMoviles" />
@@ -5085,6 +5113,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_TalleresMoviles_SucursalModificacion" Association="Self.FK_TalleresMoviles_SucursalModificacion">
             <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="TalleresMoviles" EntitySet="TalleresMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TalleresMoviles_Taller" Association="Self.FK_TalleresMoviles_Taller">
+            <End Role="Talleres" EntitySet="Talleres" />
             <End Role="TalleresMoviles" EntitySet="TalleresMoviles" />
           </AssociationSet>
           <AssociationSet Name="FK_Tarifas_OperadorAlta" Association="Self.FK_Tarifas_OperadorAlta">
@@ -5530,6 +5562,7 @@
           <NavigationProperty Name="Dia" Relationship="GestionAdministrativa.Model.FK_Moviles_DiaPago" FromRole="Movil" ToRole="Dia" />
           <NavigationProperty Name="PagosMoviles" Relationship="GestionAdministrativa.Model.FK_PagosMoviles_Movil" FromRole="Movil" ToRole="PagosMovile" />
           <NavigationProperty Name="MovilesMontoFavors" Relationship="GestionAdministrativa.Model.FK_MovilesMontoFavor_Movil" FromRole="Movil" ToRole="MovilesMontoFavor" />
+          <NavigationProperty Name="TalleresMoviles" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_Movil" FromRole="Movil" ToRole="TalleresMovile" />
         </EntityType>
         <EntityType Name="Operador">
           <Key>
@@ -9421,6 +9454,14 @@
             <End Role="TipoComprobante" EntitySet="TiposComprobantes" />
             <End Role="MovilesMontoFavor" EntitySet="MovilesMontoFavors" />
           </AssociationSet>
+          <AssociationSet Name="FK_TalleresMoviles_Movil" Association="GestionAdministrativa.Model.FK_TalleresMoviles_Movil">
+            <End Role="Movil" EntitySet="Moviles" />
+            <End Role="TalleresMovile" EntitySet="TalleresMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TalleresMoviles_Taller" Association="GestionAdministrativa.Model.FK_TalleresMoviles_Taller">
+            <End Role="Tallere" EntitySet="Talleres" />
+            <End Role="TalleresMovile" EntitySet="TalleresMoviles" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Chofer">
           <Key>
@@ -10267,6 +10308,7 @@
           <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_Talleres_OperadorModificacion" FromRole="Tallere" ToRole="Operador" />
           <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_Talleres_SucursalAlta" FromRole="Tallere" ToRole="Sucursal" />
           <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_Talleres_SucursalModificacion" FromRole="Tallere" ToRole="Sucursal" />
+          <NavigationProperty Name="TalleresMoviles" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_Taller" FromRole="Tallere" ToRole="TalleresMovile" />
         </EntityType>
         <EntityType Name="TalleresMovile">
           <Key>
@@ -10288,6 +10330,8 @@
           <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_OperadorModificacion" FromRole="TalleresMovile" ToRole="Operador" />
           <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_SucursalAlta" FromRole="TalleresMovile" ToRole="Sucursal" />
           <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_SucursalModificacion" FromRole="TalleresMovile" ToRole="Sucursal" />
+          <NavigationProperty Name="Movile" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_Movil" FromRole="TalleresMovile" ToRole="Movil" />
+          <NavigationProperty Name="Tallere" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_Taller" FromRole="TalleresMovile" ToRole="Tallere" />
         </EntityType>
         <EntityType Name="Tarifa">
           <Key>
@@ -10892,6 +10936,30 @@
             </Principal>
             <Dependent Role="MovilesMontoFavor">
               <PropertyRef Name="TipoComprobanteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TalleresMoviles_Movil">
+          <End Type="GestionAdministrativa.Model.Movil" Role="Movil" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.TalleresMovile" Role="TalleresMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movil">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TalleresMovile">
+              <PropertyRef Name="MovilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TalleresMoviles_Taller">
+          <End Type="GestionAdministrativa.Model.Tallere" Role="Tallere" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.TalleresMovile" Role="TalleresMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tallere">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TalleresMovile">
+              <PropertyRef Name="TallerId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

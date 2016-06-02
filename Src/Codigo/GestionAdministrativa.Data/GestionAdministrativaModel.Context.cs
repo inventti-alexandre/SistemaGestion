@@ -12,9 +12,9 @@ namespace GestionAdministrativa.Data
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using GestionAdministrativa.Entities;
     using System.Data.Entity.Core.Objects;
     using System.Linq;
-    using GestionAdministrativa.Entities;
     
     public partial class GestionAdministrativaDbContext : DbContext
     {

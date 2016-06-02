@@ -14,6 +14,11 @@ namespace GestionAdministrativa.Entities
     
     public partial class Tallere
     {
+        public Tallere()
+        {
+            this.TalleresMoviles = new HashSet<TalleresMovile>();
+        }
+    
         public System.Guid Id { get; set; }
         public string Descripcion { get; set; }
         public Nullable<decimal> Porcentaje { get; set; }
@@ -28,5 +33,6 @@ namespace GestionAdministrativa.Entities
         public virtual Operador Operadore1 { get; set; }
         public virtual Sucursal Sucursale { get; set; }
         public virtual Sucursal Sucursale1 { get; set; }
+        public virtual ICollection<TalleresMovile> TalleresMoviles { get; set; }
     }
 }
