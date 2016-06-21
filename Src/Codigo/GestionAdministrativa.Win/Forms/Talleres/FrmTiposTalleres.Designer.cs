@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn4 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.DgvTiposTalleres = new Telerik.WinControls.UI.RadGridView();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
@@ -69,24 +69,24 @@
             this.DgvTiposTalleres.MasterTemplate.AllowColumnReorder = false;
             this.DgvTiposTalleres.MasterTemplate.AllowDragToGroup = false;
             this.DgvTiposTalleres.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn7.FieldName = "Descripcion";
-            gridViewTextBoxColumn7.HeaderText = "Descripcion";
-            gridViewTextBoxColumn7.Name = "Descripcion";
-            gridViewTextBoxColumn7.Width = 498;
-            gridViewTextBoxColumn8.FieldName = "Porcentaje";
-            gridViewTextBoxColumn8.HeaderText = "Porcentaje";
-            gridViewTextBoxColumn8.Name = "Porcentaje";
-            gridViewTextBoxColumn8.Width = 218;
-            gridViewCommandColumn4.HeaderText = "";
-            gridViewCommandColumn4.Image = global::GestionAdministrativa.Win.Properties.Resources.Garbage_Closed;
-            gridViewCommandColumn4.MaxWidth = 25;
-            gridViewCommandColumn4.MinWidth = 25;
-            gridViewCommandColumn4.Name = "Delete";
-            gridViewCommandColumn4.Width = 25;
+            gridViewTextBoxColumn3.FieldName = "Descripcion";
+            gridViewTextBoxColumn3.HeaderText = "Descripcion";
+            gridViewTextBoxColumn3.Name = "Descripcion";
+            gridViewTextBoxColumn3.Width = 498;
+            gridViewTextBoxColumn4.FieldName = "Porcentaje";
+            gridViewTextBoxColumn4.HeaderText = "Porcentaje";
+            gridViewTextBoxColumn4.Name = "Porcentaje";
+            gridViewTextBoxColumn4.Width = 218;
+            gridViewCommandColumn2.HeaderText = "";
+            gridViewCommandColumn2.Image = global::GestionAdministrativa.Win.Properties.Resources.Garbage_Closed;
+            gridViewCommandColumn2.MaxWidth = 25;
+            gridViewCommandColumn2.MinWidth = 25;
+            gridViewCommandColumn2.Name = "Delete";
+            gridViewCommandColumn2.Width = 25;
             this.DgvTiposTalleres.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewCommandColumn4});
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewCommandColumn2});
             this.DgvTiposTalleres.Name = "DgvTiposTalleres";
             this.DgvTiposTalleres.ReadOnly = true;
             this.DgvTiposTalleres.Size = new System.Drawing.Size(761, 302);
@@ -99,7 +99,7 @@
             // 
             this.BtnAgregar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnAgregar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregar.Location = new System.Drawing.Point(646, 44);
+            this.BtnAgregar.Location = new System.Drawing.Point(647, 44);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(103, 41);
             this.BtnAgregar.TabIndex = 21;
@@ -121,7 +121,7 @@
             // radLabel1
             // 
             this.radLabel1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(493, 13);
+            this.radLabel1.Location = new System.Drawing.Point(494, 13);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(121, 25);
             this.radLabel1.TabIndex = 19;
@@ -130,7 +130,7 @@
             // TxtPorcentaje
             // 
             this.TxtPorcentaje.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPorcentaje.Location = new System.Drawing.Point(620, 10);
+            this.TxtPorcentaje.Location = new System.Drawing.Point(621, 10);
             this.TxtPorcentaje.Name = "TxtPorcentaje";
             this.TxtPorcentaje.Size = new System.Drawing.Size(129, 28);
             this.TxtPorcentaje.TabIndex = 18;

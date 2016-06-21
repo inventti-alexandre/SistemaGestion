@@ -382,6 +382,14 @@
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Descripcion" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="MotivosTalleres">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Motivo" Type="varchar" MaxLength="50" />
+          <Property Name="Descuento" Type="float" Nullable="false" />
+        </EntityType>
         <EntityType Name="Moviles">
           <Key>
             <PropertyRef Name="Id" />
@@ -850,13 +858,14 @@
           </Key>
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="50" />
-          <Property Name="Porcentaje" Type="decimal" Precision="3" Scale="2" />
+          <Property Name="Porcentaje" Type="decimal" Precision="4" Scale="2" />
           <Property Name="OperadorAltaId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="SucursalAltaId" Type="int" Nullable="false" />
           <Property Name="FechaAlta" Type="datetime" Nullable="false" />
           <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
           <Property Name="SucursalModificacionId" Type="int" />
           <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="Activo" Type="bit" />
         </EntityType>
         <EntityType Name="TalleresMoviles">
           <Key>
@@ -4149,6 +4158,7 @@
           <EntitySet Name="GruposProveedores" EntityType="Self.GruposProveedores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Localidades" EntityType="Self.Localidades" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ModelosCelulares" EntityType="Self.ModelosCelulares" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MotivosTalleres" EntityType="Self.MotivosTalleres" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Moviles" EntityType="Self.Moviles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MovilesMontoFavor" EntityType="Self.MovilesMontoFavor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Operadores" EntityType="Self.Operadores" Schema="dbo" store:Type="Tables" />
@@ -9462,6 +9472,7 @@
             <End Role="Tallere" EntitySet="Talleres" />
             <End Role="TalleresMovile" EntitySet="TalleresMoviles" />
           </AssociationSet>
+          <EntitySet Name="MotivosTalleres" EntityType="GestionAdministrativa.Model.MotivosTallere" />
         </EntityContainer>
         <EntityType Name="Chofer">
           <Key>
@@ -10297,7 +10308,7 @@
           </Key>
           <Property Name="Id" Type="Guid" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Porcentaje" Type="Decimal" Precision="3" Scale="2" />
+          <Property Name="Porcentaje" Type="Decimal" Precision="4" Scale="2" />
           <Property Name="OperadorAltaId" Type="Guid" Nullable="false" />
           <Property Name="SucursalAltaId" Type="Int32" Nullable="false" />
           <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
@@ -10309,6 +10320,7 @@
           <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_Talleres_SucursalAlta" FromRole="Tallere" ToRole="Sucursal" />
           <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_Talleres_SucursalModificacion" FromRole="Tallere" ToRole="Sucursal" />
           <NavigationProperty Name="TalleresMoviles" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_Taller" FromRole="Tallere" ToRole="TalleresMovile" />
+          <Property Name="Activo" Type="Boolean" />
         </EntityType>
         <EntityType Name="TalleresMovile">
           <Key>
@@ -10963,6 +10975,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="MotivosTallere">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Motivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Descuento" Type="Double" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -11989,6 +12009,7 @@
           <EntitySetMapping Name="Talleres">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.Tallere">
               <MappingFragment StoreEntitySet="Talleres">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
                 <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
                 <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
                 <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
@@ -12089,6 +12110,15 @@
                 <ScalarProperty Name="TipoComprobanteId" ColumnName="TipoComprobanteId" />
                 <ScalarProperty Name="FechaComprobante" ColumnName="FechaComprobante" />
                 <ScalarProperty Name="MovilId" ColumnName="MovilId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MotivosTalleres">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.MotivosTallere">
+              <MappingFragment StoreEntitySet="MotivosTalleres">
+                <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+                <ScalarProperty Name="Motivo" ColumnName="Motivo" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

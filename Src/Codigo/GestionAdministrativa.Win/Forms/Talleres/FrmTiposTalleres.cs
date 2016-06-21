@@ -35,7 +35,6 @@ namespace GestionAdministrativa.Win.Forms.Talleres
 
         public decimal Porcentaje
         {
-
             get
             {
                 decimal j;
@@ -57,7 +56,7 @@ namespace GestionAdministrativa.Win.Forms.Talleres
 
         private void RefrescarListado()
         {
-            var tiposTalleres = Uow.Talleres.Listado();
+            var tiposTalleres = Uow.Talleres.Listado().Where(t => t.Activo==true);
             if (tiposTalleres != null)
                 DgvTiposTalleres.DataSource = tiposTalleres.ToList();
         }
@@ -75,6 +74,7 @@ namespace GestionAdministrativa.Win.Forms.Talleres
                 tipoTaller.Id = Guid.NewGuid();
                 tipoTaller.Descripcion = Descripcion;
                 tipoTaller.Porcentaje = Porcentaje;
+                tipoTaller.Activo = true;
                 tipoTaller.OperadorAltaId = Context.OperadorActual.Id;
                 tipoTaller.SucursalAltaId = Context.SucursalActual.Id;
                 tipoTaller.FechaAlta = _clock.Now;
@@ -113,8 +113,12 @@ namespace GestionAdministrativa.Win.Forms.Talleres
 
         private void DeleteTipoTaller(Tallere tipoTaller)
         {
+            tipoTaller.Activo = false;
+            tipoTaller.FechaModificacion = _clock.Now;
+            tipoTaller.OperadorModificacionId = Context.OperadorActual.Id;
+            tipoTaller.SucursalModificacionId = Context.SucursalActual.Id;
 
-            Uow.Talleres.Eliminar(tipoTaller);
+            Uow.Talleres.Modificar(tipoTaller);
             Uow.Commit();
             RefrescarListado();
 

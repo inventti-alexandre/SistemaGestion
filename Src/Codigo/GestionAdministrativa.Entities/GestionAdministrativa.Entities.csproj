@@ -99,6 +99,7 @@
     <Compile Include="Dto\ChoferesDto.cs" />
     <Compile Include="Dto\CelularDto.cs" />
     <Compile Include="Dto\MovilesDto.cs" />
+    <Compile Include="Dto\TiposTalleresDto.cs" />
     <Compile Include="EmpresasCelulare.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
@@ -138,6 +139,9 @@
     <Compile Include="Metadata\TiposTalleresMetadata.cs" />
     <Compile Include="Metadata\VentaMetadata.cs" />
     <Compile Include="ModelosCelulare.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MotivosTallere.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Movil.cs">

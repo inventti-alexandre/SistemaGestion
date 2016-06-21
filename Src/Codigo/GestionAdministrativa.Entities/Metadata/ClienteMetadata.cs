@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Alejandria.Entities
+namespace GestionAdministrativa.Entities
 {
     [MetadataType(typeof(ClienteMetadata))]
     public partial class Cliente

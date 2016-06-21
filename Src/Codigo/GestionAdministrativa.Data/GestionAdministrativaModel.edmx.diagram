@@ -78,15 +78,15 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_CentrosCostos_SucursalAlta" ManuallyRouted="false" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_CentrosCostos_SucursalModificacion" ManuallyRouted="false" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPago_CentrosCostos" ManuallyRouted="true" >
-          <ConnectorPoint PointX="21.75" PointY="73.318595441406273" />
-          <ConnectorPoint PointX="21.208333333333332" PointY="73.318595441406273" />
-          <ConnectorPoint PointX="20.666666666666668" PointY="73.318595441406273" />
-          <ConnectorPoint PointX="20.5" PointY="73.318595441406273" />
+          <ConnectorPoint PointX="21.75" PointY="73.230044025065141" />
+          <ConnectorPoint PointX="21.208333333333332" PointY="73.230044025065141" />
+          <ConnectorPoint PointX="21.041666666666668" PointY="73.230044025065141" />
+          <ConnectorPoint PointX="20.958333333333332" PointY="73.230044025065141" />
+          <ConnectorPoint PointX="20.666666666666668" PointY="73.230044025065141" />
+          <ConnectorPoint PointX="20.5" PointY="73.230044025065141" />
           <ConnectorPoint PointX="20.5" PointY="70.75" />
-          <ConnectorPoint PointX="18.583333333333332" PointY="70.75" />
-          <ConnectorPoint PointX="18.416666666666668" PointY="70.75" />
-          <ConnectorPoint PointX="18.333333333333332" PointY="70.75" />
-          <ConnectorPoint PointX="18.166666666666668" PointY="70.75" />
+          <ConnectorPoint PointX="20.458333333333332" PointY="70.75" />
+          <ConnectorPoint PointX="20.291666666666668" PointY="70.75" />
           <ConnectorPoint PointX="17.5" PointY="70.75" />
           <ConnectorPoint PointX="17.5" PointY="72.008932291666667" />
           <ConnectorPoint PointX="16.5" PointY="72.008932291666667" />
@@ -332,6 +332,7 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_TipoComprobante" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_TalleresMoviles_Movil" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_TalleresMoviles_Taller" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.MotivosTallere" Width="1.5" PointX="0.75" PointY="3.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
