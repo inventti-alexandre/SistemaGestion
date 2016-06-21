@@ -17,7 +17,14 @@ namespace GestionAdministrativa.Win.Forms.Talleres
 
         public FrmTalleres(IGestionAdministrativaUow uow, IClock clock)
         {
+            _clock = clock;
+            Uow = uow;
             InitializeComponent();
         }
+
+        #region Properties
+
+
+        #endregion
     }
 }

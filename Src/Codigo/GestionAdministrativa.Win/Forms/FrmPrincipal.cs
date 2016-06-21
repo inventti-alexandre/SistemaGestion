@@ -24,6 +24,7 @@ using GestionAdministrativa.Win.Forms.Cambios;
 using System.Deployment.Application;
 using GestionAdministrativa.Win.Forms.Egresos;
 using GestionAdministrativa.Win.Forms.PagosMoviles;
+using GestionAdministrativa.Win.Forms.Talleres;
 
 namespace GestionAdministrativa.Win.Forms
 {
@@ -255,6 +256,14 @@ namespace GestionAdministrativa.Win.Forms
             var frm = FormFactory.Create<FrmMovilesPago>(Guid.Empty, ActionFormMode.Create);
             frm.Show();
         }
+
+        private void MenuTiposTalleres_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmTiposTalleres>(Guid.Empty, ActionFormMode.Create);
+            frm.Show();
+        }
+
+       
 
        
         

@@ -38,6 +38,7 @@
             this.BtnCelulares = new Telerik.WinControls.UI.RadButton();
             this.Menu = new Telerik.WinControls.UI.RadMenu();
             this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuTiposTalleres = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
             this.BtnChoferListado = new Telerik.WinControls.UI.RadButton();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
@@ -68,7 +69,7 @@
             this.btnInformeCaja.AutoSize = true;
             this.btnInformeCaja.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInformeCaja.Image = global::GestionAdministrativa.Win.Properties.Resources.infCaja;
-            this.btnInformeCaja.Location = new System.Drawing.Point(298, 209);
+            this.btnInformeCaja.Location = new System.Drawing.Point(291, 243);
             this.btnInformeCaja.Name = "btnInformeCaja";
             this.btnInformeCaja.Size = new System.Drawing.Size(147, 132);
             this.btnInformeCaja.TabIndex = 10;
@@ -80,7 +81,7 @@
             // lblUsuario
             // 
             this.lblUsuario.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(44, 12);
+            this.lblUsuario.Location = new System.Drawing.Point(53, 55);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(111, 28);
             this.lblUsuario.TabIndex = 11;
@@ -91,7 +92,7 @@
             this.btnCambioCelularMovil.AutoSize = true;
             this.btnCambioCelularMovil.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambioCelularMovil.Image = global::GestionAdministrativa.Win.Properties.Resources.celChange;
-            this.btnCambioCelularMovil.Location = new System.Drawing.Point(451, 55);
+            this.btnCambioCelularMovil.Location = new System.Drawing.Point(444, 89);
             this.btnCambioCelularMovil.Name = "btnCambioCelularMovil";
             this.btnCambioCelularMovil.Size = new System.Drawing.Size(132, 132);
             this.btnCambioCelularMovil.TabIndex = 10;
@@ -105,7 +106,7 @@
             this.btnCajaResumida.AutoSize = true;
             this.btnCajaResumida.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCajaResumida.Image = global::GestionAdministrativa.Win.Properties.Resources.infCaja;
-            this.btnCajaResumida.Location = new System.Drawing.Point(451, 209);
+            this.btnCajaResumida.Location = new System.Drawing.Point(444, 243);
             this.btnCajaResumida.Name = "btnCajaResumida";
             this.btnCajaResumida.Size = new System.Drawing.Size(158, 132);
             this.btnCajaResumida.TabIndex = 9;
@@ -119,7 +120,7 @@
             this.BtnCajas.AutoSize = true;
             this.BtnCajas.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCajas.Image = global::GestionAdministrativa.Win.Properties.Resources.balance;
-            this.BtnCajas.Location = new System.Drawing.Point(145, 360);
+            this.BtnCajas.Location = new System.Drawing.Point(138, 394);
             this.BtnCajas.Name = "BtnCajas";
             this.BtnCajas.Size = new System.Drawing.Size(132, 132);
             this.BtnCajas.TabIndex = 8;
@@ -133,7 +134,7 @@
             this.BtnAbrirCaja.AutoSize = true;
             this.BtnAbrirCaja.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAbrirCaja.Image = global::GestionAdministrativa.Win.Properties.Resources.caja;
-            this.BtnAbrirCaja.Location = new System.Drawing.Point(1077, 55);
+            this.BtnAbrirCaja.Location = new System.Drawing.Point(1070, 89);
             this.BtnAbrirCaja.Name = "BtnAbrirCaja";
             this.BtnAbrirCaja.Size = new System.Drawing.Size(132, 132);
             this.BtnAbrirCaja.TabIndex = 7;
@@ -147,7 +148,7 @@
             this.btnPagos.AutoSize = true;
             this.btnPagos.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPagos.Image = global::GestionAdministrativa.Win.Properties.Resources.pago01;
-            this.btnPagos.Location = new System.Drawing.Point(145, 209);
+            this.btnPagos.Location = new System.Drawing.Point(138, 243);
             this.btnPagos.Name = "btnPagos";
             this.btnPagos.Size = new System.Drawing.Size(132, 132);
             this.btnPagos.TabIndex = 6;
@@ -161,7 +162,7 @@
             this.BtnCelulares.AutoSize = true;
             this.BtnCelulares.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCelulares.Image = global::GestionAdministrativa.Win.Properties.Resources.Cell01;
-            this.BtnCelulares.Location = new System.Drawing.Point(598, 55);
+            this.BtnCelulares.Location = new System.Drawing.Point(591, 89);
             this.BtnCelulares.Name = "BtnCelulares";
             this.BtnCelulares.Size = new System.Drawing.Size(132, 132);
             this.BtnCelulares.TabIndex = 4;
@@ -174,7 +175,6 @@
             // Menu
             // 
             this.Menu.BackColor = System.Drawing.Color.DarkGray;
-            this.Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.Menu.DropDownAnimationEnabled = true;
             this.Menu.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Menu.Items.AddRange(new Telerik.WinControls.RadItem[] {
@@ -182,32 +182,41 @@
             this.radMenuItem2});
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Name = "Menu";
-            this.Menu.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.Menu.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
             // 
             // 
             // 
             this.Menu.RootElement.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
-            this.Menu.Size = new System.Drawing.Size(38, 652);
+            this.Menu.Size = new System.Drawing.Size(1340, 38);
             this.Menu.TabIndex = 5;
             this.Menu.Text = "radMenu1";
             this.Menu.ThemeName = "TelerikMetro";
-            this.Menu.Visible = false;
             // 
             // radMenuItem1
             // 
             this.radMenuItem1.AccessibleDescription = "Menu 01";
             this.radMenuItem1.AccessibleName = "Menu 01";
-            this.radMenuItem1.AngleTransform = 90F;
+            this.radMenuItem1.AngleTransform = 0F;
+            this.radMenuItem1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.MenuTiposTalleres});
             this.radMenuItem1.Name = "radMenuItem1";
-            this.radMenuItem1.Text = "Menu 01";
+            this.radMenuItem1.Text = "Talleres";
             this.radMenuItem1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // MenuTiposTalleres
+            // 
+            this.MenuTiposTalleres.AccessibleDescription = "radMenuItem3";
+            this.MenuTiposTalleres.AccessibleName = "radMenuItem3";
+            this.MenuTiposTalleres.Name = "MenuTiposTalleres";
+            this.MenuTiposTalleres.Text = "Tipos Talleres";
+            this.MenuTiposTalleres.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuTiposTalleres.Click += new System.EventHandler(this.MenuTiposTalleres_Click);
             // 
             // radMenuItem2
             // 
             this.radMenuItem2.AccessibleDescription = "Menu 02";
             this.radMenuItem2.AccessibleName = "Menu 02";
-            this.radMenuItem2.AngleTransform = 90F;
+            this.radMenuItem2.AngleTransform = 0F;
             this.radMenuItem2.Name = "radMenuItem2";
             this.radMenuItem2.Text = "Menu 02";
             this.radMenuItem2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
@@ -219,7 +228,7 @@
             this.BtnChoferListado.ForeColor = System.Drawing.Color.White;
             this.BtnChoferListado.Image = global::GestionAdministrativa.Win.Properties.Resources.chofer01;
             this.BtnChoferListado.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnChoferListado.Location = new System.Drawing.Point(145, 55);
+            this.BtnChoferListado.Location = new System.Drawing.Point(138, 89);
             this.BtnChoferListado.Name = "BtnChoferListado";
             this.BtnChoferListado.Size = new System.Drawing.Size(132, 132);
             this.BtnChoferListado.TabIndex = 3;
@@ -234,7 +243,7 @@
             this.radButton1.BackColor = System.Drawing.Color.White;
             this.radButton1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radButton1.Image = global::GestionAdministrativa.Win.Properties.Resources.Car01;
-            this.radButton1.Location = new System.Drawing.Point(298, 55);
+            this.radButton1.Location = new System.Drawing.Point(291, 89);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(132, 132);
             this.radButton1.TabIndex = 0;
@@ -248,7 +257,7 @@
             this.btnFueraFrecuencia.AutoSize = true;
             this.btnFueraFrecuencia.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFueraFrecuencia.Image = global::GestionAdministrativa.Win.Properties.Resources.infCaja;
-            this.btnFueraFrecuencia.Location = new System.Drawing.Point(615, 209);
+            this.btnFueraFrecuencia.Location = new System.Drawing.Point(608, 243);
             this.btnFueraFrecuencia.Name = "btnFueraFrecuencia";
             this.btnFueraFrecuencia.Size = new System.Drawing.Size(132, 132);
             this.btnFueraFrecuencia.TabIndex = 10;
@@ -262,7 +271,7 @@
             this.BtnEgresos.AutoSize = true;
             this.BtnEgresos.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEgresos.Image = global::GestionAdministrativa.Win.Properties.Resources.pago01;
-            this.BtnEgresos.Location = new System.Drawing.Point(298, 360);
+            this.BtnEgresos.Location = new System.Drawing.Point(291, 394);
             this.BtnEgresos.Name = "BtnEgresos";
             this.BtnEgresos.Size = new System.Drawing.Size(132, 132);
             this.BtnEgresos.TabIndex = 7;
@@ -276,7 +285,7 @@
             this.TxtPagoBase.AutoSize = true;
             this.TxtPagoBase.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtPagoBase.Image = global::GestionAdministrativa.Win.Properties.Resources.pago01;
-            this.TxtPagoBase.Location = new System.Drawing.Point(451, 360);
+            this.TxtPagoBase.Location = new System.Drawing.Point(444, 394);
             this.TxtPagoBase.Name = "TxtPagoBase";
             this.TxtPagoBase.Size = new System.Drawing.Size(147, 132);
             this.TxtPagoBase.TabIndex = 8;
@@ -291,7 +300,7 @@
             this.btnPago2.AutoSize = true;
             this.btnPago2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPago2.Image = global::GestionAdministrativa.Win.Properties.Resources.pago01;
-            this.btnPago2.Location = new System.Drawing.Point(615, 360);
+            this.btnPago2.Location = new System.Drawing.Point(608, 394);
             this.btnPago2.Name = "btnPago2";
             this.btnPago2.Size = new System.Drawing.Size(147, 132);
             this.btnPago2.TabIndex = 12;
@@ -369,6 +378,7 @@
         private Telerik.WinControls.UI.RadButton BtnEgresos;
         private Telerik.WinControls.UI.RadButton TxtPagoBase;
         private Telerik.WinControls.UI.RadButton btnPago2;
+        private Telerik.WinControls.UI.RadMenuItem MenuTiposTalleres;
 
 
     }

@@ -135,6 +135,7 @@
     <Compile Include="Metadata\ChoferMetadata.cs" />
     <Compile Include="Metadata\CelularMetadata.cs" />
     <Compile Include="Metadata\MovilMetadata.cs" />
+    <Compile Include="Metadata\TiposTalleresMetadata.cs" />
     <Compile Include="Metadata\VentaMetadata.cs" />
     <Compile Include="ModelosCelulare.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>

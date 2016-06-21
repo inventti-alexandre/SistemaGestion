@@ -36,6 +36,8 @@ namespace GestionAdministrativa.Data.Interfaces
         IRepository<OrdenPago> OrdenesPagos { get; }
         IRepository<OrdenPagoDetalle> OrdenesPagosDetalles { get; }
         IRepository<Proveedor> Proveedores { get; }
+        IRepository<Tallere> Talleres { get; }
+        IRepository<TalleresMovile> TalleresMoviles { get; }
         IRepository<Titulare> Titulares { get; }
         bool IsDisposed { get; }
 

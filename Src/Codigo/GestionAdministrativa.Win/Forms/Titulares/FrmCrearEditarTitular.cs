@@ -17,8 +17,8 @@ namespace GestionAdministrativa.Win.Forms.Titulares
     public partial class FrmCrearEditarTitular : EditFormBase
     {
         private readonly ActionFormMode _formMode;
-        private Guid _titularId;
         private Titulare _titular;
+        private Guid _titularId;
         private readonly IClock _clock;
         private IFormFactory _iFormFactory;
         public FrmCrearEditarTitular(IGestionAdministrativaUow uow, IClock clock, Guid id, ActionFormMode mode, IFormFactory formFactory)
@@ -30,6 +30,7 @@ namespace GestionAdministrativa.Win.Forms.Titulares
             _iFormFactory = formFactory;
             InitializeComponent();
         }
+
 
         private void InicializarForm(ActionFormMode mode)
         {
@@ -238,6 +239,5 @@ namespace GestionAdministrativa.Win.Forms.Titulares
             this.ValidarControl(TxtApellido, "Apellido");
             this.ValidarControl(TxtNombre, "Nombre");
         }
-
     }
 }

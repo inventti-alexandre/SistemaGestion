@@ -395,6 +395,18 @@
     <Compile Include="Forms\Reportes\FrmInformeCaja.Designer.cs">
       <DependentUpon>FrmInformeCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Talleres\FrmTiposTalleres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Talleres\FrmTiposTalleres.Designer.cs">
+      <DependentUpon>FrmTiposTalleres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Talleres\FrmTalleres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Talleres\FrmTalleres.Designer.cs">
+      <DependentUpon>FrmTalleres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Titulares\FrmCrearEditarTitular.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -538,6 +550,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reportes\FrmInformeCaja.resx">
       <DependentUpon>FrmInformeCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Talleres\FrmTiposTalleres.resx">
+      <DependentUpon>FrmTiposTalleres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Talleres\FrmTalleres.resx">
+      <DependentUpon>FrmTalleres.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Titulares\FrmCrearEditarTitular.resx">
       <DependentUpon>FrmCrearEditarTitular.cs</DependentUpon>

@@ -48,6 +48,8 @@ namespace GestionAdministrativa.Data
         public IRepository<OrdenPago> OrdenesPagos { get { return GetStandardRepo<OrdenPago>(); } }
         public IRepository<OrdenPagoDetalle> OrdenesPagosDetalles { get { return GetStandardRepo<OrdenPagoDetalle>(); } }
         public IRepository<Proveedor> Proveedores { get { return GetStandardRepo<Proveedor>(); } }
+        public IRepository<Tallere> Talleres { get { return GetStandardRepo<Tallere>(); } }
+        public IRepository<TalleresMovile> TalleresMoviles { get { return GetStandardRepo<TalleresMovile>(); } }
         public IRepository<Titulare> Titulares { get { return GetStandardRepo<Titulare>(); } }
         public string ConnectionString
         {
