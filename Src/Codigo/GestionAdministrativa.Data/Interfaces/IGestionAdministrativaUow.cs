@@ -36,6 +36,7 @@ namespace GestionAdministrativa.Data.Interfaces
         IRepository<OrdenPago> OrdenesPagos { get; }
         IRepository<OrdenPagoDetalle> OrdenesPagosDetalles { get; }
         IRepository<Proveedor> Proveedores { get; }
+        IRepository<Titulare> Titulares { get; }
         bool IsDisposed { get; }
 
         void Commit();
