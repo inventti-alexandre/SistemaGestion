@@ -92,6 +92,10 @@ namespace GestionAdministrativa.Win.Forms.Titulares
 
         #endregion
 
+        #region Eventos
+        public event EventHandler<Titulare> EntityAgregada;
+        #endregion
+
         private void FrmCrearEditarTitular_Load(object sender, EventArgs e)
         {
             CargarEntidad(_titularId);
@@ -113,7 +117,7 @@ namespace GestionAdministrativa.Win.Forms.Titulares
             this.DNI = _titular.DNI;
             this.Apellido = _titular.Apellido;
             this.Nombre = _titular.Nombre;
-            //this.Telefono = _titular.Telefono;
+            this.Telefono = _titular.Telefono;
             this.Email = _titular.Mail;
             this.Domicilio = _titular.Domicilio;
            // this.MovilId = _titular.MovilId;
@@ -131,6 +135,108 @@ namespace GestionAdministrativa.Win.Forms.Titulares
             //    Celular = _celular.TiposCelulares.Tipo;
             //}
             //else { BtnAgregarCelular.Visible = true; }
+        }
+
+        private void CrearEditar()
+        {
+            var esValido = this.ValidarForm();
+
+            if (!esValido)
+                this.DialogResult = DialogResult.None;
+            else
+            {
+                var entity = ObtenerEntityDesdeForm();
+                if (_formMode == ActionFormMode.Create)
+                {
+                    var titular = Uow.Titulares.Obtener(t => t.DNI == DNI);
+                    if (titular != null)
+                    {
+                        MessageBox.Show("Un titular con ese DNi ya existe en la base de datos.");
+                        return;
+                    }
+
+                    Uow.Titulares.Agregar(entity);
+                    //if (entity.Movil != null)
+                    //{
+                    //    var choferMovil = new ChoferesMovil();
+                    //    choferMovil.Choferid = entity.Id;
+                    //    choferMovil.MovilId = entity.MovilId;
+                    //    choferMovil.Alta = _clock.Now;
+                    //    choferMovil.FechaAlta = _clock.Now;
+                    //    choferMovil.OperadorAltaId = Context.OperadorActual.Id;
+                    //    choferMovil.SucursalAltaId = Context.SucursalActual.Id;
+
+                    //    Uow.ChoferesMoviles.Agregar(choferMovil);
+                    //}
+                }
+                //else
+                //{
+                //    if (NuevoMovil)
+                //    {
+                //        var choferMovil = new ChoferesMovil();
+                //        choferMovil.Choferid = entity.Id;
+                //        choferMovil.MovilId = entity.MovilId;
+                //        choferMovil.Alta = _clock.Now;
+                //        choferMovil.FechaAlta = _clock.Now;
+                //        choferMovil.OperadorAltaId = Context.OperadorActual.Id;
+                //        choferMovil.SucursalAltaId = Context.SucursalActual.Id;
+
+                //        Uow.ChoferesMoviles.Agregar(choferMovil);
+                //    }
+                //    Uow.Choferes.Modificar(entity);
+                //}
+
+                Uow.Commit();
+
+                if (_formMode == ActionFormMode.Create)
+                {
+                    OnEntityAgregada(entity);
+                }
+                this.Close();
+
+            }
+        }
+
+        private Titulare ObtenerEntityDesdeForm()
+        {
+            _titular.DNI = DNI;
+            _titular.Apellido = Apellido;
+            _titular.Nombre = Nombre;
+            _titular.Telefono = Telefono;
+            _titular.Mail = Email;
+            _titular.Domicilio = Domicilio;
+            //_titular.MovilId = MovilId == Guid.Empty ? null : MovilId;
+            _titular.OperadorAltaId = _formMode == ActionFormMode.Create ? Context.OperadorActual.Id : _titular.OperadorAltaId;
+            _titular.SucursalAltaId = _formMode == ActionFormMode.Create ? Context.SucursalActual.Id : _titular.SucursalAltaId;
+            _titular.FechaAlta = _formMode == ActionFormMode.Create ? _clock.Now : _titular.FechaAlta;
+            _titular.OperadorModificacionId = Context.OperadorActual.Id;
+            _titular.SucursalModificacionId = Context.SucursalActual.Id;
+            _titular.FechaModificacion = _formMode == ActionFormMode.Create ? _clock.Now : _titular.FechaAlta;
+            //if (_celular != null)
+            //    _chofer.CelularId = _celular.Id;
+            //else
+            //    _chofer.CelularId = null;
+            return _titular;
+        }
+
+        private void OnEntityAgregada(Titulare entity)
+        {
+            if (EntityAgregada != null)
+            {
+                EntityAgregada(this, entity);
+            }
+        }
+
+        protected override object ObtenerEntidad()
+        {
+            return ObtenerEntityDesdeForm();
+        }
+
+        protected override void ValidarControles()
+        {
+            this.ValidarControl(TxtDni, "Dni");
+            this.ValidarControl(TxtApellido, "Apellido");
+            this.ValidarControl(TxtNombre, "Nombre");
         }
 
     }

@@ -984,7 +984,7 @@
           <Property Name="Apellido" Type="varchar" MaxLength="50" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" />
           <Property Name="DNI" Type="int" />
-          <Property Name="Telefono" Type="int" />
+          <Property Name="Telefono" Type="varchar" MaxLength="50" />
           <Property Name="Mail" Type="varchar" MaxLength="50" />
           <Property Name="Domicilio" Type="varchar" MaxLength="50" />
           <Property Name="OperadorAltaId" Type="uniqueidentifier" Nullable="false" />
@@ -10363,7 +10363,7 @@
           <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DNI" Type="Int32" />
-          <Property Name="Telefono" Type="Int32" />
+          <Property Name="Telefono" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Domicilio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="OperadorAltaId" Type="Guid" Nullable="false" />

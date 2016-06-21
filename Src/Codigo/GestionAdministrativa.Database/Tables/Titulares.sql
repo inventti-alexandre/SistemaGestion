@@ -4,7 +4,7 @@
     [Apellido] VARCHAR(50) NULL, 
     [Nombre] VARCHAR(50) NULL, 
     [DNI] INT NULL, 
-    [Telefono] INT NULL, 
+    [Telefono] VARCHAR(50) NULL, 
     [Mail] VARCHAR(50) NULL, 
     [Domicilio] VARCHAR(50) NULL, 
     [OperadorAltaId] UNIQUEIDENTIFIER NOT NULL, 

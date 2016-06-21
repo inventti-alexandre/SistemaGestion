@@ -18,7 +18,7 @@ namespace GestionAdministrativa.Entities
         public string Apellido { get; set; }
         public string Nombre { get; set; }
         public Nullable<int> DNI { get; set; }
-        public Nullable<int> Telefono { get; set; }
+        public string Telefono { get; set; }
         public string Mail { get; set; }
         public string Domicilio { get; set; }
         public System.Guid OperadorAltaId { get; set; }
