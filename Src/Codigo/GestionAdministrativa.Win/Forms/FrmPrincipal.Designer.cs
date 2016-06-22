@@ -46,6 +46,7 @@
             this.BtnEgresos = new Telerik.WinControls.UI.RadButton();
             this.TxtPagoBase = new Telerik.WinControls.UI.RadButton();
             this.btnPago2 = new Telerik.WinControls.UI.RadButton();
+            this.MenuNuevoTaller = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.btnInformeCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCambioCelularMovil)).BeginInit();
@@ -86,6 +87,7 @@
             this.lblUsuario.Size = new System.Drawing.Size(111, 28);
             this.lblUsuario.TabIndex = 11;
             this.lblUsuario.Text = "Usuario: ";
+
             // 
             // btnCambioCelularMovil
             // 
@@ -198,7 +200,8 @@
             this.radMenuItem1.AccessibleName = "Menu 01";
             this.radMenuItem1.AngleTransform = 0F;
             this.radMenuItem1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.MenuTiposTalleres});
+            this.MenuTiposTalleres,
+            this.MenuNuevoTaller});
             this.radMenuItem1.Name = "radMenuItem1";
             this.radMenuItem1.Text = "Talleres";
             this.radMenuItem1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
@@ -309,6 +312,15 @@
             this.btnPago2.ThemeName = "TelerikMetro";
             this.btnPago2.Click += new System.EventHandler(this.btnPago2_Click);
             // 
+            // MenuNuevoTaller
+            // 
+            this.MenuNuevoTaller.AccessibleDescription = "Nuevo Taller";
+            this.MenuNuevoTaller.AccessibleName = "Nuevo Taller";
+            this.MenuNuevoTaller.Name = "MenuNuevoTaller";
+            this.MenuNuevoTaller.Text = "Nuevo Taller";
+            this.MenuNuevoTaller.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuNuevoTaller.Click += new System.EventHandler(this.MenuNuevoTaller_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -379,6 +391,7 @@
         private Telerik.WinControls.UI.RadButton TxtPagoBase;
         private Telerik.WinControls.UI.RadButton btnPago2;
         private Telerik.WinControls.UI.RadMenuItem MenuTiposTalleres;
+        private Telerik.WinControls.UI.RadMenuItem MenuNuevoTaller;
 
 
     }

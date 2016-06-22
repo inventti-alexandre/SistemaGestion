@@ -7,20 +7,43 @@ using System.Text;
 using System.Windows.Forms;
 using Framework.Common.Utility;
 using GestionAdministrativa.Data.Interfaces;
+using GestionAdministrativa.Entities;
+using GestionAdministrativa.Win.Enums;
 using Telerik.WinControls;
 
 namespace GestionAdministrativa.Win.Forms.Talleres
 {
-    public partial class FrmTalleres : FormBase
+    public partial class FrmTalleres : EditFormBase
     {
         private IClock _clock;
+        private ActionFormMode _actionFormMode;
+        private TalleresMovile _tallerMovil;
 
-        public FrmTalleres(IGestionAdministrativaUow uow, IClock clock)
+        public FrmTalleres(ActionFormMode mode, IGestionAdministrativaUow uow, IClock clock)
         {
             _clock = clock;
+            _actionFormMode = mode;
             Uow = uow;
             InitializeComponent();
+            InicializarForm(mode);
         }
+
+        private void InicializarForm(ActionFormMode mode)
+        {
+            if (_actionFormMode == ActionFormMode.Create)
+                {
+                    this.Text = "Nuevo Taller";
+                    //FechaAlta = _clock.Now;
+                }
+                else
+                    this.Text = "Fin Taller";
+        }
+
+        #region Events
+
+        public event EventHandler<TalleresMovile> EntityAgregada;
+
+        #endregion
 
         #region Properties
 

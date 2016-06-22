@@ -263,6 +263,13 @@ namespace GestionAdministrativa.Win.Forms
             frm.Show();
         }
 
+        private void MenuNuevoTaller_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmTalleres>(Guid.Empty, ActionFormMode.Create);
+            frm.Show();
+        }
+
+
        
 
        
