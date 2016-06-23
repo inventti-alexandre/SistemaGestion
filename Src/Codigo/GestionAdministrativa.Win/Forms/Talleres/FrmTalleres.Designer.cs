@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             this.radDropDownList1 = new Telerik.WinControls.UI.RadDropDownList();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -68,15 +68,15 @@
             // radDropDownList1
             // 
             this.radDropDownList1.DropDownAnimationEnabled = true;
-            radListDataItem4.Text = "ListItem 1";
-            radListDataItem4.TextWrap = true;
-            radListDataItem5.Text = "ListItem 2";
-            radListDataItem5.TextWrap = true;
-            radListDataItem6.Text = "ListItem 3";
-            radListDataItem6.TextWrap = true;
-            this.radDropDownList1.Items.Add(radListDataItem4);
-            this.radDropDownList1.Items.Add(radListDataItem5);
-            this.radDropDownList1.Items.Add(radListDataItem6);
+            radListDataItem1.Text = "ListItem 1";
+            radListDataItem1.TextWrap = true;
+            radListDataItem2.Text = "ListItem 2";
+            radListDataItem2.TextWrap = true;
+            radListDataItem3.Text = "ListItem 3";
+            radListDataItem3.TextWrap = true;
+            this.radDropDownList1.Items.Add(radListDataItem1);
+            this.radDropDownList1.Items.Add(radListDataItem2);
+            this.radDropDownList1.Items.Add(radListDataItem3);
             this.radDropDownList1.Location = new System.Drawing.Point(552, 162);
             this.radDropDownList1.MaxDropDownItems = 0;
             this.radDropDownList1.Name = "radDropDownList1";
@@ -292,6 +292,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "FrmTalleres";
+            this.Load += new System.EventHandler(this.FrmTalleres_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
