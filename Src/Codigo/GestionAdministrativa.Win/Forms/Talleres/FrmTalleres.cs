@@ -47,6 +47,31 @@ namespace GestionAdministrativa.Win.Forms.Talleres
 
         #region Properties
 
+        public Guid Movil
+        {
+            get { return (Guid?)DdlMovil.SelectedValue ?? Guid.Empty; }
+            set { DdlMovil.SelectedValue = value; }
+        }
+        public Guid TipoTaller
+        {
+            get { return (Guid?)DdlTipo.SelectedValue ?? Guid.Empty; }
+            set { DdlTipo.SelectedValue = value; }
+        }
+
+        public DateTime Desde
+        {
+            get { return DtpDesde.Value; }
+            set { DtpDesde.Value = value; }
+        }
+        public DateTime Hasta
+        {
+            get { return DtpFin.Value; }
+            set { DtpFin.Value = value; }
+        }
+
+        #endregion
+
+        #region Methods
 
         #endregion
     }
