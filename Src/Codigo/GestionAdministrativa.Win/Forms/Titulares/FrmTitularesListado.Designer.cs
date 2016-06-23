@@ -34,6 +34,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.ucFiltroTitulares = new GestionAdministrativa.Win.Forms.Titulares.ucFiltroTitulares();
             this.GridTitulares = new Telerik.WinControls.UI.RadGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -68,35 +69,41 @@
             gridViewTextBoxColumn1.FieldName = "DNI";
             gridViewTextBoxColumn1.HeaderText = "DNI";
             gridViewTextBoxColumn1.Name = "DNI";
-            gridViewTextBoxColumn1.Width = 191;
+            gridViewTextBoxColumn1.Width = 182;
             gridViewTextBoxColumn2.FieldName = "Apellido";
             gridViewTextBoxColumn2.HeaderText = "Apellido";
             gridViewTextBoxColumn2.Name = "Apellido";
-            gridViewTextBoxColumn2.Width = 191;
+            gridViewTextBoxColumn2.Width = 182;
             gridViewTextBoxColumn3.FieldName = "Nombre";
             gridViewTextBoxColumn3.HeaderText = "Nombre";
             gridViewTextBoxColumn3.Name = "Nombre";
-            gridViewTextBoxColumn3.Width = 191;
+            gridViewTextBoxColumn3.Width = 182;
             gridViewTextBoxColumn4.FieldName = "Telefono";
             gridViewTextBoxColumn4.HeaderText = "Telefono";
             gridViewTextBoxColumn4.Name = "Telefono";
-            gridViewTextBoxColumn4.Width = 191;
-            gridViewTextBoxColumn5.FieldName = "Email";
+            gridViewTextBoxColumn4.Width = 182;
+            gridViewTextBoxColumn5.FieldName = "Mail";
             gridViewTextBoxColumn5.HeaderText = "Email";
-            gridViewTextBoxColumn5.Name = "Email";
-            gridViewTextBoxColumn5.Width = 190;
+            gridViewTextBoxColumn5.Name = "Mail";
+            gridViewTextBoxColumn5.Width = 181;
+            gridViewCommandColumn1.HeaderText = "";
+            gridViewCommandColumn1.Image = global::GestionAdministrativa.Win.Properties.Resources.Data_Edit;
+            gridViewCommandColumn1.Name = "Detail";
+            gridViewCommandColumn1.Width = 46;
             this.GridTitulares.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
             gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5});
+            gridViewTextBoxColumn5,
+            gridViewCommandColumn1});
             this.GridTitulares.Name = "GridTitulares";
             this.GridTitulares.ReadOnly = true;
             this.GridTitulares.Size = new System.Drawing.Size(972, 419);
             this.GridTitulares.TabIndex = 1;
             this.GridTitulares.Text = "radGridView1";
             this.GridTitulares.ThemeName = "TelerikMetro";
+            this.GridTitulares.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.GridTitulares_CommandCellClick);
             // 
             // tableLayoutPanel1
             // 

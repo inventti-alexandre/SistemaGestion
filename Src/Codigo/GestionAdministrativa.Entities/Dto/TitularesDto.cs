@@ -14,6 +14,6 @@ namespace GestionAdministrativa.Entities.Dto
         public string Apellido { get; set; }
         public string Nombre { get; set; }
         public string Telefono { get; set; }
-        public string Email { get; set; }
+        public string Mail { get; set; }
     }
 }

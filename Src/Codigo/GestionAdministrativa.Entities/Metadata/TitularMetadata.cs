@@ -24,5 +24,7 @@ namespace GestionAdministrativa.Entities
 
         [Required(ErrorMessage = "Debe ingresar el nombre")]
         public string Nombre { get; set; }
+        public string Mail { get; set; }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using GestionAdministrativa.Business.Interfaces;
 using GestionAdministrativa.Data.Interfaces;
+using GestionAdministrativa.Entities.Dto;
 using GestionAdministrativa.Win.Enums;
 using System;
 using System.Collections.Generic;
@@ -52,55 +53,57 @@ namespace GestionAdministrativa.Win.Forms.Titulares
 
         private void BtnCrear_Click(object sender, EventArgs e)
         {
-            var frm = FormFactory.Create<FrmCrearEditarTitular>(Guid.Empty, ActionFormMode.Create);
-            frm.Show();
+            Create();
+        }
+
+        private void GridTitulares_CommandCellClick(object sender, EventArgs e)
+        {
+            var commandCell = (Telerik.WinControls.UI.GridCommandCellElement)sender;
+
+            var selectedRow = this.GridTitulares.SelectedRows.FirstOrDefault();
+            if (selectedRow == null)
+                return;
+
+            var titular = selectedRow.DataBoundItem as TitularesDto;
+
+            if (titular == null)
+                return;
+
+            switch (commandCell.ColumnInfo.Name)
+            {
+                case "Detail":
+                    Detail(titular.Id);
+                    break;
+
+            }
         }
 
 
-        //private void Delete(Guid choferid)
-        //{
-        //    using (var formCrear = FormFactory.Create<FrmDetalleEliminarChofer>(choferid, ActionFormMode.Delete))
-        //    {
-        //        var result = formCrear.ShowDialog();
-        //        if (result == DialogResult.OK)
-        //        {
-        //            formCrear.Close();
-        //            RefrescarListado();
-        //        }
-        //    }
-        //}
+        private void Detail(Guid titularid)
+        {
+            using (var formCrear = FormFactory.Create<FrmDetalleEliminarTitular>(titularid, ActionFormMode.Detail))
+            {
+                var result = formCrear.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    formCrear.Close();
+                    RefrescarListado();
+                }
+            }
+        }
 
-        //private void Edit(Guid choferid)
-        //{
-        //    var frm = FormFactory.Create<FrmCrearEditarChofer>(choferid, ActionFormMode.Edit);
-        //    frm.Show();
-        //}
-
-        //private void Detail(Guid choferid)
-        //{
-        //    using (var formCrear = FormFactory.Create<FrmDetalleEliminarChofer>(choferid, ActionFormMode.Detail))
-        //    {
-        //        var result = formCrear.ShowDialog();
-        //        if (result == DialogResult.OK)
-        //        {
-        //            formCrear.Close();
-        //            RefrescarListado();
-        //        }
-        //    }
-        //}
-
-        //private void CreateChofer()
-        //{
-        //    using (var formCrear = FormFactory.Create<FrmCrearEditarChofer>(Guid.Empty, ActionFormMode.Create))
-        //    {
-        //        var result = formCrear.ShowDialog();
-        //        if (result == DialogResult.OK)
-        //        {
-        //            formCrear.Close();
-        //            RefrescarListado();
-        //        }
-        //    }
-        //}
+        private void Create()
+        {
+            using (var formCrear = FormFactory.Create<FrmCrearEditarTitular>(Guid.Empty, ActionFormMode.Create))
+            {
+                var result = formCrear.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    formCrear.Close();
+                    RefrescarListado();
+                }
+            }
+        }
 
 
         #endregion
