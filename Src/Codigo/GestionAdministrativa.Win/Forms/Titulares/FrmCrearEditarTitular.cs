@@ -97,10 +97,6 @@ namespace GestionAdministrativa.Win.Forms.Titulares
         public event EventHandler<Titulare> EntityAgregada;
         #endregion
 
-        private void FrmCrearEditarTitular_Load(object sender, EventArgs e)
-        {
-            CargarEntidad(_titularId);
-        }
 
         private void CargarEntidad(Guid titularId)
         {
@@ -238,6 +234,16 @@ namespace GestionAdministrativa.Win.Forms.Titulares
             this.ValidarControl(TxtDni, "Dni");
             this.ValidarControl(TxtApellido, "Apellido");
             this.ValidarControl(TxtNombre, "Nombre");
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            CrearEditar();
+        }
+
+        private void FrmCrearEditarTitular_Load_1(object sender, EventArgs e)
+        {
+            CargarEntidad(_titularId);
         }
     }
 }

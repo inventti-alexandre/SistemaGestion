@@ -413,6 +413,18 @@
     <Compile Include="Forms\Titulares\FrmCrearEditarTitular.Designer.cs">
       <DependentUpon>FrmCrearEditarTitular.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Titulares\FrmTitularesListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Titulares\FrmTitularesListado.Designer.cs">
+      <DependentUpon>FrmTitularesListado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Titulares\ucFiltroTitulares.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Titulares\ucFiltroTitulares.Designer.cs">
+      <DependentUpon>ucFiltroTitulares.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserControlBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -559,6 +571,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Titulares\FrmCrearEditarTitular.resx">
       <DependentUpon>FrmCrearEditarTitular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Titulares\FrmTitularesListado.resx">
+      <DependentUpon>FrmTitularesListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Titulares\ucFiltroTitulares.resx">
+      <DependentUpon>ucFiltroTitulares.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserControlBase.resx">
       <DependentUpon>UserControlBase.cs</DependentUpon>

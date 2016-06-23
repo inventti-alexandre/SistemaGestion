@@ -17,7 +17,7 @@ namespace GestionAdministrativa.Entities
         [Required(ErrorMessage = "Debe ingresar un CUIT/DNI")]
         //[MaxLength(11, ErrorMessage = "El número de cuit/DNI no es válido")]
         [RegularExpression("^[0-9]{8,11}?$", ErrorMessage = "El número de cuit/DNI no es válido")]
-        public string Dni { get; set; }
+        public string DNI { get; set; }
 
         [Required(ErrorMessage = "Debe ingresar el apellido")]
         public string Apellido { get; set; }

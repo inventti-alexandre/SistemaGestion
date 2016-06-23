@@ -25,6 +25,7 @@ using System.Deployment.Application;
 using GestionAdministrativa.Win.Forms.Egresos;
 using GestionAdministrativa.Win.Forms.PagosMoviles;
 using GestionAdministrativa.Win.Forms.Talleres;
+using GestionAdministrativa.Win.Forms.Titulares;
 
 namespace GestionAdministrativa.Win.Forms
 {
@@ -269,11 +270,13 @@ namespace GestionAdministrativa.Win.Forms
             frm.Show();
         }
 
+        private void BtnTitulares_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmTitularesListado>(Guid.Empty, ActionFormMode.Create);
+            frm.Show();
+        }
 
-       
-
-       
-        
+  
      
     }
 }
