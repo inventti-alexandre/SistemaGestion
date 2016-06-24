@@ -14,6 +14,11 @@ namespace GestionAdministrativa.Entities
     
     public partial class TalleresMovile
     {
+        public TalleresMovile()
+        {
+            this.MotivosTalleres = new HashSet<MotivosTallere>();
+        }
+    
         public System.Guid Id { get; set; }
         public System.Guid TallerId { get; set; }
         public System.Guid MovilId { get; set; }
@@ -34,5 +39,6 @@ namespace GestionAdministrativa.Entities
         public virtual Sucursal Sucursale1 { get; set; }
         public virtual Movil Movile { get; set; }
         public virtual Tallere Tallere { get; set; }
+        public virtual ICollection<MotivosTallere> MotivosTalleres { get; set; }
     }
 }

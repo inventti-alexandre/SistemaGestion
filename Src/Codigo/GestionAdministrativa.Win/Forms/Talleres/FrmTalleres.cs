@@ -105,9 +105,9 @@ namespace GestionAdministrativa.Win.Forms.Talleres
             var motivosTalleres = Uow.MotivosTalleres.Listado().Where(m => m.Activo == true).OrderBy(m => m.Motivo).ToList();
             if (motivosTalleres != null)
             {
-                checkedListBox1.DataSource = motivosTalleres;
-                checkedListBox1.DisplayMember = "Motivo";
-                checkedListBox1.ValueMember = "Id";
+                ChkListBox.DataSource = motivosTalleres;
+                ChkListBox.DisplayMember = "Motivo";
+                ChkListBox.ValueMember = "Id";
             }
             
             var tiposTalleres = Uow.Talleres.Listado().Where(t => t.Activo == true).OrderBy(t => t.Descripcion).ToList();

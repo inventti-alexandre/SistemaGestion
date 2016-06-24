@@ -42,7 +42,7 @@
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.DdlMovil = new Telerik.WinControls.UI.RadDropDownList();
             this.EpvTalleres = new System.Windows.Forms.ErrorProvider(this.components);
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.ChkListBox = new System.Windows.Forms.CheckedListBox();
             this.panel1.SuspendLayout();
             this.PnlNuevoTipo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
@@ -200,20 +200,20 @@
             // 
             this.EpvTalleres.ContainerControl = this;
             // 
-            // checkedListBox1
+            // ChkListBox
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(532, 23);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(253, 160);
-            this.checkedListBox1.TabIndex = 27;
+            this.ChkListBox.FormattingEnabled = true;
+            this.ChkListBox.Location = new System.Drawing.Point(532, 23);
+            this.ChkListBox.Name = "ChkListBox";
+            this.ChkListBox.Size = new System.Drawing.Size(253, 160);
+            this.ChkListBox.TabIndex = 27;
             // 
             // FrmTalleres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(923, 432);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.ChkListBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PnlNuevoTipo);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -256,7 +256,7 @@
         private Telerik.WinControls.UI.RadLabel radLabel4;
         private Telerik.WinControls.UI.RadDateTimePicker DtpDesde;
         private System.Windows.Forms.ErrorProvider EpvTalleres;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox ChkListBox;
 
     }
 }
