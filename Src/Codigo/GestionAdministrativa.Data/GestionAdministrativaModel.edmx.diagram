@@ -332,7 +332,7 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_TipoComprobante" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_TalleresMoviles_Movil" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_TalleresMoviles_Taller" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.MotivosTallere" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.MotivosTallere" Width="1.5" PointX="2.25" PointY="3.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

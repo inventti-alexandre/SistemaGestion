@@ -17,14 +17,14 @@ namespace GestionAdministrativa.Win.Forms.Talleres
     public partial class FrmTalleres : EditFormBase
     {
         private IClock _clock;
-        private ActionFormMode _actionFormMode;
+        private ActionFormMode _formMode;
         private TalleresMovile _tallerMovil;
         private Guid _tallerID;
 
         public FrmTalleres(ActionFormMode mode, IGestionAdministrativaUow uow, IClock clock)
         {
             _clock = clock;
-            _actionFormMode = mode;
+            _formMode = mode;
             Uow = uow;
             InitializeComponent();
             InicializarForm(mode);
@@ -32,7 +32,7 @@ namespace GestionAdministrativa.Win.Forms.Talleres
 
         private void InicializarForm(ActionFormMode mode)
         {
-            if (_actionFormMode == ActionFormMode.Create)
+            if (_formMode == ActionFormMode.Create)
             {
                 this.Text = "Nuevo Taller";
                 DtpFin.Enabled = false;
@@ -42,17 +42,20 @@ namespace GestionAdministrativa.Win.Forms.Talleres
                 this.Text = "Fin Taller";
                 DtpFin.Enabled = false;
             }
-             
-       
         }
 
         private void FrmTalleres_Load(object sender, EventArgs e)
         {
             CargarCombos();
-            //CargarEntidad(_choferid);
+            CargarEntidad(_tallerID);
+            SetDatePickers();
         }
 
-      
+        private void SetDatePickers()
+        {
+            DtpDesde.Value = _clock.Now;
+            DtpFin.Value = _clock.Now;
+        }
 
         #region Events
 
@@ -98,6 +101,15 @@ namespace GestionAdministrativa.Win.Forms.Talleres
             DdlMovil.ValueMember = "Id";
             DdlMovil.DataSource = moviles;
 
+           
+            var motivosTalleres = Uow.MotivosTalleres.Listado().Where(m => m.Activo == true).OrderBy(m => m.Motivo).ToList();
+            if (motivosTalleres != null)
+            {
+                checkedListBox1.DataSource = motivosTalleres;
+                checkedListBox1.DisplayMember = "Motivo";
+                checkedListBox1.ValueMember = "Id";
+            }
+            
             var tiposTalleres = Uow.Talleres.Listado().Where(t => t.Activo == true).OrderBy(t => t.Descripcion).ToList();
             tiposTalleres.Insert(0, new Tallere() { Descripcion = "Seleccione", Id = Guid.Empty });
 
@@ -108,10 +120,10 @@ namespace GestionAdministrativa.Win.Forms.Talleres
 
         private void CargarEntidad(Guid tallerId)
         {
-            if (tallerId == default(Guid))
+            if (tallerId == Guid.Empty)
             {
                 _tallerMovil = new TalleresMovile();
-                _tallerID = Guid.NewGuid();
+                _tallerMovil.Id = Guid.NewGuid();
                 return;
             }
             else
@@ -126,8 +138,82 @@ namespace GestionAdministrativa.Win.Forms.Talleres
         {
             var esValido = this.ValidarForm();
 
-            if ()
+            if (!esValido)
+                this.DialogResult = DialogResult.None;
+            else
+            {
+                var entity = ObtenerEntidadDesdeForm();
+
+                if (_formMode == ActionFormMode.Create)
+                {
+                    var tallerMovil = Uow.TalleresMoviles.Obtener(t => t.MovilId == entity.MovilId && t.Activo ==true);
+                    if (tallerMovil != null)
+                    {
+                        MessageBox.Show("Ya existe un taller activo para este móvil.");
+                        return;
+                    }
+                    
+                    Uow.TalleresMoviles.Agregar(entity);
+                }
+                else
+                {
+                    entity.Activo = false;
+                    Uow.TalleresMoviles.Modificar(entity);
+                }
+                Uow.Commit();
+
+                if (_formMode == ActionFormMode.Create)
+                    OnEntityAgregada(entity);
+                this.Close();
+            }
         }
+
+        private void OnEntityAgregada(TalleresMovile entity)
+        {
+            if (EntityAgregada != null)
+                EntityAgregada(this, entity);
+        }
+
+        private TalleresMovile ObtenerEntidadDesdeForm()
+        {
+            
+           _tallerMovil.MovilId = Movil;
+           _tallerMovil.TallerId = TipoTaller;
+           _tallerMovil.FechaDesde = Desde;
+           _tallerMovil.FechaHasta = Hasta;
+            _tallerMovil.Activo = true;
+
+            _tallerMovil.OperadorAltaId = _formMode == ActionFormMode.Create
+                ? Context.OperadorActual.Id
+                : _tallerMovil.OperadorAltaId;
+
+            _tallerMovil.SucursalAltaId = _formMode == ActionFormMode.Create
+                ? Context.SucursalActual.Id
+                : _tallerMovil.SucursalAltaId;
+
+            _tallerMovil.FechaAlta = _formMode == ActionFormMode.Create ? _clock.Now : _tallerMovil.FechaAlta;
+            _tallerMovil.OperadorModificacionId = Context.OperadorActual.Id;
+            _tallerMovil.SucursalModificacionId = Context.SucursalActual.Id;
+            _tallerMovil.FechaModificacion = _clock.Now;
+
+            return _tallerMovil;
+        }
+
+        protected override object ObtenerEntidad()
+        {
+            return ObtenerEntidadDesdeForm();
+        }
+
+        protected override void ValidarControles()
+        {
+            this.ValidarControl(DdlMovil, "MovilId");
+        }
+
         #endregion
+
+        private void BtnAceptar_Click(object sender, EventArgs e)
+        {
+            CrearEditar();
+        }
     }
 }

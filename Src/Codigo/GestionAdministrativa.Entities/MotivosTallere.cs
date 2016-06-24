@@ -16,6 +16,6 @@ namespace GestionAdministrativa.Entities
     {
         public System.Guid Id { get; set; }
         public string Motivo { get; set; }
-        public double Descuento { get; set; }
+        public bool Activo { get; set; }
     }
 }

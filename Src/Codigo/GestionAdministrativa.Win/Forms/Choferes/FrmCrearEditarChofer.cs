@@ -126,7 +126,7 @@ namespace GestionAdministrativa.Win.Forms.Choferes
         #region Controles
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            
+       
             CrearEditar();
         }
         #endregion

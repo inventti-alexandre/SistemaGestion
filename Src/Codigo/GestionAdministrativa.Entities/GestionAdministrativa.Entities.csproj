@@ -94,6 +94,7 @@
     <Compile Include="Dia.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dto\TalleresMoviles.cs" />
     <Compile Include="Dto\TitularesDto.cs" />
     <Compile Include="Dto\PagosDto.cs" />
     <Compile Include="Dto\CajasDto.cs" />
@@ -131,6 +132,7 @@
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Metadata\CajaMetadata.cs" />
+    <Compile Include="Metadata\TalleresMovilesMetaData.cs" />
     <Compile Include="Metadata\TitularMetadata.cs" />
     <Compile Include="Metadata\OrdenPagoMetadata.cs" />
     <Compile Include="Metadata\ClienteMetadata.cs" />

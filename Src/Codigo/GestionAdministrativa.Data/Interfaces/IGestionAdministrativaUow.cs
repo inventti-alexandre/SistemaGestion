@@ -12,6 +12,7 @@ namespace GestionAdministrativa.Data.Interfaces
         IRepository<Chofer> Choferes { get; }
         IRepository<Operador> Operadores { get; }
         IRepository<Movil> Moviles { get; }
+        IRepository<MotivosTallere > MotivosTalleres { get; } 
         IRepository<Promocione> Promociones { get; }
         IRepository<PromocionesMovile> PromocionesMoviles { get; }
         IRepository<Tarifa> Tarifas { get; }

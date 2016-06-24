@@ -387,8 +387,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Motivo" Type="varchar" MaxLength="50" />
-          <Property Name="Descuento" Type="float" Nullable="false" />
+          <Property Name="Motivo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Moviles">
           <Key>
@@ -10982,8 +10982,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="Motivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Descuento" Type="Double" Nullable="false" />
+          <Property Name="Motivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -12120,7 +12120,7 @@
           <EntitySetMapping Name="MotivosTalleres">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.MotivosTallere">
               <MappingFragment StoreEntitySet="MotivosTalleres">
-                <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
                 <ScalarProperty Name="Motivo" ColumnName="Motivo" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>

@@ -28,12 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            this.radDropDownList1 = new Telerik.WinControls.UI.RadDropDownList();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnAceptar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
@@ -46,9 +41,8 @@
             this.DdlTipo = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.DdlMovil = new Telerik.WinControls.UI.RadDropDownList();
-            this.radMultiColumnComboBox1 = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.EpvTalleres = new System.Windows.Forms.ErrorProvider(this.components);
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.panel1.SuspendLayout();
             this.PnlNuevoTipo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
@@ -59,49 +53,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.DdlTipo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DdlMovil)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EpvTalleres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
-            // 
-            // radDropDownList1
-            // 
-            this.radDropDownList1.DropDownAnimationEnabled = true;
-            radListDataItem1.Text = "ListItem 1";
-            radListDataItem1.TextWrap = true;
-            radListDataItem2.Text = "ListItem 2";
-            radListDataItem2.TextWrap = true;
-            radListDataItem3.Text = "ListItem 3";
-            radListDataItem3.TextWrap = true;
-            this.radDropDownList1.Items.Add(radListDataItem1);
-            this.radDropDownList1.Items.Add(radListDataItem2);
-            this.radDropDownList1.Items.Add(radListDataItem3);
-            this.radDropDownList1.Location = new System.Drawing.Point(552, 162);
-            this.radDropDownList1.MaxDropDownItems = 0;
-            this.radDropDownList1.Name = "radDropDownList1";
-            this.radDropDownList1.ShowImageInEditorArea = true;
-            this.radDropDownList1.Size = new System.Drawing.Size(239, 31);
-            this.radDropDownList1.TabIndex = 29;
-            this.radDropDownList1.ThemeName = "TelerikMetro";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.checkBox1);
-            this.panel2.Location = new System.Drawing.Point(540, 29);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 100);
-            this.panel2.TabIndex = 28;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(3, 6);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(131, 27);
-            this.checkBox1.TabIndex = 27;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -122,6 +76,7 @@
             this.BtnAceptar.TabIndex = 21;
             this.BtnAceptar.Text = "Aceptar";
             this.BtnAceptar.UseVisualStyleBackColor = true;
+            this.BtnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // BtnCancelar
             // 
@@ -241,48 +196,24 @@
             this.DdlMovil.TabIndex = 21;
             this.DdlMovil.ThemeName = "TelerikMetro";
             // 
-            // radMultiColumnComboBox1
+            // EpvTalleres
             // 
+            this.EpvTalleres.ContainerControl = this;
             // 
-            // radMultiColumnComboBox1.NestedRadGridView
+            // checkedListBox1
             // 
-            this.radMultiColumnComboBox1.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.radMultiColumnComboBox1.EditorControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radMultiColumnComboBox1.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radMultiColumnComboBox1.EditorControl.Location = new System.Drawing.Point(0, 0);
-            // 
-            // 
-            // 
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.radMultiColumnComboBox1.EditorControl.Name = "NestedRadGridView";
-            this.radMultiColumnComboBox1.EditorControl.ReadOnly = true;
-            this.radMultiColumnComboBox1.EditorControl.ShowGroupPanel = false;
-            this.radMultiColumnComboBox1.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.radMultiColumnComboBox1.EditorControl.TabIndex = 0;
-            this.radMultiColumnComboBox1.Location = new System.Drawing.Point(585, 221);
-            this.radMultiColumnComboBox1.Name = "radMultiColumnComboBox1";
-            // 
-            // 
-            // 
-            this.radMultiColumnComboBox1.RootElement.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.WrapAroundChildren;
-            this.radMultiColumnComboBox1.Size = new System.Drawing.Size(193, 25);
-            this.radMultiColumnComboBox1.TabIndex = 30;
-            this.radMultiColumnComboBox1.TabStop = false;
-            this.radMultiColumnComboBox1.Text = "radMultiColumnComboBox1";
-            this.radMultiColumnComboBox1.ThemeName = "TelerikMetro";
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(532, 23);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(253, 160);
+            this.checkedListBox1.TabIndex = 27;
             // 
             // FrmTalleres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 280);
-            this.Controls.Add(this.radMultiColumnComboBox1);
-            this.Controls.Add(this.radDropDownList1);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(923, 432);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PnlNuevoTipo);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -293,9 +224,6 @@
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "FrmTalleres";
             this.Load += new System.EventHandler(this.FrmTalleres_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.PnlNuevoTipo.ResumeLayout(false);
             this.PnlNuevoTipo.PerformLayout();
@@ -307,12 +235,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.DdlTipo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DdlMovil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EpvTalleres)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -330,10 +255,8 @@
         private Telerik.WinControls.UI.RadDateTimePicker DtpFin;
         private Telerik.WinControls.UI.RadLabel radLabel4;
         private Telerik.WinControls.UI.RadDateTimePicker DtpDesde;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Panel panel2;
-        private Telerik.WinControls.UI.RadDropDownList radDropDownList1;
-        private Telerik.WinControls.UI.RadMultiColumnComboBox radMultiColumnComboBox1;
+        private System.Windows.Forms.ErrorProvider EpvTalleres;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
 
     }
 }
