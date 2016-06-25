@@ -905,6 +905,7 @@ warning 6002: The table/view 'GestionAdministrativa.Database.dbo.TallerMovilMoti
           <Property Name="FechaHasta" Type="datetime" />
           <Property Name="Monto" Type="money" Nullable="false" />
           <Property Name="Semana" Type="money" Nullable="false" />
+          <Property Name="PagoAtrasado" Type="money" />
           <Property Name="Activo" Type="bit" Nullable="false" />
           <Property Name="OperadorAltaId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="SucursalAltaId" Type="int" Nullable="false" />
@@ -10421,6 +10422,7 @@ warning 6002: The table/view 'GestionAdministrativa.Database.dbo.TallerMovilMoti
           <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_Tarifas_SucursalAlta" FromRole="Tarifa" ToRole="Sucursal" />
           <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_Tarifas_SucursalModificacion" FromRole="Tarifa" ToRole="Sucursal" />
           <Property Name="Semana" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="PagoAtrasado" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
         <EntityType Name="Titulare">
           <Key>
@@ -12104,6 +12106,7 @@ warning 6002: The table/view 'GestionAdministrativa.Database.dbo.TallerMovilMoti
           <EntitySetMapping Name="Tarifas">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.Tarifa">
               <MappingFragment StoreEntitySet="Tarifas">
+                <ScalarProperty Name="PagoAtrasado" ColumnName="PagoAtrasado" />
                 <ScalarProperty Name="Semana" ColumnName="Semana" />
                 <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
                 <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />

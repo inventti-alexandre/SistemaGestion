@@ -26,6 +26,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
         private IClock _clock;
         private Movil _movil;
         private Guid _movilId;
+        private List<PagoDia> _detalle;
 
         public FrmSelectorMovil(ActionFormMode mode, IGestionAdministrativaUow uow, IClock clock, Guid id)
         {
@@ -101,6 +102,22 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             set { TxtSemanal.Text = value.ToString("n2"); }
         }
 
+        public decimal? PagoAtrasado
+        {
+            get
+            {
+                decimal atrasado;
+                return decimal.TryParse(TxtAtrasado.Text, out atrasado) ? atrasado : 0;
+            }
+
+            set {
+                if (value == null)
+                    TxtAtrasado.Text = "";
+                else
+                    TxtAtrasado.Text = value.Value.ToString("n2"); 
+            }
+        }
+
         public decimal SubTotal
         {
             get
@@ -152,6 +169,9 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
         private void FrmSelectorMovil_Load(object sender, EventArgs e)
         {
             CargarMovil();
+            _detalle= new List<PagoDia>();
+            this.GridDetalle.Columns["Fecha"].DataType = typeof(DateTime);
+            this.GridDetalle.Columns["Fecha"].FormatString = "{0: dd/M/yyyy}";
         }
 
         private void DtpHasta_ValueChanged(object sender, EventArgs e)
@@ -196,12 +216,15 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                         var tarifa = Uow.Tarifas.Listado().Where(t => t.Activo == true).OrderByDescending(t => t.FechaAlta).FirstOrDefault();
                         Diario = tarifa.Monto;
                         Semanal = tarifa.Semana;
+                        PagoAtrasado = tarifa.PagoAtrasado;
                     }
                     else
                     {
                         var tarifa = Uow.Promociones.Obtener(p => p.Id == promociones.PromocionId);
                         Diario = tarifa.Monto;
                         Semanal = tarifa.Semana;
+                        var tarifaActual = Uow.Tarifas.Listado().Where(t => t.Activo == true).OrderByDescending(t => t.FechaAlta).FirstOrDefault();
+                        PagoAtrasado = tarifaActual.PagoAtrasado;
                     }
 
                     var pagoBase = Uow.PagosMoviles.Listado().Where(pm => pm.MovilId == movil.Id).OrderByDescending(pm => pm.FechaAlta).FirstOrDefault();
@@ -232,6 +255,25 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
         {
             TimeSpan cantidadDias = SetTimeToZero(Hasta) - SetTimeToZero(Desde); 
             Dias = cantidadDias.Days + 1;
+            
+            //CARGA DE GRILLA DETALLE
+            _detalle.Clear();
+            for (int i = 0; i < Dias; i++)
+            {
+                PagoDia diario = new PagoDia();
+                diario.Fecha = Desde.AddDays(i);
+                TimeSpan atrasado = SetTimeToZero(_clock.Now) - SetTimeToZero(diario.Fecha);
+                int DiasAtrasado = atrasado.Days;
+                if (DiasAtrasado > 2)
+                    diario.Monto = PagoAtrasado ?? 0;
+                else
+                    diario.Monto = Diario;
+                _detalle.Add(diario);
+            }
+            GridDetalle.DataSource = _detalle.ToList();
+            //MessageBox.Show(_detalle.Count().ToString());
+
+            //////////////////////////////
             SubTotal = Dias * Diario;
             if (Desde <= _clock.Now.AddDays(2))
             {

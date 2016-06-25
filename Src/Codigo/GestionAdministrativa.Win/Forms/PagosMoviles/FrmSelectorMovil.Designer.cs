@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.BtnAceptar = new System.Windows.Forms.Button();
             this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
             this.TxtSubtotal = new Telerik.WinControls.UI.RadTextBox();
@@ -49,6 +51,9 @@
             this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
             this.TxtDiario = new Telerik.WinControls.UI.RadTextBox();
             this.TxtSemanal = new Telerik.WinControls.UI.RadTextBox();
+            this.GridDetalle = new Telerik.WinControls.UI.RadGridView();
+            this.TxtAtrasado = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel11 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSubtotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
@@ -69,13 +74,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDiario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSemanal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridDetalle.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtAtrasado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnAceptar
             // 
             this.BtnAceptar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAceptar.Location = new System.Drawing.Point(314, 374);
+            this.BtnAceptar.Location = new System.Drawing.Point(457, 378);
             this.BtnAceptar.Name = "BtnAceptar";
             this.BtnAceptar.Size = new System.Drawing.Size(109, 41);
             this.BtnAceptar.TabIndex = 28;
@@ -98,7 +107,7 @@
             this.TxtSubtotal.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtSubtotal.Location = new System.Drawing.Point(150, 231);
             this.TxtSubtotal.Name = "TxtSubtotal";
-            this.TxtSubtotal.Size = new System.Drawing.Size(268, 28);
+            this.TxtSubtotal.Size = new System.Drawing.Size(416, 28);
             this.TxtSubtotal.TabIndex = 26;
             this.TxtSubtotal.TabStop = false;
             this.TxtSubtotal.ThemeName = "TelerikMetro";
@@ -128,7 +137,7 @@
             this.TxtDias.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtDias.Location = new System.Drawing.Point(150, 163);
             this.TxtDias.Name = "TxtDias";
-            this.TxtDias.Size = new System.Drawing.Size(268, 28);
+            this.TxtDias.Size = new System.Drawing.Size(416, 28);
             this.TxtDias.TabIndex = 23;
             this.TxtDias.TabStop = false;
             this.TxtDias.ThemeName = "TelerikMetro";
@@ -148,7 +157,7 @@
             this.TxtTotal.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtTotal.Location = new System.Drawing.Point(150, 333);
             this.TxtTotal.Name = "TxtTotal";
-            this.TxtTotal.Size = new System.Drawing.Size(268, 28);
+            this.TxtTotal.Size = new System.Drawing.Size(416, 28);
             this.TxtTotal.TabIndex = 20;
             this.TxtTotal.TabStop = false;
             this.TxtTotal.ThemeName = "TelerikMetro";
@@ -181,7 +190,7 @@
             this.DtpHasta.Name = "DtpHasta";
             this.DtpHasta.NullableValue = new System.DateTime(2015, 12, 1, 19, 30, 46, 0);
             this.DtpHasta.NullDate = new System.DateTime(((long)(0)));
-            this.DtpHasta.Size = new System.Drawing.Size(268, 31);
+            this.DtpHasta.Size = new System.Drawing.Size(416, 31);
             this.DtpHasta.TabIndex = 24;
             this.DtpHasta.TabStop = false;
             this.DtpHasta.Text = "1/12/2015";
@@ -199,7 +208,7 @@
             this.DtpDesde.Name = "DtpDesde";
             this.DtpDesde.NullableValue = new System.DateTime(2015, 12, 1, 19, 30, 46, 0);
             this.DtpDesde.NullDate = new System.DateTime(((long)(0)));
-            this.DtpDesde.Size = new System.Drawing.Size(268, 31);
+            this.DtpDesde.Size = new System.Drawing.Size(416, 31);
             this.DtpDesde.TabIndex = 22;
             this.DtpDesde.TabStop = false;
             this.DtpDesde.Text = "1/12/2015";
@@ -215,7 +224,7 @@
             this.DdlMoviles.MaxDropDownItems = 0;
             this.DdlMoviles.Name = "DdlMoviles";
             this.DdlMoviles.ShowImageInEditorArea = true;
-            this.DdlMoviles.Size = new System.Drawing.Size(268, 29);
+            this.DdlMoviles.Size = new System.Drawing.Size(416, 29);
             this.DdlMoviles.TabIndex = 18;
             this.DdlMoviles.ThemeName = "TelerikMetro";
             this.DdlMoviles.SelectedValueChanged += new System.EventHandler(this.DdlMoviles_SelectedValueChanged);
@@ -235,7 +244,7 @@
             this.TxtTaller.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtTaller.Location = new System.Drawing.Point(150, 299);
             this.TxtTaller.Name = "TxtTaller";
-            this.TxtTaller.Size = new System.Drawing.Size(268, 28);
+            this.TxtTaller.Size = new System.Drawing.Size(416, 28);
             this.TxtTaller.TabIndex = 14;
             this.TxtTaller.TabStop = false;
             this.TxtTaller.ThemeName = "TelerikMetro";
@@ -255,7 +264,7 @@
             this.TxtAFavor.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtAFavor.Location = new System.Drawing.Point(150, 265);
             this.TxtAFavor.Name = "TxtAFavor";
-            this.TxtAFavor.Size = new System.Drawing.Size(268, 28);
+            this.TxtAFavor.Size = new System.Drawing.Size(416, 28);
             this.TxtAFavor.TabIndex = 29;
             this.TxtAFavor.TabStop = false;
             this.TxtAFavor.ThemeName = "TelerikMetro";
@@ -272,7 +281,7 @@
             // radLabel10
             // 
             this.radLabel10.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel10.Location = new System.Drawing.Point(248, 197);
+            this.radLabel10.Location = new System.Drawing.Point(235, 197);
             this.radLabel10.Name = "radLabel10";
             this.radLabel10.Size = new System.Drawing.Size(90, 25);
             this.radLabel10.TabIndex = 26;
@@ -284,7 +293,7 @@
             this.TxtDiario.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtDiario.Location = new System.Drawing.Point(150, 197);
             this.TxtDiario.Name = "TxtDiario";
-            this.TxtDiario.Size = new System.Drawing.Size(92, 28);
+            this.TxtDiario.Size = new System.Drawing.Size(72, 28);
             this.TxtDiario.TabIndex = 27;
             this.TxtDiario.TabStop = false;
             this.TxtDiario.ThemeName = "TelerikMetro";
@@ -293,18 +302,71 @@
             // 
             this.TxtSemanal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtSemanal.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtSemanal.Location = new System.Drawing.Point(333, 197);
+            this.TxtSemanal.Location = new System.Drawing.Point(320, 197);
             this.TxtSemanal.Name = "TxtSemanal";
-            this.TxtSemanal.Size = new System.Drawing.Size(85, 28);
+            this.TxtSemanal.Size = new System.Drawing.Size(72, 28);
             this.TxtSemanal.TabIndex = 28;
             this.TxtSemanal.TabStop = false;
             this.TxtSemanal.ThemeName = "TelerikMetro";
             // 
+            // GridDetalle
+            // 
+            this.GridDetalle.Location = new System.Drawing.Point(702, 48);
+            // 
+            // GridDetalle
+            // 
+            this.GridDetalle.MasterTemplate.AllowAddNewRow = false;
+            this.GridDetalle.MasterTemplate.AllowColumnReorder = false;
+            this.GridDetalle.MasterTemplate.AllowDragToGroup = false;
+            this.GridDetalle.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewTextBoxColumn3.FieldName = "Fecha";
+            gridViewTextBoxColumn3.FormatString = "";
+            gridViewTextBoxColumn3.HeaderText = "Fecha";
+            gridViewTextBoxColumn3.Name = "Fecha";
+            gridViewTextBoxColumn3.Width = 180;
+            gridViewTextBoxColumn4.FieldName = "Monto";
+            gridViewTextBoxColumn4.FormatString = "";
+            gridViewTextBoxColumn4.HeaderText = "Monto";
+            gridViewTextBoxColumn4.Name = "Monto";
+            gridViewTextBoxColumn4.Width = 179;
+            this.GridDetalle.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4});
+            this.GridDetalle.Name = "GridDetalle";
+            this.GridDetalle.ReadOnly = true;
+            this.GridDetalle.Size = new System.Drawing.Size(380, 307);
+            this.GridDetalle.TabIndex = 31;
+            this.GridDetalle.Text = "radGridView1";
+            this.GridDetalle.ThemeName = "TelerikMetro";
+            // 
+            // TxtAtrasado
+            // 
+            this.TxtAtrasado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TxtAtrasado.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtAtrasado.Location = new System.Drawing.Point(494, 197);
+            this.TxtAtrasado.Name = "TxtAtrasado";
+            this.TxtAtrasado.Size = new System.Drawing.Size(72, 28);
+            this.TxtAtrasado.TabIndex = 33;
+            this.TxtAtrasado.TabStop = false;
+            this.TxtAtrasado.Text = "0";
+            this.TxtAtrasado.ThemeName = "TelerikMetro";
+            // 
+            // radLabel11
+            // 
+            this.radLabel11.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel11.Location = new System.Drawing.Point(409, 197);
+            this.radLabel11.Name = "radLabel11";
+            this.radLabel11.Size = new System.Drawing.Size(80, 25);
+            this.radLabel11.TabIndex = 32;
+            this.radLabel11.Text = "+ 48hs:";
+            // 
             // FrmSelectorMovil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 520);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1172, 520);
+            this.Controls.Add(this.TxtAtrasado);
+            this.Controls.Add(this.radLabel11);
+            this.Controls.Add(this.GridDetalle);
             this.Controls.Add(this.TxtSemanal);
             this.Controls.Add(this.TxtDiario);
             this.Controls.Add(this.radLabel10);
@@ -354,6 +416,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDiario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSemanal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridDetalle.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtAtrasado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -383,5 +449,8 @@
         private Telerik.WinControls.UI.RadLabel radLabel10;
         private Telerik.WinControls.UI.RadTextBox TxtDiario;
         private Telerik.WinControls.UI.RadTextBox TxtSemanal;
+        private Telerik.WinControls.UI.RadGridView GridDetalle;
+        private Telerik.WinControls.UI.RadTextBox TxtAtrasado;
+        private Telerik.WinControls.UI.RadLabel radLabel11;
     }
 }

@@ -6,6 +6,7 @@
     [FechaHasta] DATETIME NULL, 
     [Monto] MONEY NOT NULL,
 	[Semana] MONEY NOT NULL,  
+	[PagoAtrasado] MONEY  NULL, 
     [Activo] BIT NOT NULL, 
     [OperadorAltaId] UNIQUEIDENTIFIER NOT NULL, 
     [SucursalAltaId] INT NOT NULL, 

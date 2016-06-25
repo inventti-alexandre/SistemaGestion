@@ -78,7 +78,6 @@ namespace GestionAdministrativa.Win.Forms.Titulares
             }
         }
 
-
         private void Detail(Guid titularid)
         {
             using (var formCrear = FormFactory.Create<FrmDetalleEliminarTitular>(titularid, ActionFormMode.Detail))

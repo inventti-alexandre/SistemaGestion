@@ -27,6 +27,7 @@ namespace GestionAdministrativa.Entities
         public Nullable<int> SucursalModificacionId { get; set; }
         public Nullable<System.DateTime> FechaModificacion { get; set; }
         public decimal Semana { get; set; }
+        public Nullable<decimal> PagoAtrasado { get; set; }
     
         public virtual Operador Operadore { get; set; }
         public virtual Operador Operadore1 { get; set; }
