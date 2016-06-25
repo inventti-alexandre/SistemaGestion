@@ -274,7 +274,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             //MessageBox.Show(_detalle.Count().ToString());
 
             //////////////////////////////
-            SubTotal = Dias * Diario;
+            SubTotal = _detalle.Sum(s=>s.Monto);// Dias* Diario;
             if (Desde <= _clock.Now.AddDays(2))
             {
                 if (Dias >= 7)

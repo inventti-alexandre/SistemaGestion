@@ -884,6 +884,7 @@
           <Property Name="SucursalModificacionId" Type="int" />
           <Property Name="FechaModificacion" Type="datetime" />
           <Property Name="Activo" Type="bit" />
+          <Property Name="Acreditado" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'GestionAdministrativa.Database.dbo.TallerMovilMotivo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -10400,6 +10401,7 @@ warning 6002: The table/view 'GestionAdministrativa.Database.dbo.TallerMovilMoti
           <NavigationProperty Name="Tallere" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_Taller" FromRole="TalleresMovile" ToRole="Tallere" />
           <Property Name="Activo" Type="Boolean" />
           <NavigationProperty Name="MotivosTalleres" Relationship="GestionAdministrativa.Model.TallerMovilMotivo" FromRole="TalleresMovile" ToRole="MotivosTallere" />
+          <Property Name="Acreditado" Type="Boolean" />
         </EntityType>
         <EntityType Name="Tarifa">
           <Key>
@@ -12087,6 +12089,7 @@ warning 6002: The table/view 'GestionAdministrativa.Database.dbo.TallerMovilMoti
           <EntitySetMapping Name="TalleresMoviles">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.TalleresMovile">
               <MappingFragment StoreEntitySet="TalleresMoviles">
+                <ScalarProperty Name="Acreditado" ColumnName="Acreditado" />
                 <ScalarProperty Name="Activo" ColumnName="Activo" />
                 <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
                 <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />

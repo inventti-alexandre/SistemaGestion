@@ -13,6 +13,7 @@
     [SucursalModificacionId] INT NULL, 
     [FechaModificacion] DATETIME NULL, 
     [Activo] BIT NULL, 
+    [Acreditado] BIT NULL, 
     CONSTRAINT [FK_TalleresMoviles_OperadorAlta] FOREIGN KEY (OperadorAltaId) REFERENCES Operadores(Id), 
     CONSTRAINT [FK_TalleresMoviles_SucursalAlta] FOREIGN KEY (SucursalAltaId) REFERENCES Sucursales(Id), 
     CONSTRAINT [FK_TalleresMoviles_OperadorModificacion] FOREIGN KEY (OperadorModificacionId) REFERENCES Operadores(Id), 
