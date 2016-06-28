@@ -310,7 +310,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                         DateTime proximoPago = _celular.FechaProximoPago ?? _clock.Now;
                         DateTime DesdeComent = _pagoCelular.Desde ?? _clock.Now;
                         DateTime HastaComent = _pagoCelular.Hasta ?? _clock.Now;
-                        ucComentarios.GenerarComentario(chofer.Id, "Pago del " + DesdeComent.ToString("dd/MM/yyyy") + " al " + HastaComent.ToString("dd/MM/yyyy") + ". Monto: $" + _pagoCelular.Monto);
+                        ucComentarios.GenerarComentario(chofer.Id, "Pago del " + DesdeComent.ToString("dd/MM/yyyy") + " al " + HastaComent.ToString("dd/MM/yyyy"));// + ". Monto: $" + _pagoCelular.Monto);
                         Uow.Commit();
                         MessageBox.Show("Pago guardado correctamente. Proximo pago: " +  proximoPago.Date.ToString("dd/MM/yyyy"));
                         
@@ -326,7 +326,6 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             var caja = Uow.Cajas.Listado().Where(c => c.OperadorId == Context.OperadorActual.Id && c.FCierre == null).OrderByDescending(c=>c.FechaAlta ).FirstOrDefault();
             caja.Ingresos = (caja.Ingresos ?? 0) + (_pagoCelular.Vales ?? 0) + (_pagoCelular.Efectivo ?? 0);
 
-            //MessageBox.Show(caja.Ingresos.ToString());
             caja.Saldo = (caja.Saldo ?? 0) + (_pagoCelular.Vales ?? 0) + (_pagoCelular.Efectivo ?? 0);
             if (_pagoCelular.Efectivo != null)
                 caja.Efectivo += _pagoCelular.Efectivo;

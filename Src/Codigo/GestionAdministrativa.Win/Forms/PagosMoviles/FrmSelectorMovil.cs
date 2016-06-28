@@ -253,6 +253,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
       
         private void ActualizarDiasMonto()
         {
+            int diasAPagar = 0;
             TimeSpan cantidadDias = SetTimeToZero(Hasta) - SetTimeToZero(Desde); 
             Dias = cantidadDias.Days + 1;
             
@@ -264,31 +265,51 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                 diario.Fecha = Desde.AddDays(i);
                 TimeSpan atrasado = SetTimeToZero(_clock.Now) - SetTimeToZero(diario.Fecha);
                 int DiasAtrasado = atrasado.Days;
-                if (DiasAtrasado > 2)
+                var control = 1;
+                if (_clock.Now.DayOfWeek == DayOfWeek.Monday)
+                    control = 3;
+                if (DiasAtrasado > control)
+                {
                     diario.Monto = PagoAtrasado ?? 0;
+                    diasAPagar = 0;
+                }
                 else
+                {
                     diario.Monto = Diario;
+                    diasAPagar += 1;
+                }
+                    
                 _detalle.Add(diario);
             }
+            if (diasAPagar >= 7)
+            {
+                var semanas = diasAPagar / 7;
+                var adelanto = semanas * 7;
+                foreach (PagoDia diario in _detalle)
+                {
+                    if(diario.Monto == Diario && adelanto > 0)
+                    {
+                        diario.Monto = Semanal;
+                        adelanto -= 1;
+                    }
+                }
+ 
+            }
             GridDetalle.DataSource = _detalle.ToList();
-            //MessageBox.Show(_detalle.Count().ToString());
+            
 
             //////////////////////////////
-            SubTotal = _detalle.Sum(s=>s.Monto);// Dias* Diario;
-            if (Desde <= _clock.Now.AddDays(2))
-            {
-                if (Dias >= 7)
-                {
-                    var semanas = Dias / 7;
-                    var resto = Dias % 7;
-                    SubTotal = (semanas * Semanal + resto * Diario);
-                }
-            }
-                 
-            
-           
-                
-
+            SubTotal = _detalle.Sum(s=>s.Monto);
+            //if (Desde <= _clock.Now.AddDays(2))
+            //{
+            //    if (Dias >= 7)
+            //    {
+            //        var semanas = Dias / 7;
+            //        var resto = Dias % 7;
+            //        SubTotal = (semanas * Semanal + resto * Diario);
+            //    }
+            //}
+  
         }
 
         private void OnPagoBaseAgregado(PagosBase pago)
