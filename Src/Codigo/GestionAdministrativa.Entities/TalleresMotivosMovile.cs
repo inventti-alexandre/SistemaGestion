@@ -12,17 +12,13 @@ namespace GestionAdministrativa.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class MotivosTallere
+    public partial class TalleresMotivosMovile
     {
-        public MotivosTallere()
-        {
-            this.TalleresMotivosMoviles = new HashSet<TalleresMotivosMovile>();
-        }
-    
         public System.Guid Id { get; set; }
-        public string Motivo { get; set; }
-        public bool Activo { get; set; }
+        public System.Guid TallerMovilId { get; set; }
+        public System.Guid MotivoTallerId { get; set; }
     
-        public virtual ICollection<TalleresMotivosMovile> TalleresMotivosMoviles { get; set; }
+        public virtual MotivosTallere MotivosTallere { get; set; }
+        public virtual TalleresMovile TalleresMovile { get; set; }
     }
 }

@@ -867,6 +867,14 @@
           <Property Name="FechaModificacion" Type="datetime" />
           <Property Name="Activo" Type="bit" />
         </EntityType>
+        <EntityType Name="TalleresMotivosMoviles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TallerMovilId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MotivoTallerId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
         <EntityType Name="TalleresMoviles">
           <Key>
             <PropertyRef Name="Id" />
@@ -885,16 +893,6 @@
           <Property Name="FechaModificacion" Type="datetime" />
           <Property Name="Activo" Type="bit" />
           <Property Name="Acreditado" Type="bit" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'GestionAdministrativa.Database.dbo.TallerMovilMotivo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="TallerMovilMotivo">
-          <Key>
-            <PropertyRef Name="TallerMovilId" />
-            <PropertyRef Name="MotivoTallerId" />
-          </Key>
-          <Property Name="TallerMovilId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="MotivoTallerId" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="Tarifas">
           <Key>
@@ -3826,24 +3824,24 @@ warning 6002: The table/view 'GestionAdministrativa.Database.dbo.TallerMovilMoti
         </Association>
         <Association Name="FK_TallerMovilMotivo_MotivoTaller">
           <End Role="MotivosTalleres" Type="Self.MotivosTalleres" Multiplicity="1" />
-          <End Role="TallerMovilMotivo" Type="Self.TallerMovilMotivo" Multiplicity="*" />
+          <End Role="TalleresMotivosMoviles" Type="Self.TalleresMotivosMoviles" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MotivosTalleres">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="TallerMovilMotivo">
+            <Dependent Role="TalleresMotivosMoviles">
               <PropertyRef Name="MotivoTallerId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TallerMovilMotivo_TallerId">
           <End Role="TalleresMoviles" Type="Self.TalleresMoviles" Multiplicity="1" />
-          <End Role="TallerMovilMotivo" Type="Self.TallerMovilMotivo" Multiplicity="*" />
+          <End Role="TalleresMotivosMoviles" Type="Self.TalleresMotivosMoviles" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TalleresMoviles">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="TallerMovilMotivo">
+            <Dependent Role="TalleresMotivosMoviles">
               <PropertyRef Name="TallerMovilId" />
             </Dependent>
           </ReferentialConstraint>
@@ -4221,6 +4219,7 @@ warning 6002: The table/view 'GestionAdministrativa.Database.dbo.TallerMovilMoti
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sucursales" EntityType="Self.Sucursales" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Talleres" EntityType="Self.Talleres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TalleresMotivosMoviles" EntityType="Self.TalleresMotivosMoviles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TalleresMoviles" EntityType="Self.TalleresMoviles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tarifas" EntityType="Self.Tarifas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TiposCelulares" EntityType="Self.TiposCelulares" Schema="dbo" store:Type="Tables" />
@@ -4230,12 +4229,6 @@ warning 6002: The table/view 'GestionAdministrativa.Database.dbo.TallerMovilMoti
           <EntitySet Name="TiposMovimientosCajas" EntityType="Self.TiposMovimientosCajas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TiposRecibos" EntityType="Self.TiposRecibos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Titulares" EntityType="Self.Titulares" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TallerMovilMotivo" EntityType="Self.TallerMovilMotivo" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [TallerMovilMotivo].[TallerMovilId] AS [TallerMovilId], 
-    [TallerMovilMotivo].[MotivoTallerId] AS [MotivoTallerId]
-    FROM [dbo].[TallerMovilMotivo] AS [TallerMovilMotivo]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_Bancos_Localidad" Association="Self.FK_Bancos_Localidad">
             <End Role="Localidades" EntitySet="Localidades" />
             <End Role="Bancos" EntitySet="Bancos" />
@@ -5174,11 +5167,11 @@ warning 6002: The table/view 'GestionAdministrativa.Database.dbo.TallerMovilMoti
           </AssociationSet>
           <AssociationSet Name="FK_TallerMovilMotivo_MotivoTaller" Association="Self.FK_TallerMovilMotivo_MotivoTaller">
             <End Role="MotivosTalleres" EntitySet="MotivosTalleres" />
-            <End Role="TallerMovilMotivo" EntitySet="TallerMovilMotivo" />
+            <End Role="TalleresMotivosMoviles" EntitySet="TalleresMotivosMoviles" />
           </AssociationSet>
           <AssociationSet Name="FK_TallerMovilMotivo_TallerId" Association="Self.FK_TallerMovilMotivo_TallerId">
             <End Role="TalleresMoviles" EntitySet="TalleresMoviles" />
-            <End Role="TallerMovilMotivo" EntitySet="TallerMovilMotivo" />
+            <End Role="TalleresMotivosMoviles" EntitySet="TalleresMotivosMoviles" />
           </AssociationSet>
           <AssociationSet Name="FK_Tarifas_OperadorAlta" Association="Self.FK_Tarifas_OperadorAlta">
             <End Role="Operadores" EntitySet="Operadores" />
@@ -9524,9 +9517,14 @@ warning 6002: The table/view 'GestionAdministrativa.Database.dbo.TallerMovilMoti
             <End Role="TalleresMovile" EntitySet="TalleresMoviles" />
           </AssociationSet>
           <EntitySet Name="MotivosTalleres" EntityType="GestionAdministrativa.Model.MotivosTallere" />
-          <AssociationSet Name="TallerMovilMotivo" Association="GestionAdministrativa.Model.TallerMovilMotivo">
+          <EntitySet Name="TalleresMotivosMoviles" EntityType="GestionAdministrativa.Model.TalleresMotivosMovile" />
+          <AssociationSet Name="FK_TallerMovilMotivo_MotivoTaller" Association="GestionAdministrativa.Model.FK_TallerMovilMotivo_MotivoTaller">
             <End Role="MotivosTallere" EntitySet="MotivosTalleres" />
+            <End Role="TalleresMotivosMovile" EntitySet="TalleresMotivosMoviles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TallerMovilMotivo_TallerId" Association="GestionAdministrativa.Model.FK_TallerMovilMotivo_TallerId">
             <End Role="TalleresMovile" EntitySet="TalleresMoviles" />
+            <End Role="TalleresMotivosMovile" EntitySet="TalleresMotivosMoviles" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Chofer">
@@ -10400,8 +10398,8 @@ warning 6002: The table/view 'GestionAdministrativa.Database.dbo.TallerMovilMoti
           <NavigationProperty Name="Movile" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_Movil" FromRole="TalleresMovile" ToRole="Movil" />
           <NavigationProperty Name="Tallere" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_Taller" FromRole="TalleresMovile" ToRole="Tallere" />
           <Property Name="Activo" Type="Boolean" />
-          <NavigationProperty Name="MotivosTalleres" Relationship="GestionAdministrativa.Model.TallerMovilMotivo" FromRole="TalleresMovile" ToRole="MotivosTallere" />
           <Property Name="Acreditado" Type="Boolean" />
+          <NavigationProperty Name="TalleresMotivosMoviles" Relationship="GestionAdministrativa.Model.FK_TallerMovilMotivo_TallerId" FromRole="TalleresMovile" ToRole="TalleresMotivosMovile" />
         </EntityType>
         <EntityType Name="Tarifa">
           <Key>
@@ -11039,13 +11037,43 @@ warning 6002: The table/view 'GestionAdministrativa.Database.dbo.TallerMovilMoti
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="Motivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Motivo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Activo" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="TalleresMoviles" Relationship="GestionAdministrativa.Model.TallerMovilMotivo" FromRole="MotivosTallere" ToRole="TalleresMovile" />
+          <NavigationProperty Name="TalleresMotivosMoviles" Relationship="GestionAdministrativa.Model.FK_TallerMovilMotivo_MotivoTaller" FromRole="MotivosTallere" ToRole="TalleresMotivosMovile" />
         </EntityType>
-        <Association Name="TallerMovilMotivo">
-          <End Type="GestionAdministrativa.Model.MotivosTallere" Role="MotivosTallere" Multiplicity="*" />
-          <End Type="GestionAdministrativa.Model.TalleresMovile" Role="TalleresMovile" Multiplicity="*" />
+        <EntityType Name="TalleresMotivosMovile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="TallerMovilId" Type="Guid" Nullable="false" />
+          <Property Name="MotivoTallerId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="MotivosTallere" Relationship="GestionAdministrativa.Model.FK_TallerMovilMotivo_MotivoTaller" FromRole="TalleresMotivosMovile" ToRole="MotivosTallere" />
+          <NavigationProperty Name="TalleresMovile" Relationship="GestionAdministrativa.Model.FK_TallerMovilMotivo_TallerId" FromRole="TalleresMotivosMovile" ToRole="TalleresMovile" />
+        </EntityType>
+        <Association Name="FK_TallerMovilMotivo_MotivoTaller">
+          <End Type="GestionAdministrativa.Model.MotivosTallere" Role="MotivosTallere" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.TalleresMotivosMovile" Role="TalleresMotivosMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MotivosTallere">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TalleresMotivosMovile">
+              <PropertyRef Name="MotivoTallerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TallerMovilMotivo_TallerId">
+          <End Type="GestionAdministrativa.Model.TalleresMovile" Role="TalleresMovile" Multiplicity="1" />
+          <End Type="GestionAdministrativa.Model.TalleresMotivosMovile" Role="TalleresMotivosMovile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TalleresMovile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TalleresMotivosMovile">
+              <PropertyRef Name="TallerMovilId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -12190,14 +12218,15 @@ warning 6002: The table/view 'GestionAdministrativa.Database.dbo.TallerMovilMoti
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="TallerMovilMotivo" TypeName="GestionAdministrativa.Model.TallerMovilMotivo" StoreEntitySet="TallerMovilMotivo">
-            <EndProperty Name="TalleresMovile">
-              <ScalarProperty Name="Id" ColumnName="TallerMovilId" />
-            </EndProperty>
-            <EndProperty Name="MotivosTallere">
-              <ScalarProperty Name="Id" ColumnName="MotivoTallerId" />
-            </EndProperty>
-          </AssociationSetMapping>
+          <EntitySetMapping Name="TalleresMotivosMoviles">
+            <EntityTypeMapping TypeName="GestionAdministrativa.Model.TalleresMotivosMovile">
+              <MappingFragment StoreEntitySet="TalleresMotivosMoviles">
+                <ScalarProperty Name="MotivoTallerId" ColumnName="MotivoTallerId" />
+                <ScalarProperty Name="TallerMovilId" ColumnName="TallerMovilId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

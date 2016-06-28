@@ -232,6 +232,9 @@
     <Compile Include="Tallere.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="TalleresMotivosMovile.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="TalleresMovile.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>

@@ -12,7 +12,7 @@ namespace GestionAdministrativa.Data.Interfaces
         IRepository<Chofer> Choferes { get; }
         IRepository<Operador> Operadores { get; }
         IRepository<Movil> Moviles { get; }
-        IRepository<MotivosTallere > MotivosTalleres { get; } 
+        IRepository<MotivosTallere> MotivosTalleres { get; } 
         IRepository<Promocione> Promociones { get; }
         IRepository<PromocionesMovile> PromocionesMoviles { get; }
         IRepository<Tarifa> Tarifas { get; }
@@ -39,6 +39,7 @@ namespace GestionAdministrativa.Data.Interfaces
         IRepository<Proveedor> Proveedores { get; }
         IRepository<Tallere> Talleres { get; }
         IRepository<TalleresMovile> TalleresMoviles { get; }
+        IRepository<TalleresMotivosMovile> TalleresMotivosMoviles { get; }
         IRepository<Titulare> Titulares { get; }
         bool IsDisposed { get; }
 

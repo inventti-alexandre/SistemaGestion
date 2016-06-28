@@ -158,8 +158,43 @@ namespace GestionAdministrativa.Win.Forms.Talleres
                 else
                 {
                     entity.Activo = false;
+                    foreach (var item in ChkListBox.CheckedItems)
+                    {
+                        var motivo = (MotivosTallere)item;
+
+                        MessageBox.Show(motivo.Id.ToString());
+                        var tallerMovilMotivo = new TalleresMotivosMovile();
+                        
+                        tallerMovilMotivo.Id = Guid.NewGuid();
+                        tallerMovilMotivo.MotivoTallerId = motivo.Id;
+                        tallerMovilMotivo.TallerMovilId = entity.Id;
+
+                        Uow.TalleresMotivosMoviles.Agregar(tallerMovilMotivo);
+                    }
+
                     Uow.TalleresMoviles.Modificar(entity);
                 }
+                
+               //MessageBox.Show(ChkListBox.Items.Count.ToString());
+
+
+                //var item = 0;
+                //while (item < ChkListBox.Items.Count)
+                //{
+                //    MessageBox.Show(ChkListBox.Items[item].ToString());
+
+                //    if (ChkListBox.GetItemCheckState(item) == CheckState.Checked)
+                //    {
+                //        MessageBox.Show(ChkListBox.Items[item].ToString());
+                //        //ChkListBox.
+                //        var motivosTaller = ChkListBox.Items[item];
+                //        MessageBox.Show("sdfasdf "+motivosTaller.ToString());
+                //    }
+                //    item += 1;
+                //}
+
+                
+               
                 Uow.Commit();
 
                 if (_formMode == ActionFormMode.Create)

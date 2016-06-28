@@ -23,10 +23,8 @@ namespace GestionAdministrativa.Data
         public IRepository<Caja> Cajas { get { return GetStandardRepo<Caja>(); } }
         public IRepository<Chofer> Choferes { get { return GetStandardRepo<Chofer>(); } }
         public IRepository<Operador> Operadores { get { return GetStandardRepo<Operador>(); } }
-
         public IRepository<MotivosTallere> MotivosTalleres { get { return GetStandardRepo<MotivosTallere>(); } } 
         public IRepository<Movil> Moviles { get { return GetStandardRepo<Movil>(); } }
-
         public IRepository<Promocione> Promociones { get { return GetStandardRepo<Promocione>(); } }
         public IRepository<PromocionesMovile> PromocionesMoviles { get { return GetStandardRepo<PromocionesMovile>(); } }
         public IRepository<Tarifa> Tarifas { get { return GetStandardRepo<Tarifa>(); } }
@@ -53,6 +51,7 @@ namespace GestionAdministrativa.Data
         public IRepository<Proveedor> Proveedores { get { return GetStandardRepo<Proveedor>(); } }
         public IRepository<Tallere> Talleres { get { return GetStandardRepo<Tallere>(); } }
         public IRepository<TalleresMovile> TalleresMoviles { get { return GetStandardRepo<TalleresMovile>(); } }
+        public IRepository<TalleresMotivosMovile> TalleresMotivosMoviles { get { return GetStandardRepo<TalleresMotivosMovile>(); } }
         public IRepository<Titulare> Titulares { get { return GetStandardRepo<Titulare>(); } }
         public string ConnectionString
         {

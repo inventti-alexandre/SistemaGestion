@@ -16,7 +16,7 @@ namespace GestionAdministrativa.Entities
     {
         public TalleresMovile()
         {
-            this.MotivosTalleres = new HashSet<MotivosTallere>();
+            this.TalleresMotivosMoviles = new HashSet<TalleresMotivosMovile>();
         }
     
         public System.Guid Id { get; set; }
@@ -40,6 +40,6 @@ namespace GestionAdministrativa.Entities
         public virtual Sucursal Sucursale1 { get; set; }
         public virtual Movil Movile { get; set; }
         public virtual Tallere Tallere { get; set; }
-        public virtual ICollection<MotivosTallere> MotivosTalleres { get; set; }
+        public virtual ICollection<TalleresMotivosMovile> TalleresMotivosMoviles { get; set; }
     }
 }

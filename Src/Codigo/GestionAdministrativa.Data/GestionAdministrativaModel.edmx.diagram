@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="99b1b99db2a04024808ed4cd3dad1108" Name="Diagram1" ZoomLevel="72">
+      <Diagram DiagramId="99b1b99db2a04024808ed4cd3dad1108" Name="Diagram1" ZoomLevel="302">
         <EntityTypeShape EntityType="GestionAdministrativa.Model.Banco" Width="1.5" PointX="5.25" PointY="64.875" IsExpanded="true" />
         <EntityTypeShape EntityType="GestionAdministrativa.Model.Caja" Width="1.5" PointX="21.75" PointY="64.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GestionAdministrativa.Model.CajaMovimiento" Width="1.5" PointX="18.75" PointY="71" IsExpanded="true" />
@@ -78,15 +78,17 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_CentrosCostos_SucursalAlta" ManuallyRouted="false" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_CentrosCostos_SucursalModificacion" ManuallyRouted="false" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_OrdenesPago_CentrosCostos" ManuallyRouted="true" >
-          <ConnectorPoint PointX="21.75" PointY="73.230044025065141" />
-          <ConnectorPoint PointX="21.208333333333332" PointY="73.230044025065141" />
-          <ConnectorPoint PointX="21.041666666666668" PointY="73.230044025065141" />
-          <ConnectorPoint PointX="20.958333333333332" PointY="73.230044025065141" />
-          <ConnectorPoint PointX="20.666666666666668" PointY="73.230044025065141" />
-          <ConnectorPoint PointX="20.5" PointY="73.230044025065141" />
+          <ConnectorPoint PointX="21.75" PointY="73.207906170979854" />
+          <ConnectorPoint PointX="21.208333333333332" PointY="73.207906170979854" />
+          <ConnectorPoint PointX="21.041666666666668" PointY="73.207906170979854" />
+          <ConnectorPoint PointX="20.958333333333332" PointY="73.207906170979854" />
+          <ConnectorPoint PointX="20.666666666666668" PointY="73.207906170979854" />
+          <ConnectorPoint PointX="20.5" PointY="73.207906170979854" />
           <ConnectorPoint PointX="20.5" PointY="70.75" />
           <ConnectorPoint PointX="20.458333333333332" PointY="70.75" />
           <ConnectorPoint PointX="20.291666666666668" PointY="70.75" />
+          <ConnectorPoint PointX="18.583333333333332" PointY="70.75" />
+          <ConnectorPoint PointX="18.416666666666668" PointY="70.75" />
           <ConnectorPoint PointX="17.5" PointY="70.75" />
           <ConnectorPoint PointX="17.5" PointY="72.008932291666667" />
           <ConnectorPoint PointX="16.5" PointY="72.008932291666667" />
@@ -332,8 +334,10 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_MovilesMontoFavor_TipoComprobante" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_TalleresMoviles_Movil" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_TalleresMoviles_Taller" />
-        <EntityTypeShape EntityType="GestionAdministrativa.Model.MotivosTallere" Width="1.5" PointX="2.25" PointY="3.75" />
-        <AssociationConnector Association="GestionAdministrativa.Model.TallerMovilMotivo" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.MotivosTallere" Width="1.5" PointX="44.25" PointY="85.5" />
+        <EntityTypeShape EntityType="GestionAdministrativa.Model.TalleresMotivosMovile" Width="1.5" PointX="46.5" PointY="78.375" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TallerMovilMotivo_MotivoTaller" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_TallerMovilMotivo_TallerId" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

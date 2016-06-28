@@ -85,6 +85,7 @@ namespace GestionAdministrativa.Data
         public virtual DbSet<PagosBas> PagosBases { get; set; }
         public virtual DbSet<MovilesMontoFavor> MovilesMontoFavors { get; set; }
         public virtual DbSet<MotivosTallere> MotivosTalleres { get; set; }
+        public virtual DbSet<TalleresMotivosMovile> TalleresMotivosMoviles { get; set; }
     
         public virtual ObjectResult<Reporte_CajaResumida_Ingresos_Result> Reporte_CajaResumida_Ingresos(Nullable<int> sucursalId, Nullable<System.DateTime> fechaInicio, Nullable<System.DateTime> fechaFin, Nullable<System.Guid> operadorId, Nullable<System.Guid> cajaId)
         {
