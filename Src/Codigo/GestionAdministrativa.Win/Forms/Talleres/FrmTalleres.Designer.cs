@@ -72,7 +72,7 @@
             // 
             this.panel1.Controls.Add(this.BtnAceptar);
             this.panel1.Controls.Add(this.BtnCancelar);
-            this.panel1.Location = new System.Drawing.Point(693, 458);
+            this.panel1.Location = new System.Drawing.Point(875, 395);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(231, 46);
             this.panel1.TabIndex = 26;
@@ -283,7 +283,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1150, 507);
+            this.ClientSize = new System.Drawing.Size(1118, 445);
             this.Controls.Add(this.DgvTalleres);
             this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.TxtObservaciones);
