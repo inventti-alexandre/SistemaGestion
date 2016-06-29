@@ -138,7 +138,8 @@ namespace GestionAdministrativa.Win.Forms.Talleres
         {
             var esValido = this.ValidarForm();
 
-            if (!esValido)
+
+            if (!esValido || (Guid)DdlMovil.SelectedValue == Guid.Empty || (Guid)DdlTipo.SelectedValue == Guid.Empty)
                 this.DialogResult = DialogResult.None;
             else
             {
@@ -158,43 +159,24 @@ namespace GestionAdministrativa.Win.Forms.Talleres
                 else
                 {
                     entity.Activo = false;
-                    foreach (var item in ChkListBox.CheckedItems)
-                    {
-                        var motivo = (MotivosTallere)item;
-
-                        MessageBox.Show(motivo.Id.ToString());
-                        var tallerMovilMotivo = new TalleresMotivosMovile();
-                        
-                        tallerMovilMotivo.Id = Guid.NewGuid();
-                        tallerMovilMotivo.MotivoTallerId = motivo.Id;
-                        tallerMovilMotivo.TallerMovilId = entity.Id;
-
-                        Uow.TalleresMotivosMoviles.Agregar(tallerMovilMotivo);
-                    }
+                   
 
                     Uow.TalleresMoviles.Modificar(entity);
                 }
                 
-               //MessageBox.Show(ChkListBox.Items.Count.ToString());
+                //TALLERES POR MOVIL.
+                foreach (var item in ChkListBox.CheckedItems)
+                {
+                    var motivo = (MotivosTallere)item;
+                    var tallerMovilMotivo = new TalleresMotivosMovile();
 
+                    tallerMovilMotivo.Id = Guid.NewGuid();
+                    tallerMovilMotivo.MotivoTallerId = motivo.Id;
+                    tallerMovilMotivo.TallerMovilId = entity.Id;
 
-                //var item = 0;
-                //while (item < ChkListBox.Items.Count)
-                //{
-                //    MessageBox.Show(ChkListBox.Items[item].ToString());
+                    Uow.TalleresMotivosMoviles.Agregar(tallerMovilMotivo);
+                }
 
-                //    if (ChkListBox.GetItemCheckState(item) == CheckState.Checked)
-                //    {
-                //        MessageBox.Show(ChkListBox.Items[item].ToString());
-                //        //ChkListBox.
-                //        var motivosTaller = ChkListBox.Items[item];
-                //        MessageBox.Show("sdfasdf "+motivosTaller.ToString());
-                //    }
-                //    item += 1;
-                //}
-
-                
-               
                 Uow.Commit();
 
                 if (_formMode == ActionFormMode.Create)
@@ -211,7 +193,6 @@ namespace GestionAdministrativa.Win.Forms.Talleres
 
         private TalleresMovile ObtenerEntidadDesdeForm()
         {
-            
            _tallerMovil.MovilId = Movil;
            _tallerMovil.TallerId = TipoTaller;
            _tallerMovil.FechaDesde = Desde;
@@ -238,17 +219,17 @@ namespace GestionAdministrativa.Win.Forms.Talleres
         {
             return ObtenerEntidadDesdeForm();
         }
-
         protected override void ValidarControles()
         {
             this.ValidarControl(DdlMovil, "MovilId");
         }
-
-        #endregion
-
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
             CrearEditar();
         }
+
+        #endregion
+
+        
     }
 }
