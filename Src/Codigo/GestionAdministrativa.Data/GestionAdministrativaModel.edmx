@@ -893,6 +893,7 @@
           <Property Name="FechaModificacion" Type="datetime" />
           <Property Name="Activo" Type="bit" />
           <Property Name="Acreditado" Type="bit" />
+          <Property Name="Observaciones" Type="varchar" MaxLength="200" Nullable="false" />
         </EntityType>
         <EntityType Name="Tarifas">
           <Key>
@@ -10400,6 +10401,7 @@
           <Property Name="Activo" Type="Boolean" />
           <Property Name="Acreditado" Type="Boolean" />
           <NavigationProperty Name="TalleresMotivosMoviles" Relationship="GestionAdministrativa.Model.FK_TallerMovilMotivo_TallerId" FromRole="TalleresMovile" ToRole="TalleresMotivosMovile" />
+          <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Tarifa">
           <Key>
@@ -12117,6 +12119,7 @@
           <EntitySetMapping Name="TalleresMoviles">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.TalleresMovile">
               <MappingFragment StoreEntitySet="TalleresMoviles">
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
                 <ScalarProperty Name="Acreditado" ColumnName="Acreditado" />
                 <ScalarProperty Name="Activo" ColumnName="Activo" />
                 <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />

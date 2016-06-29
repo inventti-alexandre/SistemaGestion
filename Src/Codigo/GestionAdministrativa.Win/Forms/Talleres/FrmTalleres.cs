@@ -87,6 +87,12 @@ namespace GestionAdministrativa.Win.Forms.Talleres
             set { DtpFin.Value = value ?? _clock.Now; }
         }
 
+        public string Observaciones
+        {
+            get { return TxtObservaciones.Text; }
+            set { TxtObservaciones.Text = value ?? ""; }
+        }
+
         #endregion
 
        
@@ -136,10 +142,31 @@ namespace GestionAdministrativa.Win.Forms.Talleres
 
         private void CrearEditar()
         {
+
+            if (Observaciones == "")
+            {
+                EpvTalleres.SetError(TxtObservaciones, "Debe ingresar una observación");
+                return;
+                
+            }
+            if ((Guid)DdlMovil.SelectedValue == Guid.Empty)
+            {
+                EpvTalleres.SetError(DdlMovil, "Debe seleccionar un móvil");
+                return;
+                
+            }
+            if ((Guid)DdlTipo.SelectedValue == Guid.Empty)
+            {
+                EpvTalleres.SetError(DdlTipo, "Debe seleccionar un tipo");
+                return;
+                
+            }
+
             var esValido = this.ValidarForm();
 
+           
 
-            if (!esValido || (Guid)DdlMovil.SelectedValue == Guid.Empty || (Guid)DdlTipo.SelectedValue == Guid.Empty)
+            if (!esValido)
                 this.DialogResult = DialogResult.None;
             else
             {
@@ -198,6 +225,7 @@ namespace GestionAdministrativa.Win.Forms.Talleres
            _tallerMovil.FechaDesde = Desde;
            _tallerMovil.FechaHasta = Hasta;
             _tallerMovil.Activo = true;
+            _tallerMovil.Observaciones = Observaciones;
 
             _tallerMovil.OperadorAltaId = _formMode == ActionFormMode.Create
                 ? Context.OperadorActual.Id
@@ -222,6 +250,7 @@ namespace GestionAdministrativa.Win.Forms.Talleres
         protected override void ValidarControles()
         {
             this.ValidarControl(DdlMovil, "MovilId");
+            this.ValidarControl(TxtObservaciones,"Observaciones");
         }
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
@@ -229,6 +258,20 @@ namespace GestionAdministrativa.Win.Forms.Talleres
         }
 
         #endregion
+
+        private void DdlMovil_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (Movil != Guid.Empty)
+            {
+                var tallerMovil = Uow.TalleresMoviles.Listado().Where(t=>t.MovilId == Movil);
+                 
+
+                if (tallerMovil!=null)
+                    DgvTalleres.DataSource = tallerMovil.ToList();
+            }
+        }
+
+        
 
         
     }

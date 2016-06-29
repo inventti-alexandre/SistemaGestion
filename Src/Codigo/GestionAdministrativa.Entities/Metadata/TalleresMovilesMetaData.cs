@@ -16,5 +16,8 @@ namespace GestionAdministrativa.Entities.Metadata
     {
         [Required(ErrorMessage = "Debe seleccionar un móvil")]
         public Guid MovilId { get; set; }
+
+        [Required(ErrorMessage = "Debe agregar una observación")]
+        public string Observaciones { get; set; }
     }
 }

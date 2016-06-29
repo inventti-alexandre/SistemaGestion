@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnAceptar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
@@ -43,6 +46,10 @@
             this.DdlMovil = new Telerik.WinControls.UI.RadDropDownList();
             this.EpvTalleres = new System.Windows.Forms.ErrorProvider(this.components);
             this.ChkListBox = new System.Windows.Forms.CheckedListBox();
+            this.TxtObservaciones = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.DgvTalleres = new Telerik.WinControls.UI.RadGridView();
             this.panel1.SuspendLayout();
             this.PnlNuevoTipo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
@@ -54,6 +61,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DdlMovil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EpvTalleres)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtObservaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvTalleres)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvTalleres.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +72,7 @@
             // 
             this.panel1.Controls.Add(this.BtnAceptar);
             this.panel1.Controls.Add(this.BtnCancelar);
-            this.panel1.Location = new System.Drawing.Point(274, 221);
+            this.panel1.Location = new System.Drawing.Point(693, 458);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(231, 46);
             this.panel1.TabIndex = 26;
@@ -195,6 +206,7 @@
             this.DdlMovil.Size = new System.Drawing.Size(292, 31);
             this.DdlMovil.TabIndex = 21;
             this.DdlMovil.ThemeName = "TelerikMetro";
+            this.DdlMovil.SelectedValueChanged += new System.EventHandler(this.DdlMovil_SelectedValueChanged);
             // 
             // EpvTalleres
             // 
@@ -203,19 +215,82 @@
             // ChkListBox
             // 
             this.ChkListBox.FormattingEnabled = true;
-            this.ChkListBox.Location = new System.Drawing.Point(532, 23);
+            this.ChkListBox.Location = new System.Drawing.Point(546, 26);
             this.ChkListBox.Name = "ChkListBox";
-            this.ChkListBox.Size = new System.Drawing.Size(253, 160);
+            this.ChkListBox.Size = new System.Drawing.Size(560, 160);
             this.ChkListBox.TabIndex = 27;
+            // 
+            // TxtObservaciones
+            // 
+            this.TxtObservaciones.Location = new System.Drawing.Point(28, 229);
+            this.TxtObservaciones.Multiline = true;
+            this.TxtObservaciones.Name = "TxtObservaciones";
+            // 
+            // 
+            // 
+            this.TxtObservaciones.RootElement.StretchVertically = true;
+            this.TxtObservaciones.Size = new System.Drawing.Size(466, 157);
+            this.TxtObservaciones.TabIndex = 28;
+            this.TxtObservaciones.TabStop = false;
+            // 
+            // radLabel3
+            // 
+            this.radLabel3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel3.Location = new System.Drawing.Point(16, 198);
+            this.radLabel3.Name = "radLabel3";
+            this.radLabel3.Size = new System.Drawing.Size(151, 25);
+            this.radLabel3.TabIndex = 30;
+            this.radLabel3.Text = "Observaciones:";
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(12, 189);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(493, 200);
+            this.panel2.TabIndex = 31;
+            // 
+            // DgvTalleres
+            // 
+            this.DgvTalleres.Location = new System.Drawing.Point(546, 192);
+            // 
+            // DgvTalleres
+            // 
+            this.DgvTalleres.MasterTemplate.AllowAddNewRow = false;
+            gridViewTextBoxColumn1.FieldName = "FechaDesde";
+            gridViewTextBoxColumn1.HeaderText = "Desde";
+            gridViewTextBoxColumn1.Name = "FechaDesde";
+            gridViewTextBoxColumn1.Width = 100;
+            gridViewTextBoxColumn2.FieldName = "FechaHasta";
+            gridViewTextBoxColumn2.HeaderText = "Hasta";
+            gridViewTextBoxColumn2.Name = "FechaHasta";
+            gridViewTextBoxColumn2.Width = 100;
+            gridViewTextBoxColumn3.FieldName = "Observaciones";
+            gridViewTextBoxColumn3.FormatString = "";
+            gridViewTextBoxColumn3.HeaderText = "Observaciones";
+            gridViewTextBoxColumn3.Name = "Observaciones";
+            gridViewTextBoxColumn3.Width = 150;
+            this.DgvTalleres.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3});
+            this.DgvTalleres.Name = "DgvTalleres";
+            this.DgvTalleres.Size = new System.Drawing.Size(560, 197);
+            this.DgvTalleres.TabIndex = 32;
+            this.DgvTalleres.Text = "radGridView1";
+            this.DgvTalleres.ThemeName = "TelerikMetro";
             // 
             // FrmTalleres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 432);
+            this.ClientSize = new System.Drawing.Size(1150, 507);
+            this.Controls.Add(this.DgvTalleres);
+            this.Controls.Add(this.radLabel3);
+            this.Controls.Add(this.TxtObservaciones);
             this.Controls.Add(this.ChkListBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PnlNuevoTipo);
+            this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmTalleres";
             // 
@@ -236,8 +311,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DdlMovil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EpvTalleres)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtObservaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvTalleres.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvTalleres)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -257,6 +337,10 @@
         private Telerik.WinControls.UI.RadDateTimePicker DtpDesde;
         private System.Windows.Forms.ErrorProvider EpvTalleres;
         private System.Windows.Forms.CheckedListBox ChkListBox;
+        private Telerik.WinControls.UI.RadTextBox TxtObservaciones;
+        private Telerik.WinControls.UI.RadLabel radLabel3;
+        private Telerik.WinControls.UI.RadGridView DgvTalleres;
+        private System.Windows.Forms.Panel panel2;
 
     }
 }

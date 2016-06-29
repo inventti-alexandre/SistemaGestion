@@ -33,6 +33,7 @@ namespace GestionAdministrativa.Entities
         public Nullable<System.DateTime> FechaModificacion { get; set; }
         public Nullable<bool> Activo { get; set; }
         public Nullable<bool> Acreditado { get; set; }
+        public string Observaciones { get; set; }
     
         public virtual Operador Operadore { get; set; }
         public virtual Operador Operadore1 { get; set; }
