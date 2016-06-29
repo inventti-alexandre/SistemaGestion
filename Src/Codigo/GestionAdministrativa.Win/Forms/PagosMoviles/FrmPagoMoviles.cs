@@ -150,18 +150,17 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
 
             Uow.Cajas.Modificar(caja);
 
-           
-
-
+            
             //pagos bases
             var pagosBases = new PagosBas();
-            pagosBases.Id=Guid.NewGuid();
-            pagosBases.PagoMovil = null; //aca tienen que venir el movil que hace el pago
+            pagosBases.Id = Guid.NewGuid();
+            pagosBases.PagoMovil = ucListadoPago1._pagosBases.FirstOrDefault().MovilId; //aca tienen que venir el movil que hace el pago
             pagosBases.FechaAlta = _clock.Now;
             pagosBases.OperadorAltaId = Context.OperadorActual.Id;
             pagosBases.SucursalAltaId = Context.SucursalActual.Id;
 
             Uow.PagosBases.Agregar(pagosBases);
+           
 
             //Creo la caja movimiento
             var cajaMovimiento = new CajaMovimiento();
