@@ -55,6 +55,12 @@ namespace GestionAdministrativa.Win.Forms.Talleres
         {
             DtpDesde.Value = _clock.Now;
             DtpFin.Value = _clock.Now;
+
+            this.DgvTalleres.Columns["FechaDesde"].DataType = typeof(DateTime);
+            this.DgvTalleres.Columns["FechaDesde"].FormatString = "{0: dd/M/yyyy}";
+
+            this.DgvTalleres.Columns["FechaHasta"].DataType = typeof(DateTime);
+            this.DgvTalleres.Columns["FechaHasta"].FormatString = "{0: dd/M/yyyy}";
         }
 
         #region Events
@@ -143,24 +149,7 @@ namespace GestionAdministrativa.Win.Forms.Talleres
         private void CrearEditar()
         {
 
-            if (Observaciones == "")
-            {
-                EpvTalleres.SetError(TxtObservaciones, "Debe ingresar una observación");
-                return;
-                
-            }
-            if ((Guid)DdlMovil.SelectedValue == Guid.Empty)
-            {
-                EpvTalleres.SetError(DdlMovil, "Debe seleccionar un móvil");
-                return;
-                
-            }
-            if ((Guid)DdlTipo.SelectedValue == Guid.Empty)
-            {
-                EpvTalleres.SetError(DdlTipo, "Debe seleccionar un tipo");
-                return;
-                
-            }
+            if (!Validar()) return;
 
             var esValido = this.ValidarForm();
 
@@ -210,6 +199,27 @@ namespace GestionAdministrativa.Win.Forms.Talleres
                     OnEntityAgregada(entity);
                 this.Close();
             }
+        }
+
+        private bool Validar()
+        {
+            bool valido = true;
+            if (Observaciones == "")
+            {
+                EpvTalleres.SetError(TxtObservaciones, "Debe ingresar una observación");
+                valido = false;
+            }
+            if ((Guid) DdlMovil.SelectedValue == Guid.Empty)
+            {
+                EpvTalleres.SetError(DdlMovil, "Debe seleccionar un móvil");
+                valido = false;
+            }
+            if ((Guid) DdlTipo.SelectedValue == Guid.Empty)
+            {
+                EpvTalleres.SetError(DdlTipo, "Debe seleccionar un tipo");
+                valido = false;
+            }
+            return valido;
         }
 
         private void OnEntityAgregada(TalleresMovile entity)
@@ -264,11 +274,13 @@ namespace GestionAdministrativa.Win.Forms.Talleres
             if (Movil != Guid.Empty)
             {
                 var tallerMovil = Uow.TalleresMoviles.Listado().Where(t=>t.MovilId == Movil);
-                 
 
-                if (tallerMovil!=null)
+                if (tallerMovil != null)
                     DgvTalleres.DataSource = tallerMovil.ToList();
+                
             }
+            else
+                DgvTalleres.DataSource = null;
         }
 
         
