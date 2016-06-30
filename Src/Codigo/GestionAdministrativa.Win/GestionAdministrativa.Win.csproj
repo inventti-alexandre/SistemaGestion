@@ -707,6 +707,7 @@
     <Content Include="Resources\save-disk.png" />
     <Content Include="Resources\settings.png" />
     <Content Include="Resources\seña.png" />
+    <None Include="Resources\tool.png" />
     <Content Include="Resources\Van - 01.png" />
     <Content Include="Resources\Van - 02.png" />
     <Content Include="Resources\van.png" />

@@ -286,6 +286,14 @@ namespace GestionAdministrativa.Win.Forms
             frm.Show();
         }
 
+        private void BtnTalleres_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmTalleresListado>(Guid.Empty, ActionFormMode.Create);
+            frm.Show();
+        }
+
+       
+
       
 
       

@@ -45,6 +45,7 @@ namespace GestionAdministrativa.Win.Forms.Talleres
         private void FrmTalleresListado_Load(object sender, EventArgs e)
         {
             base.FormBaseListado_Load(sender,e);
+            this.Text = "Listado de talleres";
             RefrescarListado();
         }
 

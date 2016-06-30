@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn4 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.DgvTalleresMoviles = new Telerik.WinControls.UI.RadGridView();
             this.BtnCrear = new System.Windows.Forms.Button();
             this.TxtMovil = new Telerik.WinControls.UI.RadTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTalleresMoviles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTalleresMoviles.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMovil)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,55 +57,55 @@
             this.DgvTalleresMoviles.MasterTemplate.AllowAddNewRow = false;
             this.DgvTalleresMoviles.MasterTemplate.AllowDeleteRow = false;
             this.DgvTalleresMoviles.MasterTemplate.AllowDragToGroup = false;
-            gridViewTextBoxColumn1.FieldName = "MovilNumero";
-            gridViewTextBoxColumn1.FormatString = "";
-            gridViewTextBoxColumn1.HeaderText = "Movil";
-            gridViewTextBoxColumn1.Name = "Movil";
-            gridViewTextBoxColumn1.ReadOnly = true;
-            gridViewTextBoxColumn1.Width = 70;
-            gridViewTextBoxColumn2.FieldName = "FechaDesde";
-            gridViewTextBoxColumn2.FormatString = "";
-            gridViewTextBoxColumn2.HeaderText = "Fecha Desde";
-            gridViewTextBoxColumn2.Name = "FechaDesde";
-            gridViewTextBoxColumn2.ReadOnly = true;
-            gridViewTextBoxColumn2.Width = 150;
-            gridViewTextBoxColumn3.FieldName = "FechaHasta";
-            gridViewTextBoxColumn3.FormatString = "";
-            gridViewTextBoxColumn3.HeaderText = "Fecha Hasta";
-            gridViewTextBoxColumn3.Name = "FechaHasta";
-            gridViewTextBoxColumn3.ReadOnly = true;
-            gridViewTextBoxColumn3.Width = 150;
-            gridViewCheckBoxColumn1.FieldName = "Activo";
-            gridViewCheckBoxColumn1.HeaderText = "Activo";
-            gridViewCheckBoxColumn1.Name = "Activo";
-            gridViewCheckBoxColumn1.ReadOnly = true;
-            gridViewCheckBoxColumn1.Width = 80;
-            gridViewCheckBoxColumn2.FieldName = "Acreditado";
-            gridViewCheckBoxColumn2.HeaderText = "Acreditado";
-            gridViewCheckBoxColumn2.Name = "Acreditado";
-            gridViewCheckBoxColumn2.ReadOnly = true;
-            gridViewCheckBoxColumn2.Width = 80;
-            gridViewTextBoxColumn4.FieldName = "Observaciones";
-            gridViewTextBoxColumn4.HeaderText = "Observaciones";
-            gridViewTextBoxColumn4.MinWidth = 350;
-            gridViewTextBoxColumn4.Name = "Observaciones";
-            gridViewTextBoxColumn4.ReadOnly = true;
-            gridViewTextBoxColumn4.Width = 350;
-            gridViewCommandColumn1.HeaderText = "";
-            gridViewCommandColumn1.Image = global::GestionAdministrativa.Win.Properties.Resources.Reload_16x16;
-            gridViewCommandColumn1.MaxWidth = 25;
-            gridViewCommandColumn1.MinWidth = 25;
-            gridViewCommandColumn1.Name = "Fin";
-            gridViewCommandColumn1.RowSpan = 16;
-            gridViewCommandColumn1.Width = 25;
+            gridViewTextBoxColumn5.FieldName = "MovilNumero";
+            gridViewTextBoxColumn5.FormatString = "";
+            gridViewTextBoxColumn5.HeaderText = "Movil";
+            gridViewTextBoxColumn5.Name = "Movil";
+            gridViewTextBoxColumn5.ReadOnly = true;
+            gridViewTextBoxColumn5.Width = 70;
+            gridViewTextBoxColumn6.FieldName = "FechaDesde";
+            gridViewTextBoxColumn6.FormatString = "";
+            gridViewTextBoxColumn6.HeaderText = "Fecha Desde";
+            gridViewTextBoxColumn6.Name = "FechaDesde";
+            gridViewTextBoxColumn6.ReadOnly = true;
+            gridViewTextBoxColumn6.Width = 150;
+            gridViewTextBoxColumn7.FieldName = "FechaHasta";
+            gridViewTextBoxColumn7.FormatString = "";
+            gridViewTextBoxColumn7.HeaderText = "Fecha Hasta";
+            gridViewTextBoxColumn7.Name = "FechaHasta";
+            gridViewTextBoxColumn7.ReadOnly = true;
+            gridViewTextBoxColumn7.Width = 150;
+            gridViewCheckBoxColumn3.FieldName = "Activo";
+            gridViewCheckBoxColumn3.HeaderText = "Activo";
+            gridViewCheckBoxColumn3.Name = "Activo";
+            gridViewCheckBoxColumn3.ReadOnly = true;
+            gridViewCheckBoxColumn3.Width = 80;
+            gridViewCheckBoxColumn4.FieldName = "Acreditado";
+            gridViewCheckBoxColumn4.HeaderText = "Acreditado";
+            gridViewCheckBoxColumn4.Name = "Acreditado";
+            gridViewCheckBoxColumn4.ReadOnly = true;
+            gridViewCheckBoxColumn4.Width = 80;
+            gridViewTextBoxColumn8.FieldName = "Observaciones";
+            gridViewTextBoxColumn8.HeaderText = "Observaciones";
+            gridViewTextBoxColumn8.MinWidth = 350;
+            gridViewTextBoxColumn8.Name = "Observaciones";
+            gridViewTextBoxColumn8.ReadOnly = true;
+            gridViewTextBoxColumn8.Width = 350;
+            gridViewCommandColumn2.HeaderText = "";
+            gridViewCommandColumn2.Image = global::GestionAdministrativa.Win.Properties.Resources.Reload_16x16;
+            gridViewCommandColumn2.MaxWidth = 25;
+            gridViewCommandColumn2.MinWidth = 25;
+            gridViewCommandColumn2.Name = "Fin";
+            gridViewCommandColumn2.RowSpan = 16;
+            gridViewCommandColumn2.Width = 25;
             this.DgvTalleresMoviles.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewCheckBoxColumn1,
-            gridViewCheckBoxColumn2,
-            gridViewTextBoxColumn4,
-            gridViewCommandColumn1});
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewCheckBoxColumn3,
+            gridViewCheckBoxColumn4,
+            gridViewTextBoxColumn8,
+            gridViewCommandColumn2});
             this.DgvTalleresMoviles.Name = "DgvTalleresMoviles";
             this.DgvTalleresMoviles.Size = new System.Drawing.Size(1254, 558);
             this.DgvTalleresMoviles.TabIndex = 0;
@@ -127,7 +129,7 @@
             // TxtMovil
             // 
             this.TxtMovil.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtMovil.Location = new System.Drawing.Point(3, 3);
+            this.TxtMovil.Location = new System.Drawing.Point(79, 4);
             this.TxtMovil.Name = "TxtMovil";
             this.TxtMovil.Size = new System.Drawing.Size(357, 28);
             this.TxtMovil.TabIndex = 17;
@@ -137,11 +139,21 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.radLabel2);
             this.panel1.Controls.Add(this.TxtMovil);
             this.panel1.Location = new System.Drawing.Point(12, 81);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1254, 35);
             this.panel1.TabIndex = 18;
+            // 
+            // radLabel2
+            // 
+            this.radLabel2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel2.Location = new System.Drawing.Point(3, 7);
+            this.radLabel2.Name = "radLabel2";
+            this.radLabel2.Size = new System.Drawing.Size(70, 25);
+            this.radLabel2.TabIndex = 23;
+            this.radLabel2.Text = "Movil:";
             // 
             // FrmTalleresListado
             // 
@@ -164,6 +176,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtMovil)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -175,5 +188,6 @@
         private System.Windows.Forms.Button BtnCrear;
         private Telerik.WinControls.UI.RadTextBox TxtMovil;
         private System.Windows.Forms.Panel panel1;
+        private Telerik.WinControls.UI.RadLabel radLabel2;
     }
 }

@@ -50,6 +50,7 @@
             this.TxtPagoBase = new Telerik.WinControls.UI.RadButton();
             this.btnPago2 = new Telerik.WinControls.UI.RadButton();
             this.BtnTitulares = new Telerik.WinControls.UI.RadButton();
+            this.BtnTalleres = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.btnInformeCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCambioCelularMovil)).BeginInit();
@@ -66,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtPagoBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPago2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnTitulares)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnTalleres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -358,11 +360,26 @@
             this.BtnTitulares.ThemeName = "TelerikMetro";
             this.BtnTitulares.Click += new System.EventHandler(this.BtnTitulares_Click);
             // 
+            // BtnTalleres
+            // 
+            this.BtnTalleres.AutoSize = true;
+            this.BtnTalleres.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnTalleres.Image = global::GestionAdministrativa.Win.Properties.Resources.tool2;
+            this.BtnTalleres.Location = new System.Drawing.Point(787, 394);
+            this.BtnTalleres.Name = "BtnTalleres";
+            this.BtnTalleres.Size = new System.Drawing.Size(132, 132);
+            this.BtnTalleres.TabIndex = 13;
+            this.BtnTalleres.Text = "Talleres";
+            this.BtnTalleres.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnTalleres.ThemeName = "TelerikMetro";
+            this.BtnTalleres.Click += new System.EventHandler(this.BtnTalleres_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1340, 652);
+            this.Controls.Add(this.BtnTalleres);
             this.Controls.Add(this.BtnTitulares);
             this.Controls.Add(this.btnPago2);
             this.Controls.Add(this.TxtPagoBase);
@@ -404,6 +421,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtPagoBase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPago2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnTitulares)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnTalleres)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -434,6 +452,7 @@
         private Telerik.WinControls.UI.RadButton BtnTitulares;
         private Telerik.WinControls.UI.RadMenuItem MenuMotivosTalleres;
         private Telerik.WinControls.UI.RadMenuItem MenuListadoTalleres;
+        private Telerik.WinControls.UI.RadButton BtnTalleres;
 
 
     }
