@@ -190,7 +190,13 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
 
                 Uow.PagosMoviles.Agregar(pagoMovil);
 
-
+                if (ucListadoPago1.PagosBases[i].Taller > 0)
+                {
+                    var movil = ucListadoPago1.PagosBases[i].Movil.Id;
+                    var talleres = Uow.TalleresMoviles.Listado().Where(t => t.MovilId == movil && t.Acreditado == false).FirstOrDefault();
+                    talleres.Acreditado = true;
+                    Uow.TalleresMoviles.Modificar(talleres);
+                }
 
             }
             Uow.Commit();

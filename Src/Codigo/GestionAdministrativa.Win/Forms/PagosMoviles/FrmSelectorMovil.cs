@@ -239,6 +239,8 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                         DtpDesde.Value = pagoBase.Hasta.Value.AddDays(1);
                         Hasta = Desde.AddDays(6);
                     }
+
+
                     //if (Desde.Month != Hasta.Month)
                     //{
                     //    MessageBox.Show("Generar dos pagos");
@@ -257,7 +259,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             TimeSpan cantidadDias = SetTimeToZero(Hasta) - SetTimeToZero(Desde); 
             Dias = cantidadDias.Days + 1;
             
-            //CARGA DE GRILLA DETALLE
+            //CARGA DE GRILLA DETALLE - Generar una fila por dia por pagar
             _detalle.Clear();
             for (int i = 0; i < Dias; i++)
             {
@@ -281,6 +283,8 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                     
                 _detalle.Add(diario);
             }
+
+            //Ver si hay semana adelantada
             if (diasAPagar >= 7)
             {
                 var semanas = diasAPagar / 7;
@@ -294,6 +298,26 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                     }
                 }
  
+            }
+
+            //Ver si hay talleres que acreditar
+            var talleres = Uow.TalleresMoviles.Listado().Where(t => t.MovilId == _movilId && t.Acreditado == false).FirstOrDefault();
+            if (talleres != null)
+            {
+                int diasTaller = 0;
+                TimeSpan cantidadTaller = SetTimeToZero(talleres.FechaHasta ?? _clock.Now) - SetTimeToZero(talleres.FechaDesde);
+                diasTaller = cantidadTaller.Days + 1;
+                Taller = diasTaller;
+
+                var descuentoTaller = Uow.Talleres.Listado().Where(t => t.Id == talleres.TallerId).FirstOrDefault().Porcentaje;
+                if (_detalle.Count > 0)
+                {
+                    for (int i = 0; i < diasTaller; i++)
+                    {
+                        _detalle[i].Monto = _detalle[i].Monto - (_detalle[i].Monto * (descuentoTaller ?? 0) / 100);
+                    }
+                }
+   
             }
             GridDetalle.DataSource = _detalle.ToList();
             
@@ -350,7 +374,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
 
         private void ActualizarTotal()
         {
-            Total = SubTotal - AFavor - Taller;
+            Total = SubTotal - AFavor;
         }
         private DateTime SetTimeToZero(DateTime fecha)
         {
