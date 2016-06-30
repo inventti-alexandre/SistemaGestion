@@ -10396,7 +10396,7 @@
           <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_OperadorModificacion" FromRole="TalleresMovile" ToRole="Operador" />
           <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_SucursalAlta" FromRole="TalleresMovile" ToRole="Sucursal" />
           <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_SucursalModificacion" FromRole="TalleresMovile" ToRole="Sucursal" />
-          <NavigationProperty Name="Movile" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_Movil" FromRole="TalleresMovile" ToRole="Movil" />
+          <NavigationProperty Name="Movil" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_Movil" FromRole="TalleresMovile" ToRole="Movil" />
           <NavigationProperty Name="Tallere" Relationship="GestionAdministrativa.Model.FK_TalleresMoviles_Taller" FromRole="TalleresMovile" ToRole="Tallere" />
           <Property Name="Activo" Type="Boolean" />
           <Property Name="Acreditado" Type="Boolean" />

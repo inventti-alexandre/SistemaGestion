@@ -39,7 +39,7 @@ namespace GestionAdministrativa.Entities
         public virtual Operador Operadore1 { get; set; }
         public virtual Sucursal Sucursale { get; set; }
         public virtual Sucursal Sucursale1 { get; set; }
-        public virtual Movil Movile { get; set; }
+        public virtual Movil Movil { get; set; }
         public virtual Tallere Tallere { get; set; }
         public virtual ICollection<TalleresMotivosMovile> TalleresMotivosMoviles { get; set; }
     }

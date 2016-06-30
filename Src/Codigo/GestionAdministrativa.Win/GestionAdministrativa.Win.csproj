@@ -401,6 +401,12 @@
     <Compile Include="Forms\Talleres\FrmMotivosTalleres.Designer.cs">
       <DependentUpon>FrmMotivosTalleres.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Talleres\FrmTalleresListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Talleres\FrmTalleresListado.Designer.cs">
+      <DependentUpon>FrmTalleresListado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Talleres\FrmTiposTalleres.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -577,6 +583,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Talleres\FrmMotivosTalleres.resx">
       <DependentUpon>FrmMotivosTalleres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Talleres\FrmTalleresListado.resx">
+      <DependentUpon>FrmTalleresListado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Talleres\FrmTiposTalleres.resx">
       <DependentUpon>FrmTiposTalleres.cs</DependentUpon>

@@ -41,6 +41,7 @@
             this.MenuTiposTalleres = new Telerik.WinControls.UI.RadMenuItem();
             this.MenuNuevoTaller = new Telerik.WinControls.UI.RadMenuItem();
             this.MenuMotivosTalleres = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuListadoTalleres = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
             this.BtnChoferListado = new Telerik.WinControls.UI.RadButton();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
@@ -204,7 +205,8 @@
             this.radMenuItem1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.MenuTiposTalleres,
             this.MenuNuevoTaller,
-            this.MenuMotivosTalleres});
+            this.MenuMotivosTalleres,
+            this.MenuListadoTalleres});
             this.radMenuItem1.Name = "radMenuItem1";
             this.radMenuItem1.Text = "Talleres";
             this.radMenuItem1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
@@ -235,6 +237,15 @@
             this.MenuMotivosTalleres.Text = "Motivos Talleres";
             this.MenuMotivosTalleres.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MenuMotivosTalleres.Click += new System.EventHandler(this.MenuMotivosTalleres_Click);
+            // 
+            // MenuListadoTalleres
+            // 
+            this.MenuListadoTalleres.AccessibleDescription = "radMenuItem3";
+            this.MenuListadoTalleres.AccessibleName = "radMenuItem3";
+            this.MenuListadoTalleres.Name = "MenuListadoTalleres";
+            this.MenuListadoTalleres.Text = "Talleres listado";
+            this.MenuListadoTalleres.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuListadoTalleres.Click += new System.EventHandler(this.MenuListadoTalleres_Click);
             // 
             // radMenuItem2
             // 
@@ -422,6 +433,7 @@
         private Telerik.WinControls.UI.RadMenuItem MenuNuevoTaller;
         private Telerik.WinControls.UI.RadButton BtnTitulares;
         private Telerik.WinControls.UI.RadMenuItem MenuMotivosTalleres;
+        private Telerik.WinControls.UI.RadMenuItem MenuListadoTalleres;
 
 
     }
