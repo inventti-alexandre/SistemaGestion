@@ -53,6 +53,7 @@ namespace GestionAdministrativa.Data
         public IRepository<TalleresMovile> TalleresMoviles { get { return GetStandardRepo<TalleresMovile>(); } }
         public IRepository<TalleresMotivosMovile> TalleresMotivosMoviles { get { return GetStandardRepo<TalleresMotivosMovile>(); } }
         public IRepository<Titulare> Titulares { get { return GetStandardRepo<Titulare>(); } }
+        public IRepository<MovilesMontoFavor> MovilesMontosFavor { get { return GetStandardRepo<MovilesMontoFavor>(); } }
         public string ConnectionString
         {
             get

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.BtnAceptar = new System.Windows.Forms.Button();
             this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
             this.TxtSubtotal = new Telerik.WinControls.UI.RadTextBox();
@@ -268,6 +268,7 @@
             this.TxtAFavor.TabIndex = 29;
             this.TxtAFavor.TabStop = false;
             this.TxtAFavor.ThemeName = "TelerikMetro";
+            this.TxtAFavor.TextChanged += new System.EventHandler(this.TxtAFavor_TextChanged);
             // 
             // radLabel9
             // 
@@ -319,19 +320,19 @@
             this.GridDetalle.MasterTemplate.AllowColumnReorder = false;
             this.GridDetalle.MasterTemplate.AllowDragToGroup = false;
             this.GridDetalle.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn3.FieldName = "Fecha";
-            gridViewTextBoxColumn3.FormatString = "";
-            gridViewTextBoxColumn3.HeaderText = "Fecha";
-            gridViewTextBoxColumn3.Name = "Fecha";
-            gridViewTextBoxColumn3.Width = 180;
-            gridViewTextBoxColumn4.FieldName = "Monto";
-            gridViewTextBoxColumn4.FormatString = "";
-            gridViewTextBoxColumn4.HeaderText = "Monto";
-            gridViewTextBoxColumn4.Name = "Monto";
-            gridViewTextBoxColumn4.Width = 179;
+            gridViewTextBoxColumn1.FieldName = "Fecha";
+            gridViewTextBoxColumn1.FormatString = "";
+            gridViewTextBoxColumn1.HeaderText = "Fecha";
+            gridViewTextBoxColumn1.Name = "Fecha";
+            gridViewTextBoxColumn1.Width = 180;
+            gridViewTextBoxColumn2.FieldName = "Monto";
+            gridViewTextBoxColumn2.FormatString = "";
+            gridViewTextBoxColumn2.HeaderText = "Monto";
+            gridViewTextBoxColumn2.Name = "Monto";
+            gridViewTextBoxColumn2.Width = 179;
             this.GridDetalle.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2});
             this.GridDetalle.Name = "GridDetalle";
             this.GridDetalle.ReadOnly = true;
             this.GridDetalle.Size = new System.Drawing.Size(380, 307);

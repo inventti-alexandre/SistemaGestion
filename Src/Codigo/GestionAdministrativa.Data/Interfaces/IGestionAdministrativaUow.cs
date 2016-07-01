@@ -41,6 +41,7 @@ namespace GestionAdministrativa.Data.Interfaces
         IRepository<TalleresMovile> TalleresMoviles { get; }
         IRepository<TalleresMotivosMovile> TalleresMotivosMoviles { get; }
         IRepository<Titulare> Titulares { get; }
+        IRepository<MovilesMontoFavor> MovilesMontosFavor { get; }
         bool IsDisposed { get; }
 
         void Commit();

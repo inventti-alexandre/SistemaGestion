@@ -199,6 +199,24 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                 }
 
             }
+
+            //Monto a Favor al primer  movil
+            var montoAfavor  = ucPagos.Pagos.Sum(p => p.Importe) - ucListadoPago1._pagosBases.Sum(t => t.Total);
+            if (montoAfavor != 0)
+            {
+                var movilesMontoFavor = new MovilesMontoFavor();
+                movilesMontoFavor.Id = Guid.NewGuid();
+                movilesMontoFavor.MovilId = ucListadoPago1.PagosBases[0].Movil.Id;
+                movilesMontoFavor.TipoComprobanteId = 7; //Montno a Favor BASE;
+                movilesMontoFavor.Concepto = "Monto a favor por pago de base";
+                movilesMontoFavor.FechaAlta = _clock.Now;
+                movilesMontoFavor.FechaComprobante = _clock.Now;
+                movilesMontoFavor.ImpOcupado = 0;
+                movilesMontoFavor.Importe = montoAfavor;
+                movilesMontoFavor.SucursalAltaId = Context.SucursalActual.Id;
+                movilesMontoFavor.OperadorAltaId = Context.OperadorActual.Id;
+                Uow.MovilesMontosFavor.Agregar(movilesMontoFavor);
+            }
             Uow.Commit();
             MessageBox.Show("Pago de base guardado correctamente");
             this.Close();

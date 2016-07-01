@@ -137,7 +137,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                 return decimal.TryParse(TxtTaller.Text, out taller) ? taller : taller;
             }
 
-            set { TxtTaller.Text = value.ToString("n2"); }
+            set { TxtTaller.Text = value.ToString("n0"); }
         }
 
         public decimal AFavor
@@ -240,7 +240,8 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
                         Hasta = Desde.AddDays(6);
                     }
 
-
+                    var montosFavor = Uow.MovilesMontosFavor.Listado().Where(m=>m.MovilId == movil.Id && m.ImpOcupado != m.Importe).Sum(m=>m.Importe - m.ImpOcupado);
+                    AFavor = montosFavor??0;
                     //if (Desde.Month != Hasta.Month)
                     //{
                     //    MessageBox.Show("Generar dos pagos");
@@ -379,6 +380,11 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
         private DateTime SetTimeToZero(DateTime fecha)
         {
             return new DateTime(fecha.Year, fecha.Month, fecha.Day, 0, 0, 0);
+        }
+
+        private void TxtAFavor_TextChanged(object sender, EventArgs e)
+        {
+            Total = SubTotal - AFavor;
         }
        
     }
