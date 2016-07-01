@@ -59,6 +59,13 @@ namespace GestionAdministrativa.Win.Forms.Talleres
             base.FormBaseListado_Load(sender,e);
             this.Text = "Listado de talleres";
             RefrescarListado();
+            ucFiltroMoviles.Filtered += Filtered;
+            
+
+            this.DgvTalleresMoviles.Columns["FechaDesde"].DataType = typeof(DateTime);
+            this.DgvTalleresMoviles.Columns["FechaDesde"].FormatString = "{0: dd/M/yyyy}";
+            this.DgvTalleresMoviles.Columns["FechaHasta"].DataType = typeof(DateTime);
+            this.DgvTalleresMoviles.Columns["FechaHasta"].FormatString = "{0: dd/M/yyyy}";
         }
 
         private void Filtered(object sender, EventArgs e)
@@ -73,10 +80,12 @@ namespace GestionAdministrativa.Win.Forms.Talleres
           //  var patente = ucFiltroMoviles.Patente != "" ? ucFiltroMoviles.Patente : "";
             //var activo = ucFiltroMoviles.Activo;
             bool activo = true;
+      
             var talleresMoviles =
                 await
                     Task.Run(
                         () =>
+                            _talleresMovilesNegocio.Listado(SortColumn, SortDirection,Movil, activo, 1, 1000,
                                 out pageTotal));
 
             DgvTalleresMoviles.DataSource = talleresMoviles;
@@ -111,30 +120,51 @@ namespace GestionAdministrativa.Win.Forms.Talleres
         {
             if (_tallerMovil != null)
             {
+                DialogResult dialogResult = MessageBox.Show("Desea devolver el cartel del móvil: " + _tallerMovil.MovilNumero, "Gestion de talleres", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     var tallerMovil = Uow.TalleresMoviles.Obtener(t => t.Id == _tallerMovil.Id && t.Activo == true);
+                    DevolverCartel(tallerMovil);
                     RefrescarListado();
                 }
             }
             else
             {
+                DialogResult dialogResult = MessageBox.Show("Desea devolver el cartel del móvil: " + _NumeroMovil, "Gestion de talleres", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     var tallerMovil = Uow.TalleresMoviles.Obtener(t => t.Movil.Numero == _NumeroMovil && t.Activo == true);
+                    DevolverCartel(tallerMovil);
                     RefrescarListado();
                     Movil = 0;
                 }
+            }    
+        }
 
+        private void DevolverCartel(TalleresMovile tallerMovil)
+        {
+            tallerMovil.FechaHasta = _clock.Now;
+            tallerMovil.Acreditado = false;
+            tallerMovil.Activo = false;
+            Uow.TalleresMoviles.Modificar(tallerMovil);
+            Uow.Commit();
         }
 
         private void BtnCrear_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmTalleres>(Guid.Empty, ActionFormMode.Create);
+            frm.Show();
             RefrescarListado();
         }
 
+        private void BtnDevolver_Click(object sender, EventArgs e)
         {
+            if (Movil !=0)
+                FinalizarTaller(null, Movil);
+        }
+        private void TxtMovil_TextChanged(object sender, EventArgs e)
+        {
+            RefrescarListado();
         }
     }
 }
