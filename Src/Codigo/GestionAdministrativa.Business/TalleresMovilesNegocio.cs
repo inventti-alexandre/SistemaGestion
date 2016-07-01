@@ -24,7 +24,7 @@ namespace GestionAdministrativa.Business
             clock = _clock;
         }
 
-        public List<TalleresMovilesDto> Listado(string sortBy, string sortDirection, bool? activo, int pageIndex, int pageSize, out int pageTotal)
+        public List<TalleresMovilesDto> Listado(string sortBy, string sortDirection,int? numero, bool? activo, int pageIndex, int pageSize, out int pageTotal)
         {
             var criteros = new PagingCriteria();
 
@@ -35,7 +35,7 @@ namespace GestionAdministrativa.Business
 
             Expression<Func<TalleresMovile, bool>> where =
                                             x =>
-                                               // (numero == 0 || x.Numero.ToString().Contains(numero.ToString())) &&
+                                                (numero == 0 || x.Movil.Numero.ToString().Contains(numero.ToString())) &&
                                                 //(string.IsNullOrEmpty(patente) || x.Patente.Contains(patente)) &&
                                                 (x.Activo == activo);
 

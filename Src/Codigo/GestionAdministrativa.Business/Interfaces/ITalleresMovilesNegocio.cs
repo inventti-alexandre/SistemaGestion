@@ -12,6 +12,6 @@ namespace GestionAdministrativa.Business.Interfaces
         //List<TalleresMovilesD> Listado(string sortBy, string sortDirection, int? numero, string patente, bool? activo, int pageIndex, int pageSize, out int pageTotal);
         //Movil ObtenerPorId(Guid movilId);
 
-        List<TalleresMovilesDto> Listado(string sortBy, string sortDirection, bool? activo, int pageIndex, int pageSize, out int pageTotal);
+        List<TalleresMovilesDto> Listado(string sortBy, string sortDirection,int? numero, bool? activo, int pageIndex, int pageSize, out int pageTotal);
     }
 }

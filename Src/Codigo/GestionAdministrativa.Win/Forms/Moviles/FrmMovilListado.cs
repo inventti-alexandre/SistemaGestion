@@ -45,7 +45,7 @@ namespace GestionAdministrativa.Win.Forms.Moviles
         private void InicializarPaginador()
         {
             //throw new NotImplementedException();
-            MessageBox.Show("Hola");
+            //MessageBox.Show("Hola");
         }
 
         private void FrmMovilListado_Load(object sender, EventArgs e)
