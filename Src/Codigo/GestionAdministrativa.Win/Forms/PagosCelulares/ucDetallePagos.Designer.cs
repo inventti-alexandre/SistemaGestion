@@ -164,8 +164,7 @@
             // 
             // ucDetallePagos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.BtnAceptar);
             this.Controls.Add(this.TxtTotal);
             this.Controls.Add(this.radLabel6);

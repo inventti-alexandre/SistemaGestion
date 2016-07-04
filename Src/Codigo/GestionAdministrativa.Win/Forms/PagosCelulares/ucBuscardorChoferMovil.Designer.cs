@@ -109,12 +109,10 @@
             this.DdlMoviles.TabIndex = 1;
             this.DdlMoviles.ThemeName = "TelerikMetro";
             this.DdlMoviles.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DdlMoviles_KeyUp);
-
             // 
             // ucBuscardorChoferMovil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.DdlMoviles);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnBuscar);

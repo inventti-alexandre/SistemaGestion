@@ -25,9 +25,11 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private IClock _clock;
         private Celular _celular;
         private List<ChoferMontoFavor> _montosAFavor;
-        public FrmPagoSistema(IGestionAdministrativaUow uow, IPagoCelularNegocio pagoCelularNegocio,IClock clock)
+        public FrmPagoSistema(IGestionAdministrativaUow uow, IPagoCelularNegocio pagoCelularNegocio,IClock clock,
+            IUowFactory uowFactory)
         {
             Uow = uow;
+            UowFactory = uowFactory;
             _clock = clock;
             _iPagoCelularNegocio = pagoCelularNegocio;
             InitializeComponent();
@@ -313,8 +315,9 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                         ucComentarios.GenerarComentario(chofer.Id, "Pago del " + DesdeComent.ToString("dd/MM/yyyy") + " al " + HastaComent.ToString("dd/MM/yyyy"));// + ". Monto: $" + _pagoCelular.Monto);
                         Uow.Commit();
                         MessageBox.Show("Pago guardado correctamente. Proximo pago: " +  proximoPago.Date.ToString("dd/MM/yyyy"));
-                        
-                        this.Close();
+
+                        RefrescarUow();
+                       // this.Close();
                     }
             }
             
@@ -394,6 +397,11 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         }
 
         #endregion
+
+        private void ucDetallePagos_Load(object sender, EventArgs e)
+        {
+
+        }
 
      
   

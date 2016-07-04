@@ -26,6 +26,8 @@ using GestionAdministrativa.Win.Forms.Egresos;
 using GestionAdministrativa.Win.Forms.PagosMoviles;
 using GestionAdministrativa.Win.Forms.Talleres;
 using GestionAdministrativa.Win.Forms.Titulares;
+using Telerik.WinControls.UI;
+using GestionAdministrativa.Win.Helpers;
 
 namespace GestionAdministrativa.Win.Forms
 {
@@ -33,9 +35,11 @@ namespace GestionAdministrativa.Win.Forms
     {
         public IClock _clock;
         private Caja _caja;
-        public FrmPrincipal(IFormFactory formFactory, IGestionAdministrativaUow uow,IClock clock)//, IUowFactory uowFactory)
+        private readonly IFormRegistry _formRegistry;
+        public FrmPrincipal(IFormFactory formFactory, IGestionAdministrativaUow uow, IClock clock, IFormRegistry formRegistry)//, IUowFactory uowFactory)
         {
             FormFactory = formFactory;
+            _formRegistry = formRegistry;
             Uow = uow;
             _clock = clock;
            // UowFactory = uowFactory;
@@ -48,43 +52,81 @@ namespace GestionAdministrativa.Win.Forms
                 return ApplicationDeployment.CurrentDeployment.CurrentVersion;
             }
         }
-       
 
+        public void AbrirTab(Form form)
+        {
+            form.Cursor = Cursors.WaitCursor;
+            var page = TabsPrincipal.Pages.FirstOrDefault(p => p.Text == form.Text);
+
+            if (page == null)
+            {
+                page = GetPage(form);
+            }
+
+            TabsPrincipal.SelectedPage = page;
+            form.Cursor = Cursors.Default;
+
+            _formRegistry.AddForm(form);
+        }
+
+        private RadPageViewPage GetPage(Form form)
+        {
+            RadPageViewPage page;
+            form.Owner = this;
+            form.TopLevel = false;
+            form.Dock = DockStyle.Fill;
+            form.FormBorderStyle = FormBorderStyle.None;
+            page = new RadPageViewPage();
+            page.AutoScroll = true;
+            form.Parent = page;
+            page.Text = form.Text;
+            page.Controls.Add(form);
+            TabsPrincipal.Pages.Add(page);
+            form.Show();
+
+            return page;
+        }
         private void radButton1_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmMovilListado>(Guid.Empty, ActionFormMode.Create);
-            frm.ShowDialog();
+            AbrirTab(frm);
+            //frm.ShowDialog();
         }
 
         private void BtnChofer_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmCrearEditarChofer>(Guid.Empty, ActionFormMode.Create);
-            frm.Show();
+            AbrirTab(frm);
+            //frm.Show();
         }
 
 
         private void BtnMovilListado_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmMovilListado>();
-            frm.ShowDialog();
+            AbrirTab(frm);
+            //frm.ShowDialog();
         }
 
         private void BtnChoferListado_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmChoferesListado>();
-            frm.Show();
+           // frm.Show();
+            AbrirTab(frm);
         }
 
         private void BtnCelulares_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmCrearEditarCelular>(Guid.Empty, ActionFormMode.Create);
-            frm.ShowDialog();
+            AbrirTab(frm);
+            //frm.ShowDialog();
         }
 
         private void btnPagos_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmPagoSistema>();
-            frm.Show();
+            AbrirTab(frm);
+            //frm.Show();
         }
 
         private void BtnCaja_Click(object sender, EventArgs e)
@@ -187,7 +229,8 @@ namespace GestionAdministrativa.Win.Forms
             Uow.Commit();
 
             var frm = FormFactory.Create<FrmCajaResumida>();
-            frm.Show();
+            AbrirTab(frm);
+            //frm.Show();
         }
 
         private void DeshabilitarControlesPago()
@@ -211,85 +254,99 @@ namespace GestionAdministrativa.Win.Forms
         private void btnCajaResumida_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmCajaResumida>();
-            frm.Show();
+            AbrirTab(frm);
+            //frm.Show();
         }
 
         private void BtnCajas_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmCajasListado>();
-            frm.Show();
+            AbrirTab(frm);
+            //frm.Show();
         }
 
         private void btnCambioCelularMovil_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmCambioCelularChofer>();
-            frm.Show();
+            AbrirTab(frm);
+            //frm.Show();
         }
 
         private void btnInformeCaja_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmInformeCaja>();
-            frm.Show();
+            AbrirTab(frm);
+            //frm.Show();
         }
 
         private void btnFueraFrecuencia_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmFueraSistema>();
-            frm.Show();
+            AbrirTab(frm);
+            //frm.Show();
         }
 
         private void TxtGastos_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmCrearEditarEgreso>(Guid.Empty, ActionFormMode.Create);
-            frm.ShowDialog();
+            AbrirTab(frm);
+            //frm.ShowDialog();
         }
 
         private void TxtPagoBase_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmPagoMoviles>(Guid.Empty, ActionFormMode.Create);
-            frm.Show();
+            AbrirTab(frm);
+            //frm.Show();
         }
 
         private void btnPago2_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmMovilesPago>(Guid.Empty, ActionFormMode.Create);
-            frm.Show();
+            AbrirTab(frm);
+            //frm.Show();
         }
 
         private void MenuTiposTalleres_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmTiposTalleres>(Guid.Empty, ActionFormMode.Create);
-            frm.Show();
+            AbrirTab(frm);
+            //frm.Show();
         }
 
         private void MenuNuevoTaller_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmTalleres>(Guid.Empty, ActionFormMode.Create);
-            frm.Show();
+            AbrirTab(frm);
+            //frm.Show();
         }
 
         private void BtnTitulares_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmTitularesListado>(Guid.Empty, ActionFormMode.Create);
-            frm.Show();
+            AbrirTab(frm);
+            //frm.Show();
         }
 
         private void MenuMotivosTalleres_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmMotivosTalleres>(Guid.Empty, ActionFormMode.Create);
-            frm.Show();
+            AbrirTab(frm);
+            //frm.Show();
         }
 
         private void MenuListadoTalleres_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmTalleresListado>(Guid.Empty, ActionFormMode.Create);
-            frm.Show();
+            AbrirTab(frm);
+            //frm.Show();
         }
 
         private void BtnTalleres_Click(object sender, EventArgs e)
         {
             var frm = FormFactory.Create<FrmTalleresListado>(Guid.Empty, ActionFormMode.Create);
-            frm.Show();
+            AbrirTab(frm);
+            //frm.Show();
         }
 
        

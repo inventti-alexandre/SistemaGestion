@@ -56,7 +56,7 @@
             // TxtTotal
             // 
             this.TxtTotal.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotal.Location = new System.Drawing.Point(463, 298);
+            this.TxtTotal.Location = new System.Drawing.Point(465, 239);
             this.TxtTotal.Name = "TxtTotal";
             this.TxtTotal.Size = new System.Drawing.Size(119, 30);
             this.TxtTotal.TabIndex = 3;
@@ -66,7 +66,7 @@
             // radLabel1
             // 
             this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(349, 298);
+            this.radLabel1.Location = new System.Drawing.Point(351, 239);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(108, 28);
             this.radLabel1.TabIndex = 2;
@@ -116,7 +116,7 @@
             gridViewCommandColumn1});
             this.gridPagos.Name = "gridPagos";
             this.gridPagos.ReadOnly = true;
-            this.gridPagos.Size = new System.Drawing.Size(567, 220);
+            this.gridPagos.Size = new System.Drawing.Size(567, 171);
             this.gridPagos.TabIndex = 0;
             this.gridPagos.Text = "radGridView1";
             this.gridPagos.ThemeName = "TelerikMetro";
@@ -177,8 +177,7 @@
             // 
             // ucPagos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.txtImporte);
             this.Controls.Add(this.ddlTipo);
@@ -188,7 +187,7 @@
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.gridPagos);
             this.Name = "ucPagos";
-            this.Size = new System.Drawing.Size(604, 339);
+            this.Size = new System.Drawing.Size(604, 284);
             this.Load += new System.EventHandler(this.ucPagos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TxtTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();

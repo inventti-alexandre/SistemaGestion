@@ -71,7 +71,7 @@
             this.LnkEditarChofer.AutoSize = true;
             this.LnkEditarChofer.Enabled = false;
             this.LnkEditarChofer.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LnkEditarChofer.Location = new System.Drawing.Point(854, 55);
+            this.LnkEditarChofer.Location = new System.Drawing.Point(770, 55);
             this.LnkEditarChofer.Name = "LnkEditarChofer";
             this.LnkEditarChofer.Size = new System.Drawing.Size(153, 23);
             this.LnkEditarChofer.TabIndex = 8;
@@ -81,9 +81,9 @@
             // TxtDeudaBase
             // 
             this.TxtDeudaBase.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDeudaBase.Location = new System.Drawing.Point(547, 50);
+            this.TxtDeudaBase.Location = new System.Drawing.Point(523, 50);
             this.TxtDeudaBase.Name = "TxtDeudaBase";
-            this.TxtDeudaBase.Size = new System.Drawing.Size(156, 28);
+            this.TxtDeudaBase.Size = new System.Drawing.Size(112, 28);
             this.TxtDeudaBase.TabIndex = 7;
             this.TxtDeudaBase.TabStop = false;
             this.TxtDeudaBase.ThemeName = "TelerikMetro";
@@ -112,9 +112,9 @@
             // TxtMovilNro
             // 
             this.TxtMovilNro.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtMovilNro.Location = new System.Drawing.Point(547, 14);
+            this.TxtMovilNro.Location = new System.Drawing.Point(523, 14);
             this.TxtMovilNro.Name = "TxtMovilNro";
-            this.TxtMovilNro.Size = new System.Drawing.Size(156, 28);
+            this.TxtMovilNro.Size = new System.Drawing.Size(112, 28);
             this.TxtMovilNro.TabIndex = 6;
             this.TxtMovilNro.TabStop = false;
             this.TxtMovilNro.ThemeName = "TelerikMetro";
@@ -122,7 +122,7 @@
             // TxtTelefono
             // 
             this.TxtTelefono.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTelefono.Location = new System.Drawing.Point(840, 11);
+            this.TxtTelefono.Location = new System.Drawing.Point(756, 11);
             this.TxtTelefono.Name = "TxtTelefono";
             this.TxtTelefono.Size = new System.Drawing.Size(180, 28);
             this.TxtTelefono.TabIndex = 6;
@@ -142,7 +142,7 @@
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.Location = new System.Drawing.Point(471, 14);
+            this.radLabel2.Location = new System.Drawing.Point(447, 14);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(70, 25);
             this.radLabel2.TabIndex = 1;
@@ -151,7 +151,7 @@
             // radLabel5
             // 
             this.radLabel5.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel5.Location = new System.Drawing.Point(420, 53);
+            this.radLabel5.Location = new System.Drawing.Point(396, 53);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(121, 25);
             this.radLabel5.TabIndex = 4;
@@ -169,7 +169,7 @@
             // radLabel3
             // 
             this.radLabel3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel3.Location = new System.Drawing.Point(734, 14);
+            this.radLabel3.Location = new System.Drawing.Point(650, 14);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(100, 25);
             this.radLabel3.TabIndex = 2;
@@ -186,8 +186,7 @@
             // 
             // ucEstadoCuentaChofer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.TxtNombre);
             this.Controls.Add(this.LnkEditarChofer);
             this.Controls.Add(this.TxtDeudaBase);
@@ -201,7 +200,7 @@
             this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.radLabel1);
             this.Name = "ucEstadoCuentaChofer";
-            this.Size = new System.Drawing.Size(1036, 106);
+            this.Size = new System.Drawing.Size(947, 93);
             this.Load += new System.EventHandler(this.ucEstadoCuentaChofer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TxtNombre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtDeudaBase)).EndInit();

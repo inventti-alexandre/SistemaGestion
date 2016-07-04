@@ -81,7 +81,7 @@
             this.ucEstadoCuentaChofer1.MovilNumero = "";
             this.ucEstadoCuentaChofer1.Name = "ucEstadoCuentaChofer1";
             this.ucEstadoCuentaChofer1.Nombre = "";
-            this.ucEstadoCuentaChofer1.Size = new System.Drawing.Size(1012, 134);
+            this.ucEstadoCuentaChofer1.Size = new System.Drawing.Size(1012, 103);
             this.ucEstadoCuentaChofer1.TabIndex = 1;
             this.ucEstadoCuentaChofer1.Telefono = "";
             // 
@@ -91,13 +91,12 @@
             this.radPanel3.Controls.Add(this.btnGuardar);
             this.radPanel3.Controls.Add(this.ucDetallePagos);
             this.radPanel3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radPanel3.Location = new System.Drawing.Point(50, 160);
+            this.radPanel3.Location = new System.Drawing.Point(12, 147);
             this.radPanel3.Name = "radPanel3";
-            this.radPanel3.Size = new System.Drawing.Size(635, 693);
+            this.radPanel3.Size = new System.Drawing.Size(635, 516);
             this.radPanel3.TabIndex = 2;
             this.radPanel3.Text = "A PAGAR";
             this.radPanel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-
             // 
             // ucPagos1
             // 
@@ -106,9 +105,9 @@
             0,
             0,
             0});
-            this.ucPagos1.Location = new System.Drawing.Point(11, 190);
+            this.ucPagos1.Location = new System.Drawing.Point(3, 126);
             this.ucPagos1.Name = "ucPagos1";
-            this.ucPagos1.Size = new System.Drawing.Size(615, 339);
+            this.ucPagos1.Size = new System.Drawing.Size(615, 275);
             this.ucPagos1.TabIndex = 6;
             this.ucPagos1.Tipo = "Vales";
             this.ucPagos1.Total = new decimal(new int[] {
@@ -122,7 +121,7 @@
             this.btnGuardar.BackColor = System.Drawing.Color.Yellow;
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(398, 554);
+            this.btnGuardar.Location = new System.Drawing.Point(389, 407);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(196, 42);
             this.btnGuardar.TabIndex = 4;
@@ -135,7 +134,7 @@
             // 
             this.ucDetallePagos.FechaDesde = new System.DateTime(2016, 1, 7, 11, 46, 3, 884);
             this.ucDetallePagos.FechaHasta = new System.DateTime(2016, 1, 7, 11, 46, 3, 884);
-            this.ucDetallePagos.Location = new System.Drawing.Point(3, 34);
+            this.ucDetallePagos.Location = new System.Drawing.Point(3, 18);
             this.ucDetallePagos.Monto = new decimal(new int[] {
             0,
             0,
@@ -149,26 +148,27 @@
             0,
             0,
             131072});
+            this.ucDetallePagos.Load += new System.EventHandler(this.ucDetallePagos_Load);
             // 
             // radPanel5
             // 
             this.radPanel5.Controls.Add(this.ucBuscardorChoferMovil);
-            this.radPanel5.Location = new System.Drawing.Point(50, 12);
+            this.radPanel5.Location = new System.Drawing.Point(12, 2);
             this.radPanel5.Name = "radPanel5";
-            this.radPanel5.Size = new System.Drawing.Size(635, 142);
+            this.radPanel5.Size = new System.Drawing.Size(635, 139);
             this.radPanel5.TabIndex = 1;
             // 
             // ucHistorialPagosChofer1
             // 
-            this.ucHistorialPagosChofer1.Location = new System.Drawing.Point(17, 236);
+            this.ucHistorialPagosChofer1.Location = new System.Drawing.Point(20, 145);
             this.ucHistorialPagosChofer1.Name = "ucHistorialPagosChofer1";
-            this.ucHistorialPagosChofer1.Size = new System.Drawing.Size(1001, 209);
+            this.ucHistorialPagosChofer1.Size = new System.Drawing.Size(854, 232);
             this.ucHistorialPagosChofer1.TabIndex = 10;
             // 
             // radLabel1
             // 
             this.radLabel1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(17, 205);
+            this.radLabel1.Location = new System.Drawing.Point(17, 163);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(192, 25);
             this.radLabel1.TabIndex = 11;
@@ -182,9 +182,9 @@
             this.radPanel1.Controls.Add(this.ucComentarios);
             this.radPanel1.Controls.Add(this.radLabel1);
             this.radPanel1.Controls.Add(this.ucHistorialPagosChofer1);
-            this.radPanel1.Location = new System.Drawing.Point(725, 15);
+            this.radPanel1.Location = new System.Drawing.Point(653, 2);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(1039, 838);
+            this.radPanel1.Size = new System.Drawing.Size(1039, 691);
             this.radPanel1.TabIndex = 11;
             // 
             // radLabel3
@@ -199,7 +199,7 @@
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.Location = new System.Drawing.Point(17, 471);
+            this.radLabel2.Location = new System.Drawing.Point(230, 163);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(121, 25);
             this.radLabel2.TabIndex = 13;
@@ -208,16 +208,16 @@
             // ucComentarios
             // 
             this.ucComentarios.Comentario = "";
-            this.ucComentarios.Location = new System.Drawing.Point(6, 484);
+            this.ucComentarios.Location = new System.Drawing.Point(7, 364);
             this.ucComentarios.Name = "ucComentarios";
-            this.ucComentarios.Size = new System.Drawing.Size(1020, 340);
+            this.ucComentarios.Size = new System.Drawing.Size(1020, 320);
             this.ucComentarios.TabIndex = 12;
             // 
             // FrmPagoSistema
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1909, 920);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1736, 720);
+            this.ControlBox = false;
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radPanel5);
             this.Controls.Add(this.radPanel3);
@@ -227,7 +227,6 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Registrar pago de sistema";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmPagoSistema_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).EndInit();
             this.radPanel3.ResumeLayout(false);
