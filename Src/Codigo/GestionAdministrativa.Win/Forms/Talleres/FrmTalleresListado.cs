@@ -61,7 +61,6 @@ namespace GestionAdministrativa.Win.Forms.Talleres
             RefrescarListado();
             ucFiltroMoviles.Filtered += Filtered;
             
-
             this.DgvTalleresMoviles.Columns["FechaDesde"].DataType = typeof(DateTime);
             this.DgvTalleresMoviles.Columns["FechaDesde"].FormatString = "{0: dd/M/yyyy}";
             this.DgvTalleresMoviles.Columns["FechaHasta"].DataType = typeof(DateTime);
