@@ -25,11 +25,10 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private IClock _clock;
         private Celular _celular;
         private List<ChoferMontoFavor> _montosAFavor;
-        public FrmPagoSistema(IGestionAdministrativaUow uow, IPagoCelularNegocio pagoCelularNegocio,IClock clock,
-            IUowFactory uowFactory)
+        public FrmPagoSistema(IGestionAdministrativaUow uow, IPagoCelularNegocio pagoCelularNegocio,IClock clock)//,IUowFactory uowFactory)
         {
             Uow = uow;
-            UowFactory = uowFactory;
+            //UowFactory = uowFactory;
             _clock = clock;
             _iPagoCelularNegocio = pagoCelularNegocio;
             InitializeComponent();
@@ -316,7 +315,8 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                         Uow.Commit();
                         MessageBox.Show("Pago guardado correctamente. Proximo pago: " +  proximoPago.Date.ToString("dd/MM/yyyy"));
 
-                        RefrescarUow();
+                       // RefrescarUow();
+                        ucBuscardorChoferMovil.LimpiarFiltros();
                        // this.Close();
                     }
             }

@@ -27,7 +27,8 @@ namespace GestionAdministrativa.Business
 
         public PagoCelular AutoPago(Celular _celular, DateTime desde, DateTime hasta, Guid operadorId)
         {
-            var nuevoPago = Uow.PagosCelulares.Listado().Where(p=> p.CelularId == _celular.Id).OrderByDescending(pc => pc.FechaAlta).FirstOrDefault();
+            PagoCelular nuevoPago = new PagoCelular();
+            nuevoPago = Uow.PagosCelulares.Listado().Where(p => p.CelularId == _celular.Id).OrderByDescending(pc => pc.FechaAlta).FirstOrDefault();
             var celular = Uow.Celulares.Obtener(c => c.Id == _celular.Id, c => c.TiposCelulares);
             if (nuevoPago == null)
             {
