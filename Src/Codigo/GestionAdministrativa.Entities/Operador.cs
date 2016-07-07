@@ -118,6 +118,8 @@ namespace GestionAdministrativa.Entities
             this.MovilesMontoFavors = new HashSet<MovilesMontoFavor>();
             this.MovilesMontoFavors1 = new HashSet<MovilesMontoFavor>();
             this.MovilesMontoFavors2 = new HashSet<MovilesMontoFavor>();
+            this.Clientes = new HashSet<Cliente>();
+            this.Clientes1 = new HashSet<Cliente>();
         }
     
         public System.Guid Id { get; set; }
@@ -241,5 +243,7 @@ namespace GestionAdministrativa.Entities
         public virtual ICollection<MovilesMontoFavor> MovilesMontoFavors { get; set; }
         public virtual ICollection<MovilesMontoFavor> MovilesMontoFavors1 { get; set; }
         public virtual ICollection<MovilesMontoFavor> MovilesMontoFavors2 { get; set; }
+        public virtual ICollection<Cliente> Clientes { get; set; }
+        public virtual ICollection<Cliente> Clientes1 { get; set; }
     }
 }

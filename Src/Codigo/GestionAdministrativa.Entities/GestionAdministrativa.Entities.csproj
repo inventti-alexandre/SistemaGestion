@@ -76,6 +76,9 @@
     <Compile Include="ChoferMontoFavor.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Cliente.cs">
+      <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Comentario.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
