@@ -267,6 +267,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NroCliente" Type="int" Nullable="false" />
           <Property Name="Dni" Type="int" />
           <Property Name="Apellido" Type="varchar" MaxLength="50" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" />
@@ -11230,6 +11231,7 @@
           <NavigationProperty Name="Operadore1" Relationship="GestionAdministrativa.Model.FK_Clientes_OperadorModificacion" FromRole="Cliente" ToRole="Operador" />
           <NavigationProperty Name="Sucursale" Relationship="GestionAdministrativa.Model.FK_Clientes_SucursalAlta" FromRole="Cliente" ToRole="Sucursal" />
           <NavigationProperty Name="Sucursale1" Relationship="GestionAdministrativa.Model.FK_Clientes_SucursalModificacion" FromRole="Cliente" ToRole="Sucursal" />
+          <Property Name="NroCliente" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="FK_Clientes_OperadorAlta">
           <End Type="GestionAdministrativa.Model.Operador" Role="Operador" Multiplicity="1" />
@@ -12448,6 +12450,7 @@
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="GestionAdministrativa.Model.Cliente">
               <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="NroCliente" ColumnName="NroCliente" />
                 <ScalarProperty Name="FechaModficacion" ColumnName="FechaModficacion" />
                 <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
                 <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
