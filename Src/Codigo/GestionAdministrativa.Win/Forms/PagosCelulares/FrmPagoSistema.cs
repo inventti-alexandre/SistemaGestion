@@ -25,6 +25,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private IClock _clock;
         private Celular _celular;
         private List<ChoferMontoFavor> _montosAFavor;
+        private bool _limpiandoFiltros;
         public FrmPagoSistema(IGestionAdministrativaUow uow, IPagoCelularNegocio pagoCelularNegocio,IClock clock)//,IUowFactory uowFactory)
         {
             Uow = uow;
@@ -193,14 +194,20 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
         private void GenerarDeudaPago(DateTime? desde, DateTime? hasta)
         {
-            if (_celular!= null)
+            if (!_limpiandoFiltros)
             {
-                var pago = _iPagoCelularNegocio.AutoPago(_celular, desde ?? _clock.Now,hasta ?? _clock.Now, Context.OperadorActual.Id);
-                ucPagos1.ActualizarNuevoPago("Efectivo", pago.Monto);
-                ucDetallePagos.ActualizarNuevoPago(pago);
-                ucDetallePagos.ActualizarMonto(_celular);
-                _pagoCelular = pago;
+                if (_celular != null)
+                {
+                    var pago = new PagoCelular();
+                    pago = _iPagoCelularNegocio.AutoPago(_celular, desde ?? _clock.Now, hasta ?? _clock.Now, Context.OperadorActual.Id);
+                    ucPagos1.ActualizarNuevoPago("Efectivo", pago.Monto);
+                    ucDetallePagos.ActualizarNuevoPago(pago);
+                    ucDetallePagos.ActualizarMonto(_celular);
+                    _pagoCelular = pago;
+                }
+            
             }
+            
            
         }
 
@@ -217,7 +224,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
-            EnviarMail();
+           // EnviarMail();
         }
         private void EnviarMail()
         {
@@ -316,7 +323,9 @@ namespace GestionAdministrativa.Win.Forms.Pagos
                         MessageBox.Show("Pago guardado correctamente. Proximo pago: " +  proximoPago.Date.ToString("dd/MM/yyyy"));
 
                        // RefrescarUow();
+                        _limpiandoFiltros = true;
                         ucBuscardorChoferMovil.LimpiarFiltros();
+                        _limpiandoFiltros = false;
                        // this.Close();
                     }
             }

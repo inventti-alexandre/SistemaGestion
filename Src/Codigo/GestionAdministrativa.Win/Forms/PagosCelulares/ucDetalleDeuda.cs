@@ -17,8 +17,8 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 {
     public partial class ucDetalleDeuda : UserControlBase
     {
-        private PagoCelular _pagoCelular;
-        private IPagoCelularNegocio _pagoCelularNegocio;
+        //private PagoCelular _pagoCelular;
+        //private IPagoCelularNegocio _pagoCelularNegocio;
         private IList<PagoCelular> _aPagar = new List<PagoCelular>();
         
         public ucDetalleDeuda()
@@ -36,15 +36,15 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             get { return _aPagar; }
         }
         
-        public PagoCelular ActualizarNuevoPago(PagoCelular pago)
-        {
-            APagar.Clear();
-            _pagoCelular = pago;
+        //public PagoCelular ActualizarNuevoPago(PagoCelular pago)
+        //{
+        //    APagar.Clear();
+        //    _pagoCelular = pago;
 
-            APagar.Add(_pagoCelular);
-            RefrescarDeuda();
-            return _pagoCelular;
-        }
+        //    APagar.Add(_pagoCelular);
+        //    RefrescarDeuda();
+        //    return _pagoCelular;
+        //}
 
         public void RefrescarDeuda()
         {

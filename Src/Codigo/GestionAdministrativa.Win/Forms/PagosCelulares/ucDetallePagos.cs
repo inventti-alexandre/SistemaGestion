@@ -16,7 +16,7 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         private PagoCelular _pagoCelular;
         private IList<PagoCelular> _aPagar = new List<PagoCelular>();
         public bool esPagoInicial = true;
-
+        private bool _limpiandoFiltros;
        
         public ucDetallePagos()
         {
@@ -86,10 +86,13 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
         public void Limpiar()
         {
+            _limpiandoFiltros = true;
+            _pagoCelular = new PagoCelular();
             FechaDesde = DateTime.Now;
             FechaHasta = DateTime.Now;
             Total = 0;
             Monto = 0;
+            _limpiandoFiltros = false;
         }
         public PagoCelular ActualizarNuevoPago(PagoCelular pago)
         {
@@ -136,18 +139,22 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
         private void dtpDesde_ValueChanged(object sender, EventArgs e)
         {
-            if (_pagoCelular != null)
+            if (!_limpiandoFiltros)
             {
+                if (_pagoCelular != null)
+                {
 
-                if (esPagoInicial)
-                {
-                    FechaHasta = FechaDesde.AddDays(4);
-                }
-                else
-                {
-                    FechaHasta = FechaDesde.AddDays(6);
+                    if (esPagoInicial)
+                    {
+                        FechaHasta = FechaDesde.AddDays(4);
+                    }
+                    else
+                    {
+                        FechaHasta = FechaDesde.AddDays(6);
+                    }
                 }
             }
+            
         }
 
         private void dtpHasta_ValueChanged(object sender, EventArgs e)
@@ -166,9 +173,6 @@ namespace GestionAdministrativa.Win.Forms.Pagos
         {
             OnTotalChanged(Total);
         }
-
-       
-
 
     }
 }
