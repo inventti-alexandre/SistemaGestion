@@ -40,6 +40,7 @@ namespace GestionAdministrativa.Entities
         public Nullable<System.DateTime> FechaProximoPago { get; set; }
         public string Observaciones { get; set; }
         public Nullable<int> DiaPago { get; set; }
+        public Nullable<System.Guid> TitularId { get; set; }
     
         public virtual Operador Operadores { get; set; }
         public virtual Operador Operadores1 { get; set; }
@@ -52,5 +53,6 @@ namespace GestionAdministrativa.Entities
         public virtual ICollection<PagosMovile> PagosMoviles { get; set; }
         public virtual ICollection<MovilesMontoFavor> MovilesMontoFavors { get; set; }
         public virtual ICollection<TalleresMovile> TalleresMoviles { get; set; }
+        public virtual Titulare Titulare { get; set; }
     }
 }

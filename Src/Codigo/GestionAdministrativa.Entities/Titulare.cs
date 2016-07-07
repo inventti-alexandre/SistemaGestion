@@ -14,6 +14,11 @@ namespace GestionAdministrativa.Entities
     
     public partial class Titulare
     {
+        public Titulare()
+        {
+            this.Moviles = new HashSet<Movil>();
+        }
+    
         public System.Guid Id { get; set; }
         public string Apellido { get; set; }
         public string Nombre { get; set; }
@@ -32,5 +37,6 @@ namespace GestionAdministrativa.Entities
         public virtual Operador Operadore1 { get; set; }
         public virtual Sucursal Sucursale { get; set; }
         public virtual Sucursal Sucursale1 { get; set; }
+        public virtual ICollection<Movil> Moviles { get; set; }
     }
 }

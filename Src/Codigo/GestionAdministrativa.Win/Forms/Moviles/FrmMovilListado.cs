@@ -140,15 +140,17 @@ namespace GestionAdministrativa.Win.Forms.Moviles
 
         private void Editar(Guid movilId)
         {
-            using (var formCrear = FormFactory.Create<FrmCrearEditarMovil>(movilId, ActionFormMode.Edit))
-            {
-                var result = formCrear.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    formCrear.Close();
-                    RefrescarListado();
-                }
-            }
+            var frm = FormFactory.Create<FrmCrearEditarMovil>(movilId, ActionFormMode.Edit);
+            frm.Show();
+            //using (var formCrear = FormFactory.Create<FrmCrearEditarMovil>(movilId, ActionFormMode.Edit))
+            //{
+            //    var result = formCrear.ShowDialog();
+            //    if (result == DialogResult.OK)
+            //    {
+            //        formCrear.Close();
+            //        RefrescarListado();
+            //    }
+            //}
         }
 
         private void Detalle(Guid movilId)

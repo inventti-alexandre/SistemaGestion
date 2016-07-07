@@ -2,7 +2,7 @@
 (
 	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
     [Numero] INT NOT NULL, 
-    [Patente] VARCHAR(6) NULL, 
+    [Patente] VARCHAR(10) NULL, 
     [FechaAlta] DATETIME NOT NULL, 
 	[FechaBaja] DATETIME NULL, 
 	[Habilitado] BIT NULL,
@@ -16,9 +16,11 @@
     [OperadorModificacionId] UNIQUEIDENTIFIER NULL, 
     [SucursalModificacionId] INT NULL, 
      [Activo] BIT NULL, 
+    [TitularId] UNIQUEIDENTIFIER NULL, 
     CONSTRAINT [FK_Moviles_OperadorAlta] FOREIGN KEY (OperadorAltaId) REFERENCES Operadores(Id), 
     CONSTRAINT [FK_Moviles_SucursalAlta] FOREIGN KEY (SucursalAltaId) REFERENCES Sucursales(Id), 
     CONSTRAINT [FK_Moviles_OperadorModificacion] FOREIGN KEY (OperadorModificacionId) REFERENCES Operadores(Id), 
     CONSTRAINT [FK_Moviles_SucursalModificacion] FOREIGN KEY (SucursalModificacionId) REFERENCES Sucursales(Id), 
-    CONSTRAINT [FK_Moviles_DiaPago] FOREIGN KEY (DiaPago) REFERENCES Dias(Id)
+    CONSTRAINT [FK_Moviles_DiaPago] FOREIGN KEY (DiaPago) REFERENCES Dias(Id), 
+    CONSTRAINT [FK_Moviles_Titular] FOREIGN KEY (TitularId) REFERENCES Titulares(Id)
 )

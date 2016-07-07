@@ -345,6 +345,7 @@
         <AssociationConnector Association="GestionAdministrativa.Model.FK_Clientes_OperadorModificacion" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_Clientes_SucursalAlta" />
         <AssociationConnector Association="GestionAdministrativa.Model.FK_Clientes_SucursalModificacion" />
+        <AssociationConnector Association="GestionAdministrativa.Model.FK_Moviles_Titular" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -70,7 +70,7 @@
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.Location = new System.Drawing.Point(46, 59);
+            this.radLabel2.Location = new System.Drawing.Point(46, 40);
             this.radLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(80, 25);
@@ -80,7 +80,7 @@
             // TxtPatente
             // 
             this.TxtPatente.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPatente.Location = new System.Drawing.Point(160, 56);
+            this.TxtPatente.Location = new System.Drawing.Point(160, 37);
             this.TxtPatente.Margin = new System.Windows.Forms.Padding(4);
             this.TxtPatente.Name = "TxtPatente";
             this.TxtPatente.Size = new System.Drawing.Size(125, 27);
@@ -91,7 +91,7 @@
             // ChkActivo
             // 
             this.ChkActivo.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChkActivo.Location = new System.Drawing.Point(160, 98);
+            this.ChkActivo.Location = new System.Drawing.Point(160, 79);
             this.ChkActivo.Margin = new System.Windows.Forms.Padding(4);
             this.ChkActivo.Name = "ChkActivo";
             this.ChkActivo.Size = new System.Drawing.Size(15, 15);
@@ -102,7 +102,7 @@
             // radLabel3
             // 
             this.radLabel3.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel3.Location = new System.Drawing.Point(46, 98);
+            this.radLabel3.Location = new System.Drawing.Point(46, 69);
             this.radLabel3.Margin = new System.Windows.Forms.Padding(4);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(70, 25);
@@ -112,7 +112,7 @@
             // BtnLimpiar
             // 
             this.BtnLimpiar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLimpiar.Location = new System.Drawing.Point(356, 107);
+            this.BtnLimpiar.Location = new System.Drawing.Point(357, 53);
             this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(205, 41);
@@ -124,7 +124,7 @@
             // BtnBuscar
             // 
             this.BtnBuscar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBuscar.Location = new System.Drawing.Point(593, 107);
+            this.BtnBuscar.Location = new System.Drawing.Point(594, 53);
             this.BtnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(205, 41);
@@ -135,8 +135,7 @@
             // 
             // ucFiltroMoviles
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.radLabel3);
@@ -148,7 +147,7 @@
             this.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "ucFiltroMoviles";
-            this.Size = new System.Drawing.Size(819, 164);
+            this.Size = new System.Drawing.Size(819, 112);
             ((System.ComponentModel.ISupportInitialize)(this.TxtNumero)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();

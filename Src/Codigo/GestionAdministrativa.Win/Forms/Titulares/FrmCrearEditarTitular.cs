@@ -89,7 +89,10 @@ namespace GestionAdministrativa.Win.Forms.Titulares
             get { return TxtDomicilio.Text; }
             set { TxtDomicilio.Text = value; }
         }
-     
+        public Titulare Titular
+        {
+            get { return _titular; }
+        }
 
         #endregion
 

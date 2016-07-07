@@ -116,7 +116,8 @@
             gridViewCommandColumn3});
             this.DgvMovil.MasterTemplate.EnableGrouping = false;
             this.DgvMovil.Name = "DgvMovil";
-            this.DgvMovil.Size = new System.Drawing.Size(1391, 493);
+            this.DgvMovil.ReadOnly = true;
+            this.DgvMovil.Size = new System.Drawing.Size(1391, 549);
             this.DgvMovil.TabIndex = 0;
             this.DgvMovil.Text = "Listado de Moviles";
             this.DgvMovil.ThemeName = "TelerikMetro";
@@ -131,7 +132,7 @@
             this.ucFiltroMoviles.Name = "ucFiltroMoviles";
             this.ucFiltroMoviles.Numero = 0;
             this.ucFiltroMoviles.Patente = "";
-            this.ucFiltroMoviles.Size = new System.Drawing.Size(937, 155);
+            this.ucFiltroMoviles.Size = new System.Drawing.Size(937, 113);
             this.ucFiltroMoviles.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -152,6 +153,7 @@
             // BtnCrearCliente
             // 
             this.BtnCrearCliente.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.BtnCrearCliente.BackColor = System.Drawing.Color.Yellow;
             this.BtnCrearCliente.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCrearCliente.Location = new System.Drawing.Point(4, 4);
             this.BtnCrearCliente.Margin = new System.Windows.Forms.Padding(4, 4, 53, 4);
@@ -169,18 +171,18 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.DgvMovil, 0, 0);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 215);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 159);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1397, 499);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1397, 555);
             this.tableLayoutPanel1.TabIndex = 17;
             // 
             // FrmMovilListado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1397, 714);
+            this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.ucFiltroMoviles);
