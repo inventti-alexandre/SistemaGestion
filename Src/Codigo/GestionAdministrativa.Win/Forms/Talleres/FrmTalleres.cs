@@ -21,9 +21,10 @@ namespace GestionAdministrativa.Win.Forms.Talleres
         private TalleresMovile _tallerMovil;
         private Guid _tallerID;
 
-        public FrmTalleres(ActionFormMode mode, IGestionAdministrativaUow uow, IClock clock)
+        public FrmTalleres(ActionFormMode mode, IGestionAdministrativaUow uow, IClock clock, Guid id)
         {
             _clock = clock;
+            _tallerID = id;
             _formMode = mode;
             Uow = uow;
             InitializeComponent();
@@ -40,7 +41,12 @@ namespace GestionAdministrativa.Win.Forms.Talleres
             else
             {
                 this.Text = "Fin Taller";
-                DtpFin.Enabled = false;
+
+                ChkListBox.Enabled = false;
+                DdlMovil.Enabled = false;
+                DdlTipo.Enabled = false;
+                DtpDesde.Enabled = false;
+                TxtObservaciones.Enabled = false;
             }
         }
 
@@ -48,12 +54,32 @@ namespace GestionAdministrativa.Win.Forms.Talleres
         {
             CargarCombos();
             CargarEntidad(_tallerID);
-            SetDatePickers();
+
+           if (_formMode == ActionFormMode.Create)
+               SetDatePickers(null, null);
+           else
+           {
+               SetDatePickers(_tallerMovil.FechaDesde, null);
+               DdlMovil.SelectedValue = _tallerMovil.MovilId;
+               DdlTipo.SelectedValue = _tallerMovil.TallerId;
+
+               foreach (TalleresMotivosMovile row in _tallerMovil.TalleresMotivosMoviles)
+               {
+                   //row.MotivoTallerId
+                   foreach (var item in ChkListBox.Items)
+                   {
+                       //ChkListBox.Items[]
+                   }
+                   //ChkListBox
+                   MessageBox.Show(row.MotivoTallerId.ToString());
+               }
+           }
+            
         }
 
-        private void SetDatePickers()
+        private void SetDatePickers(DateTime? from = null, DateTime? to = null)
         {
-            DtpDesde.Value = _clock.Now;
+            DtpDesde.Value = @from == null ? _clock.Now : _tallerMovil.FechaAlta;
             DtpFin.Value = _clock.Now;
 
             this.DgvTalleres.Columns["FechaDesde"].DataType = typeof(DateTime);

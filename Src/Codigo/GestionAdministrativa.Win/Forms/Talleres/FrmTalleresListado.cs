@@ -14,6 +14,7 @@ using GestionAdministrativa.Data.Interfaces;
 using GestionAdministrativa.Entities;
 using GestionAdministrativa.Entities.Dto;
 using GestionAdministrativa.Win.Enums;
+using GestionAdministrativa.Win.Forms.PagosMoviles;
 using Telerik.WinControls;
 
 namespace GestionAdministrativa.Win.Forms.Talleres
@@ -33,7 +34,6 @@ namespace GestionAdministrativa.Win.Forms.Talleres
         }
 
          
-
 
 
         #endregion
@@ -119,13 +119,17 @@ namespace GestionAdministrativa.Win.Forms.Talleres
         {
             if (_tallerMovil != null)
             {
-                DialogResult dialogResult = MessageBox.Show("Desea devolver el cartel del móvil: " + _tallerMovil.MovilNumero, "Gestion de talleres", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    var tallerMovil = Uow.TalleresMoviles.Obtener(t => t.Id == _tallerMovil.Id && t.Activo == true);
-                    DevolverCartel(tallerMovil);
-                    RefrescarListado();
-                }
+                var frm = FormFactory.Create<FrmTalleres>(_tallerMovil.Id, ActionFormMode.Edit);
+           
+                frm.Show();
+
+                //DialogResult dialogResult = MessageBox.Show("Desea devolver el cartel del móvil: " + _tallerMovil.MovilNumero, "Gestion de talleres", MessageBoxButtons.YesNo);
+                //if (dialogResult == DialogResult.Yes)
+                //{
+                //    var tallerMovil = Uow.TalleresMoviles.Obtener(t => t.Id == _tallerMovil.Id && t.Activo == true);
+                //    DevolverCartel(tallerMovil);
+                //    RefrescarListado();
+                //}
             }
             else
             {
@@ -133,9 +137,12 @@ namespace GestionAdministrativa.Win.Forms.Talleres
                 if (dialogResult == DialogResult.Yes)
                 {
                     var tallerMovil = Uow.TalleresMoviles.Obtener(t => t.Movil.Numero == _NumeroMovil && t.Activo == true);
-                    DevolverCartel(tallerMovil);
-                    RefrescarListado();
-                    Movil = 0;
+                    var frm = FormFactory.Create<FrmTalleres>(tallerMovil.Id, ActionFormMode.Edit);
+
+                    frm.Show();
+                    //DevolverCartel(tallerMovil);
+                   // RefrescarListado();
+                    //Movil = 0;
                 }
             }    
         }
