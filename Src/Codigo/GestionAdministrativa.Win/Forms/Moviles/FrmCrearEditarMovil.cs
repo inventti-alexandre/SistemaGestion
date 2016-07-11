@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Framework.Common.Utility;
 using GestionAdministrativa.Data.Interfaces;
-using Telerik.WinControls;
 using GestionAdministrativa.Entities;
 using GestionAdministrativa.Win.Enums;
+using GestionAdministrativa.Win.Enums;
+using GestionAdministrativa.Win.Forms.Titulares;
+
 
 namespace GestionAdministrativa.Win.Forms.Moviles
 {
@@ -18,16 +22,19 @@ namespace GestionAdministrativa.Win.Forms.Moviles
             #region InitializeComponents
             
             private ActionFormMode _actionForm;
+            private IFormFactory _iFormFactory;
             private IClock _clock;
             private Movil _movil;
+            private Titulare _titular;
             private Guid _movilId;
 
-            public FrmCrearEditarMovil(ActionFormMode mode, IGestionAdministrativaUow uow,IClock clock,Guid id)
+            public FrmCrearEditarMovil(ActionFormMode mode, IGestionAdministrativaUow uow, IClock clock, Guid id, IFormFactory formFactory)
             {
                 _actionForm = mode;
                 _clock = clock;
                 _movilId = id;
                 Uow = uow;
+                _iFormFactory = formFactory;
                 InitializeComponent();
                 InicializarForm(mode);
             }
@@ -83,14 +90,31 @@ namespace GestionAdministrativa.Win.Forms.Moviles
             get { return DtpFechaAlta.Value; }
             set { DtpFechaAlta.Value = value; }
         }
-        
 
+        public Guid? Titular
+        {
+            get { return (Guid?)ddlTitulares.SelectedValue ?? Guid.Empty; }
+            set { ddlTitulares.SelectedValue = value; }
+        }
         #endregion
 
         #region Methods
         private void FrmCrearEditarMovil_Load(object sender, EventArgs e)
         {
+            CargarCombos();
             CargarMovil(_movilId);
+            
+        }
+
+        private void CargarCombos()
+        {
+
+            var titulares = Uow.Titulares.Listado().OrderBy(m => m.DNI).ToList();
+            titulares.Insert(0, new Titulare() { DNI = 00, Id = Guid.Empty });
+
+            ddlTitulares.DisplayMember = "DNI";
+            ddlTitulares.ValueMember = "Id";
+            ddlTitulares.DataSource = titulares;
         }
 
         private void CargarMovil(Guid _movilId)
@@ -109,6 +133,15 @@ namespace GestionAdministrativa.Win.Forms.Moviles
             this.Numero = _movil.Numero;
             this.Patente = _movil.Patente;
             this.FechaAlta = _movil.FechaAlta;
+
+
+            _titular = Uow.Titulares.Listado().Where(t => t.Id == _movil.TitularId).FirstOrDefault();
+
+            if (_titular != null)
+            {
+                Titular = _titular.Id;
+            }
+            else { BtnAgregarTitular.Visible = true; }
         }
            
         
@@ -167,9 +200,10 @@ namespace GestionAdministrativa.Win.Forms.Moviles
                         movil.OperadorModificacionId = Context.OperadorActual.Id;
                         movil.SucursalModificacionId = Context.SucursalActual.Id;
                         movil.FechaModificacion = _actionForm == ActionFormMode.Edit ? _clock.Now : (DateTime?)null;
-
+                        movil.TitularId = Titular;
                         Uow.Moviles.Modificar(movil);
                         Uow.Commit();
+                        this.Close();
                     }
 
                 }
@@ -194,7 +228,7 @@ namespace GestionAdministrativa.Win.Forms.Moviles
                 _movil.OperadorModificacionId = Context.OperadorActual.Id;
                 _movil.SucursalModificacionId = Context.SucursalActual.Id;
                 _movil.FechaModificacion = _actionForm == ActionFormMode.Edit ? _clock.Now : (DateTime?) null;
-
+                _movil.TitularId = Titular;
                 return _movil;
             }
 
@@ -211,13 +245,23 @@ namespace GestionAdministrativa.Win.Forms.Moviles
 
         #endregion
 
-            
+            private void BtnAgregarTitular_Click(object sender, EventArgs e)
+            {
+                using (var seleccionar = _iFormFactory.Create<FrmCrearEditarTitular>(Guid.Empty, ActionFormMode.Create))
+                {
+                    seleccionar.EntityAgregada += (o, titular) =>
+                    {
+                        CargarCombos();
+                        ddlTitulares.SelectedValue = seleccionar.Titular.Id;
 
-       
+                    };
+                    seleccionar.ShowDialog();
+                }
+            }
 
-       
-       
-
-        
+            private void BtnCancelar_Click(object sender, EventArgs e)
+            {
+                this.Close();
+            }    
     }
 }
