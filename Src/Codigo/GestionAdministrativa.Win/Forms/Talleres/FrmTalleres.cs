@@ -55,25 +55,7 @@ namespace GestionAdministrativa.Win.Forms.Talleres
             CargarCombos();
             CargarEntidad(_tallerID);
 
-           if (_formMode == ActionFormMode.Create)
-               SetDatePickers(null, null);
-           else
-           {
-               SetDatePickers(_tallerMovil.FechaDesde, null);
-               DdlMovil.SelectedValue = _tallerMovil.MovilId;
-               DdlTipo.SelectedValue = _tallerMovil.TallerId;
-
-               foreach (TalleresMotivosMovile row in _tallerMovil.TalleresMotivosMoviles)
-               {
-                   //row.MotivoTallerId
-                   foreach (var item in ChkListBox.Items)
-                   {
-                       //ChkListBox.Items[]
-                   }
-                   //ChkListBox
-                   MessageBox.Show(row.MotivoTallerId.ToString());
-               }
-           }
+          
             
         }
 
@@ -162,14 +144,34 @@ namespace GestionAdministrativa.Win.Forms.Talleres
             {
                 _tallerMovil = new TalleresMovile();
                 _tallerMovil.Id = Guid.NewGuid();
+                 SetDatePickers(null, null);
                 return;
             }
             else
             {
-                _tallerMovil = Uow.TalleresMoviles.Obtener(t => t.Id == tallerId);
+                _tallerMovil = Uow.TalleresMoviles.Obtener(t => t.Id == tallerId, t => t.TalleresMotivosMoviles);
+                //_tallerMovil = Uow.TalleresMoviles.Listado(t=>t.TalleresMotivosMoviles).Where(t => t.Id == tallerId).FirstOrDefault();
+                 SetDatePickers(_tallerMovil.FechaDesde, null);
+                DdlMovil.SelectedValue = _tallerMovil.MovilId;
+                DdlTipo.SelectedValue = _tallerMovil.TallerId;
+                this.Desde = _tallerMovil.FechaDesde;
+                this.Hasta = _tallerMovil.FechaHasta;
+                this.Observaciones = _tallerMovil.Observaciones;
+
+                foreach (TalleresMotivosMovile row in _tallerMovil.TalleresMotivosMoviles)
+                {
+                    
+                    for (int i = 0; i < ChkListBox.Items.Count; i++)
+                    {
+                        
+                        MotivosTallere motivoTaller = (MotivosTallere)ChkListBox.Items[i];
+                        if (motivoTaller.Id == row.MotivoTallerId)
+                            ChkListBox.SetItemChecked(i, true);
+                    }
+                    
+                }
             }
-            this.Desde = _tallerMovil.FechaDesde;
-            this.Hasta = _tallerMovil.FechaHasta;
+            
         }
 
         private void CrearEditar()
