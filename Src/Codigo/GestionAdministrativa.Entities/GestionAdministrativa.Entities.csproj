@@ -97,6 +97,7 @@
     <Compile Include="Dia.cs">
       <DependentUpon>GestionAdministrativaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dto\ClientesDto.cs" />
     <Compile Include="Dto\TalleresMovilesDto.cs" />
     <Compile Include="Dto\TitularesDto.cs" />
     <Compile Include="Dto\PagosDto.cs" />

@@ -1,22 +1,16 @@
-﻿using System;
+﻿using GestionAdministrativa.Entities;
+using GestionAdministrativa.Entities.Dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using GestionAdministrativa.Entities;
-using GestionAdministrativa.Entities.Dto;
 
 namespace GestionAdministrativa.Business.Interfaces
 {
-    public interface IClienteNegocio : IDisposable
+    public interface IClienteNegocio :IDisposable
     {
-        List<ClienteDto> Listado(string sortBy, string sortDirection, string denominacion, string cuit,bool? activo, int pageIndex, int pageSize, out int pageTotal);
-        decimal DeudaTotal(Guid clienteId, int? sucursalId);
-        decimal DeudaVencida(Guid clienteId, int? sucursalId);
-        //List<ClienteMontoFavor> Senias(string sortBy, string sortDirection, Guid? clienteId,int sucursalId, int pageIndex, int pageSize,
-        //                               out int pageTotal);
-
-        Cliente ObtenerPorId(Guid clienteId);
+        List<ClientesDto> Listado(string sortBy, string sortDirection, int? dni, string apellido, Guid? numero, bool? activo, int pageIndex, int pageSize, out int pageTotal);
+      
     }
 }

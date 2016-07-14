@@ -28,6 +28,7 @@ using GestionAdministrativa.Win.Forms.Talleres;
 using GestionAdministrativa.Win.Forms.Titulares;
 using Telerik.WinControls.UI;
 using GestionAdministrativa.Win.Helpers;
+using GestionAdministrativa.Win.Forms.Clientes;
 
 namespace GestionAdministrativa.Win.Forms
 {
@@ -347,6 +348,12 @@ namespace GestionAdministrativa.Win.Forms
             var frm = FormFactory.Create<FrmTalleresListado>(Guid.Empty, ActionFormMode.Create);
             AbrirTab(frm);
             //frm.Show();
+        }
+
+        private void radButton2_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmClientesListado>(Guid.Empty, ActionFormMode.Create);
+            AbrirTab(frm);
         }
 
        

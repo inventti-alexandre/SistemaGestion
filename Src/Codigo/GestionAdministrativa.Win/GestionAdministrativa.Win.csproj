@@ -254,6 +254,12 @@
     <Compile Include="Forms\Clientes\FrmClientesListado.Designer.cs">
       <DependentUpon>FrmClientesListado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Clientes\FrmCrearEditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Clientes\FrmCrearEditarCliente.Designer.cs">
+      <DependentUpon>FrmCrearEditarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Clientes\ucBuscadorCliente.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -520,6 +526,9 @@
     <EmbeddedResource Include="Forms\Clientes\FrmClientesListado.resx">
       <DependentUpon>FrmClientesListado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Clientes\FrmCrearEditarCliente.resx">
+      <DependentUpon>FrmCrearEditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Clientes\ucBuscadorCliente.resx">
       <DependentUpon>ucBuscadorCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -695,6 +704,7 @@
     <Content Include="Resources\Counting-Machine.png" />
     <Content Include="Resources\Customer.png" />
     <None Include="Resources\CustomerAlejandria.png" />
+    <None Include="Resources\CustomerApipe.png" />
     <Content Include="Resources\Data-Edit-Con.png" />
     <Content Include="Resources\Data-Edit-Con1.png" />
     <Content Include="Resources\Data-Edit.png" />

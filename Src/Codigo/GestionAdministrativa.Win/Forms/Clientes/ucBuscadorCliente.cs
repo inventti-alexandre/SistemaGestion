@@ -23,7 +23,7 @@ namespace GestionAdministrativa.Win.Forms.Clientes
             }
 
             InitializeComponent();
-           // CargarCombos();
+            CargarCombos();
         }
 
         #region "Propiedades"

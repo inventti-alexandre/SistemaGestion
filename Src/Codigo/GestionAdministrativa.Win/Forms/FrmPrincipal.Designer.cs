@@ -53,6 +53,7 @@
             this.BtnTalleres = new Telerik.WinControls.UI.RadButton();
             this.TabsPrincipal = new Telerik.WinControls.UI.RadPageView();
             this.Accesos = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radButton2 = new Telerik.WinControls.UI.RadButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.btnInformeCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblUsuario)).BeginInit();
@@ -74,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TabsPrincipal)).BeginInit();
             this.TabsPrincipal.SuspendLayout();
             this.Accesos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -176,7 +178,7 @@
             this.BtnCelulares.AutoSize = true;
             this.BtnCelulares.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCelulares.Image = global::GestionAdministrativa.Win.Properties.Resources.Cell01;
-            this.BtnCelulares.Location = new System.Drawing.Point(490, 23);
+            this.BtnCelulares.Location = new System.Drawing.Point(775, 23);
             this.BtnCelulares.Name = "BtnCelulares";
             this.BtnCelulares.Size = new System.Drawing.Size(132, 132);
             this.BtnCelulares.TabIndex = 4;
@@ -395,6 +397,7 @@
             // 
             // Accesos
             // 
+            this.Accesos.Controls.Add(this.radButton2);
             this.Accesos.Controls.Add(this.BtnChoferListado);
             this.Accesos.Controls.Add(this.BtnTalleres);
             this.Accesos.Controls.Add(this.BtnAbrirCaja);
@@ -414,6 +417,20 @@
             this.Accesos.Name = "Accesos";
             this.Accesos.Size = new System.Drawing.Size(1324, 513);
             this.Accesos.Text = "Accesos";
+            // 
+            // radButton2
+            // 
+            this.radButton2.AutoSize = true;
+            this.radButton2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radButton2.Image = global::GestionAdministrativa.Win.Properties.Resources.CustomerApipe;
+            this.radButton2.Location = new System.Drawing.Point(484, 23);
+            this.radButton2.Name = "radButton2";
+            this.radButton2.Size = new System.Drawing.Size(132, 132);
+            this.radButton2.TabIndex = 14;
+            this.radButton2.Text = "Clientes";
+            this.radButton2.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radButton2.ThemeName = "TelerikMetro";
+            this.radButton2.Click += new System.EventHandler(this.radButton2_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -467,6 +484,7 @@
             this.TabsPrincipal.ResumeLayout(false);
             this.Accesos.ResumeLayout(false);
             this.Accesos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -503,6 +521,7 @@
         private Telerik.WinControls.UI.RadPageView TabsPrincipal;
         private Telerik.WinControls.UI.RadPageViewPage Accesos;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Telerik.WinControls.UI.RadButton radButton2;
 
 
     }
