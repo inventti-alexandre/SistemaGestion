@@ -43,6 +43,7 @@
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.txtImporte = new Telerik.WinControls.UI.RadTextBox();
+            this.BtnVales = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridPagos)).BeginInit();
@@ -51,6 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtImporte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnVales)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtTotal
@@ -175,9 +177,21 @@
             this.txtImporte.TabStop = false;
             this.txtImporte.ThemeName = "TelerikMetro";
             // 
+            // BtnVales
+            // 
+            this.BtnVales.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVales.Location = new System.Drawing.Point(15, 237);
+            this.BtnVales.Name = "BtnVales";
+            this.BtnVales.Size = new System.Drawing.Size(152, 47);
+            this.BtnVales.TabIndex = 16;
+            this.BtnVales.Text = "Agregar Vales";
+            this.BtnVales.ThemeName = "TelerikMetro";
+            this.BtnVales.Click += new System.EventHandler(this.BtnVales_Click);
+            // 
             // ucPagos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.BtnVales);
             this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.txtImporte);
             this.Controls.Add(this.ddlTipo);
@@ -187,7 +201,7 @@
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.gridPagos);
             this.Name = "ucPagos";
-            this.Size = new System.Drawing.Size(604, 284);
+            this.Size = new System.Drawing.Size(604, 299);
             this.Load += new System.EventHandler(this.ucPagos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TxtTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
@@ -197,6 +211,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtImporte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnVales)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +227,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.UI.RadTextBox txtImporte;
+        private Telerik.WinControls.UI.RadButton BtnVales;
     }
 }

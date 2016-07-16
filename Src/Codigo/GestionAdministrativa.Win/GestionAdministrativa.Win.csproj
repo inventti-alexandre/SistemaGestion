@@ -266,6 +266,12 @@
     <Compile Include="Forms\Clientes\ucBuscadorCliente.Designer.cs">
       <DependentUpon>ucBuscadorCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CuentasCorrientes\FrmIngresoVales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CuentasCorrientes\FrmIngresoVales.Designer.cs">
+      <DependentUpon>FrmIngresoVales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EditFormBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -370,12 +376,6 @@
     </Compile>
     <Compile Include="Forms\PagosMoviles\FrmMovilesPago.Designer.cs">
       <DependentUpon>FrmMovilesPago.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PagosMoviles\FrmPagoMoviles.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PagosMoviles\FrmPagoMoviles.Designer.cs">
-      <DependentUpon>FrmPagoMoviles.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\PagosMoviles\FrmSelectorMovil.cs">
       <SubType>Form</SubType>
@@ -532,6 +532,9 @@
     <EmbeddedResource Include="Forms\Clientes\ucBuscadorCliente.resx">
       <DependentUpon>ucBuscadorCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CuentasCorrientes\FrmIngresoVales.resx">
+      <DependentUpon>FrmIngresoVales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditFormBase.resx">
       <DependentUpon>EditFormBase.cs</DependentUpon>
     </EmbeddedResource>
@@ -586,9 +589,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PagosMoviles\FrmMovilesPago.resx">
       <DependentUpon>FrmMovilesPago.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PagosMoviles\FrmPagoMoviles.resx">
-      <DependentUpon>FrmPagoMoviles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PagosMoviles\FrmSelectorMovil.resx">
       <DependentUpon>FrmSelectorMovil.cs</DependentUpon>

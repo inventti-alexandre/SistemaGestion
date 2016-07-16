@@ -61,6 +61,7 @@
     <Compile Include="CajaNegocio.cs" />
     <Compile Include="ClienteNegocio.cs" />
     <Compile Include="Data\PagoDia.cs" />
+    <Compile Include="Data\ValesPago.cs" />
     <Compile Include="Interfaces\IClienteNegocio.cs" />
     <Compile Include="Interfaces\ITalleresMovilesNegocio.cs" />
     <Compile Include="TalleresMovilesNegocio.cs" />

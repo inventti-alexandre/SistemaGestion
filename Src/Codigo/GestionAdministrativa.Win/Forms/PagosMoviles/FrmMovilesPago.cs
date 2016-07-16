@@ -1,7 +1,9 @@
 ﻿using Framework.Common.Utility;
+using Framework.Ioc;
 using GestionAdministrativa.Data.Interfaces;
 using GestionAdministrativa.Entities;
 using GestionAdministrativa.Win.Enums;
+using GestionAdministrativa.Win.Forms.CuentasCorrientes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

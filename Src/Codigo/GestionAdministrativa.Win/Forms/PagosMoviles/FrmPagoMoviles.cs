@@ -11,12 +11,13 @@ using GestionAdministrativa.Data.Interfaces;
 using Telerik.WinControls;
 using GestionAdministrativa.Entities;
 using GestionAdministrativa.Win.Enums;
+using GestionAdministrativa.Win.Forms.CuentasCorrientes;
 
 namespace GestionAdministrativa.Win.Forms.PagosMoviles
 {
     public partial class FrmPagoMoviles : EditFormBase
     {
-            #region InitializeComponents
+        #region InitializeComponents
             
             private ActionFormMode _actionForm;
             private IClock _clock;

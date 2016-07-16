@@ -10,6 +10,10 @@ using System.Windows.Forms;
 using GestionAdministrativa.Entities;
 using GestionAdministrativa.Business.Data;
 using Telerik.WinControls.UI;
+using GestionAdministrativa.Data.Interfaces;
+using Framework.Ioc;
+using GestionAdministrativa.Win.Forms.CuentasCorrientes;
+using GestionAdministrativa.Win.Enums;
 
 namespace GestionAdministrativa.Win.Forms.Pagos
 {
@@ -21,6 +25,11 @@ namespace GestionAdministrativa.Win.Forms.Pagos
 
         public ucPagos()
         {
+            if (Ioc.Container != null)
+            {
+                Uow = Ioc.Container.Get<IGestionAdministrativaUow>();
+                FormFactory = Ioc.Container.Get<IFormFactory>();
+            }
             InitializeComponent();
         }
 
@@ -180,6 +189,12 @@ namespace GestionAdministrativa.Win.Forms.Pagos
             }
         }
 #endregion
+
+        private void BtnVales_Click(object sender, EventArgs e)
+        {
+            var frm = FormFactory.Create<FrmIngresoVales>(Guid.Empty, ActionFormMode.Create);
+            frm.Show();
+        }
 
        
 
