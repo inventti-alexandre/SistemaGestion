@@ -176,8 +176,16 @@ namespace GestionAdministrativa.Win.Forms.Talleres
 
         private void CrearEditar()
         {
+            var esValidos = this.Validar();
 
-            if (!Validar()) return;
+            if (!esValidos)
+            {
+                this.DialogResult = DialogResult.None;
+                return;
+            }
+              
+
+            //if (!Validar()) this.DialogResult = DialogResult.None; 
 
             var esValido = this.ValidarForm();
 
@@ -195,6 +203,7 @@ namespace GestionAdministrativa.Win.Forms.Talleres
                     if (tallerMovil != null)
                     {
                         MessageBox.Show("Ya existe un taller activo para este móvil.");
+                        this.DialogResult = DialogResult.None;
                         return;
                     }
                     
@@ -247,6 +256,17 @@ namespace GestionAdministrativa.Win.Forms.Talleres
                 EpvTalleres.SetError(DdlTipo, "Debe seleccionar un tipo");
                 valido = false;
             }
+
+            if (_formMode == ActionFormMode.Edit)
+            {
+                if (DtpFin.Value < _tallerMovil.FechaDesde)
+                {
+                    EpvTalleres.SetError(DtpFin,"La fecha de entrega de cartel no puede ser menor a la de inicio de taller");
+                    valido = false;
+                }
+            }
+
+
             return valido;
         }
 

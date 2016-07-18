@@ -33,9 +33,6 @@ namespace GestionAdministrativa.Win.Forms.Talleres
             set { TxtMovil.Text = value.ToString(); }
         }
 
-         
-
-
         #endregion
         private ITalleresMovilesNegocio _talleresMovilesNegocio;
         private IClock _clock;
@@ -59,7 +56,8 @@ namespace GestionAdministrativa.Win.Forms.Talleres
             base.FormBaseListado_Load(sender,e);
             this.Text = "Listado de talleres";
             RefrescarListado();
-            ucFiltroMoviles.Filtered += Filtered;
+           // ucFiltroMoviles.Filtered += Filtered;
+            TxtMovil.Focus();
             
             this.DgvTalleresMoviles.Columns["FechaDesde"].DataType = typeof(DateTime);
             this.DgvTalleresMoviles.Columns["FechaDesde"].FormatString = "{0: dd/M/yyyy}";
@@ -75,9 +73,7 @@ namespace GestionAdministrativa.Win.Forms.Talleres
         public override async Task<int> RefrescarListado()
         {
             int pageTotal = 0;
-            //int? numero = ucFiltroMoviles.Numero;
-          //  var patente = ucFiltroMoviles.Patente != "" ? ucFiltroMoviles.Patente : "";
-            //var activo = ucFiltroMoviles.Activo;
+            
             bool activo = true;
       
             var talleresMoviles =
@@ -88,7 +84,6 @@ namespace GestionAdministrativa.Win.Forms.Talleres
                                 out pageTotal));
 
             DgvTalleresMoviles.DataSource = talleresMoviles;
-            //return VisualStyleElement.Page.
             return pageTotal;
         }
 
@@ -119,17 +114,15 @@ namespace GestionAdministrativa.Win.Forms.Talleres
         {
             if (_tallerMovil != null)
             {
-                var frm = FormFactory.Create<FrmTalleres>(_tallerMovil.Id, ActionFormMode.Edit);
-           
-                frm.Show();
-
-                //DialogResult dialogResult = MessageBox.Show("Desea devolver el cartel del móvil: " + _tallerMovil.MovilNumero, "Gestion de talleres", MessageBoxButtons.YesNo);
-                //if (dialogResult == DialogResult.Yes)
-                //{
-                //    var tallerMovil = Uow.TalleresMoviles.Obtener(t => t.Id == _tallerMovil.Id && t.Activo == true);
-                //    DevolverCartel(tallerMovil);
-                //    RefrescarListado();
-                //}
+                using (var frmCrear = FormFactory.Create<FrmTalleres>(_tallerMovil.Id, ActionFormMode.Edit))
+                {
+                    var result = frmCrear.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        frmCrear.Close();
+                        RefrescarListado();
+                    }
+                }  
             }
             else
             {
@@ -137,12 +130,15 @@ namespace GestionAdministrativa.Win.Forms.Talleres
                 if (dialogResult == DialogResult.Yes)
                 {
                     var tallerMovil = Uow.TalleresMoviles.Obtener(t => t.Movil.Numero == _NumeroMovil && t.Activo == true);
-                    var frm = FormFactory.Create<FrmTalleres>(tallerMovil.Id, ActionFormMode.Edit);
-
-                    frm.Show();
-                    //DevolverCartel(tallerMovil);
-                   // RefrescarListado();
-                    //Movil = 0;
+                    using (var frmCrear = FormFactory.Create<FrmTalleres>(tallerMovil.Id, ActionFormMode.Edit))
+                    {
+                        var result = frmCrear.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            frmCrear.Close();
+                            RefrescarListado();
+                        }
+                    }  
                 }
             }    
         }
@@ -158,9 +154,15 @@ namespace GestionAdministrativa.Win.Forms.Talleres
 
         private void BtnCrear_Click(object sender, EventArgs e)
         {
-            var frm = FormFactory.Create<FrmTalleres>(Guid.Empty, ActionFormMode.Create);
-            frm.Show();
-            RefrescarListado();
+            using (var frmCrear = FormFactory.Create<FrmTalleres>(Guid.Empty, ActionFormMode.Create))
+            {
+                var result = frmCrear.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    frmCrear.Close();
+                    RefrescarListado();
+                }
+            } 
         }
 
         private void BtnDevolver_Click(object sender, EventArgs e)
@@ -171,6 +173,12 @@ namespace GestionAdministrativa.Win.Forms.Talleres
         private void TxtMovil_TextChanged(object sender, EventArgs e)
         {
             RefrescarListado();
+        }
+
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            Movil = 0;
+            TxtMovil.Focus();
         }
     }
 }

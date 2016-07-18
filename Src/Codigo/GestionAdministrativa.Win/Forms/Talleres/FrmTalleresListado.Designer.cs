@@ -28,29 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            this.DgvTalleresMoviles = new Telerik.WinControls.UI.RadGridView();
-            this.BtnCrear = new System.Windows.Forms.Button();
-            this.TxtMovil = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
-            this.BtnDevolver = new System.Windows.Forms.Button();
-            this.ucFiltroMoviles = new GestionAdministrativa.Win.Forms.Moviles.ucFiltroMoviles();
+            this.TxtMovil = new Telerik.WinControls.UI.RadTextBox();
+            this.BtnCrear = new System.Windows.Forms.Button();
+            this.DgvTalleresMoviles = new Telerik.WinControls.UI.RadGridView();
+            this.BtnLimpiar = new Telerik.WinControls.UI.RadButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtMovil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTalleresMoviles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTalleresMoviles.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtMovil)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnLimpiar)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
+            // radLabel2
+            // 
+            this.radLabel2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel2.Location = new System.Drawing.Point(3, 15);
+            this.radLabel2.Name = "radLabel2";
+            this.radLabel2.Size = new System.Drawing.Size(70, 25);
+            this.radLabel2.TabIndex = 23;
+            this.radLabel2.Text = "Movil:";
+            // 
+            // TxtMovil
+            // 
+            this.TxtMovil.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtMovil.Location = new System.Drawing.Point(79, 12);
+            this.TxtMovil.Name = "TxtMovil";
+            this.TxtMovil.Size = new System.Drawing.Size(357, 28);
+            this.TxtMovil.TabIndex = 17;
+            this.TxtMovil.TabStop = false;
+            this.TxtMovil.ThemeName = "TelerikMetro";
+            this.TxtMovil.TextChanged += new System.EventHandler(this.TxtMovil_TextChanged);
+            // 
+            // BtnCrear
+            // 
+            this.BtnCrear.BackColor = System.Drawing.Color.Yellow;
+            this.BtnCrear.FlatAppearance.BorderSize = 0;
+            this.BtnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCrear.Location = new System.Drawing.Point(12, -6);
+            this.BtnCrear.Name = "BtnCrear";
+            this.BtnCrear.Size = new System.Drawing.Size(153, 41);
+            this.BtnCrear.TabIndex = 11;
+            this.BtnCrear.Text = "Crear";
+            this.BtnCrear.UseVisualStyleBackColor = false;
+            this.BtnCrear.Click += new System.EventHandler(this.BtnCrear_Click);
+            // 
             // DgvTalleresMoviles
             // 
-            this.DgvTalleresMoviles.Location = new System.Drawing.Point(12, 290);
+            this.DgvTalleresMoviles.Location = new System.Drawing.Point(12, 96);
             // 
             // DgvTalleresMoviles
             // 
@@ -101,80 +135,41 @@
             gridViewTextBoxColumn4,
             gridViewCommandColumn1});
             this.DgvTalleresMoviles.Name = "DgvTalleresMoviles";
-            this.DgvTalleresMoviles.Size = new System.Drawing.Size(1254, 487);
+            this.DgvTalleresMoviles.Size = new System.Drawing.Size(1254, 607);
             this.DgvTalleresMoviles.TabIndex = 0;
             this.DgvTalleresMoviles.Text = "radGridView1";
             this.DgvTalleresMoviles.ThemeName = "TelerikMetro";
             this.DgvTalleresMoviles.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.DgvTalleresMoviles_CommandCellClick);
             // 
-            // BtnCrear
+            // BtnLimpiar
             // 
-            this.BtnCrear.BackColor = System.Drawing.Color.Yellow;
-            this.BtnCrear.FlatAppearance.BorderSize = 0;
-            this.BtnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCrear.Location = new System.Drawing.Point(12, -6);
-            this.BtnCrear.Name = "BtnCrear";
-            this.BtnCrear.Size = new System.Drawing.Size(153, 41);
-            this.BtnCrear.TabIndex = 11;
-            this.BtnCrear.Text = "Crear";
-            this.BtnCrear.UseVisualStyleBackColor = false;
-            this.BtnCrear.Click += new System.EventHandler(this.BtnCrear_Click);
+            this.BtnLimpiar.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLimpiar.Location = new System.Drawing.Point(1045, 4);
+            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.Size = new System.Drawing.Size(205, 41);
+            this.BtnLimpiar.TabIndex = 24;
+            this.BtnLimpiar.Text = "Limpiar Filtros";
+            this.BtnLimpiar.ThemeName = "TelerikMetro";
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
-            // TxtMovil
+            // panel1
             // 
-            this.TxtMovil.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtMovil.Location = new System.Drawing.Point(894, 0);
-            this.TxtMovil.Name = "TxtMovil";
-            this.TxtMovil.Size = new System.Drawing.Size(357, 28);
-            this.TxtMovil.TabIndex = 17;
-            this.TxtMovil.TabStop = false;
-            this.TxtMovil.ThemeName = "TelerikMetro";
-            this.TxtMovil.TextChanged += new System.EventHandler(this.TxtMovil_TextChanged);
-            // 
-            // radLabel2
-            // 
-            this.radLabel2.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.Location = new System.Drawing.Point(818, 3);
-            this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(70, 25);
-            this.radLabel2.TabIndex = 23;
-            this.radLabel2.Text = "Movil:";
-            // 
-            // BtnDevolver
-            // 
-            this.BtnDevolver.BackColor = System.Drawing.Color.Yellow;
-            this.BtnDevolver.FlatAppearance.BorderSize = 0;
-            this.BtnDevolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDevolver.Location = new System.Drawing.Point(612, 0);
-            this.BtnDevolver.Name = "BtnDevolver";
-            this.BtnDevolver.Size = new System.Drawing.Size(184, 28);
-            this.BtnDevolver.TabIndex = 19;
-            this.BtnDevolver.Text = "Devolver cartel";
-            this.BtnDevolver.UseVisualStyleBackColor = false;
-            this.BtnDevolver.Click += new System.EventHandler(this.BtnDevolver_Click);
-            // 
-            // ucFiltroMoviles
-            // 
-            this.ucFiltroMoviles.Activo = true;
-            this.ucFiltroMoviles.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucFiltroMoviles.Location = new System.Drawing.Point(13, 42);
-            this.ucFiltroMoviles.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.ucFiltroMoviles.Name = "ucFiltroMoviles";
-            this.ucFiltroMoviles.Numero = 0;
-            this.ucFiltroMoviles.Patente = "";
-            this.ucFiltroMoviles.Size = new System.Drawing.Size(819, 164);
-            this.ucFiltroMoviles.TabIndex = 24;
+            this.panel1.Controls.Add(this.radLabel2);
+            this.panel1.Controls.Add(this.BtnLimpiar);
+            this.panel1.Controls.Add(this.TxtMovil);
+            this.panel1.Location = new System.Drawing.Point(12, 41);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1254, 49);
+            this.panel1.TabIndex = 25;
             // 
             // FrmTalleresListado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1537, 778);
+            this.ClientSize = new System.Drawing.Size(1268, 705);
             this.ControlBox = false;
-            this.Controls.Add(this.ucFiltroMoviles);
-            this.Controls.Add(this.BtnDevolver);
-            this.Controls.Add(this.radLabel2);
-            this.Controls.Add(this.TxtMovil);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnCrear);
             this.Controls.Add(this.DgvTalleresMoviles);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -183,15 +178,17 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "FrmTalleresListado";
+            this.Text = "Listado Talleres";
             this.Load += new System.EventHandler(this.FrmTalleresListado_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtMovil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTalleresMoviles.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTalleresMoviles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtMovil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnLimpiar)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -201,7 +198,7 @@
         private System.Windows.Forms.Button BtnCrear;
         private Telerik.WinControls.UI.RadTextBox TxtMovil;
         private Telerik.WinControls.UI.RadLabel radLabel2;
-        private System.Windows.Forms.Button BtnDevolver;
-        private Moviles.ucFiltroMoviles ucFiltroMoviles;
+        private Telerik.WinControls.UI.RadButton BtnLimpiar;
+        private System.Windows.Forms.Panel panel1;
     }
 }
