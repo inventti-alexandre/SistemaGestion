@@ -76,16 +76,15 @@ namespace GestionAdministrativa.Win.Forms.CuentasCorrientes
             vale.Monto = decimal.TryParse(TxtMonto.Text, out monto) ? monto : 0;
 
             _valesPagos.Add(vale);
-            var list = _valesPagos.ToList();
-            gridVales.DataSource = list;
-            RefrescarGrid();
+            gridVales.DataSource = _valesPagos.ToList();
         }
 
-        private void RefrescarGrid()
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
-           // gridVales.DataSource = _valesPagos.ToList();
-            radGridView1.DataSource = _valesPagos.ToList();
+
         }
+
+       
 
 
     }

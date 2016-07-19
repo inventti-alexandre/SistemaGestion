@@ -8,9 +8,9 @@ namespace GestionAdministrativa.Business.Data
 {
     public class ValesPago
     {
-        public Guid MovilPaga;
-        public Guid MovilVale;
-        public Guid Client;
-        public decimal Monto;
+        public Guid MovilPaga { get; set; }
+        public Guid MovilVale { get; set; }
+        public Guid Client { get; set; }
+        public decimal Monto { get; set; }
     }
 }
