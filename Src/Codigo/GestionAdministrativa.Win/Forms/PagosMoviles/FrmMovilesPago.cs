@@ -221,7 +221,7 @@ namespace GestionAdministrativa.Win.Forms.PagosMoviles
             }
             Uow.Commit();
             MessageBox.Show("Pago de base guardado correctamente");
-            this.Close();
+            //this.Close();
         }
 
 

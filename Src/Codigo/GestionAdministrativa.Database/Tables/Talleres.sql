@@ -2,7 +2,7 @@
 (
 	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
     [Descripcion] VARCHAR(50) NULL, 
-    [Porcentaje] DECIMAL(4, 2) NULL, 
+    [Porcentaje] DECIMAL(5, 2) NULL, 
     [OperadorAltaId] UNIQUEIDENTIFIER NOT NULL, 
     [SucursalAltaId] INT NOT NULL, 
     [FechaAlta] DATETIME NOT NULL, 
