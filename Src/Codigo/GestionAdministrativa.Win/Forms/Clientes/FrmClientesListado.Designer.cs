@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -37,6 +38,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.GridClientes = new Telerik.WinControls.UI.RadGridView();
             this.btnCrear = new System.Windows.Forms.Button();
+            this.ucBuscadorCliente1 = new GestionAdministrativa.Win.Forms.Clientes.ucBuscadorCliente();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridClientes.MasterTemplate)).BeginInit();
@@ -49,6 +51,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.GridClientes, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnCrear, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ucBuscadorCliente1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -122,6 +125,16 @@
             this.btnCrear.UseVisualStyleBackColor = false;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
+            // ucBuscadorCliente1
+            // 
+            this.ucBuscadorCliente1.Apellido = "";
+            this.ucBuscadorCliente1.ClienteId = new System.Guid("00000000-0000-0000-0000-000000000000");
+            this.ucBuscadorCliente1.DNI = 0;
+            this.ucBuscadorCliente1.Location = new System.Drawing.Point(3, 45);
+            this.ucBuscadorCliente1.Name = "ucBuscadorCliente1";
+            this.ucBuscadorCliente1.Size = new System.Drawing.Size(845, 119);
+            this.ucBuscadorCliente1.TabIndex = 3;
+            // 
             // FrmClientesListado
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -149,5 +162,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Telerik.WinControls.UI.RadGridView GridClientes;
         private System.Windows.Forms.Button btnCrear;
+        private ucBuscadorCliente ucBuscadorCliente1;
     }
 }

@@ -35,7 +35,7 @@ namespace GestionAdministrativa.Win.Forms.Clientes
 
         private void FrmClientesListado_Load(object sender, EventArgs e)
         {
-            ucBuscadorCliente.Filtered += ucBuscadorClienteOnFiltered;
+            ucBuscadorCliente1.Filtered += ucBuscadorClienteOnFiltered;
         }
 
         private void ucBuscadorClienteOnFiltered(object sender, EventArgs e)
