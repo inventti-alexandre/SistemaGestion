@@ -34,7 +34,7 @@ namespace GestionAdministrativa.Win.Forms.CuentasCorrientes
         private void FrmIngresoVales_Load(object sender, EventArgs e)
         {
             CargarCombos();
-            gridVales.DataSource = _valesPagos;
+            //gridVales.DataSource = _valesPagos;
         }
 
         private void CargarCombos()
@@ -76,7 +76,15 @@ namespace GestionAdministrativa.Win.Forms.CuentasCorrientes
             vale.Monto = decimal.TryParse(TxtMonto.Text, out monto) ? monto : 0;
 
             _valesPagos.Add(vale);
-            gridVales.DataSource = _valesPagos.ToList();
+            var list = _valesPagos.ToList();
+            gridVales.DataSource = list;
+            RefrescarGrid();
+        }
+
+        private void RefrescarGrid()
+        {
+           // gridVales.DataSource = _valesPagos.ToList();
+            radGridView1.DataSource = _valesPagos.ToList();
         }
 
 

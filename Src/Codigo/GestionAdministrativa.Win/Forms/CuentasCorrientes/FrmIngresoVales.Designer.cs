@@ -49,6 +49,7 @@
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.TxtTotal = new Telerik.WinControls.UI.RadTextBox();
             this.btnAceptar = new Telerik.WinControls.UI.RadButton();
+            this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlMovilPaga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
@@ -70,6 +71,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAceptar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -280,10 +283,19 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.ThemeName = "TelerikMetro";
             // 
+            // radGridView1
+            // 
+            this.radGridView1.Location = new System.Drawing.Point(57, 381);
+            this.radGridView1.Name = "radGridView1";
+            this.radGridView1.Size = new System.Drawing.Size(240, 150);
+            this.radGridView1.TabIndex = 9;
+            this.radGridView1.Text = "radGridView1";
+            // 
             // FrmIngresoVales
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(869, 733);
+            this.Controls.Add(this.radGridView1);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.TxtTotal);
             this.Controls.Add(this.radLabel5);
@@ -320,6 +332,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAceptar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -345,5 +359,6 @@
         private Telerik.WinControls.UI.RadButton btnAceptar;
         private Telerik.WinControls.UI.RadLabel LblCliente;
         private Telerik.WinControls.UI.RadButton BtnAgregarVale;
+        private Telerik.WinControls.UI.RadGridView radGridView1;
     }
 }
