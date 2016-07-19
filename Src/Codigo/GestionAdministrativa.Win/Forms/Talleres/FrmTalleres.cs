@@ -212,6 +212,7 @@ namespace GestionAdministrativa.Win.Forms.Talleres
                 else
                 {
                     entity.Activo = false;
+                    entity.Acreditado = false;
                    
 
                     Uow.TalleresMoviles.Modificar(entity);
