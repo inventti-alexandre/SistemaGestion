@@ -53,7 +53,7 @@ namespace GestionAdministrativa.Win.Forms.CuentasCorrientes
             ddlMovilVale.DataSource = movilesVale;
 
             var clientes = Uow.Clientes.Listado().Where(c => c.Activo == true).OrderBy(c => c.NroCliente).ToList();
-            ddlCliente.DisplayMember = "NroCliente";
+            ddlCliente.DisplayMember = "NroCliente";//test
             ddlCliente.ValueMember = "Id";
             ddlCliente.DataSource = clientes;
         }
