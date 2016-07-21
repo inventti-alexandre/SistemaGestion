@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.ddlMovilPaga = new Telerik.WinControls.UI.RadDropDownList();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
@@ -49,6 +49,8 @@
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.TxtTotal = new Telerik.WinControls.UI.RadTextBox();
             this.btnAceptar = new Telerik.WinControls.UI.RadButton();
+            this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlMovilPaga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
@@ -70,6 +72,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAceptar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,6 +111,8 @@
             // 
             // radPanel2
             // 
+            this.radPanel2.Controls.Add(this.radLabel7);
+            this.radPanel2.Controls.Add(this.radLabel6);
             this.radPanel2.Controls.Add(this.BtnAgregarVale);
             this.radPanel2.Controls.Add(this.LblCliente);
             this.radPanel2.Controls.Add(this.TxtMonto);
@@ -117,14 +123,14 @@
             this.radPanel2.Controls.Add(this.radLabel2);
             this.radPanel2.Location = new System.Drawing.Point(31, 101);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(777, 63);
+            this.radPanel2.Size = new System.Drawing.Size(777, 167);
             this.radPanel2.TabIndex = 4;
             this.radPanel2.ThemeName = "TelerikMetro";
             // 
             // BtnAgregarVale
             // 
             this.BtnAgregarVale.Image = global::GestionAdministrativa.Win.Properties.Resources.Add_New_blue;
-            this.BtnAgregarVale.Location = new System.Drawing.Point(732, 20);
+            this.BtnAgregarVale.Location = new System.Drawing.Point(610, 93);
             this.BtnAgregarVale.Name = "BtnAgregarVale";
             this.BtnAgregarVale.Size = new System.Drawing.Size(23, 24);
             this.BtnAgregarVale.TabIndex = 9;
@@ -142,7 +148,7 @@
             // 
             // TxtMonto
             // 
-            this.TxtMonto.Location = new System.Drawing.Point(617, 20);
+            this.TxtMonto.Location = new System.Drawing.Point(495, 93);
             this.TxtMonto.Name = "TxtMonto";
             this.TxtMonto.Size = new System.Drawing.Size(100, 26);
             this.TxtMonto.TabIndex = 7;
@@ -152,7 +158,7 @@
             // radLabel4
             // 
             this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel4.Location = new System.Drawing.Point(530, 20);
+            this.radLabel4.Location = new System.Drawing.Point(408, 93);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(69, 27);
             this.radLabel4.TabIndex = 6;
@@ -204,7 +210,7 @@
             // radPanel3
             // 
             this.radPanel3.Controls.Add(this.gridVales);
-            this.radPanel3.Location = new System.Drawing.Point(31, 190);
+            this.radPanel3.Location = new System.Drawing.Point(31, 338);
             this.radPanel3.Name = "radPanel3";
             this.radPanel3.Size = new System.Drawing.Size(777, 281);
             this.radPanel3.TabIndex = 5;
@@ -221,30 +227,30 @@
             this.gridVales.MasterTemplate.AllowColumnReorder = false;
             this.gridVales.MasterTemplate.AllowDragToGroup = false;
             this.gridVales.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn4.FieldName = "MovilVale";
-            gridViewTextBoxColumn4.HeaderText = "Movil";
-            gridViewTextBoxColumn4.Name = "Movil";
-            gridViewTextBoxColumn4.Width = 190;
-            gridViewTextBoxColumn5.FieldName = "Client";
-            gridViewTextBoxColumn5.HeaderText = "Cliente";
-            gridViewTextBoxColumn5.Name = "Cliente";
-            gridViewTextBoxColumn5.Width = 361;
-            gridViewTextBoxColumn6.FieldName = "Monto";
-            gridViewTextBoxColumn6.HeaderText = "Monto";
-            gridViewTextBoxColumn6.Name = "Monto";
-            gridViewTextBoxColumn6.Width = 177;
-            gridViewCommandColumn2.HeaderImage = global::GestionAdministrativa.Win.Properties.Resources.delete;
-            gridViewCommandColumn2.HeaderText = "";
-            gridViewCommandColumn2.Image = global::GestionAdministrativa.Win.Properties.Resources.delete;
-            gridViewCommandColumn2.MaxWidth = 30;
-            gridViewCommandColumn2.MinWidth = 30;
-            gridViewCommandColumn2.Name = "Eliminar";
-            gridViewCommandColumn2.Width = 30;
+            gridViewTextBoxColumn1.FieldName = "MovilVale";
+            gridViewTextBoxColumn1.HeaderText = "Movil";
+            gridViewTextBoxColumn1.Name = "Movil";
+            gridViewTextBoxColumn1.Width = 190;
+            gridViewTextBoxColumn2.FieldName = "Client";
+            gridViewTextBoxColumn2.HeaderText = "Cliente";
+            gridViewTextBoxColumn2.Name = "Cliente";
+            gridViewTextBoxColumn2.Width = 361;
+            gridViewTextBoxColumn3.FieldName = "Monto";
+            gridViewTextBoxColumn3.HeaderText = "Monto";
+            gridViewTextBoxColumn3.Name = "Monto";
+            gridViewTextBoxColumn3.Width = 177;
+            gridViewCommandColumn1.HeaderImage = global::GestionAdministrativa.Win.Properties.Resources.delete;
+            gridViewCommandColumn1.HeaderText = "";
+            gridViewCommandColumn1.Image = global::GestionAdministrativa.Win.Properties.Resources.delete;
+            gridViewCommandColumn1.MaxWidth = 30;
+            gridViewCommandColumn1.MinWidth = 30;
+            gridViewCommandColumn1.Name = "Eliminar";
+            gridViewCommandColumn1.Width = 30;
             this.gridVales.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewCommandColumn2});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewCommandColumn1});
             this.gridVales.Name = "gridVales";
             this.gridVales.ReadOnly = true;
             this.gridVales.Size = new System.Drawing.Size(777, 281);
@@ -254,7 +260,7 @@
             // radLabel5
             // 
             this.radLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel5.Location = new System.Drawing.Point(394, 497);
+            this.radLabel5.Location = new System.Drawing.Point(394, 645);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(54, 31);
             this.radLabel5.TabIndex = 6;
@@ -263,7 +269,7 @@
             // TxtTotal
             // 
             this.TxtTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotal.Location = new System.Drawing.Point(467, 498);
+            this.TxtTotal.Location = new System.Drawing.Point(467, 646);
             this.TxtTotal.Name = "TxtTotal";
             this.TxtTotal.Size = new System.Drawing.Size(100, 33);
             this.TxtTotal.TabIndex = 7;
@@ -273,7 +279,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(645, 492);
+            this.btnAceptar.Location = new System.Drawing.Point(645, 640);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(163, 40);
             this.btnAceptar.TabIndex = 8;
@@ -281,10 +287,28 @@
             this.btnAceptar.ThemeName = "TelerikMetro";
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // radLabel6
+            // 
+            this.radLabel6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel6.Location = new System.Drawing.Point(26, 90);
+            this.radLabel6.Name = "radLabel6";
+            this.radLabel6.Size = new System.Drawing.Size(114, 27);
+            this.radLabel6.TabIndex = 10;
+            this.radLabel6.Text = "Numero Vale:";
+            // 
+            // radLabel7
+            // 
+            this.radLabel7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel7.Location = new System.Drawing.Point(222, 90);
+            this.radLabel7.Name = "radLabel7";
+            this.radLabel7.Size = new System.Drawing.Size(95, 27);
+            this.radLabel7.TabIndex = 11;
+            this.radLabel7.Text = "Fecha Vale:";
+            // 
             // FrmIngresoVales
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(869, 733);
+            this.ClientSize = new System.Drawing.Size(858, 733);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.TxtTotal);
             this.Controls.Add(this.radLabel5);
@@ -321,6 +345,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAceptar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -346,5 +372,7 @@
         private Telerik.WinControls.UI.RadButton btnAceptar;
         private Telerik.WinControls.UI.RadLabel LblCliente;
         private Telerik.WinControls.UI.RadButton BtnAgregarVale;
+        private Telerik.WinControls.UI.RadLabel radLabel7;
+        private Telerik.WinControls.UI.RadLabel radLabel6;
     }
 }

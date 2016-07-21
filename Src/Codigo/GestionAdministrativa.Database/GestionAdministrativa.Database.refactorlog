@@ -399,4 +399,32 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="TallerMovilId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="9a6ea7f2-1750-4e46-8a08-961acc45a78c" ChangeDateTime="07/19/2016 18:09:07">
+    <Property Name="ElementName" Value="[dbo].[FK_ClientesMovimiento_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[ClientesMovimiento]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_ClientesMovimiento_SucursalAlta]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="07787a84-c5ea-4bab-808d-0c65c0fafcf9" ChangeDateTime="07/19/2016 18:09:15">
+    <Property Name="ElementName" Value="[dbo].[FK_ClientesMovimiento_ToTable_1]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[ClientesMovimiento]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_ClientesMovimiento_OperadorAlta]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="184d8349-2602-42c5-9fee-bacfdb655cca" ChangeDateTime="07/19/2016 18:09:26">
+    <Property Name="ElementName" Value="[dbo].[FK_ClientesMovimiento_ToTable_2]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[ClientesMovimiento]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_ClientesMovimiento_SucursalModificacion]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="46868c40-11f5-4e9b-b1c8-011b688cf65a" ChangeDateTime="07/19/2016 18:09:41">
+    <Property Name="ElementName" Value="[dbo].[FK_ClientesMovimiento_ToTable_3]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[ClientesMovimiento]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_ClientesMovimiento_OperadorModificacion]" />
+  </Operation>
 </Operations>
