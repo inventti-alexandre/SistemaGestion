@@ -457,4 +457,11 @@
     <Property Name="NewName" Value="MovilViajeId" />
 >>>>>>> origin/master
   </Operation>
+  <Operation Name="Rename Refactor" Key="1ef21ddb-4156-4bf3-a492-0ee4cdd93853" ChangeDateTime="07/21/2016 15:14:33">
+    <Property Name="ElementName" Value="[dbo].[FK_Vales_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Vales]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Vales_MovilPresenta]" />
+  </Operation>
 </Operations>
