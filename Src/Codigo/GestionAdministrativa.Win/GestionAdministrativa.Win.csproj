@@ -476,6 +476,12 @@
     <Compile Include="Forms\Util\UcUsuariosLogin.Designer.cs">
       <DependentUpon>UcUsuariosLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Vales\FrmValesLotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Vales\FrmValesLotes.Designer.cs">
+      <DependentUpon>FrmValesLotes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\FormRegistry.cs" />
     <Compile Include="Helpers\IFormRegistry.cs" />
     <Compile Include="IFormFactory.cs" />
@@ -640,6 +646,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Util\UcUsuariosLogin.resx">
       <DependentUpon>UcUsuariosLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Vales\FrmValesLotes.resx">
+      <DependentUpon>FrmValesLotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
