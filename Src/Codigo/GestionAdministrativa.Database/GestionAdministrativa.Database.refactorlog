@@ -427,4 +427,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="[FK_ClientesMovimiento_OperadorModificacion]" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="c90142ee-1375-4221-bfbf-3cd7b4e28d59" ChangeDateTime="07/21/2016 14:58:59">
+    <Property Name="ElementName" Value="[dbo].[Vales].[MovilVale]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Vales]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MovilViaje" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="11ac754b-c9ee-4c67-9be1-0c5e1af860ba" ChangeDateTime="07/21/2016 14:59:13">
+    <Property Name="ElementName" Value="[dbo].[Vales].[MovilPresenta]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Vales]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MovilPresentaId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3ec71548-0ea2-4e44-8856-5a51d0e1c448" ChangeDateTime="07/21/2016 14:59:16">
+    <Property Name="ElementName" Value="[dbo].[Vales].[MovilViaje]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Vales]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MovilViajeId" />
+  </Operation>
 </Operations>
