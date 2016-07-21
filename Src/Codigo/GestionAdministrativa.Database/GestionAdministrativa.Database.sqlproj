@@ -148,7 +148,11 @@
     <Build Include="Tables\TalleresMotivosMoviles.sql" />
     <Build Include="Tables\Clientes.sql" />
     <Build Include="Tables\ClientesMovimientos.sql" />
+<<<<<<< HEAD
     <Build Include="Tables\LoteVales.sql" />
+=======
+    <Build Include="Tables\Vales.sql" />
+>>>>>>> origin/master
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Dias.sql" />

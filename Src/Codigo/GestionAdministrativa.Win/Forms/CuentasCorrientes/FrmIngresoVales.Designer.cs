@@ -36,6 +36,8 @@
             this.ddlMovilPaga = new Telerik.WinControls.UI.RadDropDownList();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.radPanel2 = new Telerik.WinControls.UI.RadPanel();
+            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
             this.BtnAgregarVale = new Telerik.WinControls.UI.RadButton();
             this.LblCliente = new Telerik.WinControls.UI.RadLabel();
             this.TxtMonto = new Telerik.WinControls.UI.RadTextBox();
@@ -49,14 +51,16 @@
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.TxtTotal = new Telerik.WinControls.UI.RadTextBox();
             this.btnAceptar = new Telerik.WinControls.UI.RadButton();
-            this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
+            this.TxtNroVale = new Telerik.WinControls.UI.RadTextBox();
+            this.DtpFechaVale = new Telerik.WinControls.UI.RadDateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlMovilPaga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
             this.radPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnAgregarVale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LblCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMonto)).BeginInit();
@@ -72,8 +76,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAceptar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtNroVale)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaVale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,12 +109,14 @@
             this.radPanel1.Controls.Add(this.ddlMovilPaga);
             this.radPanel1.Location = new System.Drawing.Point(31, 21);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(777, 54);
+            this.radPanel1.Size = new System.Drawing.Size(959, 54);
             this.radPanel1.TabIndex = 3;
             this.radPanel1.ThemeName = "TelerikMetro";
             // 
             // radPanel2
             // 
+            this.radPanel2.Controls.Add(this.DtpFechaVale);
+            this.radPanel2.Controls.Add(this.TxtNroVale);
             this.radPanel2.Controls.Add(this.radLabel7);
             this.radPanel2.Controls.Add(this.radLabel6);
             this.radPanel2.Controls.Add(this.BtnAgregarVale);
@@ -123,14 +129,32 @@
             this.radPanel2.Controls.Add(this.radLabel2);
             this.radPanel2.Location = new System.Drawing.Point(31, 101);
             this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(777, 167);
+            this.radPanel2.Size = new System.Drawing.Size(959, 167);
             this.radPanel2.TabIndex = 4;
             this.radPanel2.ThemeName = "TelerikMetro";
+            // 
+            // radLabel7
+            // 
+            this.radLabel7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel7.Location = new System.Drawing.Point(312, 96);
+            this.radLabel7.Name = "radLabel7";
+            this.radLabel7.Size = new System.Drawing.Size(95, 27);
+            this.radLabel7.TabIndex = 11;
+            this.radLabel7.Text = "Fecha Vale:";
+            // 
+            // radLabel6
+            // 
+            this.radLabel6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel6.Location = new System.Drawing.Point(26, 23);
+            this.radLabel6.Name = "radLabel6";
+            this.radLabel6.Size = new System.Drawing.Size(114, 27);
+            this.radLabel6.TabIndex = 10;
+            this.radLabel6.Text = "Numero Vale:";
             // 
             // BtnAgregarVale
             // 
             this.BtnAgregarVale.Image = global::GestionAdministrativa.Win.Properties.Resources.Add_New_blue;
-            this.BtnAgregarVale.Location = new System.Drawing.Point(610, 93);
+            this.BtnAgregarVale.Location = new System.Drawing.Point(842, 93);
             this.BtnAgregarVale.Name = "BtnAgregarVale";
             this.BtnAgregarVale.Size = new System.Drawing.Size(23, 24);
             this.BtnAgregarVale.TabIndex = 9;
@@ -140,7 +164,7 @@
             // LblCliente
             // 
             this.LblCliente.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCliente.Location = new System.Drawing.Point(408, 20);
+            this.LblCliente.Location = new System.Drawing.Point(97, 129);
             this.LblCliente.Name = "LblCliente";
             this.LblCliente.Size = new System.Drawing.Size(65, 27);
             this.LblCliente.TabIndex = 8;
@@ -148,7 +172,7 @@
             // 
             // TxtMonto
             // 
-            this.TxtMonto.Location = new System.Drawing.Point(495, 93);
+            this.TxtMonto.Location = new System.Drawing.Point(727, 93);
             this.TxtMonto.Name = "TxtMonto";
             this.TxtMonto.Size = new System.Drawing.Size(100, 26);
             this.TxtMonto.TabIndex = 7;
@@ -158,7 +182,7 @@
             // radLabel4
             // 
             this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel4.Location = new System.Drawing.Point(408, 93);
+            this.radLabel4.Location = new System.Drawing.Point(640, 93);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(69, 27);
             this.radLabel4.TabIndex = 6;
@@ -168,7 +192,7 @@
             // 
             this.ddlCliente.DropDownAnimationEnabled = true;
             this.ddlCliente.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlCliente.Location = new System.Drawing.Point(293, 20);
+            this.ddlCliente.Location = new System.Drawing.Point(97, 93);
             this.ddlCliente.MaxDropDownItems = 0;
             this.ddlCliente.Name = "ddlCliente";
             this.ddlCliente.ShowImageInEditorArea = true;
@@ -180,7 +204,7 @@
             // radLabel3
             // 
             this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel3.Location = new System.Drawing.Point(222, 20);
+            this.radLabel3.Location = new System.Drawing.Point(26, 93);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(65, 27);
             this.radLabel3.TabIndex = 4;
@@ -190,7 +214,7 @@
             // 
             this.ddlMovilVale.DropDownAnimationEnabled = true;
             this.ddlMovilVale.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlMovilVale.Location = new System.Drawing.Point(87, 17);
+            this.ddlMovilVale.Location = new System.Drawing.Point(423, 20);
             this.ddlMovilVale.MaxDropDownItems = 0;
             this.ddlMovilVale.Name = "ddlMovilVale";
             this.ddlMovilVale.ShowImageInEditorArea = true;
@@ -201,7 +225,7 @@
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.Location = new System.Drawing.Point(26, 20);
+            this.radLabel2.Location = new System.Drawing.Point(362, 23);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(55, 27);
             this.radLabel2.TabIndex = 1;
@@ -287,28 +311,36 @@
             this.btnAceptar.ThemeName = "TelerikMetro";
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // radLabel6
+            // TxtNroVale
             // 
-            this.radLabel6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel6.Location = new System.Drawing.Point(26, 90);
-            this.radLabel6.Name = "radLabel6";
-            this.radLabel6.Size = new System.Drawing.Size(114, 27);
-            this.radLabel6.TabIndex = 10;
-            this.radLabel6.Text = "Numero Vale:";
+            this.TxtNroVale.Location = new System.Drawing.Point(146, 20);
+            this.TxtNroVale.Name = "TxtNroVale";
+            this.TxtNroVale.Size = new System.Drawing.Size(158, 26);
+            this.TxtNroVale.TabIndex = 12;
+            this.TxtNroVale.TabStop = false;
+            this.TxtNroVale.ThemeName = "TelerikMetro";
             // 
-            // radLabel7
+            // DtpFechaVale
             // 
-            this.radLabel7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel7.Location = new System.Drawing.Point(222, 90);
-            this.radLabel7.Name = "radLabel7";
-            this.radLabel7.Size = new System.Drawing.Size(95, 27);
-            this.radLabel7.TabIndex = 11;
-            this.radLabel7.Text = "Fecha Vale:";
+            this.DtpFechaVale.CustomFormat = "MM";
+            this.DtpFechaVale.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DtpFechaVale.Location = new System.Drawing.Point(423, 96);
+            this.DtpFechaVale.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DtpFechaVale.MinDate = new System.DateTime(((long)(0)));
+            this.DtpFechaVale.Name = "DtpFechaVale";
+            this.DtpFechaVale.NullableValue = new System.DateTime(2016, 7, 21, 10, 59, 37, 595);
+            this.DtpFechaVale.NullDate = new System.DateTime(((long)(0)));
+            this.DtpFechaVale.Size = new System.Drawing.Size(150, 29);
+            this.DtpFechaVale.TabIndex = 13;
+            this.DtpFechaVale.TabStop = false;
+            this.DtpFechaVale.Text = "07";
+            this.DtpFechaVale.ThemeName = "TelerikMetro";
+            this.DtpFechaVale.Value = new System.DateTime(2016, 7, 21, 10, 59, 37, 595);
             // 
             // FrmIngresoVales
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(858, 733);
+            this.ClientSize = new System.Drawing.Size(1022, 733);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.TxtTotal);
             this.Controls.Add(this.radLabel5);
@@ -330,6 +362,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).EndInit();
             this.radPanel2.ResumeLayout(false);
             this.radPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnAgregarVale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LblCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMonto)).EndInit();
@@ -345,8 +379,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAceptar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtNroVale)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaVale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -374,5 +408,7 @@
         private Telerik.WinControls.UI.RadButton BtnAgregarVale;
         private Telerik.WinControls.UI.RadLabel radLabel7;
         private Telerik.WinControls.UI.RadLabel radLabel6;
+        private Telerik.WinControls.UI.RadDateTimePicker DtpFechaVale;
+        private Telerik.WinControls.UI.RadTextBox TxtNroVale;
     }
 }

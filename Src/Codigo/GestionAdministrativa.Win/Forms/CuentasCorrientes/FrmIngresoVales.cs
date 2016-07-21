@@ -31,6 +31,10 @@ namespace GestionAdministrativa.Win.Forms.CuentasCorrientes
             InitializeComponent();
         }
 
+        #region Propiedades
+
+        #endregion
+
         private void FrmIngresoVales_Load(object sender, EventArgs e)
         {
             CargarCombos();
