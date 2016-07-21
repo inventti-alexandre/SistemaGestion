@@ -427,14 +427,12 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="[FK_ClientesMovimiento_OperadorModificacion]" />
   </Operation>
-<<<<<<< HEAD
   <Operation Name="Rename Refactor" Key="bd61f6a5-c11b-450f-afd1-444a4ef2db97" ChangeDateTime="07/21/2016 15:13:44">
     <Property Name="ElementName" Value="[dbo].[LoteVales].[OperadorModificacionId]" />
     <Property Name="ElementType" Value="SqlSimpleColumn" />
     <Property Name="ParentElementName" Value="[dbo].[LoteVales]" />
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="FechaModificacion" />
-=======
   <Operation Name="Rename Refactor" Key="c90142ee-1375-4221-bfbf-3cd7b4e28d59" ChangeDateTime="07/21/2016 14:58:59">
     <Property Name="ElementName" Value="[dbo].[Vales].[MovilVale]" />
     <Property Name="ElementType" Value="SqlSimpleColumn" />
@@ -455,7 +453,6 @@
     <Property Name="ParentElementName" Value="[dbo].[Vales]" />
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="MovilViajeId" />
->>>>>>> origin/master
   </Operation>
   <Operation Name="Rename Refactor" Key="1ef21ddb-4156-4bf3-a492-0ee4cdd93853" ChangeDateTime="07/21/2016 15:14:33">
     <Property Name="ElementName" Value="[dbo].[FK_Vales_ToTable]" />
